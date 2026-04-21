@@ -25,9 +25,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <googlesql.version>1.0.0</googlesql.version>
         <grpc.version>1.62.2</grpc.version>
         <protobuf.version>3.25.3</protobuf.version>
+        <netty.version>4.1.107.Final</netty.version>
     </properties>
 
     <dependencies>
@@ -59,16 +59,7 @@
             <version>8.3.0</version>
         </dependency>
 
-        <!-- GoogleSQL Java API (local dependency, built from googlesql submodule) -->
-        <dependency>
-            <groupId>com.google.googlesql</groupId>
-            <artifactId>googlesql-java</artifactId>
-            <version>${googlesql.version}</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/../googlesql/java/com/google/googlesql</systemPath>
-        </dependency>
-
-        <!-- gRPC -->
+        <!-- gRPC (for potential GoogleSQL local service communication) -->
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
@@ -98,11 +89,25 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <!-- JSON Schema Validation -->
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- Caffeine Cache -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>3.1.8</version>
         </dependency>
 
         <!-- Testing -->
@@ -114,6 +119,11 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -147,6 +157,11 @@
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
             </plugin>
         </plugins>
     </build>

@@ -2,15 +2,18 @@ package com.onto.service.logic.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onto.service.entity.*;
 import com.onto.service.exception.OntologyException;
 import com.onto.service.logic.LogicRegistry;
 import com.onto.service.mapper.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -40,6 +43,11 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     @Transactional
@@ -117,10 +125,8 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
 
     @Override
     public List<String> getDependencyTopoOrder(String domainName, String version) {
-        // 获取所有 Logic
         List<OntologyLogic> allLogics = baseMapper.selectByDomainVersion(domainName, version);
 
-        // 构建依赖图
         Map<String, List<String>> graph = new HashMap<>();
         Map<String, Integer> inDegree = new HashMap<>();
 
@@ -132,14 +138,13 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
         for (OntologyLogic logic : allLogics) {
             List<OntologyLogicDependency> deps = dependencyMapper.selectByLogicName(domainName, version, logic.getLogicName());
             for (OntologyLogicDependency dep : deps) {
-                if (dep.getRequired()) {
+                if (Boolean.TRUE.equals(dep.getRequired())) {
                     graph.computeIfAbsent(dep.getDependencyName(), k -> new ArrayList<>()).add(logic.getLogicName());
                     inDegree.merge(logic.getLogicName(), 1, Integer::sum);
                 }
             }
         }
 
-        // Kahn 算法拓扑排序
         Queue<String> queue = new LinkedList<>();
         for (Map.Entry<String, Integer> entry : inDegree.entrySet()) {
             if (entry.getValue() == 0) {
@@ -262,6 +267,16 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
             throw new OntologyException("SQL expression is empty for logic: " + logicName);
         }
 
+        // 参数替换
+        if (params != null) {
+            for (Map.Entry<String, Object> param : params.entrySet()) {
+                String placeholder = "{" + param.getKey() + "}";
+                String value = param.getValue() instanceof String
+                    ? "'" + param.getValue() + "'" : String.valueOf(param.getValue());
+                sql = sql.replace(placeholder, value);
+            }
+        }
+
         // 记录运行
         SemanticLogicRun run = new SemanticLogicRun();
         run.setRunId(UUID.randomUUID().toString());
@@ -284,7 +299,7 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
                 fact.setDomainName(domainName);
                 fact.setVersion(version);
                 fact.setObjectType(logic.getTargetType());
-                fact.setObjectId(String.valueOf(row.getOrDefault("object_id", "")));
+                fact.setObjectId(String.valueOf(row.getOrDefault("object_id", row.getOrDefault("id", ""))));
                 fact.setPropertyName(logic.getTargetProperty());
                 fact.setValueType(logic.getOutputType());
                 fact.setComputedByLogic(logicName);
@@ -292,6 +307,10 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
                 fact.setValidFrom(LocalDateTime.now());
 
                 Object value = row.get("value");
+                if (value == null) {
+                    // 尝试其他常见列名
+                    value = row.getOrDefault(logic.getTargetProperty(), row.values().iterator().next());
+                }
                 setFactValue(fact, value, logic.getOutputType());
 
                 facts.add(fact);
@@ -326,7 +345,7 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
             throw new OntologyException("External binding not found or disabled");
         }
 
-        // 记录运行，状态为 submitted (等待外部平台执行)
+        // 记录运行
         SemanticLogicRun run = new SemanticLogicRun();
         run.setRunId(UUID.randomUUID().toString());
         run.setDomainName(domainName);
@@ -339,8 +358,55 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
         run.setStatus("submitted");
         logicRunMapper.insert(run);
 
+        // 尝试触发外部平台
+        try {
+            triggerExternalPlatform(binding, run);
+        } catch (Exception e) {
+            log.warn("Failed to trigger external platform synchronously, run marked as submitted: {}", e.getMessage());
+        }
+
         log.info("Triggered external logic {} on platform {}, runId={}", logicName, platformName, run.getRunId());
         return run.getRunId();
+    }
+
+    // ==================== Private Methods ====================
+
+    /**
+     * 触发外部平台执行
+     */
+    private void triggerExternalPlatform(OntologyLogicExecutionBinding binding, SemanticLogicRun run) {
+        if (binding.getPlatformJobRef() == null) {
+            return;
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("run_id", run.getRunId());
+        body.put("logic_name", run.getLogicName());
+        body.put("domain_name", run.getDomainName());
+        body.put("version", run.getVersion());
+        body.put("result_table", binding.getResultTable());
+        body.put("trigger_rule_ref", binding.getTriggerRuleRef());
+
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
+
+        try {
+            ResponseEntity<Map> response = restTemplate.postForEntity(
+                binding.getPlatformJobRef(), entity, Map.class);
+
+            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+                Map<String, Object> result = response.getBody();
+                String externalJobId = String.valueOf(result.getOrDefault("job_id", ""));
+                run.setExternalJobRef(externalJobId);
+                logicRunMapper.updateById(run);
+                log.info("External platform accepted job, externalJobId={}", externalJobId);
+            }
+        } catch (Exception e) {
+            log.error("External platform trigger failed: {}", e.getMessage());
+            throw e;
+        }
     }
 
     private void setFactValue(SemanticFact fact, Object value, String outputType) {
@@ -351,8 +417,11 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
                 break;
             case "DOUBLE":
             case "FLOAT":
+                fact.setValueNumber(Double.valueOf(String.valueOf(value)));
+                break;
             case "INT":
             case "INT64":
+            case "INTEGER":
                 fact.setValueNumber(Double.valueOf(String.valueOf(value)));
                 break;
             case "BOOL":

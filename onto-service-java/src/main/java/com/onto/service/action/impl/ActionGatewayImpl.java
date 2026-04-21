@@ -1,16 +1,28 @@
 package com.onto.service.action.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.networknt.schema.JsonSchema;
+import com.networknt.schema.JsonSchemaFactory;
+import com.networknt.schema.SpecVersion;
+import com.networknt.schema.ValidationMessage;
 import com.onto.service.action.*;
 import com.onto.service.entity.*;
 import com.onto.service.exception.OntologyException;
 import com.onto.service.logic.LogicRegistry;
 import com.onto.service.mapper.*;
 import com.onto.service.query.QueryAdapter;
+import com.onto.service.query.SemanticQuery;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -36,6 +48,12 @@ public class ActionGatewayImpl implements ActionGateway {
 
     @Autowired
     private QueryAdapter queryAdapter;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V202012);
 
     @Override
     public List<OntologyAction> listTools(String domainName, String version) {
@@ -95,14 +113,30 @@ public class ActionGatewayImpl implements ActionGateway {
             result.getErrors().addAll(precheck.getFailedConditions());
         }
 
-        // 5. 生成预览
+        // 5. 外部平台 dry-run (如果配置了)
         if (result.getValid()) {
-            Map<String, Object> preview = new HashMap<>();
-            preview.put("action", actionDef.getActionName());
-            preview.put("target", request.getTargetObjectId());
-            preview.put("input", request.getInput());
-            preview.put("estimated_effect", "Will create/update external resource");
-            result.setPreview(preview);
+            OntologyActionBinding binding = getActiveBinding(request);
+            if (binding != null && binding.getDryRunRef() != null) {
+                try {
+                    Map<String, Object> externalPreview = callExternalDryRun(binding, request);
+                    result.setPreview(externalPreview);
+                } catch (Exception e) {
+                    result.getWarnings().add("External dry-run failed: " + e.getMessage());
+                    Map<String, Object> fallbackPreview = new HashMap<>();
+                    fallbackPreview.put("action", actionDef.getActionName());
+                    fallbackPreview.put("target", request.getTargetObjectId());
+                    fallbackPreview.put("input", request.getInput());
+                    fallbackPreview.put("note", "External dry-run unavailable, showing local preview only");
+                    result.setPreview(fallbackPreview);
+                }
+            } else {
+                Map<String, Object> preview = new HashMap<>();
+                preview.put("action", actionDef.getActionName());
+                preview.put("target", request.getTargetObjectId());
+                preview.put("input", request.getInput());
+                preview.put("estimated_effect", "Will create/update external resource");
+                result.setPreview(preview);
+            }
             result.getWarnings().add("This is a dry-run. No actual action will be performed.");
         }
 
@@ -163,13 +197,20 @@ public class ActionGatewayImpl implements ActionGateway {
             return result;
         }
 
-        // 4. 提交到外部平台 (模拟)
+        // 4. 提交到外部平台
         OntologyActionBinding binding = getActiveBinding(request);
         if (binding != null) {
-            instance.setStatus("submitted");
-            instance.setExternalRequestRef(binding.getPlatformActionRef() + ":" + actionId);
-            log.info("Submitted action {} to platform {}, requestRef={}",
-                actionId, binding.getPlatformName(), instance.getExternalRequestRef());
+            try {
+                String externalRef = submitToExternalPlatform(binding, request);
+                instance.setStatus("submitted");
+                instance.setExternalRequestRef(externalRef);
+                log.info("Submitted action {} to platform {}, requestRef={}",
+                    actionId, binding.getPlatformName(), externalRef);
+            } catch (Exception e) {
+                instance.setStatus("failed");
+                instance.setErrorMessage("External submission failed: " + e.getMessage());
+                log.error("Failed to submit action to external platform", e);
+            }
         } else {
             // 本地执行模式
             instance.setStatus("success");
@@ -198,6 +239,11 @@ public class ActionGatewayImpl implements ActionGateway {
             throw new OntologyException("Action not found: " + actionId);
         }
 
+        // 如果状态是 submitted，尝试查询外部平台状态
+        if ("submitted".equals(instance.getStatus()) && instance.getExternalRequestRef() != null) {
+            tryPollExternalStatus(instance);
+        }
+
         ActionResult result = new ActionResult();
         result.setActionId(actionId);
         result.setStatus(instance.getStatus());
@@ -216,6 +262,10 @@ public class ActionGatewayImpl implements ActionGateway {
         }
 
         if ("running".equals(instance.getStatus()) || "pending".equals(instance.getStatus()) || "submitted".equals(instance.getStatus())) {
+            // 尝试取消外部平台任务
+            if (instance.getExternalRequestRef() != null) {
+                tryCancelExternalTask(instance);
+            }
             instance.setStatus("cancelled");
             instance.setUpdatedAt(LocalDateTime.now());
             actionInstanceMapper.updateById(instance);
@@ -234,6 +284,9 @@ public class ActionGatewayImpl implements ActionGateway {
             }
             if (filters.get("actionName") != null) {
                 wrapper.eq("action_name", filters.get("actionName"));
+            }
+            if (filters.get("requestedBy") != null) {
+                wrapper.eq("requested_by", filters.get("requestedBy"));
             }
         }
         wrapper.orderByDesc("created_at");
@@ -262,16 +315,21 @@ public class ActionGatewayImpl implements ActionGateway {
         // 1. 检查 precondition_sql
         if (actionDef.getPreconditionSql() != null && !actionDef.getPreconditionSql().isEmpty()) {
             try {
-                // 执行前置条件 SQL
-                String sql = actionDef.getPreconditionSql().replace("{target_object_id}", "'" + targetObjectId + "'");
-                Map<String, Object> sqlResult = queryAdapter.executeSemanticQuery(domainName, version,
-                    createPreconditionQuery(sql)).getRows().get(0);
-                Boolean preconditionMet = (Boolean) sqlResult.getOrDefault("precondition_met", true);
-                if (!Boolean.TRUE.equals(preconditionMet)) {
-                    result.setPassed(false);
-                    result.getFailedConditions().add("Precondition SQL check failed: " + actionDef.getPreconditionSql());
+                String sql = actionDef.getPreconditionSql()
+                    .replace("{target_object_id}", "'" + targetObjectId + "'")
+                .replace("${target_object_id}", "'" + targetObjectId + "'");
+
+                List<Map<String, Object>> rows = queryAdapter.executeSemanticQuery(domainName, version,
+                    createPreconditionQuery(sql)).getRows();
+
+                if (rows != null && !rows.isEmpty()) {
+                    Object preconditionMet = rows.get(0).getOrDefault("precondition_met", true);
+                    if (!Boolean.TRUE.equals(preconditionMet)) {
+                        result.setPassed(false);
+                        result.getFailedConditions().add("Precondition SQL check failed");
+                    }
+                    result.getCheckedValues().put("precondition_sql", preconditionMet);
                 }
-                result.getCheckedValues().put("precondition_sql", preconditionMet);
             } catch (Exception e) {
                 result.setPassed(false);
                 result.getFailedConditions().add("Precondition SQL execution error: " + e.getMessage());
@@ -281,7 +339,6 @@ public class ActionGatewayImpl implements ActionGateway {
         // 2. 检查 precondition_logic (推理事实)
         if (actionDef.getPreconditionLogic() != null && !actionDef.getPreconditionLogic().isEmpty()) {
             String logicName = actionDef.getPreconditionLogic();
-            // 解析 logic_name 获取 target_type 和 target_property
             String[] parts = logicName.split("\\.");
             if (parts.length >= 2) {
                 String targetType = parts[0];
@@ -309,12 +366,10 @@ public class ActionGatewayImpl implements ActionGateway {
         return result;
     }
 
+    // ==================== Private Methods ====================
+
     private OntologyAction getActionDefinition(ActionRequest request) {
-        QueryWrapper<OntologyAction> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", request.getDomainName())
-               .eq("version", request.getVersion())
-               .eq("action_name", request.getActionName());
-        return actionMapper.selectOne(wrapper);
+        return getActionDefinition(request.getDomainName(), request.getVersion(), request.getActionName());
     }
 
     private OntologyAction getActionDefinition(String domainName, String version, String actionName) {
@@ -334,30 +389,157 @@ public class ActionGatewayImpl implements ActionGateway {
         return actionBindingMapper.selectOne(wrapper);
     }
 
+    /**
+     * JSON Schema 校验输入参数
+     */
     private void validateInputSchema(ActionRequest request, OntologyAction actionDef, DryRunResult result) {
         if (actionDef.getInputSchemaJson() == null || actionDef.getInputSchemaJson().isEmpty()) {
             return;
         }
-        // 简化校验：检查必填字段是否存在
         if (request.getInput() == null) {
             result.getWarnings().add("No input parameters provided");
             return;
         }
-        // TODO: 解析 JSON Schema 进行完整校验
+
+        try {
+            JsonSchema schema = schemaFactory.getSchema(actionDef.getInputSchemaJson());
+            JsonNode inputNode = objectMapper.valueToTree(request.getInput());
+            Set<ValidationMessage> validationMessages = schema.validate(inputNode);
+
+            if (!validationMessages.isEmpty()) {
+                result.setValid(false);
+                for (ValidationMessage msg : validationMessages) {
+                    result.getErrors().add("Input validation: " + msg.getMessage());
+                }
+            }
+        } catch (Exception e) {
+            result.getWarnings().add("Input schema validation error: " + e.getMessage());
+        }
+    }
+
+    /**
+     * 调用外部平台 dry-run
+     */
+    private Map<String, Object> callExternalDryRun(OntologyActionBinding binding, ActionRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("action_name", request.getActionName());
+        body.put("target_object_id", request.getTargetObjectId());
+        body.put("input", request.getInput());
+
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
+        ResponseEntity<Map> response = restTemplate.postForEntity(binding.getDryRunRef(), entity, Map.class);
+        return response.getBody();
+    }
+
+    /**
+     * 提交到外部平台
+     */
+    private String submitToExternalPlatform(OntologyActionBinding binding, ActionRequest request) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("action_name", request.getActionName());
+        body.put("target_type", request.getTargetType());
+        body.put("target_object_id", request.getTargetObjectId());
+        body.put("input", request.getInput());
+        body.put("requested_by", request.getRequestedBy());
+
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(body, headers);
+        ResponseEntity<Map> response = restTemplate.postForEntity(
+            binding.getPlatformActionRef(), entity, Map.class);
+
+        Map<String, Object> result = response.getBody();
+        if (result != null && result.get("request_id") != null) {
+            return String.valueOf(result.get("request_id"));
+        }
+        return binding.getPlatformActionRef() + ":" + UUID.randomUUID();
+    }
+
+    /**
+     * 轮询外部平台状态
+     */
+    private void tryPollExternalStatus(SemanticActionInstance instance) {
+        OntologyActionBinding binding = getBindingByAction(instance);
+        if (binding == null || binding.getResultRef() == null) {
+            return;
+        }
+
+        try {
+            String url = binding.getResultRef() + "/" + instance.getExternalRequestRef();
+            ResponseEntity<Map> response = restTemplate.getForEntity(url, Map.class);
+            Map<String, Object> result = response.getBody();
+            if (result != null) {
+                String status = String.valueOf(result.getOrDefault("status", "unknown"));
+                instance.setStatus(mapExternalStatus(status));
+                instance.setExternalResultJson(toJson(result));
+                instance.setUpdatedAt(LocalDateTime.now());
+                actionInstanceMapper.updateById(instance);
+            }
+        } catch (Exception e) {
+            log.debug("Failed to poll external status for action {}", instance.getActionId(), e);
+        }
+    }
+
+    /**
+     * 取消外部平台任务
+     */
+    private void tryCancelExternalTask(SemanticActionInstance instance) {
+        OntologyActionBinding binding = getBindingByAction(instance);
+        if (binding == null) {
+            return;
+        }
+
+        try {
+            String url = binding.getPlatformActionRef() + "/" + instance.getExternalRequestRef() + "/cancel";
+            restTemplate.postForEntity(url, null, Map.class);
+        } catch (Exception e) {
+            log.warn("Failed to cancel external task for action {}", instance.getActionId(), e);
+        }
+    }
+
+    private OntologyActionBinding getBindingByAction(SemanticActionInstance instance) {
+        QueryWrapper<OntologyActionBinding> wrapper = new QueryWrapper<>();
+        wrapper.eq("domain_name", instance.getDomainName())
+               .eq("version", instance.getVersion())
+               .eq("action_name", instance.getActionName())
+               .eq("enabled", true);
+        return actionBindingMapper.selectOne(wrapper);
+    }
+
+    private String mapExternalStatus(String externalStatus) {
+        switch (externalStatus.toLowerCase()) {
+            case "completed":
+            case "success":
+            case "done":
+                return "success";
+            case "failed":
+            case "error":
+                return "failed";
+            case "running":
+            case "in_progress":
+                return "running";
+            case "cancelled":
+            case "canceled":
+                return "cancelled";
+            default:
+                return "submitted";
+        }
     }
 
     private SemanticQuery createPreconditionQuery(String sql) {
         SemanticQuery query = new SemanticQuery();
         query.setIntent("select");
-        // 将 SQL 包装为子查询
         return query;
     }
 
     private String toJson(Object obj) {
         if (obj == null) return null;
         try {
-            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-            return mapper.writeValueAsString(obj);
+            return objectMapper.writeValueAsString(obj);
         } catch (Exception e) {
             return obj.toString();
         }

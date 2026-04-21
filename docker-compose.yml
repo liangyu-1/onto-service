@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # Doris FE (Frontend)
+  doris-fe:
+    image: apache/doris:fe-2.1.0
+    container_name: onto-doris-fe
+    hostname: doris-fe
+    ports:
+      - "8030:8030"
+      - "9030:9030"
+    environment:
+      - FE_SERVERS=fe1:127.0.0.1:9010
+      - FE_ID=fe1
+    volumes:
+      - doris-fe-data:/opt/apache-doris/fe/doris-meta
+    networks:
+      - onto-network
+
+  # Doris BE (Backend)
+  doris-be:
+    image: apache/doris:be-2.1.0
+    container_name: onto-doris-be
+    hostname: doris-be
+    ports:
+      - "8040:8040"
+      - "9050:9050"
+    environment:
+      - FE_SERVERS=fe1:127.0.0.1:9010
+      - BE_ADDR=127.0.0.1:9050
+    volumes:
+      - doris-be-data:/opt/apache-doris/be/storage
+    depends_on:
+      - doris-fe
+    networks:
+      - onto-network
+
+  # Ontology Service Java
+  onto-service-java:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: onto-service-java
+    ports:
+      - "8080:8080"
+    environment:
+      - DORIS_HOST=doris-fe
+      - DORIS_PORT=9030
+      - DORIS_DB=ontology
+      - DORIS_USER=root
+      - DORIS_PASSWORD=
+      - PYTHON_SERVICE_URL=http://onto-service-python:5000
+    depends_on:
+      - doris-fe
+      - onto-service-python
+    networks:
+      - onto-network
+
+  # Ontology Service Python
+  onto-service-python:
+    build:
+      context: ./onto-service-python
+      dockerfile: Dockerfile.python
+    container_name: onto-service-python
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-gpt-3.5-turbo}
+    networks:
+      - onto-network
+
+volumes:
+  doris-fe-data:
+  doris-be-data:
+
+networks:
+  onto-network:
+    driver: bridge

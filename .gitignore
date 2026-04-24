@@ -1,0 +1,13 @@
+## Java / Maven
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+## Logs
+*.log
+
+## macOS
+.DS_Store
+

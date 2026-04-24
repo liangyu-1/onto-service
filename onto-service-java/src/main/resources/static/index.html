@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ontology Service 本体平台</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f6f7; color: #333; }
+.container { max-width: 1280px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 22px; margin-bottom: 16px; color: #1a1a1a; }
+.tabs { display: flex; gap: 2px; background: #e8e8e8; padding: 4px; border-radius: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab { padding: 8px 14px; cursor: pointer; border-radius: 6px; border: none; background: transparent; font-size: 13px; color: #666; }
+.tab.active { background: #fff; color: #1890ff; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+.panel { display: none; background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.panel.active { display: block; }
+.section { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px dashed #eee; }
+.section:last-child { border-bottom: none; margin-bottom: 0; }
+.section h3 { font-size: 15px; margin-bottom: 10px; color: #1a1a1a; }
+.section h4 { font-size: 13px; margin: 10px 0 6px; color: #666; }
+.form-row { display: flex; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
+input, select, textarea { padding: 6px 10px; border: 1px solid #d9d9d9; border-radius: 4px; font-size: 13px; min-width: 160px; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: #1890ff; }
+textarea { min-width: 300px; min-height: 60px; font-family: monospace; flex: 1; }
+button { padding: 6px 14px; border: none; border-radius: 4px; background: #1890ff; color: #fff; font-size: 13px; cursor: pointer; }
+button:hover { background: #40a9ff; }
+button.secondary { background: #f0f0f0; color: #333; }
+button.secondary:hover { background: #e0e0e0; }
+button.small { padding: 4px 10px; font-size: 12px; }
+.result { margin-top: 8px; padding: 10px; background: #f6ffed; border: 1px solid #b7eb8f; border-radius: 4px; font-size: 12px; overflow-x: auto; max-height: 250px; overflow-y: auto; white-space: pre-wrap; word-break: break-word; }
+.result.error { background: #fff2f0; border-color: #ffccc7; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+th { font-weight: 500; color: #666; background: #fafafa; font-size: 12px; }
+tr:hover { background: #fafafa; }
+.badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px; }
+.badge.draft { background: #e6f7ff; color: #1890ff; }
+.badge.published { background: #f6ffed; color: #52c41a; }
+.loading { color: #999; font-size: 12px; padding: 20px; text-align: center; }
+.empty { color: #999; text-align: center; padding: 20px; font-size: 12px; }
+.hint { color: #999; font-size: 11px; margin-top: 4px; }
+label.checkbox { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+label.checkbox input { min-width: auto; width: 14px; height: 14px; }
+.wf-pipeline { font-size: 12px; color: #888; margin: -8px 0 14px; line-height: 1.5; }
+.wf-banner { display: none; font-size: 12px; color: #ad6800; background: #fffbe6; border: 1px solid #ffe58f; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+.wf-banner.visible { display: block; }
+.tab.tab-muted { opacity: 0.55; }
+.tab.tab-next { box-shadow: inset 0 -2px 0 #1890ff; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🔷 Ontology Service 本体存储查询引擎</h1>
+<p class="wf-pipeline">建模顺序（与《本体平台设计方案》Semantic Layer 元数据一致）：<strong>域版本</strong> → <strong>对象类型</strong> → <strong>属性</strong> → <strong>关系</strong> → <strong>TBOX/ABOX 映射</strong> → <strong>推理规则</strong> → <strong>Action</strong>。仅灰显步骤为「待满足前置」；每步的<strong>列表查询</strong>始终可用，<strong>创建/执行</strong>需前置数据就绪。</p>
+<div id="wf_banner" class="wf-banner" role="status"></div>
+
+<div class="tabs">
+  <button type="button" class="tab active" data-tab="domains">📁 域管理</button>
+  <button type="button" class="tab" data-tab="objectTypes">📦 对象类型</button>
+  <button type="button" class="tab" data-tab="properties">🏷️ 属性</button>
+  <button type="button" class="tab" data-tab="relationships">🔗 关系</button>
+  <button type="button" class="tab" data-tab="aboxMappings">🗺️ TBOX/ABOX映射</button>
+  <button type="button" class="tab" data-tab="logic">⚙️ 推理规则</button>
+  <button type="button" class="tab" data-tab="actions">🔨 Action管理</button>
+</div>
+
+<!-- ========== 域管理 ========== -->
+<div id="domains" class="panel active">
+  <div class="section">
+    <h3>创建域</h3>
+    <div class="form-row">
+      <input id="d_name" placeholder="域名称 (如 PlantGraph)">
+      <select id="d_status"><option value="draft">draft</option><option value="published">published</option></select>
+    </div>
+    <div class="form-row"><textarea id="d_ddl" placeholder="DDL SQL（可选）"></textarea></div>
+    <button type="button" onclick="createDomain()">创建</button>
+    <div class="hint">创建成功后会自动刷新列表</div>
+    <div id="d_result"></div>
+  </div>
+  <div class="section">
+    <h3>域列表</h3>
+    <div class="form-row">
+      <input id="d_query" placeholder="输入域名称查询版本">
+      <button type="button" onclick="listDomains()" class="secondary">查询</button>
+    </div>
+    <div id="d_list"></div>
+  </div>
+
+  <div class="section">
+    <h3>RDF/OWL 工件（导入/导出）</h3>
+    <div class="form-row">
+      <input id="rdf_domain" placeholder="域名称" value="PlantGraph">
+      <input id="rdf_version" placeholder="版本" value="1.0.0">
+      <select id="rdf_format">
+        <option value="ttl">ttl (Turtle)</option>
+        <option value="rdfxml">rdfxml</option>
+        <option value="jsonld">jsonld</option>
+        <option value="owl">owl</option>
+      </select>
+      <input id="rdf_baseIri" placeholder="baseIri（可选，如 urn:onto:PlantGraph:1.0.0）">
+    </div>
+    <div class="form-row">
+      <textarea id="rdf_content" placeholder="导入：粘贴 RDF/OWL 内容；导出：点击“生成并下载”后会填充这里"></textarea>
+    </div>
+    <div class="form-row">
+      <button type="button" onclick="exportRdfOwl()">生成并下载（从 TBOX 导出）</button>
+      <button type="button" onclick="uploadRdfOwl()" class="secondary">上传保存（归档）</button>
+      <button type="button" onclick="listRdfOwlArtifacts()" class="secondary">查看历史</button>
+    </div>
+    <div id="rdf_result"></div>
+  </div>
+</div>
+
+<!-- ========== 对象类型 ========== -->
+<div id="objectTypes" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建对象类型</h3>
+    <div class="form-row">
+      <input id="ot_domain" placeholder="域名称" value="PlantGraph">
+      <input id="ot_version" placeholder="版本" value="1.0.0">
+      <input id="ot_label" placeholder="类型标签 (如 Equipment)">
+    </div>
+    <div class="form-row">
+      <input id="ot_parent" placeholder="父类型 (可选)">
+      <input id="ot_display" placeholder="显示名称">
+    </div>
+    <div class="form-row"><textarea id="ot_desc" placeholder="描述"></textarea></div>
+    <button type="button" onclick="createObjectType()">创建</button>
+    <div id="ot_result"></div>
+  </div>
+  <div class="section">
+    <h3>对象类型列表</h3>
+    <div class="form-row">
+      <input id="ot_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="ot_qversion" placeholder="版本" value="1.0.0">
+      <button type="button" onclick="listObjectTypes()" class="secondary">查询</button>
+    </div>
+    <div id="ot_list"></div>
+  </div>
+</div>
+
+<!-- ========== 属性 ========== -->
+<div id="properties" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建属性</h3>
+    <div class="form-row">
+      <input id="p_domain" placeholder="域名称" value="PlantGraph">
+      <input id="p_version" placeholder="版本" value="1.0.0">
+      <input id="p_owner" placeholder="所属类型 (如 Equipment)">
+    </div>
+    <div class="form-row">
+      <input id="p_name" placeholder="属性名 (如 temperature)">
+      <input id="p_type" placeholder="值类型: STRING/DOUBLE/TIMESTAMP/JSON" value="DOUBLE">
+      <input id="p_column" placeholder="映射列名 (可选)">
+    </div>
+    <div class="form-row">
+      <label class="checkbox"><input type="checkbox" id="p_isMeasure"> 是否聚合指标 (measure)</label>
+      <input id="p_role" placeholder="语义角色: identifier/dimension/state/metric" value="metric">
+    </div>
+    <div class="form-row">
+      <textarea id="p_expr" placeholder="派生表达式 SQL（可选）"></textarea>
+      <textarea id="p_desc" placeholder="描述"></textarea>
+    </div>
+    <button type="button" onclick="createProperty()">创建</button>
+    <div id="p_result"></div>
+  </div>
+  <div class="section">
+    <h3>属性列表（按类型查询）</h3>
+    <div class="form-row">
+      <input id="p_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="p_qversion" placeholder="版本" value="1.0.0">
+      <input id="p_qowner" placeholder="所属类型" value="Equipment">
+      <button type="button" onclick="listProperties()" class="secondary">查询</button>
+    </div>
+    <div id="p_list"></div>
+  </div>
+</div>
+
+<!-- ========== 关系 ========== -->
+<div id="relationships" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建关系</h3>
+    <div class="form-row">
+      <input id="r_domain" placeholder="域名称" value="PlantGraph">
+      <input id="r_version" placeholder="版本" value="1.0.0">
+      <input id="r_label" placeholder="关系标签 (如 HAS_SENSOR)">
+    </div>
+    <div class="form-row">
+      <input id="r_source" placeholder="源类型">
+      <input id="r_target" placeholder="目标类型">
+      <input id="r_edgeTable" placeholder="边表名">
+    </div>
+    <div class="form-row">
+      <input id="r_sourceKey" placeholder="源外键列">
+      <input id="r_targetKey" placeholder="目标外键列">
+      <input id="r_cardinality" placeholder="基数: one_to_one/one_to_many/many_to_many" value="one_to_many">
+    </div>
+    <div class="form-row">
+      <input id="r_out" placeholder="正向导航名 (可选)">
+      <input id="r_in" placeholder="反向导航名 (可选)">
+    </div>
+    <div class="form-row">
+      <label class="checkbox"><input type="checkbox" id="r_outMulti"> 正向多行</label>
+      <label class="checkbox"><input type="checkbox" id="r_inMulti"> 反向多行</label>
+    </div>
+    <div class="form-row"><textarea id="r_desc" placeholder="描述（可选）"></textarea></div>
+    <button type="button" onclick="createRelationship()">创建</button>
+    <div id="r_result"></div>
+  </div>
+  <div class="section">
+    <h3>关系列表</h3>
+    <div class="form-row">
+      <input id="r_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="r_qversion" placeholder="版本" value="1.0.0">
+      <button type="button" onclick="listRelationships()" class="secondary">查询</button>
+    </div>
+    <div id="r_list"></div>
+  </div>
+</div>
+
+<!-- ========== TBOX/ABOX 映射（设计方案：class_abox_mapping 在 edge 之后、Logic 之前）========== -->
+<div id="aboxMappings" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建 TBOX/ABOX 映射</h3>
+    <div class="form-row">
+      <input id="m_domain" placeholder="域名称" value="PlantGraph">
+      <input id="m_version" placeholder="版本" value="1.0.0">
+      <input id="m_class" placeholder="类名 (如 Equipment)">
+    </div>
+    <div class="form-row">
+      <input id="m_parent" placeholder="父类 (可选)">
+      <input id="m_strategy" placeholder="映射策略: class_table/class_view/single_wide_table/union_view" value="class_table">
+    </div>
+    <div class="form-row">
+      <input id="m_sourceName" placeholder="ABOX 源名称 (表/视图名)">
+      <input id="m_sourceKind" placeholder="源类型: physical_table/logical_view/materialized_view" value="physical_table">
+    </div>
+    <div class="form-row">
+      <input id="m_pk" placeholder="主键列">
+      <input id="m_disc" placeholder="类型判别列 (可选)">
+    </div>
+    <div class="form-row">
+      <textarea id="m_filter" placeholder="类型过滤 SQL（可选）"></textarea>
+      <textarea id="m_proj" placeholder="属性投影 JSON（可选）"></textarea>
+    </div>
+    <div class="form-row">
+      <textarea id="m_viewSql" placeholder="视图 SQL（class_view/union_view 时必填）"></textarea>
+    </div>
+    <div class="form-row">
+      <input id="m_material" placeholder="物化策略: virtual/materialized_5m" value="virtual">
+      <input id="m_ai" placeholder="AI 上下文（可选）">
+    </div>
+    <button type="button" onclick="createMapping()">创建</button>
+    <div id="m_result"></div>
+  </div>
+  <div class="section">
+    <h3>映射列表</h3>
+    <div class="form-row">
+      <input id="m_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="m_qversion" placeholder="版本" value="1.0.0">
+      <button type="button" onclick="listMappings()" class="secondary">查询</button>
+    </div>
+    <div id="m_list"></div>
+  </div>
+</div>
+
+<!-- ========== 推理规则 ========== -->
+<div id="logic" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建推理规则</h3>
+    <div class="form-row">
+      <input id="l_domain" placeholder="域名称" value="PlantGraph">
+      <input id="l_version" placeholder="版本" value="1.0.0">
+      <input id="l_name" placeholder="规则名 (如 security_state)">
+    </div>
+    <div class="form-row">
+      <input id="l_targetType" placeholder="目标类型">
+      <input id="l_targetProp" placeholder="目标属性（可选）">
+      <input id="l_kind" placeholder="类型: semantic_property/measure/constraint/state_machine/alert_rule" value="semantic_property">
+    </div>
+    <div class="form-row">
+      <input id="l_impl" placeholder="实现类型: sql/udf/python/nlp/external_service" value="sql">
+      <input id="l_outputType" placeholder="输出类型: STRING/DOUBLE/JSON" value="STRING">
+      <input id="l_mode" placeholder="执行模式: on_read/materialized/scheduled/event_driven" value="on_read">
+    </div>
+    <div class="form-row">
+      <label class="checkbox"><input type="checkbox" id="l_deterministic"> 是否确定性</label>
+    </div>
+    <div class="form-row">
+      <textarea id="l_sql" placeholder="SQL 表达式 / 查询（可选）"></textarea>
+      <textarea id="l_desc" placeholder="描述（可选）"></textarea>
+    </div>
+    <button type="button" onclick="createLogic()">创建</button>
+    <div id="l_result"></div>
+  </div>
+  <div class="section">
+    <h3>推理规则列表</h3>
+    <div class="form-row">
+      <input id="l_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="l_qversion" placeholder="版本" value="1.0.0">
+      <button type="button" onclick="listLogic()" class="secondary">查询</button>
+    </div>
+    <div id="l_list"></div>
+  </div>
+</div>
+
+<!-- ========== Action 管理 ========== -->
+<div id="actions" class="panel">
+  <div class="section wf-gate-edit">
+    <h3>创建 Action 定义</h3>
+    <div class="form-row">
+      <input id="a_domain" placeholder="域名称" value="PlantGraph">
+      <input id="a_version" placeholder="版本" value="1.0.0">
+      <input id="a_name" placeholder="Action 名">
+    </div>
+    <div class="form-row">
+      <input id="a_tool" placeholder="Tool 名 (给 LLM 用的)">
+      <input id="a_target" placeholder="目标类型">
+      <input id="a_mode" placeholder="调用模式: dry_run_only/submit_request/execute_external" value="submit_request">
+    </div>
+    <div class="form-row">
+      <textarea id="a_inputSchema" placeholder="输入 Schema JSON（可选）"></textarea>
+      <textarea id="a_outputSchema" placeholder="输出 Schema JSON（可选）"></textarea>
+    </div>
+    <div class="form-row">
+      <textarea id="a_preSql" placeholder="前置条件 SQL（可选）"></textarea>
+      <input id="a_preLogic" placeholder="前置条件 Logic（可选）">
+    </div>
+    <div class="form-row">
+      <input id="a_platform" placeholder="外部平台（可选）">
+      <input id="a_ref" placeholder="外部 Action 引用（可选）">
+    </div>
+    <div class="form-row">
+      <label class="checkbox"><input type="checkbox" id="a_dryRun"> 必须先 dry-run</label>
+    </div>
+    <div class="form-row"><textarea id="a_ai" placeholder="AI 上下文说明（可选）"></textarea></div>
+    <button type="button" onclick="createAction()">创建</button>
+    <div id="a_result"></div>
+  </div>
+  <div class="section">
+    <h3>Action 列表</h3>
+    <div class="form-row">
+      <input id="a_qdomain" placeholder="域名称" value="PlantGraph">
+      <input id="a_qversion" placeholder="版本" value="1.0.0">
+      <button type="button" onclick="listActions()" class="secondary">查询</button>
+    </div>
+    <div id="a_list"></div>
+  </div>
+  <div class="section wf-gate-edit">
+    <h3>执行 Action</h3>
+    <div class="form-row">
+      <input id="e_domain" placeholder="域名称" value="PlantGraph">
+      <input id="e_version" placeholder="版本" value="1.0.0">
+      <input id="e_name" placeholder="Action 名">
+    </div>
+    <div class="form-row">
+      <input id="e_targetId" placeholder="目标对象 ID">
+      <input id="e_by" placeholder="请求人" value="admin">
+    </div>
+    <div class="form-row"><textarea id="e_input" placeholder="输入参数 JSON（可选）"></textarea></div>
+    <div class="form-row">
+      <label class="checkbox"><input type="checkbox" id="e_dryRun" checked> Dry-run 模式</label>
+    </div>
+    <button type="button" onclick="dryRunAction()">Dry-run 校验</button>
+    <button type="button" onclick="submitAction()">提交执行</button>
+    <div id="e_result"></div>
+  </div>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

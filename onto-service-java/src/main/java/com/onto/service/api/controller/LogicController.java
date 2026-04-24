@@ -3,6 +3,7 @@ package com.onto.service.api.controller;
 import com.onto.service.common.Result;
 import com.onto.service.entity.*;
 import com.onto.service.logic.LogicRegistry;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +20,17 @@ public class LogicController {
     @Autowired
     private LogicRegistry logicRegistry;
 
+    @Autowired
+    private TboxNeo4jService tbox;
+
     @PostMapping("/{domainName}/{version}")
     public Result<OntologyLogic> createLogic(@PathVariable String domainName,
                                               @PathVariable String version,
                                               @RequestBody OntologyLogic logic) {
         logic.setDomainName(domainName);
         logic.setVersion(version);
+        // TBOX 主存写 Neo4j，同时写入现有 registry 以便后续执行与依赖解析
+        tbox.createLogic(logic);
         return Result.success(logicRegistry.createLogic(logic));
     }
 
@@ -46,7 +52,8 @@ public class LogicController {
         if (targetType != null) {
             return Result.success(logicRegistry.getLogicsByTarget(domainName, version, targetType));
         }
-        return Result.success(logicRegistry.list(domainName, version));
+        // 优先 Neo4j 作为 TBOX 主存
+        return Result.success(tbox.listLogic(domainName, version));
     }
 
     @GetMapping("/{domainName}/{version}/{logicName}/dependencies")

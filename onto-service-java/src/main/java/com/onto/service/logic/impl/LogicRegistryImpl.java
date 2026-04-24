@@ -7,6 +7,7 @@ import com.onto.service.entity.*;
 import com.onto.service.exception.OntologyException;
 import com.onto.service.logic.LogicRegistry;
 import com.onto.service.mapper.*;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -47,58 +48,59 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private TboxNeo4jService tbox;
+
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     @Transactional
     public OntologyLogic createLogic(OntologyLogic logic) {
-        baseMapper.insert(logic);
+        // TBOX 唯一主存位于 Neo4j；Registry 侧仅保留执行/解释相关能力，不落 Doris 元数据主表
         return logic;
     }
 
     @Override
     @Transactional
     public OntologyLogic updateLogic(String domainName, String version, String logicName, OntologyLogic logic) {
-        QueryWrapper<OntologyLogic> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName)
-               .eq("version", version)
-               .eq("logic_name", logicName);
-        baseMapper.update(logic, wrapper);
+        // MVP: 由 Ontology Service 负责更新 Neo4j TBOX；此处不再更新 Doris 元数据表
+        logic.setDomainName(domainName);
+        logic.setVersion(version);
+        logic.setLogicName(logicName);
         return logic;
     }
 
     @Override
     @Transactional
     public void deleteLogic(String domainName, String version, String logicName) {
-        QueryWrapper<OntologyLogic> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName)
-               .eq("version", version)
-               .eq("logic_name", logicName);
-        baseMapper.delete(wrapper);
+        // MVP: delete 由 Neo4j TBOX 侧实现；此处不处理
     }
 
     @Override
     public OntologyLogic getLogic(String domainName, String version, String logicName) {
-        QueryWrapper<OntologyLogic> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName)
-               .eq("version", version)
-               .eq("logic_name", logicName);
-        return baseMapper.selectOne(wrapper);
+        return tbox.listLogic(domainName, version).stream()
+                .filter(l -> logicName.equals(l.getLogicName()))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public List<OntologyLogic> getLogicsByType(String domainName, String version, String logicKind) {
-        return baseMapper.selectByLogicKind(domainName, version, logicKind);
+        return tbox.listLogic(domainName, version).stream()
+                .filter(l -> logicKind.equals(l.getLogicKind()))
+                .toList();
     }
 
     @Override
     public List<OntologyLogic> getLogicsByTarget(String domainName, String version, String targetType) {
-        return baseMapper.selectByTargetType(domainName, version, targetType);
+        return tbox.listLogic(domainName, version).stream()
+                .filter(l -> targetType.equals(l.getTargetType()))
+                .toList();
     }
 
     @Override
     public List<OntologyLogic> list(String domainName, String version) {
-        return baseMapper.selectByDomainVersion(domainName, version);
+        return tbox.listLogic(domainName, version);
     }
 
     @Override
@@ -130,7 +132,7 @@ public class LogicRegistryImpl extends ServiceImpl<OntologyLogicMapper, Ontology
 
     @Override
     public List<String> getDependencyTopoOrder(String domainName, String version) {
-        List<OntologyLogic> allLogics = baseMapper.selectByDomainVersion(domainName, version);
+        List<OntologyLogic> allLogics = tbox.listLogic(domainName, version);
 
         Map<String, List<String>> graph = new HashMap<>();
         Map<String, Integer> inDegree = new HashMap<>();

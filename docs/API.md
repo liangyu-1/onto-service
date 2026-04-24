@@ -2,6 +2,8 @@
 
 > 基础地址: `http://localhost:8080` (Java) / `http://localhost:5001` (Python)
 
+说明（重要）：\n- **TBOX 主存**在 **Neo4j**（对象类型/属性/关系/映射/规则/动作等元数据）。\n- **ABOX 主存**在 **Doris**（事实数据、派生事实、规则运行、动作实例等）。
+
 ---
 
 ## 一、Java 后端 API (`:8080`)
@@ -21,7 +23,6 @@
 {
   "domainName": "PlantGraph",
   "ddlSql": "CREATE PROPERTY GRAPH ...",
-  "status": "draft",
   "createdBy": "admin"
 }
 ```
@@ -106,7 +107,7 @@
 | `GET` | `/{domain}/{version}` | 列出所有映射 |
 | `GET` | `/{domain}/{version}/{className}` | 获取指定类映射 |
 | `PUT` | `/{domain}/{version}/{className}` | 更新映射 |
-| `DELETE` | `/{domain}/{version}/{className}` | 删除映射 |
+| `DELETE` | `/{domain}/{version}/{className}` | 删除映射（当前 MVP 未实现，返回 `not_implemented`） |
 
 **创建映射请求体:**
 ```json
@@ -245,6 +246,16 @@
 
 ---
 
+### 8. RDF/OWL 工件 `POST /api/v1/artifacts`
+
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| `GET` | `/api/v1/artifacts/{domainName}/{version}` | 列出 artifacts |
+| `GET` | `/api/v1/artifacts/{domainName}/{version}/rdf-owl` | 导出 TBOX 为 Turtle（可选持久化） |
+| `POST` | `/api/v1/artifacts/{domainName}/{version}/rdf-owl` | 上传并保存 Turtle（artifact） |
+
+---
+
 ## 二、Python 后端 API (`:5001`)
 
 ### 1. 健康检查
@@ -282,27 +293,15 @@
 
 ## 三、数据表总览
 
-### TBOX (术语层) — 11 张表
+### TBOX（元数据/术语层）— Neo4j 节点/关系（主存）
 
-| 表名 | 说明 |
-|------|------|
-| `ontology_domain` | 域定义与版本管理 |
-| `ontology_object_type` | 对象类型/节点类别 |
-| `ontology_object_abox_mapping` | **TBOX → ABOX 映射** |
-| `ontology_property` | 属性定义 |
-| `ontology_relationship` | 关系/边定义 |
-| `ontology_logic` | 推理规则定义 |
-| `ontology_logic_dependency` | 规则依赖关系 |
-| `ontology_logic_execution_binding` | 规则执行绑定 |
-| `ontology_logic_explanation` | 规则解释模板 |
-| `ontology_action` | Action 定义 |
-| `ontology_action_binding` | Action 外部平台绑定 |
+TBOX 不再以 Doris 表作为主存；对外以 Neo4j 图模型持久化：\n- 节点：`ObjectType` `Property` `RelationType` `Logic` `Action` `AliasTerm` `AboxMapping`\n- 关系：`HAS_PROPERTY` `SOURCE_TYPE` `TARGET_TYPE` `TARGETS` `DEPENDS_ON` `REFERS_TO` 等
 
-### ABOX (实例层) — 4 张表
+### ABOX（实例/运行数据层）— Doris 表
 
 | 表名 | 说明 |
 |------|------|
 | `semantic_fact` | 推理产生的事实 |
 | `semantic_logic_run` | 规则执行记录 |
 | `semantic_action_instance` | Action 执行实例 |
-| `semantic_query_log` | 查询日志 |
+| `ontology_ai_context` | AI Context（供 LLM grounding 使用） |

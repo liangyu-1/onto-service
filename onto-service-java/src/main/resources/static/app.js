@@ -20,12 +20,14 @@ function toRowList(data) {
  * ontology_domain → node_type → property → edge_type → class_abox_mapping → ontology_logic → ontology_action
  */
 const TAB_ORDER = ['domains', 'objectTypes', 'properties', 'relationships', 'aboxMappings', 'logic', 'actions'];
+// Queries tab is for testing only; not part of the modeling gate order.
 
 const WF_NEXT_HINT = {
   objectTypes: '请先在本体域中创建并查询到至少一个版本。',
   properties: '请先在「对象类型」中至少定义一个类型标签。',
   relationships: '请先在「属性」中至少为一个对象类型定义属性。',
-  aboxMappings: '请先在「关系」中至少创建一条关系。',
+  // 关系在很多场景是可选的；即便没有关系，也应该允许先完成映射与查询（单表）。
+  aboxMappings: '请先在「TBOX/ABOX 映射」中至少完成一条类映射（关系步骤可选）。',
   logic: '请先在「TBOX/ABOX 映射」中至少完成一条类映射。',
   actions: '请先在「推理规则」中至少定义一条规则。'
 };
@@ -155,13 +157,14 @@ async function refreshWorkflowLocks() {
     API + '/semantic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version) + '/relationships',
     'GET');
   const rels = relRes.ok ? toRowList(relRes.data) : [];
+  // 关系是可选步骤：有属性即可进入映射；关系只影响“JOIN 导航能力”。
   const hasRelationshipReady = hasProperty && rels.length > 0;
 
   const mapRes = await request(
     API + '/abox-mappings/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version),
     'GET');
   const maps = mapRes.ok ? toRowList(mapRes.data) : [];
-  const hasAnyMapping = hasRelationshipReady && maps.length > 0;
+  const hasAnyMapping = hasProperty && maps.length > 0;
 
   const logicRes = await request(API + '/logic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version), 'GET');
   const logics = logicRes.ok ? toRowList(logicRes.data) : [];
@@ -171,11 +174,105 @@ async function refreshWorkflowLocks() {
   if (hasVersion) max = 1;
   if (hasObjectType) max = 2;
   if (hasProperty) max = 3;
-  if (hasRelationshipReady) max = 4;
+  // 关系不再作为强制门禁；但仍保留该步骤用于引导（有关系则更完整）。
+  if (hasProperty) max = 4;
   if (hasAnyMapping) max = 5;
   if (hasAnyLogic) max = 6;
   wfMaxUnlockedIndex = max;
   updateWorkflowUi();
+}
+
+// ========== 查询测试（多选属性辅助）==========
+let qLoadedProps = [];
+
+function updateQuerySelectPropsFromChecks() {
+  const picked = [];
+  document.querySelectorAll('#q_prop_checks input[type="checkbox"]').forEach(cb => {
+    if (cb.checked) picked.push(cb.value);
+  });
+  // Merge with manually picked props.
+  const manual = parseJson(val('q_selectProps')) || [];
+  const merged = Array.from(new Set([...(Array.isArray(manual) ? manual : []), ...picked].filter(Boolean)));
+  setQueryPickedProps(merged);
+}
+
+function setQueryPickedProps(props) {
+  const arr = Array.from(new Set((props || []).map(x => String(x || '').trim()).filter(Boolean)));
+  const el = document.getElementById('q_selectProps');
+  if (el) el.value = JSON.stringify(arr);
+  renderQueryPickedProps(arr);
+}
+
+function renderQueryPickedProps(arr) {
+  const box = document.getElementById('q_prop_picks');
+  if (!box) return;
+  if (!arr || !arr.length) {
+    box.innerHTML = '<div class="hint">已选属性：空</div>';
+    return;
+  }
+  box.innerHTML = '<div class="hint">已选属性：</div>' + arr.map(p =>
+    '<button type="button" class="secondary small" style="margin:4px 6px 0 0;" onclick="removeQueryProp(\'' + escapeHtml(p) + '\')">' +
+      escapeHtml(p) + ' ×</button>'
+  ).join('');
+}
+
+function addQueryProp() {
+  const v = (val('q_prop_add') || '').trim();
+  if (!v) return;
+  const cur = parseJson(val('q_selectProps')) || [];
+  const next = Array.from(new Set([...(Array.isArray(cur) ? cur : []), v]));
+  setQueryPickedProps(next);
+  const inp = document.getElementById('q_prop_add');
+  if (inp) inp.value = '';
+}
+
+function removeQueryProp(prop) {
+  const cur = parseJson(val('q_selectProps')) || [];
+  const next = (Array.isArray(cur) ? cur : []).filter(p => p !== prop);
+  setQueryPickedProps(next);
+}
+
+function clearQueryProps() {
+  setQueryPickedProps([]);
+}
+
+async function loadQueryProperties() {
+  const domain = val('q_domain') || workspaceDomain();
+  const version = val('q_version') || workspaceVersionHint() || '1.0.0';
+  const targetType = val('q_targetType');
+  if (!targetType) {
+    showResult('q_result', '请先填写 targetType 再加载属性。', true);
+    return;
+  }
+  const { ok, data } = await request(
+    API + '/semantic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version) +
+      '/object-types/' + encodeURIComponent(targetType) + '/properties?visibleOnly=false',
+    'GET'
+  );
+  if (!ok) {
+    showResult('q_result', data, true);
+    return;
+  }
+  qLoadedProps = toRowList(data);
+  const box = document.getElementById('q_prop_checks');
+  if (!box) return;
+  if (!qLoadedProps.length) {
+    box.innerHTML = '<div class="hint">该对象类型暂无已定义属性。</div>';
+    updateQuerySelectPropsFromChecks();
+    return;
+  }
+  const current = new Set(parseJson(val('q_selectProps')) || []);
+  box.innerHTML = qLoadedProps.map(p => {
+    const name = p.propertyName || '';
+    const checked = current.has(name) ? 'checked' : '';
+    return '<label class="checkbox" style="margin-right:12px;"><input type="checkbox" value="' + escapeHtml(name) + '" ' + checked + '> ' + escapeHtml(name) + '</label>';
+  }).join('');
+  box.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.addEventListener('change', updateQuerySelectPropsFromChecks));
+  updateQuerySelectPropsFromChecks();
+}
+
+function escapeHtml(s) {
+  return String(s || '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 }
 
 function showTab(name, btn) {
@@ -341,6 +438,37 @@ async function listRdfOwlArtifacts() {
   showResult('rdf_result', rows, false);
 }
 
+// ========== 查询测试 ==========
+async function runSemanticQuery() {
+  const domain = val('q_domain') || workspaceDomain();
+  const version = val('q_version') || workspaceVersionHint() || '1.0.0';
+  const body = {
+    intent: 'select',
+    targetType: val('q_targetType'),
+    selectProperties: parseJson(val('q_selectProps')) || [],
+    relationPath: parseJson(val('q_relationPath')) || [],
+    filters: parseJson(val('q_filters')) || {},
+    limit: parseInt(val('q_limit') || '10', 10)
+  };
+  const { ok, data } = await request(API + '/query/semantic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version), 'POST', body);
+  showResult('q_result', data, !ok);
+}
+
+// Allow Enter-to-add for manual property picker.
+document.addEventListener('DOMContentLoaded', function () {
+  const inp = document.getElementById('q_prop_add');
+  if (inp) {
+    inp.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        addQueryProp();
+      }
+    });
+  }
+  // Initial render
+  renderQueryPickedProps(parseJson(val('q_selectProps')) || []);
+});
+
 // ========== 对象类型 ==========
 async function createObjectType() {
   const body = {
@@ -373,7 +501,7 @@ async function listObjectTypes() {
 // ========== 属性 ==========
 async function createProperty() {
   const body = {
-    propertyName: val('p_name'), ownerLabel: val('p_owner'), valueType: val('p_type'),
+    propertyName: val('p_name'), ownerLabel: val('p_owner_sel'), valueType: val('p_type'),
     columnName: val('p_column') || null, expressionSql: val('p_expr') || null,
     isMeasure: bool('p_isMeasure'), semanticRole: val('p_role') || null,
     description: val('p_desc') || null
@@ -382,7 +510,10 @@ async function createProperty() {
   showResult('p_result', data, !ok);
   if (ok) {
     syncWorkspaceInputs(val('p_domain'), val('p_version'));
-    document.getElementById('p_qowner').value = val('p_owner');
+    const multi = document.getElementById('p_qowner_multi');
+    if (multi) {
+      Array.from(multi.options).forEach(o => { if (o.value === body.ownerLabel) o.selected = true; });
+    }
     await listProperties();
     goToNextTabAfterCreate(2);
   }
@@ -391,9 +522,27 @@ async function createProperty() {
 async function listProperties() {
   const el = document.getElementById('p_list');
   el.innerHTML = '<div class="loading">加载中...</div>';
-  const { ok, data } = await request(API + '/semantic/' + val('p_qdomain') + '/' + val('p_qversion') + '/object-types/' + val('p_qowner') + '/properties?visibleOnly=false', 'GET');
-  if (!ok) { el.innerHTML = '<div class="empty">查询失败</div>'; await refreshWorkflowLocks(); return; }
-  renderTable('p_list', toRowList(data), [
+  const domain = val('p_qdomain');
+  const version = val('p_qversion');
+  const multi = document.getElementById('p_qowner_multi');
+  const owners = multi ? Array.from(multi.selectedOptions).map(o => o.value).filter(Boolean) : [];
+  if (!owners.length) {
+    el.innerHTML = '<div class="empty">请先选择至少一个所属类型（可多选）</div>';
+    await refreshWorkflowLocks();
+    return;
+  }
+  const all = [];
+  for (let i = 0; i < owners.length; i++) {
+    const owner = owners[i];
+    const { ok, data } = await request(
+      API + '/semantic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version) +
+        '/object-types/' + encodeURIComponent(owner) + '/properties?visibleOnly=false',
+      'GET'
+    );
+    if (ok) toRowList(data).forEach(p => all.push(p));
+  }
+  renderTable('p_list', all, [
+    { key: 'ownerLabel', label: '所属类型' },
     { key: 'propertyName', label: '属性名' },
     { key: 'valueType', label: '值类型' },
     { key: 'columnName', label: '映射列' },
@@ -402,6 +551,33 @@ async function listProperties() {
     { key: 'description', label: '描述' }
   ]);
   await refreshWorkflowLocks();
+}
+
+// ========== 属性：加载对象类型下拉/多选 ==========
+async function loadPropertyOwnerOptions(forQueryList) {
+  const domain = forQueryList ? (val('p_qdomain') || workspaceDomain()) : (val('p_domain') || workspaceDomain());
+  const version = forQueryList ? (val('p_qversion') || workspaceVersionHint() || '1.0.0') : (val('p_version') || workspaceVersionHint() || '1.0.0');
+  const { ok, data } = await request(API + '/semantic/' + encodeURIComponent(domain) + '/' + encodeURIComponent(version) + '/object-types', 'GET');
+  const types = ok ? toRowList(data) : [];
+  const items = types.map(t => (t && t.labelName) ? String(t.labelName) : '').filter(Boolean).sort();
+
+  const selCreate = document.getElementById('p_owner_sel');
+  const selQuery = document.getElementById('p_qowner_multi');
+
+  if (selCreate) {
+    const cur = selCreate.value;
+    selCreate.innerHTML = items.length
+      ? items.map(x => '<option value="' + escapeHtml(x) + '">' + escapeHtml(x) + '</option>').join('')
+      : '<option value="">(无对象类型)</option>';
+    if (cur) selCreate.value = cur;
+  }
+
+  if (selQuery) {
+    const curSel = new Set(Array.from(selQuery.selectedOptions).map(o => o.value));
+    selQuery.innerHTML = items.map(x => '<option value="' + escapeHtml(x) + '">' + escapeHtml(x) + '</option>').join('');
+    Array.from(selQuery.options).forEach(o => { if (curSel.has(o.value)) o.selected = true; });
+    if (!curSel.size && selQuery.options.length) selQuery.options[0].selected = true;
+  }
 }
 
 // ========== 关系 ==========

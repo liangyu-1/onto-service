@@ -4,6 +4,7 @@ import com.onto.service.action.admin.OntologyActionService;
 import com.onto.service.common.Result;
 import com.onto.service.entity.OntologyAction;
 import com.onto.service.entity.OntologyActionBinding;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,9 @@ public class ActionAdminController {
     @Autowired
     private OntologyActionService actionService;
 
+    @Autowired
+    private TboxNeo4jService tbox;
+
     // ========== Action 定义 CRUD ==========
 
     @PostMapping("/definitions/{domainName}/{version}")
@@ -27,20 +31,27 @@ public class ActionAdminController {
                                                 @RequestBody OntologyAction action) {
         action.setDomainName(domainName);
         action.setVersion(version);
-        return Result.success(actionService.createAction(action));
+        tbox.createAction(action);
+        // TBOX 主存为 Neo4j；不再写入 Doris 的 ontology_action 元数据表
+        return Result.success(action);
     }
 
     @GetMapping("/definitions/{domainName}/{version}")
     public Result<List<OntologyAction>> listActions(@PathVariable String domainName,
                                                      @PathVariable String version) {
-        return Result.success(actionService.listActions(domainName, version));
+        return Result.success(tbox.listActions(domainName, version));
     }
 
     @GetMapping("/definitions/{domainName}/{version}/{actionName}")
     public Result<OntologyAction> getAction(@PathVariable String domainName,
                                              @PathVariable String version,
                                              @PathVariable String actionName) {
-        return Result.success(actionService.getAction(domainName, version, actionName));
+        return Result.success(
+                tbox.listActions(domainName, version).stream()
+                        .filter(a -> actionName != null && actionName.equals(a.getActionName()))
+                        .findFirst()
+                        .orElse(null)
+        );
     }
 
     @PutMapping("/definitions/{domainName}/{version}/{actionName}")
@@ -51,15 +62,16 @@ public class ActionAdminController {
         action.setDomainName(domainName);
         action.setVersion(version);
         action.setActionName(actionName);
-        return Result.success(actionService.updateAction(action));
+        tbox.createAction(action);
+        return Result.success(action);
     }
 
     @DeleteMapping("/definitions/{domainName}/{version}/{actionName}")
     public Result<String> deleteAction(@PathVariable String domainName,
                                         @PathVariable String version,
                                         @PathVariable String actionName) {
-        actionService.deleteAction(domainName, version, actionName);
-        return Result.success("deleted");
+        // MVP: 未实现 delete（Neo4j 侧可补齐 delete cypher）
+        return Result.success("not_implemented");
     }
 
     // ========== Action 绑定 CRUD ==========

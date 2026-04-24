@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ontology Graph (D3Vis)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0b1020; color: #e9eefc; }
+    .topbar { display: flex; gap: 10px; align-items: center; padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(16, 24, 48, 0.9); position: sticky; top: 0; z-index: 10; }
+    .topbar a { color: #a7c5ff; text-decoration: none; }
+    .topbar a:hover { text-decoration: underline; }
+    .topbar input { padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: #e9eefc; min-width: 140px; outline: none; }
+    .topbar button { padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: #2d6cff; color: white; cursor: pointer; }
+    .topbar button.secondary { background: rgba(255,255,255,0.08); color: #e9eefc; }
+    .topbar button:hover { filter: brightness(1.05); }
+    .wrap { display: grid; grid-template-columns: 1fr 340px; height: calc(100vh - 52px); }
+    #stage { position: relative; }
+    #graph { width: 100%; height: 100%; }
+    .side { border-left: 1px solid rgba(255,255,255,0.08); padding: 12px; overflow: auto; background: rgba(16, 24, 48, 0.65); }
+    .card { padding: 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.05); margin-bottom: 10px; }
+    .muted { color: rgba(233,238,252,0.7); font-size: 12px; line-height: 1.5; }
+    .k { font-size: 12px; color: rgba(233,238,252,0.75); margin-top: 6px; }
+    .v { font-size: 13px; word-break: break-word; }
+    .err { color: #ffb4b4; white-space: pre-wrap; }
+    .badge { display:inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.07); }
+    .legend { display:flex; gap:8px; flex-wrap: wrap; }
+    .hint { font-size: 12px; color: rgba(233,238,252,0.7); }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="/" title="Back to console">← 控制台</a>
+    <span class="badge">D3Vis 本体图谱</span>
+    <input id="domain" placeholder="domain" value="TPCH" />
+    <input id="version" placeholder="version" value="1.0.0" />
+    <button id="loadBtn">加载图谱</button>
+    <button id="fitBtn" class="secondary">适配视图</button>
+    <span id="status" class="hint"></span>
+  </div>
+
+  <div class="wrap">
+    <div id="stage">
+      <svg id="graph"></svg>
+    </div>
+    <div class="side">
+      <div class="card">
+        <div class="legend">
+          <span class="badge">节点：ObjectType</span>
+          <span class="badge">边：RelationType</span>
+        </div>
+        <div class="muted" style="margin-top:8px;">
+          操作：拖拽节点、滚轮缩放、空白拖动画布。点击节点/边查看详情。
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600; margin-bottom:6px;">选中信息</div>
+        <div id="inspect" class="muted">未选择</div>
+      </div>
+      <div class="card">
+        <div style="font-weight:600; margin-bottom:6px;">错误</div>
+        <div id="errors" class="muted">无</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="ontology-vis.js"></script>
+</body>
+</html>
+

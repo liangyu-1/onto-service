@@ -1,11 +1,10 @@
 package com.onto.service.query.impl;
 
 import com.onto.service.entity.*;
+import com.onto.service.exception.OntologyException;
 import com.onto.service.mapper.*;
 import com.onto.service.query.*;
-import com.onto.service.semantic.OntologyObjectTypeService;
-import com.onto.service.semantic.OntologyPropertyService;
-import com.onto.service.semantic.OntologyRelationshipService;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,16 +23,7 @@ public class QueryAdapterImpl implements QueryAdapter {
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    private OntologyObjectTypeService objectTypeService;
-
-    @Autowired
-    private OntologyPropertyService propertyService;
-
-    @Autowired
-    private OntologyRelationshipService relationshipService;
-
-    @Autowired
-    private OntologyObjectAboxMappingMapper aboxMappingMapper;
+    private TboxNeo4jService tbox;
 
     @Autowired
     private OntologyLogicMapper logicMapper;
@@ -143,7 +133,10 @@ public class QueryAdapterImpl implements QueryAdapter {
 
         // 3. 数据来源
         List<String> sources = new ArrayList<>();
-        OntologyObjectAboxMapping mapping = aboxMappingMapper.selectByClassName(domainName, version, query.getTargetType());
+        OntologyObjectAboxMapping mapping = tbox.listAboxMappings(domainName, version).stream()
+                .filter(m -> query.getTargetType() != null && query.getTargetType().equals(m.getClassName()))
+                .findFirst()
+                .orElse(null);
         if (mapping != null) {
             sources.add(mapping.getObjectSourceName());
         }
@@ -224,17 +217,25 @@ public class QueryAdapterImpl implements QueryAdapter {
 
         // 1. 确定数据源
         List<String> sources = new ArrayList<>();
-        OntologyObjectAboxMapping mapping = aboxMappingMapper.selectByClassName(domainName, version, query.getTargetType());
-        if (mapping != null) {
-            sources.add(mapping.getObjectSourceName());
+        OntologyObjectAboxMapping mapping = tbox.listAboxMappings(domainName, version).stream()
+                .filter(m -> query.getTargetType() != null && query.getTargetType().equals(m.getClassName()))
+                .findFirst()
+                .orElse(null);
+        if (mapping == null || mapping.getObjectSourceName() == null || mapping.getObjectSourceName().trim().isEmpty()) {
+            throw new OntologyException("Missing ABOX mapping for targetType=" + query.getTargetType()
+                    + ". Please create TBOX/ABOX mapping first (objectSourceName/primaryKey).");
         }
+        sources.add(mapping.getObjectSourceName().trim());
         plan.setSourceTables(sources);
 
         // 2. 解析属性投影
         Map<String, String> projections = new LinkedHashMap<>();
         if (query.getSelectProperties() != null) {
             for (String propName : query.getSelectProperties()) {
-                OntologyProperty property = propertyService.getProperty(domainName, version, query.getTargetType(), propName);
+                OntologyProperty property = tbox.listProperties(domainName, version, query.getTargetType()).stream()
+                        .filter(p -> propName.equals(p.getPropertyName()))
+                        .findFirst()
+                        .orElse(null);
                 if (property != null) {
                     String physicalCol = property.getColumnName() != null ? property.getColumnName() : property.getExpressionSql();
                     projections.put(propName, physicalCol != null ? physicalCol : propName);
@@ -251,10 +252,16 @@ public class QueryAdapterImpl implements QueryAdapter {
             String currentType = query.getTargetType();
             for (String nav : query.getRelationPath()) {
                 // 查找关系定义
-                List<OntologyRelationship> rels = relationshipService.getOutgoingRelationships(domainName, version, currentType);
+                String ct = currentType;
+                List<OntologyRelationship> rels = tbox.listRelationships(domainName, version).stream()
+                        .filter(r -> ct != null && ct.equals(r.getSourceLabel()))
+                        .toList();
                 for (OntologyRelationship rel : rels) {
                     if (nav.equals(rel.getOutgoingName()) || nav.equals(rel.getLabelName())) {
-                        OntologyObjectAboxMapping targetMapping = aboxMappingMapper.selectByClassName(domainName, version, rel.getTargetLabel());
+                        OntologyObjectAboxMapping targetMapping = tbox.listAboxMappings(domainName, version).stream()
+                                .filter(m -> rel.getTargetLabel() != null && rel.getTargetLabel().equals(m.getClassName()))
+                                .findFirst()
+                                .orElse(null);
                         if (targetMapping != null && mapping != null) {
                             ResolvedSemanticPlan.JoinCondition join = new ResolvedSemanticPlan.JoinCondition();
                             join.setJoinType("LEFT");
@@ -281,7 +288,10 @@ public class QueryAdapterImpl implements QueryAdapter {
         if (query.getFilters() != null) {
             List<String> conditions = new ArrayList<>();
             for (Map.Entry<String, Object> filter : query.getFilters().entrySet()) {
-                OntologyProperty prop = propertyService.getProperty(domainName, version, query.getTargetType(), filter.getKey());
+                OntologyProperty prop = tbox.listProperties(domainName, version, query.getTargetType()).stream()
+                        .filter(p -> filter.getKey().equals(p.getPropertyName()))
+                        .findFirst()
+                        .orElse(null);
                 String colName = prop != null && prop.getColumnName() != null ? prop.getColumnName() : filter.getKey();
                 Object value = filter.getValue();
                 if (value instanceof String) {

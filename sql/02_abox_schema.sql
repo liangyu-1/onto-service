@@ -3,6 +3,90 @@
 -- 基于 Doris 存储引擎
 -- ============================================================
 
+CREATE DATABASE IF NOT EXISTS ontology;
+USE ontology;
+
+-- ============================================================
+-- Runtime metadata tables (MVP): bindings / explanation templates / artifacts
+-- Note: TBOX authoritative storage is Neo4j, but some runtime config stays in Doris.
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS ontology_logic_dependency (
+    domain_name VARCHAR(128) NOT NULL,
+    version VARCHAR(32) NOT NULL,
+    logic_name VARCHAR(256) NOT NULL,
+    dependency_name VARCHAR(256),
+    dependency_kind VARCHAR(64),
+    dependency_path VARCHAR(512),
+    required TINYINT,
+    description TEXT
+) ENGINE = OLAP
+UNIQUE KEY(domain_name, version, logic_name, dependency_name)
+DISTRIBUTED BY HASH(domain_name) BUCKETS 3
+PROPERTIES ("replication_num"="1");
+
+CREATE TABLE IF NOT EXISTS ontology_logic_execution_binding (
+    domain_name VARCHAR(128) NOT NULL,
+    version VARCHAR(32) NOT NULL,
+    logic_name VARCHAR(256) NOT NULL,
+    platform_name VARCHAR(128),
+    platform_job_ref VARCHAR(512),
+    platform_output_ref VARCHAR(512),
+    result_table VARCHAR(256),
+    execution_mode_hint VARCHAR(64),
+    trigger_rule_ref VARCHAR(512),
+    enabled TINYINT,
+    owner VARCHAR(128),
+    observability_ref VARCHAR(512)
+) ENGINE = OLAP
+UNIQUE KEY(domain_name, version, logic_name, platform_name)
+DISTRIBUTED BY HASH(domain_name) BUCKETS 3
+PROPERTIES ("replication_num"="1");
+
+CREATE TABLE IF NOT EXISTS ontology_logic_explanation (
+    domain_name VARCHAR(128) NOT NULL,
+    version VARCHAR(32) NOT NULL,
+    logic_name VARCHAR(256) NOT NULL,
+    language VARCHAR(32) NOT NULL,
+    template_text TEXT,
+    evidence_schema_json TEXT,
+    ai_context TEXT
+) ENGINE = OLAP
+UNIQUE KEY(domain_name, version, logic_name, language)
+DISTRIBUTED BY HASH(domain_name) BUCKETS 3
+PROPERTIES ("replication_num"="1");
+
+CREATE TABLE IF NOT EXISTS ontology_action_binding (
+    domain_name VARCHAR(128) NOT NULL,
+    version VARCHAR(32) NOT NULL,
+    action_name VARCHAR(128) NOT NULL,
+    platform_name VARCHAR(128) NOT NULL,
+    platform_action_ref VARCHAR(512),
+    dry_run_ref VARCHAR(512),
+    result_ref VARCHAR(512),
+    observability_ref VARCHAR(512),
+    enabled TINYINT
+) ENGINE = OLAP
+UNIQUE KEY(domain_name, version, action_name, platform_name)
+DISTRIBUTED BY HASH(domain_name) BUCKETS 3
+PROPERTIES ("replication_num"="1");
+
+CREATE TABLE IF NOT EXISTS ontology_artifact (
+    domain_name VARCHAR(128) NOT NULL,
+    version VARCHAR(32) NOT NULL,
+    artifact_kind VARCHAR(64) NOT NULL,
+    format VARCHAR(32) NOT NULL,
+    content_hash VARCHAR(64) NOT NULL,
+    base_iri VARCHAR(512),
+    content TEXT,
+    source VARCHAR(32),
+    created_at DATETIME,
+    created_by VARCHAR(128)
+) ENGINE = OLAP
+UNIQUE KEY(domain_name, version, artifact_kind, format, content_hash)
+DISTRIBUTED BY HASH(domain_name) BUCKETS 3
+PROPERTIES ("replication_num"="1");
+
 -- 1. 推理事实表 (ABOX Derived Facts)
 CREATE TABLE IF NOT EXISTS semantic_fact (
     domain_name VARCHAR(128) NOT NULL COMMENT '所属本体图名称',

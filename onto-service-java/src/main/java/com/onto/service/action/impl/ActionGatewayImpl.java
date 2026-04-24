@@ -14,6 +14,7 @@ import com.onto.service.logic.LogicRegistry;
 import com.onto.service.mapper.*;
 import com.onto.service.query.QueryAdapter;
 import com.onto.service.query.SemanticQuery;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -35,7 +36,7 @@ import java.util.*;
 public class ActionGatewayImpl implements ActionGateway {
 
     @Autowired
-    private OntologyActionMapper actionMapper;
+    private TboxNeo4jService tbox;
 
     @Autowired
     private OntologyActionBindingMapper actionBindingMapper;
@@ -57,23 +58,22 @@ public class ActionGatewayImpl implements ActionGateway {
 
     @Override
     public List<OntologyAction> listTools(String domainName, String version) {
-        QueryWrapper<OntologyAction> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName).eq("version", version);
-        return actionMapper.selectList(wrapper);
+        return tbox.listActions(domainName, version);
     }
 
     @Override
     public OntologyAction getTool(String domainName, String version, String toolName) {
-        QueryWrapper<OntologyAction> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName)
-               .eq("version", version)
-               .eq("tool_name", toolName);
-        return actionMapper.selectOne(wrapper);
+        return tbox.listActions(domainName, version).stream()
+                .filter(a -> toolName != null && toolName.equals(a.getToolName()))
+                .findFirst()
+                .orElse(null);
     }
 
     @Override
     public List<OntologyAction> getToolsByTargetType(String domainName, String version, String targetType) {
-        return actionMapper.selectByTargetType(domainName, version, targetType);
+        return tbox.listActions(domainName, version).stream()
+                .filter(a -> targetType != null && targetType.equals(a.getTargetType()))
+                .toList();
     }
 
     @Override
@@ -373,11 +373,10 @@ public class ActionGatewayImpl implements ActionGateway {
     }
 
     private OntologyAction getActionDefinition(String domainName, String version, String actionName) {
-        QueryWrapper<OntologyAction> wrapper = new QueryWrapper<>();
-        wrapper.eq("domain_name", domainName)
-               .eq("version", version)
-               .eq("action_name", actionName);
-        return actionMapper.selectOne(wrapper);
+        return tbox.listActions(domainName, version).stream()
+                .filter(a -> actionName != null && actionName.equals(a.getActionName()))
+                .findFirst()
+                .orElse(null);
     }
 
     private OntologyActionBinding getActiveBinding(ActionRequest request) {

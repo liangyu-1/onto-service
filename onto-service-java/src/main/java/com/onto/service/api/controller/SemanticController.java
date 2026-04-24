@@ -2,7 +2,7 @@ package com.onto.service.api.controller;
 
 import com.onto.service.common.Result;
 import com.onto.service.entity.*;
-import com.onto.service.semantic.*;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,13 +16,7 @@ import java.util.List;
 public class SemanticController {
 
     @Autowired
-    private OntologyObjectTypeService objectTypeService;
-
-    @Autowired
-    private OntologyPropertyService propertyService;
-
-    @Autowired
-    private OntologyRelationshipService relationshipService;
+    private TboxNeo4jService tbox;
 
     // ===== Object Type APIs =====
 
@@ -32,27 +26,37 @@ public class SemanticController {
                                                         @RequestBody OntologyObjectType objectType) {
         objectType.setDomainName(domainName);
         objectType.setVersion(version);
-        return Result.success(objectTypeService.createObjectType(objectType));
+        return Result.success(tbox.createObjectType(objectType));
     }
 
     @GetMapping("/{domainName}/{version}/object-types")
     public Result<List<OntologyObjectType>> listObjectTypes(@PathVariable String domainName,
                                                              @PathVariable String version) {
-        return Result.success(objectTypeService.getObjectTypes(domainName, version));
+        return Result.success(tbox.listObjectTypes(domainName, version));
     }
 
     @GetMapping("/{domainName}/{version}/object-types/{labelName}")
     public Result<OntologyObjectType> getObjectType(@PathVariable String domainName,
                                                      @PathVariable String version,
                                                      @PathVariable String labelName) {
-        return Result.success(objectTypeService.getObjectType(domainName, version, labelName));
+        // MVP: list and filter
+        return Result.success(
+                tbox.listObjectTypes(domainName, version).stream()
+                        .filter(x -> labelName.equals(x.getLabelName()))
+                        .findFirst()
+                        .orElse(null)
+        );
     }
 
     @GetMapping("/{domainName}/{version}/object-types/{labelName}/children")
     public Result<List<OntologyObjectType>> getChildTypes(@PathVariable String domainName,
                                                            @PathVariable String version,
                                                            @PathVariable String labelName) {
-        return Result.success(objectTypeService.getChildTypes(domainName, version, labelName));
+        return Result.success(
+                tbox.listObjectTypes(domainName, version).stream()
+                        .filter(x -> labelName.equals(x.getParentLabel()))
+                        .toList()
+        );
     }
 
     // ===== Property APIs =====
@@ -63,7 +67,7 @@ public class SemanticController {
                                                     @RequestBody OntologyProperty property) {
         property.setDomainName(domainName);
         property.setVersion(version);
-        return Result.success(propertyService.createProperty(property));
+        return Result.success(tbox.createProperty(property));
     }
 
     @GetMapping("/{domainName}/{version}/object-types/{ownerLabel}/properties")
@@ -71,10 +75,11 @@ public class SemanticController {
                                                           @PathVariable String version,
                                                           @PathVariable String ownerLabel,
                                                           @RequestParam(required = false, defaultValue = "false") boolean visibleOnly) {
+        List<OntologyProperty> props = tbox.listProperties(domainName, version, ownerLabel);
         if (visibleOnly) {
-            return Result.success(propertyService.getVisibleProperties(domainName, version, ownerLabel));
+            props = props.stream().filter(p -> p.getHidden() == null || !p.getHidden()).toList();
         }
-        return Result.success(propertyService.getPropertiesByOwner(domainName, version, ownerLabel));
+        return Result.success(props);
     }
 
     // ===== Relationship APIs =====
@@ -85,19 +90,23 @@ public class SemanticController {
                                                             @RequestBody OntologyRelationship relationship) {
         relationship.setDomainName(domainName);
         relationship.setVersion(version);
-        return Result.success(relationshipService.createRelationship(relationship));
+        return Result.success(tbox.createRelationship(relationship));
     }
 
     @GetMapping("/{domainName}/{version}/relationships")
     public Result<List<OntologyRelationship>> listRelationships(@PathVariable String domainName,
                                                                  @PathVariable String version) {
-        return Result.success(relationshipService.getRelationships(domainName, version));
+        return Result.success(tbox.listRelationships(domainName, version));
     }
 
     @GetMapping("/{domainName}/{version}/object-types/{sourceLabel}/outgoing-relationships")
     public Result<List<OntologyRelationship>> getOutgoingRelationships(@PathVariable String domainName,
                                                                         @PathVariable String version,
                                                                         @PathVariable String sourceLabel) {
-        return Result.success(relationshipService.getOutgoingRelationships(domainName, version, sourceLabel));
+        return Result.success(
+                tbox.listRelationships(domainName, version).stream()
+                        .filter(r -> sourceLabel.equals(r.getSourceLabel()))
+                        .toList()
+        );
     }
 }

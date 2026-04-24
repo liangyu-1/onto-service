@@ -1,7 +1,7 @@
 package com.onto.service.api.controller;
 
 import com.onto.service.entity.OntologyDomain;
-import com.onto.service.semantic.OntologyDomainService;
+import com.onto.service.tbox.neo4j.TboxNeo4jService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,32 +15,32 @@ import java.util.List;
 public class DomainController {
 
     @Autowired
-    private OntologyDomainService domainService;
+    private TboxNeo4jService tbox;
 
     @PostMapping
     public OntologyDomain createDomain(@RequestBody CreateDomainRequest request) {
-        return domainService.createDomain(request.getDomainName(), request.getDdlSql(), request.getCreatedBy());
+        return tbox.createDomain(request.getDomainName(), request.getDdlSql(), request.getCreatedBy());
     }
 
     @PostMapping("/{domainName}/versions")
     public OntologyDomain publishVersion(@PathVariable String domainName,
                                           @RequestBody PublishVersionRequest request) {
-        return domainService.publishVersion(domainName, request.getDdlSql(), request.getCreatedBy());
+        return tbox.publishVersion(domainName, request.getDdlSql(), request.getCreatedBy());
     }
 
     @GetMapping("/{domainName}/versions/{version}")
     public OntologyDomain getDomainVersion(@PathVariable String domainName, @PathVariable String version) {
-        return domainService.getDomainVersion(domainName, version);
+        return tbox.getDomainVersion(domainName, version).orElse(null);
     }
 
     @GetMapping("/{domainName}/versions")
     public List<OntologyDomain> getDomainVersions(@PathVariable String domainName) {
-        return domainService.getDomainVersions(domainName);
+        return tbox.listDomainVersions(domainName);
     }
 
     @GetMapping("/{domainName}/latest")
     public OntologyDomain getLatestVersion(@PathVariable String domainName) {
-        return domainService.getLatestPublishedVersion(domainName);
+        return tbox.latestPublished(domainName).orElse(null);
     }
 
     // Request DTOs

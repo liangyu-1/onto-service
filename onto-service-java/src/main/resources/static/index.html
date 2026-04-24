@@ -51,6 +51,10 @@ label.checkbox input { min-width: auto; width: 14px; height: 14px; }
 <body>
 <div class="container">
 <h1>🔷 Ontology Service 本体存储查询引擎</h1>
+<p class="hint" style="margin: 4px 0 10px;">
+  可视化：<a href="/ontology-vis.html" style="color:#1890ff; text-decoration:none;">打开本体图谱（D3Vis）</a>
+  <span class="hint">(ObjectType/RelationType)</span>
+</p>
 <p class="wf-pipeline">建模顺序（与《本体平台设计方案》Semantic Layer 元数据一致）：<strong>域版本</strong> → <strong>对象类型</strong> → <strong>属性</strong> → <strong>关系</strong> → <strong>TBOX/ABOX 映射</strong> → <strong>推理规则</strong> → <strong>Action</strong>。仅灰显步骤为「待满足前置」；每步的<strong>列表查询</strong>始终可用，<strong>创建/执行</strong>需前置数据就绪。</p>
 <div id="wf_banner" class="wf-banner" role="status"></div>
 
@@ -62,6 +66,7 @@ label.checkbox input { min-width: auto; width: 14px; height: 14px; }
   <button type="button" class="tab" data-tab="aboxMappings">🗺️ TBOX/ABOX映射</button>
   <button type="button" class="tab" data-tab="logic">⚙️ 推理规则</button>
   <button type="button" class="tab" data-tab="actions">🔨 Action管理</button>
+  <button type="button" class="tab" data-tab="queries">🔎 查询测试</button>
 </div>
 
 <!-- ========== 域管理 ========== -->
@@ -146,7 +151,8 @@ label.checkbox input { min-width: auto; width: 14px; height: 14px; }
     <div class="form-row">
       <input id="p_domain" placeholder="域名称" value="PlantGraph">
       <input id="p_version" placeholder="版本" value="1.0.0">
-      <input id="p_owner" placeholder="所属类型 (如 Equipment)">
+      <select id="p_owner_sel"></select>
+      <button type="button" class="secondary small" onclick="loadPropertyOwnerOptions()">加载对象类型</button>
     </div>
     <div class="form-row">
       <input id="p_name" placeholder="属性名 (如 temperature)">
@@ -169,7 +175,8 @@ label.checkbox input { min-width: auto; width: 14px; height: 14px; }
     <div class="form-row">
       <input id="p_qdomain" placeholder="域名称" value="PlantGraph">
       <input id="p_qversion" placeholder="版本" value="1.0.0">
-      <input id="p_qowner" placeholder="所属类型" value="Equipment">
+      <select id="p_qowner_multi" multiple style="min-width:240px; min-height:84px;"></select>
+      <button type="button" class="secondary small" onclick="loadPropertyOwnerOptions(true)">加载对象类型</button>
       <button type="button" onclick="listProperties()" class="secondary">查询</button>
     </div>
     <div id="p_list"></div>
@@ -364,6 +371,40 @@ label.checkbox input { min-width: auto; width: 14px; height: 14px; }
     <button type="button" onclick="dryRunAction()">Dry-run 校验</button>
     <button type="button" onclick="submitAction()">提交执行</button>
     <div id="e_result"></div>
+  </div>
+</div>
+
+<!-- ========== 查询测试 ========== -->
+<div id="queries" class="panel">
+  <div class="section">
+    <h3>语义查询（Neo4j TBOX → Doris SQL）</h3>
+    <div class="form-row">
+      <input id="q_domain" placeholder="域名称" value="PlantGraph">
+      <input id="q_version" placeholder="版本" value="1.0.0">
+      <input id="q_targetType" placeholder="targetType (如 BoilerProcess)" value="BoilerProcess">
+      <input id="q_limit" placeholder="limit" value="10">
+    </div>
+    <div class="form-row">
+      <textarea id="q_selectProps" placeholder="selectProperties JSON 数组，如 [\"process_id\"]">["process_id"]</textarea>
+      <textarea id="q_relationPath" placeholder="relationPath JSON 数组，如 [\"HAS_POINT\",\"HAS_SAMPLE\"]">[]</textarea>
+    </div>
+    <div class="form-row">
+      <button type="button" class="secondary" onclick="loadQueryProperties()">加载 targetType 的属性（多选）</button>
+      <div id="q_prop_checks" class="hint"></div>
+    </div>
+    <div class="form-row">
+      <input id="q_prop_add" placeholder="添加属性名（回车或点添加）">
+      <button type="button" class="secondary" onclick="addQueryProp()">添加</button>
+      <button type="button" class="secondary small" onclick="clearQueryProps()">清空已选</button>
+    </div>
+    <div class="form-row">
+      <div id="q_prop_picks" class="hint"></div>
+    </div>
+    <div class="form-row">
+      <textarea id="q_filters" placeholder="filters JSON 对象，如 {\"process_id\":\"P1\"}">{}</textarea>
+    </div>
+    <button type="button" onclick="runSemanticQuery()">执行语义查询</button>
+    <div id="q_result"></div>
   </div>
 </div>
 

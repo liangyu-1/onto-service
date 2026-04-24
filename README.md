@@ -1,8 +1,8 @@
 # Ontology Service - 本体存储查询引擎
 
-基于 GoogleSQL (ZetaSQL) + Apache Doris 的工业场景本体存储与查询引擎。
+基于 **GoogleSQL / Semantic SQL** + **Apache Doris (ABOX)** + **Neo4j (TBOX)** 的工业场景本体存储与查询引擎原型（`neo4j-test` 分支）。
 
-## 架构设计
+## 架构设计（neo4j-test）
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -22,8 +22,7 @@
 └──────────────────────┬──────────────────────────────────────┘
                        │
 ┌──────────────────────▼──────────────────────────────────────┐
-│                      Apache Doris                            │
-│              (ABOX Storage + OLAP Engine)                    │
+│         Neo4j (TBOX) + Apache Doris (ABOX)                    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -32,7 +31,9 @@
 - **Java**: Spring Boot 3.2 + MyBatis Plus + JDBC
 - **Python**: FastAPI + Sentence-Transformers + OpenAI
 - **C++**: GoogleSQL/ZetaSQL 扩展 (Property Graph)
-- **Storage**: Apache Doris (OLAP)
+- **TBOX**: Neo4j (Cypher / Bolt)
+- **ABOX**: Apache Doris (OLAP / MySQL protocol)
+- **语法**: GoogleSQL / Semantic SQL（MVP：受限语义查询结构体 → Doris SQL）
 
 ## 快速开始
 
@@ -53,14 +54,27 @@ docker-compose up -d
 - Java API: http://localhost:8080
 - Python API: http://localhost:5000
 - Doris FE: http://localhost:8030
+- Neo4j Browser: http://localhost:7474
 
 ### 3. 初始化数据库
 
 ```bash
-# 执行 Doris DDL
-mysql -h127.0.0.1 -P9030 -uroot < sql/01_tbox_schema.sql
-mysql -h127.0.0.1 -P9030 -uroot < sql/02_abox_schema.sql
+# 先构建 Java 包（compose 会挂载 target 目录运行 jar）
+cd onto-service-java
+mvn -DskipTests package
+cd ..
+
+# 初始化 Doris ABOX schema + HAI demo 数据
+bash scripts/init_doris.sh
+
+# 初始化 Neo4j TBOX demo 图（PlantGraph/1.0.0 + HAI 映射）
+bash scripts/seed_neo4j.sh
 ```
+
+### 4. 打开前端控制台
+
+- 打开 `http://localhost:8080/`
+- 进入「查询测试」Tab，可执行语义查询（Neo4j TBOX → Doris SQL）。
 
 ## API 文档
 

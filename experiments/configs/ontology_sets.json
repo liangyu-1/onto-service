@@ -1,0 +1,14 @@
+{
+  "ontologies": [
+    {
+      "domain": "TPCH",
+      "version": "1.0.0",
+      "events_file": "replay_events.jsonl"
+    },
+    {
+      "domain": "PlantGraph",
+      "version": "1.0.0",
+      "events_file": "replay_events.jsonl"
+    }
+  ]
+}

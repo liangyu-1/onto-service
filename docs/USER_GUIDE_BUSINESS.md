@@ -303,4 +303,47 @@ bash scripts/seed_neo4j.sh
 - **关系导航不生效**：sourceKey/targetKey 写错（必须是 Doris 表真实列）
 - **动作 dry-run 失败**：目标对象 ID 没填 / 前置条件不满足
 
+---
+
+## 7) 实验模式（论文复现）
+
+本节用于按论文口径复现实验，不替代业务建模流程。
+
+### 7.1 一键执行
+
+在项目根目录执行：
+
+```bash
+bash scripts/run_paper_experiments.sh
+```
+
+该命令会按顺序执行：
+1. preflight 校验（TPCH/PlantGraph 数据与 TBOX 完整性）
+2. 实验 1/2：真实重放 + 决策质量
+3. 实验 3：反事实
+4. 实验 4：跨本体泛化
+5. 实验 5：负载漂移
+6. 论文产物打包
+
+### 7.2 结果位置
+
+所有结果位于：
+
+`experiments/results/`
+
+重点查看：
+- `exp1_exp2_*/summary.csv`
+- `exp3_counterfactual_*/counterfactual_scenario_matrix.csv`
+- `exp4_generalization_*/generalization_summary.csv`
+- `exp5_drift_*/drift_phase_metrics.csv`
+- `paper_artifact_pack_*/summary.csv`
+
+### 7.3 结果口径说明
+
+- `Average Regret`：与 Oracle 的平均效用差
+- `CNU`：累计净效用
+- `UTR`：不必要触发率（触发动作但收益不如 no-op 或 Oracle 不触发）
+- `Hit Rate`：动作命中 Oracle 的比例
+- `latency_p50_ms` / `latency_p95_ms`：延迟分位
+
 

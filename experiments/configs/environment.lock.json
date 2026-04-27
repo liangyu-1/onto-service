@@ -1,0 +1,11 @@
+{
+  "java_version_contains": "1.8",
+  "docker_version_contains": "Docker version",
+  "docker_compose_version_contains": "Docker Compose",
+  "required_containers": [
+    "onto-service-java",
+    "onto-neo4j",
+    "onto-doris-fe",
+    "onto-doris-be"
+  ]
+}

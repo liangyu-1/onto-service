@@ -256,6 +256,71 @@
 
 ---
 
+### 9. 论文实验模式（脚本入口）
+
+> 论文实验基于统一 runner 执行，入口在 `experiments/`，结果写入 `experiments/results/`。
+
+#### 9.1 预检查（硬失败门禁）
+
+```bash
+python experiments/preflight.py
+```
+
+产物：
+- `experiments/results/preflight/preflight_report.json`
+
+#### 9.2 真实重放 + 决策质量（实验 1/2）
+
+```bash
+python experiments/run_exp1_exp2.py
+```
+
+产物（示例）：
+- `steps_<policy>.jsonl`：逐 step 记录（含 `executedSql`、latency、action、utility）
+- `summary.csv`：主/辅指标汇总（Average Regret、CNU、UTR、Hit Rate、P50/P95 等）
+- `curve_cumulative_utility.csv`、`box_regret_source.csv`、`bar_utr_source.csv`、`line_hit_rate_source.csv`
+
+#### 9.3 反事实（实验 3）
+
+```bash
+python experiments/run_exp3_counterfactual.py
+```
+
+产物：
+- `counterfactual_scenario_matrix.csv`（三类反事实场景对照）
+
+#### 9.4 跨本体泛化（实验 4）
+
+```bash
+python experiments/run_exp4_generalization.py
+```
+
+产物：
+- `generalization_summary.csv`（Leave-One-Ontology-Out 结果）
+
+#### 9.5 负载漂移（实验 5）
+
+```bash
+python experiments/run_exp5_drift.py
+```
+
+产物：
+- `drift_phase_metrics.csv`（阶段漂移下策略稳定性）
+
+#### 9.6 一键执行全部实验
+
+```bash
+python experiments/run_all.py
+# or
+bash scripts/run_paper_experiments.sh
+```
+
+产物：
+- `paper_artifact_pack_*/artifact_index.json`
+- `paper_artifact_pack_*/summary.csv`
+
+---
+
 ## 二、Python 后端 API (`:5001`)
 
 ### 1. 健康检查

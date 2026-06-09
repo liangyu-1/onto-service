@@ -1,0 +1,186 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{times}
+\usepackage{url}
+
+\pagestyle{plain}
+\providecommand{\keywords}[1]{\par\smallskip\noindent\textbf{Keywords: }#1\par}
+
+\title{Ontology-Grounded Action Extraction from Unstructured Procedural Documents}
+
+\author{Anonymous Authors\\Anonymous Institution}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Operational ontologies require action layers that describe what can be executed, by whom, on which objects, with which parameters, under which conditions, and with which effects. In practice, many action definitions are not available as clean ontology records. They are scattered across SOPs, maintenance manuals, workflow descriptions, customer-service scripts, work orders, and incident reports. This paper studies ontology-grounded action extraction: extracting structured action representations from unstructured procedural documents while grounding them to an existing ontology. Unlike general information extraction or process mining from text, the task is not merely to identify activities. The extracted action must be mapped to ontology action types, target objects, parameters, preconditions, effects, constraints, and control-flow relations. We propose a framework that combines structure-aware document parsing, LLM-based procedural unit extraction, ontology-constrained action intermediate representation, graph construction, and schema validation. The output is an ontology-grounded Action IR and procedure graph that can be used to populate or enrich the action layer of an operational ontology. We define the task, propose the method, and present an evaluation protocol covering action extraction, grounding accuracy, parameter recovery, evidence faithfulness, and control-flow correctness.
+\end{abstract}
+
+\keywords{Action extraction, procedural documents, ontology grounding, SOP understanding, action layer construction}
+
+\section{Introduction}
+Many operational domains depend on procedural documents. Industrial SOPs describe how to inspect equipment, respond to abnormal states, and record quality checks. Maintenance manuals describe how to remove parts, use tools, and recover from failures. Customer-service scripts describe how to verify user conditions, collect information, and trigger business operations. These documents contain actions, but the actions are usually embedded in natural language, tables, headings, exceptions, and conditionals.
+
+At the same time, operational ontology systems increasingly need an explicit action layer. An action layer specifies action types, actors, target objects, parameters, preconditions, effects, constraints, and execution provenance. Without such a layer, an ontology can describe domain objects but cannot support action retrieval, agent planning, or execution validation. Manually building action layers is expensive, especially in domains where procedures evolve frequently. Existing process extraction resources such as PET show that activities, actors, and control-flow elements can be annotated in natural-language process descriptions~\cite{bellan2022pet}, but they do not by themselves provide a full ontology-grounded action layer.
+
+This paper investigates how to extract ontology-grounded actions from unstructured procedural documents. The key distinction from ordinary information extraction is grounding. A sentence such as ``check the pressure gauge before starting the pump'' is not only an activity mention. It should be represented as an action with type \textit{Inspect}, target \textit{PressureGauge}, temporal relation to \textit{StartPump}, possible parameter \textit{pressure}, and evidence span from the SOP. If the ontology contains target type constraints or state preconditions, the extraction must satisfy them.
+
+We propose an ontology-grounded action extraction framework with five stages: structure-aware document parsing, procedural unit extraction, Action IR construction, ontology grounding, and procedure graph validation. The method uses LLMs for semantic extraction but does not rely on unconstrained generation. Instead, every extracted action is checked against an ontology schema and evidence span.
+
+The contributions are:
+\begin{itemize}
+    \item We define ontology-grounded action extraction as a task distinct from generic event extraction, activity extraction, and process mining from text.
+    \item We propose an Action IR that captures action type, actor, target, parameters, preconditions, effects, constraints, evidence, and control-flow relations.
+    \item We design an extraction framework that combines document structure, LLM extraction, ontology candidate retrieval, and symbolic validation.
+    \item We specify an evaluation protocol using procedural and maintenance datasets, with metrics for action extraction, ontology grounding, parameter recovery, control-flow correctness, and evidence faithfulness.
+\end{itemize}
+
+\section{Related Work}
+\subsection{Process and Activity Extraction}
+Business process extraction from natural language focuses on identifying activities, actors, gateways, and control flow~\cite{bellan2022pet}. Recent work has revisited process extraction and process knowledge construction with prompting and LLMs~\cite{bellan2024processkg,kourani2024processmodeling,neuberger2024universal}. Closely related procedure-extraction work studies LLM-based extraction of steps and substeps from unstructured PDF manuals with ontology-informed in-context learning~\cite{rula2024procedure}. Such work is directly relevant, but it often treats extracted activities as process-model elements or procedural steps rather than ontology-grounded executable actions. Our task requires mapping extracted activities to action types, target objects, parameters, and constraints.
+
+\subsection{Event and Relation Extraction}
+Event extraction identifies triggers and arguments from text~\cite{doddington2004ace,maji2022text2event}. Procedural action extraction differs because actions are embedded in ordered instructions, tables, conditionals, and exception-handling structures. Control flow and preconditions are as important as trigger detection.
+
+\subsection{Ontology Learning and Ontology Population}
+Ontology learning extracts concepts and relations from text, and recent surveys discuss the shift toward LLM-assisted ontology learning~\cite{du2024ontologylearning}. OntoRAG further illustrates the idea of deriving ontology-like structures from unstructured knowledge bases for QA~\cite{tiwari2025ontorag}. In contrast, this paper assumes an existing ontology and uses documents to construct or enrich its action layer. This distinction matters: the method should not hallucinate new action types when grounding to existing ontology elements is possible.
+
+\subsection{Process-Aware LLM Evaluation}
+Recent process-mining benchmarks evaluate whether LLMs can solve process-specific and semantics-aware process-mining tasks~\cite{berti2024pmllm,rebmann2024semantics}. These studies are useful for evaluation design because they separate generic language ability from process-specific semantic competence. However, they do not directly evaluate whether extracted actions are grounded to an ontology action schema with parameters, preconditions, effects, constraints, and evidence. Our evaluation therefore keeps process-level metrics but adds Action IR and ontology-grounding metrics.
+
+\section{Task Definition}
+Let $\mathcal{D}$ be a collection of procedural documents and $\mathcal{O}$ an existing ontology with object types, action types, parameters, constraints, and optional state definitions. The task is to produce an Action IR set $\mathcal{A}_{D}$ and a procedure graph $\mathcal{G}_{D}$:
+\[
+f(\mathcal{D}, \mathcal{O}) \rightarrow (\mathcal{A}_{D}, \mathcal{G}_{D}).
+\]
+Each action record contains:
+\[
+\langle id, type, actor, target, params, pre, eff, constraints, evidence, grounding \rangle.
+\]
+The procedure graph contains action nodes and control-flow edges such as sequential, conditional, exception, loop, and parallel relations.
+
+\section{Method}
+\subsection{Structure-Aware Document Parsing}
+Procedural documents contain headings, numbered steps, tables, safety warnings, figures, and appendices. We first parse the document into structured chunks. Each chunk preserves section path, block type, step number, table context, and evidence offsets. This reduces the risk that a flat chunker merges unrelated steps or loses procedural order.
+
+\subsection{Procedural Unit Extraction}
+The second stage identifies procedural units: operation steps, conditions, safety constraints, quality requirements, equipment descriptions, and exception-handling statements. An LLM can be used for this stage, but prompts must require evidence spans and unit types. Units without evidence are rejected.
+
+\subsection{Action IR Construction}
+Operation units are compiled into Action IR records. The extractor identifies action trigger, actor, target object, input/output arguments, parameters, preconditions, effects, and evidence. Condition and exception units are linked to action records rather than stored as independent facts when they constrain action execution.
+
+\subsection{Ontology Grounding}
+For each action field, the system retrieves ontology candidates. Action triggers are matched to action types; targets are matched to object types; measured or set values are matched to parameters; requirements are matched to constraints. Grounding uses lexical matching, dense retrieval, and graph neighborhood expansion. A field may remain unresolved, but unresolved fields are explicitly marked.
+
+\subsection{Procedure Graph Construction}
+Actions are connected using document order, numbering, headings, conditional markers, exception phrases, and table context. The graph builder creates sequential, conditional, exception, loop, and parallel edges. The procedure graph is later used for action indexing and agent planning.
+
+\subsection{Validation}
+The validation stage checks whether action types exist in the ontology, whether target types satisfy action constraints, whether parameters are compatible with target objects, whether control-flow edges reference valid actions, and whether evidence text is traceable to the source document.
+
+\section{Experimental Protocol}
+\subsection{Datasets}
+PET is suitable for process-text activities, actors, gateways, and flow relations. MyFixit supports repair actions, tools, and parts. MSPT supports scientific procedure actions and parameters. OMIn supports maintenance entities and incident relations, though it does not provide complete action annotations. Process-mining benchmarks such as PM-LLM-Benchmark and semantics-aware process-mining tasks can be used for auxiliary evaluation of process understanding, but they are insufficient as the only benchmark because they lack complete ontology-grounded Action IR labels. Enterprise SOPs and work orders, if available, should serve as the main domain validation set.
+
+\subsection{Baselines}
+Baselines include rule-based extraction, sequence-labeling models, LLM-only extraction without ontology validation, process extraction models, and ontology matching after extraction. The strongest baseline is an LLM extraction pipeline that receives the ontology as prompt context but does not perform symbolic validation.
+
+\subsection{Metrics}
+We evaluate action mention F1, action-type accuracy, target grounding accuracy, parameter grounding F1, evidence-span F1, control-flow edge F1, and validation pass rate. For downstream utility, we also evaluate whether the extracted Action IR improves action retrieval and agent planning.
+
+\begin{table}[t]
+\centering
+\caption{Planned evaluation dimensions. Numerical results will be filled after experiments.}
+\begin{tabular}{lcccc}
+\toprule
+Method & Action F1 & Grounding Acc. & Param F1 & Flow F1 \\
+\midrule
+Rules & TBD & TBD & TBD & TBD \\
+LLM-only & TBD & TBD & TBD & TBD \\
+LLM + ontology prompt & TBD & TBD & TBD & TBD \\
+Ours & TBD & TBD & TBD & TBD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+The proposed task depends on ontology quality. If the ontology lacks action types or target-object constraints, grounding becomes weak. Public datasets also provide partial coverage: some annotate actions but not preconditions; others annotate entities but not control flow. Therefore, a rigorous evaluation should include a manually audited subset with full Action IR labels.
+
+\section{Conclusion}
+This paper proposes ontology-grounded action extraction from procedural documents. The goal is not to build a complete ontology from text, but to construct and enrich an ontology action layer with traceable, validated action records. The resulting Action IR and procedure graph provide the foundation for action indexing and ontology-grounded agent planning.
+
+\begin{thebibliography}{99}
+
+\bibitem{bellan2022pet}
+Patrizio Bellan, Han van der Aa, Mauro Dragoni, Chiara Ghidini, and Simone Paolo Ponzetto.
+\newblock PET: An Annotated Dataset for Process Extraction from Natural Language Text Tasks.
+\newblock In \emph{Business Process Management Workshops}, 2022.
+
+\bibitem{bellan2024processkg}
+Patrizio Bellan, Mauro Dragoni, and Chiara Ghidini.
+\newblock Process Knowledge Extraction and Knowledge Graph Construction Through Prompting: A Quantitative Analysis.
+\newblock In \emph{ACM SAC}, 2024.
+
+\bibitem{kourani2024processmodeling}
+Humam Kourani, Alessandro Berti, Daniel Schuster, and Wil M. P. van der Aalst.
+\newblock Process Modeling With Large Language Models.
+\newblock arXiv:2403.07541, 2024.
+
+\bibitem{neuberger2024universal}
+Julian Neuberger, Lars Ackermann, Han van der Aa, and Stefan Jablonski.
+\newblock A Universal Prompting Strategy for Extracting Process Model Information from Natural Language Text using Large Language Models.
+\newblock arXiv:2407.18540, 2024.
+
+\bibitem{rula2024procedure}
+Anisa Rula and Jennifer D'Souza.
+\newblock Exploring Large Language Models for Procedural Extraction from Documents.
+\newblock In \emph{SEBD}, 2024.
+
+\bibitem{doddington2004ace}
+George Doddington, Alexis Mitchell, Mark Przybocki, Lance Ramshaw, Stephanie Strassel, and Ralph Weischedel.
+\newblock The Automatic Content Extraction (ACE) Program: Tasks, Data, and Evaluation.
+\newblock In \emph{LREC}, 2004.
+
+\bibitem{maji2022text2event}
+Subhadarshi Panda Maji, Prithviraj Sen, and Alexander Fabbri.
+\newblock Text2Event: Controllable Sequence-to-Structure Generation for End-to-end Event Extraction.
+\newblock In \emph{ACL}, 2022.
+
+\bibitem{du2024ontologylearning}
+Rick Du, Huilong An, Keyu Wang, and Weidong Liu.
+\newblock A Short Review for Ontology Learning: Stride to Large Language Models Trend.
+\newblock arXiv:2404.14991, 2024.
+
+\bibitem{tiwari2025ontorag}
+Yash Tiwari, Owais Ahmad Lone, and Mayukha Pal.
+\newblock OntoRAG: Enhancing Question-Answering through Automated Ontology Derivation from Unstructured Knowledge Bases.
+\newblock arXiv:2506.00664, 2025.
+
+\bibitem{berti2024pmllm}
+Alessandro Berti, Humam Kourani, and Wil M. P. van der Aalst.
+\newblock PM-LLM-Benchmark: Evaluating Large Language Models on Process Mining Tasks.
+\newblock arXiv:2407.13244, 2024.
+
+\bibitem{rebmann2024semantics}
+Adrian Rebmann, Fabian David Schmidt, Goran Glavas, and Han van der Aa.
+\newblock Evaluating the Ability of LLMs to Solve Semantics-Aware Process Mining Tasks.
+\newblock arXiv:2407.02310, 2024.
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{wang2024eike}
+Keyu Wang, Guilin Qi, Jiaoyan Chen, Yi Huang, and Tianxing Wu.
+\newblock Embedding Ontologies via Incorporating Extensional and Intensional Knowledge.
+\newblock arXiv:2402.01677, 2024.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,173 @@
+{
+  "method": "ours",
+  "num_tasks": 10,
+  "task_success_rate": 0.4,
+  "avg_action_accuracy": 0.5132051282051282,
+  "avg_time": 34.42308921813965,
+  "results": [
+    {
+      "task_id": "5",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_product_details",
+        "get_product_details",
+        "ask_for_confirmation",
+        "exchange_delivered_order_items"
+      ],
+      "final": "exchange_delivered_order_items",
+      "success": false,
+      "accuracy": 0.2,
+      "time": 46.14301681518555
+    },
+    {
+      "task_id": "9",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_product_details",
+        "get_product_details",
+        "ask_for_confirmation",
+        "ask_for_confirmation",
+        "exchange_delivered_order_items"
+      ],
+      "final": "exchange_delivered_order_items",
+      "success": true,
+      "accuracy": 0.8333333333333334,
+      "time": 40.50948786735535
+    },
+    {
+      "task_id": "12",
+      "predicted": [
+        "find_user_id_by_email",
+        "get_user_details",
+        "get_order_details",
+        "get_order_details",
+        "ask_for_confirmation",
+        "return_delivered_order_items"
+      ],
+      "final": "return_delivered_order_items",
+      "success": false,
+      "accuracy": 0.8,
+      "time": 23.43576693534851
+    },
+    {
+      "task_id": "17",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_order_details",
+        "ask_for_confirmation",
+        "modify_pending_order_address"
+      ],
+      "final": "modify_pending_order_address",
+      "success": true,
+      "accuracy": 0.16666666666666666,
+      "time": 12.242402076721191
+    },
+    {
+      "task_id": "18",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "ask_for_confirmation",
+        "get_product_details",
+        "ask_for_confirmation",
+        "exchange_delivered_order_items"
+      ],
+      "final": "exchange_delivered_order_items",
+      "success": true,
+      "accuracy": 0.6,
+      "time": 29.284238815307617
+    },
+    {
+      "task_id": "26",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "ask_for_confirmation",
+        "return_delivered_order_items"
+      ],
+      "final": "return_delivered_order_items",
+      "success": false,
+      "accuracy": 0.75,
+      "time": 33.48418688774109
+    },
+    {
+      "task_id": "27",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "get_product_details",
+        "get_item_details",
+        "get_item_details",
+        "transfer_to_human_agents"
+      ],
+      "final": null,
+      "success": false,
+      "accuracy": 0.6666666666666666,
+      "time": 45.46199607849121
+    },
+    {
+      "task_id": "32",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "get_order_details",
+        "ask_for_confirmation",
+        "cancel_pending_order"
+      ],
+      "final": "cancel_pending_order",
+      "success": false,
+      "accuracy": 0.6153846153846154,
+      "time": 36.33561372756958
+    },
+    {
+      "task_id": "33",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "ask_for_confirmation",
+        "modify_user_address"
+      ],
+      "final": "modify_user_address",
+      "success": true,
+      "accuracy": 0.5,
+      "time": 37.6460440158844
+    },
+    {
+      "task_id": "36",
+      "predicted": [
+        "find_user_id_by_name_zip",
+        "get_user_details",
+        "get_order_details",
+        "get_product_details",
+        "get_product_details",
+        "get_product_details",
+        "get_product_details",
+        "get_product_details",
+        "get_item_details",
+        "get_item_details"
+      ],
+      "final": null,
+      "success": false,
+      "accuracy": 0.0,
+      "time": 39.68813896179199
+    }
+  ]
+}

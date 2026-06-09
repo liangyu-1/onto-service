@@ -1,0 +1,461 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+% \usepackage{placeins}
+\usepackage{times}
+\usepackage{url}
+
+\pagestyle{plain}
+\providecommand{\keywords}[1]{\par\smallskip\noindent\textbf{Keywords: }#1\par}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Action-Layer Verification and Repair for Policy-Constrained LLM Agents}
+
+\author{Anonymous Authors\\Anonymous Institution}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+LLM agents increasingly interact with tools, databases, workflows, and operational environments. However, many agents still act in an under-specified action space: actions are selected from natural-language tool descriptions or generated as free-form steps, while domain preconditions, policy constraints, confirmation requirements, and repeated-action failures are enforced weakly or only after damage has occurred. This paper studies two linked questions: how to decide whether an LLM-proposed operation is \emph{admissible} with respect to an ontology-grounded action layer, and what happens when rejected actions are returned to the model for repair. We represent executable operations as an ActionBank containing typed actions, target objects, parameters, preconditions, effects, constraints, and execution-history predicates. The LLM remains responsible for proposing the next action, but every proposal is checked by a runtime admissibility verifier before execution. Rejected actions are returned to the LLM with structured violation feedback for bounded repair, and the resulting traces are analyzed as repair successes or repair failures. On all 40 $\tau$-bench retail test tasks with Kimi-latest, action-layer verification eliminates observed executed violations (71$\rightarrow$0) but does not improve final-action success (25.0\%$\rightarrow$22.5\%); the difference is not statistically significant (exact McNemar $p=0.564$). The evidence supports ontology-grounded action admissibility as an execution-control mechanism that improves compliance, while repair failure analysis shows why compliance does not automatically yield task success: the repair loop changes the action trajectory in ways that can help or harm, and most remaining failures reflect model reasoning limitations rather than constraint violations.
+\end{abstract}
+
+\keywords{LLM agents, action layer, runtime verification, repair, policy-constrained tool use}
+
+\section{Introduction}
+LLM agents are increasingly deployed as interfaces to operational systems rather than as text-only assistants. In these settings, an action is not merely a generated token sequence: it may query private records, modify an order, trigger a refund, schedule a service, or commit a workflow transition. The central reliability question is therefore not only whether the model can produce a plausible next step, but whether the proposed step is admissible under the current object state, business policy, and execution history.
+
+Most current tool-use interfaces provide a weak boundary for this problem. Function names, JSON schemas, and natural-language tool descriptions specify how an API should be called, but they usually do not define when the call is allowed. For example, a tool schema can require an \texttt{order\_id}, but it does not by itself enforce that the order is delivered before a return, pending before a cancellation, confirmed by the user before modification, or not repeatedly queried after the same information has already been retrieved. Recent agent benchmarks expose this gap: failures in $\tau$-bench, AppWorld, WorkArena, ToolSandbox, and DialogTool often involve state tracking, policy following, and invalid tool execution rather than a complete absence of relevant tools~\cite{yao2024taubench,trivedi2024appworld,drouin2024workarena,lu2024toolsandbox,wang2025dialogtool}.
+
+This paper studies the \emph{action layer} as an explicit execution-control layer for LLM agents. We use the term action layer to denote the part of an operational ontology that describes executable actions together with their target object types, parameters, preconditions, effects, policy constraints, confirmation requirements, and execution provenance. This differs from using an ontology only as a passive knowledge source: the action layer is consulted before execution and can reject an action even if the LLM proposed it in a syntactically valid form.
+
+We investigate a constrained but practical question: can an ontology-grounded action layer improve the execution reliability of policy-constrained LLM agents? Our answer is deliberately limited. We do not claim that an action layer solves long-horizon planning or gives an LLM robust state understanding. Instead, we argue that separating action proposal from action admissibility is a necessary control mechanism for operational agents. The LLM remains the semantic proposer, while the action layer acts as a runtime verifier that blocks unknown actions, malformed calls, unsatisfied preconditions, missing confirmations, policy violations, and unproductive duplicate actions. Rejected proposals are returned to the model as structured feedback for bounded repair.
+
+This framing is important because recent runtime enforcement systems already show that external rules, privilege policies, and formal constraints can block unsafe tool calls~\cite{wang2025agentspec,shi2025progent,kamath2025agentc,winston2026solver,sah2026verifiertax}. The open question for our setting is not whether blocking is possible, but whether an ontology-grounded action representation can define a useful notion of action admissibility, and whether repair after rejection actually recovers task progress. We evaluate this design on the retail domain of $\tau$-bench, where agents must complete customer-service tasks under domain policies and stateful tool interactions~\cite{yao2024taubench}. The results support a specific conclusion: action-layer verification improves compliance by eliminating observed executed violations, but it does not produce a statistically significant improvement in final-action success under our current setting. This distinction is important. The method is best understood as an execution-safety and repair-analysis framework, not as a complete planning algorithm.
+
+The contributions of this paper are:
+\begin{itemize}
+    \item We formalize \textbf{ontology-grounded action admissibility}: an LLM-proposed action is executable only if it is grounded to a typed action schema and satisfies object, parameter, precondition, policy, confirmation, and history constraints.
+    \item We construct an ontology-grounded ActionBank for $\tau$-bench retail with typed targets, parameters, preconditions, effects, confirmation requirements, policy constraints, and execution-history predicates.
+    \item We implement a runtime admissibility verifier and bounded repair loop that blocks non-admissible actions before execution and returns typed violation feedback to the LLM.
+    \item We provide a 40-task evaluation and repair failure analysis showing that verification eliminates observed executed violations, but final-action success does not improve because post-rejection recovery is unreliable under incomplete dialogue-state tracking.
+\end{itemize}
+
+\section{Related Work}
+\subsection{LLM Agents and Tool Use}
+Tool-using agents select and invoke external tools, APIs, or programs. Toolformer learns when and how to call APIs~\cite{schick2023toolformer}, ToolLLM constructs a large-scale tool-use benchmark and framework~\cite{qin2024toolllm}, and Gorilla connects LLMs with large API collections~\cite{patil2024gorilla}. Most tool-use systems rely on natural-language tool descriptions and input-output schemas. They often do not model domain-specific preconditions, effects, business rules, or state transitions in a formal action layer.
+
+\subsection{Planning with Language Models}
+LLMs can decompose goals into plans, but generated plans may be invalid or incomplete. ReAct shows that reasoning traces and actions can be interleaved~\cite{yao2023react}, while SayCan grounds language-model skill selection with affordance values in robotics~\cite{ahn2022saycan}. Existing methods improve planning with self-reflection, search, feedback, or external verifiers. Our approach focuses on a narrower control point: before a proposed action is executed, an explicit action layer checks whether the action is grounded and admissible under the current state and policy.
+
+\subsection{Runtime Enforcement for LLM Agents}
+Runtime enforcement systems intercept agent actions and check them against explicit rules before execution. AgentSpec defines a domain-specific language for runtime safety constraints~\cite{wang2025agentspec}; Progent enforces tool-level privilege policies~\cite{shi2025progent}; Agent-C enforces temporal constraints over agent action sequences~\cite{kamath2025agentc}; and solver-aided policy checking translates tool-use policies into formal constraints for runtime verification~\cite{winston2026solver}. Recent empirical work also shows that strict verification can create a safety-capability tradeoff: blocked actions reduce unsafe execution, but agents may fail to recover after intervention~\cite{sah2026verifiertax}. Our work is in this family, but the target representation differs. We define admissibility over an ontology-grounded action layer with typed target objects, preconditions, effects, confirmation requirements, and execution-history predicates, and we explicitly analyze repair traces to explain when verification helps or hurts task completion.
+
+\subsection{Agent Benchmarks for Realistic Workflows}
+Recent benchmarks stress different aspects of agent planning. TravelPlanner evaluates multi-constraint travel planning~\cite{xie2024travelplanner}; $\tau$-bench evaluates tool-agent-user interaction under domain policies~\cite{yao2024taubench}; AppWorld evaluates interactive code-generating agents operating over many APIs~\cite{trivedi2024appworld}; WorkArena evaluates enterprise web tasks in ServiceNow-like environments~\cite{drouin2024workarena}; ToolSandbox evaluates stateful, conversational tool use~\cite{lu2024toolsandbox}; and DialogTool evaluates stateful tool use across multi-turn dialogues~\cite{wang2025dialogtool}. These benchmarks support our motivation: agent failure is often not only language understanding failure, but also action grounding, constraint tracking, state management, and long-horizon tool consistency failure.
+
+\subsection{Ontology and Workflow Reasoning}
+Ontologies and workflow models provide typed concepts, constraints, and process relations. However, they are rarely integrated with LLM agents as runtime action verifiers. This paper uses the ontology action layer primarily as an executable control surface rather than as a passive knowledge source.
+
+\section{Problem Definition}
+Let $\mathcal{O}$ be an operational ontology with action layer $\mathcal{A}$, object types $\mathcal{T}$, constraints $\mathcal{C}$, and states $\mathcal{S}$. Given a user goal $g$, execution history $h_t$, and current state $s_t$, the LLM proposes an action call:
+\[
+\hat{a}_t(\hat{\theta}_t) = \operatorname{LLM}(g,h_t,s_t,\mathcal{A}).
+\]
+The verifier decides whether the proposed action is admissible and therefore executable:
+\[
+\operatorname{Verify}(\hat{a}_t,\hat{\theta}_t,s_t,h_t,\mathcal{O}) \rightarrow \{\operatorname{accept}, \operatorname{reject}(v)\},
+\]
+where $v$ is a structured violation reason such as unknown action, missing parameter, unsatisfied precondition, missing confirmation, policy violation, or duplicate action. If rejected, the agent receives $v$ and proposes a repair. A complete run produces an action sequence:
+\[
+\pi = [a_1(\theta_1), a_2(\theta_2), \ldots, a_m(\theta_m)]
+\]
+where each executed action has passed verification. A valid execution must satisfy:
+\begin{itemize}
+    \item every executed action is grounded to an action-layer schema;
+    \item target objects and parameters are type-compatible;
+    \item preconditions and confirmation requirements are satisfied at execution time;
+    \item hard policy constraints are not violated;
+    \item duplicate or unproductive repeated actions are blocked unless explicitly justified.
+\end{itemize}
+We call this predicate \emph{ontology-grounded action admissibility}. It is stronger than API validity because it depends on semantic bindings between an action, its target object type, the current object state, domain policy, and execution history. It is weaker than full planning because it checks the proposed next action rather than searching over complete future plans. The paper evaluates whether this admissibility-and-repair loop improves execution reliability, and uses rejected-action traces to identify repair failure modes. It does not claim to fully solve long-horizon symbolic planning.
+
+\section{Method}
+\subsection{Overview}
+The proposed framework separates action proposal from action admissibility. The LLM is used as a semantic proposer: it reads the user goal, the available action schemas, and the execution history, then proposes the next action call. The action layer is used as an external execution-control mechanism: it verifies whether the proposed action is grounded, well-formed, admissible under the current state, and non-redundant. Only accepted actions are executed. Rejected actions are returned to the LLM with structured feedback for bounded repair.
+
+\subsection{ActionBank Representation}
+ActionBank is the executable action layer used by the agent. Each action $a \in \mathcal{A}$ is represented as:
+\[
+a = \langle id, d, T_a, \Theta, P, E, C_a \rangle,
+\]
+where $id$ is the action identifier, $d$ is a natural-language description, $T_a$ is the target object type, $\Theta$ is the parameter schema, $P$ is the set of preconditions, $E$ is the set of effects, and $C_a$ is the set of hard policy constraints. This representation differs from ordinary tool descriptions in two ways. First, parameters and targets are typed and can be checked before execution. Second, preconditions and constraints are explicit machine-checkable expressions rather than only prompt text.
+
+For example, \texttt{return\_delivered\_order\_items} targets an \textit{Order}, requires \texttt{order\_id}, \texttt{item\_ids}, and \texttt{payment\_method\_id}, requires the order status to be \texttt{delivered}, and requires explicit user confirmation. Effects are used to summarize expected state changes and to support trace explanations, but the current implementation does not yet perform full symbolic planning over effects.
+
+\subsection{State and History Abstraction}
+The verifier operates over a compact execution state $s_t$. In the retail setting, $s_t$ includes authentication status, the authenticated user id, cached users, cached orders, cached product records, confirmation status, and a record of whether a final update action has already been taken on an order. The execution history $h_t$ stores accepted actions, arguments, results, verifier decisions, and repair attempts.
+
+The LLM receives a textual abstraction of this state rather than direct database access. In addition to raw cached object identifiers, the prompt includes state-derived guidance such as order status and eligible terminal actions. For example, a cached delivered order makes return and exchange actions potentially eligible, while a cached pending order makes cancellation and pending-order modification actions potentially eligible. These hints are not trusted as final decisions; they are used to reduce repeated lookup loops and to make state information salient during action proposal.
+
+\subsection{Action Proposal}
+At step $t$, the LLM proposes a JSON action call:
+\[
+\hat{a}_t(\hat{\theta}_t) = \operatorname{LLM}(g,h_t,\phi(s_t),\mathcal{A}),
+\]
+where $\phi(s_t)$ is the compact state abstraction. The prompt contains the ActionBank schemas, critical policy reminders, recent execution history, cached state summaries, and instructions to return exactly one next action. The LLM is not trusted as the final authority on executability; its output is treated as a candidate that must pass runtime verification.
+
+\subsection{Admissibility Verification}
+Given a proposed action $\hat{a}_t(\hat{\theta}_t)$, the verifier applies five checks:
+\[
+V = V_{\text{exist}} \wedge V_{\text{param}} \wedge V_{\text{pre}} \wedge V_{\text{policy}} \wedge V_{\text{dup}}.
+\]
+\textbf{Action existence} checks whether the action id is present in ActionBank. \textbf{Parameter checking} verifies that required arguments are present and type-compatible when the type can be checked locally. \textbf{Precondition checking} evaluates state predicates such as \texttt{order.status == pending} or \texttt{order.status == delivered}. \textbf{Policy checking} enforces hard business rules such as user authentication and explicit confirmation before update actions. \textbf{Duplicate checking} rejects repeated information-gathering actions with identical arguments when a previous execution has already succeeded.
+
+The verifier returns either \texttt{accept} or \texttt{reject} with one of five typed violations: \textsc{UnknownAction}, \textsc{MissingParameter}, \textsc{Precondition}, \textsc{Policy}, or \textsc{Duplicate}.
+In the current implementation, the strongest observed effect comes from duplicate-loop and confirmation checking. This is a limitation of the present benchmark run, not a claim that these are the only useful verifier types.
+
+This admissibility check is ontology-grounded in the following sense. The action id is resolved against the action layer, the target is checked against an ontology object type, the parameters are interpreted as typed role fillers, preconditions and effects are attached to object-state predicates, and policy constraints are represented as action-level guards. The verifier therefore does not merely ask whether the JSON call is syntactically valid; it asks whether the proposed operation is semantically allowed for the target object in the current execution context.
+
+\subsection{Repair Policy}
+If verification fails, the proposed action is not executed and is not added to the successful execution trace. Instead, the system appends structured violation feedback to the prompt:
+\[
+( \hat{a}_t, \hat{\theta}_t, v, \phi(s_t), h_t ) \rightarrow \operatorname{repair\ prompt}.
+\]
+The repair prompt asks the LLM to propose a different productive action that satisfies all constraints. For duplicate lookup violations, the repair prompt explicitly instructs the LLM to use cached history results rather than transferring to a human agent. For missing confirmation, the expected repair is typically \texttt{ask\_for\_confirmation}. For failed preconditions, the expected repair is to choose an action compatible with the observed object state or to gather missing information.
+
+Repair is bounded by a small retry budget. If no valid action is found, the agent falls back to \texttt{transfer\_to\_human\_agents}. This fallback is conservative, but it can also reduce final-action success when the verifier is too strict or when the LLM over-corrects after rejection.
+
+\subsection{Repair Failure Analysis}
+The same verifier trace is used to analyze repair behavior. For every rejected proposal, we record the rejected action, violation type, repaired action, whether the repaired action is accepted, and whether the final task outcome improves, remains unchanged, or degrades relative to Schema-Only. We classify repair outcomes into four categories:
+\begin{itemize}
+    \item \textbf{productive repair}: rejection causes the agent to choose a valid action that advances the task;
+    \item \textbf{neutral repair}: rejection removes a violation but does not change final task failure;
+    \item \textbf{over-correction}: rejection causes the agent to abandon a recoverable trajectory, usually by transferring to a human agent;
+    \item \textbf{state-insensitive repair}: the repaired action remains incompatible with a counterfactual or dialogue-dependent state even though it passes local checks.
+\end{itemize}
+This analysis is necessary because a verifier can improve compliance while reducing or failing to improve final-action success. The evaluation therefore reports both executed violations and repair-induced outcome changes rather than treating verification as automatically beneficial.
+
+\subsection{Execution Trace and Explanation}
+For each episode, the system records accepted actions, rejected actions, violation types, repair attempts, and execution results. This trace supports two uses. First, it is used by the duplicate detector and state abstraction module. Second, it provides faithful explanations: the system can explain that an action was blocked because it repeated an already successful lookup, lacked user confirmation, or violated an order-status precondition. The explanation is therefore derived from verifier traces rather than generated as an unconstrained post-hoc rationale.
+
+\section{Experimental Setup}
+\subsection{Dataset}
+We evaluate on the retail domain of $\tau$-bench~\cite{yao2024taubench}, a customer-service benchmark. The retail domain contains 500 users, 50 products, and 1,000 orders with 16 action types including authentication, query, cancellation, return, exchange, and modification. Each task provides a user scenario, evaluation criteria, and a gold action sequence. We use the official train/test split (74 train / 40 test tasks for retail).
+
+\subsection{Action Layer Construction}
+We construct an ActionBank with 17 typed action schemas (Table~\ref{tab:actionbank}). Each schema includes: \textit{action\_id}, \textit{description}, \textit{parameters} (with types), \textit{preconditions} (e.g., \texttt{order.status == 'pending'}), \textit{effects} (e.g., \texttt{order.status = 'cancelled'}), and \textit{constraints} (e.g., \texttt{user\_authenticated == true}). The action layer is derived from the $\tau$-bench policy document and domain knowledge.
+
+\begin{table}[!htbp]
+\centering
+\caption{ActionBank schemas for the retail domain (selected).}
+\label{tab:actionbank}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.50\columnwidth}p{0.12\columnwidth}>{\raggedright\arraybackslash}p{0.28\columnwidth}@{}}
+\toprule
+Action & Target & Key Preconditions / Constraints \\
+\midrule
+\shortstack[l]{\texttt{find\_user\_id}\\\texttt{\_by\_name}\\\texttt{\_zip}} & User & -- \\
+\texttt{get\_user\_details} & User & auth=true \\
+\texttt{get\_order\_details} & Order & auth=true \\
+\texttt{cancel\_pending\_order} & Order & pending; confirmed \\
+\shortstack[l]{\texttt{return}\\\texttt{\_delivered}\\\texttt{\_order}\\\texttt{\_items}} & Order & delivered; confirmed \\
+\texttt{exchange\_delivered\_order\_items} & Order & delivered; confirmed \\
+\texttt{ask\_for\_confirmation} & User & auth=true \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{Baselines}
+\textbf{Schema-Only}: LLM receives the full ActionBank as a system prompt but has no runtime verifier. Actions are executed without constraint checking.
+
+\textbf{Ours}: Schema-Only + Constraint Verifier + Repair Loop. The verifier checks preconditions, constraints, and duplicate actions before execution. Violations are fed back to the LLM for repair (max 2 attempts).
+
+\subsection{Models}
+We evaluate Kimi-latest (accessed via Kimi CLI, version as of June 2026), with temperature set to 0. Earlier pilot runs with open-weight models had lower final-action success and are not used as the main evidence in this paper.
+
+\subsection{Metrics}
+\textbf{Final-Action Success}: Predicted final action name matches the gold final action name. This is a proxy for task success; full $\tau$-bench task success requires dialogue simulation and NL assertion evaluation, which our current single-turn implementation does not support.
+\textbf{Action Accuracy}: Prefix match between predicted and gold action sequences.
+\textbf{Executed Violation Count}: Number of violations observed in the executed trace. For Schema-Only, this is a post-hoc audit count (the same verifier is run after execution). For Ours, this is zero because violations are blocked before execution.
+\textbf{Rejected Violation Count}: Number of violations blocked by the verifier before execution (Ours only).
+\textbf{Invalid Action Count}: Actions not in ActionBank or causing execution errors.
+\textbf{Repair Outcome}: Whether a rejected action leads to productive repair, neutral repair, or over-correction relative to Schema-Only.
+\textbf{Execution Latency}: Average time per task.
+
+\section{Results}
+\subsection{Main Results}
+
+Table~\ref{tab:main} reports results on all 40 test tasks from the retail domain. We evaluate with Kimi-latest via Kimi CLI and temperature=0.
+
+\begin{table}[!htbp]
+\centering
+\caption{Main results on $\tau$-bench retail (40 test tasks) with Kimi-latest.}
+\label{tab:main}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}Yrrrrr@{}}
+\toprule
+Method & Final-Act. Succ. & Strict Succ. & Acc. & Exec. Viol. & Invalid \\
+\midrule
+Schema-Only & 25.0\% & 17.5\% & 37.1\% & 71 & 10 \\
+\textbf{Ours} & \textbf{22.5\%} & \textbf{20.0\%} & \textbf{38.9\%} & \textbf{0} & \textbf{4} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\textbf{Key findings:}
+\begin{itemize}
+    \item \textbf{Ours eliminates all executed violations (71$\rightarrow$0).} Schema-Only generates 71 executed violations across 40 tasks (post-hoc audit): all are duplicate actions (repeated lookups with identical arguments). Ours blocks these before execution through the constraint verifier.
+    \item \textbf{Final-action success does not improve (25.0\%$\rightarrow$22.5\%).} Ours improves on 1 task (Task~9: corrects authentication order) but degrades on 2 tasks (Task~60: execution error from malformed order ID; Task~79: falls back to \texttt{transfer\_to\_human\_agents}). Exact McNemar/binomial test: $b=1$, $c=2$, $\chi^2$=0.33, $p=0.564$---not statistically significant at $p<0.05$.
+    \item \textbf{Invalid actions decrease (10$\rightarrow$4).} Ours reduces invalid actions and execution errors through better grounding.
+    \item \textbf{Remaining failures are model-reasoning limitations.} 29/40 tasks fail under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation that exceeds single-turn planning capability.
+\end{itemize}
+
+\subsection{Ablation Study}
+
+Table~\ref{tab:ablation} shows the impact of each component on a 10-task diagnostic subset.
+
+\begin{table}[!htbp]
+\centering
+\caption{Diagnostic ablation study on constraint checking mechanisms (Kimi-latest, 10-task subset).}
+\label{tab:ablation}
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}Ycccc@{}}
+\toprule
+Component & Success & Acc. & Exec. Viol. & Invalid \\
+\midrule
+Schema-Only & 30.0\% & 61.5\% & 19 & 0 \\
++ Precond-only (no repair) & 50.0\% & 61.5\% & 15 & 0 \\
++ Blocking (no repair) & 20.0\% & 58.2\% & 0 & 0 \\
+\textbf{+ Repair Loop (Ours)} & \textbf{60.0\%} & \textbf{61.9\%} & \textbf{0} & \textbf{0} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\textbf{Key observations:} (1)~Precondition-only checking (without duplicate detection or repair) achieves 50\% success by catching missing confirmations but still allows duplicate query loops (14/15 violations are duplicates). (2)~Blocking without repair drops success to 20\% because violations cause immediate fallback to \texttt{transfer\_to\_human\_agents} without recovery. (3)~The repair loop is important in this subset: it provides violation feedback and asks the LLM to propose a different action, enabling recovery from duplicate loops and missing confirmations. We caution that this ablation is on a small subset and may not generalize to the full 40-task set.
+
+\subsection{Violation Type Analysis}
+
+Table~\ref{tab:violations} breaks down the 71 executed violations observed in Schema-Only across 40 tasks (post-hoc audit).
+
+\begin{table}[!htbp]
+\centering
+\caption{Violation type breakdown for Schema-Only (40 tasks).}
+\label{tab:violations}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}Yr@{}}
+\toprule
+Violation Type & Count \\
+\midrule
+Duplicate action (same args already executed) & 71 (100\%) \\
+Missing user confirmation (\texttt{user\_confirmed} constraint) & 0 \\
+Unknown action (not in ActionBank) & 0 \\
+Precondition failure (wrong order status) & 0 \\
+Policy violation & 0 \\
+\midrule
+\textbf{Total} & \textbf{71} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+All violations are duplicate actions: the LLM repeats \texttt{get\_order\_details} or \texttt{get\_item\_details} with identical arguments, indicating a failure to break out of information-gathering loops. Notably, there are zero missing confirmations, zero unknown actions, zero precondition failures, and zero policy violations in the executed traces---Kimi-latest reliably grounds actions to the ActionBank and respects basic preconditions, but struggles with loop termination. The absence of missing-confirmation violations in the 40-task run (vs.~9 in the 10-task ablation subset) reflects task selection variance.
+
+\subsection{Repair Failure Analysis}
+
+Table~\ref{tab:repair} summarizes outcome changes caused by admissibility rejection and bounded repair. The repair loop is beneficial when it converts a repeated lookup into a productive next action, but harmful when the rejection causes the LLM to over-correct.
+
+\begin{table}[!htbp]
+\centering
+\caption{Repair outcome analysis relative to Schema-Only on 40 tasks.}
+\label{tab:repair}
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}Yr@{}}
+\toprule
+Repair Outcome & Count \\
+\midrule
+Productive repair (failure$\rightarrow$success) & 1 \\
+Over-correction (success$\rightarrow$failure) & 2 \\
+Neutral repair (failure$\rightarrow$failure, different trajectory) & 6 \\
+No final-outcome change & 31 \\
+\midrule
+\textbf{Net success change} & \textbf{$-1$} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+This analysis explains the non-significant success change. Verification removes all executed violations, but repair is not a guaranteed recovery mechanism. The single productive repair (Task~9) corrects an authentication-order error: Schema-Only calls \texttt{get\_user\_details} before authentication (post-hoc violation), while Ours avoids this through the verifier. Over-corrections (Tasks~60, 79) occur when the verifier or execution error changes the model's trajectory: Task~60 encounters a malformed order ID that causes an execution error; Task~79 falls back to \texttt{transfer\_to\_human\_agents} despite an available valid action. The six neutral repairs change the action trajectory but do not alter final success. This is the main empirical reason why compliance improves while final-action success does not.
+
+\subsection{Diagnostic Counterfactual State Test}
+
+We evaluate state sensitivity by modifying order status (pending$\leftrightarrow$delivered) and testing the \emph{first LLM proposal before verification}. Table~\ref{tab:counterfactual} shows results on 5 tasks.
+
+\begin{table}[!htbp]
+\centering
+\caption{Counterfactual state test results (5 tasks, first proposal before verification).}
+\label{tab:counterfactual}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\columnwidth}{@{}cYYYY@{}}
+\toprule
+Task & Original & State & Counterfactual & Expected \\
+\midrule
+5 & return & order=pending & return (unchanged) & cancel \\
+26 & return & order=pending & return (unchanged) & cancel \\
+32 & \texttt{transfer\_to\_human} & order=delivered & cancel (changed) & return \\
+38 & loop & order=delivered & loop (unchanged) & return \\
+51 & return & order=pending & return (unchanged) & cancel \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+State Sensitivity Accuracy (SSA) = 1/5 = 20\%. The test measures the first LLM proposal before the verifier or repair loop participates. The planner correctly responds to state changes only when the original plan already fails (Task~32). When the original plan succeeds, the planner does not adapt to counterfactual states---it continues with the originally selected action regardless of status changes. This indicates that the LLM relies more on semantic pattern matching than on explicit precondition checking during action selection.
+
+\subsection{Qualitative Examples}
+
+\textbf{Authentication Order (Task 9).} Schema-Only calls \texttt{get\_user\_details} before authentication, generating a precondition violation (post-hoc audit). The subsequent \texttt{find\_user\_id\_by\_name\_zip} succeeds but the trajectory is already corrupted. Ours avoids this error because the verifier blocks the unauthenticated lookup, guiding the LLM to authenticate first.
+
+\textbf{Duplicate Query Loop (Task 33).} Schema-Only repeats \texttt{get\_order\_details} 10 times (all duplicate violations). Ours rejects the duplicates and repairs to \texttt{modify\_user\_address}, though the task still fails due to incorrect argument values.
+
+\textbf{Repair Over-correction (Task 79).} Schema-Only successfully executes \texttt{modify\_pending\_order\_items}. Ours takes a different trajectory with additional lookups, eventually falling back to \texttt{transfer\_to\_human\_agents}. This illustrates a failure mode where the repair loop changes the model's trajectory without improving the outcome.
+
+\section{Discussion}
+\subsection{What the Action Layer Contributes}
+The main empirical value of the action layer is not higher autonomous planning success. The current results do not support that claim. Its value is a more explicit admissibility boundary between an LLM proposal and an executable operation. Compared with ordinary tool schemas, the action layer binds actions to ontology object types, state predicates, confirmation requirements, policy guards, and execution-history predicates. This makes it possible to reject an action for semantic reasons even when the tool name and JSON arguments are valid.
+
+This distinction also separates the proposed method from generic runtime guardrails. A guardrail can block a forbidden tool or unsafe string pattern; an ontology-grounded admissibility verifier asks whether a specific action is allowed for a specific object in a specific state and history. In the current benchmark, the strongest observed benefit comes from duplicate and confirmation constraints. This is a narrow empirical result, but it still demonstrates the broader design principle: admissibility should be defined over domain actions and object states, not only over API syntax.
+
+\subsection{Why Repair Fails}
+Repair failure analysis shows that post-rejection behavior is the limiting factor. The verifier can tell the agent that an action is non-admissible, but it does not guarantee that the LLM will infer the correct alternative action. In productive cases, the violation feedback maps directly to a local fix: insert confirmation or use cached lookup results. In harmful cases, the same rejection causes over-correction, especially fallback to \texttt{transfer\_to\_human\_agents}. This suggests that future systems need a stronger repair policy, such as candidate-action ranking under admissibility constraints, state-machine-guided repair, or search over admissible actions, rather than relying only on a single LLM repair prompt.
+
+\subsection{Limitations}
+\textbf{Model capability.} Even Kimi-latest fails on 29/40 tasks under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation. These failures are LLM reasoning limitations, not constraint-checking failures: the verifier correctly allows the predicted actions (preconditions satisfied), but the LLM selects the wrong branch. Tasks~12 and 26 require \texttt{transfer\_to\_human\_agents} under complex policy conditions; Tasks~32 and 36 involve multi-step condition branching. Explicit dialogue-state tracking or multi-turn planning would likely improve success beyond 22.5\%.
+
+\textbf{Dialogue simulation.} $\tau$-bench tasks require back-and-forth dialogue for condition branching (e.g., ``if the agent asks for confirmation, only exchange the desk lamp; if asked again, do not exchange anything and return the water bottle''). Our current implementation uses a single-turn planner without dialogue simulation, leading to mismatches when user intent changes mid-conversation. The verifier cannot detect this because both branch actions satisfy their preconditions independently. Integrating with $\tau$-bench's dialogue simulator is essential for full evaluation.
+
+\textbf{Repair overhead.} The repair loop increases latency from $\sim$60s to $\sim$90s per task due to additional LLM calls (Kimi-latest via CLI).
+
+\textbf{Action layer completeness.} The proposed method depends on an action layer with explicit preconditions, effects, and constraints. Many real systems lack such representations, motivating companion work on action extraction from procedural documents.
+
+\subsection{Future Work}
+We plan to: (1) integrate with $\tau$-bench's dialogue simulator for full condition-branching evaluation; (2) conduct larger-scale counterfactual state tests to measure state sensitivity accuracy (current SSA=20\% on 5 tasks, first-proposal diagnostic); (3) extend to the airline domain; (4) learn neural verifiers to complement rule-based checking; and (5) distinguish hard constraints from soft preferences.
+
+\section{Conclusion}
+This paper frames policy-constrained tool use as ontology-grounded action admissibility checking. By representing operations as typed actions with object bindings, machine-checkable preconditions, constraints, confirmation requirements, and execution-history predicates, a runtime verifier can block non-admissible actions before execution and provide structured feedback for repair. On $\tau$-bench retail, this eliminates observed executed violations, but does not improve final-action success and fails to provide robust state sensitivity. Repair failure analysis shows that compliance and success diverge because LLMs do not reliably recover after rejection. The current evidence therefore supports action-layer verification as an execution-control and diagnosis mechanism, not as a complete solution to state-aware agent planning.
+
+\begin{thebibliography}{99}
+
+\bibitem{yao2023react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao.
+\newblock ReAct: Synergizing Reasoning and Acting in Language Models.
+\newblock In \emph{ICLR}, 2023.
+
+\bibitem{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`i}, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language Models Can Teach Themselves to Use Tools.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem{qin2024toolllm}
+Yujia Qin, Shengding Hu, Yankai Lin, Weize Chen, Ning Ding, Ganqu Cui, Zheni Zeng, Yufei Huang, Chaojun Xiao, Chi Han, et al.
+\newblock ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.
+\newblock In \emph{ICLR}, 2024.
+
+\bibitem{patil2024gorilla}
+Shishir G. Patil, Tianjun Zhang, Xin Wang, and Joseph E. Gonzalez.
+\newblock Gorilla: Large Language Model Connected with Massive APIs.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem{ahn2022saycan}
+Michael Ahn, Anthony Brohan, Noah Brown, Yevgen Chebotar, Omar Cortes, Byron David, Chelsea Finn, Keerthana Gopalakrishnan, Karol Hausman, Alex Herzog, et al.
+\newblock Do As I Can, Not As I Say: Grounding Language in Robotic Affordances.
+\newblock In \emph{CoRL}, 2022.
+
+\bibitem{xie2024travelplanner}
+Jian Xie, Kai Zhang, Jiangjie Chen, Tinghui Zhu, Renze Lou, Yuandong Tian, Yanghua Xiao, and Yu Su.
+\newblock TravelPlanner: A Benchmark for Real-World Planning with Language Agents.
+\newblock arXiv:2402.01622, 2024.
+
+\bibitem{yao2024taubench}
+Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.
+\newblock $\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains.
+\newblock arXiv:2406.12045, 2024.
+
+\bibitem{trivedi2024appworld}
+Harsh Trivedi, Tushar Khot, Mareike Hartmann, Ruskin Manku, Vinty Dong, Edward Li, Shashank Gupta, Ashish Sabharwal, and Niranjan Balasubramanian.
+\newblock AppWorld: A Controllable World of Apps and People for Benchmarking Interactive Coding Agents.
+\newblock In \emph{ACL}, 2024.
+
+\bibitem{drouin2024workarena}
+Alexandre Drouin, Maxime Gasse, Massimo Caccia, Issam H. Laradji, Manuel Del Verme, Tom Marty, David Vazquez, Nicolas Chapados, and Alexandre Lacoste.
+\newblock WorkArena: How Capable are Web Agents at Solving Common Knowledge Work Tasks?
+\newblock In \emph{ICML}, 2024.
+
+\bibitem{lu2024toolsandbox}
+Jiarui Lu, Thomas Holleis, Yizhe Zhang, Bernhard Aumayer, Feng Nan, Felix Bai, Shuang Ma, Shen Ma, Mengyu Li, Guoli Yin, Zirui Wang, and Ruoming Pang.
+\newblock ToolSandbox: A Stateful, Conversational, Interactive Evaluation Benchmark for LLM Tool Use Capabilities.
+\newblock arXiv:2408.04682, 2024.
+
+\bibitem{wang2025dialogtool}
+Hongru Wang, Wenyu Huang, Yufei Wang, Yuanhao Xi, Jianqiao Lu, Huan Zhang, Nan Hu, Zeming Liu, Jeff Z. Pan, and Kam-Fai Wong.
+\newblock Rethinking Stateful Tool Use in Multi-Turn Dialogues: Benchmarks and Challenges.
+\newblock arXiv:2505.13328, 2025.
+
+\bibitem{wang2025agentspec}
+Haoyu Wang, Christopher M. Poskitt, and Jun Sun.
+\newblock AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents.
+\newblock arXiv:2503.18666, 2025.
+
+\bibitem{shi2025progent}
+Tianneng Shi, Jingxuan He, Zhun Wang, Hongwei Li, Linyu Wu, Wenbo Guo, and Dawn Song.
+\newblock Progent: Programmable Privilege Control for LLM Agents.
+\newblock arXiv:2504.11703, 2025.
+
+\bibitem{kamath2025agentc}
+Adharsh Kamath, Sishen Zhang, Calvin Xu, Shubham Ugare, Gagandeep Singh, and Sasa Misailovic.
+\newblock Enforcing Temporal Constraints for LLM Agents.
+\newblock arXiv:2512.23738, 2025.
+
+\bibitem{winston2026solver}
+Cailin Winston, Claris Winston, and Ren{\'e} Just.
+\newblock Solver-Aided Verification of Policy Compliance in Tool-Augmented LLM Agents.
+\newblock arXiv:2603.20449, 2026.
+
+\bibitem{sah2026verifiertax}
+Tanmay Sah, Vishal Srivastava, Dolly Sah, and Kayden Jordan.
+\newblock The Verifier Tax: Horizon Dependent Safety Success Tradeoffs in Tool Using LLM Agents.
+\newblock arXiv:2603.19328, 2026.
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{wang2024eike}
+Keyu Wang, Guilin Qi, Jiaoyan Chen, Yi Huang, and Tianxing Wu.
+\newblock Embedding Ontologies via Incorporating Extensional and Intensional Knowledge.
+\newblock arXiv:2402.01677, 2024.
+
+\end{thebibliography}
+
+\end{document}

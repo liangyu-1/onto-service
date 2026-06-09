@@ -1,0 +1,211 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{times}
+\usepackage{url}
+
+\pagestyle{plain}
+\providecommand{\keywords}[1]{\par\smallskip\noindent\textbf{Keywords: }#1\par}
+
+\title{ActionIndex: Executability-Aware Hybrid Indexing for Ontology Action Layers}
+
+\author{Anonymous Authors\\Anonymous Institution}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Operational ontologies increasingly contain not only objects, relations, and constraints, but also actions that can be selected, planned, invoked, and validated by intelligent systems. Existing retrieval-augmented generation and ontology-aware retrieval methods, however, mostly index document chunks, entities, concepts, or graph neighborhoods. They are not designed to retrieve executable actions together with their targets, parameters, preconditions, effects, constraints, and supporting evidence. This paper introduces \textsc{ActionIndex}, an executability-aware hybrid indexing framework for ontology action layers. The key idea is to treat actions as first-class retrieval units rather than as incidental labels attached to text or graph nodes. \textsc{ActionIndex} constructs structured action index documents from ontology action definitions and procedural evidence, and combines lexical, dense, ontology-graph, and constraint-state channels for retrieval and ranking. The ranking objective is not only semantic relevance, but also ontology grounding, precondition satisfaction, parameter completeness, state-transition compatibility, and evidence support. We define an action retrieval task, propose a scoring architecture, and specify an evaluation protocol covering action recall, grounding accuracy, constraint satisfaction, path correctness, and explanation faithfulness. The proposed framework provides a principled retrieval substrate for SOP search, intelligent customer service, workflow optimization, and LLM agents operating over ontology-grounded action layers.
+\end{abstract}
+
+\keywords{Action retrieval, ontology action layer, hybrid indexing, executability-aware ranking, neuro-symbolic retrieval}
+
+\section{Introduction}
+Retrieval-augmented systems are increasingly used in operational settings such as industrial SOP assistance, enterprise workflow optimization, customer-service automation, and LLM-based agents. In these settings, the system is often expected to answer questions such as: what action should be performed next, which object should the action operate on, which parameters are required, whether the current state satisfies the action's preconditions, and which business rule or SOP evidence justifies the recommendation. Conventional retrieval architectures are weakly aligned with this requirement. Dense retrieval and BM25 retrieve text passages; RAG retrieves external memory for generation~\cite{lewis2020rag}; GraphRAG-style methods retrieve entities, communities, or paths~\cite{edge2024graphrag}; ontology-aware retrieval retrieves concepts and relations~\cite{wang2024eike}. None of these retrieval units directly represents executable actions.
+
+This mismatch becomes problematic when an ontology is operationalized. In an operational ontology, an action is not merely a verb phrase. It has a schema, a target object type, parameters, preconditions, postconditions, effects, constraints, possible executors, risk level, and evidence provenance. A retrieval system that ranks actions only by text similarity may return actions that sound relevant but cannot be executed, violate constraints, miss required parameters, or do not connect to the current workflow state. Conversely, a purely symbolic action selector may be precise but brittle under natural-language queries and document-derived procedural descriptions.
+
+We argue that action-layer retrieval should be formulated as a distinct retrieval problem: given a natural-language task query, workflow state, and ontology action layer, retrieve a ranked set of executable, grounded, and explainable action candidates. This paper proposes \textsc{ActionIndex}, an ontology-aware hybrid indexing framework centered on actions. Rather than indexing all ontology elements uniformly, \textsc{ActionIndex} constructs an action index document for each action by combining action labels, aliases, target types, parameters, preconditions, effects, constraints, neighboring actions, and evidence spans. Retrieval combines four channels: lexical action matching, dense semantic matching, ontology graph expansion, and constraint-state validation.
+
+The main contributions are:
+\begin{itemize}
+    \item We define action-layer retrieval as a retrieval problem whose unit is an executable ontology action rather than a document chunk, entity, or concept.
+    \item We propose an action index document representation that encodes action semantics, ontology grounding, constraints, state transitions, and evidence provenance.
+    \item We introduce an executability-aware ranking objective that jointly considers semantic relevance, ontology-path compatibility, precondition satisfaction, parameter completeness, state-transition fit, and evidence support.
+    \item We specify an evaluation protocol that goes beyond Recall@k by measuring action grounding, constraint satisfaction, executable hit rate, and explanation faithfulness.
+\end{itemize}
+
+\section{Related Work}
+\subsection{Hybrid and Neural Retrieval}
+Modern retrieval systems frequently combine lexical matching, dense embeddings, and reranking. Such hybrid retrieval improves robustness across exact terminology and semantic paraphrase. Recent RAG-oriented IR work further shows that standard query-document relevance does not necessarily predict downstream RAG quality~\cite{salemi2024erag}, and that retrieved context can affect generation in counter-intuitive ways~\cite{cuconasu2024noise}. Adaptive retrieval methods such as QUAM use query-affinity and relevance-aware document graphs to improve recall under limited reranking budgets~\cite{rathee2025quam}. Recent benchmarking toolkits such as Rankify also reflect the need for reproducible retrieval and reranking evaluation~\cite{abdallah2025rankify}. These works motivate our view that action retrieval should not be evaluated only as text relevance. However, their indexed object is still usually a document passage or a web page. For operational action selection, passage relevance is insufficient because actions require parameters, state assumptions, and constraint validation.
+
+\subsection{GraphRAG and Ontology-Aware Retrieval}
+Graph-augmented RAG methods retrieve graph nodes, graph communities, paths, or subgraphs to improve evidence organization and reasoning~\cite{edge2024graphrag}. LightRAG combines graph structures with vector representations and supports incremental update~\cite{guo2024lightrag}, while HippoRAG combines LLMs, knowledge graphs, and graph-based spreading activation for long-term memory retrieval~\cite{gutierrez2024hipporag}. KG$^2$RAG further uses knowledge graphs to expand and organize retrieved chunks~\cite{zhu2025kg2rag}. OntoRAG derives ontologies from unstructured knowledge bases to support ontology-enhanced QA~\cite{tiwari2025ontorag}. Ontology-aware retrieval further emphasizes formal concept relations, type hierarchies, and constraints, while ontology embedding work such as EIKE models extensional and intensional ontology knowledge in representation spaces~\cite{wang2024eike}. These methods provide useful structural signals, but they typically index ontology concepts, chunks, or graph neighborhoods rather than executable action schemas. As a result, they do not explicitly optimize for whether a retrieved action can be executed in the current context.
+
+\subsection{Tool Retrieval and Agent Action Selection}
+Recent work on tool use and tool retrieval studies how agents select APIs or tools from large tool libraries~\cite{schick2023toolformer,qin2024toolllm,patil2024gorilla}. ToolRerank introduces adaptive and hierarchy-aware reranking for tool retrieval~\cite{zheng2024toolrerank}, and massive tool retrieval benchmarks study query-tool alignment at large scale~\cite{zhang2024massivetool}. This line is close to action retrieval, but APIs are usually described by input-output signatures and natural-language documentation. Ontology actions additionally involve domain objects, business states, preconditions, effects, constraints, and provenance from SOPs or workflow documents. \textsc{ActionIndex} therefore treats action retrieval as tool retrieval plus ontology grounding and executability validation.
+
+\section{Problem Definition}
+Let $\mathcal{O}$ be an operational ontology with object types, relations, parameters, constraints, states, and an action layer $\mathcal{A} = \{a_1,\ldots,a_n\}$. Each action $a$ is represented as:
+\[
+a = \langle t, r, o, I, O, P, E, C, S, \Pi \rangle
+\]
+where $t$ is the action type, $r$ is the actor role, $o$ is the target object type, $I$ and $O$ are inputs and outputs, $P$ is the set of preconditions, $E$ is the set of effects, $C$ is the set of constraints, $S$ is the state-transition descriptor, and $\Pi$ denotes evidence and provenance.
+
+Given a query $q$, optional current state $s_q$, and optional target object mention $m_q$, the task is to return a ranked list of actions:
+\[
+\operatorname{rank}(q, s_q, m_q, \mathcal{O}) = [a_{(1)}, a_{(2)}, \ldots, a_{(k)}]
+\]
+such that high-ranked actions are semantically relevant, ontology-grounded, executable under the query context, and supported by traceable evidence.
+
+\section{Action Index Document}
+For each action $a$, \textsc{ActionIndex} constructs a structured index document:
+\[
+D(a) = \{D_{\text{name}}, D_{\text{target}}, D_{\text{param}}, D_{\text{pre}}, D_{\text{effect}}, D_{\text{constraint}}, D_{\text{neighbor}}, D_{\text{evidence}}\}.
+\]
+The fields are not flat text. They retain field identity and weights. Action names and target objects receive high lexical weights; evidence text receives high dense-retrieval weight; constraints and preconditions are used both for retrieval and validation; neighboring actions provide workflow context.
+
+\section{Hybrid Index Architecture}
+\subsection{Lexical Action Index}
+The lexical index stores action names, aliases, object names, parameter names, and domain-specific terminology. It supports exact and fuzzy matching, which is essential in industrial domains where equipment names, process codes, and action labels may be standardized.
+
+\subsection{Dense Action Index}
+The dense index encodes action index documents using a sentence or domain embedding model. It captures paraphrases such as ``handle abnormal pressure'' and ``inspect pressure gauge before shutdown''. Dense retrieval is especially useful when user queries differ from SOP wording.
+
+\subsection{Ontology Graph Index}
+The graph index captures typed relations among actions, objects, parameters, states, constraints, and neighboring actions. It supports expansion from an object to applicable actions, from a failure state to recovery actions, and from one action to prerequisite or follow-up actions.
+
+\subsection{Constraint-State Index}
+The constraint-state index stores preconditions, postconditions, required parameters, state transitions, permissions, and safety constraints. Unlike a post-hoc filter, this channel participates in scoring. It allows the system to prefer an action that is executable in the current state over a semantically similar but invalid action.
+
+\section{Executability-Aware Ranking}
+For query $q$ and candidate action $a$, the score is:
+\[
+\begin{split}
+\operatorname{Score}(q,a) = &
+\lambda_1 L(q,a) + \lambda_2 V(q,a) + \lambda_3 G(q,a) \\
+& + \lambda_4 C(q,a) + \lambda_5 S(q,a) + \lambda_6 E(q,a),
+\end{split}
+\]
+where $L$ is lexical match, $V$ is dense similarity, $G$ is ontology-path compatibility, $C$ is constraint satisfaction, $S$ is state-transition fit, and $E$ is evidence support. The ranking function can be implemented as a weighted model, a learning-to-rank model, or a constrained reranker. The central design choice is that executability is treated as a first-order ranking signal rather than as an explanation generated after retrieval.
+
+\section{Experimental Protocol}
+\subsection{Datasets}
+We plan to evaluate on a combination of public and domain-specific datasets. PET provides business-process activity and control-flow annotations. MyFixit provides procedural repair manuals with actions, tools, and parts. MSPT provides materials synthesis procedures with operations and parameters. OMIn provides maintenance incidents and entity grounding, although its action annotations are incomplete. If available, enterprise SOPs, work orders, or customer-service workflows should be used as the primary domain validation set.
+
+\subsection{Baselines}
+Baselines include BM25, dense retrieval, BM25+dense hybrid retrieval, GraphRAG/KG-RAG retrieval, an ontology concept index that does not distinguish actions, LLM-only action selection, and ablated variants of \textsc{ActionIndex} without graph context or constraint-state scoring.
+
+\subsection{Metrics}
+We will report Recall@k, MRR, and nDCG for retrieval; action-type accuracy, target grounding accuracy, and parameter F1 for ontology grounding; constraint satisfaction rate, precondition match, and executable hit rate for executability; and evidence faithfulness and path correctness for explanation and workflow coherence.
+
+\begin{table}[t]
+\centering
+\caption{Planned evaluation dimensions. Numerical results will be filled after experiments.}
+\begin{tabular}{lccc}
+\toprule
+Method & Action Recall & Executable Hit & Constraint Sat. \\
+\midrule
+BM25 & TBD & TBD & TBD \\
+Dense Retrieval & TBD & TBD & TBD \\
+GraphRAG/KG-RAG & TBD & TBD & TBD \\
+Concept Index & TBD & TBD & TBD \\
+\textsc{ActionIndex} & TBD & TBD & TBD \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+\textsc{ActionIndex} is most defensible when the target domain contains explicit or extractable actions. If the ontology lacks action types, parameters, or constraints, the method can still perform semantic retrieval but loses its main advantage. Another limitation is annotation availability: public datasets rarely contain full preconditions, effects, and state transitions. A realistic evaluation may require a smaller manually curated subset for executability and path-level metrics.
+
+\section{Conclusion}
+This paper proposes action-layer indexing as a distinct retrieval problem for operational ontologies. By treating actions as first-class retrieval units and ranking them by both relevance and executability, \textsc{ActionIndex} provides a retrieval foundation for SOP assistance, workflow optimization, customer-service automation, and LLM agents. Future work will instantiate the framework in Neo4j-backed ontology indexes and evaluate it on public process datasets and industrial SOP corpora.
+
+\begin{thebibliography}{99}
+
+\bibitem{lewis2020rag}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
+\newblock In \emph{NeurIPS}, 2020.
+
+\bibitem{edge2024graphrag}
+Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson.
+\newblock From Local to Global: A Graph RAG Approach to Query-Focused Summarization.
+\newblock arXiv:2404.16130, 2024.
+
+\bibitem{salemi2024erag}
+Alireza Salemi and Hamed Zamani.
+\newblock Evaluating Retrieval Quality in Retrieval-Augmented Generation.
+\newblock In \emph{SIGIR}, 2024.
+
+\bibitem{cuconasu2024noise}
+Florin Cuconasu, Giovanni Trappolini, Federico Siciliano, Simone Filice, Cesare Campagnano, Yoelle Maarek, Nicola Tonellotto, and Fabrizio Silvestri.
+\newblock The Power of Noise: Redefining Retrieval for RAG Systems.
+\newblock In \emph{SIGIR}, 2024.
+
+\bibitem{rathee2025quam}
+Mandeep Rathee, Sean MacAvaney, and Avishek Anand.
+\newblock QUAM: Adaptive Retrieval through Query Affinity Modelling.
+\newblock In \emph{WSDM}, 2025.
+
+\bibitem{abdallah2025rankify}
+Abdelrahman Abdallah, Bhawna Piryani, Jamshid Mozafari, Mohammed Ali, and Adam Jatowt.
+\newblock Rankify: A Comprehensive Python Toolkit for Retrieval, Re-Ranking, and Retrieval-Augmented Generation.
+\newblock arXiv:2502.02464, 2025.
+
+\bibitem{guo2024lightrag}
+Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, and Chao Huang.
+\newblock LightRAG: Simple and Fast Retrieval-Augmented Generation.
+\newblock arXiv:2410.05779, 2024.
+
+\bibitem{gutierrez2024hipporag}
+Bernal Jim{\'e}nez Guti{\'e}rrez, Yiheng Shu, Yu Gu, Michihiro Yasunaga, and Yu Su.
+\newblock HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem{zhu2025kg2rag}
+Xiangrong Zhu, Yuexiang Xie, Yi Liu, Yaliang Li, and Wei Hu.
+\newblock Knowledge Graph-Guided Retrieval Augmented Generation.
+\newblock In \emph{NAACL}, 2025.
+
+\bibitem{tiwari2025ontorag}
+Yash Tiwari, Owais Ahmad Lone, and Mayukha Pal.
+\newblock OntoRAG: Enhancing Question-Answering through Automated Ontology Derivation from Unstructured Knowledge Bases.
+\newblock arXiv:2506.00664, 2025.
+
+\bibitem{wang2024eike}
+Keyu Wang, Guilin Qi, Jiaoyan Chen, Yi Huang, and Tianxing Wu.
+\newblock Embedding Ontologies via Incorporating Extensional and Intensional Knowledge.
+\newblock arXiv:2402.01677, 2024.
+
+\bibitem{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`i}, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language Models Can Teach Themselves to Use Tools.
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem{qin2024toolllm}
+Yujia Qin, Shengding Hu, Yankai Lin, Weize Chen, Ning Ding, Ganqu Cui, Zheni Zeng, Yufei Huang, Chaojun Xiao, Chi Han, et al.
+\newblock ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.
+\newblock In \emph{ICLR}, 2024.
+
+\bibitem{patil2024gorilla}
+Shishir G. Patil, Tianjun Zhang, Xin Wang, and Joseph E. Gonzalez.
+\newblock Gorilla: Large Language Model Connected with Massive APIs.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem{zheng2024toolrerank}
+Yuanhang Zheng, Peng Li, Wei Liu, Yang Liu, Jian Luan, and Bin Wang.
+\newblock ToolRerank: Adaptive and Hierarchy-Aware Reranking for Tool Retrieval.
+\newblock In \emph{LREC-COLING}, 2024.
+
+\bibitem{zhang2024massivetool}
+Yuxiang Zhang, Xin Fan, Junjie Wang, Chongxian Chen, Fan Mo, Tetsuya Sakai, and Hayato Yamana.
+\newblock Data-Efficient Massive Tool Retrieval: A Reinforcement Learning Approach for Query-Tool Alignment with Language Models.
+\newblock In \emph{SIGIR-AP}, 2024.
+
+\end{thebibliography}
+
+\end{document}

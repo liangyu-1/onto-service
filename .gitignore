@@ -1,38 +1,52 @@
-## Java / Maven
-**/target/
-*.class
-*.jar
-*.war
-*.ear
-
-## Logs
-*.log
-
-## Python
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
 
-## macOS
-.DS_Store
+# Node
+node_modules/
 
-## IDE
+# IDE
 .idea/
+.vscode/
+*.swp
+*.swo
 
-## Experiments outputs
-experiments/results/
+# OS
+.DS_Store
+Thumbs.db
 
-## LaTeX build artifacts (keep .tex/.md)
-docs/*.aux
-docs/*.bbl
-docs/*.bcf
-docs/*.blg
-docs/*.fdb_latexmk
-docs/*.fls
-docs/*.log
-docs/*.out
-docs/*.pdf
-docs/*.run.xml
-docs/*.synctex.gz
-docs/*.toc
-docs/*.xdv
+# Large data files
+dataset/
+*.tar.gz
+*.zip
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
 
+# Experiment results (large)
+experiments/paper3_agent_planning/results_*/
+!experiments/paper3_agent_planning/results_kimi_fixed_40/*.json
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.pdf
+
+# Misc
+papers/.cache/

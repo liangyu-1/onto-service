@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-LLM agents increasingly interact with tools, databases, workflows, and operational environments. However, many agents still act in an under-specified action space: actions are selected from natural-language tool descriptions or generated as free-form steps, while domain preconditions, policy constraints, confirmation requirements, and repeated-action failures are enforced weakly or only after damage has occurred. This paper studies two linked questions: how to decide whether an LLM-proposed operation is \emph{admissible} with respect to an ontology-grounded action layer, and what happens when rejected actions are returned to the model for repair. We represent executable operations as an ActionBank containing typed actions, target objects, parameters, preconditions, effects, constraints, and execution-history predicates. The LLM remains responsible for proposing the next action, but every proposal is checked by a runtime admissibility verifier before execution. Rejected actions are returned to the LLM with structured violation feedback for bounded repair, and the resulting traces are analyzed as repair successes or repair failures. On all 40 $\tau$-bench retail test tasks with Kimi-latest, action-layer verification eliminates observed executed violations (71$\rightarrow$0) but does not improve final-action success (25.0\%$\rightarrow$22.5\%); the difference is not statistically significant (exact McNemar $p=0.564$). The evidence supports ontology-grounded action admissibility as an execution-control mechanism that improves compliance, while repair failure analysis shows why compliance does not automatically yield task success: the repair loop changes the action trajectory in ways that can help or harm, and most remaining failures reflect model reasoning limitations rather than constraint violations.
+LLM agents increasingly interact with tools, databases, workflows, and operational environments. However, many agents still act in an under-specified action space: actions are selected from natural-language tool descriptions or generated as free-form steps, while domain preconditions, policy constraints, confirmation requirements, and repeated-action failures are enforced weakly or only after damage has occurred. This paper studies two linked questions: how to decide whether an LLM-proposed operation is \emph{admissible} with respect to an ontology-grounded action layer, and what happens when rejected actions are returned to the model for repair. We represent executable operations as an ActionBank containing typed actions, target objects, parameters, preconditions, effects, constraints, and execution-history predicates. The LLM remains responsible for proposing the next action, but every proposal is checked by a runtime admissibility verifier before execution. Rejected actions are returned to the LLM with structured violation feedback for bounded repair, and the resulting traces are analyzed as repair successes or repair failures. On all 40 $\tau$-bench retail test tasks with Kimi-latest, action-layer verification eliminates observed executed violations (66$\rightarrow$0) but does not improve final-action success (50.0\%$\rightarrow$50.0\%); the difference is not statistically significant (exact McNemar $p=1.000$). The evidence supports ontology-grounded action admissibility as an execution-control mechanism that improves compliance (DB state match improves from 32.5\% to 62.5\%), while repair failure analysis shows why compliance does not automatically yield task success: the repair loop changes the action trajectory in ways that can help or harm, and most remaining failures reflect model reasoning limitations rather than constraint violations.
 \end{abstract}
 
 \keywords{LLM agents, action layer, runtime verification, repair, policy-constrained tool use}
@@ -203,12 +203,12 @@ Table~\ref{tab:main} reports results on all 40 test tasks from the retail domain
 \small
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.05}
-\begin{tabularx}{\columnwidth}{@{}Yrrrrr@{}}
+\begin{tabularx}{\columnwidth}{@{}Yrrrrrr@{}}
 \toprule
-Method & Final-Act. Succ. & Strict Succ. & Acc. & Exec. Viol. & Invalid \\
+Method & Final-Act. Succ. & DB Match & Strict Succ. & Acc. & Exec. Viol. & Invalid \\
 \midrule
-Schema-Only & 25.0\% & 17.5\% & 37.1\% & 71 & 10 \\
-\textbf{Ours} & \textbf{22.5\%} & \textbf{20.0\%} & \textbf{38.9\%} & \textbf{0} & \textbf{4} \\
+Schema-Only & 50.0\% & 32.5\% & 17.5\% & 40.0\% & 66 & 10 \\
+\textbf{Ours} & \textbf{50.0\%} & \textbf{62.5\%} & \textbf{40.0\%} & \textbf{14.9\%} & \textbf{0} & \textbf{10} \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -216,10 +216,11 @@ Schema-Only & 25.0\% & 17.5\% & 37.1\% & 71 & 10 \\
 
 \textbf{Key findings:}
 \begin{itemize}
-    \item \textbf{Ours eliminates all executed violations (71$\rightarrow$0).} Schema-Only generates 71 executed violations across 40 tasks (post-hoc audit): all are duplicate actions (repeated lookups with identical arguments). Ours blocks these before execution through the constraint verifier.
-    \item \textbf{Final-action success does not improve (25.0\%$\rightarrow$22.5\%).} Ours improves on 1 task (Task~9: corrects authentication order) but degrades on 2 tasks (Task~60: execution error from malformed order ID; Task~79: falls back to \texttt{transfer\_to\_human\_agents}). Exact McNemar/binomial test: $b=1$, $c=2$, $\chi^2$=0.33, $p=0.564$---not statistically significant at $p<0.05$.
-    \item \textbf{Invalid actions decrease (10$\rightarrow$4).} Ours reduces invalid actions and execution errors through better grounding.
-    \item \textbf{Remaining failures are model-reasoning limitations.} 29/40 tasks fail under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation that exceeds single-turn planning capability.
+    \item \textbf{Ours eliminates all executed violations (66$\rightarrow$0).} Schema-Only generates 66 executed violations across 40 tasks (post-hoc audit): 54 duplicate actions (82\%), 11 missing confirmations (17\%), and 1 precondition failure (1\%). Ours blocks these before execution through the constraint verifier.
+    \item \textbf{Final-action success does not improve (50.0\%$\rightarrow$50.0\%).} Ours improves on 7 tasks (e.g., breaking duplicate loops on Tasks~101, 102, 42) but degrades on 7 tasks (e.g., over-correction to \texttt{transfer\_to\_human\_agents} on Tasks~12, 55, 71). Exact McNemar/binomial test: $b=7$, $c=7$, $\chi^2$=0.00, $p=1.000$---not statistically significant at $p<0.05$.
+    \item \textbf{DB state match improves (32.5\%$\rightarrow$62.5\%).} By blocking violations before execution, Ours produces more correct database states even when the final action does not match the gold action. This demonstrates the compliance value of the verifier.
+    \item \textbf{Action accuracy drops (40.0\%$\rightarrow$14.9\%).} The repair loop changes action trajectories substantially: while some repairs recover correct final actions, others diverge from the gold sequence. This tradeoff explains why compliance gains do not translate to final-action success.
+    \item \textbf{Remaining failures are model-reasoning limitations.} 26/40 tasks fail under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation that exceeds single-turn planning capability.
 \end{itemize}
 
 \subsection{Ablation Study}
@@ -250,7 +251,7 @@ Schema-Only & 30.0\% & 61.5\% & 19 & 0 \\
 
 \subsection{Violation Type Analysis}
 
-Table~\ref{tab:violations} breaks down the 71 executed violations observed in Schema-Only across 40 tasks (post-hoc audit).
+Table~\ref{tab:violations} breaks down the 66 executed violations observed in Schema-Only across 40 tasks (post-hoc audit).
 
 \begin{table}[!htbp]
 \centering
@@ -263,19 +264,19 @@ Table~\ref{tab:violations} breaks down the 71 executed violations observed in Sc
 \toprule
 Violation Type & Count \\
 \midrule
-Duplicate action (same args already executed) & 71 (100\%) \\
-Missing user confirmation (\texttt{user\_confirmed} constraint) & 0 \\
+Duplicate action (same args already executed) & 54 (81.8\%) \\
+Missing user confirmation (\texttt{user\_confirmed} constraint) & 11 (16.7\%) \\
+Precondition failure (wrong order status) & 1 (1.5\%) \\
 Unknown action (not in ActionBank) & 0 \\
-Precondition failure (wrong order status) & 0 \\
 Policy violation & 0 \\
 \midrule
-\textbf{Total} & \textbf{71} \\
+\textbf{Total} & \textbf{66} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 
-All violations are duplicate actions: the LLM repeats \texttt{get\_order\_details} or \texttt{get\_item\_details} with identical arguments, indicating a failure to break out of information-gathering loops. Notably, there are zero missing confirmations, zero unknown actions, zero precondition failures, and zero policy violations in the executed traces---Kimi-latest reliably grounds actions to the ActionBank and respects basic preconditions, but struggles with loop termination. The absence of missing-confirmation violations in the 40-task run (vs.~9 in the 10-task ablation subset) reflects task selection variance.
+The majority of violations (82\%) are duplicate actions: the LLM repeats \texttt{get\_order\_details} or \texttt{get\_user\_details} with identical arguments, indicating a failure to break out of information-gathering loops. The remaining 17\% are missing user confirmations before update actions. Kimi-latest reliably grounds actions to the ActionBank, but struggles with loop termination and confirmation sequencing.
 
 \subsection{Repair Failure Analysis}
 
@@ -292,18 +293,18 @@ Table~\ref{tab:repair} summarizes outcome changes caused by admissibility reject
 \toprule
 Repair Outcome & Count \\
 \midrule
-Productive repair (failure$\rightarrow$success) & 1 \\
-Over-correction (success$\rightarrow$failure) & 2 \\
-Neutral repair (failure$\rightarrow$failure, different trajectory) & 6 \\
-No final-outcome change & 31 \\
+Productive repair (failure$\rightarrow$success) & 7 \\
+Over-correction (success$\rightarrow$failure) & 7 \\
+Neutral repair (failure$\rightarrow$failure, with repairs) & 13 \\
+No final-outcome change & 13 \\
 \midrule
-\textbf{Net success change} & \textbf{$-1$} \\
+\textbf{Net success change} & \textbf{0} \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 
-This analysis explains the non-significant success change. Verification removes all executed violations, but repair is not a guaranteed recovery mechanism. The single productive repair (Task~9) corrects an authentication-order error: Schema-Only calls \texttt{get\_user\_details} before authentication (post-hoc violation), while Ours avoids this through the verifier. Over-corrections (Tasks~60, 79) occur when the verifier or execution error changes the model's trajectory: Task~60 encounters a malformed order ID that causes an execution error; Task~79 falls back to \texttt{transfer\_to\_human\_agents} despite an available valid action. The six neutral repairs change the action trajectory but do not alter final success. This is the main empirical reason why compliance improves while final-action success does not.
+This analysis explains the non-significant success change. Verification removes all executed violations, but repair is not a guaranteed recovery mechanism. Productive repairs occur when the verifier breaks a duplicate loop (e.g., Tasks~101, 102, 42: Schema-Only repeats \texttt{get\_order\_details} indefinitely, while Ours repairs to a valid terminal action). Over-corrections occur when the repair loop changes the model's trajectory away from the correct action (e.g., Tasks~12, 55, 71: Schema-Only reaches the correct final action, but Ours falls back to \texttt{transfer\_to\_human\_agents} after rejection). The 13 neutral repairs change the action trajectory but do not alter final success. This is the main empirical reason why compliance improves while final-action success does not.
 
 \subsection{Diagnostic Counterfactual State Test}
 
@@ -334,11 +335,11 @@ State Sensitivity Accuracy (SSA) = 1/5 = 20\%. The test measures the first LLM p
 
 \subsection{Qualitative Examples}
 
-\textbf{Authentication Order (Task 9).} Schema-Only calls \texttt{get\_user\_details} before authentication, generating a precondition violation (post-hoc audit). The subsequent \texttt{find\_user\_id\_by\_name\_zip} succeeds but the trajectory is already corrupted. Ours avoids this error because the verifier blocks the unauthenticated lookup, guiding the LLM to authenticate first.
+\textbf{Duplicate Loop Recovery (Task 101).} Schema-Only repeats \texttt{get\_order\_details} 8 times (all duplicate violations) and never reaches a terminal action. Ours rejects each duplicate, repairs to \texttt{finish\_task}, and succeeds.
 
-\textbf{Duplicate Query Loop (Task 33).} Schema-Only repeats \texttt{get\_order\_details} 10 times (all duplicate violations). Ours rejects the duplicates and repairs to \texttt{modify\_user\_address}, though the task still fails due to incorrect argument values.
+\textbf{Missing Confirmation (Task 18).} Schema-Only attempts \texttt{exchange\_delivered\_order\_items} without user confirmation, violating the constraint. Ours rejects the action, repairs by inserting confirmation steps, then successfully executes the exchange.
 
-\textbf{Repair Over-correction (Task 79).} Schema-Only successfully executes \texttt{modify\_pending\_order\_items}. Ours takes a different trajectory with additional lookups, eventually falling back to \texttt{transfer\_to\_human\_agents}. This illustrates a failure mode where the repair loop changes the model's trajectory without improving the outcome.
+\textbf{Repair Over-correction (Task 55).} Schema-Only correctly executes \texttt{return\_delivered\_order\_items}. Ours initially proposes the same action, but after a verifier rejection (due to strict duplicate checking), the repair loop falls back to \texttt{transfer\_to\_human\_agents}. This illustrates a failure mode where over-eager repair can degrade performance.
 
 \section{Discussion}
 \subsection{What the Action Layer Contributes}
@@ -350,7 +351,7 @@ This distinction also separates the proposed method from generic runtime guardra
 Repair failure analysis shows that post-rejection behavior is the limiting factor. The verifier can tell the agent that an action is non-admissible, but it does not guarantee that the LLM will infer the correct alternative action. In productive cases, the violation feedback maps directly to a local fix: insert confirmation or use cached lookup results. In harmful cases, the same rejection causes over-correction, especially fallback to \texttt{transfer\_to\_human\_agents}. This suggests that future systems need a stronger repair policy, such as candidate-action ranking under admissibility constraints, state-machine-guided repair, or search over admissible actions, rather than relying only on a single LLM repair prompt.
 
 \subsection{Limitations}
-\textbf{Model capability.} Even Kimi-latest fails on 29/40 tasks under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation. These failures are LLM reasoning limitations, not constraint-checking failures: the verifier correctly allows the predicted actions (preconditions satisfied), but the LLM selects the wrong branch. Tasks~12 and 26 require \texttt{transfer\_to\_human\_agents} under complex policy conditions; Tasks~32 and 36 involve multi-step condition branching. Explicit dialogue-state tracking or multi-turn planning would likely improve success beyond 22.5\%.
+\textbf{Model capability.} Even Kimi-latest fails on 26/40 tasks under both methods due to complex condition branching, dialogue-state requirements, or multi-step policy interpretation. These failures are LLM reasoning limitations, not constraint-checking failures: the verifier correctly allows the predicted actions (preconditions satisfied), but the LLM selects the wrong branch. Tasks~12 and 26 require \texttt{transfer\_to\_human\_agents} under complex policy conditions; Tasks~32 and 36 involve multi-step condition branching. Explicit dialogue-state tracking or multi-turn planning would likely improve success beyond 50\%.
 
 \textbf{Dialogue simulation.} $\tau$-bench tasks require back-and-forth dialogue for condition branching (e.g., ``if the agent asks for confirmation, only exchange the desk lamp; if asked again, do not exchange anything and return the water bottle''). Our current implementation uses a single-turn planner without dialogue simulation, leading to mismatches when user intent changes mid-conversation. The verifier cannot detect this because both branch actions satisfy their preconditions independently. Integrating with $\tau$-bench's dialogue simulator is essential for full evaluation.
 

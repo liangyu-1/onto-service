@@ -1,0 +1,4568 @@
+{
+  "total_docs": 40,
+  "passed_docs": 0,
+  "passed_actions": 14,
+  "total_actions": 180,
+  "reports": [
+    {
+      "doc_id": "5",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "5_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "5_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "5_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "5_p14_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "5_p17_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "5_p18_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'return requested'; order.retur...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "5_p20_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 6 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "9",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "9_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "9_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "9_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "9_s9_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 8310926033....'\", \"parameters: 'Look up product details for product ID 8310926033....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "9_s10_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 6817146515....'\", \"parameters: 'Look up product details for product ID 6817146515....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "9_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Exchange items ['8384507844'] for ['7624783998'] i...'\", \"parameters: 'Exchange items ['8384507844'] for ['7624783998'] i...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "12",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "12_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "12_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'transfer_to_human_agents' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "No target type required"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['summary']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "12_s6_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_email' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "12_s10_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'transfer_to_human_agents' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "No target type required"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['summary']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "17",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "17_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "17_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "17_p20_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "17_p23_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "18",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "18_p1_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: ' Issue: You want to return the office chair becaus...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "18_p1_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "18_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "18_s7_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "18_s8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "26",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "26_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "26_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "26_s12_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "26_s13_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'transfer_to_human_agents' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "No target type required"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['summary']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "27",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "27_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "27_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "27_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "27_s10_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 7363354090....'\", \"parameters: 'Look up product details for product ID 7363354090....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "27_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Exchange items ['8118291112'] for ['8277474082'] i...'\", \"parameters: 'Exchange items ['8118291112'] for ['8277474082'] i...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "32",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "32_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "32_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "32_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "32_s14_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Cancel the pending order #W9373487. Reason: no lon...'\", \"parameters: 'Cancel the pending order #W9373487. Reason: no lon...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "32_s16_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Cancel the pending order #W5481803. Reason: no lon...'\", \"parameters: 'Cancel the pending order #W5481803. Reason: no lon...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "32_s18_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Process a return for items ['6477915553'] from del...'\", \"parameters: 'Process a return for items ['6477915553'] from del...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "33",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "33_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "33_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_payment' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "33_p2_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "33_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "33_p20_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "33_p23_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "36",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "36_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "36_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "36_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "38",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "38_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "38_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "38_p5_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_email' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "38_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "38_p13_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "38_p16_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "39",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "39_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "39_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "39_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "39_p17_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "39_p20_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "40",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "40_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_payment' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "40_p5_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_email' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "40_p14_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_payment' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "40_p17_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "42",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "42_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "42_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "42_s10_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Update the shipping address for pending order #W95...'\", \"parameters: 'Update the shipping address for pending order #W95...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "42_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Update the shipping address for pending order #W40...'\", \"parameters: 'Update the shipping address for pending order #W40...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "42_s12_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Update the user's default address to the new addre...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "42_s13_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 1808611083....'\", \"parameters: 'Look up product details for product ID 1808611083....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "42_s15_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W4082615: replace [...'\", \"parameters: 'Modify items in pending order #W4082615: replace [...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 6 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "45",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "45_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "45_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "45_p11_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "45_p16_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "45_p17_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'exchange requested'; order.ite...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "45_p19_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "49",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "49_p1_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "49_p1_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "49_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "49_s11_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "49_s13_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "51",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "51_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "51_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_payment' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "51_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "51_s8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 8940227892....'\", \"parameters: 'Look up product details for product ID 8940227892....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "51_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Process a return for items ['5996159312'] from del...'\", \"parameters: 'Process a return for items ['5996159312'] from del...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "53",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "53_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "53_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Process a return for items ['7758198585'] from del...'\", \"parameters: 'Process a return for items ['7758198585'] from del...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 1 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "55",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "55_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "55_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "55_s6_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_email' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "55_s7_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_email' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "55_s15_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Cancel the pending order #W4836353. Reason: no lon...'\", \"parameters: 'Cancel the pending order #W4836353. Reason: no lon...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "55_s16_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Cancel the pending order #W7342738. Reason: no lon...'\", \"parameters: 'Cancel the pending order #W7342738. Reason: no lon...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "55_s17_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "55_s18_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Process a return for items ['8277474082'] from del...'\", \"parameters: 'Process a return for items ['8277474082'] from del...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 7 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "56",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "56_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "56_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "56_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 3821016478....'\", \"parameters: 'Look up product details for product ID 3821016478....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "56_s12_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W4284542: replace [...'\", \"parameters: 'Modify items in pending order #W4284542: replace [...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "60",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "60_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "60_s8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 9924732112....'\", \"parameters: 'Look up product details for product ID 9924732112....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "60_s9_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W5061109: replace [...'\", \"parameters: 'Modify items in pending order #W5061109: replace [...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "61",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "61_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "61_p11_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "61_p16_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "61_p19_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "62",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "62_p2_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "62_p2_u4_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "62_p2_u5_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "62_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "62_p17_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "62_p20_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 5 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "64",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "64_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "64_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "64_s11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'get_product_details' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Product' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (1 params)"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Look up product details for product ID 3377618313....'\", \"parameters: 'Look up product details for product ID 3377618313....'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "64_s12_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Exchange items ['1810466394'] for ['6700049080'] i...'\", \"parameters: 'Exchange items ['1810466394'] for ['6700049080'] i...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "64_s13_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W7464385: replace [...'\", \"parameters: 'Modify items in pending order #W7464385: replace [...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "65",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "65_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "65_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "65_p14_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "68",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "68_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "68_s7_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 1 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "70",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "70_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "70_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "70_p6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'exchange requested'; order.ite...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "70_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "71",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "71_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "71_p2_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "71_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "71_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "71_p11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "74",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "74_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "74_p2_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "74_p5_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "74_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "74_p11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "77",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "77_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "77_p6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'exchange requested'; order.ite...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "77_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "79",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "79_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 0 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "86",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "86_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['first_name', 'last_name', 'zip']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "86_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W2466703: replace [...'\", \"parameters: 'Modify items in pending order #W2466703: replace [...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "86_s7_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Update the user's default address to the new addre...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "90",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "90_p1_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "90_s4_u0_action",
+          "passed": true,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": true,
+              "message": "All required parameters present (2 params)"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 1 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "94",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "94_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "94_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "94_p6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'exchange requested'; order.ite...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "94_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "97",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "97_p1_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: ' Issue: You want to change your LA order to your N...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "97_p1_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "97_p1_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "97_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "97_s5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "100",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "100_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "100_p2_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "100_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "100_s7_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Process a return for items ['5676696062'] from del...'\", \"parameters: 'Process a return for items ['5676696062'] from del...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "101",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "101_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "101_s7_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Update the shipping address for pending order #W42...'\", \"parameters: 'Update the shipping address for pending order #W42...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "101_s8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W4219264: replace [...'\", \"parameters: 'Modify items in pending order #W4219264: replace [...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "101_s9_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'Modify items in pending order #W6729841: replace [...'\", \"parameters: 'Modify items in pending order #W6729841: replace [...'\"]"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 3 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "102",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "102_p2_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "102_p2_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "102_p5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "102_p8_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "102_p11_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "102_p12_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: 'me: order.status = 'exchange requested'; order.ite...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "102_p14_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'ask_for_confirmation' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'User' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['action_description']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 6 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "108",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "108_p1_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: ' Issue: You want to return everything but a tablet...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "108_p1_u1_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "108_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'return_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 2 edges reference valid actions"
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "111",
+      "overall_passed": false,
+      "action_reports": [
+        {
+          "action_id": "111_p1_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'address']"
+            },
+            "evidence": {
+              "passed": false,
+              "message": "Untraceable evidence spans: [\"action_type: ' Issue: You want to modify the laptop order to you...'\"]"
+            }
+          }
+        },
+        {
+          "action_id": "111_p1_u2_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'exchange_delivered_order_items' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "111_s4_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "111_s5_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'modify_pending_order_address' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['address']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        },
+        {
+          "action_id": "111_s6_u0_action",
+          "passed": false,
+          "checks": {
+            "action_type": {
+              "passed": true,
+              "message": "Action type 'cancel_pending_order' found in ontology"
+            },
+            "target_type": {
+              "passed": true,
+              "message": "Target type 'Order' matches ontology"
+            },
+            "parameters": {
+              "passed": false,
+              "message": "Missing required parameters: ['reason']"
+            },
+            "evidence": {
+              "passed": true,
+              "message": "All evidence spans traceable"
+            }
+          }
+        }
+      ],
+      "graph_report": {
+        "passed": true,
+        "checks": {
+          "graph_validity": {
+            "passed": true,
+            "message": "All 4 edges reference valid actions"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "actions": [
+    {
+      "action_id": "find_user_id_by_email",
+      "description": "Find a user's ID by their email address. Use this to authenticate the user.",
+      "parameters": {
+        "email": "string - user's email address"
+      },
+      "preconditions": [],
+      "effects": [
+        "user_id = found_user_id",
+        "user_authenticated = true"
+      ],
+      "constraints": [],
+      "target_object": "User"
+    },
+    {
+      "action_id": "find_user_id_by_name_zip",
+      "description": "Find a user's ID by their first name, last name, and zip code. Use this when user doesn't remember email.",
+      "parameters": {
+        "first_name": "string",
+        "last_name": "string",
+        "zip": "string"
+      },
+      "preconditions": [],
+      "effects": [
+        "user_id = found_user_id",
+        "user_authenticated = true"
+      ],
+      "constraints": [],
+      "target_object": "User"
+    },
+    {
+      "action_id": "get_user_details",
+      "description": "Get detailed information about a user including address, payment methods, and orders.",
+      "parameters": {
+        "user_id": "string"
+      },
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [
+        "user cached in state"
+      ],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "User"
+    },
+    {
+      "action_id": "get_order_details",
+      "description": "Get details of a specific order including items, status, and payment history.",
+      "parameters": {
+        "order_id": "string - order ID with # prefix"
+      },
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [
+        "order cached in state"
+      ],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "get_product_details",
+      "description": "Get details of a product including available variants and options.",
+      "parameters": {
+        "product_id": "string"
+      },
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [
+        "product cached in state"
+      ],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "Product"
+    },
+    {
+      "action_id": "get_item_details",
+      "description": "Get details of a specific item/variant by its item ID.",
+      "parameters": {
+        "item_id": "string"
+      },
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [
+        "item cached in state"
+      ],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "Product"
+    },
+    {
+      "action_id": "list_all_product_types",
+      "description": "List all available product types in the store.",
+      "parameters": {},
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "Product"
+    },
+    {
+      "action_id": "cancel_pending_order",
+      "description": "Cancel a pending order. The order status must be 'pending'. Refund will be processed.",
+      "parameters": {
+        "order_id": "string",
+        "reason": "string - 'no longer needed' or 'ordered by mistake'"
+      },
+      "preconditions": [
+        "order.status == 'pending'",
+        "reason in ['no longer needed', 'ordered by mistake']"
+      ],
+      "effects": [
+        "order.status = 'cancelled'",
+        "trigger refund"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "modify_pending_order_address",
+      "description": "Change the shipping address of a pending order.",
+      "parameters": {
+        "order_id": "string",
+        "address": "dict with address fields"
+      },
+      "preconditions": [
+        "order.status == 'pending'"
+      ],
+      "effects": [
+        "order.address = new_address"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "modify_pending_order_items",
+      "description": "Change items in a pending order to different variants of the same product. Can only be done once per order.",
+      "parameters": {
+        "order_id": "string",
+        "item_ids": "list of item IDs to replace",
+        "new_item_ids": "list of new item IDs (same position, same product)",
+        "payment_method_id": "string - payment method from the order or authenticated user"
+      },
+      "preconditions": [
+        "order.status == 'pending'",
+        "len(item_ids) == len(new_item_ids)"
+      ],
+      "effects": [
+        "order.items replaced",
+        "order.status = 'pending (items modified)'"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true",
+        "action_taken_on_order[order_id] == false",
+        "referential_integrity == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "modify_pending_order_payment",
+      "description": "Change the payment method of a pending order.",
+      "parameters": {
+        "order_id": "string",
+        "payment_method_id": "string"
+      },
+      "preconditions": [
+        "order.status == 'pending'"
+      ],
+      "effects": [
+        "order.payment updated"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true",
+        "referential_integrity == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "modify_user_address",
+      "description": "Update the user's default address in their profile.",
+      "parameters": {
+        "user_id": "string",
+        "address": "dict with address fields"
+      },
+      "preconditions": [
+        "user_authenticated == true"
+      ],
+      "effects": [
+        "user.address = new_address"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true"
+      ],
+      "target_object": "User"
+    },
+    {
+      "action_id": "return_delivered_order_items",
+      "description": "Return items from a delivered order. Can only be done once per order.",
+      "parameters": {
+        "order_id": "string",
+        "item_ids": "list of item IDs to return",
+        "payment_method_id": "string - where to send refund"
+      },
+      "preconditions": [
+        "order.status == 'delivered'"
+      ],
+      "effects": [
+        "order.status = 'return requested'",
+        "order.returned_items = item_ids"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true",
+        "action_taken_on_order[order_id] == false",
+        "referential_integrity == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "exchange_delivered_order_items",
+      "description": "Exchange items from a delivered order for new variants of the same product. Can only be done once per order.",
+      "parameters": {
+        "order_id": "string",
+        "item_ids": "list of item IDs to exchange",
+        "new_item_ids": "list of new item IDs (same position, same product)",
+        "payment_method_id": "string - for price difference"
+      },
+      "preconditions": [
+        "order.status == 'delivered'",
+        "len(item_ids) == len(new_item_ids)"
+      ],
+      "effects": [
+        "order.status = 'exchange requested'",
+        "order.items replaced"
+      ],
+      "constraints": [
+        "user_authenticated == true",
+        "user_confirmed == true",
+        "action_taken_on_order[order_id] == false",
+        "referential_integrity == true"
+      ],
+      "target_object": "Order"
+    },
+    {
+      "action_id": "transfer_to_human_agents",
+      "description": "Transfer the conversation to a human agent when the request cannot be handled.",
+      "parameters": {
+        "summary": "string - summary of the issue"
+      },
+      "preconditions": [],
+      "effects": [
+        "transfer_to_human = true"
+      ],
+      "constraints": [],
+      "target_object": ""
+    },
+    {
+      "action_id": "calculate",
+      "description": "Perform a calculation (e.g., price difference).",
+      "parameters": {
+        "expression": "string - math expression"
+      },
+      "preconditions": [],
+      "effects": [],
+      "constraints": [],
+      "target_object": ""
+    },
+    {
+      "action_id": "ask_for_confirmation",
+      "description": "Ask the user for explicit confirmation before executing an update action (cancel, exchange, return, modify).",
+      "parameters": {
+        "action_description": "string - description of what you want to confirm"
+      },
+      "preconditions": [],
+      "effects": [
+        "user_confirmed = true"
+      ],
+      "constraints": [
+        "user_authenticated == true"
+      ],
+      "target_object": "User"
+    },
+    {
+      "action_id": "finish_task",
+      "description": "Declare that all requested user-visible work has been completed. Use only after all required lookup, confirmation, and update actions have been executed.",
+      "parameters": {},
+      "preconditions": [],
+      "effects": [
+        "task completed"
+      ],
+      "constraints": [],
+      "target_object": "Conversation"
+    }
+  ]
+}

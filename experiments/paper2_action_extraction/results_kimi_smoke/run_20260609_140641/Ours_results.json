@@ -1,0 +1,4579 @@
+{
+  "method": "Ours",
+  "results": [
+    {
+      "doc_id": "5",
+      "actions": [
+        {
+          "action_id": "action_0",
+          "action_type": "transfer_to_human_agents",
+          "actor": "agent",
+          "target": "water bottle and desk lamp",
+          "target_type": "",
+          "parameters": {
+            "summary": null
+          },
+          "preconditions": [],
+          "effects": [
+            "water bottle changed",
+            "desk lamp changed"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "change the water bottle and the desk lamp. ",
+                "start": 0,
+                "end": 43,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "change the water bottle and the desk lamp. ",
+                "start": 0,
+                "end": 43,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+            "target_type": "Matched to ontology type '' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5833333333333334,
+          "resolved": true
+        },
+        {
+          "action_id": "action_1",
+          "action_type": "exchange_delivered_order_items",
+          "actor": "agent",
+          "target": "water bottle",
+          "target_type": "Product",
+          "parameters": {
+            "order_id": null,
+            "item_ids": null,
+            "new_item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "water bottle exchanged to bigger one"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": " exchange the water bottle to a bigger on",
+                "start": 0,
+                "end": 41,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": " exchange the water bottle to a bigger on",
+                "start": 0,
+                "end": 41,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.25,
+          "resolved": true
+        },
+        {
+          "action_id": "action_2",
+          "action_type": "transfer_to_human_agents",
+          "actor": "agent",
+          "target": "desk lamp",
+          "target_type": "",
+          "parameters": {
+            "summary": null
+          },
+          "preconditions": [],
+          "effects": [
+            "desk lamp exchanged to less bright one"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": " the desk lamp to a less bright on",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": " the desk lamp to a less bright on",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+            "target_type": "Matched to ontology type '' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5833333333333334,
+          "resolved": true
+        },
+        {
+          "action_id": "action_3",
+          "action_type": "exchange_delivered_order_items",
+          "actor": "agent",
+          "target": "desk lamp",
+          "target_type": "Product",
+          "parameters": {
+            "order_id": null,
+            "item_ids": null,
+            "new_item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "only desk lamp exchanged"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": ", only exchange the desk la",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "(prefer battery > USB > A",
+                "start": 0,
+                "end": 25,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": ". If the agent asks for confirmati",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "(prefer battery > USB > A",
+                "start": 0,
+                "end": 25,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.25,
+          "resolved": true
+        },
+        {
+          "action_id": "action_4",
+          "action_type": "return_delivered_order_items",
+          "actor": "agent",
+          "target": "water bottle",
+          "target_type": "Product",
+          "parameters": {
+            "order_id": null,
+            "item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "nothing exchanged",
+            "water bottle returned"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "d return the water bottle inste",
+                "start": 0,
+                "end": 31,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": ", do not exchange anythi",
+                "start": 0,
+                "end": 24,
+                "chunk_id": null
+              },
+              {
+                "text": "d return the water bottle inste",
+                "start": 0,
+                "end": 31,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": ". If the agent asks for confirmation aga",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.25,
+          "resolved": true
+        },
+        {
+          "action_id": "action_5",
+          "action_type": "find_user_id_by_email",
+          "actor": "agent",
+          "target": "user",
+          "target_type": "User",
+          "parameters": {
+            "email": null
+          },
+          "preconditions": [],
+          "effects": [
+            "user_id = found_user_id",
+            "user_authenticated = true"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up the user ",
+                "start": 0,
+                "end": 16,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "sing name Mei Kovacs and zip code 28236.",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                "start": 0,
+                "end": 64,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'find_user_id_by_email' (score=1.00)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.8333333333333334,
+          "resolved": true
+        },
+        {
+          "action_id": "action_6",
+          "action_type": "get_user_details",
+          "actor": "agent",
+          "target": "user",
+          "target_type": "User",
+          "parameters": {
+            "user_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "user cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "etrieve detailed information for the user ",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: user cached in stat",
+                "start": 0,
+                "end": 36,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.4166666666666667,
+          "resolved": true
+        },
+        {
+          "action_id": "action_7",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "order #W6390527",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W6390527"
+          },
+          "preconditions": [],
+          "effects": [
+            "order cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "Get the details of order #W6390527",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "Get the details of order #W6390527",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: order cached in stat",
+                "start": 0,
+                "end": 37,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.6666666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_8",
+          "action_type": "get_product_details",
+          "actor": "agent",
+          "target": "product ID 6817146515",
+          "target_type": "Product",
+          "parameters": {
+            "product_id": "6817146515"
+          },
+          "preconditions": [],
+          "effects": [
+            "product cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up product details for product ID 6817146515",
+                "start": 0,
+                "end": 48,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ook up product details for product ID 6817146515",
+                "start": 0,
+                "end": 48,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "Expected outcome: product cached in sta",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5833333333333334,
+          "resolved": true
+        },
+        {
+          "action_id": "action_9",
+          "action_type": "return_delivered_order_items",
+          "actor": "agent",
+          "target": "order #W6390527",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W6390527",
+            "item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "order.status = 'return requested'",
+            "order.returned_items = items"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "rocess a return ",
+                "start": 0,
+                "end": 16,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "tems ['8538875209'] ",
+                "start": 0,
+                "end": 20,
+                "chunk_id": null
+              },
+              {
+                "text": "d order #W63905",
+                "start": 0,
+                "end": 15,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "Expected outcome: order.status = 'return requested'; order.returned_items = item",
+                "start": 0,
+                "end": 80,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.33"
+          },
+          "control_flow": {},
+          "confidence": 0.47222222222222215,
+          "resolved": true
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "action_id": "action_0",
+            "action_type": "transfer_to_human_agents",
+            "actor": "agent",
+            "target": "water bottle and desk lamp",
+            "target_type": "",
+            "parameters": {
+              "summary": null
+            },
+            "preconditions": [],
+            "effects": [
+              "water bottle changed",
+              "desk lamp changed"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "change the water bottle and the desk lamp. ",
+                  "start": 0,
+                  "end": 43,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "change the water bottle and the desk lamp. ",
+                  "start": 0,
+                  "end": 43,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+              "target_type": "Matched to ontology type '' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5833333333333334,
+            "resolved": true
+          },
+          {
+            "action_id": "action_1",
+            "action_type": "exchange_delivered_order_items",
+            "actor": "agent",
+            "target": "water bottle",
+            "target_type": "Product",
+            "parameters": {
+              "order_id": null,
+              "item_ids": null,
+              "new_item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "water bottle exchanged to bigger one"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": " exchange the water bottle to a bigger on",
+                  "start": 0,
+                  "end": 41,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": " exchange the water bottle to a bigger on",
+                  "start": 0,
+                  "end": 41,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.25,
+            "resolved": true
+          },
+          {
+            "action_id": "action_2",
+            "action_type": "transfer_to_human_agents",
+            "actor": "agent",
+            "target": "desk lamp",
+            "target_type": "",
+            "parameters": {
+              "summary": null
+            },
+            "preconditions": [],
+            "effects": [
+              "desk lamp exchanged to less bright one"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": " the desk lamp to a less bright on",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": " the desk lamp to a less bright on",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+              "target_type": "Matched to ontology type '' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5833333333333334,
+            "resolved": true
+          },
+          {
+            "action_id": "action_3",
+            "action_type": "exchange_delivered_order_items",
+            "actor": "agent",
+            "target": "desk lamp",
+            "target_type": "Product",
+            "parameters": {
+              "order_id": null,
+              "item_ids": null,
+              "new_item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "only desk lamp exchanged"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": ", only exchange the desk la",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "(prefer battery > USB > A",
+                  "start": 0,
+                  "end": 25,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": ". If the agent asks for confirmati",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "(prefer battery > USB > A",
+                  "start": 0,
+                  "end": 25,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.25,
+            "resolved": true
+          },
+          {
+            "action_id": "action_4",
+            "action_type": "return_delivered_order_items",
+            "actor": "agent",
+            "target": "water bottle",
+            "target_type": "Product",
+            "parameters": {
+              "order_id": null,
+              "item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "nothing exchanged",
+              "water bottle returned"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "d return the water bottle inste",
+                  "start": 0,
+                  "end": 31,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": ", do not exchange anythi",
+                  "start": 0,
+                  "end": 24,
+                  "chunk_id": null
+                },
+                {
+                  "text": "d return the water bottle inste",
+                  "start": 0,
+                  "end": 31,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": ". If the agent asks for confirmation aga",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.25,
+            "resolved": true
+          },
+          {
+            "action_id": "action_5",
+            "action_type": "find_user_id_by_email",
+            "actor": "agent",
+            "target": "user",
+            "target_type": "User",
+            "parameters": {
+              "email": null
+            },
+            "preconditions": [],
+            "effects": [
+              "user_id = found_user_id",
+              "user_authenticated = true"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up the user ",
+                  "start": 0,
+                  "end": 16,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "sing name Mei Kovacs and zip code 28236.",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                  "start": 0,
+                  "end": 64,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'find_user_id_by_email' (score=1.00)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.8333333333333334,
+            "resolved": true
+          },
+          {
+            "action_id": "action_6",
+            "action_type": "get_user_details",
+            "actor": "agent",
+            "target": "user",
+            "target_type": "User",
+            "parameters": {
+              "user_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "user cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "etrieve detailed information for the user ",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: user cached in stat",
+                  "start": 0,
+                  "end": 36,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.4166666666666667,
+            "resolved": true
+          },
+          {
+            "action_id": "action_7",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "order #W6390527",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W6390527"
+            },
+            "preconditions": [],
+            "effects": [
+              "order cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "Get the details of order #W6390527",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "Get the details of order #W6390527",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: order cached in stat",
+                  "start": 0,
+                  "end": 37,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.6666666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_8",
+            "action_type": "get_product_details",
+            "actor": "agent",
+            "target": "product ID 6817146515",
+            "target_type": "Product",
+            "parameters": {
+              "product_id": "6817146515"
+            },
+            "preconditions": [],
+            "effects": [
+              "product cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up product details for product ID 6817146515",
+                  "start": 0,
+                  "end": 48,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ook up product details for product ID 6817146515",
+                  "start": 0,
+                  "end": 48,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "Expected outcome: product cached in sta",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5833333333333334,
+            "resolved": true
+          },
+          {
+            "action_id": "action_9",
+            "action_type": "return_delivered_order_items",
+            "actor": "agent",
+            "target": "order #W6390527",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W6390527",
+              "item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "order.status = 'return requested'",
+              "order.returned_items = items"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "rocess a return ",
+                  "start": 0,
+                  "end": 16,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "tems ['8538875209'] ",
+                  "start": 0,
+                  "end": 20,
+                  "chunk_id": null
+                },
+                {
+                  "text": "d order #W63905",
+                  "start": 0,
+                  "end": 15,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "Expected outcome: order.status = 'return requested'; order.returned_items = item",
+                  "start": 0,
+                  "end": 80,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.33"
+            },
+            "control_flow": {},
+            "confidence": 0.47222222222222215,
+            "resolved": true
+          }
+        ],
+        "edges": [
+          {
+            "source": "action_0",
+            "target": "action_1",
+            "relation": "sequential",
+            "evidence": "Step 1 → Step 2"
+          },
+          {
+            "source": "action_1",
+            "target": "action_2",
+            "relation": "sequential",
+            "evidence": "Step 2 → Step 3"
+          },
+          {
+            "source": "action_2",
+            "target": "action_3",
+            "relation": "conditional",
+            "evidence": "Step 3 → Step 4"
+          },
+          {
+            "source": "action_3",
+            "target": "action_4",
+            "relation": "conditional",
+            "evidence": "Step 4 → Step 5"
+          },
+          {
+            "source": "action_4",
+            "target": "action_5",
+            "relation": "sequential",
+            "evidence": "Step 5 → Step 6"
+          },
+          {
+            "source": "action_5",
+            "target": "action_6",
+            "relation": "sequential",
+            "evidence": "Step 6 → Step 7"
+          },
+          {
+            "source": "action_6",
+            "target": "action_7",
+            "relation": "sequential",
+            "evidence": "Step 7 → Step 8"
+          },
+          {
+            "source": "action_7",
+            "target": "action_8",
+            "relation": "sequential",
+            "evidence": "Step 8 → Step 9"
+          },
+          {
+            "source": "action_8",
+            "target": "action_9",
+            "relation": "sequential",
+            "evidence": "Step 9 → Step 10"
+          }
+        ]
+      },
+      "doc_text": "# Maintenance Manual: Task 5\n\n## Problem Description\nYou want to exchange the water bottle and the desk lamp. You want to exchange the water bottle to a bigger one, and the desk lamp to a less bright one (prefer battery > USB > AC). If the agent asks for confirmation, only exchange the desk lamp. If the agent asks for confirmation again, do not exchange anything, and return the water bottle instead.\n\n## Step-by-Step Resolution\n### Step 1\nLook up the user using name Mei Kovacs and zip code 28236.\n**Expected outcome**: user_id = found_user_id; user_authenticated = true\n### Step 2\nRetrieve detailed information for the user (ID: mei_kovacs_8020).\n**Expected outcome**: user cached in state\n### Step 3\nGet the details of order #W6390527.\n**Expected outcome**: order cached in state\n### Step 4\nLook up product details for product ID 6817146515.\n**Expected outcome**: product cached in state\n### Step 5\nProcess a return for items ['8538875209'] from delivered order #W6390527.\n**Expected outcome**: order.status = 'return requested'; order.returned_items = item_ids\n\n## Verification\nConfirm all actions completed successfully.",
+      "validation": {
+        "doc_id": "5",
+        "overall_passed": false,
+        "action_reports": [
+          {
+            "action_id": "action_0",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'transfer_to_human_agents' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "No target type required"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['summary']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_1",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'exchange_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": false,
+                "message": "Target type 'Product' != expected 'Order'"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_2",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'transfer_to_human_agents' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "No target type required"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['summary']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_3",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'exchange_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": false,
+                "message": "Target type 'Product' != expected 'Order'"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id', 'item_ids', 'new_item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_4",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'return_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": false,
+                "message": "Target type 'Product' != expected 'Order'"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_5",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'find_user_id_by_email' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['email']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: user_id = found_user_id; user_aut...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_6",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_user_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['user_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: user cached in stat...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_7",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: order cached in stat...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_8",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_product_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Product' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'Expected outcome: product cached in sta...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_9",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'return_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'Expected outcome: order.status = 'return requested...'\"]"
+              }
+            }
+          }
+        ],
+        "graph_report": {
+          "passed": true,
+          "checks": {
+            "graph_validity": {
+              "passed": true,
+              "message": "All 9 edges reference valid actions"
+            }
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "9",
+      "actions": [
+        {
+          "action_id": "action_0",
+          "action_type": "find_user_id_by_email",
+          "actor": "agent",
+          "target": "user_id",
+          "target_type": "User",
+          "parameters": {
+            "email": null
+          },
+          "preconditions": [],
+          "effects": [
+            "user_id is identified"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up the user ",
+                "start": 0,
+                "end": 16,
+                "chunk_id": null
+              },
+              {
+                "text": "sing name Mei Kovacs and zip code 28236.",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "sing name Mei Kovacs and zip code 28236.",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.75,
+          "resolved": true
+        },
+        {
+          "action_id": "action_1",
+          "action_type": "get_user_details",
+          "actor": "agent",
+          "target": "mei_kovacs_8020",
+          "target_type": "User",
+          "parameters": {
+            "user_id": "mei_kovacs_8020"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "user details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "etrieve detailed information for the user (ID: mei_kovacs_8020)",
+                "start": 0,
+                "end": 63,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "etrieve detailed information for the user (ID: mei_kovacs_8020)",
+                "start": 0,
+                "end": 63,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "*Precondition**: user_authenticated == tru",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "*Constraint**: user_authenticated == tru",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.9166666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_2",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "W6390527",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W6390527"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "order details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W6390527. ",
+                "start": 0,
+                "end": 35,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "et the details of order #W6390527. ",
+                "start": 0,
+                "end": 35,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "Precondition**: user_authenticated == true",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "*Constraint**: user_authenticated == tru",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 1.0,
+          "resolved": true
+        },
+        {
+          "action_id": "action_3",
+          "action_type": "get_product_details",
+          "actor": "agent",
+          "target": "8310926033",
+          "target_type": "Product",
+          "parameters": {
+            "product_id": "8310926033"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "product details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up product details for product ID 8310926033.",
+                "start": 0,
+                "end": 49,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ook up product details for product ID 8310926033.",
+                "start": 0,
+                "end": 49,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": ": user_authenticated == tr",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": ": user_authenticated == tr",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.9166666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_4",
+          "action_type": "get_product_details",
+          "actor": "agent",
+          "target": "6817146515",
+          "target_type": "Product",
+          "parameters": {
+            "product_id": "6817146515"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "product details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up product details for product ID 6817146515.",
+                "start": 0,
+                "end": 49,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ook up product details for product ID 6817146515.",
+                "start": 0,
+                "end": 49,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.9166666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_5",
+          "action_type": "exchange_delivered_order_items",
+          "actor": "agent",
+          "target": "W639",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W639",
+            "item_ids": [
+              "8384507844"
+            ],
+            "new_item_ids": [
+              "7624783998"
+            ],
+            "payment_method_id": null
+          },
+          "preconditions": [
+            "order.status == 'delivered'",
+            "len(item_ids) == len(new_item_ids)"
+          ],
+          "effects": [
+            "items are exchanged in the delivered order"
+          ],
+          "constraints": [
+            "user_authenticated == true",
+            "user_confirmed == true",
+            "action_taken_on_order[order_id] == false",
+            "referential_integrity == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "xchange items ['8384507844'] for ['7624783998'] in delivered order #W639",
+                "start": 0,
+                "end": 72,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "xchange items ['8384507844'] for ['7624783998'] in delivered order #W639",
+                "start": 0,
+                "end": 72,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "n**: order.status == 'deliv",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              },
+              {
+                "text": "ed'; len(item_ids) == len(new_item",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "**: user_authenticated == ",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              },
+              {
+                "text": "ue; user_confirmed == ",
+                "start": 0,
+                "end": 22,
+                "chunk_id": null
+              },
+              {
+                "text": "ue; action_taken_on_order[order_id] == f",
+                "start": 0,
+                "end": 40,
+                "chunk_id": null
+              },
+              {
+                "text": "se; referential_integrity == ",
+                "start": 0,
+                "end": 29,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.75"
+          },
+          "control_flow": {},
+          "confidence": 0.875,
+          "resolved": true
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "action_id": "action_0",
+            "action_type": "find_user_id_by_email",
+            "actor": "agent",
+            "target": "user_id",
+            "target_type": "User",
+            "parameters": {
+              "email": null
+            },
+            "preconditions": [],
+            "effects": [
+              "user_id is identified"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up the user ",
+                  "start": 0,
+                  "end": 16,
+                  "chunk_id": null
+                },
+                {
+                  "text": "sing name Mei Kovacs and zip code 28236.",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "sing name Mei Kovacs and zip code 28236.",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.75,
+            "resolved": true
+          },
+          {
+            "action_id": "action_1",
+            "action_type": "get_user_details",
+            "actor": "agent",
+            "target": "mei_kovacs_8020",
+            "target_type": "User",
+            "parameters": {
+              "user_id": "mei_kovacs_8020"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "user details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "etrieve detailed information for the user (ID: mei_kovacs_8020)",
+                  "start": 0,
+                  "end": 63,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "etrieve detailed information for the user (ID: mei_kovacs_8020)",
+                  "start": 0,
+                  "end": 63,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "*Precondition**: user_authenticated == tru",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "*Constraint**: user_authenticated == tru",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.9166666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_2",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "W6390527",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W6390527"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "order details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W6390527. ",
+                  "start": 0,
+                  "end": 35,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "et the details of order #W6390527. ",
+                  "start": 0,
+                  "end": 35,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "Precondition**: user_authenticated == true",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "*Constraint**: user_authenticated == tru",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 1.0,
+            "resolved": true
+          },
+          {
+            "action_id": "action_3",
+            "action_type": "get_product_details",
+            "actor": "agent",
+            "target": "8310926033",
+            "target_type": "Product",
+            "parameters": {
+              "product_id": "8310926033"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "product details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up product details for product ID 8310926033.",
+                  "start": 0,
+                  "end": 49,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ook up product details for product ID 8310926033.",
+                  "start": 0,
+                  "end": 49,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": ": user_authenticated == tr",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": ": user_authenticated == tr",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.9166666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_4",
+            "action_type": "get_product_details",
+            "actor": "agent",
+            "target": "6817146515",
+            "target_type": "Product",
+            "parameters": {
+              "product_id": "6817146515"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "product details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up product details for product ID 6817146515.",
+                  "start": 0,
+                  "end": 49,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ook up product details for product ID 6817146515.",
+                  "start": 0,
+                  "end": 49,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.9166666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_5",
+            "action_type": "exchange_delivered_order_items",
+            "actor": "agent",
+            "target": "W639",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W639",
+              "item_ids": [
+                "8384507844"
+              ],
+              "new_item_ids": [
+                "7624783998"
+              ],
+              "payment_method_id": null
+            },
+            "preconditions": [
+              "order.status == 'delivered'",
+              "len(item_ids) == len(new_item_ids)"
+            ],
+            "effects": [
+              "items are exchanged in the delivered order"
+            ],
+            "constraints": [
+              "user_authenticated == true",
+              "user_confirmed == true",
+              "action_taken_on_order[order_id] == false",
+              "referential_integrity == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "xchange items ['8384507844'] for ['7624783998'] in delivered order #W639",
+                  "start": 0,
+                  "end": 72,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "xchange items ['8384507844'] for ['7624783998'] in delivered order #W639",
+                  "start": 0,
+                  "end": 72,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "n**: order.status == 'deliv",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                },
+                {
+                  "text": "ed'; len(item_ids) == len(new_item",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "**: user_authenticated == ",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                },
+                {
+                  "text": "ue; user_confirmed == ",
+                  "start": 0,
+                  "end": 22,
+                  "chunk_id": null
+                },
+                {
+                  "text": "ue; action_taken_on_order[order_id] == f",
+                  "start": 0,
+                  "end": 40,
+                  "chunk_id": null
+                },
+                {
+                  "text": "se; referential_integrity == ",
+                  "start": 0,
+                  "end": 29,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.75"
+            },
+            "control_flow": {},
+            "confidence": 0.875,
+            "resolved": true
+          }
+        ],
+        "edges": [
+          {
+            "source": "action_0",
+            "target": "action_1",
+            "relation": "sequential",
+            "evidence": "Step 1 → Step 2"
+          },
+          {
+            "source": "action_1",
+            "target": "action_2",
+            "relation": "sequential",
+            "evidence": "Step 2 → Step 3"
+          },
+          {
+            "source": "action_2",
+            "target": "action_3",
+            "relation": "sequential",
+            "evidence": "Step 3 → Step 4"
+          },
+          {
+            "source": "action_3",
+            "target": "action_4",
+            "relation": "sequential",
+            "evidence": "Step 4 → Step 5"
+          },
+          {
+            "source": "action_4",
+            "target": "action_5",
+            "relation": "sequential",
+            "evidence": "Step 5 → Step 6"
+          }
+        ]
+      },
+      "doc_text": "# Standard Operating Procedure: Task 9\n\n## Purpose\nYou want to exchange the water bottle and the desk lamp. You want to exchange the water bottle to a bigger one, and the desk lamp to a brighter one (prefer AC adapter > battery > USB). When the agent asks for confirmation, suddenly change your mind and ask to only exchange the desk lamp.\n\n## Known Information\nYou are mei_kovacs_8020 living in zipcode 28236.\n\n## Procedure\n1. Look up the user using name Mei Kovacs and zip code 28236.\n2. Retrieve detailed information for the user (ID: mei_kovacs_8020).\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n3. Get the details of order #W6390527.\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n4. Look up product details for product ID 8310926033.\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n5. Look up product details for product ID 6817146515.\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n6. Exchange items ['8384507844'] for ['7624783998'] in delivered order #W6390527.\n   **Precondition**: order.status == 'delivered'; len(item_ids) == len(new_item_ids)\n   **Constraint**: user_authenticated == true; user_confirmed == true; action_taken_on_order[order_id] == false; referential_integrity == true\n\n## Completion\nEnsure all steps are completed and the customer is satisfied.",
+      "validation": {
+        "doc_id": "9",
+        "overall_passed": false,
+        "action_reports": [
+          {
+            "action_id": "action_0",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'find_user_id_by_email' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['email']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_1",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_user_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_2",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"action_type: 'et the details of order #W6390527. ...'\", \"parameters: 'et the details of order #W6390527. ...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_3",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_product_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Product' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_4",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_product_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Product' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_5",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'exchange_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['payment_method_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          }
+        ],
+        "graph_report": {
+          "passed": true,
+          "checks": {
+            "graph_validity": {
+              "passed": true,
+              "message": "All 5 edges reference valid actions"
+            }
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "12",
+      "actions": [
+        {
+          "action_id": "action_0",
+          "action_type": "find_user_id_by_email",
+          "actor": "agent",
+          "target": "user",
+          "target_type": "User",
+          "parameters": {
+            "email": null
+          },
+          "preconditions": [],
+          "effects": [
+            "user is identified"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ind the user by their email address ",
+                "start": 0,
+                "end": 36,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ind the user by their email address ",
+                "start": 0,
+                "end": 36,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.9166666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_1",
+          "action_type": "get_user_details",
+          "actor": "agent",
+          "target": "mia_garcia_451",
+          "target_type": "User",
+          "parameters": {
+            "user_id": "mia_garcia_451"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "detailed user information is retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "etrieve detailed information for the user (ID: mia_garcia_451",
+                "start": 0,
+                "end": 61,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "etrieve detailed information for the user (ID: mia_garcia_451",
+                "start": 0,
+                "end": 61,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": " **Precondition**: user_authenticated == t",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "e **Constraint**: user_authenticated ==",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.9166666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_2",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "W5490111",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W5490111"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "order details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W5490111.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "et the details of order #W5490111.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 1.0,
+          "resolved": true
+        },
+        {
+          "action_id": "action_3",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "W7387996",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W7387996"
+          },
+          "preconditions": [
+            "user_authenticated == true"
+          ],
+          "effects": [
+            "order details are retrieved"
+          ],
+          "constraints": [
+            "user_authenticated == true"
+          ],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W7387996.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "et the details of order #W7387996.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": " user_authenticated == tru",
+                "start": 0,
+                "end": 26,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 1.0,
+          "resolved": true
+        },
+        {
+          "action_id": "action_4",
+          "action_type": "transfer_to_human_agents",
+          "actor": "agent",
+          "target": "case",
+          "target_type": "",
+          "parameters": {
+            "summary": null
+          },
+          "preconditions": [],
+          "effects": [
+            "case is transferred to a human agent"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ransfer the case to a human agent. ",
+                "start": 0,
+                "end": 35,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ransfer the case to a human agent. ",
+                "start": 0,
+                "end": 35,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+            "target_type": "Matched to ontology type '' (score=0.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5833333333333334,
+          "resolved": true
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "action_id": "action_0",
+            "action_type": "find_user_id_by_email",
+            "actor": "agent",
+            "target": "user",
+            "target_type": "User",
+            "parameters": {
+              "email": null
+            },
+            "preconditions": [],
+            "effects": [
+              "user is identified"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ind the user by their email address ",
+                  "start": 0,
+                  "end": 36,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ind the user by their email address ",
+                  "start": 0,
+                  "end": 36,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.9166666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_1",
+            "action_type": "get_user_details",
+            "actor": "agent",
+            "target": "mia_garcia_451",
+            "target_type": "User",
+            "parameters": {
+              "user_id": "mia_garcia_451"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "detailed user information is retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "etrieve detailed information for the user (ID: mia_garcia_451",
+                  "start": 0,
+                  "end": 61,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "etrieve detailed information for the user (ID: mia_garcia_451",
+                  "start": 0,
+                  "end": 61,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": " **Precondition**: user_authenticated == t",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "e **Constraint**: user_authenticated ==",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.9166666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_2",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "W5490111",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W5490111"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "order details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W5490111.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "et the details of order #W5490111.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 1.0,
+            "resolved": true
+          },
+          {
+            "action_id": "action_3",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "W7387996",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W7387996"
+            },
+            "preconditions": [
+              "user_authenticated == true"
+            ],
+            "effects": [
+              "order details are retrieved"
+            ],
+            "constraints": [
+              "user_authenticated == true"
+            ],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W7387996.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "et the details of order #W7387996.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": " user_authenticated == tru",
+                  "start": 0,
+                  "end": 26,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 1.0,
+            "resolved": true
+          },
+          {
+            "action_id": "action_4",
+            "action_type": "transfer_to_human_agents",
+            "actor": "agent",
+            "target": "case",
+            "target_type": "",
+            "parameters": {
+              "summary": null
+            },
+            "preconditions": [],
+            "effects": [
+              "case is transferred to a human agent"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ransfer the case to a human agent. ",
+                  "start": 0,
+                  "end": 35,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ransfer the case to a human agent. ",
+                  "start": 0,
+                  "end": 35,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'transfer_to_human_agents' (score=0.50)",
+              "target_type": "Matched to ontology type '' (score=0.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5833333333333334,
+            "resolved": true
+          }
+        ],
+        "edges": [
+          {
+            "source": "action_0",
+            "target": "action_1",
+            "relation": "sequential",
+            "evidence": "Step 1 → Step 2"
+          },
+          {
+            "source": "action_1",
+            "target": "action_2",
+            "relation": "sequential",
+            "evidence": "Step 2 → Step 3"
+          },
+          {
+            "source": "action_2",
+            "target": "action_3",
+            "relation": "sequential",
+            "evidence": "Step 3 → Step 4"
+          },
+          {
+            "source": "action_3",
+            "target": "action_4",
+            "relation": "sequential",
+            "evidence": "Step 4 → Step 5"
+          }
+        ]
+      },
+      "doc_text": "# Standard Operating Procedure: Task 12\n\n## Purpose\nYou just got into gaming and want to cancel or return everything not associated with it. (Everything except a keyboard and a mouse, but do not reveal it to the agent). PayPal is prefered for refund, but otherwise you are angry and ask for human agent for help.\n\n## Known Information\nYou are mia_garcia_4516 (mia.garcia2723@example.com).\n\n## Procedure\n1. Find the user by their email address mia.garcia2723@example.com.\n2. Retrieve detailed information for the user (ID: mia_garcia_4516).\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n3. Get the details of order #W5490111.\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n4. Get the details of order #W7387996.\n   **Precondition**: user_authenticated == true\n   **Constraint**: user_authenticated == true\n5. Transfer the case to a human agent. Summary: The user prefers PayPal for refund, but the agent cannot help.\n\n## Completion\nEnsure all steps are completed and the customer is satisfied.",
+      "validation": {
+        "doc_id": "12",
+        "overall_passed": false,
+        "action_reports": [
+          {
+            "action_id": "action_0",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'find_user_id_by_email' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['email']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_1",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_user_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"constraints: 'e **Constraint**: user_authenticated ==...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_2",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_3",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_4",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'transfer_to_human_agents' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "No target type required"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['summary']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          }
+        ],
+        "graph_report": {
+          "passed": true,
+          "checks": {
+            "graph_validity": {
+              "passed": true,
+              "message": "All 4 edges reference valid actions"
+            }
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "17",
+      "actions": [
+        {
+          "action_id": "action_0",
+          "action_type": "return_delivered_order_items",
+          "actor": "agent",
+          "target": "#W8665881",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": null,
+            "item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Order #W8665881 delivery address updated to Suite 641 i"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "change #W8665881 to be delivered to Suite 641 i",
+                "start": 0,
+                "end": 47,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "change #W8665881 to be delivered to Suite 641 i",
+                "start": 0,
+                "end": 47,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                "start": 0,
+                "end": 61,
+                "chunk_id": null
+              },
+              {
+                "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                "start": 0,
+                "end": 64,
+                "chunk_id": null
+              },
+              {
+                "text": "etrieve detailed information for the user ",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "Expected outcome: order.address = new_address",
+                "start": 0,
+                "end": 45,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "or pending order #W8665881.",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.4166666666666667,
+          "resolved": true
+        },
+        {
+          "action_id": "action_1",
+          "action_type": "find_user_id_by_name_zip",
+          "actor": "agent",
+          "target": "Fatima Johnson",
+          "target_type": "User",
+          "parameters": {
+            "first_name": null,
+            "last_name": null,
+            "zip": null
+          },
+          "preconditions": [],
+          "effects": [
+            "user_id = found_user_id",
+            "user_authenticated = true"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                "start": 0,
+                "end": 61,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                "start": 0,
+                "end": 61,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                "start": 0,
+                "end": 64,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'find_user_id_by_name_zip' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.75,
+          "resolved": true
+        },
+        {
+          "action_id": "action_2",
+          "action_type": "get_user_details",
+          "actor": "agent",
+          "target": "found_user_id",
+          "target_type": "User",
+          "parameters": {
+            "user_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "User details retrieved"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "etrieve detailed information for the user ",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                "start": 0,
+                "end": 64,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_user_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5,
+          "resolved": true
+        },
+        {
+          "action_id": "action_3",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "#W5199551",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Order #W5199551 cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W5199551.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: order cached in stat",
+                "start": 0,
+                "end": 37,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5,
+          "resolved": true
+        },
+        {
+          "action_id": "action_4",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "#W8665881",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Order #W8665881 cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W8665881.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: order cached in stat",
+                "start": 0,
+                "end": 37,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5,
+          "resolved": true
+        },
+        {
+          "action_id": "action_5",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "#W9389413",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Order #W9389413 cached in state"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W9389413.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "xpected outcome: order cached in stat",
+                "start": 0,
+                "end": 37,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5,
+          "resolved": true
+        },
+        {
+          "action_id": "action_6",
+          "action_type": "modify_pending_order_address",
+          "actor": "agent",
+          "target": "#W8665881",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": null,
+            "address": null
+          },
+          "preconditions": [],
+          "effects": [
+            "order.address = new_address"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "pdate the shipping address ",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "Suite 641 i",
+                "start": 0,
+                "end": 11,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "or pending order #W8665881.",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              }
+            ],
+            "effects": [
+              {
+                "text": "Expected outcome: order.address = new_address",
+                "start": 0,
+                "end": 45,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "or pending order #W8665881.",
+                "start": 0,
+                "end": 27,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'modify_pending_order_address' (score=0.50)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.4166666666666667,
+          "resolved": true
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "action_id": "action_0",
+            "action_type": "return_delivered_order_items",
+            "actor": "agent",
+            "target": "#W8665881",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": null,
+              "item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Order #W8665881 delivery address updated to Suite 641 i"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "change #W8665881 to be delivered to Suite 641 i",
+                  "start": 0,
+                  "end": 47,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "change #W8665881 to be delivered to Suite 641 i",
+                  "start": 0,
+                  "end": 47,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                  "start": 0,
+                  "end": 61,
+                  "chunk_id": null
+                },
+                {
+                  "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                  "start": 0,
+                  "end": 64,
+                  "chunk_id": null
+                },
+                {
+                  "text": "etrieve detailed information for the user ",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "Expected outcome: order.address = new_address",
+                  "start": 0,
+                  "end": 45,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "or pending order #W8665881.",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'return_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.4166666666666667,
+            "resolved": true
+          },
+          {
+            "action_id": "action_1",
+            "action_type": "find_user_id_by_name_zip",
+            "actor": "agent",
+            "target": "Fatima Johnson",
+            "target_type": "User",
+            "parameters": {
+              "first_name": null,
+              "last_name": null,
+              "zip": null
+            },
+            "preconditions": [],
+            "effects": [
+              "user_id = found_user_id",
+              "user_authenticated = true"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                  "start": 0,
+                  "end": 61,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "Look up the user using name Fatima Johnson and zip code 78712",
+                  "start": 0,
+                  "end": 61,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                  "start": 0,
+                  "end": 64,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'find_user_id_by_name_zip' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.75,
+            "resolved": true
+          },
+          {
+            "action_id": "action_2",
+            "action_type": "get_user_details",
+            "actor": "agent",
+            "target": "found_user_id",
+            "target_type": "User",
+            "parameters": {
+              "user_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "User details retrieved"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "etrieve detailed information for the user ",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "xpected outcome: user_id = found_user_id; user_authenticated = t",
+                  "start": 0,
+                  "end": 64,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_user_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5,
+            "resolved": true
+          },
+          {
+            "action_id": "action_3",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "#W5199551",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Order #W5199551 cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W5199551.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: order cached in stat",
+                  "start": 0,
+                  "end": 37,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5,
+            "resolved": true
+          },
+          {
+            "action_id": "action_4",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "#W8665881",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Order #W8665881 cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W8665881.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: order cached in stat",
+                  "start": 0,
+                  "end": 37,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5,
+            "resolved": true
+          },
+          {
+            "action_id": "action_5",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "#W9389413",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Order #W9389413 cached in state"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W9389413.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "xpected outcome: order cached in stat",
+                  "start": 0,
+                  "end": 37,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5,
+            "resolved": true
+          },
+          {
+            "action_id": "action_6",
+            "action_type": "modify_pending_order_address",
+            "actor": "agent",
+            "target": "#W8665881",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": null,
+              "address": null
+            },
+            "preconditions": [],
+            "effects": [
+              "order.address = new_address"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "pdate the shipping address ",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "Suite 641 i",
+                  "start": 0,
+                  "end": 11,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "or pending order #W8665881.",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                }
+              ],
+              "effects": [
+                {
+                  "text": "Expected outcome: order.address = new_address",
+                  "start": 0,
+                  "end": 45,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "or pending order #W8665881.",
+                  "start": 0,
+                  "end": 27,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'modify_pending_order_address' (score=0.50)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.4166666666666667,
+            "resolved": true
+          }
+        ],
+        "edges": [
+          {
+            "source": "action_0",
+            "target": "action_1",
+            "relation": "sequential",
+            "evidence": "Step 1 → Step 2"
+          },
+          {
+            "source": "action_1",
+            "target": "action_2",
+            "relation": "sequential",
+            "evidence": "Step 2 → Step 3"
+          },
+          {
+            "source": "action_2",
+            "target": "action_3",
+            "relation": "sequential",
+            "evidence": "Step 3 → Step 4"
+          },
+          {
+            "source": "action_3",
+            "target": "action_4",
+            "relation": "sequential",
+            "evidence": "Step 4 → Step 5"
+          },
+          {
+            "source": "action_4",
+            "target": "action_5",
+            "relation": "sequential",
+            "evidence": "Step 5 → Step 6"
+          },
+          {
+            "source": "action_5",
+            "target": "action_6",
+            "relation": "sequential",
+            "evidence": "Step 6 → Step 7"
+          }
+        ]
+      },
+      "doc_text": "# Maintenance Manual: Task 17\n\n## Problem Description\nYou want to change #W8665881 to be delivered to Suite 641 instead.\n\n## Step-by-Step Resolution\n### Step 1\nLook up the user using name Fatima Johnson and zip code 78712.\n**Expected outcome**: user_id = found_user_id; user_authenticated = true\n### Step 2\nRetrieve detailed information for the user (ID: fatima_johnson_7581).\n**Expected outcome**: user cached in state\n### Step 3\nGet the details of order #W5199551.\n**Expected outcome**: order cached in state\n### Step 4\nGet the details of order #W8665881.\n**Expected outcome**: order cached in state\n### Step 5\nGet the details of order #W9389413.\n**Expected outcome**: order cached in state\n### Step 6\nUpdate the shipping address for pending order #W8665881.\n**Expected outcome**: order.address = new_address\n\n## Verification\nConfirm all actions completed successfully.",
+      "validation": {
+        "doc_id": "17",
+        "overall_passed": false,
+        "action_reports": [
+          {
+            "action_id": "action_0",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'return_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id', 'item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"preconditions: 'xpected outcome: user_id = found_user_id; user_aut...'\", \"effects: 'Expected outcome: order.address = new_address...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_1",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'find_user_id_by_name_zip' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['first_name', 'last_name', 'zip']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: user_id = found_user_id; user_aut...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_2",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_user_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['user_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"preconditions: 'xpected outcome: user_id = found_user_id; user_aut...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_3",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: order cached in stat...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_4",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: order cached in stat...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_5",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'xpected outcome: order cached in stat...'\"]"
+              }
+            }
+          },
+          {
+            "action_id": "action_6",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'modify_pending_order_address' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['order_id', 'address']"
+              },
+              "evidence": {
+                "passed": false,
+                "message": "Untraceable evidence spans: [\"effects: 'Expected outcome: order.address = new_address...'\"]"
+              }
+            }
+          }
+        ],
+        "graph_report": {
+          "passed": true,
+          "checks": {
+            "graph_validity": {
+              "passed": true,
+              "message": "All 6 edges reference valid actions"
+            }
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "18",
+      "actions": [
+        {
+          "action_id": "action_0",
+          "action_type": "find_user_id_by_email",
+          "actor": "agent",
+          "target": "user",
+          "target_type": "User",
+          "parameters": {
+            "email": null
+          },
+          "preconditions": [],
+          "effects": [
+            "User record identified"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up the user ",
+                "start": 0,
+                "end": 16,
+                "chunk_id": null
+              },
+              {
+                "text": "sing name Mei Davis and zip code 80217.",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "sing name Mei Davis and zip code 80217.",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.75,
+          "resolved": true
+        },
+        {
+          "action_id": "action_1",
+          "action_type": "get_user_details",
+          "actor": "agent",
+          "target": "user",
+          "target_type": "User",
+          "parameters": {
+            "user_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Detailed user information retrieved"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "etrieve detailed information for the user ",
+                "start": 0,
+                "end": 42,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [],
+            "preconditions": [
+              {
+                "text": "ook up the user ",
+                "start": 0,
+                "end": 16,
+                "chunk_id": null
+              },
+              {
+                "text": "sing name Mei Davis and zip code 80217.",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'User' (score=1.00)",
+            "parameters": "Coverage=0.00"
+          },
+          "control_flow": {},
+          "confidence": 0.4166666666666667,
+          "resolved": true
+        },
+        {
+          "action_id": "action_2",
+          "action_type": "get_order_details",
+          "actor": "agent",
+          "target": "order #W2890441",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W2890441"
+          },
+          "preconditions": [],
+          "effects": [
+            "Order details retrieved"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "et the details of order #W2890441.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "et the details of order #W2890441.",
+                "start": 0,
+                "end": 34,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.6666666666666666,
+          "resolved": true
+        },
+        {
+          "action_id": "action_3",
+          "action_type": "get_product_details",
+          "actor": "agent",
+          "target": "product ID 4794339885",
+          "target_type": "Product",
+          "parameters": {
+            "product_id": "4794339885"
+          },
+          "preconditions": [],
+          "effects": [
+            "Product details retrieved"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "ook up product details for product ID 4794339885",
+                "start": 0,
+                "end": 48,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "ook up product details for product ID 4794339885",
+                "start": 0,
+                "end": 48,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+            "target_type": "Matched to ontology type 'Product' (score=1.00)",
+            "parameters": "Coverage=1.00"
+          },
+          "control_flow": {},
+          "confidence": 0.5833333333333334,
+          "resolved": true
+        },
+        {
+          "action_id": "action_4",
+          "action_type": "exchange_delivered_order_items",
+          "actor": "agent",
+          "target": "order #W2890441",
+          "target_type": "Order",
+          "parameters": {
+            "order_id": "W2890441",
+            "item_ids": null,
+            "new_item_ids": null,
+            "payment_method_id": null
+          },
+          "preconditions": [],
+          "effects": [
+            "Items exchanged in order"
+          ],
+          "constraints": [],
+          "evidence": {
+            "action_type": [
+              {
+                "text": "xchange items ['8069050545'] for ['1071497737']",
+                "start": 0,
+                "end": 47,
+                "chunk_id": null
+              }
+            ],
+            "parameters": [
+              {
+                "text": "xchange items ['8069050545'] for ['1071497737']",
+                "start": 0,
+                "end": 47,
+                "chunk_id": null
+              },
+              {
+                "text": "in delivered order #W2890441",
+                "start": 0,
+                "end": 28,
+                "chunk_id": null
+              }
+            ],
+            "preconditions": [
+              {
+                "text": "in delivered order #W2890441",
+                "start": 0,
+                "end": 28,
+                "chunk_id": null
+              }
+            ],
+            "constraints": [
+              {
+                "text": "ces. But if the agent asks you fo",
+                "start": 0,
+                "end": 33,
+                "chunk_id": null
+              },
+              {
+                "text": "confirm, you say you want to rethink fo",
+                "start": 0,
+                "end": 39,
+                "chunk_id": null
+              },
+              {
+                "text": "and then change your mind to exchange for th",
+                "start": 0,
+                "end": 44,
+                "chunk_id": null
+              },
+              {
+                "text": "same item. If the agent mentions that the same product is n",
+                "start": 0,
+                "end": 59,
+                "chunk_id": null
+              },
+              {
+                "text": " available, ask for a gray office chair with fixed armrest made of l",
+                "start": 0,
+                "end": 68,
+                "chunk_id": null
+              }
+            ]
+          },
+          "grounding": {
+            "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+            "target_type": "Matched to ontology type 'Order' (score=1.00)",
+            "parameters": "Coverage=0.25"
+          },
+          "control_flow": {},
+          "confidence": 0.4583333333333333,
+          "resolved": true
+        }
+      ],
+      "graph": {
+        "nodes": [
+          {
+            "action_id": "action_0",
+            "action_type": "find_user_id_by_email",
+            "actor": "agent",
+            "target": "user",
+            "target_type": "User",
+            "parameters": {
+              "email": null
+            },
+            "preconditions": [],
+            "effects": [
+              "User record identified"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up the user ",
+                  "start": 0,
+                  "end": 16,
+                  "chunk_id": null
+                },
+                {
+                  "text": "sing name Mei Davis and zip code 80217.",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "sing name Mei Davis and zip code 80217.",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'find_user_id_by_email' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.75,
+            "resolved": true
+          },
+          {
+            "action_id": "action_1",
+            "action_type": "get_user_details",
+            "actor": "agent",
+            "target": "user",
+            "target_type": "User",
+            "parameters": {
+              "user_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Detailed user information retrieved"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "etrieve detailed information for the user ",
+                  "start": 0,
+                  "end": 42,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [],
+              "preconditions": [
+                {
+                  "text": "ook up the user ",
+                  "start": 0,
+                  "end": 16,
+                  "chunk_id": null
+                },
+                {
+                  "text": "sing name Mei Davis and zip code 80217.",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_user_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'User' (score=1.00)",
+              "parameters": "Coverage=0.00"
+            },
+            "control_flow": {},
+            "confidence": 0.4166666666666667,
+            "resolved": true
+          },
+          {
+            "action_id": "action_2",
+            "action_type": "get_order_details",
+            "actor": "agent",
+            "target": "order #W2890441",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W2890441"
+            },
+            "preconditions": [],
+            "effects": [
+              "Order details retrieved"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "et the details of order #W2890441.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "et the details of order #W2890441.",
+                  "start": 0,
+                  "end": 34,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_order_details' (score=1.00)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.6666666666666666,
+            "resolved": true
+          },
+          {
+            "action_id": "action_3",
+            "action_type": "get_product_details",
+            "actor": "agent",
+            "target": "product ID 4794339885",
+            "target_type": "Product",
+            "parameters": {
+              "product_id": "4794339885"
+            },
+            "preconditions": [],
+            "effects": [
+              "Product details retrieved"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "ook up product details for product ID 4794339885",
+                  "start": 0,
+                  "end": 48,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "ook up product details for product ID 4794339885",
+                  "start": 0,
+                  "end": 48,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'get_product_details' (score=0.50)",
+              "target_type": "Matched to ontology type 'Product' (score=1.00)",
+              "parameters": "Coverage=1.00"
+            },
+            "control_flow": {},
+            "confidence": 0.5833333333333334,
+            "resolved": true
+          },
+          {
+            "action_id": "action_4",
+            "action_type": "exchange_delivered_order_items",
+            "actor": "agent",
+            "target": "order #W2890441",
+            "target_type": "Order",
+            "parameters": {
+              "order_id": "W2890441",
+              "item_ids": null,
+              "new_item_ids": null,
+              "payment_method_id": null
+            },
+            "preconditions": [],
+            "effects": [
+              "Items exchanged in order"
+            ],
+            "constraints": [],
+            "evidence": {
+              "action_type": [
+                {
+                  "text": "xchange items ['8069050545'] for ['1071497737']",
+                  "start": 0,
+                  "end": 47,
+                  "chunk_id": null
+                }
+              ],
+              "parameters": [
+                {
+                  "text": "xchange items ['8069050545'] for ['1071497737']",
+                  "start": 0,
+                  "end": 47,
+                  "chunk_id": null
+                },
+                {
+                  "text": "in delivered order #W2890441",
+                  "start": 0,
+                  "end": 28,
+                  "chunk_id": null
+                }
+              ],
+              "preconditions": [
+                {
+                  "text": "in delivered order #W2890441",
+                  "start": 0,
+                  "end": 28,
+                  "chunk_id": null
+                }
+              ],
+              "constraints": [
+                {
+                  "text": "ces. But if the agent asks you fo",
+                  "start": 0,
+                  "end": 33,
+                  "chunk_id": null
+                },
+                {
+                  "text": "confirm, you say you want to rethink fo",
+                  "start": 0,
+                  "end": 39,
+                  "chunk_id": null
+                },
+                {
+                  "text": "and then change your mind to exchange for th",
+                  "start": 0,
+                  "end": 44,
+                  "chunk_id": null
+                },
+                {
+                  "text": "same item. If the agent mentions that the same product is n",
+                  "start": 0,
+                  "end": 59,
+                  "chunk_id": null
+                },
+                {
+                  "text": " available, ask for a gray office chair with fixed armrest made of l",
+                  "start": 0,
+                  "end": 68,
+                  "chunk_id": null
+                }
+              ]
+            },
+            "grounding": {
+              "action_type": "Matched to ontology action 'exchange_delivered_order_items' (score=0.50)",
+              "target_type": "Matched to ontology type 'Order' (score=1.00)",
+              "parameters": "Coverage=0.25"
+            },
+            "control_flow": {},
+            "confidence": 0.4583333333333333,
+            "resolved": true
+          }
+        ],
+        "edges": [
+          {
+            "source": "action_0",
+            "target": "action_1",
+            "relation": "sequential",
+            "evidence": "Step 1 → Step 2"
+          },
+          {
+            "source": "action_1",
+            "target": "action_2",
+            "relation": "sequential",
+            "evidence": "Step 2 → Step 3"
+          },
+          {
+            "source": "action_2",
+            "target": "action_3",
+            "relation": "sequential",
+            "evidence": "Step 3 → Step 4"
+          },
+          {
+            "source": "action_3",
+            "target": "action_4",
+            "relation": "conditional",
+            "evidence": "Step 4 → Step 5"
+          }
+        ]
+      },
+      "doc_text": "# Customer Service Script: Task 18\n\n**Customer Issue**: You want to return the office chair because it came with some broken pieces. But if the agent asks you for confirm, you say you want to rethink for a while, and then change your mind to exchange for the same item. If the agent mentions that the same product is not available, ask for a gray office chair with fixed armrest made of leather instead.\n**Known Facts**: You are Mei Davis in zipcode 80217.\n\n**Agent Steps**:\n1. Look up the user using name Mei Davis and zip code 80217.\n2. Retrieve detailed information for the user (ID: mei_davis_8935).\n3. Get the details of order #W2890441.\n4. Look up product details for product ID 4794339885.\n5. Exchange items ['8069050545'] for ['1071497737'] in delivered order #W2890441.\n\n**End of Script**",
+      "validation": {
+        "doc_id": "18",
+        "overall_passed": false,
+        "action_reports": [
+          {
+            "action_id": "action_0",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'find_user_id_by_email' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['email']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_1",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_user_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'User' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['user_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_2",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_order_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_3",
+            "passed": true,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'get_product_details' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Product' matches ontology"
+              },
+              "parameters": {
+                "passed": true,
+                "message": "All required parameters present (1 params)"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          },
+          {
+            "action_id": "action_4",
+            "passed": false,
+            "checks": {
+              "action_type": {
+                "passed": true,
+                "message": "Action type 'exchange_delivered_order_items' found in ontology"
+              },
+              "target_type": {
+                "passed": true,
+                "message": "Target type 'Order' matches ontology"
+              },
+              "parameters": {
+                "passed": false,
+                "message": "Missing required parameters: ['item_ids', 'new_item_ids', 'payment_method_id']"
+              },
+              "evidence": {
+                "passed": true,
+                "message": "All evidence spans traceable"
+              }
+            }
+          }
+        ],
+        "graph_report": {
+          "passed": true,
+          "checks": {
+            "graph_validity": {
+              "passed": true,
+              "message": "All 4 edges reference valid actions"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 595.027186870575
+}

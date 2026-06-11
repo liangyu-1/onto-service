@@ -1,0 +1,3580 @@
+{
+  "assets": [
+    {
+      "assetId": "FALCON_DB_7::vgsales",
+      "name": "vgsales",
+      "kind": "table",
+      "domain": "FALCON_DB_7",
+      "comment": "CREATE TABLE \"vgsales\" (\n\"Rank\" INTEGER,\n  \"Name\" TEXT,\n  \"Platform\" TEXT,\n  \"Year\" REAL,\n  \"Genre\" TEXT,\n  \"Publisher\" TEXT,\n  \"NA_Sales\" REAL,\n  \"EU_Sales\" REAL,\n  \"JP_Sales\" REAL,\n  \"Other_Sales\" REAL,\n  \"Global_Sales\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "rank",
+          "type": "BIGINT",
+          "comment": "orig=Rank",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "comment": "orig=Name",
+          "nullable": true
+        },
+        {
+          "name": "platform",
+          "type": "STRING",
+          "comment": "orig=Platform",
+          "nullable": true
+        },
+        {
+          "name": "year",
+          "type": "BIGINT",
+          "comment": "orig=Year",
+          "nullable": true
+        },
+        {
+          "name": "genre",
+          "type": "STRING",
+          "comment": "orig=Genre",
+          "nullable": true
+        },
+        {
+          "name": "publisher",
+          "type": "STRING",
+          "comment": "orig=Publisher",
+          "nullable": true
+        },
+        {
+          "name": "na_sales",
+          "type": "DOUBLE",
+          "comment": "orig=NA_Sales",
+          "nullable": true
+        },
+        {
+          "name": "eu_sales",
+          "type": "DOUBLE",
+          "comment": "orig=EU_Sales",
+          "nullable": true
+        },
+        {
+          "name": "jp_sales",
+          "type": "DOUBLE",
+          "comment": "orig=JP_Sales",
+          "nullable": true
+        },
+        {
+          "name": "other_sales",
+          "type": "DOUBLE",
+          "comment": "orig=Other_Sales",
+          "nullable": true
+        },
+        {
+          "name": "global_sales",
+          "type": "DOUBLE",
+          "comment": "orig=Global_Sales",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "7"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_products",
+      "name": "blinkit_products",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_products\" (\n\"product_id\" INTEGER,\n  \"product_name\" TEXT,\n  \"category\" TEXT,\n  \"brand\" TEXT,\n  \"price\" REAL,\n  \"mrp\" REAL,\n  \"margin_percentage\" REAL,\n  \"shelf_life_days\" INTEGER,\n  \"min_stock_level\" INTEGER,\n  \"max_stock_level\" INTEGER\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "product_name",
+          "type": "STRING",
+          "comment": "orig=product_name",
+          "nullable": true
+        },
+        {
+          "name": "category",
+          "type": "STRING",
+          "comment": "orig=category",
+          "nullable": true
+        },
+        {
+          "name": "brand",
+          "type": "STRING",
+          "comment": "orig=brand",
+          "nullable": true
+        },
+        {
+          "name": "price",
+          "type": "DOUBLE",
+          "comment": "orig=price",
+          "nullable": true
+        },
+        {
+          "name": "mrp",
+          "type": "DOUBLE",
+          "comment": "orig=mrp",
+          "nullable": true
+        },
+        {
+          "name": "margin_percentage",
+          "type": "DOUBLE",
+          "comment": "orig=margin_percentage",
+          "nullable": true
+        },
+        {
+          "name": "shelf_life_days",
+          "type": "BIGINT",
+          "comment": "orig=shelf_life_days",
+          "nullable": true
+        },
+        {
+          "name": "min_stock_level",
+          "type": "BIGINT",
+          "comment": "orig=min_stock_level",
+          "nullable": true
+        },
+        {
+          "name": "max_stock_level",
+          "type": "BIGINT",
+          "comment": "orig=max_stock_level",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_marketing_performance",
+      "name": "blinkit_marketing_performance",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_marketing_performance\" (\n\"campaign_id\" INTEGER,\n  \"campaign_name\" TEXT,\n  \"date\" TEXT,\n  \"target_audience\" TEXT,\n  \"channel\" TEXT,\n  \"impressions\" INTEGER,\n  \"clicks\" INTEGER,\n  \"conversions\" INTEGER,\n  \"spend\" REAL,\n  \"revenue_generated\" REAL,\n  \"roas\" REAL\n)",
+      "primaryKeys": [
+        "campaign_id"
+      ],
+      "columns": [
+        {
+          "name": "campaign_id",
+          "type": "BIGINT",
+          "comment": "orig=campaign_id",
+          "nullable": true
+        },
+        {
+          "name": "campaign_name",
+          "type": "STRING",
+          "comment": "orig=campaign_name",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=date",
+          "nullable": true
+        },
+        {
+          "name": "target_audience",
+          "type": "STRING",
+          "comment": "orig=target_audience",
+          "nullable": true
+        },
+        {
+          "name": "channel",
+          "type": "STRING",
+          "comment": "orig=channel",
+          "nullable": true
+        },
+        {
+          "name": "impressions",
+          "type": "BIGINT",
+          "comment": "orig=impressions",
+          "nullable": true
+        },
+        {
+          "name": "clicks",
+          "type": "BIGINT",
+          "comment": "orig=clicks",
+          "nullable": true
+        },
+        {
+          "name": "conversions",
+          "type": "BIGINT",
+          "comment": "orig=conversions",
+          "nullable": true
+        },
+        {
+          "name": "spend",
+          "type": "DOUBLE",
+          "comment": "orig=spend",
+          "nullable": true
+        },
+        {
+          "name": "revenue_generated",
+          "type": "DOUBLE",
+          "comment": "orig=revenue_generated",
+          "nullable": true
+        },
+        {
+          "name": "roas",
+          "type": "DOUBLE",
+          "comment": "orig=roas",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_inventory",
+      "name": "blinkit_inventory",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_inventory\" (\n\"product_id\" INTEGER,\n  \"date\" TEXT,\n  \"stock_received\" INTEGER,\n  \"damaged_stock\" INTEGER\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=date",
+          "nullable": true
+        },
+        {
+          "name": "stock_received",
+          "type": "BIGINT",
+          "comment": "orig=stock_received",
+          "nullable": true
+        },
+        {
+          "name": "damaged_stock",
+          "type": "BIGINT",
+          "comment": "orig=damaged_stock",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_customer_feedback",
+      "name": "blinkit_customer_feedback",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_customer_feedback\" (\n\"feedback_id\" INTEGER,\n  \"order_id\" INTEGER,\n  \"customer_id\" INTEGER,\n  \"rating\" INTEGER,\n  \"feedback_text\" TEXT,\n  \"feedback_category\" TEXT,\n  \"sentiment\" TEXT,\n  \"feedback_date\" TEXT\n)",
+      "primaryKeys": [
+        "feedback_id"
+      ],
+      "columns": [
+        {
+          "name": "feedback_id",
+          "type": "BIGINT",
+          "comment": "orig=feedback_id",
+          "nullable": true
+        },
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "rating",
+          "type": "BIGINT",
+          "comment": "orig=rating",
+          "nullable": true
+        },
+        {
+          "name": "feedback_text",
+          "type": "STRING",
+          "comment": "orig=feedback_text",
+          "nullable": true
+        },
+        {
+          "name": "feedback_category",
+          "type": "STRING",
+          "comment": "orig=feedback_category",
+          "nullable": true
+        },
+        {
+          "name": "sentiment",
+          "type": "STRING",
+          "comment": "orig=sentiment",
+          "nullable": true
+        },
+        {
+          "name": "feedback_date",
+          "type": "STRING",
+          "comment": "orig=feedback_date",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_inventorynew",
+      "name": "blinkit_inventorynew",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_inventoryNew\" (\n\"product_id\" INTEGER,\n  \"date\" TEXT,\n  \"stock_received\" INTEGER,\n  \"damaged_stock\" INTEGER\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=date",
+          "nullable": true
+        },
+        {
+          "name": "stock_received",
+          "type": "BIGINT",
+          "comment": "orig=stock_received",
+          "nullable": true
+        },
+        {
+          "name": "damaged_stock",
+          "type": "BIGINT",
+          "comment": "orig=damaged_stock",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_order_items",
+      "name": "blinkit_order_items",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_order_items\" (\n\"order_id\" INTEGER,\n  \"product_id\" INTEGER,\n  \"quantity\" INTEGER,\n  \"unit_price\" REAL\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "BIGINT",
+          "comment": "orig=quantity",
+          "nullable": true
+        },
+        {
+          "name": "unit_price",
+          "type": "DOUBLE",
+          "comment": "orig=unit_price",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_customers",
+      "name": "blinkit_customers",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_customers\" (\n\"customer_id\" INTEGER,\n  \"customer_name\" TEXT,\n  \"email\" TEXT,\n  \"phone\" INTEGER,\n  \"address\" TEXT,\n  \"area\" TEXT,\n  \"pincode\" INTEGER,\n  \"registration_date\" TEXT,\n  \"customer_segment\" TEXT,\n  \"total_orders\" INTEGER,\n  \"avg_order_value\" REAL\n)",
+      "primaryKeys": [
+        "customer_id"
+      ],
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_name",
+          "type": "STRING",
+          "comment": "orig=customer_name",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=email",
+          "nullable": true
+        },
+        {
+          "name": "phone",
+          "type": "BIGINT",
+          "comment": "orig=phone",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=address",
+          "nullable": true
+        },
+        {
+          "name": "area",
+          "type": "STRING",
+          "comment": "orig=area",
+          "nullable": true
+        },
+        {
+          "name": "pincode",
+          "type": "BIGINT",
+          "comment": "orig=pincode",
+          "nullable": true
+        },
+        {
+          "name": "registration_date",
+          "type": "STRING",
+          "comment": "orig=registration_date",
+          "nullable": true
+        },
+        {
+          "name": "customer_segment",
+          "type": "STRING",
+          "comment": "orig=customer_segment",
+          "nullable": true
+        },
+        {
+          "name": "total_orders",
+          "type": "BIGINT",
+          "comment": "orig=total_orders",
+          "nullable": true
+        },
+        {
+          "name": "avg_order_value",
+          "type": "DOUBLE",
+          "comment": "orig=avg_order_value",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_orders",
+      "name": "blinkit_orders",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_orders\" (\n\"order_id\" INTEGER,\n  \"customer_id\" INTEGER,\n  \"order_date\" TEXT,\n  \"promised_delivery_time\" TEXT,\n  \"actual_delivery_time\" TEXT,\n  \"delivery_status\" TEXT,\n  \"order_total\" REAL,\n  \"payment_method\" TEXT,\n  \"delivery_partner_id\" INTEGER,\n  \"store_id\" INTEGER\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "order_date",
+          "type": "STRING",
+          "comment": "orig=order_date",
+          "nullable": true
+        },
+        {
+          "name": "promised_delivery_time",
+          "type": "STRING",
+          "comment": "orig=promised_delivery_time",
+          "nullable": true
+        },
+        {
+          "name": "actual_delivery_time",
+          "type": "STRING",
+          "comment": "orig=actual_delivery_time",
+          "nullable": true
+        },
+        {
+          "name": "delivery_status",
+          "type": "STRING",
+          "comment": "orig=delivery_status",
+          "nullable": true
+        },
+        {
+          "name": "order_total",
+          "type": "DOUBLE",
+          "comment": "orig=order_total",
+          "nullable": true
+        },
+        {
+          "name": "payment_method",
+          "type": "STRING",
+          "comment": "orig=payment_method",
+          "nullable": true
+        },
+        {
+          "name": "delivery_partner_id",
+          "type": "BIGINT",
+          "comment": "orig=delivery_partner_id",
+          "nullable": true
+        },
+        {
+          "name": "store_id",
+          "type": "BIGINT",
+          "comment": "orig=store_id",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_24::blinkit_delivery_performance",
+      "name": "blinkit_delivery_performance",
+      "kind": "table",
+      "domain": "FALCON_DB_24",
+      "comment": "CREATE TABLE \"blinkit_delivery_performance\" (\n\"order_id\" INTEGER,\n  \"delivery_partner_id\" INTEGER,\n  \"promised_time\" TEXT,\n  \"actual_time\" TEXT,\n  \"delivery_time_minutes\" REAL,\n  \"distance_km\" REAL,\n  \"delivery_status\" TEXT,\n  \"reasons_if_delayed\" TEXT\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "delivery_partner_id",
+          "type": "BIGINT",
+          "comment": "orig=delivery_partner_id",
+          "nullable": true
+        },
+        {
+          "name": "promised_time",
+          "type": "STRING",
+          "comment": "orig=promised_time",
+          "nullable": true
+        },
+        {
+          "name": "actual_time",
+          "type": "STRING",
+          "comment": "orig=actual_time",
+          "nullable": true
+        },
+        {
+          "name": "delivery_time_minutes",
+          "type": "DOUBLE",
+          "comment": "orig=delivery_time_minutes",
+          "nullable": true
+        },
+        {
+          "name": "distance_km",
+          "type": "DOUBLE",
+          "comment": "orig=distance_km",
+          "nullable": true
+        },
+        {
+          "name": "delivery_status",
+          "type": "STRING",
+          "comment": "orig=delivery_status",
+          "nullable": true
+        },
+        {
+          "name": "reasons_if_delayed",
+          "type": "STRING",
+          "comment": "orig=reasons_if_delayed",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "24"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_14::toy_products",
+      "name": "toy_products",
+      "kind": "table",
+      "domain": "FALCON_DB_14",
+      "comment": "CREATE TABLE \"toy_products\" (\n\"Product_ID\" INTEGER,\n  \"Product_Name\" TEXT,\n  \"Product_Category\" TEXT,\n  \"Product_Cost\" TEXT,\n  \"Product_Price\" TEXT\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=Product_ID",
+          "nullable": true
+        },
+        {
+          "name": "product_name",
+          "type": "STRING",
+          "comment": "orig=Product_Name",
+          "nullable": true
+        },
+        {
+          "name": "product_category",
+          "type": "STRING",
+          "comment": "orig=Product_Category",
+          "nullable": true
+        },
+        {
+          "name": "product_cost",
+          "type": "STRING",
+          "comment": "orig=Product_Cost",
+          "nullable": true
+        },
+        {
+          "name": "product_price",
+          "type": "STRING",
+          "comment": "orig=Product_Price",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "14"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_14::toy_sales",
+      "name": "toy_sales",
+      "kind": "table",
+      "domain": "FALCON_DB_14",
+      "comment": "CREATE TABLE \"toy_sales\" (\n\"Sale_ID\" INTEGER,\n  \"Date\" TEXT,\n  \"Store_ID\" INTEGER,\n  \"Product_ID\" INTEGER,\n  \"Units\" INTEGER\n)",
+      "primaryKeys": [
+        "sale_id"
+      ],
+      "columns": [
+        {
+          "name": "sale_id",
+          "type": "BIGINT",
+          "comment": "orig=Sale_ID",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=Date",
+          "nullable": true
+        },
+        {
+          "name": "store_id",
+          "type": "BIGINT",
+          "comment": "orig=Store_ID",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=Product_ID",
+          "nullable": true
+        },
+        {
+          "name": "units",
+          "type": "BIGINT",
+          "comment": "orig=Units",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "14"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_14::toy_stores",
+      "name": "toy_stores",
+      "kind": "table",
+      "domain": "FALCON_DB_14",
+      "comment": "CREATE TABLE \"toy_stores\" (\n\"Store_ID\" INTEGER,\n  \"Store_Name\" TEXT,\n  \"Store_City\" TEXT,\n  \"Store_Location\" TEXT,\n  \"Store_Open_Date\" TEXT\n)",
+      "primaryKeys": [
+        "store_id"
+      ],
+      "columns": [
+        {
+          "name": "store_id",
+          "type": "BIGINT",
+          "comment": "orig=Store_ID",
+          "nullable": true
+        },
+        {
+          "name": "store_name",
+          "type": "STRING",
+          "comment": "orig=Store_Name",
+          "nullable": true
+        },
+        {
+          "name": "store_city",
+          "type": "STRING",
+          "comment": "orig=Store_City",
+          "nullable": true
+        },
+        {
+          "name": "store_location",
+          "type": "STRING",
+          "comment": "orig=Store_Location",
+          "nullable": true
+        },
+        {
+          "name": "store_open_date",
+          "type": "STRING",
+          "comment": "orig=Store_Open_Date",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "14"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_14::toy_inventory",
+      "name": "toy_inventory",
+      "kind": "table",
+      "domain": "FALCON_DB_14",
+      "comment": "CREATE TABLE \"toy_inventory\" (\n\"Store_ID\" INTEGER,\n  \"Product_ID\" INTEGER,\n  \"Stock_On_Hand\" INTEGER\n)",
+      "primaryKeys": [
+        "store_id"
+      ],
+      "columns": [
+        {
+          "name": "store_id",
+          "type": "BIGINT",
+          "comment": "orig=Store_ID",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=Product_ID",
+          "nullable": true
+        },
+        {
+          "name": "stock_on_hand",
+          "type": "BIGINT",
+          "comment": "orig=Stock_On_Hand",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "14"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_16::school_students",
+      "name": "school_students",
+      "kind": "table",
+      "domain": "FALCON_DB_16",
+      "comment": "CREATE TABLE \"school_students\" (\n\"StudentID\" INTEGER,\n  \"FirstName\" TEXT,\n  \"LastName\" TEXT,\n  \"DateOfBirth\" TEXT,\n  \"Address\" TEXT,\n  \"ContactNumber\" INTEGER,\n  \"Email\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "studentid",
+          "type": "BIGINT",
+          "comment": "orig=StudentID",
+          "nullable": true
+        },
+        {
+          "name": "firstname",
+          "type": "STRING",
+          "comment": "orig=FirstName",
+          "nullable": true
+        },
+        {
+          "name": "lastname",
+          "type": "STRING",
+          "comment": "orig=LastName",
+          "nullable": true
+        },
+        {
+          "name": "dateofbirth",
+          "type": "STRING",
+          "comment": "orig=DateOfBirth",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=Address",
+          "nullable": true
+        },
+        {
+          "name": "contactnumber",
+          "type": "BIGINT",
+          "comment": "orig=ContactNumber",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=Email",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "16"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_16::school_teachers",
+      "name": "school_teachers",
+      "kind": "table",
+      "domain": "FALCON_DB_16",
+      "comment": "CREATE TABLE \"school_teachers\" (\n\"TeacherID\" INTEGER,\n  \"FirstName\" TEXT,\n  \"LastName\" TEXT,\n  \"DateOfBirth\" TEXT,\n  \"Address\" TEXT,\n  \"ContactNumber\" INTEGER,\n  \"Email\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "teacherid",
+          "type": "BIGINT",
+          "comment": "orig=TeacherID",
+          "nullable": true
+        },
+        {
+          "name": "firstname",
+          "type": "STRING",
+          "comment": "orig=FirstName",
+          "nullable": true
+        },
+        {
+          "name": "lastname",
+          "type": "STRING",
+          "comment": "orig=LastName",
+          "nullable": true
+        },
+        {
+          "name": "dateofbirth",
+          "type": "STRING",
+          "comment": "orig=DateOfBirth",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=Address",
+          "nullable": true
+        },
+        {
+          "name": "contactnumber",
+          "type": "BIGINT",
+          "comment": "orig=ContactNumber",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=Email",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "16"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_16::school_marks",
+      "name": "school_marks",
+      "kind": "table",
+      "domain": "FALCON_DB_16",
+      "comment": "CREATE TABLE \"school_marks\" (\n\"MarkID\" INTEGER,\n  \"StudentID\" INTEGER,\n  \"SubjectID\" INTEGER,\n  \"TeacherID\" INTEGER,\n  \"MarkObtained\" INTEGER,\n  \"ExamDate\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "markid",
+          "type": "BIGINT",
+          "comment": "orig=MarkID",
+          "nullable": true
+        },
+        {
+          "name": "studentid",
+          "type": "BIGINT",
+          "comment": "orig=StudentID",
+          "nullable": true
+        },
+        {
+          "name": "subjectid",
+          "type": "BIGINT",
+          "comment": "orig=SubjectID",
+          "nullable": true
+        },
+        {
+          "name": "teacherid",
+          "type": "BIGINT",
+          "comment": "orig=TeacherID",
+          "nullable": true
+        },
+        {
+          "name": "markobtained",
+          "type": "BIGINT",
+          "comment": "orig=MarkObtained",
+          "nullable": true
+        },
+        {
+          "name": "examdate",
+          "type": "STRING",
+          "comment": "orig=ExamDate",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "16"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_16::school_subjects",
+      "name": "school_subjects",
+      "kind": "table",
+      "domain": "FALCON_DB_16",
+      "comment": "CREATE TABLE \"school_subjects\" (\n\"SubjectID\" INTEGER,\n  \"SubjectName\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "subjectid",
+          "type": "BIGINT",
+          "comment": "orig=SubjectID",
+          "nullable": true
+        },
+        {
+          "name": "subjectname",
+          "type": "STRING",
+          "comment": "orig=SubjectName",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "16"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_4::finance_factoring_data",
+      "name": "finance_factoring_data",
+      "kind": "table",
+      "domain": "FALCON_DB_4",
+      "comment": "CREATE TABLE \"finance_factoring_data\" (\n\"countryCode\" INTEGER,\n  \"customerID\" TEXT,\n  \"PaperlessDate\" TEXT,\n  \"invoiceNumber\" INTEGER,\n  \"InvoiceDate\" TEXT,\n  \"DueDate\" TEXT,\n  \"InvoiceAmount\" REAL,\n  \"Disputed\" TEXT,\n  \"SettledDate\" TEXT,\n  \"PaperlessBill\" TEXT,\n  \"DaysToSettle\" INTEGER,\n  \"DaysLate\" INTEGER\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "countrycode",
+          "type": "BIGINT",
+          "comment": "orig=countryCode",
+          "nullable": true
+        },
+        {
+          "name": "customerid",
+          "type": "STRING",
+          "comment": "orig=customerID",
+          "nullable": true
+        },
+        {
+          "name": "paperlessdate",
+          "type": "STRING",
+          "comment": "orig=PaperlessDate",
+          "nullable": true
+        },
+        {
+          "name": "invoicenumber",
+          "type": "BIGINT",
+          "comment": "orig=invoiceNumber",
+          "nullable": true
+        },
+        {
+          "name": "invoicedate",
+          "type": "STRING",
+          "comment": "orig=InvoiceDate",
+          "nullable": true
+        },
+        {
+          "name": "duedate",
+          "type": "STRING",
+          "comment": "orig=DueDate",
+          "nullable": true
+        },
+        {
+          "name": "invoiceamount",
+          "type": "DOUBLE",
+          "comment": "orig=InvoiceAmount",
+          "nullable": true
+        },
+        {
+          "name": "disputed",
+          "type": "STRING",
+          "comment": "orig=Disputed",
+          "nullable": true
+        },
+        {
+          "name": "settleddate",
+          "type": "STRING",
+          "comment": "orig=SettledDate",
+          "nullable": true
+        },
+        {
+          "name": "paperlessbill",
+          "type": "STRING",
+          "comment": "orig=PaperlessBill",
+          "nullable": true
+        },
+        {
+          "name": "daystosettle",
+          "type": "BIGINT",
+          "comment": "orig=DaysToSettle",
+          "nullable": true
+        },
+        {
+          "name": "dayslate",
+          "type": "BIGINT",
+          "comment": "orig=DaysLate",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "4"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_19::alcohol_life_expectancy_verbose",
+      "name": "alcohol_life_expectancy_verbose",
+      "kind": "table",
+      "domain": "FALCON_DB_19",
+      "comment": "",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "index",
+          "type": "BIGINT",
+          "comment": "orig=index",
+          "nullable": true
+        },
+        {
+          "name": "ghocode",
+          "type": "STRING",
+          "comment": "orig=GhoCode",
+          "nullable": true
+        },
+        {
+          "name": "ghodisplay",
+          "type": "STRING",
+          "comment": "orig=GhoDisplay",
+          "nullable": true
+        },
+        {
+          "name": "publishstatecode",
+          "type": "STRING",
+          "comment": "orig=PublishStateCode",
+          "nullable": true
+        },
+        {
+          "name": "publishstatedisplay",
+          "type": "STRING",
+          "comment": "orig=PublishStateDisplay",
+          "nullable": true
+        },
+        {
+          "name": "yearcode",
+          "type": "BIGINT",
+          "comment": "orig=YearCode",
+          "nullable": true
+        },
+        {
+          "name": "yeardisplay",
+          "type": "BIGINT",
+          "comment": "orig=YearDisplay",
+          "nullable": true
+        },
+        {
+          "name": "regioncode",
+          "type": "STRING",
+          "comment": "orig=RegionCode",
+          "nullable": true
+        },
+        {
+          "name": "regiondisplay",
+          "type": "STRING",
+          "comment": "orig=RegionDisplay",
+          "nullable": true
+        },
+        {
+          "name": "worldbankincomegroupgroupcode",
+          "type": "STRING",
+          "comment": "orig=WorldBankIncomeGroupGroupCode",
+          "nullable": true
+        },
+        {
+          "name": "worldbankincomegroupdisplay",
+          "type": "STRING",
+          "comment": "orig=WorldBankIncomeGroupDisplay",
+          "nullable": true
+        },
+        {
+          "name": "countrycode",
+          "type": "STRING",
+          "comment": "orig=CountryCode",
+          "nullable": true
+        },
+        {
+          "name": "countrydisplay",
+          "type": "STRING",
+          "comment": "orig=CountryDisplay",
+          "nullable": true
+        },
+        {
+          "name": "sexcode",
+          "type": "STRING",
+          "comment": "orig=SexCode",
+          "nullable": true
+        },
+        {
+          "name": "sexdisplay",
+          "type": "STRING",
+          "comment": "orig=SexDisplay",
+          "nullable": true
+        },
+        {
+          "name": "displayvalue",
+          "type": "BIGINT",
+          "comment": "orig=DisplayValue",
+          "nullable": true
+        },
+        {
+          "name": "numeric",
+          "type": "DOUBLE",
+          "comment": "orig=Numeric",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "19"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_19::alcohol_drinks",
+      "name": "alcohol_drinks",
+      "kind": "table",
+      "domain": "FALCON_DB_19",
+      "comment": "CREATE TABLE \"alcohol_drinks\" (\n\"index\" INTEGER,\n  \"country\" TEXT,\n  \"beer_servings\" INTEGER,\n  \"spirit_servings\" INTEGER,\n  \"wine_servings\" INTEGER,\n  \"total_litres_of_pure_alcohol\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "index",
+          "type": "BIGINT",
+          "comment": "orig=index",
+          "nullable": true
+        },
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "beer_servings",
+          "type": "BIGINT",
+          "comment": "orig=beer_servings",
+          "nullable": true
+        },
+        {
+          "name": "spirit_servings",
+          "type": "BIGINT",
+          "comment": "orig=spirit_servings",
+          "nullable": true
+        },
+        {
+          "name": "wine_servings",
+          "type": "BIGINT",
+          "comment": "orig=wine_servings",
+          "nullable": true
+        },
+        {
+          "name": "total_litres_of_pure_alcohol",
+          "type": "DOUBLE",
+          "comment": "orig=total_litres_of_pure_alcohol",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "19"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_17::ecommerce_order_items",
+      "name": "ecommerce_order_items",
+      "kind": "table",
+      "domain": "FALCON_DB_17",
+      "comment": "CREATE TABLE \"ecommerce_order_items\" (\n\"order_id\" TEXT,\n  \"product_id\" TEXT,\n  \"seller_id\" TEXT,\n  \"price\" REAL,\n  \"shipping_charges\" REAL\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "STRING",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "STRING",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "seller_id",
+          "type": "STRING",
+          "comment": "orig=seller_id",
+          "nullable": true
+        },
+        {
+          "name": "price",
+          "type": "DOUBLE",
+          "comment": "orig=price",
+          "nullable": true
+        },
+        {
+          "name": "shipping_charges",
+          "type": "DOUBLE",
+          "comment": "orig=shipping_charges",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "17"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_17::ecommerce_payments",
+      "name": "ecommerce_payments",
+      "kind": "table",
+      "domain": "FALCON_DB_17",
+      "comment": "CREATE TABLE \"ecommerce_payments\" (\n\"order_id\" TEXT,\n  \"payment_sequential\" INTEGER,\n  \"payment_type\" TEXT,\n  \"payment_installments\" INTEGER,\n  \"payment_value\" REAL\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "STRING",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "payment_sequential",
+          "type": "BIGINT",
+          "comment": "orig=payment_sequential",
+          "nullable": true
+        },
+        {
+          "name": "payment_type",
+          "type": "STRING",
+          "comment": "orig=payment_type",
+          "nullable": true
+        },
+        {
+          "name": "payment_installments",
+          "type": "BIGINT",
+          "comment": "orig=payment_installments",
+          "nullable": true
+        },
+        {
+          "name": "payment_value",
+          "type": "DOUBLE",
+          "comment": "orig=payment_value",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "17"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_17::ecommerce_products",
+      "name": "ecommerce_products",
+      "kind": "table",
+      "domain": "FALCON_DB_17",
+      "comment": "CREATE TABLE \"ecommerce_products\" (\n\"product_id\" TEXT,\n  \"product_category_name\" TEXT,\n  \"product_weight_g\" REAL,\n  \"product_length_cm\" REAL,\n  \"product_height_cm\" REAL,\n  \"product_width_cm\" REAL\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "STRING",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "product_category_name",
+          "type": "STRING",
+          "comment": "orig=product_category_name",
+          "nullable": true
+        },
+        {
+          "name": "product_weight_g",
+          "type": "DOUBLE",
+          "comment": "orig=product_weight_g",
+          "nullable": true
+        },
+        {
+          "name": "product_length_cm",
+          "type": "DOUBLE",
+          "comment": "orig=product_length_cm",
+          "nullable": true
+        },
+        {
+          "name": "product_height_cm",
+          "type": "DOUBLE",
+          "comment": "orig=product_height_cm",
+          "nullable": true
+        },
+        {
+          "name": "product_width_cm",
+          "type": "DOUBLE",
+          "comment": "orig=product_width_cm",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "17"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_17::ecommerce_orders",
+      "name": "ecommerce_orders",
+      "kind": "table",
+      "domain": "FALCON_DB_17",
+      "comment": "CREATE TABLE \"ecommerce_orders\" (\n\"order_id\" TEXT,\n  \"customer_id\" TEXT,\n  \"order_purchase_timestamp\" TEXT,\n  \"order_approved_at\" TEXT\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "STRING",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_id",
+          "type": "STRING",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "order_purchase_timestamp",
+          "type": "STRING",
+          "comment": "orig=order_purchase_timestamp",
+          "nullable": true
+        },
+        {
+          "name": "order_approved_at",
+          "type": "STRING",
+          "comment": "orig=order_approved_at",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "17"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_17::ecommerce_customers",
+      "name": "ecommerce_customers",
+      "kind": "table",
+      "domain": "FALCON_DB_17",
+      "comment": "CREATE TABLE \"ecommerce_customers\" (\n\"customer_id\" TEXT,\n  \"customer_zip_code_prefix\" INTEGER,\n  \"customer_city\" TEXT,\n  \"customer_state\" TEXT\n)",
+      "primaryKeys": [
+        "customer_id"
+      ],
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "STRING",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_zip_code_prefix",
+          "type": "BIGINT",
+          "comment": "orig=customer_zip_code_prefix",
+          "nullable": true
+        },
+        {
+          "name": "customer_city",
+          "type": "STRING",
+          "comment": "orig=customer_city",
+          "nullable": true
+        },
+        {
+          "name": "customer_state",
+          "type": "STRING",
+          "comment": "orig=customer_state",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "17"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_18::world_economic_tourism",
+      "name": "world_economic_tourism",
+      "kind": "table",
+      "domain": "FALCON_DB_18",
+      "comment": "CREATE TABLE \"world_economic_tourism\" (\n\"country\" TEXT,\n  \"tourists_in_millions\" REAL,\n  \"receipts_in_billions\" REAL,\n  \"receipts_per_tourist\" INTEGER,\n  \"percentage_of_gdp\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "tourists_in_millions",
+          "type": "DOUBLE",
+          "comment": "orig=tourists_in_millions",
+          "nullable": true
+        },
+        {
+          "name": "receipts_in_billions",
+          "type": "DOUBLE",
+          "comment": "orig=receipts_in_billions",
+          "nullable": true
+        },
+        {
+          "name": "receipts_per_tourist",
+          "type": "BIGINT",
+          "comment": "orig=receipts_per_tourist",
+          "nullable": true
+        },
+        {
+          "name": "percentage_of_gdp",
+          "type": "DOUBLE",
+          "comment": "orig=percentage_of_gdp",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "18"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_18::world_economic_cost_of_living",
+      "name": "world_economic_cost_of_living",
+      "kind": "table",
+      "domain": "FALCON_DB_18",
+      "comment": "CREATE TABLE \"world_economic_cost_of_living\" (\n\"country\" TEXT,\n  \"cost_index\" REAL,\n  \"monthly_income\" INTEGER,\n  \"purchasing_power_index\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "cost_index",
+          "type": "DOUBLE",
+          "comment": "orig=cost_index",
+          "nullable": true
+        },
+        {
+          "name": "monthly_income",
+          "type": "BIGINT",
+          "comment": "orig=monthly_income",
+          "nullable": true
+        },
+        {
+          "name": "purchasing_power_index",
+          "type": "DOUBLE",
+          "comment": "orig=purchasing_power_index",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "18"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_18::world_economic_richest_countries",
+      "name": "world_economic_richest_countries",
+      "kind": "table",
+      "domain": "FALCON_DB_18",
+      "comment": "CREATE TABLE \"world_economic_richest_countries\" (\n\"country\" TEXT,\n  \"gdp_per_capita\" INTEGER\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "gdp_per_capita",
+          "type": "BIGINT",
+          "comment": "orig=gdp_per_capita",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "18"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_18::world_economic_unemployment",
+      "name": "world_economic_unemployment",
+      "kind": "table",
+      "domain": "FALCON_DB_18",
+      "comment": "CREATE TABLE \"world_economic_unemployment\" (\n\"country\" TEXT,\n  \"unemployment_rate\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "unemployment_rate",
+          "type": "DOUBLE",
+          "comment": "orig=unemployment_rate",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "18"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_18::world_economic_corruption",
+      "name": "world_economic_corruption",
+      "kind": "table",
+      "domain": "FALCON_DB_18",
+      "comment": "CREATE TABLE \"world_economic_corruption\" (\n\"country\" TEXT,\n  \"annual_income\" INTEGER,\n  \"corruption_index\" INTEGER\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=country",
+          "nullable": true
+        },
+        {
+          "name": "annual_income",
+          "type": "BIGINT",
+          "comment": "orig=annual_income",
+          "nullable": true
+        },
+        {
+          "name": "corruption_index",
+          "type": "BIGINT",
+          "comment": "orig=corruption_index",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "18"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_20::city_ride_drivers_data",
+      "name": "city_ride_drivers_data",
+      "kind": "table",
+      "domain": "FALCON_DB_20",
+      "comment": "CREATE TABLE \"city_ride_drivers_data\" (\n\"Driver_ID\" INTEGER,\n  \"Name\" TEXT,\n  \"Age\" INTEGER,\n  \"City\" TEXT,\n  \"Experience_Years\" INTEGER,\n  \"Average_Rating\" REAL,\n  \"Active_Status\" TEXT\n)",
+      "primaryKeys": [
+        "driver_id"
+      ],
+      "columns": [
+        {
+          "name": "driver_id",
+          "type": "BIGINT",
+          "comment": "orig=Driver_ID",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "comment": "orig=Name",
+          "nullable": true
+        },
+        {
+          "name": "age",
+          "type": "BIGINT",
+          "comment": "orig=Age",
+          "nullable": true
+        },
+        {
+          "name": "city",
+          "type": "STRING",
+          "comment": "orig=City",
+          "nullable": true
+        },
+        {
+          "name": "experience_years",
+          "type": "BIGINT",
+          "comment": "orig=Experience_Years",
+          "nullable": true
+        },
+        {
+          "name": "average_rating",
+          "type": "DOUBLE",
+          "comment": "orig=Average_Rating",
+          "nullable": true
+        },
+        {
+          "name": "active_status",
+          "type": "STRING",
+          "comment": "orig=Active_Status",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "20"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_20::city_ride_rides_data",
+      "name": "city_ride_rides_data",
+      "kind": "table",
+      "domain": "FALCON_DB_20",
+      "comment": "CREATE TABLE \"city_ride_rides_data\" (\n\"Ride_ID\" INTEGER,\n  \"Driver_ID\" INTEGER,\n  \"City\" TEXT,\n  \"Date\" TEXT,\n  \"Distance_km\" REAL,\n  \"Duration_min\" INTEGER,\n  \"Fare\" REAL,\n  \"Rating\" REAL,\n  \"Promo_Code\" TEXT\n)",
+      "primaryKeys": [
+        "ride_id"
+      ],
+      "columns": [
+        {
+          "name": "ride_id",
+          "type": "BIGINT",
+          "comment": "orig=Ride_ID",
+          "nullable": true
+        },
+        {
+          "name": "driver_id",
+          "type": "BIGINT",
+          "comment": "orig=Driver_ID",
+          "nullable": true
+        },
+        {
+          "name": "city",
+          "type": "STRING",
+          "comment": "orig=City",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=Date",
+          "nullable": true
+        },
+        {
+          "name": "distance_km",
+          "type": "DOUBLE",
+          "comment": "orig=Distance_km",
+          "nullable": true
+        },
+        {
+          "name": "duration_min",
+          "type": "BIGINT",
+          "comment": "orig=Duration_min",
+          "nullable": true
+        },
+        {
+          "name": "fare",
+          "type": "DOUBLE",
+          "comment": "orig=Fare",
+          "nullable": true
+        },
+        {
+          "name": "rating",
+          "type": "DOUBLE",
+          "comment": "orig=Rating",
+          "nullable": true
+        },
+        {
+          "name": "promo_code",
+          "type": "STRING",
+          "comment": "orig=Promo_Code",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "20"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_reviews",
+      "name": "online_shop_reviews",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_reviews\" (\n\"review_id\" INTEGER,\n  \"product_id\" INTEGER,\n  \"customer_id\" INTEGER,\n  \"rating\" INTEGER,\n  \"review_text\" TEXT,\n  \"review_date\" TEXT\n)",
+      "primaryKeys": [
+        "review_id"
+      ],
+      "columns": [
+        {
+          "name": "review_id",
+          "type": "BIGINT",
+          "comment": "orig=review_id",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "rating",
+          "type": "BIGINT",
+          "comment": "orig=rating",
+          "nullable": true
+        },
+        {
+          "name": "review_text",
+          "type": "STRING",
+          "comment": "orig=review_text",
+          "nullable": true
+        },
+        {
+          "name": "review_date",
+          "type": "STRING",
+          "comment": "orig=review_date",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_shipments",
+      "name": "online_shop_shipments",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_shipments\" (\n\"shipment_id\" INTEGER,\n  \"order_id\" INTEGER,\n  \"shipment_date\" TEXT,\n  \"carrier\" TEXT,\n  \"tracking_number\" TEXT,\n  \"delivery_date\" TEXT,\n  \"shipment_status\" TEXT\n)",
+      "primaryKeys": [
+        "shipment_id"
+      ],
+      "columns": [
+        {
+          "name": "shipment_id",
+          "type": "BIGINT",
+          "comment": "orig=shipment_id",
+          "nullable": true
+        },
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "shipment_date",
+          "type": "STRING",
+          "comment": "orig=shipment_date",
+          "nullable": true
+        },
+        {
+          "name": "carrier",
+          "type": "STRING",
+          "comment": "orig=carrier",
+          "nullable": true
+        },
+        {
+          "name": "tracking_number",
+          "type": "STRING",
+          "comment": "orig=tracking_number",
+          "nullable": true
+        },
+        {
+          "name": "delivery_date",
+          "type": "STRING",
+          "comment": "orig=delivery_date",
+          "nullable": true
+        },
+        {
+          "name": "shipment_status",
+          "type": "STRING",
+          "comment": "orig=shipment_status",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_order_items",
+      "name": "online_shop_order_items",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_order_items\" (\n\"order_item_id\" INTEGER,\n  \"order_id\" INTEGER,\n  \"product_id\" INTEGER,\n  \"quantity\" INTEGER,\n  \"price_at_purchase\" REAL\n)",
+      "primaryKeys": [
+        "order_item_id"
+      ],
+      "columns": [
+        {
+          "name": "order_item_id",
+          "type": "BIGINT",
+          "comment": "orig=order_item_id",
+          "nullable": true
+        },
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "BIGINT",
+          "comment": "orig=quantity",
+          "nullable": true
+        },
+        {
+          "name": "price_at_purchase",
+          "type": "DOUBLE",
+          "comment": "orig=price_at_purchase",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_customers",
+      "name": "online_shop_customers",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_customers\" (\n\"customer_id\" INTEGER,\n  \"first_name\" TEXT,\n  \"last_name\" TEXT,\n  \"address\" TEXT,\n  \"email\" TEXT,\n  \"phone_number\" TEXT\n)",
+      "primaryKeys": [
+        "customer_id"
+      ],
+      "columns": [
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "first_name",
+          "type": "STRING",
+          "comment": "orig=first_name",
+          "nullable": true
+        },
+        {
+          "name": "last_name",
+          "type": "STRING",
+          "comment": "orig=last_name",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=address",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=email",
+          "nullable": true
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING",
+          "comment": "orig=phone_number",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_orders",
+      "name": "online_shop_orders",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_orders\" (\n\"order_id\" INTEGER,\n  \"order_date\" TEXT,\n  \"customer_id\" INTEGER,\n  \"total_price\" REAL\n)",
+      "primaryKeys": [
+        "order_id"
+      ],
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "order_date",
+          "type": "STRING",
+          "comment": "orig=order_date",
+          "nullable": true
+        },
+        {
+          "name": "customer_id",
+          "type": "BIGINT",
+          "comment": "orig=customer_id",
+          "nullable": true
+        },
+        {
+          "name": "total_price",
+          "type": "DOUBLE",
+          "comment": "orig=total_price",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_suppliers",
+      "name": "online_shop_suppliers",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_suppliers\" (\n\"supplier_id\" INTEGER,\n  \"supplier_name\" TEXT,\n  \"contact_name\" TEXT,\n  \"address\" TEXT,\n  \"phone_number\" TEXT,\n  \"email\" TEXT\n)",
+      "primaryKeys": [
+        "supplier_id"
+      ],
+      "columns": [
+        {
+          "name": "supplier_id",
+          "type": "BIGINT",
+          "comment": "orig=supplier_id",
+          "nullable": true
+        },
+        {
+          "name": "supplier_name",
+          "type": "STRING",
+          "comment": "orig=supplier_name",
+          "nullable": true
+        },
+        {
+          "name": "contact_name",
+          "type": "STRING",
+          "comment": "orig=contact_name",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=address",
+          "nullable": true
+        },
+        {
+          "name": "phone_number",
+          "type": "STRING",
+          "comment": "orig=phone_number",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=email",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_products",
+      "name": "online_shop_products",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_products\" (\n\"product_id\" INTEGER,\n  \"product_name\" TEXT,\n  \"category\" TEXT,\n  \"price\" REAL,\n  \"supplier_id\" INTEGER\n)",
+      "primaryKeys": [
+        "product_id"
+      ],
+      "columns": [
+        {
+          "name": "product_id",
+          "type": "BIGINT",
+          "comment": "orig=product_id",
+          "nullable": true
+        },
+        {
+          "name": "product_name",
+          "type": "STRING",
+          "comment": "orig=product_name",
+          "nullable": true
+        },
+        {
+          "name": "category",
+          "type": "STRING",
+          "comment": "orig=category",
+          "nullable": true
+        },
+        {
+          "name": "price",
+          "type": "DOUBLE",
+          "comment": "orig=price",
+          "nullable": true
+        },
+        {
+          "name": "supplier_id",
+          "type": "BIGINT",
+          "comment": "orig=supplier_id",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_28::online_shop_payment",
+      "name": "online_shop_payment",
+      "kind": "table",
+      "domain": "FALCON_DB_28",
+      "comment": "CREATE TABLE \"online_shop_payment\" (\n\"payment_id\" INTEGER,\n  \"order_id\" INTEGER,\n  \"payment_method\" TEXT,\n  \"amount\" REAL,\n  \"transaction_status\" TEXT\n)",
+      "primaryKeys": [
+        "payment_id"
+      ],
+      "columns": [
+        {
+          "name": "payment_id",
+          "type": "BIGINT",
+          "comment": "orig=payment_id",
+          "nullable": true
+        },
+        {
+          "name": "order_id",
+          "type": "BIGINT",
+          "comment": "orig=order_id",
+          "nullable": true
+        },
+        {
+          "name": "payment_method",
+          "type": "STRING",
+          "comment": "orig=payment_method",
+          "nullable": true
+        },
+        {
+          "name": "amount",
+          "type": "DOUBLE",
+          "comment": "orig=amount",
+          "nullable": true
+        },
+        {
+          "name": "transaction_status",
+          "type": "STRING",
+          "comment": "orig=transaction_status",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "28"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_9::internet_users_data",
+      "name": "internet_users_data",
+      "kind": "table",
+      "domain": "FALCON_DB_9",
+      "comment": "CREATE TABLE \"internet_users_data\" (\n\"id\" INTEGER,\n  \"entity\" TEXT,\n  \"code\" TEXT,\n  \"year\" INTEGER,\n  \"cellular_subscription\" REAL,\n  \"internet_users\" REAL,\n  \"no_of_internet_users\" INTEGER,\n  \"broadband_subscription\" REAL\n)",
+      "primaryKeys": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "BIGINT",
+          "comment": "orig=id",
+          "nullable": true
+        },
+        {
+          "name": "entity",
+          "type": "STRING",
+          "comment": "orig=entity",
+          "nullable": true
+        },
+        {
+          "name": "code",
+          "type": "STRING",
+          "comment": "orig=code",
+          "nullable": true
+        },
+        {
+          "name": "year",
+          "type": "BIGINT",
+          "comment": "orig=year",
+          "nullable": true
+        },
+        {
+          "name": "cellular_subscription",
+          "type": "DOUBLE",
+          "comment": "orig=cellular_subscription",
+          "nullable": true
+        },
+        {
+          "name": "internet_users",
+          "type": "DOUBLE",
+          "comment": "orig=internet_users",
+          "nullable": true
+        },
+        {
+          "name": "no_of_internet_users",
+          "type": "BIGINT",
+          "comment": "orig=no_of_internet_users",
+          "nullable": true
+        },
+        {
+          "name": "broadband_subscription",
+          "type": "DOUBLE",
+          "comment": "orig=broadband_subscription",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "9"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_15::credit_card_customer_base",
+      "name": "credit_card_customer_base",
+      "kind": "table",
+      "domain": "FALCON_DB_15",
+      "comment": "CREATE TABLE \"credit_card_customer_base\" (\n\"Cust_ID\" TEXT,\n  \"Age\" INTEGER,\n  \"Customer_Segment\" TEXT,\n  \"Customer_Vintage_Group\" TEXT\n)",
+      "primaryKeys": [
+        "cust_id"
+      ],
+      "columns": [
+        {
+          "name": "cust_id",
+          "type": "STRING",
+          "comment": "orig=Cust_ID",
+          "nullable": true
+        },
+        {
+          "name": "age",
+          "type": "BIGINT",
+          "comment": "orig=Age",
+          "nullable": true
+        },
+        {
+          "name": "customer_segment",
+          "type": "STRING",
+          "comment": "orig=Customer_Segment",
+          "nullable": true
+        },
+        {
+          "name": "customer_vintage_group",
+          "type": "STRING",
+          "comment": "orig=Customer_Vintage_Group",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "15"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_15::credit_card_transaction_base",
+      "name": "credit_card_transaction_base",
+      "kind": "table",
+      "domain": "FALCON_DB_15",
+      "comment": "CREATE TABLE \"credit_card_transaction_base\" (\n\"Transaction_ID\" TEXT,\n  \"Transaction_Date\" TEXT,\n  \"Credit_Card_ID\" TEXT,\n  \"Transaction_Value\" INTEGER,\n  \"Transaction_Segment\" TEXT\n)",
+      "primaryKeys": [
+        "transaction_id"
+      ],
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "STRING",
+          "comment": "orig=Transaction_ID",
+          "nullable": true
+        },
+        {
+          "name": "transaction_date",
+          "type": "STRING",
+          "comment": "orig=Transaction_Date",
+          "nullable": true
+        },
+        {
+          "name": "credit_card_id",
+          "type": "STRING",
+          "comment": "orig=Credit_Card_ID",
+          "nullable": true
+        },
+        {
+          "name": "transaction_value",
+          "type": "BIGINT",
+          "comment": "orig=Transaction_Value",
+          "nullable": true
+        },
+        {
+          "name": "transaction_segment",
+          "type": "STRING",
+          "comment": "orig=Transaction_Segment",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "15"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_15::credit_card_fraud_base",
+      "name": "credit_card_fraud_base",
+      "kind": "table",
+      "domain": "FALCON_DB_15",
+      "comment": "CREATE TABLE \"credit_card_fraud_base\" (\n\"Transaction_ID\" TEXT,\n  \"Fraud_Flag\" INTEGER\n)",
+      "primaryKeys": [
+        "transaction_id"
+      ],
+      "columns": [
+        {
+          "name": "transaction_id",
+          "type": "STRING",
+          "comment": "orig=Transaction_ID",
+          "nullable": true
+        },
+        {
+          "name": "fraud_flag",
+          "type": "BIGINT",
+          "comment": "orig=Fraud_Flag",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "15"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_15::credit_card_card_base",
+      "name": "credit_card_card_base",
+      "kind": "table",
+      "domain": "FALCON_DB_15",
+      "comment": "CREATE TABLE \"credit_card_card_base\" (\n\"Card_Number\" TEXT,\n  \"Card_Family\" TEXT,\n  \"Credit_Limit\" INTEGER,\n  \"Cust_ID\" TEXT\n)",
+      "primaryKeys": [
+        "cust_id"
+      ],
+      "columns": [
+        {
+          "name": "card_number",
+          "type": "STRING",
+          "comment": "orig=Card_Number",
+          "nullable": true
+        },
+        {
+          "name": "card_family",
+          "type": "STRING",
+          "comment": "orig=Card_Family",
+          "nullable": true
+        },
+        {
+          "name": "credit_limit",
+          "type": "BIGINT",
+          "comment": "orig=Credit_Limit",
+          "nullable": true
+        },
+        {
+          "name": "cust_id",
+          "type": "STRING",
+          "comment": "orig=Cust_ID",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "15"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_5::unicorns_data",
+      "name": "unicorns_data",
+      "kind": "table",
+      "domain": "FALCON_DB_5",
+      "comment": "CREATE TABLE \"unicorns_data\" (\n\"Company\" TEXT,\n  \"Valuation\" TEXT,\n  \"Date Joined\" TEXT,\n  \"Country\" TEXT,\n  \"City\" TEXT,\n  \"Industry\" TEXT,\n  \"Investors\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "company",
+          "type": "STRING",
+          "comment": "orig=Company",
+          "nullable": true
+        },
+        {
+          "name": "valuation",
+          "type": "STRING",
+          "comment": "orig=Valuation",
+          "nullable": true
+        },
+        {
+          "name": "date_joined",
+          "type": "STRING",
+          "comment": "orig=Date Joined",
+          "nullable": true
+        },
+        {
+          "name": "country",
+          "type": "STRING",
+          "comment": "orig=Country",
+          "nullable": true
+        },
+        {
+          "name": "city",
+          "type": "STRING",
+          "comment": "orig=City",
+          "nullable": true
+        },
+        {
+          "name": "industry",
+          "type": "STRING",
+          "comment": "orig=Industry",
+          "nullable": true
+        },
+        {
+          "name": "investors",
+          "type": "STRING",
+          "comment": "orig=Investors",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "5"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_8::googleplaystore",
+      "name": "googleplaystore",
+      "kind": "table",
+      "domain": "FALCON_DB_8",
+      "comment": "CREATE TABLE \"googleplaystore\" (\n\"app\" TEXT,\n  \"category\" TEXT,\n  \"rating\" REAL,\n  \"reviews\" TEXT,\n  \"size\" TEXT,\n  \"installs\" TEXT,\n  \"type\" TEXT,\n  \"price\" TEXT,\n  \"content_rating\" TEXT,\n  \"genres\" TEXT,\n  \"last_updated\" TEXT,\n  \"current_ver\" TEXT,\n  \"android_ver\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "app",
+          "type": "STRING",
+          "comment": "orig=app",
+          "nullable": true
+        },
+        {
+          "name": "category",
+          "type": "STRING",
+          "comment": "orig=category",
+          "nullable": true
+        },
+        {
+          "name": "rating",
+          "type": "DOUBLE",
+          "comment": "orig=rating",
+          "nullable": true
+        },
+        {
+          "name": "reviews",
+          "type": "STRING",
+          "comment": "orig=reviews",
+          "nullable": true
+        },
+        {
+          "name": "size",
+          "type": "STRING",
+          "comment": "orig=size",
+          "nullable": true
+        },
+        {
+          "name": "installs",
+          "type": "STRING",
+          "comment": "orig=installs",
+          "nullable": true
+        },
+        {
+          "name": "type",
+          "type": "STRING",
+          "comment": "orig=type",
+          "nullable": true
+        },
+        {
+          "name": "price",
+          "type": "STRING",
+          "comment": "orig=price",
+          "nullable": true
+        },
+        {
+          "name": "content_rating",
+          "type": "STRING",
+          "comment": "orig=content_rating",
+          "nullable": true
+        },
+        {
+          "name": "genres",
+          "type": "STRING",
+          "comment": "orig=genres",
+          "nullable": true
+        },
+        {
+          "name": "last_updated",
+          "type": "STRING",
+          "comment": "orig=last_updated",
+          "nullable": true
+        },
+        {
+          "name": "current_ver",
+          "type": "STRING",
+          "comment": "orig=current_ver",
+          "nullable": true
+        },
+        {
+          "name": "android_ver",
+          "type": "STRING",
+          "comment": "orig=android_ver",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "8"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_appearances",
+      "name": "football_appearances",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_appearances\" (\n\"gameID\" INTEGER,\n  \"playerID\" INTEGER,\n  \"goals\" INTEGER,\n  \"ownGoals\" INTEGER,\n  \"shots\" INTEGER,\n  \"xGoals\" REAL,\n  \"xGoalsChain\" REAL,\n  \"xGoalsBuildup\" REAL,\n  \"assists\" INTEGER,\n  \"keyPasses\" INTEGER,\n  \"xAssists\" REAL,\n  \"position\" TEXT,\n  \"positionOrder\" INTEGER,\n  \"yellowCard\" INTEGER,\n  \"redCard\" INTEGER,\n  \"time\" INTEGER,\n  \"substituteIn\" INTEGER,\n  \"substituteOut\" INTEGER,\n  \"leagueID\" INTEGER\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "gameid",
+          "type": "BIGINT",
+          "comment": "orig=gameID",
+          "nullable": true
+        },
+        {
+          "name": "playerid",
+          "type": "BIGINT",
+          "comment": "orig=playerID",
+          "nullable": true
+        },
+        {
+          "name": "goals",
+          "type": "BIGINT",
+          "comment": "orig=goals",
+          "nullable": true
+        },
+        {
+          "name": "owngoals",
+          "type": "BIGINT",
+          "comment": "orig=ownGoals",
+          "nullable": true
+        },
+        {
+          "name": "shots",
+          "type": "BIGINT",
+          "comment": "orig=shots",
+          "nullable": true
+        },
+        {
+          "name": "xgoals",
+          "type": "DOUBLE",
+          "comment": "orig=xGoals",
+          "nullable": true
+        },
+        {
+          "name": "xgoalschain",
+          "type": "DOUBLE",
+          "comment": "orig=xGoalsChain",
+          "nullable": true
+        },
+        {
+          "name": "xgoalsbuildup",
+          "type": "DOUBLE",
+          "comment": "orig=xGoalsBuildup",
+          "nullable": true
+        },
+        {
+          "name": "assists",
+          "type": "BIGINT",
+          "comment": "orig=assists",
+          "nullable": true
+        },
+        {
+          "name": "keypasses",
+          "type": "BIGINT",
+          "comment": "orig=keyPasses",
+          "nullable": true
+        },
+        {
+          "name": "xassists",
+          "type": "DOUBLE",
+          "comment": "orig=xAssists",
+          "nullable": true
+        },
+        {
+          "name": "position",
+          "type": "STRING",
+          "comment": "orig=position",
+          "nullable": true
+        },
+        {
+          "name": "positionorder",
+          "type": "BIGINT",
+          "comment": "orig=positionOrder",
+          "nullable": true
+        },
+        {
+          "name": "yellowcard",
+          "type": "BIGINT",
+          "comment": "orig=yellowCard",
+          "nullable": true
+        },
+        {
+          "name": "redcard",
+          "type": "BIGINT",
+          "comment": "orig=redCard",
+          "nullable": true
+        },
+        {
+          "name": "time",
+          "type": "BIGINT",
+          "comment": "orig=time",
+          "nullable": true
+        },
+        {
+          "name": "substitutein",
+          "type": "BIGINT",
+          "comment": "orig=substituteIn",
+          "nullable": true
+        },
+        {
+          "name": "substituteout",
+          "type": "BIGINT",
+          "comment": "orig=substituteOut",
+          "nullable": true
+        },
+        {
+          "name": "leagueid",
+          "type": "BIGINT",
+          "comment": "orig=leagueID",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_teams",
+      "name": "football_teams",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_teams\" (\n\"teamID\" INTEGER,\n  \"name\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "teamid",
+          "type": "BIGINT",
+          "comment": "orig=teamID",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "comment": "orig=name",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_games",
+      "name": "football_games",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_games\" (\n\"gameID\" INTEGER,\n  \"leagueID\" INTEGER,\n  \"season\" INTEGER,\n  \"date\" TEXT,\n  \"homeTeamID\" INTEGER,\n  \"awayTeamID\" INTEGER,\n  \"homeGoals\" INTEGER,\n  \"awayGoals\" INTEGER,\n  \"homeProbability\" REAL,\n  \"drawProbability\" REAL,\n  \"awayProbability\" REAL,\n  \"homeGoalsHalfTime\" INTEGER,\n  \"awayGoalsHalfTime\" INTEGER,\n  \"B365H\" REAL,\n  \"B365D\" REAL,\n  \"B365A\" REAL,\n  \"BWH\" REAL,\n  \"BWD\" REAL,\n  \"BWA\" REAL,\n  \"IWH\" REAL,\n  \"IWD\" REAL,\n  \"IWA\" REAL,\n  \"PSH\" REAL,\n  \"PSD\" REAL,\n  \"PSA\" REAL,\n  \"WHH\" REAL,\n  \"WHD\" REAL,\n  \"WHA\" REAL,\n  \"VCH\" REAL,\n  \"VCD\" REAL,\n  \"VCA\" REAL,\n  \"PSCH\" REAL,\n  \"PSCD\" REAL,\n  \"PSCA\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "gameid",
+          "type": "BIGINT",
+          "comment": "orig=gameID",
+          "nullable": true
+        },
+        {
+          "name": "leagueid",
+          "type": "BIGINT",
+          "comment": "orig=leagueID",
+          "nullable": true
+        },
+        {
+          "name": "season",
+          "type": "BIGINT",
+          "comment": "orig=season",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=date",
+          "nullable": true
+        },
+        {
+          "name": "hometeamid",
+          "type": "BIGINT",
+          "comment": "orig=homeTeamID",
+          "nullable": true
+        },
+        {
+          "name": "awayteamid",
+          "type": "BIGINT",
+          "comment": "orig=awayTeamID",
+          "nullable": true
+        },
+        {
+          "name": "homegoals",
+          "type": "BIGINT",
+          "comment": "orig=homeGoals",
+          "nullable": true
+        },
+        {
+          "name": "awaygoals",
+          "type": "BIGINT",
+          "comment": "orig=awayGoals",
+          "nullable": true
+        },
+        {
+          "name": "homeprobability",
+          "type": "DOUBLE",
+          "comment": "orig=homeProbability",
+          "nullable": true
+        },
+        {
+          "name": "drawprobability",
+          "type": "DOUBLE",
+          "comment": "orig=drawProbability",
+          "nullable": true
+        },
+        {
+          "name": "awayprobability",
+          "type": "DOUBLE",
+          "comment": "orig=awayProbability",
+          "nullable": true
+        },
+        {
+          "name": "homegoalshalftime",
+          "type": "BIGINT",
+          "comment": "orig=homeGoalsHalfTime",
+          "nullable": true
+        },
+        {
+          "name": "awaygoalshalftime",
+          "type": "BIGINT",
+          "comment": "orig=awayGoalsHalfTime",
+          "nullable": true
+        },
+        {
+          "name": "b365h",
+          "type": "DOUBLE",
+          "comment": "orig=B365H",
+          "nullable": true
+        },
+        {
+          "name": "b365d",
+          "type": "DOUBLE",
+          "comment": "orig=B365D",
+          "nullable": true
+        },
+        {
+          "name": "b365a",
+          "type": "DOUBLE",
+          "comment": "orig=B365A",
+          "nullable": true
+        },
+        {
+          "name": "bwh",
+          "type": "DOUBLE",
+          "comment": "orig=BWH",
+          "nullable": true
+        },
+        {
+          "name": "bwd",
+          "type": "DOUBLE",
+          "comment": "orig=BWD",
+          "nullable": true
+        },
+        {
+          "name": "bwa",
+          "type": "DOUBLE",
+          "comment": "orig=BWA",
+          "nullable": true
+        },
+        {
+          "name": "iwh",
+          "type": "DOUBLE",
+          "comment": "orig=IWH",
+          "nullable": true
+        },
+        {
+          "name": "iwd",
+          "type": "DOUBLE",
+          "comment": "orig=IWD",
+          "nullable": true
+        },
+        {
+          "name": "iwa",
+          "type": "DOUBLE",
+          "comment": "orig=IWA",
+          "nullable": true
+        },
+        {
+          "name": "psh",
+          "type": "DOUBLE",
+          "comment": "orig=PSH",
+          "nullable": true
+        },
+        {
+          "name": "psd",
+          "type": "DOUBLE",
+          "comment": "orig=PSD",
+          "nullable": true
+        },
+        {
+          "name": "psa",
+          "type": "DOUBLE",
+          "comment": "orig=PSA",
+          "nullable": true
+        },
+        {
+          "name": "whh",
+          "type": "DOUBLE",
+          "comment": "orig=WHH",
+          "nullable": true
+        },
+        {
+          "name": "whd",
+          "type": "DOUBLE",
+          "comment": "orig=WHD",
+          "nullable": true
+        },
+        {
+          "name": "wha",
+          "type": "DOUBLE",
+          "comment": "orig=WHA",
+          "nullable": true
+        },
+        {
+          "name": "vch",
+          "type": "DOUBLE",
+          "comment": "orig=VCH",
+          "nullable": true
+        },
+        {
+          "name": "vcd",
+          "type": "DOUBLE",
+          "comment": "orig=VCD",
+          "nullable": true
+        },
+        {
+          "name": "vca",
+          "type": "DOUBLE",
+          "comment": "orig=VCA",
+          "nullable": true
+        },
+        {
+          "name": "psch",
+          "type": "DOUBLE",
+          "comment": "orig=PSCH",
+          "nullable": true
+        },
+        {
+          "name": "pscd",
+          "type": "DOUBLE",
+          "comment": "orig=PSCD",
+          "nullable": true
+        },
+        {
+          "name": "psca",
+          "type": "DOUBLE",
+          "comment": "orig=PSCA",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_teamstats",
+      "name": "football_teamstats",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_teamstats\" (\n\"gameID\" INTEGER,\n  \"teamID\" INTEGER,\n  \"season\" INTEGER,\n  \"date\" TEXT,\n  \"location\" TEXT,\n  \"goals\" INTEGER,\n  \"xGoals\" REAL,\n  \"shots\" INTEGER,\n  \"shotsOnTarget\" INTEGER,\n  \"deep\" INTEGER,\n  \"ppda\" REAL,\n  \"fouls\" INTEGER,\n  \"corners\" INTEGER,\n  \"yellowCards\" REAL,\n  \"redCards\" INTEGER,\n  \"result\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "gameid",
+          "type": "BIGINT",
+          "comment": "orig=gameID",
+          "nullable": true
+        },
+        {
+          "name": "teamid",
+          "type": "BIGINT",
+          "comment": "orig=teamID",
+          "nullable": true
+        },
+        {
+          "name": "season",
+          "type": "BIGINT",
+          "comment": "orig=season",
+          "nullable": true
+        },
+        {
+          "name": "date",
+          "type": "STRING",
+          "comment": "orig=date",
+          "nullable": true
+        },
+        {
+          "name": "location",
+          "type": "STRING",
+          "comment": "orig=location",
+          "nullable": true
+        },
+        {
+          "name": "goals",
+          "type": "BIGINT",
+          "comment": "orig=goals",
+          "nullable": true
+        },
+        {
+          "name": "xgoals",
+          "type": "DOUBLE",
+          "comment": "orig=xGoals",
+          "nullable": true
+        },
+        {
+          "name": "shots",
+          "type": "BIGINT",
+          "comment": "orig=shots",
+          "nullable": true
+        },
+        {
+          "name": "shotsontarget",
+          "type": "BIGINT",
+          "comment": "orig=shotsOnTarget",
+          "nullable": true
+        },
+        {
+          "name": "deep",
+          "type": "BIGINT",
+          "comment": "orig=deep",
+          "nullable": true
+        },
+        {
+          "name": "ppda",
+          "type": "DOUBLE",
+          "comment": "orig=ppda",
+          "nullable": true
+        },
+        {
+          "name": "fouls",
+          "type": "BIGINT",
+          "comment": "orig=fouls",
+          "nullable": true
+        },
+        {
+          "name": "corners",
+          "type": "BIGINT",
+          "comment": "orig=corners",
+          "nullable": true
+        },
+        {
+          "name": "yellowcards",
+          "type": "BIGINT",
+          "comment": "orig=yellowCards",
+          "nullable": true
+        },
+        {
+          "name": "redcards",
+          "type": "BIGINT",
+          "comment": "orig=redCards",
+          "nullable": true
+        },
+        {
+          "name": "result",
+          "type": "STRING",
+          "comment": "orig=result",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_shots",
+      "name": "football_shots",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_shots\" (\n\"gameID\" INTEGER,\n  \"shooterID\" INTEGER,\n  \"assisterID\" REAL,\n  \"minute\" INTEGER,\n  \"situation\" TEXT,\n  \"lastAction\" TEXT,\n  \"shotType\" TEXT,\n  \"shotResult\" TEXT,\n  \"xGoal\" REAL,\n  \"positionX\" REAL,\n  \"positionY\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "gameid",
+          "type": "BIGINT",
+          "comment": "orig=gameID",
+          "nullable": true
+        },
+        {
+          "name": "shooterid",
+          "type": "BIGINT",
+          "comment": "orig=shooterID",
+          "nullable": true
+        },
+        {
+          "name": "assisterid",
+          "type": "DOUBLE",
+          "comment": "orig=assisterID",
+          "nullable": true
+        },
+        {
+          "name": "minute",
+          "type": "BIGINT",
+          "comment": "orig=minute",
+          "nullable": true
+        },
+        {
+          "name": "situation",
+          "type": "STRING",
+          "comment": "orig=situation",
+          "nullable": true
+        },
+        {
+          "name": "lastaction",
+          "type": "STRING",
+          "comment": "orig=lastAction",
+          "nullable": true
+        },
+        {
+          "name": "shottype",
+          "type": "STRING",
+          "comment": "orig=shotType",
+          "nullable": true
+        },
+        {
+          "name": "shotresult",
+          "type": "STRING",
+          "comment": "orig=shotResult",
+          "nullable": true
+        },
+        {
+          "name": "xgoal",
+          "type": "DOUBLE",
+          "comment": "orig=xGoal",
+          "nullable": true
+        },
+        {
+          "name": "positionx",
+          "type": "DOUBLE",
+          "comment": "orig=positionX",
+          "nullable": true
+        },
+        {
+          "name": "positiony",
+          "type": "DOUBLE",
+          "comment": "orig=positionY",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_leagues",
+      "name": "football_leagues",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_leagues\" (\n\"leagueID\" INTEGER,\n  \"name\" TEXT,\n  \"understatNotation\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "leagueid",
+          "type": "BIGINT",
+          "comment": "orig=leagueID",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "comment": "orig=name",
+          "nullable": true
+        },
+        {
+          "name": "understatnotation",
+          "type": "STRING",
+          "comment": "orig=understatNotation",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_26::football_players",
+      "name": "football_players",
+      "kind": "table",
+      "domain": "FALCON_DB_26",
+      "comment": "CREATE TABLE \"football_players\" (\n\"playerID\" INTEGER,\n  \"name\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "playerid",
+          "type": "BIGINT",
+          "comment": "orig=playerID",
+          "nullable": true
+        },
+        {
+          "name": "name",
+          "type": "STRING",
+          "comment": "orig=name",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "26"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_21::e_customers",
+      "name": "e_customers",
+      "kind": "table",
+      "domain": "FALCON_DB_21",
+      "comment": "CREATE TABLE \"e_customers\" (\n\"CustomerID\" INTEGER,\n  \"FirstName\" TEXT,\n  \"LastName\" TEXT,\n  \"Email\" TEXT,\n  \"Phone\" TEXT,\n  \"Address\" TEXT,\n  \"City\" TEXT,\n  \"ZipCode\" INTEGER,\n  \"SignupDate\" TEXT\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "customerid",
+          "type": "BIGINT",
+          "comment": "orig=CustomerID",
+          "nullable": true
+        },
+        {
+          "name": "firstname",
+          "type": "STRING",
+          "comment": "orig=FirstName",
+          "nullable": true
+        },
+        {
+          "name": "lastname",
+          "type": "STRING",
+          "comment": "orig=LastName",
+          "nullable": true
+        },
+        {
+          "name": "email",
+          "type": "STRING",
+          "comment": "orig=Email",
+          "nullable": true
+        },
+        {
+          "name": "phone",
+          "type": "STRING",
+          "comment": "orig=Phone",
+          "nullable": true
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "comment": "orig=Address",
+          "nullable": true
+        },
+        {
+          "name": "city",
+          "type": "STRING",
+          "comment": "orig=City",
+          "nullable": true
+        },
+        {
+          "name": "zipcode",
+          "type": "BIGINT",
+          "comment": "orig=ZipCode",
+          "nullable": true
+        },
+        {
+          "name": "signupdate",
+          "type": "STRING",
+          "comment": "orig=SignupDate",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "21"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_21::e_products",
+      "name": "e_products",
+      "kind": "table",
+      "domain": "FALCON_DB_21",
+      "comment": "CREATE TABLE \"e_products\" (\n\"ProductID\" INTEGER,\n  \"ProductName\" TEXT,\n  \"Category\" TEXT,\n  \"Price\" REAL,\n  \"StockQuantity\" INTEGER\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "productid",
+          "type": "BIGINT",
+          "comment": "orig=ProductID",
+          "nullable": true
+        },
+        {
+          "name": "productname",
+          "type": "STRING",
+          "comment": "orig=ProductName",
+          "nullable": true
+        },
+        {
+          "name": "category",
+          "type": "STRING",
+          "comment": "orig=Category",
+          "nullable": true
+        },
+        {
+          "name": "price",
+          "type": "DOUBLE",
+          "comment": "orig=Price",
+          "nullable": true
+        },
+        {
+          "name": "stockquantity",
+          "type": "BIGINT",
+          "comment": "orig=StockQuantity",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "21"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_21::e_orders",
+      "name": "e_orders",
+      "kind": "table",
+      "domain": "FALCON_DB_21",
+      "comment": "CREATE TABLE \"e_orders\" (\n\"OrderID\" INTEGER,\n  \"CustomerID\" INTEGER,\n  \"ProductID\" INTEGER,\n  \"OrderDate\" TEXT,\n  \"Quantity\" INTEGER,\n  \"OrderStatus\" TEXT,\n  \"TotalAmount\" REAL\n)",
+      "primaryKeys": [],
+      "columns": [
+        {
+          "name": "orderid",
+          "type": "BIGINT",
+          "comment": "orig=OrderID",
+          "nullable": true
+        },
+        {
+          "name": "customerid",
+          "type": "BIGINT",
+          "comment": "orig=CustomerID",
+          "nullable": true
+        },
+        {
+          "name": "productid",
+          "type": "BIGINT",
+          "comment": "orig=ProductID",
+          "nullable": true
+        },
+        {
+          "name": "orderdate",
+          "type": "STRING",
+          "comment": "orig=OrderDate",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "BIGINT",
+          "comment": "orig=Quantity",
+          "nullable": true
+        },
+        {
+          "name": "orderstatus",
+          "type": "STRING",
+          "comment": "orig=OrderStatus",
+          "nullable": true
+        },
+        {
+          "name": "totalamount",
+          "type": "DOUBLE",
+          "comment": "orig=TotalAmount",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": "21"
+      }
+    },
+    {
+      "assetId": "FALCON_DB_::internet_users_data",
+      "name": "internet_users_data",
+      "kind": "table",
+      "domain": "FALCON_DB_",
+      "comment": "CREATE TABLE \"internet_users_data\" (\n\"id\" INTEGER,\n  \"entity\" TEXT,\n  \"code\" TEXT,\n  \"year\" INTEGER,\n  \"cellular_subscription\" REAL,\n  \"internet_users\" REAL,\n  \"no_of_internet_users\" INTEGER,\n  \"broadband_subscription\" REAL\n)",
+      "primaryKeys": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "BIGINT",
+          "comment": "orig=id",
+          "nullable": true
+        },
+        {
+          "name": "entity",
+          "type": "STRING",
+          "comment": "orig=entity",
+          "nullable": true
+        },
+        {
+          "name": "code",
+          "type": "STRING",
+          "comment": "orig=code",
+          "nullable": true
+        },
+        {
+          "name": "year",
+          "type": "BIGINT",
+          "comment": "orig=year",
+          "nullable": true
+        },
+        {
+          "name": "cellular_subscription",
+          "type": "DOUBLE",
+          "comment": "orig=cellular_subscription",
+          "nullable": true
+        },
+        {
+          "name": "internet_users",
+          "type": "DOUBLE",
+          "comment": "orig=internet_users",
+          "nullable": true
+        },
+        {
+          "name": "no_of_internet_users",
+          "type": "BIGINT",
+          "comment": "orig=no_of_internet_users",
+          "nullable": true
+        },
+        {
+          "name": "broadband_subscription",
+          "type": "DOUBLE",
+          "comment": "orig=broadband_subscription",
+          "nullable": true
+        }
+      ],
+      "stats": {
+        "source": "falcon.tables.json",
+        "db_id": ""
+      }
+    }
+  ],
+  "lineage": [
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_customer_feedback",
+      "toAssetId": "FALCON_DB_24::blinkit_order_items",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_customer_feedback",
+      "toAssetId": "FALCON_DB_24::blinkit_orders",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_customer_feedback",
+      "toAssetId": "FALCON_DB_24::blinkit_delivery_performance",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_customer_feedback",
+      "toAssetId": "FALCON_DB_24::blinkit_customers",
+      "fromKey": "customer_id",
+      "toKey": "customer_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_order_items",
+      "toAssetId": "FALCON_DB_24::blinkit_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_order_items",
+      "toAssetId": "FALCON_DB_24::blinkit_inventory",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_order_items",
+      "toAssetId": "FALCON_DB_24::blinkit_inventorynew",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_24::blinkit_orders",
+      "toAssetId": "FALCON_DB_24::blinkit_customers",
+      "fromKey": "customer_id",
+      "toKey": "customer_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_14::toy_sales",
+      "toAssetId": "FALCON_DB_14::toy_stores",
+      "fromKey": "store_id",
+      "toKey": "store_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_14::toy_sales",
+      "toAssetId": "FALCON_DB_14::toy_inventory",
+      "fromKey": "store_id",
+      "toKey": "store_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_14::toy_sales",
+      "toAssetId": "FALCON_DB_14::toy_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_14::toy_inventory",
+      "toAssetId": "FALCON_DB_14::toy_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_17::ecommerce_order_items",
+      "toAssetId": "FALCON_DB_17::ecommerce_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_17::ecommerce_orders",
+      "toAssetId": "FALCON_DB_17::ecommerce_customers",
+      "fromKey": "customer_id",
+      "toKey": "customer_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_20::city_ride_rides_data",
+      "toAssetId": "FALCON_DB_20::city_ride_drivers_data",
+      "fromKey": "driver_id",
+      "toKey": "driver_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_reviews",
+      "toAssetId": "FALCON_DB_28::online_shop_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_reviews",
+      "toAssetId": "FALCON_DB_28::online_shop_customers",
+      "fromKey": "customer_id",
+      "toKey": "customer_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_shipments",
+      "toAssetId": "FALCON_DB_28::online_shop_orders",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_order_items",
+      "toAssetId": "FALCON_DB_28::online_shop_orders",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_order_items",
+      "toAssetId": "FALCON_DB_28::online_shop_products",
+      "fromKey": "product_id",
+      "toKey": "product_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_orders",
+      "toAssetId": "FALCON_DB_28::online_shop_customers",
+      "fromKey": "customer_id",
+      "toKey": "customer_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_products",
+      "toAssetId": "FALCON_DB_28::online_shop_suppliers",
+      "fromKey": "supplier_id",
+      "toKey": "supplier_id",
+      "comment": "inferred_by_shared_id_name"
+    },
+    {
+      "edgeType": "fk",
+      "fromAssetId": "FALCON_DB_28::online_shop_payment",
+      "toAssetId": "FALCON_DB_28::online_shop_orders",
+      "fromKey": "order_id",
+      "toKey": "order_id",
+      "comment": "inferred_by_shared_id_name"
+    }
+  ],
+  "meta": {
+    "source_file": "/Users/yuliang/github/Falcon/dev_data/tables.json",
+    "asset_count": 59,
+    "lineage_count": 23,
+    "format": "onto-service dataplatform metadata (TBOX auto-draft ready)"
+  }
+}

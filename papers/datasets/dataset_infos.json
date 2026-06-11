@@ -1,0 +1,84 @@
+{"default": {
+    "description": "Abstract. Although there is a long tradition of work in NLP on extracting entities and relations from text, to date there exists little work on the acquisition of business processes from unstructured data such as textual corpora of process descriptions. With this work we aim at filling this gap and establishing the first steps towards bridging data-driven information extraction methodologies from Natural Language Processing and the model-based formalization that is aimed from Business Process Management. For this, we develop the first corpus of business process descriptions annotated with activities, gateways, actors and flow information. We present our new resource, including a detailed overview of the annotation schema and guidelines, as well as a variety of baselines to benchmark the difficulty and challenges of business process extraction from text.\n",
+    "citation": "@inproceedings{DBLP:conf/bpm/BellanADGP22,\n  author       = {Patrizio Bellan and\n                  Han van der Aa and\n                  Mauro Dragoni and\n                  Chiara Ghidini and\n                  Simone Paolo Ponzetto},\n  editor       = {Cristina Cabanillas and\n                  Niels Frederik Garmann{-}Johnsen and\n                  Agnes Koschmider},\n  title        = {{PET:} An Annotated Dataset for Process Extraction from Natural Language\n                  Text Tasks},\n  booktitle    = {Business Process Management Workshops - {BPM} 2022 International Workshops,\n                  M{\"{u}}nster, Germany, September 11-16, 2022, Revised Selected\n                  Papers},\n  series       = {Lecture Notes in Business Information Processing},\n  volume       = {460},\n  pages        = {315--321},\n  publisher    = {Springer},\n  year         = {2022},\n  url          = {https://doi.org/10.1007/978-3-031-25383-6\\_23},\n  doi          = {10.1007/978-3-031-25383-6\\_23},\n  timestamp    = {Tue, 14 Feb 2023 09:47:10 +0100},\n  biburl       = {https://dblp.org/rec/conf/bpm/BellanADGP22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n@inproceedings{DBLP:conf/aiia/BellanGDPA22,\n  author       = {Patrizio Bellan and\n                  Chiara Ghidini and\n                  Mauro Dragoni and\n                  Simone Paolo Ponzetto and\n                  Han van der Aa},\n  editor       = {Debora Nozza and\n                  Lucia C. Passaro and\n                  Marco Polignano},\n  title        = {Process Extraction from Natural Language Text: the {PET} Dataset and\n                  Annotation Guidelines},\n  booktitle    = {Proceedings of the Sixth Workshop on Natural Language for Artificial\n                  Intelligence {(NL4AI} 2022) co-located with 21th International Conference\n                  of the Italian Association for Artificial Intelligence (AI*IA 2022),\n                  Udine, November 30th, 2022},\n  series       = {{CEUR} Workshop Proceedings},\n  volume       = {3287},\n  pages        = {177--191},\n  publisher    = {CEUR-WS.org},\n  year         = {2022},\n  url          = {https://ceur-ws.org/Vol-3287/paper18.pdf},\n  timestamp    = {Fri, 10 Mar 2023 16:23:01 +0100},\n  biburl       = {https://dblp.org/rec/conf/aiia/BellanGDPA22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}\n\n",
+    "homepage": "https://pdi.fbk.eu/pet-dataset/",
+    "license": "MIT",
+    "features": {
+        "document name": {
+            "dtype": "string",
+            "_type": "Value"
+        },
+        "tokens": {
+            "feature": {
+                "dtype": "string",
+                "_type": "Value"
+            },
+            "_type": "Sequence"
+        },
+        "tokens-IDs": {
+            "feature": {
+                "dtype": "int8",
+                "_type": "Value"
+            },
+            "_type": "Sequence"
+        },
+        "ner_tags": {
+            "feature": {
+                "dtype": "string",
+                "_type": "Value"
+            },
+            "_type": "Sequence"
+        },
+        "sentence-IDs": {
+            "feature": {
+                "dtype": "int8",
+                "_type": "Value"
+            },
+            "_type": "Sequence"
+        },
+        "relations": {
+            "feature": {
+                "source-head-sentence-ID": {
+                    "dtype": "int8",
+                    "_type": "Value"
+                },
+                "source-head-word-ID": {
+                    "dtype": "int8",
+                    "_type": "Value"
+                },
+                "relation-type": {
+                    "dtype": "string",
+                    "_type": "Value"
+                },
+                "target-head-sentence-ID": {
+                    "dtype": "int8",
+                    "_type": "Value"
+                },
+                "target-head-word-ID": {
+                    "dtype": "int8",
+                    "_type": "Value"
+                }
+            },
+            "_type": "Sequence"
+        }
+    },
+    "builder_name": "pet",
+    "config_name": "default",
+    "version": {
+        "version_str": "1.1.0",
+        "major": 1,
+        "minor": 1,
+        "patch": 0
+    },
+    "splits": {
+        "test": {
+            "name": "test",
+            "num_bytes": 203379,
+            "num_examples": 45,
+            "dataset_name": null
+        }
+    },
+    "download_size": 38326,
+    "dataset_size": 203379,
+    "size_in_bytes": 241705
+}}

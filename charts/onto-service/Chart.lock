@@ -1,0 +1,9 @@
+dependencies:
+- name: neo4j
+  repository: https://helm.neo4j.com/neo4j
+  version: 5.22.0
+- name: kafka
+  repository: https://charts.bitnami.com/bitnami
+  version: 26.4.0
+digest: sha256:placeholder
+generated: "2026-06-05T02:19:53Z"

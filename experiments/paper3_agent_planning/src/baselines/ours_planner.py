@@ -13,6 +13,7 @@ from src.ontology_context import OntologyContextBuilder
 from src.case_retriever import CaseRetriever
 from src.task_progress import TaskProgressVerifier
 from src.action_suggester import ActionSuggester
+from src.goal_planner import GoalRegressionPlanner
 from src.baselines.schema_baseline import SchemaPlanner, FEW_SHOT_EXAMPLE
 
 
@@ -41,6 +42,7 @@ class OursPlanner(SchemaPlanner):
         self.case_retriever = case_retriever
         self.progress_verifier = TaskProgressVerifier()
         self.action_suggester = ActionSuggester()
+        self.goal_planner = GoalRegressionPlanner(action_bank)
 
     def _build_state_guidance(self, task_info: str, state: DialogueState) -> str:
         """Build deterministic action hints from cached state.
@@ -130,12 +132,14 @@ class OursPlanner(SchemaPlanner):
                         "thought": c.get("thought", response.get("thought", "")),
                         "action": c.get("action", ""),
                         "arguments": c.get("arguments", {}),
+                        "message_to_user": c.get("message_to_user", response.get("message_to_user", "")),
                     })
         if not normalized:
             normalized.append({
                 "thought": response.get("thought", ""),
                 "action": response.get("action", ""),
                 "arguments": response.get("arguments", {}),
+                "message_to_user": response.get("message_to_user", ""),
             })
         return normalized
 
@@ -178,6 +182,7 @@ class OursPlanner(SchemaPlanner):
                 "thought": f"Using ontology-grounded fallback suggestion: {s.get('reason', '')}",
                 "action": action,
                 "arguments": s.get("arguments", {}),
+                "message_to_user": s.get("message_to_user", ""),
                 "_suggestion_confidence": confidence,
                 "_update_suggestion_fallback": action in high_conf_update,
                 })
@@ -203,6 +208,7 @@ class OursPlanner(SchemaPlanner):
                     "thought": suggestion.get("thought", ""),
                     "action": action_name,
                     "arguments": raw_arguments,
+                    "message_to_user": suggestion.get("message_to_user", ""),
                     "_retrieved_case_ids": retrieved_case_ids,
                     "_suggested_action_count": len(suggestions),
                     "_suggestion_fallback_used": True,
@@ -222,6 +228,7 @@ class OursPlanner(SchemaPlanner):
                 "thought": suggestion.get("thought", ""),
                 "action": action_name,
                 "arguments": arguments,
+                "message_to_user": suggestion.get("message_to_user", ""),
                 "_grounding_trace": grounding.changes,
                 "_retrieved_case_ids": retrieved_case_ids,
                 "_suggested_action_count": len(suggestions),
@@ -231,8 +238,61 @@ class OursPlanner(SchemaPlanner):
             }
         return None
 
+    def _try_plan_step(
+        self,
+        plan: List[Dict[str, Any]],
+        task_info: str,
+        state: DialogueState,
+        db: Dict[str, Any],
+    ) -> Optional[Dict[str, Any]]:
+        """Attempt to execute the first admissible step of an ontology-derived plan.
+
+        If a step is a DUPLICATE it is skipped; any other violation breaks the
+        plan and forces fallback to LLM-based planning.
+        """
+        for step in plan:
+            action_name = step["action"]
+            raw_args = step.get("arguments", {})
+
+            # Terminal-action safety check
+            if action_name in {"finish_task", "transfer_to_human_agents"}:
+                progress = self.progress_verifier.check_terminal(action_name, task_info, state, db)
+                if progress.violations:
+                    break
+
+            grounding = self.grounder.ground(action_name, raw_args, state, db)
+            args = grounding.arguments
+            v_result = self.verifier.verify(action_name, args, state, db)
+            combined = grounding.violations + v_result.violations
+
+            if not combined:
+                return {
+                    "thought": f"Ontology-derived plan step: {action_name}",
+                    "action": action_name,
+                    "arguments": args,
+                    "message_to_user": step.get("message_to_user", ""),
+                    "_grounding_trace": grounding.changes,
+                    "_from_goal_planner": True,
+                    "_goal_planner_remaining": [s["action"] for s in plan[plan.index(step) + 1:]],
+                }
+
+            # Duplicate is the only skippable violation
+            if not all("DUPLICATE" in v for v in combined):
+                break
+
+        return None
+
     def plan_next_action(self, task: Any, state: DialogueState, db: Dict[str, Any]) -> Dict[str, Any]:
         task_info = self._extract_task_info(task)
+
+        # === Phase 1: ontology-derived goal-regression plan ===
+        plan = self.goal_planner.generate_plan(task_info, state, db)
+        plan_text = self.goal_planner.format_plan_for_prompt(plan)
+        plan_step = self._try_plan_step(plan, task_info, state, db)
+        if plan_step is not None:
+            return plan_step
+
+        # === Phase 2: LLM-based planning with plan guidance ===
         action_bank_text = self.action_bank.to_prompt_text()
 
         # Build execution history with results
@@ -284,15 +344,18 @@ CRITICAL RULES:
 15. Transfer to human agents only when the policy or task explicitly requires human escalation.
 16. Some tasks require multiple updates. Execute all requested updates, then call finish_task with empty arguments.
 17. Use cached object bindings for address, payment_method_id, order_id, item_ids, and new_item_ids; do not invent IDs.
+18. If the task asks for information to be told to the user, include a concise "message_to_user" containing the required answer. This is not a tool argument.
+19. Use the EXACT parameter names from the ActionBank schema (e.g., ``zip`` not ``zip_code`` for ``find_user_id_by_name_zip``). Do not use placeholder strings like ``user_email`` or ``order_id``; always fill arguments with concrete values from the task or conversation.
 
 Respond with JSON only:
 {{
   "thought": "brief reasoning about what to do next",
   "action": "exact_action_id",
   "arguments": {{"param_name": "value"}},
+  "message_to_user": "optional user-visible message",
   "candidates": [
-    {{"thought": "best admissible next step", "action": "exact_action_id", "arguments": {{"param_name": "value"}}}},
-    {{"thought": "fallback if the first is not admissible", "action": "exact_action_id", "arguments": {{"param_name": "value"}}}}
+    {{"thought": "best admissible next step", "action": "exact_action_id", "arguments": {{"param_name": "value"}}, "message_to_user": "optional user-visible message"}},
+    {{"thought": "fallback if the first is not admissible", "action": "exact_action_id", "arguments": {{"param_name": "value"}}, "message_to_user": "optional user-visible message"}}
   ]
 }}"""
 
@@ -315,13 +378,28 @@ Ontology-grounded recommended next actions:
 State-derived action guidance:
 {state_guidance}
 
+{plan_text}
+
         What is the NEXT action? Extract all values from the task description. Do not repeat successful actions."""
 
         # Try with repair loop (repairs don't count against step budget)
         repair_trace = []
         for attempt in range(self.max_repair + 1):
             try:
-                response = self.llm.chat_json(system_prompt, user_prompt)
+                current_prompt = user_prompt
+                for json_attempt in range(2):
+                    try:
+                        response = self.llm.chat_json(system_prompt, current_prompt)
+                        break
+                    except Exception:
+                        if json_attempt == 0:
+                            current_prompt = (
+                                user_prompt
+                                + "\n\nREMINDER: Return ONLY a single valid JSON object. "
+                                "Do not include any explanatory text before or after the JSON."
+                            )
+                            continue
+                        raise
                 candidates = self._extract_candidates(response)
                 terminal_candidates = []
                 rejected_this_attempt = []
@@ -342,6 +420,7 @@ State-derived action guidance:
                             "thought": candidate.get("thought", response.get("thought", "")),
                             "action": action_name,
                             "arguments": arguments,
+                            "message_to_user": candidate.get("message_to_user", ""),
                             "_grounding_trace": grounding.changes,
                             "_retrieved_case_ids": retrieved_case_ids,
                             "_suggested_action_count": len(suggested_actions),
@@ -372,6 +451,7 @@ State-derived action guidance:
                             "thought": terminal_candidate.get("thought", response.get("thought", "")),
                             "action": action_name,
                             "arguments": terminal_candidate.get("arguments", {}),
+                            "message_to_user": terminal_candidate.get("message_to_user", ""),
                             "_retrieved_case_ids": retrieved_case_ids,
                             "_suggested_action_count": len(suggested_actions),
                             "_progress_required_intents": sorted(progress.required_intents),
@@ -428,6 +508,7 @@ Please propose a DIFFERENT productive action that satisfies all constraints. Pro
                         "thought": f"LLM error after {self.max_repair} repair attempts: {e}",
                         "action": "transfer_to_human_agents",
                         "arguments": {"summary": "LLM failed to plan."},
+                        "message_to_user": "",
                         "_retrieved_case_ids": retrieved_case_ids,
                         "_suggested_action_count": len(suggested_actions),
                         "_repair_trace": repair_trace,
@@ -438,6 +519,7 @@ Please propose a DIFFERENT productive action that satisfies all constraints. Pro
             "thought": f"Max repair attempts ({self.max_repair}) reached. Could not find valid action.",
             "action": "transfer_to_human_agents",
             "arguments": {"summary": "Could not find valid action after multiple attempts."},
+            "message_to_user": "",
             "_grounding_trace": [],
             "_retrieved_case_ids": retrieved_case_ids,
             "_suggested_action_count": len(suggested_actions),

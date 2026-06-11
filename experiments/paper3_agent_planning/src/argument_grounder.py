@@ -20,6 +20,26 @@ PAYMENT_ACTIONS = {
     "exchange_delivered_order_items",
 }
 
+# LLMs sometimes hallucinate parameter names that differ from the ActionBank schema.
+PARAMETER_NAME_ALIASES: Dict[str, Dict[str, str]] = {
+    "find_user_id_by_name_zip": {"zip_code": "zip", "zipcode": "zip", "postal_code": "zip"},
+    "get_order_details": {"order_number": "order_id", "orderId": "order_id"},
+    "get_user_details": {"userId": "user_id", "user_id_number": "user_id"},
+    "cancel_pending_order": {"order_number": "order_id", "orderId": "order_id"},
+    "modify_pending_order_address": {"order_number": "order_id", "orderId": "order_id"},
+    "modify_pending_order_items": {"order_number": "order_id", "orderId": "order_id"},
+    "modify_pending_order_payment": {"order_number": "order_id", "orderId": "order_id"},
+    "return_delivered_order_items": {"order_number": "order_id", "orderId": "order_id"},
+    "exchange_delivered_order_items": {"order_number": "order_id", "orderId": "order_id"},
+}
+
+# Values that are clearly placeholders and must be rejected.
+PLACEHOLDER_VALUES = {
+    "user_email", "email_address", "unknown", "none", "n/a", "null", "",
+    "order_id", "order_number", "user_id", "item_id", "product_id",
+    "first_name", "last_name", "phone_number", "address", "reason",
+}
+
 
 @dataclass
 class GroundingResult:
@@ -42,6 +62,18 @@ class ArgumentGrounder:
         changes: List[str] = []
         violations: List[str] = []
 
+        # 1. Normalize hallucinated parameter names.
+        aliases = PARAMETER_NAME_ALIASES.get(action_name, {})
+        for raw_key, canonical in aliases.items():
+            if raw_key in args:
+                args[canonical] = args.pop(raw_key)
+                changes.append(f"param_rename:{raw_key}->{canonical}")
+
+        # 2. Detect placeholder values.
+        for key, value in list(args.items()):
+            if str(value).strip().lower() in PLACEHOLDER_VALUES:
+                violations.append(f"PLACEHOLDER_VALUE: {action_name}.{key}={value}")
+
         self._ground_user_lookup(action_name, args, db, changes)
         self._ground_user_id(action_name, args, state, db, changes, violations)
         self._ground_order_id(action_name, args, state, db, changes, violations)
@@ -62,7 +94,7 @@ class ArgumentGrounder:
             return
         first = args.get("first_name")
         last = args.get("last_name")
-        zip_code = str(args.get("zip", ""))
+        zip_code = str(args.get("zip") or args.get("zip_code", ""))
         if not first or not last or not zip_code:
             return
         for user in db.get("users", {}).values():
@@ -312,10 +344,10 @@ class ArgumentGrounder:
                 payment_id = payment.get("payment_method_id")
                 if payment_id and payment_id not in methods:
                     methods.append(payment_id)
-            if methods:
-                return methods
 
         user_id = state.user_id
+        if not user_id and order:
+            user_id = order.get("user_id")
         user = db.get("users", {}).get(user_id) if user_id else None
         if user:
             for payment_id in user.get("payment_methods", {}).keys():

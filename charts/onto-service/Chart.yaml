@@ -1,0 +1,23 @@
+apiVersion: v2
+name: onto-service
+description: OaaS (Ontology as a Service) 本体语义检索服务 Helm Chart
+version: 1.0.0
+appVersion: "2.0.0"
+keywords:
+  - ontology
+  - semantic-search
+  - neo4j
+  - kafka
+  - tbox
+dependencies:
+  - name: neo4j
+    version: "5.22.0"
+    repository: "https://helm.neo4j.com/neo4j"
+    condition: neo4j.enabled
+  - name: kafka
+    version: "26.4.0"
+    repository: "https://charts.bitnami.com/bitnami"
+    condition: kafka.enabled
+maintainers:
+  - name: onto-team
+    email: onto-team@example.com

@@ -20,15 +20,16 @@ Run the Python script `run_experiments.py` with the following parameters:
 
 2. Modify `src/llm_client.py` to use Kimi API:
    - base_url: https://api.kimi.com/coding/v1
-   - api_key: sk-kimi-zEUT4efFDybkAAJ6QQ6JHeZ3AfyjtAhpqJvBgy7mudibAiTs6gzASVTKnFo0p46Y
+   - api_key: read from `KIMI_API_KEY`
    - model: kimi-latest
 
 3. Run the experiment:
    ```bash
+   export KIMI_API_KEY="your-kimi-api-key"
    PYTHONPATH=src:$PYTHONPATH python3 run_experiments.py \
      --model "kimi-latest" \
      --base-url "https://api.kimi.com/coding/v1" \
-     --api-key "sk-kimi-zEUT4efFDybkAAJ6QQ6JHeZ3AfyjtAhpqJvBgy7mudibAiTs6gzASVTKnFo0p46Y" \
+     --api-key "$KIMI_API_KEY" \
      --num-tasks 10 \
      --output-dir results_kimi
    ```

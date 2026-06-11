@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 spring:
   application:
@@ -17,10 +17,24 @@ spring:
       idle-timeout: 600000
       max-lifetime: 1800000
 
-neo4j:
-  uri: ${NEO4J_URI:bolt://localhost:7687}
-  username: ${NEO4J_USER:neo4j}
-  password: ${NEO4J_PASSWORD:neo4jpass}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:172.16.21.72:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+    listener:
+      ack-mode: manual_immediate
+
+  neo4j:
+    uri: ${NEO4J_URI:bolt://localhost:7687}
+    authentication:
+      username: ${NEO4J_USER:neo4j}
+      password: ${NEO4J_PASSWORD:neo4jpass}
 
 mybatis-plus:
   configuration:
@@ -36,6 +50,14 @@ mybatis-plus:
 # Ontology Service Configuration
 onto:
   service:
+    # ABOX 对接：默认走数据中台执行查询（不再要求 ABOX 落 Doris）
+    abox:
+      # platform|doris
+      engine: ${ABOX_ENGINE:platform}
+      platform:
+        base-url: ${DATA_PLATFORM_URL:http://localhost:5001}
+        api-key: ${DATA_PLATFORM_API_KEY:}
+        dialect: ${DATA_PLATFORM_DIALECT:googlesql}
     # GoogleSQL 配置
     googlesql:
       enabled: true
@@ -50,7 +72,46 @@ onto:
       dry-run-enabled: true
       audit-enabled: true
       default-timeout-seconds: 60
-    # LLM / Grounding 配置
-    grounding:
-      python-service-url: ${PYTHON_SERVICE_URL:http://localhost:5000}
-      embedding-dimension: 768
+  # vLLM Embedding / Reranker 配置
+  vllm:
+    embedding:
+      base-url: ${VLLM_EMBEDDING_URL:http://localhost:8105}
+      model: ${VLLM_EMBEDDING_MODEL:bge-m3}
+    rerank:
+      base-url: ${VLLM_RERANK_URL:http://localhost:8104}
+      model: ${VLLM_RERANK_MODEL:Qwen3-Reranker-4B}
+
+# OaaS (Ontology-aware Retrieval as a Service) 配置
+oaas:
+  kafka:
+    topic: ${KAFKA_TOPIC:ontology_events}
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_ID:oaas-consumer-group}
+    dlq:
+      topic: ${KAFKA_DLQ_TOPIC:ontology-dlq}
+  full-sync:
+    enabled: ${FULL_SYNC_ENABLED:true}
+    auto-on-startup: ${FULL_SYNC_AUTO_ON_STARTUP:true}
+    base-url: ${ONTOLOGY_MGMT_URL:http://172.16.21.216:8888}
+    snapshot-path: ${ONTOLOGY_SNAPSHOT_PATH:/ontology/api/open/domains}
+    page-size: 100
+  index:
+    rebuild:
+      batch-size: 100
+      thread-pool-size: 4
+  retrieval:
+    max-top-k: 100
+    default-top-k: 10
+  idempotency:
+    max-retries: 3
+    retry-interval-ms: 5000
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always

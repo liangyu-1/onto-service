@@ -1,0 +1,147 @@
+{{- if .Values.java.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "onto-service.java.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: java
+spec:
+  {{- if not .Values.java.autoscaling.enabled }}
+  replicas: {{ .Values.java.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "onto-service.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: java
+  template:
+    metadata:
+      labels:
+        {{- include "onto-service.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: java
+    spec:
+      containers:
+        - name: java
+          image: "{{ .Values.java.image.repository }}:{{ .Values.java.image.tag }}"
+          imagePullPolicy: {{ .Values.java.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.java.service.targetPort }}
+              protocol: TCP
+          env:
+            - name: SERVER_PORT
+              value: "{{ .Values.java.service.targetPort }}"
+            - name: SPRING_NEO4J_URI
+              value: "bolt://{{ .Release.Name }}:7687"
+            - name: SPRING_NEO4J_AUTHENTICATION_USERNAME
+              value: {{ .Values.neo4j.neo4j.name | quote }}
+            - name: SPRING_NEO4J_AUTHENTICATION_PASSWORD
+              value: {{ .Values.neo4j.neo4j.password | quote }}
+            - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
+              value: "{{ .Release.Name }}-kafka:9092"
+            - name: PYTHON_SERVICE_URL
+              value: "http://{{ include "onto-service.python.fullname" . }}:{{ .Values.python.service.port }}"
+            - name: ABOX_ENGINE
+              value: {{ .Values.java.env.ABOX_ENGINE | quote }}
+            - name: FULL_SYNC_ENABLED
+              value: {{ .Values.java.env.FULL_SYNC_ENABLED | quote }}
+            - name: KAFKA_TOPIC
+              value: {{ .Values.java.env.KAFKA_TOPIC | quote }}
+            - name: KAFKA_CONSUMER_GROUP_ID
+              value: {{ .Values.java.env.KAFKA_CONSUMER_GROUP_ID | quote }}
+            {{- range $key, $value := .Values.java.env }}
+            {{- if not (has $key (list "SERVER_PORT" "ABOX_ENGINE" "FULL_SYNC_ENABLED" "KAFKA_TOPIC" "KAFKA_CONSUMER_GROUP_ID" "PYTHON_SERVICE_URL")) }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- end }}
+          livenessProbe:
+            {{- toYaml .Values.java.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.java.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.java.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "onto-service.java.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: java
+spec:
+  type: {{ .Values.java.service.type }}
+  ports:
+    - port: {{ .Values.java.service.port }}
+      targetPort: {{ .Values.java.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "onto-service.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: java
+{{- if .Values.java.ingress.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "onto-service.java.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: java
+  {{- with .Values.java.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  ingressClassName: {{ .Values.java.ingress.className }}
+  rules:
+    {{- range .Values.java.ingress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
+            backend:
+              service:
+                name: {{ include "onto-service.java.fullname" $ }}
+                port:
+                  number: {{ $.Values.java.service.port }}
+          {{- end }}
+    {{- end }}
+  {{- if .Values.java.ingress.tls }}
+  tls:
+    {{- toYaml .Values.java.ingress.tls | nindent 4 }}
+  {{- end }}
+{{- end }}
+{{- if .Values.java.autoscaling.enabled }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "onto-service.java.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: java
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "onto-service.java.fullname" . }}
+  minReplicas: {{ .Values.java.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.java.autoscaling.maxReplicas }}
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.java.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.java.autoscaling.targetMemoryUtilizationPercentage }}
+{{- end }}
+{{- end }}

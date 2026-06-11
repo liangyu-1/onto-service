@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.request
 from typing import Any, Dict, Optional
 
@@ -15,7 +16,7 @@ class LLMClient:
 
     def chat_json(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> Dict[str, Any]:
         """Get JSON response from LLM."""
-        response = self.chat(system_prompt, user_prompt, temperature)
+        response = self.chat(system_prompt, user_prompt, temperature, json_mode=True)
         try:
             return json.loads(response)
         except json.JSONDecodeError:
@@ -26,6 +27,13 @@ class LLMClient:
             elif "```" in response:
                 json_str = response.split("```")[1].split("```")[0].strip()
                 return json.loads(json_str)
+            # Fallback: find the first {...} object in the text
+            m = re.search(r"\{.*?\}", response, re.DOTALL)
+            if m:
+                try:
+                    return json.loads(m.group(0))
+                except json.JSONDecodeError:
+                    pass
             raise ValueError(f"Could not parse JSON from response: {response[:200]}")
 
 
@@ -37,7 +45,7 @@ class OpenAIClient(LLMClient):
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
 
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> str:
+    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0, json_mode: bool = False) -> str:
         url = f"{self.base_url}/chat/completions"
         payload = {
             "model": self.model,
@@ -48,6 +56,8 @@ class OpenAIClient(LLMClient):
             "temperature": temperature,
             "max_tokens": 8192,
         }
+        if json_mode:
+            payload["response_format"] = {"type": "json_object"}
         req = urllib.request.Request(
             url=url,
             data=json.dumps(payload).encode("utf-8"),
@@ -102,12 +112,14 @@ class HeuristicClient(LLMClient):
 
 
 def create_llm_client(
-    model: str = "gemma4-31b",
-    base_url: str = "http://172.16.22.79:9999/v1",
+    model: str = "GLM-5.1",
+    base_url: str = "https://open.bigmodel.cn/api/coding/paas/v4",
     api_key: str = "EMPTY",
     use_kimi_cli: bool = False,
 ) -> LLMClient:
     """Factory: create OpenAI-compatible client."""
+    if api_key == "EMPTY":
+        api_key = os.getenv("OPENAI_API_KEY", "EMPTY")
     if use_kimi_cli:
         from kimi_cli_client import KimiCLIClient
         print("Using Kimi CLI client")
@@ -120,6 +132,7 @@ def create_llm_client(
         print(f"LLM client connected: {model} @ {base_url}")
         return client
     except Exception as e:
-        print(f"WARNING: Could not connect to LLM at {base_url}: {e}")
-        print("Falling back to heuristic LLM client.")
-        return HeuristicClient(mistake_rate=0.3)
+        raise RuntimeError(
+            f"Could not connect to LLM at {base_url}: {e}. "
+            "Please check the endpoint, model name, and API key."
+        ) from e

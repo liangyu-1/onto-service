@@ -18,13 +18,13 @@ class KimiCLIClient(LLMClient):
     def __init__(self, model: str = "kimi-latest"):
         self.model = model
 
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> str:
+    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0, json_mode: bool = False) -> str:
         """Send a chat request via Kimi CLI."""
         # Combine system and user prompt
         full_prompt = f"{system_prompt}\n\n{user_prompt}"
         
         result = subprocess.run(
-            ['kimi', '--print', '--quiet'],
+            ['kimi-cli', '--print', '--quiet'],
             input=full_prompt,
             capture_output=True,
             text=True,

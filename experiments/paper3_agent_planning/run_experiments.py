@@ -89,6 +89,7 @@ class ExperimentRunner:
         gold_final_call = gold_action_calls[-1] if gold_action_calls else None
         predicted = []
         predicted_calls = []
+        assistant_messages = []
         step_details = []
         executed_violation_count = 0
         rejected_violation_count = 0
@@ -113,6 +114,9 @@ class ExperimentRunner:
             action_name = action.get("action", "")
             arguments = action.get("arguments", {})
             thought = action.get("thought", "")
+            message_to_user = str(action.get("message_to_user", "") or "")
+            if message_to_user:
+                assistant_messages.append(message_to_user)
             grounding_trace = action.get("_grounding_trace", [])
             retrieved_case_ids = action.get("_retrieved_case_ids", [])
             suggested_action_count = action.get("_suggested_action_count", 0)
@@ -175,6 +179,7 @@ class ExperimentRunner:
                 "action": action_name,
                 "arguments": arguments,
                 "thought": thought,
+                "message_to_user": message_to_user,
                 "grounding_trace": grounding_trace,
                 "retrieved_case_ids": retrieved_case_ids,
                 "suggested_action_count": suggested_action_count,
@@ -206,6 +211,7 @@ class ExperimentRunner:
             executed_violation_count=executed_violation_count,
             invalid_count=invalid_count,
             predicted_execution_errors=execution_errors,
+            assistant_messages=assistant_messages,
         )
         success = local_reward.local_success
         strict_success = local_reward.strict_success
@@ -227,6 +233,7 @@ class ExperimentRunner:
             "predicted_final": final_action,
             "predicted_final_call": predicted_calls[-1] if predicted_calls else None,
             "predicted_effective_final_call": local_reward.predicted_final_action,
+            "assistant_messages": assistant_messages,
             "success": success,
             "strict_success": strict_success,
             "final_name_match": final_name_match,
@@ -236,6 +243,8 @@ class ExperimentRunner:
             "local_db_reward": local_reward.local_db_reward,
             "local_communicate_reward": local_reward.local_communicate_reward,
             "local_nl_assertion_reward": local_reward.local_nl_assertion_reward,
+            "communicate_info": local_reward.communicate_info,
+            "communicated_messages": local_reward.communicated_messages,
             "reward_basis": local_reward.reward_basis,
             "db_mismatch_summary": local_reward.db_mismatch_summary,
             "accuracy": round(accuracy, 3),
@@ -304,9 +313,9 @@ class ExperimentRunner:
 # ============================================================================
 
 def run_experiments(
-    model: str,
-    base_url: str,
-    api_key: str,
+    model: Optional[str] = None,
+    base_url: Optional[str] = None,
+    api_key: Optional[str] = None,
     num_tasks: Optional[int] = None,
     output_dir: str = "results",
     max_steps: int = 15,
@@ -317,8 +326,8 @@ def run_experiments(
     """Run all experiments and save results."""
     print(f"\n{'='*60}")
     print(f"Experiment Start: {datetime.now().isoformat()}")
-    print(f"Model: {model}")
-    print(f"Base URL: {base_url}")
+    print(f"Model: {model or '(default)'}")
+    print(f"Base URL: {base_url or '(default)'}")
     print(f"{'='*60}\n")
 
     # Load data
@@ -336,12 +345,15 @@ def run_experiments(
 
     print(f"Loaded {len(test_tasks)} test tasks and {len(train_tasks)} train cases")
 
-    # Create LLM client
-    if use_kimi_cli:
-        from kimi_cli_client import KimiCLIClient
-        llm = KimiCLIClient(model=model)
-    else:
-        llm = OpenAIClient(model=model, base_url=base_url, api_key=api_key)
+    # Create LLM client (pass only non-None args so create_llm_client defaults kick in)
+    kwargs = {"use_kimi_cli": use_kimi_cli}
+    if model is not None:
+        kwargs["model"] = model
+    if base_url is not None:
+        kwargs["base_url"] = base_url
+    if api_key is not None:
+        kwargs["api_key"] = api_key
+    llm = create_llm_client(**kwargs)
     verifier = ConstraintVerifier(action_bank)
     runner = ExperimentRunner(db, action_bank, verifier, max_steps=max_steps)
     if require_official_evaluator and not runner.evaluator.official_tau_bench_available:
@@ -434,6 +446,11 @@ def print_summary(all_results: Dict[str, List[Dict]]):
             1 for r in valid_results
             if r.get("local_db_reward", r.get("db_hash_match", r.get("db_state_match", False)))
         )
+        communication_applicable = [
+            r for r in valid_results
+            if r.get("local_communicate_reward") is not None
+        ]
+        local_communicate_reward = sum(1 for r in communication_applicable if r.get("local_communicate_reward") is True)
         avg_acc = sum(r.get("accuracy", 0) for r in valid_results) / total
         avg_exact_acc = sum(r.get("exact_action_accuracy", 0) for r in valid_results) / total
         total_violations = sum(r.get("violation_count", 0) for r in valid_results)
@@ -455,6 +472,11 @@ def print_summary(all_results: Dict[str, List[Dict]]):
         print(f"\n{planner_name}:")
         print(f"  Tasks: {total}")
         print(f"  Local DB Reward: {local_db_reward}/{total} = {100*local_db_reward/total:.1f}%")
+        if communication_applicable:
+            print(
+                f"  Local Communicate Reward: {local_communicate_reward}/{len(communication_applicable)} "
+                f"= {100*local_communicate_reward/len(communication_applicable):.1f}%"
+            )
         print(f"  Local DB Success Rate: {success}/{total} = {100*success/total:.1f}%")
         print(f"  Strict Success Rate: {strict_success}/{total} = {100*strict_success/total:.1f}%")
         print(f"  Avg Name-Prefix Accuracy: {avg_acc*100:.1f}%")
@@ -499,9 +521,9 @@ def print_summary(all_results: Dict[str, List[Dict]]):
 
 def main():
     parser = argparse.ArgumentParser(description="Run agent planning experiments")
-    parser.add_argument("--model", default="./models/Qwen3.6-27B", help="Model name")
-    parser.add_argument("--base-url", default="http://172.16.22.79:9999/qwen36/v1", help="API base URL")
-    parser.add_argument("--api-key", default="EMPTY", help="API key")
+    parser.add_argument("--model", default=None, help="Model name")
+    parser.add_argument("--base-url", default=None, help="API base URL")
+    parser.add_argument("--api-key", default=None, help="API key")
     parser.add_argument("--num-tasks", type=int, default=None, help="Number of tasks to run (default: all)")
     parser.add_argument("--output-dir", default="results", help="Output directory")
     parser.add_argument("--max-steps", type=int, default=15, help="Max steps per task")

@@ -30,6 +30,20 @@ class SchemaPlanner:
         self.llm = llm
         self.action_bank = action_bank
 
+    def _call_llm_json(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
+        """Call LLM with JSON-mode; retry once on parse failure."""
+        for json_attempt in range(2):
+            try:
+                return self.llm.chat_json(system_prompt, user_prompt)
+            except Exception:
+                if json_attempt == 0:
+                    user_prompt += (
+                        "\n\nREMINDER: Return ONLY a single valid JSON object. "
+                        "Do not include any explanatory text before or after the JSON."
+                    )
+                    continue
+                raise
+
     def _extract_task_info(self, task: Any) -> str:
         """Extract task description and known facts from tau-bench task."""
         if isinstance(task, dict):
@@ -153,12 +167,15 @@ CRITICAL RULES:
 11. If the task is to return items and you know the order_id and item_ids, execute return_delivered_order_items immediately.
 12. If the task is to cancel an order and you know the order_id and reason, execute cancel_pending_order immediately.
 13. Some tasks require multiple updates. Execute all requested updates, then call finish_task with empty arguments.
+14. If the task asks for information to be told to the user, include a concise "message_to_user" containing the required answer. This is not a tool argument.
+15. Use the EXACT parameter names from the ActionBank schema (e.g., ``zip`` not ``zip_code`` for ``find_user_id_by_name_zip``). Do not use placeholder strings like ``user_email`` or ``order_id``; always fill arguments with concrete values from the task or conversation.
 
 Respond with JSON only:
 {{
   "thought": "brief reasoning about what to do next",
   "action": "exact_action_id",
-  "arguments": {{"param_name": "value"}}
+  "arguments": {{"param_name": "value"}},
+  "message_to_user": "optional user-visible message"
 }}"""
 
         user_prompt = f"""{task_info}
@@ -174,11 +191,12 @@ Current state:
 What is the NEXT action? Extract all values from the task description. Do not repeat successful actions."""
 
         try:
-            response = self.llm.chat_json(system_prompt, user_prompt)
+            response = self._call_llm_json(system_prompt, user_prompt)
             return {
                 "thought": response.get("thought", ""),
                 "action": response.get("action", ""),
                 "arguments": response.get("arguments", {}),
+                "message_to_user": response.get("message_to_user", ""),
             }
         except Exception as e:
             return {

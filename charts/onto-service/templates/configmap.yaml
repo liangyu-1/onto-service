@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "onto-service.fullname" . }}-config
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+data:
+  application.yml: |
+    server:
+      port: ${SERVER_PORT:8080}
+
+    spring:
+      application:
+        name: onto-service
+
+      datasource:
+        url: jdbc:mysql://${DORIS_HOST:localhost}:${DORIS_PORT:9030}/${DORIS_DB:ontology}?useSSL=false&characterEncoding=UTF-8
+        username: ${DORIS_USER:root}
+        password: ${DORIS_PASSWORD:}
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        hikari:
+          maximum-pool-size: 20
+          minimum-idle: 5
+          connection-timeout: 30000
+          idle-timeout: 600000
+          max-lifetime: 1800000
+
+      kafka:
+        bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:{{ .Release.Name }}-kafka:9092}
+        producer:
+          key-serializer: org.apache.kafka.common.serialization.StringSerializer
+          value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        consumer:
+          key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+          value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+          auto-offset-reset: earliest
+          enable-auto-commit: false
+        listener:
+          ack-mode: manual_immediate
+
+      neo4j:
+        uri: ${SPRING_NEO4J_URI:bolt://{{ .Release.Name }}:7687}
+        authentication:
+          username: ${SPRING_NEO4J_AUTHENTICATION_USERNAME:neo4j}
+          password: ${SPRING_NEO4J_AUTHENTICATION_PASSWORD:neo4jpass}
+
+    onto:
+      service:
+        abox:
+          engine: ${ABOX_ENGINE:platform}
+          platform:
+            base-url: ${DATA_PLATFORM_URL:http://onto-service-python:5001}
+            api-key: ${DATA_PLATFORM_API_KEY:}
+            dialect: ${DATA_PLATFORM_DIALECT:googlesql}
+        googlesql:
+          enabled: true
+          catalog-cache-ttl-minutes: 10
+        query:
+          max-limit: 10000
+          default-limit: 100
+          timeout-seconds: 30
+        action:
+          dry-run-enabled: true
+          audit-enabled: true
+          default-timeout-seconds: 60
+        grounding:
+          python-service-url: ${PYTHON_SERVICE_URL:http://onto-service-python:5001}
+          embedding-dimension: 768
+
+    oaas:
+      kafka:
+        topic: ${KAFKA_TOPIC:ontology_events}
+        consumer:
+          group-id: ${KAFKA_CONSUMER_GROUP_ID:oaas-consumer-group}
+        dlq:
+          topic: ontology-dlq
+      full-sync:
+        enabled: ${FULL_SYNC_ENABLED:true}
+        base-url: ${ONTOLOGY_MGMT_URL:http://ontology-mgmt:8888}
+        snapshot-path: ${ONTOLOGY_SNAPSHOT_PATH:/ontology/api/open/domains}
+        page-size: 100
+      index:
+        rebuild:
+          batch-size: 100
+          thread-pool-size: 4
+      retrieval:
+        max-top-k: 100
+        default-top-k: 10
+      idempotency:
+        max-retries: 3
+        retry-interval-ms: 5000
+
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: health,info,metrics,prometheus
+      endpoint:
+        health:
+          show-details: always
+      health:
+        neo4j:
+          enabled: false

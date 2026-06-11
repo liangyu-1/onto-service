@@ -44,6 +44,8 @@ class LocalRewardResult:
     local_db_reward: bool
     local_communicate_reward: Optional[bool]
     local_nl_assertion_reward: Optional[bool]
+    communicated_messages: List[str]
+    communicate_info: List[str]
     nl_assertions_supported: bool
     communicate_info_supported: bool
     expected_final_action: Optional[Dict[str, Any]]
@@ -86,6 +88,7 @@ class LocalTauBenchEvaluator:
         executed_violation_count: int,
         invalid_count: int,
         predicted_execution_errors: List[str],
+        assistant_messages: Optional[List[str]] = None,
     ) -> LocalRewardResult:
         gold_calls = [
             {"action": ga["name"], "arguments": ga.get("arguments", {})}
@@ -122,9 +125,13 @@ class LocalTauBenchEvaluator:
         nl_assertions = ec.get("nl_assertions")
         communicate_info = ec.get("communicate_info")
         nl_supported = not bool(nl_assertions)
-        communicate_supported = not bool(communicate_info)
+        assistant_messages = assistant_messages or []
+        communicate_items = [str(item) for item in (communicate_info or [])]
+        communicate_supported = True
+        local_communicate_reward = self._communicate_reward(communicate_items, assistant_messages)
+        if communicate_items and local_communicate_reward is None:
+            communicate_supported = False
         local_db_reward = db_hash_match
-        local_communicate_reward = True if communicate_supported else None
         local_nl_assertion_reward = True if nl_supported else None
 
         local_success = db_state_match
@@ -146,7 +153,7 @@ class LocalTauBenchEvaluator:
         if not nl_supported:
             coverage_warnings.append("NL assertion criteria are present but not evaluated by the local DB evaluator.")
         if not communicate_supported:
-            coverage_warnings.append("Communicate-info criteria are present but not evaluated by the local DB evaluator.")
+            coverage_warnings.append("Communicate-info criteria are present but no assistant messages were recorded for local evaluation.")
         non_db_reward_types = [
             r for r in reward_basis
             if r not in {"DB"} and not (r == "NL_ASSERTION" and nl_supported)
@@ -167,6 +174,8 @@ class LocalTauBenchEvaluator:
             local_db_reward=local_db_reward,
             local_communicate_reward=local_communicate_reward,
             local_nl_assertion_reward=local_nl_assertion_reward,
+            communicated_messages=assistant_messages,
+            communicate_info=communicate_items,
             nl_assertions_supported=nl_supported,
             communicate_info_supported=communicate_supported,
             expected_final_action=expected_final,
@@ -187,7 +196,7 @@ class LocalTauBenchEvaluator:
     def _official_tau_bench_available(self) -> bool:
         return any(
             importlib.util.find_spec(module_name) is not None
-            for module_name in ("tau_bench", "taubench")
+            for module_name in ("tau2", "tau_bench", "taubench")
         )
 
     def _db_hash(self, db: Dict[str, Any]) -> str:
@@ -214,6 +223,14 @@ class LocalTauBenchEvaluator:
             else:
                 summary[root_key] = {"mismatch": True}
         return summary
+
+    def _communicate_reward(self, required_items: List[str], assistant_messages: List[str]) -> Optional[bool]:
+        if not required_items:
+            return True
+        if not assistant_messages:
+            return None
+        transcript = "\n".join(str(message).lower() for message in assistant_messages)
+        return all(item.lower() in transcript for item in required_items)
 
     def _replay(
         self,

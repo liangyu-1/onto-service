@@ -3,6 +3,7 @@ Embedding Service
 提供语义嵌入和相似度计算
 """
 
+import os
 import numpy as np
 from typing import List, Dict, Any, Optional
 
@@ -12,21 +13,30 @@ class EmbeddingService:
     语义嵌入服务
     
     使用 sentence-transformers 或 OpenAI API 生成文本嵌入
+    优先从本地模型目录加载，避免运行时下载
     """
 
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
-        self.model_name = model_name
+    def __init__(self, model_name: str = "/app/models/bge-m3"):
+        # 如果传入的是路径（以 / 开头），直接使用本地路径
+        # 否则尝试从 sentence-transformers 缓存加载
+        if model_name.startswith("/"):
+            self.model_name = model_name
+        elif os.path.exists(f"/app/models/{model_name}"):
+            self.model_name = f"/app/models/{model_name}"
+        else:
+            self.model_name = model_name
         self._model = None
-        self._dimension = 384  # all-MiniLM-L6-v2 的维度
+        self._dimension = 768  # bge-m3 默认维度
 
     def _get_model(self):
-        """懒加载模型"""
+        """懒加载模型，优先本地"""
         if self._model is None:
             try:
                 from sentence_transformers import SentenceTransformer
                 self._model = SentenceTransformer(self.model_name)
                 self._dimension = self._model.get_sentence_embedding_dimension()
-            except ImportError:
+            except Exception as e:
+                print(f"[WARNING] Failed to load model from {self.model_name}: {e}")
                 # 如果没有 sentence-transformers，使用 mock
                 self._model = "mock"
         return self._model

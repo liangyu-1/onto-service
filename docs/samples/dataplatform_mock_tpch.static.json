@@ -1,0 +1,16 @@
+{
+  "_comment": "静态兜底 Mock（未挂载 dbt artifacts 时）。实现类：DataPlatformMockController.buildAssets / buildLineage",
+  "_approx_assetCount": 8,
+  "_approx_lineageFkEdges": 9,
+  "_edges_summary": [
+    "tpch_orders -> tpch_customer",
+    "tpch_customer -> tpch_nation",
+    "tpch_nation -> tpch_region",
+    "tpch_supplier -> tpch_nation",
+    "tpch_lineitem -> tpch_orders",
+    "tpch_lineitem -> tpch_part",
+    "tpch_lineitem -> tpch_supplier",
+    "tpch_partsupp -> tpch_part",
+    "tpch_partsupp -> tpch_supplier"
+  ]
+}

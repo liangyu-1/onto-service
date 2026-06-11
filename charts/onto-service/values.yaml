@@ -1,0 +1,237 @@
+# ============================================
+# OaaS 本体语义检索服务 - Helm Chart 配置
+# ============================================
+# 核心组件：Java 检索服务 + Python Embedding 服务 + Neo4j + Kafka
+
+# -------------------- 全局配置 --------------------
+global:
+  imageRegistry: ""
+  imagePullSecrets: []
+  # 集群默认 StorageClass：default (openebs.io/local)
+  # 注意：openebs local 使用 WaitForFirstConsumer，PVC 和 Pod 需要同时创建
+  storageClass: "default"
+
+# -------------------- Java 检索服务 --------------------
+java:
+  enabled: true
+  replicaCount: 1
+
+  image:
+    repository: 10.244.16.120:30002/yuliang/onto-service-java
+    tag: "latest"
+    pullPolicy: Always
+
+  service:
+    type: ClusterIP
+    port: 8080
+    targetPort: 8080
+
+  ingress:
+    enabled: false
+    className: nginx
+    annotations: {}
+    hosts:
+      - host: onto-service.local
+        paths:
+          - path: /
+            pathType: Prefix
+    tls: []
+
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 512Mi
+
+  autoscaling:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 70
+    targetMemoryUtilizationPercentage: 80
+
+  livenessProbe:
+    httpGet:
+      path: /actuator/health
+      port: 8080
+    initialDelaySeconds: 60
+    periodSeconds: 30
+    timeoutSeconds: 10
+    failureThreshold: 5
+
+  readinessProbe:
+    httpGet:
+      path: /actuator/health
+      port: 8080
+    initialDelaySeconds: 120
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 6
+
+  env:
+    SERVER_PORT: "8080"
+    ABOX_ENGINE: "platform"
+    PYTHON_SERVICE_URL: "http://onto-service-python:5001"
+    FULL_SYNC_ENABLED: "true"
+    ONTOLOGY_MGMT_URL: "http://ontology-mgmt:8888"
+    ONTOLOGY_SNAPSHOT_PATH: "/ontology/api/open/domains"
+    KAFKA_TOPIC: "ontology_events"
+    KAFKA_CONSUMER_GROUP_ID: "oaas-consumer-group"
+
+  config:
+    neo4j:
+      uri: "bolt://neo4j:7687"
+      user: "neo4j"
+      password: "neo4jpass"
+    kafka:
+      bootstrapServers: "kafka:9092"
+
+# -------------------- Python Embedding 服务 --------------------
+python:
+  enabled: true
+  replicaCount: 1
+
+  image:
+    repository: 10.244.16.120:30002/yuliang/onto-service-python
+    tag: "latest"
+    pullPolicy: Always
+
+  service:
+    type: ClusterIP
+    port: 5001
+    targetPort: 5001
+
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 4Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
+
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: 5001
+    initialDelaySeconds: 30
+    periodSeconds: 30
+
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: 5001
+    initialDelaySeconds: 10
+    periodSeconds: 10
+
+  env:
+    JAVA_SERVICE_URL: "http://onto-service-java:8080"
+    OPENAI_API_KEY: ""
+    LLM_MODEL: "gpt-3.5-turbo"
+    TRANSFORMERS_OFFLINE: "1"
+    HF_DATASETS_OFFLINE: "1"
+    SENTENCE_TRANSFORMERS_HOME: "/app/models"
+    HF_HOME: "/app/models"
+
+# -------------------- Neo4j 图数据库 --------------------
+neo4j:
+  enabled: true
+  neo4j:
+    name: "neo4j"
+    password: "neo4jpass"
+    edition: "community"
+  # 镜像配置（无公网环境需推送到私有仓库）
+  image:
+    imagePullPolicy: IfNotPresent
+    customImage: "10.244.16.120:30002/yuliang/neo4j:5.22.0"
+  volumes:
+    data:
+      # 使用集群默认 StorageClass（default / openebs.io/local）
+      mode: dynamic
+      dynamic:
+        storageClassName: "default"
+        accessModes:
+          - ReadWriteOnce
+        requests:
+          storage: 10Gi
+  services:
+    bolt:
+      enabled: true
+      spec:
+        type: ClusterIP
+        ports:
+          - name: bolt
+            port: 7687
+            targetPort: 7687
+    http:
+      enabled: true
+      spec:
+        type: ClusterIP
+        ports:
+          - name: http
+            port: 7474
+            targetPort: 7474
+  resources:
+    cpu: "1000m"
+    memory: "2Gi"
+
+# -------------------- Kafka --------------------
+# 适配 bitnami/kafka 26.4.0（兼容 Helm 3.12+）
+kafka:
+  enabled: true
+  # 镜像配置（无公网环境需推送到私有仓库）
+  image:
+    registry: "10.244.16.120:30002"
+    repository: "yuliang/kafka"
+    tag: "3.6.0-debian-11-r1"
+    pullPolicy: IfNotPresent
+
+  # 使用 PLAINTEXT 避免 SASL 认证配置复杂度
+  listeners:
+    client:
+      protocol: PLAINTEXT
+    controller:
+      protocol: PLAINTEXT
+    interbroker:
+      protocol: PLAINTEXT
+
+  # KRaft 模式（Kafka 26.4.0 默认开启，无需显式设置）
+  controller:
+    replicaCount: 1
+    persistence:
+      enabled: true
+      storageClass: "default"
+  broker:
+    replicaCount: 0
+    persistence:
+      enabled: true
+      storageClass: "default"
+
+  # Topic 配置（Kafka 26.4.0 的 provisioning 作为 post-install hook，
+  # 如果 Kafka 启动慢会导致 helm install 超时。建议禁用 provisioning，
+  # 部署后手动执行 kafka-topics.sh 创建 topic，或依赖 Kafka 的 auto.create.topics.enable）
+  provisioning:
+    enabled: false
+
+  # 允许 Kafka 自动创建 topic（开发/测试环境方便）
+  extraConfig: |
+    auto.create.topics.enable=true
+
+  persistence:
+    enabled: true
+    storageClass: "default"
+
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 2Gi
+    requests:
+      cpu: 250m
+      memory: 512Mi
+
+# -------------------- 服务账户 --------------------
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""

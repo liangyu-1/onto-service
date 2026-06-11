@@ -1,0 +1,62 @@
+{{- if .Values.python.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "onto-service.python.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: python
+spec:
+  replicas: {{ .Values.python.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "onto-service.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/component: python
+  template:
+    metadata:
+      labels:
+        {{- include "onto-service.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/component: python
+    spec:
+      containers:
+        - name: python
+          image: "{{ .Values.python.image.repository }}:{{ .Values.python.image.tag }}"
+          imagePullPolicy: {{ .Values.python.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.python.service.targetPort }}
+              protocol: TCP
+          env:
+            - name: JAVA_SERVICE_URL
+              value: "http://{{ include "onto-service.java.fullname" . }}:{{ .Values.java.service.port }}"
+            {{- range $key, $value := .Values.python.env }}
+            {{- if ne $key "JAVA_SERVICE_URL" }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+            {{- end }}
+          livenessProbe:
+            {{- toYaml .Values.python.livenessProbe | nindent 12 }}
+          readinessProbe:
+            {{- toYaml .Values.python.readinessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.python.resources | nindent 12 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "onto-service.python.fullname" . }}
+  labels:
+    {{- include "onto-service.labels" . | nindent 4 }}
+    app.kubernetes.io/component: python
+spec:
+  type: {{ .Values.python.service.type }}
+  ports:
+    - port: {{ .Values.python.service.port }}
+      targetPort: {{ .Values.python.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "onto-service.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/component: python
+{{- end }}

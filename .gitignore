@@ -22,16 +22,20 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+.kimi-code/
 
 # Large data files
 dataset/
 *.tar.gz
+*.tar
 *.zip
 *.bin
 *.pt
 *.pth
 *.ckpt
 *.safetensors
+onto-service-python/models/
+onto-service-java/target/
 
 # Experiment results (large)
 experiments/paper3_agent_planning/results_*/
@@ -47,6 +51,7 @@ experiments/paper3_agent_planning/results_*/
 *.bbl
 *.blg
 *.pdf
+*.xdv
 
 # Misc
 papers/.cache/

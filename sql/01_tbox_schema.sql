@@ -2,6 +2,10 @@
 -- 本体平台 TBOX (Terminology Box) 数据层 Schema
 -- 基于 Doris 存储引擎
 -- ============================================================
+-- 可与 docker-compose doris-init 联动：须在 ontology 库下创建（见 compose 中执行顺序）
+
+CREATE DATABASE IF NOT EXISTS ontology;
+USE ontology;
 
 -- 1. 本体域/图定义表
 CREATE TABLE IF NOT EXISTS ontology_domain (
@@ -12,7 +16,7 @@ CREATE TABLE IF NOT EXISTS ontology_domain (
     status VARCHAR(32) COMMENT '版本状态：draft / validated / published / deprecated / archived',
     created_at DATETIME COMMENT '创建时间',
     created_by VARCHAR(128) COMMENT '创建人或发布服务账号',
-    ddl_hash VARCHAR(64) COMMENT 'DDL 内容 hash，用于变更检测和幂等发布',
+    ddl_hash VARCHAR(64) COMMENT 'DDL 内容 hash，用于变更检测和幂等发布'
 ) ENGINE = OLAP
 UNIQUE KEY(id)
 COMMENT '本体域定义表，保存 TBOX 的源定义和版本管理'
@@ -29,7 +33,7 @@ CREATE TABLE IF NOT EXISTS ontology_object_type (
     parent_label VARCHAR(128) COMMENT '父类 label，用于 class 继承，例如 PhysicalAsset',
     display_name VARCHAR(256) COMMENT '面向用户显示的类型名称',
     description TEXT COMMENT '面向人类的简短说明',
-    ai_context TEXT COMMENT '面向 LLM 的类型语义、别名、使用建议和反例',
+    ai_context TEXT COMMENT '面向 LLM 的类型语义、别名、使用建议和反例'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, label_name)
 COMMENT '节点类型定义表'
@@ -53,7 +57,7 @@ CREATE TABLE IF NOT EXISTS ontology_object_abox_mapping (
     property_projection_json TEXT COMMENT 'class 可见属性到 ABOX 列/表达式的投影 JSON',
     view_sql TEXT COMMENT 'class_view / union_view 的定义 SQL',
     materialization_strategy VARCHAR(64) COMMENT '虚拟表是否物化以及刷新策略，例如 virtual / materialized_5m',
-    ai_context TEXT COMMENT '面向 LLM 的说明：实例从哪里来、不要误用哪些列',
+    ai_context TEXT COMMENT '面向 LLM 的说明：实例从哪里来、不要误用哪些列'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, class_name)
 COMMENT 'Object 到 ABOX 映射表，class 到 ABOX source 的承载策略'
@@ -76,7 +80,7 @@ CREATE TABLE IF NOT EXISTS ontology_property (
     semantic_aliases TEXT COMMENT '属性别名数组，辅助 LLM grounding',
     hidden TINYINT COMMENT '是否默认隐藏，适用于敏感字段或内部字段',
     description TEXT COMMENT '面向人类的简短说明',
-    ai_context TEXT COMMENT '面向 LLM 的业务含义、使用建议和歧义消解',
+    ai_context TEXT COMMENT '面向 LLM 的业务含义、使用建议和歧义消解'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, owner_label, property_name)
 COMMENT '属性定义表'
@@ -100,7 +104,7 @@ CREATE TABLE IF NOT EXISTS ontology_relationship (
     outgoing_is_multi TINYINT COMMENT 'TRUE 表示 source.outgoing_name 类型为 MULTIROW<target_label>',
     incoming_is_multi TINYINT COMMENT 'TRUE 表示 target.incoming_name 类型为 MULTIROW<source_label>',
     cardinality VARCHAR(64) COMMENT '关系基数：one_to_one / one_to_many / many_to_one / many_to_many',
-    ai_context TEXT COMMENT '该谓语面向 LLM 的业务语义、别名、使用场景和反例',
+    ai_context TEXT COMMENT '该谓语面向 LLM 的业务语义、别名、使用场景和反例'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, label_name)
 COMMENT '关系定义表'
@@ -126,7 +130,7 @@ CREATE TABLE IF NOT EXISTS ontology_logic (
     execution_mode_hint VARCHAR(64) COMMENT '执行模式提示：on_read / materialized / scheduled / event_driven',
     external_binding_name VARCHAR(256) COMMENT '外部执行绑定名称，例如 hai_security_state_job',
     output_type VARCHAR(64) COMMENT '输出类型，例如 STRING / DOUBLE / BOOL / JSON',
-    ai_context TEXT COMMENT '面向 LLM 的规则含义、适用场景和反例',
+    ai_context TEXT COMMENT '面向 LLM 的规则含义、适用场景和反例'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, logic_name)
 COMMENT 'Logic 规则定义表'
@@ -144,7 +148,7 @@ CREATE TABLE IF NOT EXISTS ontology_logic_dependency (
     dependency_kind VARCHAR(64) COMMENT '依赖类型：property / relation / measure / table / service',
     dependency_path VARCHAR(512) COMMENT '跨关系路径，例如 Equipment.has_sensor.latest_value',
     required TINYINT COMMENT '是否必需',
-    description TEXT COMMENT '依赖说明',
+    description TEXT COMMENT '依赖说明'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, logic_name, dependency_name)
 COMMENT 'Logic 依赖表'
@@ -166,7 +170,7 @@ CREATE TABLE IF NOT EXISTS ontology_logic_execution_binding (
     trigger_rule_ref VARCHAR(512) COMMENT '外部平台触发规则引用；本体层不负责调度',
     enabled TINYINT COMMENT '该绑定是否可被本体层使用',
     owner VARCHAR(128) COMMENT '负责人或服务账号',
-    observability_ref VARCHAR(512) COMMENT '外部平台运行记录、日志或监控地址引用',
+    observability_ref VARCHAR(512) COMMENT '外部平台运行记录、日志或监控地址引用'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, logic_name, platform_name)
 COMMENT 'Logic 外部执行绑定表'
@@ -183,7 +187,7 @@ CREATE TABLE IF NOT EXISTS ontology_logic_explanation (
     language VARCHAR(32) NOT NULL COMMENT '解释语言，例如 zh-CN / en-US',
     template_text TEXT COMMENT '解释模板',
     evidence_schema_json TEXT COMMENT 'evidence_json 的结构说明',
-    ai_context TEXT COMMENT '面向 LLM 的解释边界和禁止编造提示',
+    ai_context TEXT COMMENT '面向 LLM 的解释边界和禁止编造提示'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, logic_name, language)
 COMMENT 'Logic 解释模板表'
@@ -207,7 +211,7 @@ CREATE TABLE IF NOT EXISTS ontology_action (
     external_action_ref VARCHAR(512) COMMENT '外部 action / workflow / function 引用',
     invocation_mode VARCHAR(64) COMMENT '调用模式：dry_run_only / submit_request / execute_external',
     dry_run_required TINYINT COMMENT '是否必须先 dry-run',
-    ai_context TEXT COMMENT '面向 LLM 的调用时机、禁止调用场景和业务提示',
+    ai_context TEXT COMMENT '面向 LLM 的调用时机、禁止调用场景和业务提示'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, action_name)
 COMMENT 'Action 定义表'
@@ -226,7 +230,7 @@ CREATE TABLE IF NOT EXISTS ontology_action_binding (
     dry_run_ref VARCHAR(512) COMMENT '外部 dry-run / preview endpoint 引用',
     result_ref VARCHAR(512) COMMENT '外部执行结果或状态查询引用',
     observability_ref VARCHAR(512) COMMENT '外部运行记录、日志或监控地址引用',
-    enabled TINYINT COMMENT '该绑定是否可用',
+    enabled TINYINT COMMENT '该绑定是否可用'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, action_name, platform_name)
 COMMENT 'Action 外部绑定表'
@@ -236,17 +240,18 @@ PROPERTIES (
 );
 
 -- 12. 本体工件表（RDF/OWL 等）
+-- Doris：UNIQUE KEY 列必须是表字段声明的前缀且顺序一致（须先 format 再 content_hash，再放其余列）
 CREATE TABLE IF NOT EXISTS ontology_artifact (
     domain_name VARCHAR(128) NOT NULL COMMENT '所属本体图名称',
     version VARCHAR(32) NOT NULL COMMENT '所属 TBOX 版本',
     artifact_kind VARCHAR(64) NOT NULL COMMENT '工件类型：rdf_owl 等',
     format VARCHAR(32) NOT NULL COMMENT '内容格式：ttl / rdfxml / jsonld / owl',
+    content_hash VARCHAR(64) NOT NULL COMMENT '内容 hash (sha-256 hex)',
     base_iri VARCHAR(512) COMMENT '命名空间/基准 IRI',
     content TEXT COMMENT '原始内容',
-    content_hash VARCHAR(64) NOT NULL COMMENT '内容 hash (sha-256 hex)',
     source VARCHAR(32) COMMENT '来源：generated / uploaded',
     created_at DATETIME COMMENT '创建时间',
-    created_by VARCHAR(128) COMMENT '创建人',
+    created_by VARCHAR(128) COMMENT '创建人'
 ) ENGINE = OLAP
 UNIQUE KEY(domain_name, version, artifact_kind, format, content_hash)
 COMMENT '本体工件表：按 domain/version 存 RDF/OWL 等定义工件'

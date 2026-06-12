@@ -11,6 +11,20 @@ RUN sed -i 's|http://ports.ubuntu.com/ubuntu-ports|http://mirrors.tuna.tsinghua.
     apt-get install -y maven && \
     rm -rf /var/lib/apt/lists/*
 
+# Use Aliyun mirror for Maven
+RUN mkdir -p /root/.m2 && cat > /root/.m2/settings.xml <<'EOF'
+<settings>
+  <mirrors>
+    <mirror>
+      <id>aliyunmaven</id>
+      <name>Aliyun Maven</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+</settings>
+EOF
+
 WORKDIR /build
 COPY onto-service-java/pom.xml .
 COPY onto-service-java/src ./src

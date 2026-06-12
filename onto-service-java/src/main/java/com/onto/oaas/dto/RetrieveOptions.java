@@ -19,4 +19,7 @@ public class RetrieveOptions {
 
     @Builder.Default
     private boolean includeContext = false;
+
+    @Builder.Default
+    private boolean skipIntentAnalysis = false;
 }

@@ -70,14 +70,94 @@ public class TBoxRetrievalController {
 
         log.info("Retrieve request: queryId={}, query={}, topK={}", queryId, query, topK);
 
-        // ===== 智能检索流水线（PlannerAgent 编排）=====
-        List<TBoxCandidateDto> objects = executePlannedRetrieval(queryId, query, topK, filters, options);
+        boolean skipIntent = options != null && options.isSkipIntentAnalysis();
+        List<TBoxCandidateDto> objects;
+        String mode;
+        if (skipIntent) {
+            mode = "direct";
+            objects = executeDirectRetrieval(queryId, query, topK, filters, options);
+        } else {
+            mode = "agent-planned";
+            objects = executePlannedRetrieval(queryId, query, topK, filters, options);
+        }
 
         return ResponseEntity.ok(TBoxRetrieveResponse.builder()
                 .queryId(queryId)
-                .mode("agent-planned")
+                .mode(mode)
                 .objects(objects)
                 .build());
+    }
+
+    /**
+     * 直接召回：跳过意图识别和 Planner，直接调用 RecallAgent + RerankAgent。
+     */
+    @SuppressWarnings("unchecked")
+    private List<TBoxCandidateDto> executeDirectRetrieval(String queryId, String query, int topK,
+                                                           com.onto.oaas.dto.TBoxFilters filters,
+                                                           com.onto.oaas.dto.RetrieveOptions options) {
+        List<TBoxObjectType> objectTypes = filters != null ? filters.getObjectTypes() : null;
+        boolean enableKeyword = options != null && options.isEnableKeywordRecall();
+        boolean enableVector = options != null && options.isEnableVectorRecall();
+        boolean includeContext = options != null && options.isIncludeContext();
+
+        AgentMessage recallMsg = AgentMessage.builder()
+                .correlationId(queryId)
+                .type(AgentMessageType.RECALL_REQUEST)
+                .build();
+        recallMsg.putPayload("query", query);
+        recallMsg.putPayload("topK", topK);
+        recallMsg.putPayload("objectTypes", objectTypes);
+        recallMsg.putPayload("enableKeywordRecall", enableKeyword);
+        recallMsg.putPayload("enableVectorRecall", enableVector);
+
+        List<RecallAgent.ScoredCandidate> candidates = waitForResponse(recallMsg, AgentMessageType.RECALL_RESULT)
+                .getPayload("candidates", List.class);
+        if (candidates == null) {
+            candidates = Collections.emptyList();
+        }
+
+        AgentMessage rerankMsg = AgentMessage.builder()
+                .correlationId(queryId)
+                .type(AgentMessageType.RERANK_REQUEST)
+                .build();
+        rerankMsg.putPayload("query", query);
+        rerankMsg.putPayload("candidates", candidates);
+        rerankMsg.putPayload("topK", topK);
+        rerankMsg.putPayload("objectTypes", objectTypes);
+        rerankMsg.putPayload("structureDocuments", Collections.emptyList());
+        rerankMsg.putPayload("queryIntent", "UNKNOWN");
+
+        List<RerankAgent.RankedCandidate> ranked = waitForResponse(rerankMsg, AgentMessageType.RERANK_RESULT)
+                .getPayload("rankedCandidates", List.class);
+        if (ranked == null) {
+            ranked = Collections.emptyList();
+        }
+
+        List<ContextAgent.EnrichedCandidate> enriched = Collections.emptyList();
+        if (includeContext && !ranked.isEmpty()) {
+            AgentMessage enrichMsg = AgentMessage.builder()
+                    .correlationId(queryId)
+                    .type(AgentMessageType.CONTEXT_ENRICH)
+                    .build();
+            enrichMsg.putPayload("rankedCandidates", ranked);
+
+            List<ContextAgent.EnrichedCandidate> ctxResult = waitForResponse(enrichMsg, AgentMessageType.CONTEXT_ENRICHED)
+                    .getPayload("enrichedCandidates", List.class);
+            enriched = ctxResult != null ? ctxResult : Collections.emptyList();
+        }
+
+        List<TBoxCandidateDto> objects = new ArrayList<>();
+        if (includeContext && !enriched.isEmpty()) {
+            for (ContextAgent.EnrichedCandidate c : enriched) {
+                objects.add(toCandidateDto(c.document, c.score, c.channels, c.context));
+            }
+        } else {
+            for (RerankAgent.RankedCandidate c : ranked) {
+                objects.add(toCandidateDto(c.document, c.score, c.channels, null));
+            }
+        }
+
+        return objects;
     }
 
     /**
@@ -283,6 +363,10 @@ public class TBoxRetrievalController {
     }
 
     private void onAgentResponse(AgentMessage response) {
+        if (response == null || response.getCorrelationId() == null) {
+            // 增量同步等事件没有 correlationId，忽略
+            return;
+        }
         CompletableFuture<AgentMessage> future = pendingResponses.get(response.getCorrelationId());
         if (future != null && !future.isDone()) {
             future.complete(response);

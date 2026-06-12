@@ -7,7 +7,6 @@ import com.onto.oaas.agent.core.AgentMessageType;
 import com.onto.oaas.model.QueryIntentV2;
 import com.onto.oaas.model.QueryIntentV2.StructureConstraint;
 import com.onto.oaas.model.enums.TBoxObjectType;
-import com.onto.oaas.service.query.PythonQueryUnderstandingClient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -17,8 +16,7 @@ import org.springframework.stereotype.Component;
 /**
  * 语义查询理解 Agent（V2）。
  *
- * <p>职责：深度分析自然语言查询，执行实体链接、意图识别、结构约束提取、查询扩展。</p>
- * <p>优先调用 Python LLM 服务进行语义分析，服务不可用时回退到本地规则引擎。</p>
+ * <p>职责：基于本地规则分析自然语言查询，执行实体链接、意图识别、结构约束提取、查询扩展。</p>
  *
  * <p>输入：{@link AgentMessageType#QUERY_ANALYZE_V2}</p>
  * <p>输出：{@link AgentMessageType#QUERY_ANALYZED_V2}</p>
@@ -29,11 +27,8 @@ public class SemanticQueryAgent extends AbstractAgent {
 
     private static final Pattern PATH_PATTERN = Pattern.compile("[a-zA-Z_][a-zA-Z0-9_]*(?:\\.[a-zA-Z_][a-zA-Z0-9_]*)*");
 
-    private final PythonQueryUnderstandingClient queryUnderstandingClient;
-
-    public SemanticQueryAgent(AgentBus agentBus, PythonQueryUnderstandingClient queryUnderstandingClient) {
+    public SemanticQueryAgent(AgentBus agentBus) {
         super(agentBus);
-        this.queryUnderstandingClient = queryUnderstandingClient;
         subscribeTo(AgentMessageType.QUERY_ANALYZE_V2);
     }
 
@@ -52,26 +47,12 @@ public class SemanticQueryAgent extends AbstractAgent {
 
         log.info("[{}] Analyzing query V2: '{}', correlationId={}", getName(), query, message.getCorrelationId());
 
-        // 优先调用 Python LLM 服务
-        QueryIntentV2 intent = callPythonService(query);
-        if (intent == null) {
-            log.warn("[{}] Python query understanding failed, falling back to local rules", getName());
-            intent = analyzeLocal(query);
-        }
+        QueryIntentV2 intent = analyzeLocal(query);
 
         AgentMessage reply = message.reply(AgentMessageType.QUERY_ANALYZED_V2)
                 .putPayload("intent", intent)
                 .putPayload("query", query);
         publish(reply);
-    }
-
-    private QueryIntentV2 callPythonService(String query) {
-        try {
-            return queryUnderstandingClient.analyze(query);
-        } catch (Exception e) {
-            log.warn("[{}] Python query understanding error: {}", getName(), e.getMessage());
-            return null;
-        }
     }
 
     private void publishEmptyIntent(AgentMessage original) {
@@ -90,7 +71,7 @@ public class SemanticQueryAgent extends AbstractAgent {
     }
 
     /**
-     * 本地规则分析（Python 服务不可用时的回退）。
+     * 本地规则分析。
      */
     public QueryIntentV2 analyzeLocal(String query) {
         if (query == null || query.isBlank()) {

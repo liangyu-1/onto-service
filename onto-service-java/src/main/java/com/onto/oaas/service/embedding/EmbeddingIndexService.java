@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * 为索引文档批量生成 embedding 向量的服务。
  *
- * <p>在索引文档保存到仓库前，调用 Python Embedding 服务（BGE 模型）
+ * <p>在索引文档保存到仓库前，调用 vLLM/OpenAI 兼容的 Embedding 服务（BGE-M3 模型）
  * 为每个文档的 {@code textForEmbedding} 生成向量。</p>
  */
 @Slf4j

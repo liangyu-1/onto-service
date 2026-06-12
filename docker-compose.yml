@@ -157,9 +157,9 @@ services:
       - DORIS_USER=root
       - DORIS_PASSWORD=
       - ABOX_ENGINE=doris
-      - VLLM_EMBEDDING_URL=http://10.191.23.129:8105
+      - VLLM_EMBEDDING_BASE_URL=http://10.191.23.129:8105
       - VLLM_EMBEDDING_MODEL=bge-m3
-      - VLLM_RERANK_URL=http://10.191.23.129:8104
+      - VLLM_RERANK_BASE_URL=http://10.191.23.129:8104
       - VLLM_RERANK_MODEL=Qwen3-Reranker-4B
       - FULL_SYNC_AUTO_ON_STARTUP=true
       - NEO4J_URI=bolt://neo4j:7687

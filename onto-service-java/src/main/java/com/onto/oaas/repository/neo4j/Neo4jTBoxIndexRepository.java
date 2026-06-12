@@ -431,11 +431,11 @@ public class Neo4jTBoxIndexRepository implements TBoxIndexRepository {
         if (node.containsKey("embedding")) {
             org.neo4j.driver.Value embValue = node.get("embedding");
             if (embValue != null && !embValue.isNull()) {
-                List<Object> embList = embValue.asList(v -> (Object) v);
+                List<Double> embList = embValue.asList(org.neo4j.driver.Value::asDouble);
                 if (embList != null) {
                     embedding = new float[embList.size()];
                     for (int i = 0; i < embList.size(); i++) {
-                        embedding[i] = ((Number) embList.get(i)).floatValue();
+                        embedding[i] = embList.get(i).floatValue();
                     }
                 }
             }

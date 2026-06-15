@@ -26,8 +26,9 @@ class FullSyncClientTest {
         ObjectMapper objectMapper = new ObjectMapper();
         ExternalSnapshotAdapter adapter = new ExternalSnapshotAdapter(objectMapper);
         OntologyMgmtSnapshotAdapter ontologyMgmtAdapter = new OntologyMgmtSnapshotAdapter(objectMapper);
-        fullSyncClient = new FullSyncClient(restTemplate, objectMapper, adapter, ontologyMgmtAdapter);
-        // baseUrl and snapshotPath are injected via @Value; use reflection to set them for test
+        OntologyApiAuthHelper authHelper = new OntologyApiAuthHelper();
+        fullSyncClient = new FullSyncClient(restTemplate, objectMapper, adapter, ontologyMgmtAdapter, authHelper);
+        // baseUrl, snapshotPath and authHelper fields are injected via @Value; use reflection to set them for test
         org.springframework.test.util.ReflectionTestUtils.setField(fullSyncClient, "baseUrl", "http://localhost:8081");
         org.springframework.test.util.ReflectionTestUtils.setField(fullSyncClient, "snapshotPath", "/api/snapshot");
     }

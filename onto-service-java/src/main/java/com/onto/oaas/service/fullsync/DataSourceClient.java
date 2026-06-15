@@ -6,6 +6,10 @@ import com.onto.oaas.model.DatasourceDetail;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -20,6 +24,7 @@ public class DataSourceClient {
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
+    private final OntologyApiAuthHelper authHelper;
 
     private static final String DATASOURCE_PATH = "/ontology/api/open/datasources";
 
@@ -36,7 +41,11 @@ public class DataSourceClient {
                 .build()
                 .toUriString();
         try {
-            String rawJson = restTemplate.getForObject(url, String.class);
+            HttpHeaders headers = authHelper.createAuthHeaders();
+            HttpEntity<Void> entity = new HttpEntity<>(headers);
+            ResponseEntity<String> response = restTemplate.exchange(
+                    url, HttpMethod.GET, entity, String.class);
+            String rawJson = response.getBody();
             if (rawJson == null || rawJson.isBlank()) {
                 return null;
             }

@@ -95,6 +95,10 @@ oaas:
     base-url: ${ONTOLOGY_MGMT_URL:http://172.16.21.216:8888}
     snapshot-path: ${ONTOLOGY_SNAPSHOT_PATH:/ontology/api/open/domains}
     page-size: 100
+    # 本体管理系统 OpenAPI 鉴权（如需）
+    auth:
+      app-key: ${ONTOLOGY_APP_KEY:}
+      app-secret: ${ONTOLOGY_APP_SECRET:}
   index:
     rebuild:
       batch-size: 100

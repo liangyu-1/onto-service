@@ -7,6 +7,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -25,13 +29,19 @@ public class FullSyncClient {
     private final ObjectMapper objectMapper;
     private final ExternalSnapshotAdapter adapter;
     private final OntologyMgmtSnapshotAdapter ontologyMgmtAdapter;
+    private final OntologyApiAuthHelper authHelper;
 
     public TBoxSnapshot fetchSnapshot(String ontologyId, String ontologyVersion) {
         String url = buildUrl(ontologyId, ontologyVersion);
         log.info("Fetching TBox snapshot from: {}", url);
 
-        // 先获取原始 JSON，再适配转换
-        String rawJson = restTemplate.getForObject(url, String.class);
+        HttpHeaders headers = authHelper.createAuthHeaders();
+        HttpEntity<Void> entity = new HttpEntity<>(headers);
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                url, HttpMethod.GET, entity, String.class);
+        String rawJson = response.getBody();
+
         if (rawJson == null || rawJson.isBlank()) {
             log.error("Empty response from external snapshot API");
             return null;

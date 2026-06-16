@@ -19,10 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class OntologyApiAuthHelper {
 
-    @Value("${oaas.ontology-openapi.app-key:}")
+    @Value("${oaas.full-sync.auth.app-key:}")
     private String appKey;
 
-    @Value("${oaas.ontology-openapi.app-secret:}")
+    @Value("${oaas.full-sync.auth.app-secret:}")
     private String appSecret;
 
     public boolean isConfigured() {

@@ -49,9 +49,14 @@ public class FullSyncClient {
 
         try {
             JsonNode rootNode = objectMapper.readTree(rawJson);
+            if (log.isDebugEnabled()) {
+                java.util.List<String> fieldNames = new java.util.ArrayList<>();
+                rootNode.fieldNames().forEachRemaining(fieldNames::add);
+                log.debug("Snapshot response root fields: {}", fieldNames);
+            }
 
-            // 判断是否是本体管理平台格式（有 "domains" 字段且外层有 code/message）
-            if (rootNode.has("domains") && rootNode.has("code")) {
+            // 判断是否是本体管理平台格式（有 "domains" 字段）
+            if (rootNode.has("domains")) {
                 log.info("Ontology management platform format detected, adapting...");
                 TBoxSnapshot snapshot = ontologyMgmtAdapter.adapt(rootNode);
                 log.info("Adapted snapshot: domains={}, types={}",

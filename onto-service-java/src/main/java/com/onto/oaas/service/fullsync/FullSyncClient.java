@@ -42,6 +42,10 @@ public class FullSyncClient {
                 url, HttpMethod.GET, entity, String.class);
         String rawJson = response.getBody();
 
+        log.info("Snapshot API response status: {}, body preview: {}",
+                response.getStatusCode(),
+                rawJson != null ? rawJson.substring(0, Math.min(rawJson.length(), 500)) : "null");
+
         if (rawJson == null || rawJson.isBlank()) {
             log.error("Empty response from external snapshot API");
             return null;

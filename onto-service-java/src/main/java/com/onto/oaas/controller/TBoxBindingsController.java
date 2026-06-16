@@ -130,16 +130,23 @@ public class TBoxBindingsController {
      */
     private Binding enrichBindingWithDatasource(Binding binding) {
         if (binding == null || binding.getDatasource() == null) {
+            log.debug("[BindingEnrichment] Skip: binding or datasource is null");
             return binding;
         }
         // 如果已经包含 datasource 详情，不再重复查询
         if (binding.getDatasourceType() != null || binding.getConnectionUrl() != null) {
+            log.debug("[BindingEnrichment] Skip: already has datasourceType={} or connectionUrl={}",
+                    binding.getDatasourceType(), binding.getConnectionUrl());
             return binding;
         }
+        log.info("[BindingEnrichment] Fetching datasource detail for datasourceId={}", binding.getDatasource());
         DatasourceDetail detail = dataSourceClient.fetchDatasourceDetail(binding.getDatasource());
         if (detail == null) {
+            log.warn("[BindingEnrichment] Datasource detail not found for id={}", binding.getDatasource());
             return binding;
         }
+        log.info("[BindingEnrichment] Enriching binding with datasource: name={}, type={}, host={}, port={}, connectionUrl={}",
+                detail.getDatasourceName(), detail.getDatasourceType(), detail.getHost(), detail.getPort(), detail.getConnectionUrl());
         Binding enriched = new Binding();
         enriched.setDatasource(binding.getDatasource());
         enriched.setSchema(binding.getSchema());
@@ -155,6 +162,7 @@ public class TBoxBindingsController {
         enriched.setConnectionMode(detail.getConnectionMode());
         enriched.setConnectionUrl(detail.getConnectionUrl());
         enriched.setUsername(detail.getUsername());
+        enriched.setPassword(detail.getPassword());
         return enriched;
     }
 }

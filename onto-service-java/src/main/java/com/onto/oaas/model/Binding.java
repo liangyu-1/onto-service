@@ -28,4 +28,5 @@ public class Binding {
     private String connectionMode;
     private String connectionUrl;
     private String username;
+    private String password;
 }

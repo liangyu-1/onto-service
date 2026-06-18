@@ -105,9 +105,16 @@ def grounded_arguments(
     call: Dict[str, Any],
     state: DialogueState,
     db: Dict[str, Any],
+    action_bank: ActionBank,
 ) -> tuple[Dict[str, Any], List[str], List[str]]:
     """Return ontology-canonical arguments for a benchmark call."""
-    result = ArgumentGrounder().ground(call["action"], call.get("arguments", {}), state, db)
+    result = ArgumentGrounder().ground(
+        call["action"],
+        call.get("arguments", {}),
+        state,
+        db,
+        schema=action_bank.get(call["action"]),
+    )
     return result.arguments, result.changes, result.violations
 
 
@@ -124,6 +131,7 @@ def run_state_admissibility(
     tasks: List[Task],
     db: Dict[str, Any],
     verifier: ConstraintVerifier,
+    action_bank: ActionBank,
 ) -> List[BenchmarkCaseResult]:
     """Check that state predicates accept original state and reject flipped state."""
     results: List[BenchmarkCaseResult] = []
@@ -139,7 +147,9 @@ def run_state_admissibility(
             continue
 
         state = initialized_state_for_call(call, db)
-        grounded_args, grounding_changes, grounding_violations = grounded_arguments(call, state, db)
+        grounded_args, grounding_changes, grounding_violations = grounded_arguments(
+            call, state, db, action_bank
+        )
         original = verifier.verify(action, grounded_args, state, db)
         if not original.passed:
             results.append(BenchmarkCaseResult(
@@ -178,7 +188,9 @@ def run_state_admissibility(
         flipped_db = copy.deepcopy(db)
         flipped_db["orders"][order_id]["status"] = STATUS_FLIP[original_status]
         flipped_state = initialized_state_for_call(call, flipped_db)
-        flipped_args, flipped_changes, flipped_grounding_violations = grounded_arguments(call, flipped_state, flipped_db)
+        flipped_args, flipped_changes, flipped_grounding_violations = grounded_arguments(
+            call, flipped_state, flipped_db, action_bank
+        )
         flipped = verifier.verify(action, flipped_args, flipped_state, flipped_db)
         results.append(BenchmarkCaseResult(
             benchmark="state_admissibility_counterfactual",
@@ -203,6 +215,7 @@ def run_role_binding(
     tasks: List[Task],
     db: Dict[str, Any],
     verifier: ConstraintVerifier,
+    action_bank: ActionBank,
 ) -> List[BenchmarkCaseResult]:
     """Perturb ontology role fillers and check that verifier rejects them."""
     results: List[BenchmarkCaseResult] = []
@@ -217,7 +230,9 @@ def run_role_binding(
         args = call["arguments"]
         order_id = args.get("order_id")
         state = initialized_state_for_call(call, db)
-        grounded_args, grounding_changes, grounding_violations = grounded_arguments(call, state, db)
+        grounded_args, grounding_changes, grounding_violations = grounded_arguments(
+            call, state, db, action_bank
+        )
         original = verifier.verify(action, grounded_args, state, db)
         if not original.passed:
             continue
@@ -286,7 +301,9 @@ def run_effect_consistency(
             continue
         order_id = args.get("order_id")
         state = initialized_state_for_call(call, db)
-        grounded_args, grounding_changes, grounding_violations = grounded_arguments(call, state, db)
+        grounded_args, grounding_changes, grounding_violations = grounded_arguments(
+            call, state, db, action_bank
+        )
         original = ConstraintVerifier(action_bank).verify(action, grounded_args, state, db)
         if grounding_violations or not original.passed:
             results.append(BenchmarkCaseResult(
@@ -357,6 +374,7 @@ def effect_matches(schema: ActionSchema, before: Dict[str, Any], after: Dict[str
 def run_argument_grounding(
     tasks: List[Task],
     db: Dict[str, Any],
+    action_bank: ActionBank,
 ) -> List[BenchmarkCaseResult]:
     """Check whether common LLM-style parameter aliases are canonicalized."""
     grounder = ArgumentGrounder()
@@ -377,7 +395,13 @@ def run_argument_grounding(
             state = initialized_state_for_call(call, db)
             aliased_args = dict(call["arguments"])
             aliased_args[alias] = aliased_args.pop(canonical)
-            grounded = grounder.ground(action, aliased_args, state, db)
+            grounded = grounder.ground(
+                action,
+                aliased_args,
+                state,
+                db,
+                schema=action_bank.get(action),
+            )
             passed = canonical in grounded.arguments and alias not in grounded.arguments
             results.append(BenchmarkCaseResult(
                 benchmark="argument_role_canonicalization",
@@ -430,10 +454,10 @@ def main() -> None:
 
     verifier = ConstraintVerifier(action_bank)
     results: List[BenchmarkCaseResult] = []
-    results.extend(run_state_admissibility(tasks, db, verifier))
-    results.extend(run_role_binding(tasks, db, verifier))
+    results.extend(run_state_admissibility(tasks, db, verifier, action_bank))
+    results.extend(run_role_binding(tasks, db, verifier, action_bank))
     results.extend(run_effect_consistency(tasks, db, action_bank))
-    results.extend(run_argument_grounding(tasks, db))
+    results.extend(run_argument_grounding(tasks, db, action_bank))
 
     payload = {
         "benchmark_suite": "ontology_retail_local",

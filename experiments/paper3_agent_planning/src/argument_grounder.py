@@ -10,6 +10,7 @@ import copy
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
+from action_bank import ActionSchema
 from state_manager import DialogueState
 
 
@@ -41,6 +42,10 @@ PLACEHOLDER_VALUES = {
 }
 
 
+def first(items: Optional[List[str]]) -> Optional[str]:
+    return items[0] if items else None
+
+
 @dataclass
 class GroundingResult:
     arguments: Dict[str, Any]
@@ -57,6 +62,7 @@ class ArgumentGrounder:
         arguments: Dict[str, Any],
         state: DialogueState,
         db: Dict[str, Any],
+        schema: Optional[ActionSchema] = None,
     ) -> GroundingResult:
         args = copy.deepcopy(arguments or {})
         changes: List[str] = []
@@ -74,14 +80,179 @@ class ArgumentGrounder:
             if str(value).strip().lower() in PLACEHOLDER_VALUES:
                 violations.append(f"PLACEHOLDER_VALUE: {action_name}.{key}={value}")
 
-        self._ground_user_lookup(action_name, args, db, changes)
-        self._ground_user_id(action_name, args, state, db, changes, violations)
-        self._ground_order_id(action_name, args, state, db, changes, violations)
-        self._ground_address(action_name, args, state, db, changes, violations)
-        self._ground_payment_method(action_name, args, state, db, changes, violations)
-        self._ground_item_lists(action_name, args, state, db, changes, violations)
+        if schema is not None:
+            self._ground_from_semantic_roles(schema, args, state, db, changes, violations)
+        else:
+            self._ground_user_lookup(action_name, args, db, changes)
+            self._ground_user_id(action_name, args, state, db, changes, violations)
+            self._ground_order_id(action_name, args, state, db, changes, violations)
+            self._ground_address(action_name, args, state, db, changes, violations)
+            self._ground_payment_method(action_name, args, state, db, changes, violations)
+            self._ground_item_lists(action_name, args, state, db, changes, violations)
 
         return GroundingResult(arguments=args, changes=changes, violations=violations)
+
+    def _ground_from_semantic_roles(
+        self,
+        schema: ActionSchema,
+        args: Dict[str, Any],
+        state: DialogueState,
+        db: Dict[str, Any],
+        changes: List[str],
+        violations: List[str],
+    ) -> None:
+        target_parameter = str(schema.target_binding.get("parameter") or "")
+        if target_parameter:
+            self._ground_target_identifier(
+                schema,
+                target_parameter,
+                args,
+                state,
+                db,
+                changes,
+                violations,
+            )
+
+        role_parameters: Dict[str, List[str]] = {}
+        for parameter, semantics in schema.parameter_semantics.items():
+            role_parameters.setdefault(str(semantics.get("role") or ""), []).append(parameter)
+
+        for parameter in role_parameters.get("new_value", []):
+            ontology_property = schema.parameter_semantics[parameter].get("ontology_property_id", "")
+            if str(ontology_property).endswith(".address"):
+                self._ground_address_value(parameter, args, state, db, changes, violations)
+
+        for parameter in role_parameters.get("payment_method", []):
+            self._ground_payment_role(parameter, args, state, db, changes, violations)
+
+        source_parameter = first(role_parameters.get("source_items"))
+        replacement_parameter = first(role_parameters.get("replacement_items"))
+        if source_parameter:
+            self._ground_item_roles(
+                source_parameter,
+                replacement_parameter,
+                args,
+                state,
+                db,
+                changes,
+                violations,
+            )
+
+    def _ground_target_identifier(
+        self,
+        schema: ActionSchema,
+        parameter: str,
+        args: Dict[str, Any],
+        state: DialogueState,
+        db: Dict[str, Any],
+        changes: List[str],
+        violations: List[str],
+    ) -> None:
+        object_type = schema.target_object.lower()
+        value = args.get(parameter)
+        if object_type == "order":
+            if value in (None, "") and len(state.cached_orders) == 1:
+                value = next(iter(state.cached_orders))
+                args[parameter] = value
+                changes.append(f"{parameter}:<missing>->{value}")
+            canonical = self._canonical_order_id(value, db)
+            if canonical:
+                if canonical != value:
+                    args[parameter] = canonical
+                    changes.append(f"{parameter}:{value}->{canonical}")
+            else:
+                violations.append(f"GROUNDING: {parameter} {value or '<missing>'} does not identify an observed Order")
+        elif object_type == "user":
+            if state.user_id and value != state.user_id:
+                args[parameter] = state.user_id
+                changes.append(f"{parameter}:{value}->{state.user_id}")
+            elif not state.user_id:
+                violations.append(f"GROUNDING: {parameter} is not bound to an authenticated User")
+
+    def _ground_address_value(
+        self,
+        parameter: str,
+        args: Dict[str, Any],
+        state: DialogueState,
+        db: Dict[str, Any],
+        changes: List[str],
+        violations: List[str],
+    ) -> None:
+        address = self._extract_address(args, state, db)
+        if address:
+            if args.get(parameter) != address:
+                changes.append(f"{parameter}:normalized")
+            args[parameter] = address
+            for field_name in ADDRESS_FIELDS:
+                args.pop(field_name, None)
+        else:
+            violations.append(f"GROUNDING: {parameter} has no resolvable address binding")
+
+    def _ground_payment_role(
+        self,
+        parameter: str,
+        args: Dict[str, Any],
+        state: DialogueState,
+        db: Dict[str, Any],
+        changes: List[str],
+        violations: List[str],
+    ) -> None:
+        value = args.get(parameter)
+        valid_methods = self._payment_methods_for(args.get("order_id"), state, db)
+        if value:
+            if valid_methods and value not in valid_methods:
+                violations.append(
+                    f"GROUNDING: {parameter} {value} is not bound to order/user context"
+                )
+            return
+        if len(valid_methods) == 1:
+            args[parameter] = valid_methods[0]
+            changes.append(f"{parameter}:<missing>->{valid_methods[0]}")
+        elif valid_methods:
+            violations.append(f"GROUNDING: ambiguous {parameter} candidates {valid_methods}")
+        else:
+            violations.append(f"GROUNDING: missing {parameter}")
+
+    def _ground_item_roles(
+        self,
+        source_parameter: str,
+        replacement_parameter: Optional[str],
+        args: Dict[str, Any],
+        state: DialogueState,
+        db: Dict[str, Any],
+        changes: List[str],
+        violations: List[str],
+    ) -> None:
+        for parameter in (source_parameter, replacement_parameter):
+            if parameter and parameter in args and isinstance(args[parameter], str):
+                args[parameter] = [args[parameter]]
+                changes.append(f"{parameter}:string->list")
+        source_items = args.get(source_parameter)
+        if not isinstance(source_items, list) or not source_items:
+            violations.append(f"GROUNDING: missing {source_parameter}")
+            return
+        order = self._order_for(args.get("order_id"), state, db)
+        if order:
+            observed_items = {str(item.get("item_id")) for item in order.get("items", [])}
+            missing = [item for item in source_items if str(item) not in observed_items]
+            if missing:
+                violations.append(
+                    f"GROUNDING: {source_parameter} not bound to target order {missing}"
+                )
+        if replacement_parameter:
+            replacements = args.get(replacement_parameter)
+            if not isinstance(replacements, list) or not replacements:
+                violations.append(f"GROUNDING: missing {replacement_parameter}")
+            elif len(replacements) != len(source_items):
+                violations.append(
+                    f"GROUNDING: len({source_parameter}) != len({replacement_parameter})"
+                )
+            else:
+                unknown = [item for item in replacements if not self._find_variant(str(item), db)]
+                if unknown:
+                    violations.append(
+                        f"GROUNDING: {replacement_parameter} not observed {unknown}"
+                    )
 
     def _ground_user_lookup(
         self,

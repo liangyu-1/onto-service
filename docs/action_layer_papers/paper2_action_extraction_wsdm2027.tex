@@ -60,9 +60,9 @@ f(\mathcal{D}, \mathcal{O}) \rightarrow (\mathcal{A}_{D}, \mathcal{G}_{D}).
 \]
 Each action record contains:
 \[
-\langle id, type, actor, target, params, pre, eff, constraints, evidence, grounding \rangle.
+\langle id, name, type, actor, target, params, pre, eff, constraints, evidence, grounding, control\_flow, runtime \rangle.
 \]
-The procedure graph contains action nodes and control-flow edges such as sequential, conditional, exception, loop, and parallel relations.
+The procedure graph contains action nodes and control-flow edges such as sequential, conditional, exception, loop, and parallel relations. The runtime fields do not make the representation platform-specific; they define a deterministic projection from the canonical Action IR into a lightweight ActionBank used by downstream agent experiments.
 
 \section{Method}
 \subsection{Structure-Aware Document Parsing}
@@ -73,6 +73,7 @@ The second stage identifies procedural units: operation steps, conditions, safet
 
 \subsection{Action IR Construction}
 Operation units are compiled into Action IR records. The extractor identifies action trigger, actor, target object, input/output arguments, parameters, preconditions, effects, and evidence. Condition and exception units are linked to action records rather than stored as independent facts when they constrain action execution.
+The Action IR is the canonical representation shared by extraction and planning. It contains evidence and grounding fields required for extraction evaluation, plus a runtime projection contract that specifies how an accepted record is compiled into an executable ActionBank schema. The projection keeps the runtime fields needed by the agent---action identifier, target object, parameter descriptions, preconditions, effects, and constraints---while preserving evidence and grounding in the canonical record for audit.
 
 \subsection{Ontology Grounding}
 For each action field, the system retrieves ontology candidates. Action triggers are matched to action types; targets are matched to object types; measured or set values are matched to parameters; requirements are matched to constraints. Grounding uses lexical matching, dense retrieval, and graph neighborhood expansion. A field may remain unresolved, but unresolved fields are explicitly marked.
@@ -82,6 +83,7 @@ Actions are connected using document order, numbering, headings, conditional mar
 
 \subsection{Validation}
 The validation stage checks whether action types exist in the ontology, whether target types satisfy action constraints, whether parameters are compatible with target objects, whether control-flow edges reference valid actions, and whether evidence text is traceable to the source document.
+For downstream use, validation also checks that the Action IR can be projected into an ActionBank record without losing the fields required by the planner. This prevents a disconnect between SOP extraction and ontology-grounded agent planning.
 
 \section{Experimental Protocol}
 \subsection{Datasets}

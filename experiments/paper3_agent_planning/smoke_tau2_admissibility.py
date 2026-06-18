@@ -30,7 +30,6 @@ def main() -> None:
         "get_user_details",
         "get_order_details",
         "cancel_pending_order",
-        "ask_for_confirmation",
         "respond_to_user",
         "official_tool_absent_from_action_bank",
     }
@@ -126,7 +125,7 @@ def main() -> None:
         },
         premature_cancel,
     )
-    expected_hint_fragments = ["find_user_id", "ask_for_confirmation", "get_order_details"]
+    expected_hint_fragments = ["find_user_id", "message_to_user", "get_order_details"]
     for fragment in expected_hint_fragments:
         if not any(fragment in hint for hint in hints):
             raise AssertionError(f"expected repair hint containing {fragment!r}, got {hints}")
@@ -202,9 +201,8 @@ def main() -> None:
         },
         [
             {"action": "find_user_id_by_email", "arguments": {"email": "jane@example.com"}},
-            {"action": "ask_for_confirmation", "arguments": {"action_description": "cancel #O-100"}},
         ],
-        context_text="tool result: order_id #O-100 has status pending",
+        context_text="tool result: order_id #O-100 has status pending. user: yes, cancel it",
     )
     assert_contains(invalid_reason, "INVALID_REASON:")
 
@@ -215,9 +213,8 @@ def main() -> None:
         },
         [
             {"action": "find_user_id_by_email", "arguments": {"email": "jane@example.com"}},
-            {"action": "ask_for_confirmation", "arguments": {"action_description": "cancel #O-101"}},
         ],
-        context_text="user is authenticated and confirmed cancellation",
+        context_text="user is authenticated and said: yes, cancel it",
     )
     assert_contains(needs_status, "ORDER_STATUS_UNVERIFIED:")
     status_repair = deterministic_repair_candidate(
@@ -318,8 +315,10 @@ def main() -> None:
         needs_confirmation,
         tool_names,
     )
-    if confirmation_repair is None or confirmation_repair.get("action") != "ask_for_confirmation":
-        raise AssertionError(f"expected ask_for_confirmation deterministic repair, got {confirmation_repair}")
+    if confirmation_repair is None or confirmation_repair.get("action") != "respond_to_user":
+        raise AssertionError(f"expected respond_to_user confirmation repair, got {confirmation_repair}")
+    if "confirm" not in confirmation_repair.get("message_to_user", "").lower():
+        raise AssertionError(f"expected confirmation prompt text, got {confirmation_repair}")
 
     grounded_cancel = checker.verify_candidate(
         {
@@ -328,9 +327,8 @@ def main() -> None:
         },
         [
             {"action": "find_user_id_by_email", "arguments": {"email": "jane@example.com"}},
-            {"action": "ask_for_confirmation", "arguments": {"action_description": "cancel #O-100"}},
         ],
-        context_text="tool result: order_id #O-100 has status pending",
+        context_text="tool result: order_id #O-100 has status pending. user: yes, cancel it",
     )
     if grounded_cancel:
         raise AssertionError(f"expected grounded cancel to be admissible, got {grounded_cancel}")

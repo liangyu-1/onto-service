@@ -32,9 +32,11 @@ sys.path.insert(0, str(BASE_DIR / "src"))
 
 from llm_client import OpenAIClient  # noqa: E402
 from action_bank import ActionBank  # noqa: E402
+from argument_grounder import ArgumentGrounder  # noqa: E402
+from ontology_repair import OntologyRepairPlanner  # noqa: E402
+from runtime_ontology import RuntimeOntologyState, reconstruct_runtime_state  # noqa: E402
 from tau2_admissibility import (  # noqa: E402
     Tau2AdmissibilityChecker,
-    deterministic_repair_candidate,
     extract_history_tool_calls,
     repair_hints,
 )
@@ -223,10 +225,10 @@ class OntologyAgentState:
         self.messages = list(messages) if messages else []
 
 
-def load_action_bank_text(domain: str) -> str:
-    if domain != "retail" or not ACTION_BANK_PATH.exists():
+def action_bank_prompt_text(action_bank: ActionBank | None) -> str:
+    if action_bank is None:
         return ""
-    return ActionBank.from_json(ACTION_BANK_PATH).to_prompt_text()
+    return action_bank.to_prompt_text()
 
 
 def load_action_bank(domain: str) -> ActionBank | None:
@@ -235,37 +237,134 @@ def load_action_bank(domain: str) -> ActionBank | None:
     return ActionBank.from_json(ACTION_BANK_PATH)
 
 
+def _normalize_option_text(text: str) -> str:
+    normalized = text.lower()
+    normalized = normalized.replace("google home", "google assistant")
+    normalized = normalized.replace("homekit", "apple homekit")
+    normalized = normalized.replace("small", "s")
+    normalized = normalized.replace("medium", "m")
+    normalized = normalized.replace("large", "l")
+    normalized = re.sub(r"[^a-z0-9]+", " ", normalized)
+    return re.sub(r"\s+", " ", normalized).strip()
+
+
+def _option_alias_match(option_value: str, context_text: str) -> bool:
+    aliases = {
+        "s": (" size s ", " small "),
+        "m": (" size m ", " medium "),
+        "l": (" size l ", " large "),
+        "google assistant": (" google home ", " google assistant "),
+        "apple homekit": (" apple homekit ", " homekit "),
+        "v neck": (" v neck ", " v-neck "),
+        "crew neck": (" crew neck ", " crew-neck "),
+        "full size": (" full size ", " full-size "),
+    }
+    padded = f" {context_text} "
+    for canonical, candidates in aliases.items():
+        if option_value == canonical and any(candidate in padded for candidate in candidates):
+            return True
+    return False
+
+
 def uses_ontology_prompt(agent_kind: str) -> bool:
-    return agent_kind in {"ontology_prompt", "ontology_lite", "ontology_full", "ontology"}
+    return agent_kind in {
+        "ontology_prompt",
+        "state_only",
+        "ontology_lite",
+        "typed_admissibility",
+        "ontology_full",
+        "ontology",
+    }
+
+
+def uses_runtime_ontology_state(agent_kind: str) -> bool:
+    return agent_kind in {
+        "state_only",
+        "ontology_lite",
+        "typed_admissibility",
+        "ontology_full",
+        "ontology",
+    }
 
 
 def uses_admissibility_gate(agent_kind: str) -> bool:
-    return agent_kind in {"ontology_lite", "ontology_full", "ontology"}
+    return agent_kind in {
+        "ontology_lite",
+        "typed_admissibility",
+        "ontology_full",
+        "ontology",
+    }
 
 
 def uses_full_conditions(agent_kind: str) -> bool:
+    return agent_kind in {"typed_admissibility", "ontology_full", "ontology"}
+
+
+def uses_ontology_repair(agent_kind: str) -> bool:
     return agent_kind in {"ontology_full", "ontology"}
+
+
+def build_ontology_section(
+    agent_kind: str,
+    action_bank_text: str,
+    runtime_state_text: str,
+) -> str:
+    if not uses_ontology_prompt(agent_kind):
+        return ""
+    lines = [
+        "Ontology action layer:",
+        action_bank_text or "No local ActionBank available for this domain.",
+    ]
+    if uses_runtime_ontology_state(agent_kind):
+        lines.extend([
+            "",
+            "Runtime ontology state extracted from prior tool results:",
+            runtime_state_text,
+            "",
+            "Use the runtime ontology state as the source of truth for user_id, "
+            "order_id, item_id, product_id, product variants, payment_method_id, "
+            "and order status.",
+        ])
+    return "\n".join(lines)
 
 
 def premature_response_violations(
     candidate: Dict[str, Any],
     rejected: List[Dict[str, Any]],
     gate_enabled: bool,
+    context_text: str = "",
 ) -> List[str]:
     """Reject generic user responses when repairable actions are still pending."""
-    if not gate_enabled or not rejected:
+    if not gate_enabled:
         return []
-    if str(candidate.get("action", "") or "") != "respond_to_user":
+    action = str(candidate.get("action", "") or "")
+    if action not in {"respond_to_user", "transfer_to_human_agents"}:
         return []
     message = str(candidate.get("message_to_user", "") or "").lower()
+    if action == "transfer_to_human_agents":
+        lowered_context = context_text.lower()
+        explicit_transfer_request = any(
+            marker in lowered_context
+            for marker in (
+                "transfer me",
+                "human agent",
+                "real person",
+                "supervisor",
+                "someone else",
+                "another department",
+            )
+        )
+        if explicit_transfer_request:
+            return []
+        return ["PREMATURE_RESPONSE: transfer is not admissible until prerequisite actions have been attempted or policy explicitly requires transfer"]
     if not message:
         return []
     has_repair_path = any(
-        item.get("repair_hints") or item.get("deterministic_repair_candidate")
+        item.get("repair_hints")
+        or item.get("ontology_repair_candidate")
+        or item.get("deterministic_repair_candidate")
         for item in rejected
     )
-    if not has_repair_path:
-        return []
     generic_markers = (
         "cannot complete",
         "can't complete",
@@ -275,8 +374,10 @@ def premature_response_violations(
         "human agent",
         "human assistance",
         "planning failed",
+        "too many requests",
+        "http error 429",
     )
-    if any(marker in message for marker in generic_markers):
+    if any(marker in message for marker in generic_markers) and (has_repair_path or not rejected):
         return ["PREMATURE_RESPONSE: repairable prerequisites remain; do not end the task with a generic response"]
     return []
 
@@ -304,8 +405,14 @@ def build_agent_class(agent_kind: str):
             self.agent_kind = agent_kind
             self.tool_names = {getattr(tool, "name", "") for tool in tools}
             self.tool_text = "\n".join(stringify_tool(tool) for tool in tools)
-            self.action_bank_text = load_action_bank_text(domain)
             self.action_bank = load_action_bank(domain)
+            self.action_bank_text = action_bank_prompt_text(self.action_bank)
+            self.argument_grounder = ArgumentGrounder()
+            self.repair_planner = (
+                OntologyRepairPlanner(self.action_bank, self.tool_names)
+                if self.action_bank is not None
+                else None
+            )
             self.admissibility_checker = Tau2AdmissibilityChecker(
                 self.tool_names,
                 self.action_bank,
@@ -346,12 +453,196 @@ def build_agent_class(agent_kind: str):
             candidate: Dict[str, Any],
             state: OntologyAgentState,
             context_text: str,
+            runtime_state: RuntimeOntologyState,
         ) -> List[str]:
             return self.admissibility_checker.verify_candidate(
                 candidate,
                 self._history_tool_calls(state),
                 context_text=context_text,
+                runtime_state=runtime_state,
             )
+
+        def _ground_candidate(
+            self,
+            candidate: Dict[str, Any],
+            runtime_state: RuntimeOntologyState,
+            context_text: str,
+        ) -> None:
+            action = str(candidate.get("action", "") or "")
+            if action not in self.tool_names:
+                return
+            arguments = candidate.get("arguments", {})
+            if not isinstance(arguments, dict):
+                arguments = {}
+            changes: List[str] = []
+            arguments = self.argument_normalizer.normalize(action, arguments, context_text)
+            arguments, weak_changes = self._weak_ground_lookup_arguments(action, arguments)
+            changes.extend(weak_changes)
+            arguments, local_changes = self._ground_from_runtime_state(
+                action,
+                arguments,
+                runtime_state,
+                context_text,
+            )
+            changes.extend(local_changes)
+            schema = self.action_bank.get(action) if self.action_bank is not None else None
+            if schema is None or getattr(schema, "grounding_mode", "strong") != "weak":
+                grounded = self.argument_grounder.ground(
+                    action,
+                    arguments,
+                    runtime_state.to_dialogue_state(),
+                    runtime_state.to_grounding_db(),
+                    schema=schema,
+                )
+                arguments = grounded.arguments
+                changes.extend(grounded.changes)
+                if grounded.violations:
+                    candidate.setdefault("_grounding_violations", []).extend(grounded.violations)
+            candidate["arguments"] = arguments
+            if changes:
+                candidate.setdefault("_grounding_changes", []).extend(changes)
+                runtime_state.grounding_changes.extend(changes)
+
+        def _weak_ground_lookup_arguments(
+            self,
+            action: str,
+            arguments: Dict[str, Any],
+        ) -> tuple[Dict[str, Any], List[str]]:
+            grounded = dict(arguments)
+            changes: List[str] = []
+            if action == "get_order_details" and grounded.get("order_id"):
+                order_id = str(grounded["order_id"])
+                if re.fullmatch(r"W\d{7,10}", order_id, flags=re.IGNORECASE):
+                    grounded["order_id"] = f"#{order_id}"
+                    changes.append(f"order_id:{order_id}->{grounded['order_id']}")
+            return grounded, changes
+
+        def _ground_from_runtime_state(
+            self,
+            action: str,
+            arguments: Dict[str, Any],
+            runtime_state: RuntimeOntologyState,
+            context_text: str,
+        ) -> tuple[Dict[str, Any], List[str]]:
+            grounded = dict(arguments)
+            changes: List[str] = []
+            if action in {"get_user_details", "modify_user_address"} and runtime_state.user_id:
+                if grounded.get("user_id") != runtime_state.user_id:
+                    changes.append(f"user_id:{grounded.get('user_id')}->{runtime_state.user_id}")
+                    grounded["user_id"] = runtime_state.user_id
+
+            order = runtime_state.orders.get(str(grounded.get("order_id") or ""))
+            if action in {
+                "modify_pending_order_items",
+                "return_delivered_order_items",
+                "exchange_delivered_order_items",
+            } and not grounded.get("payment_method_id"):
+                payment_id = self._single_payment_method(order, runtime_state)
+                if payment_id:
+                    grounded["payment_method_id"] = payment_id
+                    changes.append(f"payment_method_id:<missing>->{payment_id}")
+
+            if action in {"modify_pending_order_items", "exchange_delivered_order_items"}:
+                grounded, variant_changes = self._ground_new_item_ids(
+                    grounded,
+                    order,
+                    runtime_state,
+                    context_text,
+                )
+                changes.extend(variant_changes)
+            return grounded, changes
+
+        def _single_payment_method(
+            self,
+            order: Optional[Dict[str, Any]],
+            runtime_state: RuntimeOntologyState,
+        ) -> str:
+            candidates: List[str] = []
+            if order:
+                for payment in order.get("payment_history", []) or []:
+                    payment_id = payment.get("payment_method_id")
+                    if payment_id and payment_id not in candidates:
+                        candidates.append(payment_id)
+            for payment_id in runtime_state.payment_methods:
+                if payment_id not in candidates:
+                    candidates.append(payment_id)
+            return candidates[0] if len(candidates) == 1 else ""
+
+        def _ground_new_item_ids(
+            self,
+            arguments: Dict[str, Any],
+            order: Optional[Dict[str, Any]],
+            runtime_state: RuntimeOntologyState,
+            context_text: str,
+        ) -> tuple[Dict[str, Any], List[str]]:
+            if not order:
+                return arguments, []
+            item_ids = arguments.get("item_ids")
+            if isinstance(item_ids, str):
+                item_ids = [item_ids]
+            if not isinstance(item_ids, list) or not item_ids:
+                return arguments, []
+            current_new = arguments.get("new_item_ids")
+            if isinstance(current_new, str):
+                current_new = [current_new]
+
+            order_items = {str(item.get("item_id")): item for item in order.get("items", []) or []}
+            if isinstance(current_new, list) and len(current_new) == len(item_ids):
+                invalid_pairs = []
+                for source_item_id, new_item_id in zip(item_ids, current_new):
+                    source_item = order_items.get(str(source_item_id))
+                    expected_product_id = str((source_item or {}).get("product_id") or "")
+                    actual_product_id = self._variant_product_id(str(new_item_id), runtime_state)
+                    if expected_product_id and actual_product_id == expected_product_id:
+                        continue
+                    invalid_pairs.append((source_item_id, new_item_id))
+                if not invalid_pairs:
+                    return arguments, []
+
+            inferred: List[str] = []
+            for item_id in item_ids:
+                source_item = order_items.get(str(item_id))
+                if not source_item:
+                    return arguments, []
+                product_id = str(source_item.get("product_id") or "")
+                product = runtime_state.products.get(product_id)
+                if not product:
+                    return arguments, []
+                variant_id = self._select_variant_id(product, str(source_item.get("item_id")), context_text)
+                if not variant_id:
+                    return arguments, []
+                inferred.append(variant_id)
+            grounded = dict(arguments)
+            grounded["item_ids"] = [str(item_id) for item_id in item_ids]
+            grounded["new_item_ids"] = inferred
+            return grounded, [f"new_item_ids:inferred->{inferred}"]
+
+        def _variant_product_id(self, item_id: str, runtime_state: RuntimeOntologyState) -> str:
+            for product_id, product in runtime_state.products.items():
+                if item_id in (product.get("variants") or {}):
+                    return str(product_id)
+            return ""
+
+        def _select_variant_id(self, product: Dict[str, Any], current_item_id: str, context_text: str) -> str:
+            text = _normalize_option_text(context_text)
+            best_id = ""
+            best_score = 0
+            for item_id, variant in (product.get("variants") or {}).items():
+                if str(item_id) == str(current_item_id):
+                    continue
+                if variant.get("available") is False:
+                    continue
+                score = 0
+                for value in (variant.get("options") or {}).values():
+                    normalized = _normalize_option_text(str(value))
+                    if normalized and normalized in text:
+                        score += 3
+                    elif _option_alias_match(normalized, text):
+                        score += 2
+                if score > best_score:
+                    best_id = str(item_id)
+                    best_score = score
+            return best_id if best_score > 0 else ""
 
         def _assistant_message(
             self,
@@ -365,11 +656,15 @@ def build_agent_class(agent_kind: str):
             gate_trace = {
                 "enabled": uses_admissibility_gate(self.agent_kind),
                 "condition_enforcement": uses_full_conditions(self.agent_kind),
+                "runtime_state_exposed": uses_runtime_ontology_state(self.agent_kind),
+                "repair_enabled": uses_ontology_repair(self.agent_kind),
                 "selected_action": action,
                 "selected_arguments": arguments,
                 "rejected_candidates": rejected or [],
                 "rejection_count": len(rejected or []),
                 "repair_attempt_count": len({item.get("attempt") for item in rejected or []}),
+                "grounding_changes": response.get("_grounding_changes", []),
+                "grounding_violations": response.get("_grounding_violations", []),
             }
 
             if action in self.tool_names:
@@ -396,21 +691,13 @@ def build_agent_class(agent_kind: str):
         def generate_next_message(self, message: Any, state: OntologyAgentState):
             state.messages.append(message)
             history = "\n".join(message_to_text(m) for m in state.messages[-12:])
-            ontology_section = ""
-            if uses_ontology_prompt(self.agent_kind):
-                ontology_section = f"""
-Ontology action layer:
-{self.action_bank_text or "No local ActionBank available for this domain."}
-
-Ontology-grounded admissibility rules:
-- Treat actions as typed operations over target objects, not just API names.
-- Before choosing a mutating action, check the action target, parameters,
-  preconditions, effects, policy constraints, confirmation requirements, and
-  execution history against the conversation and tool results.
-- Avoid repeated read-only calls with the same arguments when their result is
-  already present in the conversation.
-- Prefer the next admissible domain action over premature transfer.
-"""
+            runtime_state = reconstruct_runtime_state(state.messages, self.action_bank)
+            runtime_state_text = runtime_state.to_prompt_text()
+            ontology_section = build_ontology_section(
+                self.agent_kind,
+                self.action_bank_text,
+                runtime_state_text,
+            )
             system_prompt = f"""You are a customer-service agent evaluated by official tau2.
 
 Follow the domain policy exactly. Use tools only when their preconditions are
@@ -463,15 +750,15 @@ Example for looking up an order by email:
 Choose the next single assistant action."""
             response: Dict[str, Any] = {}
             rejected: List[Dict[str, Any]] = []
-            for attempt in range(3):
+            for attempt in range(4):
                 current_prompt = user_prompt
                 # Retry once on JSON parse failure before giving up.
-                for json_attempt in range(2):
+                for json_attempt in range(3):
                     try:
                         response = self.llm.chat_json(system_prompt, current_prompt, temperature=0.0)
                         break
                     except Exception as exc:
-                        if json_attempt == 0:
+                        if json_attempt < 2:
                             current_prompt = (
                                 user_prompt
                                 + "\n\nREMINDER: Return ONLY a single valid JSON object. "
@@ -481,31 +768,32 @@ Choose the next single assistant action."""
                         response = {
                             "action": "respond_to_user",
                             "arguments": {},
-                            "message_to_user": f"I need to transfer this request because planning failed: {exc}",
+                            "message_to_user": "I need a moment to continue checking the account details.",
+                            "_planning_error": str(exc),
                         }
                 for candidate in self._extract_candidates(response):
                     action = str(candidate.get("action", "") or "")
                     if action in self.tool_names and uses_admissibility_gate(self.agent_kind):
-                        candidate["arguments"] = self.argument_normalizer.normalize(
-                            action,
-                            candidate.get("arguments", {}),
-                            history,
-                        )
+                        self._ground_candidate(candidate, runtime_state, history)
                         placeholder_violations = self.argument_normalizer.detect_placeholders(
                             action, candidate["arguments"]
                         )
                         # Promote placeholders to hard violations so the repair loop fires.
                         if placeholder_violations:
                             candidate["_placeholder_violations"] = placeholder_violations
-                    violations = self._verify_candidate(candidate, state, history)
+                    violations = self._verify_candidate(candidate, state, history, runtime_state)
                     violations.extend(
                         candidate.get("_placeholder_violations", [])
+                    )
+                    violations.extend(
+                        candidate.get("_grounding_violations", [])
                     )
                     violations.extend(
                         premature_response_violations(
                             candidate,
                             rejected,
                             uses_admissibility_gate(self.agent_kind),
+                            history,
                         )
                     )
                     if not violations:
@@ -516,24 +804,47 @@ Choose the next single assistant action."""
                         "attempt": attempt,
                         "candidate": candidate,
                         "violations": violations,
-                        "repair_hints": repair_hints(candidate, violations),
+                        "repair_hints": [],
                     })
-                    repair_candidate = deterministic_repair_candidate(
-                        candidate,
-                        violations,
-                        self.tool_names,
-                        context_text=history,
-                        history_tool_calls=self._history_tool_calls(state),
+                    repair_candidate = (
+                        self.repair_planner.plan(
+                            candidate,
+                            violations,
+                            runtime_state,
+                            history,
+                        )
+                        if self.repair_planner is not None
+                        and uses_ontology_repair(self.agent_kind)
+                        else None
                     )
                     if repair_candidate is not None:
-                        repair_violations = self._verify_candidate(repair_candidate, state, history)
-                        rejected[-1]["deterministic_repair_candidate"] = repair_candidate
-                        rejected[-1]["deterministic_repair_violations"] = repair_violations
+                        rejected[-1]["repair_hints"] = [
+                            "Acquire missing predicate "
+                            f"`{repair_candidate.get('_missing_predicate', '')}` "
+                            f"through ontology provider "
+                            f"`{repair_candidate.get('_provider_action', '')}`."
+                        ]
+                    else:
+                        rejected[-1]["repair_hints"] = repair_hints(candidate, violations)
+                    if repair_candidate is not None:
+                        if uses_admissibility_gate(self.agent_kind):
+                            self._ground_candidate(repair_candidate, runtime_state, history)
+                        repair_violations = self._verify_candidate(
+                            repair_candidate,
+                            state,
+                            history,
+                            runtime_state,
+                        )
+                        repair_violations.extend(repair_candidate.get("_grounding_violations", []))
+                        rejected[-1]["ontology_repair_candidate"] = repair_candidate
+                        rejected[-1]["ontology_repair_violations"] = repair_violations
                         if not repair_violations:
                             assistant_message = self._assistant_message(repair_candidate, response, rejected)
                             state.messages.append(assistant_message)
                             return assistant_message, state
                 if not uses_admissibility_gate(self.agent_kind):
+                    break
+                if not uses_ontology_repair(self.agent_kind):
                     break
                 violation_text = "\n".join(
                     f"- {item['candidate'].get('action')}({json.dumps(item['candidate'].get('arguments', {}), ensure_ascii=False)}): "
@@ -548,7 +859,9 @@ The ontology-grounded admissibility checker rejected the previous candidates:
 Choose the next candidate by following the repair hints. Prefer prerequisite
 lookup, authentication, confirmation, or communication actions over repeating
 the rejected action. Use cached tool results from the conversation when
-available."""
+available. Do not transfer to a human agent merely because an internal planning
+attempt failed; choose a valid next tool call or ask the user for the specific
+missing value."""
 
             fallback = {
                 "action": "respond_to_user",
@@ -591,8 +904,36 @@ def create_ontology_prompt_agent(tools, domain_policy, **kwargs):
     )
 
 
+def create_state_only_agent(tools, domain_policy, **kwargs):
+    agent_cls = build_agent_class("state_only")
+    llm_args = kwargs.get("llm_args") or {}
+    return agent_cls(
+        tools=tools,
+        domain_policy=domain_policy,
+        llm=kwargs.get("llm") or kwargs.get("agent_llm") or "gemma4-31b",
+        llm_args=llm_args,
+        base_url=llm_args.get("base_url") or kwargs.get("base_url") or "http://172.16.22.79:9999/v1",
+        api_key=llm_args.get("api_key") or kwargs.get("api_key") or "EMPTY",
+        domain=kwargs.get("domain", "retail"),
+    )
+
+
 def create_ontology_lite_agent(tools, domain_policy, **kwargs):
     agent_cls = build_agent_class("ontology_lite")
+    llm_args = kwargs.get("llm_args") or {}
+    return agent_cls(
+        tools=tools,
+        domain_policy=domain_policy,
+        llm=kwargs.get("llm") or kwargs.get("agent_llm") or "gemma4-31b",
+        llm_args=llm_args,
+        base_url=llm_args.get("base_url") or kwargs.get("base_url") or "http://172.16.22.79:9999/v1",
+        api_key=llm_args.get("api_key") or kwargs.get("api_key") or "EMPTY",
+        domain=kwargs.get("domain", "retail"),
+    )
+
+
+def create_typed_admissibility_agent(tools, domain_policy, **kwargs):
+    agent_cls = build_agent_class("typed_admissibility")
     llm_args = kwargs.get("llm_args") or {}
     return agent_cls(
         tools=tools,
@@ -624,7 +965,15 @@ def main() -> None:
     parser.add_argument("--domain", default="retail")
     parser.add_argument(
         "--agent-kind",
-        choices=["schema", "ontology_prompt", "ontology_lite", "ontology_full", "ontology"],
+        choices=[
+            "schema",
+            "ontology_prompt",
+            "state_only",
+            "ontology_lite",
+            "typed_admissibility",
+            "ontology_full",
+            "ontology",
+        ],
         default="ontology_full",
     )
     parser.add_argument("--agent-model", default="gemma4-31b")
@@ -642,18 +991,19 @@ def main() -> None:
     parser.add_argument("--save-to", default="ontology_guided_tau2")
     args = parser.parse_args()
 
-    # Register GLM-5.1 in litellm's model cost map to suppress "model isn't mapped" warnings.
+    # Register GLM models in litellm's model cost map to suppress "model isn't mapped" warnings.
     import litellm as _litellm
 
-    if "glm-5.1" not in _litellm.model_cost:
-        _litellm.model_cost["glm-5.1"] = {
-            "max_tokens": 131072,
-            "max_input_tokens": 131072,
-            "max_output_tokens": 131072,
-            "input_cost_per_token": 0.0,
-            "output_cost_per_token": 0.0,
-            "litellm_provider": "openai",
-        }
+    for model_name in {"glm-5.1", "glm-5.2", "GLM-5.1", "GLM-5.2"}:
+        if model_name not in _litellm.model_cost:
+            _litellm.model_cost[model_name] = {
+                "max_tokens": 131072,
+                "max_input_tokens": 131072,
+                "max_output_tokens": 131072,
+                "input_cost_per_token": 0.0,
+                "output_cost_per_token": 0.0,
+                "litellm_provider": "openai",
+            }
 
     # Override tau2's hardcoded NL assertion evaluator model before any evaluator modules are imported.
     import tau2.config as _tau2_config
@@ -671,12 +1021,19 @@ def main() -> None:
 
     registry.register_agent_factory(create_schema_baseline_agent, "schema_baseline_agent")
     registry.register_agent_factory(create_ontology_prompt_agent, "ontology_prompt_agent")
+    registry.register_agent_factory(create_state_only_agent, "state_only_agent")
     registry.register_agent_factory(create_ontology_lite_agent, "ontology_lite_agent")
+    registry.register_agent_factory(
+        create_typed_admissibility_agent,
+        "typed_admissibility_agent",
+    )
     registry.register_agent_factory(create_ontology_guided_agent, "ontology_guided_agent")
     registered_by_kind = {
         "schema": "schema_baseline_agent",
         "ontology_prompt": "ontology_prompt_agent",
+        "state_only": "state_only_agent",
         "ontology_lite": "ontology_lite_agent",
+        "typed_admissibility": "typed_admissibility_agent",
         "ontology_full": "ontology_guided_agent",
         "ontology": "ontology_guided_agent",
     }

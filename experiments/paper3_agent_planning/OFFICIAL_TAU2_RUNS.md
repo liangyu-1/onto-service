@@ -7,6 +7,15 @@ This experiment has two evaluation paths:
 
 Do not claim tau-bench task-performance improvement from local runner results.
 
+The runtime ActionBank used below is a deterministic projection of
+`data/action_ir/retail_action_ir.json`. After editing the canonical Action IR,
+regenerate the runtime file and check the projection:
+
+```bash
+python experiments/paper3_agent_planning/compile_action_ir_to_action_bank.py
+python experiments/paper3_agent_planning/smoke_action_ir_projection.py
+```
+
 ## Run Official Baseline
 
 Preferred one-command pipeline:
@@ -28,7 +37,7 @@ python experiments/paper3_agent_planning/run_official_tau2_pair.py \
 Manual commands are useful for debugging individual runs.
 
 The one-command pipeline runs a preflight step before launching simulations.
-It checks the ActionBank, custom agent module, tau2 imports, and the
+It checks the Action IR projection, ActionBank, custom agent module, tau2 imports, and the
 OpenAI-compatible `/v1/models` endpoint for the configured agent model. If you
 only want to inspect commands, use `--dry-run`. If tau2 or the model endpoint is
 not available in the current shell, use the skip flags only for local smoke

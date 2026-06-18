@@ -217,7 +217,7 @@ def render_markdown(report: Dict[str, Any]) -> str:
     lines.extend(["", "## Ontology Gate Mechanism", ""])
     if report["mechanism_summary"]:
         lines.append(markdown_table(
-            ["Planner", "Gate Events", "Rejects", "Repair Attempts", "Deterministic Repairs", "Tasks With Rejects", "Violation Breakdown"],
+            ["Planner", "Gate Events", "Rejects", "Repair Attempts", "Deterministic Repairs", "Simulations With Rejects", "Violation Breakdown"],
             [
                 [
                     row["planner"],
@@ -225,7 +225,7 @@ def render_markdown(report: Dict[str, Any]) -> str:
                     row["gate_rejection_count"],
                     row["gate_repair_attempt_count"],
                     row["gate_deterministic_repair_count"],
-                    row["tasks_with_gate_rejections"],
+                    row["simulations_with_gate_rejections"],
                     json.dumps(row["violation_breakdown"], ensure_ascii=False, sort_keys=True),
                 ]
                 for row in report["mechanism_summary"]

@@ -149,7 +149,16 @@ def extract_ontology_gate_trace(sim: Dict[str, Any]) -> Dict[str, Any]:
             if not isinstance(rejected, dict):
                 continue
             rejected_candidates.append(rejected)
-            if rejected.get("deterministic_repair_candidate") and not rejected.get("deterministic_repair_violations"):
+            repair_candidate = (
+                rejected.get("ontology_repair_candidate")
+                or rejected.get("deterministic_repair_candidate")
+            )
+            repair_violations = (
+                rejected.get("ontology_repair_violations")
+                if "ontology_repair_violations" in rejected
+                else rejected.get("deterministic_repair_violations")
+            )
+            if repair_candidate and not repair_violations:
                 deterministic_repair_count += 1
             for violation in rejected.get("violations", []) or []:
                 violation_counter[violation_type(str(violation))] += 1

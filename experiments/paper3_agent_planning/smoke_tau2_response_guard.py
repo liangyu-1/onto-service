@@ -18,7 +18,7 @@ def main() -> None:
         {
             "candidate": {"action": "cancel_pending_order", "arguments": {"order_id": "#O-1"}},
             "violations": ["CONFIRMATION_REQUIRED: cancel_pending_order requires explicit user confirmation"],
-            "repair_hints": ["Ask for explicit confirmation with `ask_for_confirmation` before issuing the mutating action."],
+            "repair_hints": ["Ask the user for explicit confirmation in `message_to_user` before issuing the mutating action."],
         }
     ]
     generic = {

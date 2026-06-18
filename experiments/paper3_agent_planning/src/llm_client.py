@@ -1,11 +1,12 @@
-"""LLM client for agent planning."""
+"""OpenAI-compatible LLM client used by the tau2 agent entrypoint."""
 from __future__ import annotations
 
 import json
-import os
 import re
+import time
+import urllib.error
 import urllib.request
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 
 class LLMClient:
@@ -40,10 +41,11 @@ class LLMClient:
 class OpenAIClient(LLMClient):
     """OpenAI-compatible API client (works with vLLM, etc.)."""
 
-    def __init__(self, model: str, base_url: str, api_key: str = "EMPTY"):
+    def __init__(self, model: str, base_url: str, api_key: str = "EMPTY", max_retries: int = 4):
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
+        self.max_retries = max_retries
 
     def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0, json_mode: bool = False) -> str:
         url = f"{self.base_url}/chat/completions"
@@ -58,14 +60,7 @@ class OpenAIClient(LLMClient):
         }
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
-        req = urllib.request.Request(
-            url=url,
-            data=json.dumps(payload).encode("utf-8"),
-            method="POST",
-            headers={"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"},
-        )
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            body = json.loads(resp.read().decode("utf-8"))
+        body = self._post_chat_completion(url, payload)
         
         # Handle potential None content (e.g., when finish_reason="length")
         choice = body["choices"][0]
@@ -79,60 +74,29 @@ class OpenAIClient(LLMClient):
             raise ValueError(f"LLM returned None content (finish_reason={choice.get('finish_reason')}). Usage: {body.get('usage')}")
         return content
 
-
-class DummyClient(LLMClient):
-    """Dummy client for testing pipeline without real LLM."""
-
-    def __init__(self, fallback_responses: Optional[Dict[str, str]] = None):
-        self.fallback_responses = fallback_responses or {}
-        self.call_count = 0
-
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> str:
-        self.call_count += 1
-        for keyword, response in self.fallback_responses.items():
-            if keyword in user_prompt:
-                return response
-        return json.dumps({
-            "thought": "I need to take an action.",
-            "action": "transfer_to_human_agents",
-            "arguments": {"summary": "Need human assistance."}
-        })
-
-
-class HeuristicClient(LLMClient):
-    """Heuristic client that simulates a naive agent with configurable mistake rate."""
-
-    def __init__(self, mistake_rate: float = 0.3):
-        from baselines.heuristic_llm import HeuristicLLM
-        self.heuristic = HeuristicLLM(mistake_rate=mistake_rate)
-
-    def chat(self, system_prompt: str, user_prompt: str, temperature: float = 0.0) -> str:
-        response = self.heuristic.chat_json(system_prompt, user_prompt, temperature)
-        return json.dumps(response)
-
-
-def create_llm_client(
-    model: str = "GLM-5.1",
-    base_url: str = "https://open.bigmodel.cn/api/coding/paas/v4",
-    api_key: str = "EMPTY",
-    use_kimi_cli: bool = False,
-) -> LLMClient:
-    """Factory: create OpenAI-compatible client."""
-    if api_key == "EMPTY":
-        api_key = os.getenv("OPENAI_API_KEY", "EMPTY")
-    if use_kimi_cli:
-        from kimi_cli_client import KimiCLIClient
-        print("Using Kimi CLI client")
-        return KimiCLIClient(model=model)
-    
-    try:
-        client = OpenAIClient(model=model, base_url=base_url, api_key=api_key)
-        # Quick test
-        client.chat("You are a test assistant.", "Say 'ok'", temperature=0.0)
-        print(f"LLM client connected: {model} @ {base_url}")
-        return client
-    except Exception as e:
-        raise RuntimeError(
-            f"Could not connect to LLM at {base_url}: {e}. "
-            "Please check the endpoint, model name, and API key."
-        ) from e
+    def _post_chat_completion(self, url: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        encoded = json.dumps(payload).encode("utf-8")
+        last_error: Exception | None = None
+        for attempt in range(self.max_retries + 1):
+            req = urllib.request.Request(
+                url=url,
+                data=encoded,
+                method="POST",
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {self.api_key}"},
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    return json.loads(resp.read().decode("utf-8"))
+            except urllib.error.HTTPError as exc:
+                last_error = exc
+                if exc.code not in {408, 409, 425, 429, 500, 502, 503, 504} or attempt >= self.max_retries:
+                    break
+                retry_after = exc.headers.get("Retry-After")
+                delay = float(retry_after) if retry_after and retry_after.isdigit() else min(2 ** attempt, 16)
+                time.sleep(delay)
+            except urllib.error.URLError as exc:
+                last_error = exc
+                if attempt >= self.max_retries:
+                    break
+                time.sleep(min(2 ** attempt, 16))
+        raise last_error or RuntimeError("LLM request failed")

@@ -39,7 +39,9 @@ onto-service-java/target/
 
 # Experiment results (large)
 experiments/paper3_agent_planning/results_*/
-!experiments/paper3_agent_planning/results_kimi_fixed_40/*.json
+experiments/paper3_agent_planning/results/*.json
+experiments/paper3_agent_planning/results_official_tau2/
+experiments/paper3_agent_planning/experiments/
 
 # LaTeX build artifacts
 *.aux

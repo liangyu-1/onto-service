@@ -47,6 +47,7 @@ class Tau2AdmissibilityChecker:
         candidate: Dict[str, Any],
         history_tool_calls: Sequence[Dict[str, Any] | ToolCallRecord],
         context_text: str = "",
+        runtime_state: Any = None,
     ) -> List[str]:
         if not self.enabled:
             return []
@@ -66,25 +67,69 @@ class Tau2AdmissibilityChecker:
         violations: List[str] = []
         schema = self.action_bank.get(action) if self.action_bank is not None else None
         if schema is not None:
-            for param_name in schema.parameters:
+            required_parameters = [
+                name
+                for name in schema.parameters
+                if schema.parameter_semantics.get(name, {}).get("required", True)
+            ]
+            for param_name in required_parameters:
                 if param_name not in arguments or arguments.get(param_name) in (None, "", []):
                     violations.append(f"MISSING_PARAMETER: {action}.{param_name}")
+            violations.extend(self._check_parameter_types(action, arguments, schema))
             if self.enforce_conditions:
+                conditions = schema.preconditions + schema.constraints
+                if getattr(schema, "grounding_mode", "strong") == "weak":
+                    conditions = _weak_grounding_conditions(conditions)
+                elif runtime_state is not None and not runtime_state.target_observed(schema, arguments):
+                    binding = schema.target_binding.get("parameter", "target")
+                    violations.append(
+                        f"GROUNDING: {action}.{binding} is not bound to an observed {schema.target_object}"
+                    )
+                if runtime_state is not None:
+                    violations.extend(
+                        self._check_parameter_roles(action, arguments, schema, runtime_state)
+                    )
                 violations.extend(
                     self._check_schema_conditions(
                         action,
                         arguments,
-                        schema.preconditions + schema.constraints,
+                        conditions,
                         history_tool_calls,
                         context_text,
+                        runtime_state,
                     )
                 )
         elif self.action_bank is not None:
             violations.append(f"NOT_IN_ACTION_LAYER: {action} is an official tool but absent from ActionBank")
 
-        if self._is_duplicate(action, arguments, history_tool_calls):
+        if self._is_duplicate(action, arguments, history_tool_calls, runtime_state):
             violations.append(f"DUPLICATE: {action} with same arguments already appeared in history")
 
+        return violations
+
+    def _check_parameter_types(
+        self,
+        action: str,
+        arguments: Dict[str, Any],
+        schema: Any,
+    ) -> List[str]:
+        violations: List[str] = []
+        for parameter, semantics in schema.parameter_semantics.items():
+            if parameter not in arguments:
+                continue
+            value = arguments[parameter]
+            declared_type = str(semantics.get("type") or "").lower()
+            if declared_type.startswith("array") and not isinstance(value, list):
+                violations.append(f"PARAMETER_TYPE: {action}.{parameter} must be an array")
+            elif declared_type == "object" and not isinstance(value, dict):
+                violations.append(f"PARAMETER_TYPE: {action}.{parameter} must be an object")
+            elif declared_type in {"string", "enum"} and not isinstance(value, str):
+                violations.append(f"PARAMETER_TYPE: {action}.{parameter} must be a string")
+            allowed_values = semantics.get("allowed_values") or []
+            if allowed_values and value not in allowed_values:
+                violations.append(
+                    f"PARAMETER_VALUE: {action}.{parameter} must be one of {allowed_values}"
+                )
         return violations
 
     def _is_duplicate(
@@ -92,7 +137,10 @@ class Tau2AdmissibilityChecker:
         action: str,
         arguments: Dict[str, Any],
         history_tool_calls: Sequence[Dict[str, Any] | ToolCallRecord],
+        runtime_state: Any = None,
     ) -> bool:
+        if runtime_state is not None:
+            return runtime_state.has_successful_call(action, arguments)
         serialized = _stable_json(arguments)
         for previous in history_tool_calls:
             previous_action, previous_arguments = _unpack_tool_call(previous)
@@ -109,22 +157,43 @@ class Tau2AdmissibilityChecker:
         conditions: Sequence[str],
         history_tool_calls: Sequence[Dict[str, Any] | ToolCallRecord],
         context_text: str,
+        runtime_state: Any = None,
     ) -> List[str]:
         violations: List[str] = []
         normalized = context_text.lower()
         for condition in conditions:
             condition_text = condition.strip()
             if condition_text == "user_authenticated == true":
-                if not self._has_authentication_evidence(history_tool_calls, normalized):
+                authenticated = (
+                    runtime_state.user_authenticated
+                    if runtime_state is not None
+                    else self._has_authentication_evidence(history_tool_calls, normalized)
+                )
+                if not authenticated:
                     violations.append(f"AUTHENTICATION_REQUIRED: {action} requires an authenticated user")
                 continue
             if condition_text == "user_confirmed == true":
-                if not self._has_confirmation_evidence(history_tool_calls, normalized):
+                confirmed = (
+                    runtime_state.has_confirmation(action, arguments)
+                    if runtime_state is not None
+                    else self._has_confirmation_evidence(history_tool_calls, normalized)
+                )
+                if not confirmed:
                     violations.append(f"CONFIRMATION_REQUIRED: {action} requires explicit user confirmation")
                 continue
             if condition_text.startswith("order.status =="):
                 expected = _extract_quoted_value(condition_text)
-                if expected and not self._has_order_status_evidence(arguments, expected, normalized):
+                observed_status = (
+                    runtime_state.order_status(arguments.get("order_id"))
+                    if runtime_state is not None
+                    else ""
+                )
+                status_matches = (
+                    observed_status == expected.lower()
+                    if runtime_state is not None
+                    else self._has_order_status_evidence(arguments, expected, normalized)
+                )
+                if expected and not status_matches:
                     order_id = arguments.get("order_id", "<missing>")
                     violations.append(
                         f"ORDER_STATUS_UNVERIFIED: {action} requires order {order_id} status {expected}"
@@ -143,9 +212,63 @@ class Tau2AdmissibilityChecker:
                     violations.append(f"ITEM_MAPPING_INVALID: {action} requires item_ids and new_item_ids with equal length")
                 continue
             if condition_text.startswith("action_taken_on_order"):
-                if self._same_order_mutation_already_called(action, arguments, history_tool_calls):
+                already_taken = (
+                    runtime_state.mutation_taken_on_order(arguments.get("order_id"), exclude_action=action)
+                    if runtime_state is not None
+                    else self._same_order_mutation_already_called(action, arguments, history_tool_calls)
+                )
+                if already_taken:
                     violations.append(f"ORDER_ACTION_ALREADY_TAKEN: {action} repeats a mutating order action")
                 continue
+        return violations
+
+    def _check_parameter_roles(
+        self,
+        action: str,
+        arguments: Dict[str, Any],
+        schema: Any,
+        runtime_state: Any,
+    ) -> List[str]:
+        violations: List[str] = []
+        order_id = arguments.get("order_id")
+        source_items: List[str] = []
+        replacement_items: List[str] = []
+        for parameter, semantics in schema.parameter_semantics.items():
+            value = arguments.get(parameter)
+            if value in (None, "", []):
+                continue
+            role = semantics.get("role")
+            if role == "source_items":
+                source_items = [str(item) for item in value] if isinstance(value, list) else [str(value)]
+                missing = [item for item in source_items if item not in runtime_state.order_item_ids(order_id)]
+                if missing:
+                    violations.append(
+                        f"ROLE_BINDING: {action}.{parameter} items are not bound to order {order_id}: {missing}"
+                    )
+            elif role == "replacement_items":
+                replacement_items = [str(item) for item in value] if isinstance(value, list) else [str(value)]
+                unknown = [item for item in replacement_items if runtime_state.variant_product_id(item) is None]
+                if unknown:
+                    violations.append(
+                        f"ROLE_BINDING: {action}.{parameter} variants are not observed: {unknown}"
+                    )
+            elif role == "payment_method":
+                valid_methods = runtime_state.valid_payment_method_ids(order_id)
+                if str(value) not in valid_methods:
+                    violations.append(
+                        f"ROLE_BINDING: {action}.{parameter} is not bound to the order or authenticated user"
+                    )
+        if source_items and replacement_items and len(source_items) == len(replacement_items):
+            incompatible = []
+            for source_item, replacement_item in zip(source_items, replacement_items):
+                source_product = runtime_state.order_item_product(order_id, source_item)
+                replacement_product = runtime_state.variant_product_id(replacement_item)
+                if not source_product or source_product != replacement_product:
+                    incompatible.append((source_item, replacement_item))
+            if incompatible:
+                violations.append(
+                    f"ROLE_BINDING: replacement items must belong to the same product as source items: {incompatible}"
+                )
         return violations
 
     def _has_authentication_evidence(
@@ -215,10 +338,14 @@ def repair_hints(candidate: Dict[str, Any], violations: Sequence[str]) -> List[s
         if violation.startswith("MISSING_PARAMETER:"):
             missing = violation.split(":", 1)[1].strip()
             hints.append(f"Fill the missing argument `{missing}` from the conversation or ask the user before retrying `{action}`.")
+        elif violation.startswith("PARAMETER_TYPE:"):
+            hints.append("Use the parameter type declared by the ActionBank role schema.")
+        elif violation.startswith("PARAMETER_VALUE:"):
+            hints.append("Use one of the values allowed by the ActionBank parameter schema.")
         elif violation.startswith("AUTHENTICATION_REQUIRED:"):
             hints.append("Authenticate the user first, typically with `find_user_id_by_email` or `find_user_id_by_name_zip`, then fetch user details if needed.")
         elif violation.startswith("CONFIRMATION_REQUIRED:"):
-            hints.append("Ask for explicit confirmation with `ask_for_confirmation` before issuing the mutating action.")
+            hints.append("Ask the user for explicit confirmation in `message_to_user` before issuing the mutating action.")
         elif violation.startswith("ORDER_STATUS_UNVERIFIED:"):
             order_id = arguments.get("order_id", "the target order")
             hints.append(f"Call `get_order_details` for `{order_id}` and verify the required order status before retrying `{action}`.")
@@ -312,15 +439,15 @@ def deterministic_repair_candidate(
         "CONFIRMATION_REQUIRED" in violation_types
         and "AUTHENTICATION_REQUIRED" not in violation_types
         and "ORDER_STATUS_UNVERIFIED" not in violation_types
-        and "ask_for_confirmation" in available_tools
     ):
         description = _confirmation_description(action, arguments)
         repair = {
             "thought": f"Obtain explicit user confirmation before retrying {action}.",
-            "action": "ask_for_confirmation",
-            "arguments": {"action_description": description},
-            "message_to_user": "",
+            "action": "respond_to_user",
+            "arguments": {},
+            "message_to_user": f"Please confirm that you want me to proceed with: {description}.",
             "_repair_for": action,
+            "_repair_arguments": dict(arguments),
             "_repair_reason": "CONFIRMATION_REQUIRED",
         }
         return None if _repair_seen(repair, history_tool_calls) else repair
@@ -433,6 +560,22 @@ def _violation_type(violation: str) -> str:
     if ":" in violation:
         return violation.split(":", 1)[0]
     return violation.split(" ", 1)[0] if violation else ""
+
+
+def _weak_grounding_conditions(conditions: Sequence[str]) -> List[str]:
+    """Keep policy prerequisites for epistemic actions, drop observed-object checks.
+
+    Epistemic actions acquire state. Requiring the target object to already be
+    cached before a read action makes exploration impossible. We keep
+    authentication/policy checks and parameter checks, but defer object-status
+    and mutation-specific constraints to state-changing actions.
+    """
+    weak: List[str] = []
+    for condition in conditions:
+        condition_text = condition.strip()
+        if condition_text == "user_authenticated == true":
+            weak.append(condition_text)
+    return weak
 
 
 def _confirmation_description(action: str, arguments: Dict[str, Any]) -> str:

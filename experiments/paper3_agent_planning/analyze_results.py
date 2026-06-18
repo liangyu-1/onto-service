@@ -296,58 +296,44 @@ def wilson_ci(successes: int, total: int, z: float = 1.96) -> Tuple[float, float
 
 def violation_breakdown(results: List[Dict]) -> Dict:
     """Break down executed and internally rejected violations by type."""
-    vtypes = {
-        "DUPLICATE": 0,
-        "PRECONDITION": 0,
-        "CONSTRAINT": 0,
-        "Unknown action": 0,
-        "OTHER": 0,
-    }
+    vtypes: Dict[str, int] = {}
+
+    def add_violation(violation: str, count: int = 1) -> None:
+        if not violation:
+            key = "UNKNOWN"
+        elif ":" in violation:
+            key = violation.split(":", 1)[0]
+        elif violation.startswith("Unknown action"):
+            key = "UNKNOWN_ACTION"
+        else:
+            key = violation.split(" ", 1)[0]
+        vtypes[key] = vtypes.get(key, 0) + count
     
     for r in results:
         for step in r.get("step_details", []):
             for v in step.get("verifier_violations", []):
-                if v.startswith("DUPLICATE"):
-                    vtypes["DUPLICATE"] += 1
-                elif v.startswith("PRECONDITION"):
-                    vtypes["PRECONDITION"] += 1
-                elif v.startswith("CONSTRAINT"):
-                    vtypes["CONSTRAINT"] += 1
-                elif v.startswith("Unknown action"):
-                    vtypes["Unknown action"] += 1
-                else:
-                    vtypes["OTHER"] += 1
+                add_violation(str(v))
             for repair in step.get("repair_trace", []):
                 for v in repair.get("violations", []):
-                    if v.startswith("DUPLICATE"):
-                        vtypes["DUPLICATE"] += 1
-                    elif v.startswith("PRECONDITION"):
-                        vtypes["PRECONDITION"] += 1
-                    elif v.startswith("CONSTRAINT"):
-                        vtypes["CONSTRAINT"] += 1
-                    elif v.startswith("Unknown action"):
-                        vtypes["Unknown action"] += 1
-                    else:
-                        vtypes["OTHER"] += 1
+                    add_violation(str(v))
         for vtype, count in r.get("gate_violation_breakdown", {}).items():
-            if vtype in vtypes:
-                vtypes[vtype] += count
-            elif vtype == "UNKNOWN_ACTION":
-                vtypes["Unknown action"] += count
-            else:
-                vtypes["OTHER"] += count
+            add_violation(str(vtype), int(count))
     
-    return vtypes
+    return dict(sorted(vtypes.items(), key=lambda item: (-item[1], item[0])))
 
 
 def gate_mechanism_summary(results: List[Dict]) -> Dict:
     valid = [r for r in results if "error" not in r]
+    simulations_with_gate_rejections = sum(
+        1 for r in valid if int(r.get("gate_rejection_count", 0) or 0) > 0
+    )
     return {
         "gate_event_count": sum(int(r.get("gate_event_count", 0) or 0) for r in valid),
         "gate_rejection_count": sum(int(r.get("gate_rejection_count", 0) or 0) for r in valid),
         "gate_repair_attempt_count": sum(int(r.get("gate_repair_attempt_count", 0) or 0) for r in valid),
         "gate_deterministic_repair_count": sum(int(r.get("gate_deterministic_repair_count", 0) or 0) for r in valid),
-        "tasks_with_gate_rejections": sum(1 for r in valid if int(r.get("gate_rejection_count", 0) or 0) > 0),
+        "simulations_with_gate_rejections": simulations_with_gate_rejections,
+        "tasks_with_gate_rejections": simulations_with_gate_rejections,
     }
 
 
@@ -493,8 +479,8 @@ def analyze_experiment(result_dir: str):
     print("=" * 70)
     any_result = next((r for rs in data.values() for r in rs if isinstance(r, dict)), {})
     if any_result and "local_reward" not in any_result and not is_official_result(any_result):
-        print("WARNING: Results use the legacy format without local_reward.")
-        print("         Re-run run_experiments.py for paper-grade local DB-state metrics.")
+        print("WARNING: Results do not look like imported official tau2 results.")
+        print("         Use import_tau2_results.py before making paper-grade claims.")
     
     # Per-planner summary
     for planner_name, results in data.items():
@@ -570,7 +556,10 @@ def analyze_experiment(result_dir: str):
             print(f"  Ontology Gate Rejections: {gate_summary['gate_rejection_count']}")
             print(f"  Ontology Gate Repair Attempts: {gate_summary['gate_repair_attempt_count']}")
             print(f"  Ontology Gate Deterministic Repairs: {gate_summary['gate_deterministic_repair_count']}")
-            print(f"  Tasks with Gate Rejections: {gate_summary['tasks_with_gate_rejections']}/{total}")
+            print(
+                "  Simulations with Gate Rejections: "
+                f"{gate_summary['simulations_with_gate_rejections']}/{total}"
+            )
         print(f"  Evaluator: {evaluator_names} (official_tau_bench_available={official_available})")
         print(f"  Coverage Warnings: {total_coverage_warnings}")
         print(f"  Import Duplicate Pair Count: {total_import_duplicate_pairs}")
@@ -661,6 +650,10 @@ def analyze_experiment(result_dir: str):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("result_dir", default="results_kimi_40", nargs="?")
+    parser.add_argument(
+        "result_dir",
+        default="experiments/paper3_agent_planning/results_official_tau2/combined.json",
+        nargs="?",
+    )
     args = parser.parse_args()
     analyze_experiment(args.result_dir)

@@ -24,6 +24,9 @@ from action_bank import ActionBank  # noqa: E402
 
 
 ACTION_BANK_PATH = BASE_DIR / "data/action_bank/retail_action_bank.json"
+ACTION_IR_PATH = BASE_DIR / "data/action_ir/retail_action_ir.json"
+
+
 def ok(message: str) -> Dict[str, Any]:
     return {"ok": True, "message": message}
 
@@ -47,13 +50,53 @@ def check_action_bank(path: pathlib.Path) -> Dict[str, Any]:
         "find_user_id_by_name_zip",
         "get_user_details",
         "get_order_details",
-        "ask_for_confirmation",
         "transfer_to_human_agents",
     }
     missing = sorted(required - set(actions))
     if missing:
         return fail(f"ActionBank is missing required retail actions: {missing}")
     return ok(f"ActionBank loaded with {len(actions)} actions")
+
+
+def action_bank_snapshot(action_bank: ActionBank) -> Dict[str, Any]:
+    return {
+        "actions": [
+            {
+                "action_id": schema.action_id,
+                "description": schema.description,
+                "parameters": schema.parameters,
+                "preconditions": schema.preconditions,
+                "effects": schema.effects,
+                "constraints": schema.constraints,
+                "target_object": schema.target_object,
+                "action_kind": schema.action_kind,
+                "grounding_mode": schema.grounding_mode,
+                "parameter_semantics": schema.parameter_semantics,
+                "target_binding": schema.target_binding,
+                "ontology_action_id": schema.ontology_action_id,
+                "target_type_id": schema.target_type_id,
+                "control_flow": schema.control_flow,
+            }
+            for schema in sorted(action_bank.schemas.values(), key=lambda item: item.action_id)
+        ],
+        "predicate_providers": action_bank.predicate_providers,
+    }
+
+
+def check_action_ir_projection(action_ir_path: pathlib.Path, action_bank_path: pathlib.Path) -> Dict[str, Any]:
+    if not action_ir_path.exists():
+        return fail(f"Action IR file not found: {action_ir_path}")
+    try:
+        projected = ActionBank.from_action_ir_json(action_ir_path)
+        committed = ActionBank.from_json(action_bank_path)
+    except Exception as exc:
+        return fail(f"Action IR projection failed: {exc}")
+    if action_bank_snapshot(projected) != action_bank_snapshot(committed):
+        return fail(
+            "ActionBank is not the deterministic projection of the canonical Action IR. "
+            "Run compile_action_ir_to_action_bank.py and inspect the diff."
+        )
+    return ok(f"Action IR projects to ActionBank with {len(projected.list_actions())} actions")
 
 
 def check_agent_module() -> Dict[str, Any]:
@@ -65,7 +108,9 @@ def check_agent_module() -> Dict[str, Any]:
     for name in (
         "create_schema_baseline_agent",
         "create_ontology_prompt_agent",
+        "create_state_only_agent",
         "create_ontology_lite_agent",
+        "create_typed_admissibility_agent",
         "create_ontology_guided_agent",
         "build_agent_class",
     ):
@@ -109,7 +154,8 @@ def check_model_endpoint(base_url: str, model: str, api_key: str, timeout: float
         return fail(f"model endpoint check failed for {url}: {exc}")
     models = payload.get("data", [])
     model_ids = [str(item.get("id")) for item in models if isinstance(item, dict)]
-    if model not in model_ids:
+    normalized_model_ids = {model_id.lower() for model_id in model_ids}
+    if model.lower() not in normalized_model_ids:
         return fail(f"model {model!r} not found at {url}; available={model_ids}")
     return ok(f"model endpoint reachable and contains {model}")
 
@@ -117,6 +163,10 @@ def check_model_endpoint(base_url: str, model: str, api_key: str, timeout: float
 def run_checks(args: argparse.Namespace) -> List[Dict[str, Any]]:
     checks = [
         {"name": "action_bank", **check_action_bank(pathlib.Path(args.action_bank))},
+        {
+            "name": "action_ir_projection",
+            **check_action_ir_projection(pathlib.Path(args.action_ir), pathlib.Path(args.action_bank)),
+        },
         {"name": "agent_module", **check_agent_module()},
     ]
     if not args.skip_tau2_import_check:
@@ -135,6 +185,7 @@ def main() -> None:
     parser.add_argument("--agent-base-url", default="http://172.16.22.79:9999/v1")
     parser.add_argument("--api-key", default="EMPTY")
     parser.add_argument("--action-bank", default=str(ACTION_BANK_PATH))
+    parser.add_argument("--action-ir", default=str(ACTION_IR_PATH))
     parser.add_argument("--timeout", type=float, default=10.0)
     parser.add_argument("--skip-tau2-import-check", action="store_true")
     parser.add_argument("--skip-model-check", action="store_true")

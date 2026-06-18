@@ -38,8 +38,9 @@ def main() -> None:
                                 },
                                 "violations": ["MISSING_PARAMETER: find_user_id_by_name_zip.zip"],
                                 "deterministic_repair_candidate": {
-                                    "action": "ask_for_confirmation",
-                                    "arguments": {"action_description": "confirm"},
+                                    "action": "respond_to_user",
+                                    "arguments": {},
+                                    "message_to_user": "Please confirm the requested action.",
                                 },
                                 "deterministic_repair_violations": [],
                             }

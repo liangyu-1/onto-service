@@ -67,6 +67,39 @@ def stage(slide, x, y, w, number, title, body, color):
     add_text(slide, x + 0.18, y + 0.68, w - 0.36, 0.52, body, 12, False, MUTED, PP_ALIGN.CENTER)
 
 
+def finalize_main_deck(prs, order):
+    """Keep and reorder the advisor-facing main deck, then refresh page numbers."""
+    slide_ids = list(prs.slides._sldIdLst)
+    keep = set(order)
+    for index, slide_id in enumerate(slide_ids):
+        if index not in keep:
+            prs.slides._sldIdLst.remove(slide_id)
+            prs.part.drop_rel(slide_id.rId)
+    remaining = list(prs.slides._sldIdLst)
+    by_original_index = {
+        original_index: slide_id
+        for original_index, slide_id in zip(
+            [i for i in range(len(slide_ids)) if i in keep],
+            remaining,
+        )
+    }
+    for slide_id in list(prs.slides._sldIdLst):
+        prs.slides._sldIdLst.remove(slide_id)
+    for original_index in order:
+        prs.slides._sldIdLst.append(by_original_index[original_index])
+
+    for page_number, slide in enumerate(prs.slides, 1):
+        for shape in slide.shapes:
+            if (
+                getattr(shape, "has_text_frame", False)
+                and shape.left >= Inches(11.5)
+                and shape.top >= Inches(6.3)
+            ):
+                shape.text_frame.paragraphs[0].text = f"{page_number:02d}"
+                for run in shape.text_frame.paragraphs[0].runs:
+                    set_run(run, 20 if page_number == 1 else 9, True, TEAL if page_number == 1 else MUTED)
+
+
 def build():
     prs = Presentation()
     prs.slide_width = W
@@ -84,21 +117,124 @@ def build():
     add_text(slide, 0.87, 2.6, 11.0, 0.65, "协作构建 · 文档抽取 · 智能体理解与规划", 24, False, __import__("pptx").dml.color.RGBColor(198, 216, 228))
     line(slide, 0.87, 3.55, 5.7, 3.55, TEAL, 3)
     add_text(slide, 0.87, 4.0, 10.8, 0.8,
-             "核心目标：构建可协作生成、从文档扩充、可供 Agent 执行的 Action Layer",
+             "研究目标：构建可协作生成、从文档扩充、可供 Agent 理解与执行的本体 Action Layer",
              19, True, WHITE)
     add_text(slide, 0.87, 6.55, 7.5, 0.32, "导师汇报 · 2026年6月", 12, False,
              __import__("pptx").dml.color.RGBColor(170, 194, 210))
     add_text(slide, 11.7, 6.48, 0.75, 0.42, "01", 20, True, TEAL, PP_ALIGN.RIGHT)
 
-    # 2 Dissertation outline
-    slide = new_slide(prs, "大论文拟定大纲", "三篇小论文分别对应构建框架、文档抽取和运行时执行", "THESIS OUTLINE")
+    # Current research basis
+    slide = new_slide(
+        prs,
+        "当前研究基础",
+        "在明确研究问题和总体框架后，说明已有实现、初步证据和待决策事项",
+        "CURRENT STATUS",
+    )
+    add_card(slide, 0.72, 1.85, 3.65, 4.55, "已经完成", [
+        "Retail Action IR 与 ActionBank",
+        "IR 编译器、运行状态、admissibility、repair",
+        "Paper 2：40 篇内部试验",
+        "Paper 1：已有方法文档与 Kyuubi 工作流设计",
+    ], TEAL, 15)
+    add_card(slide, 4.83, 1.85, 3.65, 4.55, "当前证据", [
+        "Paper 3：44.9% → 55.7%",
+        "但 task-level p = 0.109",
+        "Paper 2：Ours 并非全面最优",
+        "Paper 1：案例数字尚缺可复现 benchmark",
+    ], BLUE, 15)
+    add_card(slide, 8.94, 1.85, 3.65, 4.55, "需要决策", [
+        "Paper 1 是否值得独立投入？",
+        "人工金标选择哪个领域？",
+        "能否协调 2–3 名专家？",
+        "Paper 3 达到何种门槛再扩域？",
+    ], AMBER, 15)
+
+    # 3 Domestic and international research status
+    slide = new_slide(
+        prs,
+        "国内外研究现状",
+        "合并比较需求工程、动作抽取、运行约束与国内产业实践；六类内容完整保留",
+        "RELATED WORK",
+    )
+    rows = [
+        ("国外", "本体构建与协作演化",
+         "DILIGENT / NeOn：分布式贡献与版本演化；HyWay / IDEA2：LLM + 专家验证与共识；CQ / ORSD：需求与范围验证",
+         "缺动作 Patch、执行验证和运行反馈重验证"),
+        ("国外", "程序文档与流程抽取",
+         "Text2Event / PET：事件、参与者和流程；PAGED / Universal Prompting：程序图；OMPD / NL2ProcessOps：工业程序与执行连接",
+         "缺已有本体 grounding 与完整 Action IR"),
+        ("国外", "工具智能体与运行约束",
+         "ToolRerank / ToolLLM：工具选择；tau-bench / ToolSandbox / WorkArena：有状态评测；AgentSpec / Progent：运行规则",
+         "缺本体状态驱动校验、修复和解释"),
+        ("国内", "工业本体与知识图谱",
+         "描述设备、部件、工艺和故障；用于查询、诊断、推荐和数据治理",
+         "补动作对象、角色、状态和效果；公开表示与实验"),
+        ("国内", "SOP / 流程数字化",
+         "输入工艺文档、维修手册和业务规程；输出实体关系、步骤、BPMN 或流程图",
+         "补 ontology IDs、evidence、unresolved；Full IR 金标"),
+        ("国内", "行业智能体与工具调用",
+         "采用 RAG、工具编排、工作流和平台规则；规则多位于 Prompt、代码或配置",
+         "规则来源于 Action IR；schema / ontology_full 对照"),
+    ]
+    add_table(
+        slide, 0.34, 1.62, 12.65, 4.98,
+        ["区域", "研究方向", "已有代表工作 / 实践", "本研究切入点"],
+        rows, [0.72, 2.45, 5.72, 3.76], 9,
+    )
+    add_text(
+        slide, 0.95, 6.68, 11.45, 0.26,
+        "共同缺口：缺少公开 Action IR 契约，以及分别覆盖协作构建、文档抽取和 Agent 执行的可复现实验。",
+        12, True, RED, PP_ALIGN.CENTER,
+    )
+
+    # 4 Palantir as the primary industrial reference
+    slide = new_slide(
+        prs,
+        "Palantir：最重要的产业参照",
+        "其 Ontology 已把语义模型与可执行动作统一到 operational layer；本研究必须正面说明继承点与学术增量",
+        "INDUSTRY REFERENCE",
+    )
+    add_card(slide, 0.58, 1.72, 3.82, 3.72, "Semantic Layer", [
+        "Object Types / Properties / Link Types",
+        "连接数据、模型与现实业务对象",
+        "可表达设备、产品、订单和交易",
+        "安全、权限和变更治理贯穿对象层",
+    ], BLUE, 13)
+    add_card(slide, 4.76, 1.72, 3.82, 3.72, "Kinetic Layer", [
+        "Action Types：一次事务修改对象、属性和链接",
+        "Parameters + Rules + Submission Criteria",
+        "Functions 承载可演化业务逻辑",
+        "Side Effects：通知、Webhook 等外部效果",
+    ], TEAL, 13)
+    add_card(slide, 8.94, 1.72, 3.82, 3.72, "Operational Governance", [
+        "同一动作逻辑在多个应用中复用",
+        "Permissions、Monitoring、Metrics",
+        "Action Log 支持审计",
+        "Undo / Revert 与 Action Type branching",
+    ], AMBER, 13)
+    rect(slide, 0.72, 5.72, 12.0, 1.02, PALE_RED, RED)
+    add_text(slide, 0.95, 5.85, 2.0, 0.28, "本研究不能声称", 13, True, RED)
+    add_text(
+        slide, 2.68, 5.82, 3.55, 0.62,
+        "首次在本体中定义动作、参数、规则、效果或审计。",
+        12, False, INK, PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE,
+    )
+    add_text(slide, 6.25, 5.85, 1.75, 0.28, "真正学术增量", 13, True, TEAL)
+    add_text(
+        slide, 7.82, 5.76, 4.55, 0.72,
+        "公开 Action IR；从文档和多源证据生成；协作验证与演化；在 tau2 等 benchmark 上量化 Agent 执行收益。",
+        12, False, INK, PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE,
+    )
+
+    # 5 Dissertation outline
+    slide = new_slide(prs, "大论文框架", "每章必须有明确输入、输出和证据，不能只靠共享术语形成体系", "THESIS OUTLINE")
     items = [
         ("01", "绪论", "问题、研究目标与总体框架", TEAL),
-        ("02", "理论基础与 Action IR", "动作语义、统一表示与治理模型", BLUE),
-        ("03", "协作式动作本体生成", "Paper 1：Multi-Agent + Human-in-the-Loop", GREEN),
-        ("04", "程序文档动作抽取", "Paper 2：Document → Grounded Action IR", AMBER),
-        ("05", "Agent 动作理解与规划", "Paper 3：ActionBank → Runtime Execution", RED),
-        ("06", "统一系统与跨域评估", "Retail、Airline、Maintenance / SOP", TEAL),
+        ("02", "Action IR", "字段契约、编译规则、跨域边界", BLUE),
+        ("03", "协作式数据本体生成", "Live Schema → Versioned Data Ontology", GREEN),
+        ("04", "文档抽取", "Document + Ontology → IR Patch", AMBER),
+        ("05", "运行时语义", "ActionBank + State → Execute / Repair", RED),
+        ("06", "统一评估", "质量、成本、成功率与运行开销", TEAL),
     ]
     for i, (num, title, body, color) in enumerate(items):
         row, col = divmod(i, 2)
@@ -109,34 +245,40 @@ def build():
         add_text(slide, x + 1.05, y + 0.16, 2.25, 0.35, title, 16, True, NAVY)
         add_text(slide, x + 1.05, y + 0.58, 4.3, 0.32, body, 13, False, MUTED)
 
-    # 3 Overall question
-    slide = new_slide(prs, "总体问题：如何让本体支持“行动”？", "研究对象不是泛化知识图谱，而是操作型本体中的 Action Layer", "PROBLEM")
-    add_card(slide, 0.72, 1.88, 3.55, 3.8, "传统本体回答", [
-        "有哪些对象和类型？",
-        "对象之间有什么关系？",
-        "属性和约束是什么？",
+    # Overall dissertation question
+    slide = new_slide(
+        prs,
+        "核心研究问题",
+        "如何把以静态概念描述为主的领域本体，扩展为可构建、可演化、可执行的动作知识层？",
+        "PROBLEM",
+    )
+    add_card(slide, 0.72, 1.88, 3.55, 3.8, "现有表示断裂", [
+        "本体描述对象、属性和关系",
+        "程序文档描述操作步骤和条件",
+        "API Schema 描述调用接口",
+        "Agent 运行时维护临时状态",
     ], BLUE, 17)
     add_text(slide, 4.4, 3.22, 0.65, 0.45, "→", 30, True, TEAL, PP_ALIGN.CENTER)
-    add_card(slide, 5.1, 1.88, 3.55, 3.8, "Action Layer 还要回答", [
-        "当前能做什么？",
-        "动作作用于谁？",
-        "需要什么状态和参数？",
-        "执行后世界如何变化？",
+    add_card(slide, 5.1, 1.88, 3.55, 3.8, "Action Layer 要统一", [
+        "动作作用对象和参数角色",
+        "前置状态、约束和执行效果",
+        "文档证据与本体 grounding",
+        "版本演化与运行反馈",
     ], TEAL, 16)
     add_text(slide, 8.78, 3.22, 0.65, 0.45, "→", 30, True, AMBER, PP_ALIGN.CENTER)
-    add_card(slide, 9.48, 1.88, 3.15, 3.8, "最终支撑", [
-        "动作抽取",
-        "协作式构建与演化",
-        "Agent 规划",
-        "执行验证与解释",
+    add_card(slide, 9.48, 1.88, 3.15, 3.8, "三个研究问题", [
+        "如何协作构建和演化？",
+        "如何从文档获取？",
+        "如何供 Agent 理解与执行？",
+        "三者如何形成递进链条？",
     ], AMBER, 16)
     rect(slide, 1.35, 6.02, 10.6, 0.55, PALE_RED, RED)
     add_text(slide, 1.55, 6.15, 10.2, 0.28,
-             "API Schema 只描述调用语法；Action Layer 描述动作在业务世界中的语义。",
+             "大论文主线：动作知识的表示、获取、演化与运行时使用，而不是单一 benchmark 的安全约束。",
              15, True, RED, PP_ALIGN.CENTER)
 
     # 4 What is Action IR
-    slide = new_slide(prs, "Action IR：三种表示之间的规范化中间层",
+    slide = new_slide(prs, "统一表示：Action IR",
                       "IR = Intermediate Representation，不是简单 JSON，也不是新的本体副本", "ACTION IR")
     add_card(slide, 0.72, 2.0, 3.25, 3.25, "上游：文档语言", [
         "自然语言步骤",
@@ -160,7 +302,7 @@ def build():
              16, True, TEAL, PP_ALIGN.CENTER)
 
     # 5 Schema
-    slide = new_slide(prs, "Action IR 的字段不是平铺列表，而是九个语义层", "Core 字段用于三篇论文；Optional 字段允许不同数据集部分标注", "ACTION IR")
+    slide = new_slide(prs, "Action IR 语义结构", "九个语义层区分核心字段与可选字段", "ACTION IR")
     layers = [
         ("Identity", "id / type / kind", BLUE),
         ("Actor", "role / permission", GREEN),
@@ -185,7 +327,7 @@ def build():
              12, True, AMBER, PP_ALIGN.CENTER)
 
     # 6 Worked example
-    slide = new_slide(prs, "Action IR 例子：退回已送达订单中的商品",
+    slide = new_slide(prs, "Action IR 示例",
                       "示例来自当前 retail_action_ir.json，展示它比 API Schema 多表达什么", "ACTION IR")
     add_card(slide, 0.68, 1.82, 3.2, 4.75, "工具 Schema 看到的内容", [
         "tool: return_delivered_order_items",
@@ -211,28 +353,28 @@ def build():
     ], AMBER, 14)
 
     # 7 Lifecycle
-    slide = new_slide(prs, "Action IR 的完整生命周期", "从多源证据到协作治理、发布和 Agent 执行", "ACTION IR")
+    slide = new_slide(prs, "从数据本体到 Action Layer", "Paper 1 提供对象/关系基础；Paper 2、3 负责动作知识的获取与运行使用", "ACTION IR")
     steps = [
-        ("1", "多源证据", "metadata / document / API / logs", TEAL),
-        ("2", "Agent 提案", "Action IR Patch + evidence", BLUE),
-        ("3", "协作验证", "validate / critique / consensus", AMBER),
-        ("4", "版本发布", "canonical Action IR / ActionBank", GREEN),
-        ("5", "演化反馈", "execution traces / schema drift", RED),
+        ("1", "Live Schema", "Paper 1：对象/字段/候选关系", TEAL),
+        ("2", "数据本体", "采样验证 + 共识 + 演化", BLUE),
+        ("3", "动作抽取", "Paper 2：Document → Action IR", AMBER),
+        ("4", "运行投影", "Paper 3：IR → ActionBank", GREEN),
+        ("5", "执行反馈", "violation / drift → revalidation", RED),
     ]
     for i, args in enumerate(steps):
         x = 0.55 + i * 2.56
         stage(slide, x, 2.15, 2.22, *args)
         if i < 4:
             line(slide, x + 2.24, 2.88, x + 2.5, 2.88, args[-1], 2.2, True)
-    add_card(slide, 1.0, 4.55, 5.35, 1.45, "Paper 1 负责完整治理循环", [
-        "把多个 Agent 和人的贡献转化为可审计版本演化",
+    add_card(slide, 1.0, 4.55, 5.35, 1.45, "当前已落地", [
+        "Paper 3 的 retail_action_ir.json → compiler → Agent",
     ], TEAL, 14)
-    add_card(slide, 6.98, 4.55, 5.35, 1.45, "Paper 2 / Paper 3 分别提供输入与反馈", [
-        "文档抽取产生提案；运行轨迹暴露缺失、冲突和漂移",
+    add_card(slide, 6.98, 4.55, 5.35, 1.45, "尚缺的闭环", [
+        "Paper 1 工程化、Paper 2 金标，以及基础本体与 Action IR 的真实连接",
     ], BLUE, 14)
 
     # 8 Dataset audit
-    slide = new_slide(prs, "数据可用性审计：已转换不等于可监督训练",
+    slide = new_slide(prs, "数据可用性审计",
                       "当前四个 processed JSONL 的 annotations 均为空，必须回到 raw 官方标注重新转换", "DATA")
     rows = [
         ("MyFixit", "部分可用", "1,497 Mac manuals / 36,659 steps 人标", "Paper 2: action/part/tool", "其余类别无人工标注"),
@@ -248,20 +390,20 @@ def build():
              13, True, RED, PP_ALIGN.CENTER)
 
     # 9 Dataset allocation
-    slide = new_slide(prs, "数据集必须按论文和能力分配", "没有任何一个公开数据集可以同时支撑三篇论文的全部主张", "DATA")
+    slide = new_slide(prs, "数据集分工", "每个数据集只支撑明确字段；缺失标注不能被包装成完整 Action IR", "DATA")
     rows = [
-        ("Paper 1 协作构建", "AAS/OPC UA/SysML/BOM、SOP/API、tau2 traces", "候选 patch、冲突、验证、版本演化", "需自建 Collaboration Benchmark"),
+        ("Paper 1 数据本体", "Live Schema + sampled data + users", "候选关系、证据、共识、Schema 演化", "已有方法文档；需可复现 benchmark"),
         ("Paper 2 文档抽取", "MyFixit + MSPT", "action / target / tool / parameter", "主训练与字段级测试"),
         ("Paper 2 结构能力", "PET + ProPara + BioProcess + OMIn", "flow / state change / argument / grounding", "辅助测试，不合并成完整金标"),
         ("Paper 2 弱监督", "Text-mined Synthesis", "operations / conditions / recipes", "预训练，不能报告 gold score"),
-        ("Paper 3 Agent", "tau2 Retail/Airline + ABCD", "policy、tools、dialogue、execution", "tau2 主实验，ABCD 外部验证"),
+        ("Paper 3 Agent", "tau2 Retail；计划 Airline/ABCD", "policy、tools、dialogue、execution", "目前只有 Retail 初步结果"),
     ]
     add_table(slide, 0.42, 1.8, 12.48, 4.82,
               ["论文", "数据来源", "提供的证据", "使用边界"],
               rows, [2.0, 3.55, 3.5, 3.43], 11)
 
     # 10 Missing data
-    slide = new_slide(prs, "真正缺失的数据：两套自建 benchmark", "这不是附加工作，而是 Paper 1 和 Paper 2 能否成立的前提", "DATA")
+    slide = new_slide(prs, "自建 Benchmark", "两套人工资产是 Paper 1 和 Paper 2 成立的实验前提", "DATA")
     add_card(slide, 0.72, 1.9, 5.75, 4.45, "Full Action IR Test Set（Paper 2）", [
         "从维修手册 / 工业 SOP / 业务策略抽样",
         "完整标注 actor、target、parameters",
@@ -270,41 +412,43 @@ def build():
         "双人标注 + 专家裁决 + agreement",
     ], TEAL, 15)
     add_card(slide, 6.88, 1.9, 5.75, 4.45, "Collaboration Benchmark（Paper 1）", [
-        "多源候选：metadata、document、API、execution trace",
-        "包含正确、错误、缺失和冲突的 IR Patch",
-        "记录 Agent votes、专家 decision 和 audit trail",
-        "注入 schema / policy evolution",
-        "测质量、覆盖率、专家时间和 time-to-consensus",
+        "Live Schema、采样数据和关系金标",
+        "包含正确、错误、歧义和冲突的 candidate edges",
+        "记录 JOIN 证据、用户确认、Owner decision",
+        "注入 table / column / type evolution",
+        "测关系质量、SQL 成本、专家时间和漂移恢复",
     ], GREEN, 15)
 
     # 11 Shared data roles
-    slide = new_slide(prs, "一份 Action IR 数据资产，支撑三种研究任务", "体系性来自同一语义资产在构建、抽取和执行中的闭环", "DATA")
-    add_card(slide, 0.72, 1.92, 3.65, 4.25, "Paper 1：协作事件", [
-        "candidate patch 与证据",
-        "Agent / 用户验证意见",
-        "冲突、裁决、版本和演化记录",
-        "测试质量—成本—覆盖率权衡",
+    slide = new_slide(prs, "共享数据资产", "Paper 1 提供对象/关系基础层；Paper 2、3 共享 Action IR 与运行资产", "DATA")
+    add_card(slide, 0.72, 1.92, 3.65, 4.25, "Paper 1：需工程化", [
+        "Live Schema 与候选关系",
+        "采样 JOIN 证据和统计画像",
+        "contributors / consensus / disputes",
+        "Schema drift 与重验证记录",
     ], GREEN, 15)
-    add_card(slide, 4.83, 1.92, 3.65, 4.25, "Paper 2：抽取样本", [
-        "输入：文档 + ontology",
-        "标签：Action IR + procedure graph",
-        "测试：字段、grounding、flow、evidence",
+    add_card(slide, 4.83, 1.92, 3.65, 4.25, "Paper 2：部分具备", [
+        "已有 40 篇内部试验",
+        "公开数据仅覆盖部分字段",
+        "evidence / flow 当前为 0",
+        "尚缺 Full Action IR 金标",
     ], TEAL, 16)
-    add_card(slide, 8.94, 1.92, 3.65, 4.25, "Paper 3：执行样本", [
-        "Action IR → ActionBank",
-        "runtime state 由对话和工具结果构建",
-        "测试 admissibility、repair、success",
+    add_card(slide, 8.94, 1.92, 3.65, 4.25, "Paper 3：已有原型", [
+        "Retail Action IR / ActionBank",
+        "341 个严格配对样本",
+        "114 个任务、3 个 trials",
+        "修复版全量重跑尚未完成",
     ], AMBER, 16)
     line(slide, 4.37, 4.0, 4.78, 4.0, GREEN, 2, True)
     line(slide, 8.48, 4.0, 8.89, 4.0, TEAL, 2, True)
 
     # 11 Research map
-    slide = new_slide(prs, "三篇论文的逻辑关系与实际推进顺序", "Paper 1 是闭环框架，Paper 2 和 Paper 3 分别提供知识输入与运行反馈", "RESEARCH MAP")
+    slide = new_slide(prs, "论文关系与推进顺序", "Paper 1 构建对象/关系基础层；Paper 2、3 聚焦 Action Layer 的获取与运行使用", "RESEARCH MAP")
     add_text(slide, 0.75, 1.88, 1.4, 0.35, "逻辑顺序", 16, True, NAVY)
     stages_logic = [
-        ("Paper 1", "Collaborative Ontogenesis Loop", GREEN),
-        ("Paper 2", "Document → IR Patch", TEAL),
-        ("Paper 3", "ActionBank → Execution / Feedback", AMBER),
+        ("Paper 1", "Live Schema → Data Ontology", GREEN),
+        ("Paper 2", "Document + Ontology → Action IR", TEAL),
+        ("Paper 3", "IR → ActionBank → Execution", AMBER),
     ]
     for i, (title, body, color) in enumerate(stages_logic):
         x = 2.1 + i * 3.45
@@ -316,9 +460,9 @@ def build():
     line(slide, 0.75, 3.6, 12.55, 3.6, LINE, 1.2)
     add_text(slide, 0.75, 4.05, 1.4, 0.35, "推进顺序", 16, True, NAVY)
     stages_actual = [
-        ("Paper 3", "已有代码和初步结果\n先验证 Action Layer 有无下游价值", AMBER),
-        ("Paper 2", "构建规模化、可追踪的动作来源", TEAL),
-        ("Paper 1", "整合多 Agent 提案、验证、共识与演化", GREEN),
+        ("Paper 3", "先完成修复版全量试验\n判断是否有稳定任务级收益", AMBER),
+        ("Paper 2", "修复当前评测缺陷\n建立完整 Action IR 金标", TEAL),
+        ("Paper 1", "仅在前两篇证据成立后\n投入专家协作实验", GREEN),
     ]
     for i, (title, body, color) in enumerate(stages_actual):
         x = 2.1 + i * 3.45
@@ -329,38 +473,38 @@ def build():
             line(slide, x + 2.88, 4.75, x + 3.35, 4.75, color, 2.4, True)
 
     # 12 Paper1 concept
-    slide = new_slide(prs, "Paper 1：Collaborative Action Ontogenesis",
-                      "多 Agent + Human-in-the-Loop 持续构建和演化本体动作层", "PAPER 1")
-    add_card(slide, 0.72, 1.9, 3.65, 4.15, "为什么需要协作式框架", [
-        "自动方法覆盖高但语义不可靠",
-        "纯专家方法准确但成本高",
-        "Schema、SOP、API 和策略持续变化",
-        "单一 Agent 容易产生系统性偏差",
-    ], RED, 16)
-    add_card(slide, 4.83, 1.9, 3.65, 4.15, "输入证据", [
-        "数据库 Schema 与统计画像",
-        "SOP、手册和策略文档",
-        "API / tool schemas",
-        "Agent 执行日志与失败轨迹",
-        "领域专家补充",
-    ], TEAL, 15)
-    add_card(slide, 8.94, 1.9, 3.65, 4.15, "目标输出", [
-        "版本化 canonical Action IR",
-        "完整 provenance 与贡献者",
-        "可信度和共识级别",
-        "争议、软废弃与演化记录",
-    ], GREEN, 16)
+    slide = new_slide(prs, "Paper 1：协作式数据本体生成",
+                      "以 collaborative-data-ontogenesis.docx 为主体：从 Live Database Schema 生长和演化数据本体", "PAPER 1")
+    add_card(slide, 0.72, 1.9, 3.65, 4.15, "研究问题", [
+        "全自动发现覆盖高但业务语义不可靠",
+        "全人工建模准确但冷启动与维护成本高",
+        "对所有候选执行全表 JOIN 验证代价高",
+        "Schema 变化使已有关系快速过时",
+    ], RED, 15)
+    add_card(slide, 4.83, 1.9, 3.65, 4.15, "文档已有方法", [
+        "Phase A：零 JOIN 的 Schema 发现与候选推测",
+        "Phase B：采样 JOIN、统计画像与人工确认",
+        "candidate → inferred → confirmed → approved",
+        "冲突进入 disputed / pending_review",
+        "Schema drift 触发软废弃和重验证",
+    ], TEAL, 14)
+    add_card(slide, 8.94, 1.9, 3.65, 4.15, "与大论文的关系", [
+        "输出对象、字段和关系的本体基础层",
+        "为 Paper 2 提供 existing ontology",
+        "协作、证据和版本机制可扩展到动作定义",
+        "Paper 1 本身不改写成 Action IR 论文",
+    ], GREEN, 15)
 
     # 13 Paper1 loop
-    slide = new_slide(prs, "Paper 1 方法：提案—验证—批判—共识—发布循环",
-                      "Agent 负责不同认知任务；人只处理高风险、低置信度和争议项", "PAPER 1")
+    slide = new_slide(prs, "Paper 1：方法",
+                      "核心不是多 Agent，而是按成本分层获取证据，让候选关系经过验证、共识和演化", "PAPER 1")
     roles = [
-        ("Discover", "Schema / API\n候选发现", BLUE),
-        ("Extract", "Document →\nIR Patch", TEAL),
-        ("Ground", "类型、对象与\n参数对齐", AMBER),
-        ("Validate", "采样、约束与\n执行日志验证", GREEN),
-        ("Critique", "冲突、重复与\n证据缺失", RED),
-        ("Consensus", "投票、仲裁与\n版本发布", NAVY),
+        ("Discover", "SHOW / DESCRIBE\n+ sample", BLUE),
+        ("Propose", "列名/类型/LLM\n候选关系", TEAL),
+        ("Validate", "TABLESAMPLE JOIN\n+ statistics", AMBER),
+        ("Confirm", "确认、反驳\n或补充语义", GREEN),
+        ("Govern", "共识、Owner 审核\n与冲突裁决", RED),
+        ("Evolve", "drift 检测\nsoft-deprecate / reopen", NAVY),
     ]
     for i, (title, body, color) in enumerate(roles):
         x = 0.45 + i * 2.13
@@ -371,53 +515,53 @@ def build():
             line(slide, x + 1.84, 2.64, x + 2.08, 2.64, color, 2, True)
     rect(slide, 3.15, 4.02, 7.05, 1.12, NAVY, NAVY)
     add_text(slide, 3.35, 4.18, 6.65, 0.32,
-             "Action IR Patch + Proposal Envelope", 19, True, WHITE, PP_ALIGN.CENTER)
+             "Candidate Edge = Implicit Ontology Relation Proposal", 18, True, WHITE, PP_ALIGN.CENTER)
     add_text(slide, 3.35, 4.58, 6.65, 0.28,
-             "semantic delta | evidence | contributors | votes | dispute | audit trail",
+             "semantic edge | sampled evidence | contributors | consensus | status | schema version",
              12, False, WHITE, PP_ALIGN.CENTER)
-    add_card(slide, 0.85, 5.55, 3.55, 0.95, "人类 Micro-task", [
-        "确认 / 反驳 / 补充 / 裁决",
+    add_card(slide, 0.85, 5.55, 3.55, 0.95, "人工输入", [
+        "只处理候选确认、业务补充和争议裁决",
     ], AMBER, 12)
-    add_card(slide, 4.88, 5.55, 3.55, 0.95, "可信度升级", [
-        "candidate → inferred → confirmed → approved",
+    add_card(slide, 4.88, 5.55, 3.55, 0.95, "主要指标", [
+        "relation quality + coverage + SQL / human cost",
     ], GREEN, 12)
-    add_card(slide, 8.91, 5.55, 3.55, 0.95, "持续演化", [
-        "schema drift → reopen → revalidate",
+    add_card(slide, 8.91, 5.55, 3.55, 0.95, "当前缺口", [
+        "文档有案例描述；可复现代码与系统实验需补齐",
     ], RED, 12)
 
     # 14 Paper1 evaluation
-    slide = new_slide(prs, "Paper 1 实验：不仅比较本体质量，还要比较协作成本",
-                      "验证多 Agent 协作是否真的优于单 Agent、自动流水线和纯专家流程", "PAPER 1")
+    slide = new_slide(prs, "Paper 1：实验设计",
+                      "验证两阶段证据获取能否在关系质量、计算成本和专家成本之间取得更优权衡", "PAPER 1")
     add_card(slide, 0.68, 1.82, 3.0, 4.62, "实验任务", [
-        "Cold start：从多源证据构建动作层",
-        "Noisy proposal：注入错误与缺失字段",
-        "Conflict：不同 Agent / 用户意见冲突",
-        "Evolution：Schema、SOP 和策略变化",
+        "Cold start：从 Live Schema 发现关系",
+        "Budgeted validation：限制 JOIN / scan 预算",
+        "Conflict：多人确认与业务语义冲突",
+        "Evolution：表、列和类型发生变化",
     ], TEAL, 14)
     add_card(slide, 3.88, 1.82, 2.75, 4.62, "Baselines", [
-        "Single-LLM generation",
-        "Sequential auto pipeline",
-        "Human-only construction",
-        "Simple majority vote",
-        "Ours：role-specialized loop",
+        "Name/type heuristics",
+        "LLM semantic matcher",
+        "Full JOIN validation",
+        "Human-only cataloging",
+        "Ours：Phase A + B",
     ], BLUE, 14)
     add_card(slide, 6.83, 1.82, 3.0, 4.62, "质量与效率指标", [
-        "Action IR field / exact accuracy",
-        "Coverage 与 accepted actions",
-        "Expert minutes per accepted action",
-        "Time-to-consensus",
-        "Conflict detection F1",
+        "Relation precision / recall / coverage",
+        "SQL calls / scanned bytes / latency",
+        "Expert minutes per approved edge",
+        "Confidence calibration",
+        "Drift recovery accuracy / time",
     ], AMBER, 14)
     add_card(slide, 10.03, 1.82, 2.62, 4.62, "Ablations", [
-        "No Critic",
-        "No Validator",
+        "No Sampling",
         "No Human",
-        "No Provenance",
-        "No Revalidation",
+        "No Consensus",
+        "No Evidence Ledger",
+        "No Drift Revalidation",
     ], RED, 14)
 
     # Paper1 related work
-    slide = new_slide(prs, "Paper 1 有哪些直接前驱？", "不能再声称“首个协作式、多 Agent、动态本体构建框架”", "PAPER 1")
+    slide = new_slide(prs, "Paper 1：直接前驱", "不能再声称“首个协作式、多 Agent、动态本体构建框架”", "PAPER 1")
     rows = [
         ("HyWay (2025)", "LLM semantic mapping + iterative expert validation", "缺 multi-agent 独立证据与执行反馈"),
         ("IDEA2 (2026)", "专家协作、反复修订、共识与 provenance", "只覆盖 competency questions"),
@@ -430,29 +574,29 @@ def build():
               ["已有工作", "已经做到", "你的剩余空间"],
               rows, [2.7, 5.2, 4.6], 11)
 
-    slide = new_slide(prs, "Paper 1 真正可保留的创新边界", "必须是组合机制创新，并通过直接对照实验验证", "PAPER 1")
-    add_card(slide, 0.7, 1.85, 3.82, 4.62, "Action-Specific Patch", [
-        "修改 actor、target、roles",
-        "preconditions、effects、constraints",
-        "不是普通 class/property/triple proposal",
+    slide = new_slide(prs, "Paper 1：创新边界", "从现有文档中提炼三个可直接实验的贡献，避免泛称“人机协作”", "PAPER 1")
+    add_card(slide, 0.7, 1.85, 3.82, 4.62, "成本自适应证据获取", [
+        "Phase A 用 metadata 实现全量低成本覆盖",
+        "Phase B 仅对高价值/不确定候选做采样 JOIN",
+        "比较 full validation 的质量—计算成本前沿",
     ], TEAL, 15)
-    add_card(slide, 4.76, 1.85, 3.82, 4.62, "Multi-Source Executable Validation", [
-        "metadata + document + API + traces",
-        "类型、状态、反事实和工具执行验证",
-        "运行失败可反向挑战已发布定义",
+    add_card(slide, 4.76, 1.85, 3.82, 4.62, "证据—共识双轨生命周期", [
+        "机器证据与人的业务确认分开记录",
+        "confidence 不等于 consensus_level",
+        "测 calibration、争议识别和专家时间",
     ], GREEN, 14)
-    add_card(slide, 8.82, 1.85, 3.82, 4.62, "Governed Evolution", [
-        "Action IR 与 Proposal Envelope 分离",
-        "dispute、owner、version、soft deprecation",
-        "runtime-triggered revalidation",
+    add_card(slide, 8.82, 1.85, 3.82, 4.62, "漂移感知的增量演化", [
+        "Schema hash / version 定位受影响关系",
+        "soft deprecation 后选择性重验证",
+        "比较全量重建和静态目录的恢复成本",
     ], AMBER, 14)
     add_text(slide, 1.1, 6.58, 11.1, 0.25,
-             "若缺少执行验证和运行反馈闭环，Paper 1 很容易被视为 AutoPKG + HyWay 的领域变体。",
+             "联邦文件存储和 Git 合并是工程贡献；论文创新必须由质量、计算成本、人力成本和漂移恢复实验支撑。",
              13, True, RED, PP_ALIGN.CENTER)
 
     # Paper2 method
-    slide = new_slide(prs, "Paper 2：从程序文档抽取 Ontology-Grounded Action IR",
-                      "作为协作框架中的 Document Extraction Agent，也可独立形成抽取论文", "PAPER 2")
+    slide = new_slide(prs, "Paper 2：动作抽取",
+                      "输入和输出固定：Document + Existing Ontology → Grounded IR Patch + Evidence", "PAPER 2")
     stages2 = [
         ("1", "结构解析", "标题、表格、步骤号、版面", TEAL),
         ("2", "程序单元", "动作、条件、异常、规则", BLUE),
@@ -465,34 +609,37 @@ def build():
         stage(slide, x, 2.05, 2.22, *args)
         if i < 4:
             line(slide, x + 2.24, 2.78, x + 2.5, 2.78, args[-1], 2.2, True)
-    add_card(slide, 0.9, 4.45, 5.45, 1.55, "核心创新", [
-        "从 action mention 提升为可投影的 ontology action record",
+    add_card(slide, 0.9, 4.45, 5.45, 1.55, "当前已有", [
+        "40 篇内部试验；Rule / LLM-Only / LLM-Ontology / Ours",
     ], TEAL, 15)
-    add_card(slide, 6.98, 4.45, 5.45, 1.55, "关键约束", [
-        "无法对齐的字段标记 unresolved，不允许无证据补全",
+    add_card(slide, 6.98, 4.45, 5.45, 1.55, "当前缺失", [
+        "公开 benchmark、完整金标；evidence 和 control-flow 评测为 0",
     ], RED, 15)
 
     # 16 Paper2 experiment
-    slide = new_slide(prs, "Paper 2：实验必须分层，否则无法证明 Action IR 有效", "公开数据评估局部能力，人工完整集评估整体表示", "PAPER 2")
-    add_card(slide, 0.72, 1.85, 3.65, 4.55, "字段级", [
-        "Action / Actor / Target F1",
-        "Parameter 与 Role F1",
-        "Evidence Span F1",
+    slide = new_slide(prs, "Paper 2：当前结果", "40 篇内部样本表明本体有帮助，但完整方法尚未超过直接基线", "PAPER 2")
+    add_card(slide, 0.72, 1.85, 3.65, 4.55, "LLM-Ontology", [
+        "Action mention F1：85.1%",
+        "Action type：80.3%",
+        "Target grounding：98.4%",
+        "Validation pass：81.0%",
     ], TEAL, 16)
-    add_card(slide, 4.83, 1.85, 3.65, 4.55, "结构级", [
-        "Ontology Grounding Accuracy",
-        "Control-flow Edge F1",
-        "Validation Pass Rate",
-        "Full Action IR Exact Match",
+    add_card(slide, 4.83, 1.85, 3.65, 4.55, "Ours", [
+        "Action mention F1：79.2%",
+        "Action type：78.3%",
+        "Target grounding：98.5%",
+        "Parameter grounding F1：91.6%",
+        "Validation pass：22.8%",
     ], BLUE, 15)
-    add_card(slide, 8.94, 1.85, 3.65, 4.55, "下游级", [
-        "协作提案 acceptance / conflict",
-        "ActionBank projection 成功率",
-        "Agent admissibility / success 变化",
+    add_card(slide, 8.94, 1.85, 3.65, 4.55, "结论与下一步", [
+        "当前不能声称 Ours 最优",
+        "先定位 validation pass 下降原因",
+        "修复 evidence / flow 评测",
+        "再做公开数据与 Full IR 金标",
     ], AMBER, 15)
 
     # Paper2 related work
-    slide = new_slide(prs, "Paper 2 也有非常接近的前人工作", "过程抽取、程序图、ontology-guided extraction 和可执行生成均已有研究", "PAPER 2")
+    slide = new_slide(prs, "Paper 2：直接前驱", "过程抽取、程序图、ontology-guided extraction 和可执行生成均已有研究", "PAPER 2")
     rows = [
         ("Text2Event (ACL 2021)", "schema-constrained sequence-to-structure event extraction"),
         ("CPK Extraction (2019)", "goal/workflow/action/command/usage ontology；47,491 actions"),
@@ -506,35 +653,35 @@ def build():
     add_table(slide, 0.52, 1.72, 12.3, 5.05,
               ["直接前驱", "已经覆盖的能力"], rows, [4.0, 8.3], 11)
 
-    slide = new_slide(prs, "Paper 2 必须把“输出契约”作为核心创新", "不能再声称首个 SOP/程序动作抽取或首个 ontology-guided pipeline", "PAPER 2")
-    add_card(slide, 0.7, 1.85, 3.82, 4.62, "Existing-Ontology Grounding", [
-        "不是生成任意 event/BPMN label",
-        "动作、对象、参数映射到已有 ontology IDs",
-        "无法映射时显式 unresolved",
+    slide = new_slide(prs, "Paper 2：成立门槛", "只有满足以下三项，才能把输出契约写成方法创新", "PAPER 2")
+    add_card(slide, 0.7, 1.85, 3.82, 4.62, "公开数据", [
+        "MyFixit / MSPT：动作、对象、参数",
+        "PET / PAGED：control-flow",
+        "按字段 mask 报告，不伪造完整标签",
     ], TEAL, 15)
-    add_card(slide, 4.76, 1.85, 3.82, 4.62, "Executable Action Semantics", [
-        "target-object type 与 parameter roles",
-        "preconditions、effects、policy constraints",
-        "evidence 和 state transition",
+    add_card(slide, 4.76, 1.85, 3.82, 4.62, "完整金标", [
+        "100–200 个 Full Action IR",
+        "双人标注 + 专家裁决 + agreement",
+        "测 exact match、evidence、validation",
     ], AMBER, 15)
-    add_card(slide, 8.82, 1.85, 3.82, 4.62, "Cross-Paper Contract", [
-        "可形成 Action IR Patch",
-        "可确定性投影到 ActionBank",
-        "下游 admissibility utility 参与评估",
+    add_card(slide, 8.82, 1.85, 3.82, 4.62, "直接对照", [
+        "必须超过 LLM-Only 和 LLM-Ontology",
+        "或证明可解释的质量/校验权衡",
+        "并验证 ActionBank 下游效用",
     ], GREEN, 15)
     add_text(slide, 1.1, 6.58, 11.1, 0.25,
              "PAGED 是 benchmark 强敌；2026 Multi-Agent Procedural Graph 是方法强敌；OMPD 是工业表示强敌。",
              13, True, RED, PP_ALIGN.CENTER)
 
     # Paper3 method
-    slide = new_slide(prs, "Paper 3：面向 Agent 的动作理解、约束与修复",
-                      "假设 Action IR 已存在；研究它怎样成为运行时动作语义", "PAPER 3")
+    slide = new_slide(prs, "Paper 3：运行时语义",
+                      "方法不是额外安全规则：同一 Action IR 同时生成状态检查、violation 和 repair 条件", "PAPER 3")
     stages3 = [
-        ("1", "IR 编译", "Action IR → ActionBank", TEAL),
-        ("2", "运行状态", "仅使用对话与已观察工具结果", BLUE),
-        ("3", "LLM 提案", "candidate action + arguments", AMBER),
-        ("4", "可执行性", "type-aware admissibility", RED),
-        ("5", "执行/修复", "tool call 或 ontology violation", GREEN),
+        ("1", "IR 编译", "确定性生成 ActionBank", TEAL),
+        ("2", "状态更新", "只接受已观察工具结果", BLUE),
+        ("3", "动作提案", "LLM 给出 action + args", AMBER),
+        ("4", "本体校验", "类型/角色/状态/确认", RED),
+        ("5", "执行/修复", "call 或结构化 violation", GREEN),
     ]
     for i, args in enumerate(stages3):
         x = 0.55 + i * 2.56
@@ -542,14 +689,14 @@ def build():
         if i < 4:
             line(slide, x + 2.24, 2.68, x + 2.5, 2.68, args[-1], 2.2, True)
     add_card(slide, 0.95, 4.38, 5.35, 1.65, "Epistemic Action：弱 Grounding", [
-        "查询和检查用于获取状态，不能要求对象已被缓存",
+        "查询用于获取未知状态；若要求对象已缓存，会形成启动死锁",
     ], BLUE, 15)
     add_card(slide, 7.03, 4.38, 5.35, 1.65, "Mutating Action：强 Grounding", [
-        "修改状态前检查对象、角色、状态、策略和用户确认",
+        "改变状态前检查对象、参数角色、前置状态、策略和绑定确认",
     ], RED, 15)
 
     # 17 Paper3 concrete example
-    slide = new_slide(prs, "Paper 3 具体例子：取消订单 #123", "同一个用户目标如何经过状态获取、确认绑定和强 grounding", "PAPER 3")
+    slide = new_slide(prs, "Paper 3：执行示例", "取消订单任务如何经过状态获取、确认绑定和强 grounding", "PAPER 3")
     example_steps = [
         ("1", "认证", "find_user_id_by_email\n→ user_authenticated=true", BLUE),
         ("2", "读取订单", "get_order_details(#123)\n→ status=pending", TEAL),
@@ -572,7 +719,7 @@ def build():
     ], BLUE, 14)
 
     # 18 Current implementation assets
-    slide = new_slide(prs, "Paper 3 当前已落地的 Action IR 使用链路", "不是概念性接口：已有 canonical 文件、编译器、运行时和一致性检查", "PAPER 3")
+    slide = new_slide(prs, "Paper 3：实现链路", "已有 canonical 文件、编译器、运行时和一致性检查", "PAPER 3")
     assets = [
         ("Canonical IR", "data/action_ir/\nretail_action_ir.json", TEAL),
         ("Compiler", "compile_action_ir_to_\naction_bank.py", BLUE),
@@ -593,7 +740,7 @@ def build():
              14, True, TEAL, PP_ALIGN.CENTER)
 
     # 19 Results
-    slide = new_slide(prs, "Paper 3 初步结果：有效信号与不确定性同时存在",
+    slide = new_slide(prs, "Paper 3：初步结果",
                       "主分析：341 个严格配对样本，114 个任务，3 个完整 trials", "PAPER 3")
     data = ChartData()
     data.categories = ["Schema-Only", "Typed + Repair"]
@@ -617,17 +764,19 @@ def build():
     add_card(slide, 6.58, 1.88, 5.95, 1.95, "积极证据", [
         "+10.9 pp；paired McNemar p = 0.0029",
         "Transfer calls：323 → 62",
+        "说明机制值得完整重跑，而非已经定论",
     ], TEAL, 15)
     add_card(slide, 6.58, 4.08, 5.95, 2.1, "不能回避的限制", [
         "task-level sign test p = 0.109，未显著",
         "8-trial run 被配额中断",
         "confirmation binding 缺陷修复后尚未重跑",
+        "平均延迟：190.6s → 260.3s",
     ], RED, 14)
 
     # 20 Boundaries
-    slide = new_slide(prs, "三篇论文的关系与边界", "共享 Action IR，但不能重复声称同一个贡献", "SYNTHESIS")
+    slide = new_slide(prs, "论文边界", "三篇论文形成基础本体、动作获取和运行使用的递进关系", "SYNTHESIS")
     rows = [
-        ("Paper 1", "如何持续构建和演化？", "Evidence → Versioned Action IR", "不替代各专职抽取算法"),
+        ("Paper 1", "数据本体如何低成本协作生成？", "Live Schema → Versioned Data Ontology", "不直接生成 Action IR"),
         ("Paper 2", "文档如何产生动作候选？", "Document → Action IR Patch", "不负责协作治理和 agent policy"),
         ("Paper 3", "如何理解、验证和修复动作？", "ActionBank → Runtime Execution", "不负责从文档构建动作层"),
     ]
@@ -635,48 +784,48 @@ def build():
               ["论文", "核心问题", "输入/输出", "明确不做什么"],
               rows, [1.35, 3.0, 3.45, 4.25], 12)
     add_text(slide, 1.1, 6.48, 11.1, 0.28,
-             "体系性来自共享表示和数据闭环；创新性仍需由每篇独立的机制实验支撑。",
+             "体系性来自层次递进和数据依赖；不能再声称三篇论文都共享同一个 Action IR 输出。",
              14, True, NAVY, PP_ALIGN.CENTER)
 
     # Thesis innovations
-    slide = new_slide(prs, "需要向导师突出的大论文创新点", "创新不是“用了本体和多 Agent”，而是三个可验证的机制贡献", "CONTRIBUTIONS")
-    add_card(slide, 0.68, 1.82, 3.85, 4.7, "创新一：可演化的动作本体工程", [
-        "Action IR Patch，而不是整库自由生成",
-        "多源、多 Agent 的独立证据与角色分工",
-        "critique、consensus、provenance 和 revalidation",
-        "质量—覆盖率—专家成本联合优化",
+    slide = new_slide(prs, "总体研究假设", "先写成可证伪假设；实验达标后才能在论文中改写为创新贡献", "CONTRIBUTIONS")
+    add_card(slide, 0.68, 1.82, 3.85, 4.7, "H1：协作式数据本体生成", [
+        "metadata 全量发现 + 选择性采样验证",
+        "机器证据与人类共识分轨管理",
+        "降低关系验证的 SQL 和专家成本",
+        "当前状态：有方法文档，缺可复现实验",
     ], GREEN, 15)
-    add_card(slide, 4.74, 1.82, 3.85, 4.7, "创新二：本体约束的动作抽取", [
-        "从 action mention 提升到完整 Action IR",
-        "文档结构、控制流、状态和证据联合建模",
-        "现有本体约束 grounding，显式 unresolved",
-        "可直接投影到协作提案和运行时 ActionBank",
+    add_card(slide, 4.74, 1.82, 3.85, 4.7, "H2：动作抽取", [
+        "Existing-ontology grounding + evidence",
+        "提高完整 Action IR 的可验证性",
+        "并产生可用的 ActionBank",
+        "当前状态：40 篇结果混合，需修复",
     ], TEAL, 15)
-    add_card(slide, 8.8, 1.82, 3.85, 4.7, "创新三：类型感知的动作语义", [
-        "区分获取状态的 epistemic action",
-        "与改变状态的 mutating action",
-        "weak / strong grounding 避免统一 verifier 的矛盾",
-        "ontology violation 驱动 repair 与失败分析",
+    add_card(slide, 8.8, 1.82, 3.85, 4.7, "H3：运行时语义", [
+        "epistemic weak / mutating strong grounding",
+        "提高任务成功并减少错误 transfer",
+        "收益来自本体机制而非额外重试",
+        "当前状态：+10.9 pp，任务级未显著",
     ], AMBER, 15)
 
     # Evidence matrix
-    slide = new_slide(prs, "每篇论文必须用什么证据支撑主张？", "只比较最终准确率，无法证明本体动作层是有效机制", "EVIDENCE")
+    slide = new_slide(prs, "证据矩阵", "明确当前证据、缺失实验和停止条件", "EVIDENCE")
     rows = [
-        ("Paper 1", "Multi-agent consensus loop", "IR quality / coverage / expert time / dispute", "Single LLM / automation / expert-only"),
-        ("Paper 2", "Ontology constraint", "Grounding / flow / evidence / validation", "LLM-only extraction"),
-        ("Paper 3", "Type-aware admissibility", "Task success + violations + repair + latency", "Schema-only + component ablations"),
+        ("Paper 1", "方法文档 + 案例描述", "关系金标 + 成本/协作/漂移实验", "无质量—成本优势则收缩为工程方案"),
+        ("Paper 2", "40 篇内部结果混合", "公开集 + Full IR 金标", "不能超过直接基线则收缩主张"),
+        ("Paper 3", "+10.9 pp；task p=0.109", "修复版全量 trials + 外部域", "无稳定任务级收益则转向诊断论文"),
     ]
     add_table(slide, 0.55, 1.88, 12.2, 4.55,
-              ["论文", "核心机制", "必须报告的机制指标", "关键对照"],
-              rows, [1.4, 3.0, 4.25, 3.55], 12)
+              ["论文", "当前证据", "必须补齐", "Go / No-Go"],
+              rows, [1.4, 3.0, 3.7, 4.1], 12)
 
     # Roadmap
-    slide = new_slide(prs, "建议推进路线：先补强证据，再扩展场景", "实际顺序以降低研究风险为目标", "ROADMAP")
+    slide = new_slide(prs, "推进计划", "每阶段以可交付物和验收条件结束，不按概念模块推进", "ROADMAP")
     phases = [
-        ("01", "Paper 3 重跑", "确认修复版有效\n完整 paired trials\ncomponent ablation", RED),
-        ("02", "固定共享模型", "Action IR core schema\nProposal Envelope\nfull-label test set", TEAL),
-        ("03", "完成 Paper 2", "字段与结构评估\n误差分析\n生成规模化 ActionBank", BLUE),
-        ("04", "实现 Paper 1", "multi-agent loop\nconsensus / conflict\nschema evolution", AMBER),
+        ("01", "2026 Q3", "修复 binding\n全量 paired trials\n任务级统计与消融", RED),
+        ("02", "2026 Q3", "冻结 IR core\n补 Airline 投影\n记录跨域字段差异", TEAL),
+        ("03", "2026 Q3-Q4", "修复 Paper 2 评测\n100–200 Full IR\n公开 benchmark", BLUE),
+        ("04", "2026 Q4", "复现 Kyuubi workflow\n关系/成本/漂移实验\n决定是否独立成文", AMBER),
     ]
     for i, (num, title, body, color) in enumerate(phases):
         x = 0.72 + i * 3.15
@@ -687,13 +836,13 @@ def build():
         if i < 3:
             line(slide, x + 2.78, 3.82, x + 3.08, 3.82, color, 2.4, True)
     add_text(slide, 1.2, 6.18, 10.9, 0.38,
-             "跨域顺序：Retail → Airline → Maintenance / Industrial SOP",
+             "停止扩域条件：Paper 3 无任务级稳定收益，或 Paper 2 不能超过直接本体基线",
              16, True, TEAL, PP_ALIGN.CENTER)
 
     # Advisor questions
-    slide = new_slide(prs, "导师最可能追问什么？", "汇报时主动暴露边界，并给出可验证的回答", "DEFENSE")
+    slide = new_slide(prs, "可能追问", "主动暴露边界，并给出可验证的回答", "DEFENSE")
     rows = [
-        ("三篇是否只是共享 Action IR？", "不是：分别研究治理循环、抽取算法和运行时语义，baseline 与指标独立。"),
+        ("Paper 1 不输出 Action IR，如何统一？", "Paper 1 构建对象/关系基础层；Paper 2 在其上生成 Action IR；Paper 3 使用动作层。"),
         ("Paper 1 有抽取 Agent，为何还要 Paper 2？", "Paper 1 把抽取器视为 proposal producer；Paper 2 必须独立证明复杂文档抽取贡献。"),
         ("多 Agent 是否只是拆 prompt？", "必须通过角色异质、独立证据、critic、consensus 与 ablation 证明机制收益。"),
         ("公开数据不完整，结果可信吗？", "公开集测局部能力；人工 Full Action IR 集测完整语义，两者分开报告。"),
@@ -703,14 +852,14 @@ def build():
               ["可能追问", "回答口径"], rows, [4.0, 8.28], 12)
 
     # Requested advisor support
-    slide = new_slide(prs, "这次汇报需要导师提供什么帮助？", "不是泛泛征求意见，而是请求对关键研究资源和边界作出决策", "REQUEST")
+    slide = new_slide(prs, "需要导师决策", "每项选择都会直接改变下一阶段投入，不再泛泛征求意见", "REQUEST")
     requests = [
-        ("1", "论文强度判断", "Paper 1 是独立论文，还是大论文统一系统章节？", TEAL),
-        ("2", "场景聚焦", "Full Action IR Test Set 选维修手册、工业 SOP，还是业务策略？", BLUE),
-        ("3", "专家资源", "协调 2–3 名领域专家参与标注、争议裁决和协作成本实验。", AMBER),
-        ("4", "数据资源", "争取可公开或匿名发布的 SOP、Schema、API 和变更记录。", GREEN),
-        ("5", "实验规范", "确认用户实验规模、agreement 统计和伦理审批要求。", RED),
-        ("6", "投稿定位", "分别面向 ontology engineering、NLP extraction 和 agent systems。", NAVY),
+        ("1", "Paper 1 定位", "现在按独立论文投入，还是先降为大论文系统章节？", TEAL),
+        ("2", "金标领域", "建议优先维修/工业 SOP；是否同意锁定该方向？", BLUE),
+        ("3", "专家资源", "能否协调 2–3 名专家完成标注、裁决和时间记录？", AMBER),
+        ("4", "Paper 3 门槛", "是否以任务级稳定收益作为扩展 Airline 的前提？", GREEN),
+        ("5", "Paper 2 主线", "以抽取准确率为主，还是以 executable downstream utility 为主？", RED),
+        ("6", "可发布数据", "能否获得可匿名的 SOP、Schema、API 和变更记录？", NAVY),
     ]
     for i, (num, title, body, color) in enumerate(requests):
         row, col = divmod(i, 2)
@@ -722,6 +871,30 @@ def build():
         add_text(slide, x + 0.98, y + 0.53, 4.45, 0.38, body, 12, False, MUTED)
     add_text(slide, 4.35, 6.68, 4.65, 0.38, "谢谢，请批评指正", 18, True, TEAL, PP_ALIGN.CENTER)
 
+    # Advisor-facing main deck: retain a concise decision-oriented narrative.
+    # Detailed dataset audits and repeated related-work pages remain in source
+    # and can be restored as backup slides when needed.
+    finalize_main_deck(
+        prs,
+        [
+            0,   # Cover
+            5,   # Core problem
+            2,   # International status
+            3,   # Palantir
+            4,   # Thesis outline
+            14,  # Research map
+            1,   # Current research basis
+            29,  # Thesis contributions
+            6,   # Action IR
+            9,   # Lifecycle
+            11,  # Dataset allocation
+            13,  # Shared data asset
+            15, 16, 19,       # Paper 1
+            20, 21, 23,       # Paper 2
+            24, 25, 27,       # Paper 3
+            28, 30, 31, 33,   # Synthesis, evidence, roadmap, decisions
+        ],
+    )
     prs.save(OUT)
     print(OUT)
 

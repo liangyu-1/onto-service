@@ -435,6 +435,10 @@ def build_agent_class(agent_kind: str):
                             "action": str(candidate.get("action", "") or ""),
                             "arguments": candidate.get("arguments", {}) if isinstance(candidate.get("arguments", {}), dict) else {},
                             "message_to_user": candidate.get("message_to_user", response.get("message_to_user", "")),
+                            "confirmation_for": candidate.get(
+                                "confirmation_for",
+                                response.get("confirmation_for"),
+                            ),
                         })
             if not normalized:
                 normalized.append({
@@ -442,8 +446,43 @@ def build_agent_class(agent_kind: str):
                     "action": str(response.get("action", "") or ""),
                     "arguments": response.get("arguments", {}) if isinstance(response.get("arguments", {}), dict) else {},
                     "message_to_user": response.get("message_to_user", ""),
+                    "confirmation_for": response.get("confirmation_for"),
                 })
             return normalized
+
+        def _normalize_confirmation_intent(
+            self,
+            candidate: Dict[str, Any],
+            runtime_state: RuntimeOntologyState,
+            context_text: str,
+        ) -> None:
+            if candidate.get("action") != "respond_to_user":
+                candidate.pop("confirmation_for", None)
+                return
+            intent = candidate.get("confirmation_for")
+            if not isinstance(intent, dict):
+                candidate.pop("confirmation_for", None)
+                return
+            pending_action = str(intent.get("action") or "")
+            pending_arguments = intent.get("arguments")
+            schema = self.action_bank.get(pending_action) if self.action_bank is not None else None
+            if (
+                pending_action not in self.tool_names
+                or schema is None
+                or schema.action_kind != "mutate"
+                or not isinstance(pending_arguments, dict)
+            ):
+                candidate.pop("confirmation_for", None)
+                return
+            pending_candidate = {
+                "action": pending_action,
+                "arguments": dict(pending_arguments),
+            }
+            self._ground_candidate(pending_candidate, runtime_state, context_text)
+            candidate["confirmation_for"] = {
+                "action": pending_action,
+                "arguments": pending_candidate.get("arguments", {}),
+            }
 
         def _history_tool_calls(self, state: OntologyAgentState) -> List[Dict[str, Any]]:
             return extract_history_tool_calls(state.messages)
@@ -730,11 +769,18 @@ single valid JSON object matching this exact schema:
   "action": "tool name, or respond_to_user",
   "arguments": {{"param": "value"}},
   "message_to_user": "text to send when action is respond_to_user",
+  "confirmation_for": null,
   "candidates": [
-    {{"thought": "best next action", "action": "tool name or respond_to_user", "arguments": {{}}, "message_to_user": ""}},
-    {{"thought": "fallback action", "action": "tool name or respond_to_user", "arguments": {{}}, "message_to_user": ""}}
+    {{"thought": "best next action", "action": "tool name or respond_to_user", "arguments": {{}}, "message_to_user": "", "confirmation_for": null}},
+    {{"thought": "fallback action", "action": "tool name or respond_to_user", "arguments": {{}}, "message_to_user": "", "confirmation_for": null}}
   ]
 }}
+
+When asking the user to confirm a concrete mutating action, set
+``confirmation_for`` to the exact pending tool call:
+{{"action": "mutating tool name", "arguments": {{"all": "final arguments"}}}}.
+For ordinary questions or informational responses, use null. Never set
+``confirmation_for`` for read-only actions.
 
 Example for looking up an order by email:
 {{
@@ -742,6 +788,7 @@ Example for looking up an order by email:
   "action": "find_user_id_by_email",
   "arguments": {{"email": "alice@example.com"}},
   "message_to_user": "",
+  "confirmation_for": null,
   "candidates": []
 }}"""
             user_prompt = f"""Conversation so far:
@@ -773,6 +820,11 @@ Choose the next single assistant action."""
                         }
                 for candidate in self._extract_candidates(response):
                     action = str(candidate.get("action", "") or "")
+                    self._normalize_confirmation_intent(
+                        candidate,
+                        runtime_state,
+                        history,
+                    )
                     if action in self.tool_names and uses_admissibility_gate(self.agent_kind):
                         self._ground_candidate(candidate, runtime_state, history)
                         placeholder_violations = self.argument_normalizer.detect_placeholders(

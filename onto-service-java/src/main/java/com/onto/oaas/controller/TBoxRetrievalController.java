@@ -57,7 +57,17 @@ public class TBoxRetrievalController {
     private final TBoxContextService contextService;
 
     // 用于同步等待 Agent 响应的临时存储
-    private final Map<String, CompletableFuture<AgentMessage>> pendingResponses = new ConcurrentHashMap<>();
+    private final Map<String, PendingResponse> pendingResponses = new ConcurrentHashMap<>();
+
+    private static class PendingResponse {
+        final CompletableFuture<AgentMessage> future;
+        final AgentMessageType expectedType;
+
+        PendingResponse(CompletableFuture<AgentMessage> future, AgentMessageType expectedType) {
+            this.future = future;
+            this.expectedType = expectedType;
+        }
+    }
     private static final long RESPONSE_TIMEOUT_MS = 15000;
 
     @PostMapping("/retrieve")
@@ -335,7 +345,7 @@ public class TBoxRetrievalController {
     private AgentMessage waitForResponse(AgentMessage request, AgentMessageType expectedResponseType) {
         String correlationId = request.getCorrelationId();
         CompletableFuture<AgentMessage> future = new CompletableFuture<>();
-        pendingResponses.put(correlationId, future);
+        pendingResponses.put(correlationId, new PendingResponse(future, expectedResponseType));
 
         // 注册一个临时监听器来接收响应
         agentBus.publish(request);
@@ -367,9 +377,10 @@ public class TBoxRetrievalController {
             // 增量同步等事件没有 correlationId，忽略
             return;
         }
-        CompletableFuture<AgentMessage> future = pendingResponses.get(response.getCorrelationId());
-        if (future != null && !future.isDone()) {
-            future.complete(response);
+        PendingResponse pending = pendingResponses.get(response.getCorrelationId());
+        if (pending != null && !pending.future.isDone()
+                && response.getType() == pending.expectedType) {
+            pending.future.complete(response);
         }
     }
 

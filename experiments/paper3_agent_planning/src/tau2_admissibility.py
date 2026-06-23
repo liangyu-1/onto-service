@@ -59,7 +59,30 @@ class Tau2AdmissibilityChecker:
         message_to_user = str(candidate.get("message_to_user", "") or "")
 
         if action == "respond_to_user":
-            return [] if message_to_user else ["COMMUNICATE: respond_to_user requires message_to_user"]
+            if not message_to_user:
+                return ["COMMUNICATE: respond_to_user requires message_to_user"]
+            if _looks_like_mutation_confirmation_request(message_to_user):
+                intent = candidate.get("confirmation_for")
+                if not isinstance(intent, dict):
+                    return [
+                        "CONFIRMATION_INTENT_REQUIRED: confirmation request must declare confirmation_for"
+                    ]
+                pending_action = str(intent.get("action") or "")
+                pending_arguments = intent.get("arguments")
+                pending_schema = (
+                    self.action_bank.get(pending_action)
+                    if self.action_bank is not None
+                    else None
+                )
+                if (
+                    pending_schema is None
+                    or pending_schema.action_kind != "mutate"
+                    or not isinstance(pending_arguments, dict)
+                ):
+                    return [
+                        "CONFIRMATION_INTENT_REQUIRED: confirmation_for must identify a mutating ActionBank call"
+                    ]
+            return []
 
         if action not in self.tool_names:
             return [f"UNKNOWN_ACTION: {action} is not an official tau2 tool"]
@@ -346,6 +369,10 @@ def repair_hints(candidate: Dict[str, Any], violations: Sequence[str]) -> List[s
             hints.append("Authenticate the user first, typically with `find_user_id_by_email` or `find_user_id_by_name_zip`, then fetch user details if needed.")
         elif violation.startswith("CONFIRMATION_REQUIRED:"):
             hints.append("Ask the user for explicit confirmation in `message_to_user` before issuing the mutating action.")
+        elif violation.startswith("CONFIRMATION_INTENT_REQUIRED:"):
+            hints.append(
+                "When requesting confirmation, set `confirmation_for` to the exact mutating action and final arguments."
+            )
         elif violation.startswith("ORDER_STATUS_UNVERIFIED:"):
             order_id = arguments.get("order_id", "the target order")
             hints.append(f"Call `get_order_details` for `{order_id}` and verify the required order status before retrying `{action}`.")
@@ -576,6 +603,28 @@ def _weak_grounding_conditions(conditions: Sequence[str]) -> List[str]:
         if condition_text == "user_authenticated == true":
             weak.append(condition_text)
     return weak
+
+
+def _looks_like_mutation_confirmation_request(message: str) -> bool:
+    normalized = message.lower()
+    confirmation_marker = any(
+        marker in normalized
+        for marker in ("please confirm", "type 'yes'", 'type "yes"', "confirm that", "confirm these")
+    )
+    mutation_marker = any(
+        marker in normalized
+        for marker in (
+            "cancel",
+            "return",
+            "exchange",
+            "modify",
+            "update",
+            "change",
+            "proceed with",
+            "process the",
+        )
+    )
+    return confirmation_marker and mutation_marker
 
 
 def _confirmation_description(action: str, arguments: Dict[str, Any]) -> str:

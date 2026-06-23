@@ -14,10 +14,12 @@ The nearest suitable venues checked on 2026-06-03 include:
 
 Chosen working target: WSDM 2027-style research papers. For an official ACM/WSDM submission, install the ACM `acmart` package and switch the preamble back to the official template.
 
-Drafts:
+Current three-paper research line:
 
-- `paper1_action_indexing_wsdm2027.tex`: action-layer indexing.
-- `paper2_action_extraction_wsdm2027.tex`: ontology-grounded action extraction from unstructured procedural data.
-- `paper3_agent_action_planning_wsdm2027.tex`: ontology-grounded action understanding and planning for agents.
+- Paper 1, provisional title: **Collaborative Action Ontogenesis: A Multi-Agent Human-in-the-Loop Framework for Building and Evolving Ontology Action Layers**.
+- Paper 2: **Ontology-Grounded Action Extraction from Unstructured Procedural Documents**.
+- Paper 3: **Ontology-Grounded Action Semantics for Policy-Constrained LLM Agents**.
+
+`paper1_action_indexing_wsdm2027.tex` is now a legacy candidate draft. Action indexing may remain a component for candidate discovery, but it is no longer the planned first paper unless later experiments justify an independent retrieval contribution. A new Paper 1 manuscript should be written only after the collaborative proposal-validation-consensus framework and its evaluation protocol are fixed.
 
 Important limitation: these are research-paper drafts, not submission-ready papers. The result tables intentionally contain placeholders instead of fabricated numbers.

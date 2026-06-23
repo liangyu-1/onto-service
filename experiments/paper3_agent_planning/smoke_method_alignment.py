@@ -141,6 +141,71 @@ def main() -> None:
     assert_no_prefix(confirmed_return, "CONFIRMATION_REQUIRED:")
     assert_no_prefix(confirmed_return, "ROLE_BINDING:")
 
+    proactive_messages = [
+        *messages[:6],
+        {
+            "role": "assistant",
+            "content": "Please confirm these two item exchanges.",
+            "raw_data": {
+                "selected_candidate": {
+                    "action": "respond_to_user",
+                    "confirmation_for": {
+                        "action": "exchange_delivered_order_items",
+                        "arguments": {
+                            "order_id": "W0000001",
+                            "item_ids": ["source-2", "source-1"],
+                            "new_item_ids": ["target-2", "target-1"],
+                            "payment_method_id": "pay-1",
+                        },
+                    },
+                }
+            },
+        },
+        {"role": "user", "content": "Yes."},
+    ]
+    proactive_state = reconstruct_runtime_state(proactive_messages, action_bank)
+    if not proactive_state.has_confirmation(
+        "exchange_delivered_order_items",
+        {
+            "order_id": "#W0000001",
+            "item_ids": ["source-1", "source-2"],
+            "new_item_ids": ["target-1", "target-2"],
+            "payment_method_id": "pay-1",
+        },
+    ):
+        raise AssertionError("proactive confirmation intent or canonical item mapping was lost")
+    if proactive_state.has_confirmation(
+        "exchange_delivered_order_items",
+        {
+            "order_id": "#W0000001",
+            "item_ids": ["source-1", "source-2"],
+            "new_item_ids": ["target-1", "target-2"],
+            "payment_method_id": "pay-2",
+        },
+    ):
+        raise AssertionError("confirmation must not authorize a changed payment method")
+
+    missing_intent = checker.verify_candidate(
+        {
+            "action": "respond_to_user",
+            "arguments": {},
+            "message_to_user": "Please confirm that I should proceed with the order return.",
+        },
+        [],
+        runtime_state=state,
+    )
+    assert_prefix(missing_intent, "CONFIRMATION_INTENT_REQUIRED:")
+
+    rejected_confirmation_state = reconstruct_runtime_state(
+        [
+            proactive_messages[-2],
+            {"role": "user", "content": "No, do not proceed."},
+        ],
+        action_bank,
+    )
+    if rejected_confirmation_state.confirmations:
+        raise AssertionError("explicit rejection must clear the pending confirmation")
+
     state.products["product-b"] = {
         "product_id": "product-b",
         "variants": {
@@ -208,6 +273,14 @@ def main() -> None:
         raise AssertionError(f"semantic confirmation provider was not used: {confirmation_repair}")
     if confirmation_repair.get("_provider_action") != "ask_for_confirmation":
         raise AssertionError(f"confirmation repair lost ontology provider: {confirmation_repair}")
+    if confirmation_repair.get("confirmation_for", {}).get("action") != "cancel_pending_order":
+        raise AssertionError(f"confirmation repair lost structured intent: {confirmation_repair}")
+    repair_violations = checker.verify_candidate(
+        confirmation_repair,
+        [],
+        runtime_state=state,
+    )
+    assert_no_prefix(repair_violations, "CONFIRMATION_INTENT_REQUIRED:")
 
     print("method alignment smoke tests passed")
 

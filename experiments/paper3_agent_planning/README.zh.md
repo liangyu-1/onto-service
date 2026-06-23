@@ -106,6 +106,26 @@ Canonical Action IR
 不能代替跨对象状态绑定。确认记录绑定到具体 action 和目标参数，不能授权其他订单或其他
 mutation。
 
+请求 mutation 确认时，agent 输出必须包含结构化字段：
+
+```json
+{
+  "action": "respond_to_user",
+  "confirmation_for": {
+    "action": "return_delivered_order_items",
+    "arguments": {
+      "order_id": "#W1234567",
+      "item_ids": ["item-1"],
+      "payment_method_id": "payment-1"
+    }
+  }
+}
+```
+
+RuntimeOntologyState 仅在随后收到肯定答复时记录该确认。列表顺序会规范化，但 action、
+订单、item mapping、支付方式、原因或地址发生变化时必须重新确认。缺失
+`confirmation_for` 的 mutation 确认请求会被 gate 拒绝。
+
 正式实验 variant：
 
 | `agent-kind` | ActionBank prompt | Runtime state prompt | Gate | Full conditions | Repair |

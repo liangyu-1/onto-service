@@ -207,12 +207,12 @@ public class Neo4jTBoxIndexRepository implements TBoxIndexRepository {
         String cypher = """
             CALL db.index.fulltext.queryNodes($fulltextIndex, $query)
             YIELD node, score
-            WHERE node.buffer = $buffer
+            WHERE node IS NOT NULL AND node.buffer = $buffer
             """;
         if (objectTypes != null && !objectTypes.isEmpty()) {
             cypher += " AND node.object_type IN $objectTypes";
         }
-        cypher += " RETURN node, score ORDER BY score DESC LIMIT $limit";
+        cypher += " RETURN node AS n, score ORDER BY score DESC LIMIT $limit";
 
         try (Session session = driver.session()) {
             var params = new java.util.HashMap<String, Object>();
@@ -270,12 +270,12 @@ public class Neo4jTBoxIndexRepository implements TBoxIndexRepository {
         String cypher = """
             CALL db.index.vector.queryNodes($vectorIndex, $k, $embedding)
             YIELD node, score
-            WHERE node.buffer = $buffer
+            WHERE node IS NOT NULL AND node.buffer = $buffer
             """;
         if (objectTypes != null && !objectTypes.isEmpty()) {
             cypher += " AND node.object_type IN $objectTypes";
         }
-        cypher += " RETURN node, score ORDER BY score DESC";
+        cypher += " RETURN node AS n, score ORDER BY score DESC";
 
         try (Session session = driver.session()) {
             var params = new java.util.HashMap<String, Object>();
@@ -298,7 +298,12 @@ public class Neo4jTBoxIndexRepository implements TBoxIndexRepository {
     public List<TBoxIndexDocument> hybridSearch(String query, float[] queryEmbedding,
                                                  List<TBoxObjectType> objectTypes, int topK) {
         List<TBoxIndexDocument> keywordDocs = searchByKeyword(query, objectTypes, topK * 3);
-        List<TBoxIndexDocument> vectorDocs = searchByVector(queryEmbedding, objectTypes, topK * 3);
+        List<TBoxIndexDocument> vectorDocs = List.of();
+        try {
+            vectorDocs = searchByVector(queryEmbedding, objectTypes, topK * 3);
+        } catch (Exception e) {
+            log.warn("Vector search failed, using keyword only: {}", e.getMessage());
+        }
 
         // RRF (Reciprocal Rank Fusion)
         Map<String, Double> rrfScores = new java.util.HashMap<>();
@@ -417,7 +422,11 @@ public class Neo4jTBoxIndexRepository implements TBoxIndexRepository {
         List<TBoxIndexDocument> docs = new ArrayList<>();
         while (result.hasNext()) {
             Record record = result.next();
-            Node node = record.get("n").asNode();
+            org.neo4j.driver.Value nodeValue = record.get("n");
+            if (nodeValue == null || nodeValue.isNull()) {
+                continue;
+            }
+            Node node = nodeValue.asNode();
             docs.add(mapNodeToDocument(node));
         }
         return docs;

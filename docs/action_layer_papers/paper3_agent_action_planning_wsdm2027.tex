@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-LLM agents increasingly operate over tools that query and modify operational systems. Most tool-use interfaces, however, expose actions as flat function names with JSON arguments, leaving action semantics---target object classes, parameter roles, world-state preconditions, effects, confirmation requirements, and repair paths---implicit in prompts or documentation. This paper proposes an ontology-grounded action layer for policy-constrained LLM agents. The central claim is that agent planning should distinguish \emph{epistemic actions}, which acquire state and therefore require weak grounding, from \emph{mutating actions}, which change state and therefore require strong grounding, policy validation, and confirmation. We represent actions using a canonical ontology-grounded Action IR and compile it into an executable ActionBank containing action kind, grounding mode, target object type, parameter roles, preconditions, effects, and constraints. At runtime, the agent maintains an ontology state built only from the dialogue and observed tool outputs, checks candidate actions with type-aware admissibility rules, and repairs rejected proposals using ontology violation feedback. We instantiate the method on $\tau$-bench retail. The experimental protocol separates task success from mechanism evidence: task-level paired evaluation measures end-to-end utility, while ontology diagnostics measure role binding, state-sensitive admissibility, repair effectiveness, and failure modes.
+LLM agents increasingly operate over tools that query and modify operational systems. Most tool-use interfaces, however, expose actions as flat function names with JSON arguments, leaving action semantics---target object classes, parameter roles, world-state preconditions, effects, confirmation requirements, and repair paths---implicit in prompts or documentation. This paper proposes an ontology-grounded action layer for policy-constrained LLM agents. The central claim is that agent planning should distinguish \emph{epistemic actions}, which acquire state and therefore require weak grounding, from \emph{mutating actions}, which change state and therefore require strong grounding, policy validation, and confirmation. We represent actions using a canonical ontology-grounded Action IR and compile it into an executable ActionBank containing action kind, grounding mode, target object type, parameter roles, preconditions, effects, and constraints. At runtime, the agent maintains an ontology state built only from the dialogue and observed tool outputs, checks candidate actions with type-aware admissibility rules, and repairs rejected proposals using ontology violation feedback. We instantiate the method on $\tau$-bench retail. On three quota-complete paired trials (341 trace-valid pairs), the full method increases official success from 44.9\% to 55.7\% ($+10.9$ percentage points; paired McNemar $p=0.0029$). However, the conservative task-cluster sign test is not significant ($p=0.109$), and later trials are incomplete because of provider quota exhaustion. Trace analysis further identifies a confirmation-state binding defect that disproportionately affects failed ontology trajectories. The evidence therefore supports a promising but not yet definitive task-level effect while demonstrating the diagnostic value of explicit ontology traces.
 \end{abstract}
 
 \keywords{LLM agents, operational ontology, action layer, action semantics, action grounding, tool use}
@@ -263,7 +263,7 @@ The argument-role and effect-consistency benchmarks test complementary parts of 
 \textbf{Ablations}: We remove one semantic component at a time: \textsc{NoActionKind} applies one uniform grounding rule to all actions; \textsc{NoRuntimeState} removes observed object summaries; \textsc{NoRepair} blocks invalid actions without repair; \textsc{NoRoleGrounding} removes semantic parameter-role checks. These ablations are designed to test the method claim rather than to optimize a benchmark score.
 
 \subsection{Models}
-The current implementation uses an OpenAI-compatible LLM endpoint with temperature set to 0. The model is held fixed across Schema-Only and ontology variants. Model choice is not the contribution of this paper; all claims require paired comparisons under the same model, task split, number of trials, maximum steps, and user simulator.
+The reported run uses GLM-5.2 through an OpenAI-compatible endpoint for both the agent and the official user simulator, with temperature set to 0. The model, task order, task split, maximum step budget, and simulator configuration are held fixed across Schema-Only and the full ontology method. Model choice is not the contribution of this paper; the analysis is paired by task and trial to reduce variance attributable to task composition.
 
 \subsection{Metrics}
 \textbf{Official Task Success}: Official $\tau$-bench reward on paired task/trial keys.
@@ -277,11 +277,41 @@ The current implementation uses an OpenAI-compatible LLM endpoint with temperatu
 \textbf{Ablation Delta}: Performance change after removing action kind, runtime state, role grounding, or repair.
 
 \section{Results}
-\subsection{Current Run Status}
+\subsection{Run Integrity and Analysis Set}
 
-We do not yet report a final task-performance claim. Pilot runs exposed an important method-level failure mode: applying strong grounding uniformly to both epistemic and mutating actions can collapse task performance because lookup actions such as order and product reads are blocked before the agent can acquire state. This failure motivates the type-aware admissibility semantics introduced in this paper. A paper-eligible run must therefore use the corrected ActionBank projection with \texttt{action\_kind} and \texttt{grounding\_mode}, must avoid hidden database access, and must complete paired Schema-Only and ontology runs on the same task/trial keys.
+The run requested 114 retail tasks over eight trials, for 912 simulations per method. The provider quota was exhausted during trial 5 for Schema-Only and during trial 3 for the ontology method. Consequently, the raw files contain 602 completed Schema-Only trajectories and 416 completed ontology trajectories, followed by 304 and 496 infrastructure errors, respectively. Treating infrastructure errors as task failures, or comparing the unequal raw totals, would confound method quality with provider availability.
 
-A run is considered valid only if: (1) the same model, user simulator, split, number of trials, and maximum step budget are used for all compared methods; (2) all requested task/trial keys are paired; (3) no hidden environment database is read by the agent; (4) ontology traces include accepted actions, rejected actions, violation types, grounding changes, and repair outcomes; and (5) aggregate numbers are computed from official $\tau$-bench rewards rather than from partial runs.
+The primary analysis therefore uses trials 0--2, the largest prefix completed by both methods before quota failures. We exclude one legacy task--trial pair whose trace predates capability instrumentation, leaving 341 paired simulations over 114 unique tasks. Each pair uses the same task id, trial id, model, simulator, and step budget. The Schema-Only traces disable ontology state, condition enforcement, and repair; the ontology traces enable all three. No hidden benchmark database state is exposed to the agent. Results from later partially completed trials are reported only as a complete-case sensitivity analysis because trial 3 is an execution-order prefix rather than a randomly missing sample.
+
+\subsection{Paired Task Success}
+
+Table~\ref{tab:paired_success} reports official $\tau$-bench reward on the primary paired set. The full ontology method succeeds on 190 of 341 simulations (55.7\%), compared with 153 of 341 (44.9\%) for Schema-Only, an absolute improvement of 10.9 percentage points. Among paired outcomes, 92 change from baseline failure to ontology success and 55 change in the opposite direction; 98 pairs succeed under both methods and 96 fail under both.
+
+\begin{table}[!htbp]
+\centering
+\caption{Official task success on the quota-complete paired set.}
+\label{tab:paired_success}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Method & Success & Rate \\
+\midrule
+\textsc{Schema-Only} & 153 / 341 & 44.9\% \\
+\textsc{Typed+Repair} & 190 / 341 & 55.7\% \\
+\midrule
+Absolute difference & +37 & +10.9 pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+An exact paired McNemar test rejects equal simulation-level success probabilities ($p=0.0029$). A task-cluster bootstrap gives a 95\% confidence interval of approximately $[+2.3,+19.9]$ percentage points. However, when each task is reduced to the sign of its mean trial-level difference, 52 tasks improve, 36 worsen, and 26 tie; the corresponding exact sign test is not significant ($p=0.109$). The evidence is therefore positive at the paired-simulation level but does not yet establish a stable improvement across task identities.
+
+The effect also varies across the three complete trials. Excluding the legacy pair, the absolute differences are $+4.4$, $+17.5$, and $+10.5$ percentage points for trials 0, 1, and 2, respectively. Only trial 1 is individually significant under McNemar's test. This trial variation is another reason not to interpret the current run as a final benchmark estimate.
+
+\subsection{Sensitivity Analysis}
+
+As a secondary analysis, we retain every task--trial key for which both methods produced a numeric reward before quota exhaustion. This complete-case set contains 415 pairs over the same 114 tasks. Schema-Only succeeds on 185 pairs (44.6\%) and the ontology method on 240 (57.8\%), a difference of 13.3 percentage points. The paired McNemar test gives $p<0.001$, the task-level sign test gives $p=0.038$, and the task-cluster bootstrap interval is approximately $[+3.7,+21.2]$ percentage points. These estimates are directionally consistent with the primary analysis, but they are not used as the headline result because the additional trial-3 cases form a non-random prefix determined by execution order and quota timing.
 
 \subsection{Implementation Checks}
 
@@ -291,56 +321,40 @@ The symbolic components are tested independently of the LLM. The assertion-based
     \item return action on a pending order is rejected by an order-status precondition;
     \item exchange action without user confirmation is rejected by a confirmation constraint;
     \item correctly authenticated and confirmed cancellation of a pending order is accepted;
-    \item duplicate successful lookup and unknown action ids are rejected.
+    \item duplicate successful lookup and unknown action ids are rejected;
     \item epistemic read actions with concrete identifiers are not rejected merely because the target object has not yet been cached;
     \item mutating actions still require observed target objects, valid state, and confirmation.
 \end{itemize}
 These checks validate the implementation of the admissibility predicate, but they do not by themselves establish task-level agent performance. They are therefore reported as implementation validation rather than as benchmark results.
 
-\subsection{Planned End-to-End Table}
+\subsection{Mechanism and Cost Analysis}
 
-After a valid paired run, the main table should compare \textsc{Schema-Only}, \textsc{Ontology-Prompt}, \textsc{State-Only}, \textsc{Typed-Admissibility}, and \textsc{Typed-Admissibility+Repair}. The table columns should report official reward, executed violation rate, epistemic preservation, strong-grounding compliance, repair outcome distribution, tool-call count, and latency.
-
-This table is necessary but not sufficient for the ontology claim. It shows whether the full system helps on realistic workflows, but it does not isolate why. Until the corrected type-aware run is completed, we avoid claiming that the method improves task success. The current paper claim is therefore methodological: the proposed action layer defines an inspectable ontology action semantics and an evaluation protocol that separates ontology grounding, execution compliance, repair behavior, and task completion.
-
-\subsection{Planned Ontology Benchmark Table}
-
-The ontology benchmark suite should be reported as the main evidence that the method is not merely a safety wrapper. Table~\ref{tab:planned_ontology_results} shows the planned result layout. Rows are model/system variants; columns correspond to ontology capabilities. The expected comparison is not only \textsc{Schema-Only} vs. the full method, but also the ablation deltas after removing action kind, runtime state, role grounding, and repair.
+Table~\ref{tab:mechanism_results} summarizes trace-derived mechanism statistics on the same 341 pairs. The ontology method makes fewer tool calls and transfers substantially less often, but increases wall-clock latency because rejected proposals and repairs require additional model interactions. Database-state and natural-language assertion failures are both lower under the ontology method. These quantities describe correlated mechanisms; they do not by themselves identify a causal contribution for each ontology component.
 
 \begin{table*}[!htbp]
 \centering
-\caption{Planned ontology benchmark result table.}
-\label{tab:planned_ontology_results}
-\scriptsize
+\caption{Mechanism statistics on the primary paired set. Counts are over 341 simulations per method.}
+\label{tab:mechanism_results}
+\small
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.05}
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}YYYYY@{}}
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}YYYYYY@{}}
 \toprule
-Method & Epistemic preservation & Strong-grounding compliance & Role-binding acc. & Repair success & Ablation interpretation \\
+Method & Mean latency (s) & Tool calls & Calls / sim. & Transfer calls & DB failures & NL failures \\
 \midrule
-\textsc{Schema-Only} & -- & -- & -- & -- & Flat action schema baseline \\
-\textsc{Typed+Repair} & -- & -- & -- & -- & Full method \\
-\textsc{NoActionKind} & -- & -- & -- & -- & Tests whether weak/strong grounding matters \\
-\textsc{NoRuntimeState} & -- & -- & -- & -- & Tests whether observed state grounding matters \\
-\textsc{NoRoleGrounding} & -- & -- & -- & -- & Tests whether semantic role binding matters \\
-\textsc{NoRepair} & -- & -- & -- & -- & Tests whether violation feedback enables recovery \\
+\textsc{Schema-Only} & 190.6 & 2,829 & 8.30 & 323 & 176 & 61 \\
+\textsc{Typed+Repair} & 260.3 & 2,441 & 7.16 & 62 & 139 & 34 \\
 \bottomrule
 \end{tabularx}
 \end{table*}
 
-The benchmark should include four controlled case families:
-\begin{itemize}
-    \item \textbf{State counterfactuals}: For an order-level goal, flip the order state between \textit{Pending}, \textit{Delivered}, and \textit{Cancelled}. The correct action should change even when the natural-language goal remains similar.
-    \item \textbf{Role perturbations}: Replace a valid role filler with a plausible but wrong individual, such as an item from another order or an unavailable payment method. The expected outcome is either corrected grounding or rejection with a role-level explanation.
-    \item \textbf{Effect checks}: Replay accepted final actions and compare the observed DB transition with the action schema's expected effect.
-    \item \textbf{Component ablations}: Remove ontology components one at a time and measure which capability degrades.
-\end{itemize}
+\subsection{Ontology Rejections and Repair Failure}
 
-This table should be interpreted before the end-to-end task table. If the full method improves task success but does not improve epistemic preservation, strong-grounding compliance, role binding, or repair success, then the ontology claim is not supported. Conversely, if the ontology benchmark improves while task success remains limited, the paper can still make a narrower and defensible claim: the action layer improves semantic grounding and repair interpretability, while full task success remains constrained by model capability and dialogue simulation.
+The ontology method emits 5,050 gate events, including 1,553 rejected candidates and 1,518 repair attempts. At least one rejection occurs in 311 of 341 simulations. The dominant violation classes are premature response (623), missing confirmation (529), duplicate action (296), communication-policy violation (80), role-binding violation (28), grounding violation (21), placeholder value (18), and missing parameter (17). The repair provider maps 524 missing-confirmation cases to \texttt{ask\_for\_confirmation} and five missing-variant cases to \texttt{get\_product\_details}. Thus, the traces confirm that the method is executing predicate-driven ontology checks rather than only adding descriptive context to the prompt.
 
-\subsection{Qualitative Trace Analysis}
+The traces also expose a concrete defect in the evaluated repair implementation. Confirmation requests generated proactively by the LLM did not carry a structured binding to the pending mutating action, whereas verifier-generated confirmation repairs did. Consequently, a subsequent user utterance such as ``Yes'' could fail to satisfy the intended \texttt{user\_confirmed=true} predicate. Confirmation is rejected 529 times; 292 simulations contain at least one such rejection, 122 contain at least two, and the maximum is 23 in one trajectory. Failed ontology trajectories average 1.89 confirmation rejections, and 73 of 151 failures contain at least two.
 
-The trace format supports qualitative analysis once a valid model run is available. For each task, the logs record the proposed action, verifier decision, violation type, repair attempts, grounding changes, execution result, and official task outcome. The intended qualitative analysis is to separate four cases: (1) weak grounding preserves a useful epistemic action; (2) strong grounding blocks an unsafe mutating action and repair recovers progress; (3) strong grounding blocks a harmful action but the model fails to recover; and (4) the repair policy over-corrects and causes premature transfer.
+This is not merely an evaluation artifact: it violates the method's stated requirement that confirmation be bound to an action and its arguments. After the reported run, the implementation was changed to require a structured \texttt{confirmation\_for} field, bind that intent into runtime ontology state, and accept a contextual affirmative response only for the same canonicalized action signature. Because the provider quota was exhausted, the corrected implementation has passed symbolic smoke tests but has not yet been rerun end to end. The reported numbers therefore characterize the pre-fix method and likely underestimate the attainable benefit, but that hypothesis requires a new paired run and is not treated as an empirical result.
 
 \section{Discussion}
 \subsection{What the Action Layer Contributes}
@@ -352,19 +366,23 @@ This distinction also separates the proposed method from generic tool filtering.
 Ontology-grounded admissibility is a local semantic predicate: it can say why a proposed action is not meaningful in the current context, but it does not by itself choose the globally best next action. Post-rejection behavior is therefore a separate policy problem. In simple cases, the violation feedback maps directly to a local fix, such as inserting confirmation or using cached lookup results. In harder cases, the LLM may over-correct, abandon a recoverable trajectory, or choose an admissible action that is still wrong for the task. This suggests that future systems need a stronger repair policy, such as candidate-action ranking under admissibility constraints, state-machine-guided repair, or search over admissible actions, rather than relying only on a single LLM repair prompt.
 
 \subsection{Limitations}
-\textbf{Model capability.} The framework does not assume that the LLM is a reliable planner. The verifier can reject non-admissible local actions, but it cannot by itself infer the globally correct branch in a task with incomplete dialogue state or ambiguous user intent. Valid task-performance claims therefore require a clean model run and paired comparison against Schema-Only.
+\textbf{Incomplete full run.} Provider quota exhaustion prevents a complete eight-trial comparison. The primary estimate uses only the three trials completed by both methods, and the sensitivity estimate uses a non-random complete-case subset. A quota-complete rerun is required before treating the observed improvement as a final benchmark result.
+
+\textbf{Model capability.} The framework does not assume that the LLM is a reliable planner. The verifier can reject non-admissible local actions, but it cannot by itself infer the globally correct branch in a task with incomplete dialogue state or ambiguous user intent.
 
 \textbf{Dialogue simulation.} $\tau$-bench tasks require back-and-forth dialogue for condition branching and user confirmation. Our evaluation therefore uses the official simulator for task success. Ontology checks remain local semantic checks; they cannot by themselves infer the globally correct branch in an underspecified dialogue.
 
-\textbf{Repair overhead.} The repair loop increases latency because rejected proposals require additional LLM calls. Future experiments should report both ontology-consistency benefits and latency cost.
+\textbf{Confirmation binding.} The evaluated implementation did not consistently bind proactive confirmation requests to the pending action signature. The post-run correction has only symbolic test coverage; its end-to-end effect remains unknown.
+
+\textbf{Repair overhead.} The repair loop increases mean latency from 190.6 to 260.3 seconds in the primary analysis, even though it reduces average tool calls. The utility of stronger action semantics must therefore be evaluated jointly with serving cost and latency.
 
 \textbf{Action layer completeness.} The proposed method depends on an action layer with explicit object classes, action types, role schemas, state predicates, preconditions, effects, and constraints. Many real systems lack such representations, motivating companion work on action extraction from procedural documents.
 
 \subsection{Future Work}
-We plan to: (1) run full paired $\tau$-bench evaluations with the corrected type-aware ActionBank; (2) conduct larger-scale counterfactual state tests to measure epistemic preservation and strong-grounding compliance; (3) extend to the airline and industrial SOP domains; (4) learn neural repair policies to complement rule-based checks; and (5) distinguish hard constraints from soft preferences.
+The immediate next experiment is a quota-complete paired rerun of Schema-Only and the corrected ontology method, followed by the predefined component ablations. Further work should conduct larger-scale counterfactual state tests, extend the action layer to airline and industrial SOP domains, evaluate search-based or learned repair policies, and distinguish hard constraints from soft preferences.
 
 \section{Conclusion}
-This paper frames policy-constrained tool use as ontology-grounded action semantics for LLM agents. By representing operations as typed ontology actions with action kind, grounding mode, object bindings, role schemas, state predicates, preconditions, effects, constraints, confirmation requirements, and execution-history predicates, the action layer gives the agent more than a flat tool list. It distinguishes epistemic actions that acquire state from mutating actions that change state, applies type-aware admissibility, and provides ontology-guided repair feedback. The framework should therefore be understood as an ontology action layer for agent planning and execution, not merely as a verifier wrapped around tools.
+This paper frames policy-constrained tool use as ontology-grounded action semantics for LLM agents. By representing operations as typed ontology actions with action kind, grounding mode, object bindings, role schemas, state predicates, preconditions, effects, constraints, confirmation requirements, and execution-history predicates, the action layer gives the agent more than a flat tool list. On the quota-complete paired subset, the method improves official task success by 10.9 percentage points and reduces transfer calls and evaluator failures, but the task-cluster sign test is not significant and the full run is incomplete. The ontology traces also reveal a specific confirmation-binding failure that aggregate reward alone would not expose. The current evidence therefore supports the feasibility and diagnostic value of type-aware ontology grounding, while a corrected quota-complete rerun and component ablations remain necessary for a definitive efficacy claim.
 
 \begin{thebibliography}{99}
 

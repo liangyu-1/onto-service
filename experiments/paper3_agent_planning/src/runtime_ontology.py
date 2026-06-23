@@ -86,11 +86,11 @@ class RuntimeOntologyState:
         )
 
     def has_confirmation(self, action: str, arguments: Dict[str, Any]) -> bool:
-        target = target_signature(arguments)
+        target = confirmation_signature(arguments)
         for confirmation in reversed(self.confirmations):
             if confirmation.action != action:
                 continue
-            if target_signature(confirmation.arguments) == target:
+            if confirmation_signature(confirmation.arguments) == target:
                 return True
         return False
 
@@ -212,10 +212,11 @@ def reconstruct_runtime_state(
                 pending_confirmation = request
 
         if role == "user" and pending_confirmation is not None:
-            if is_explicit_confirmation(str(content or "")):
-                state.confirmations.append(pending_confirmation)
+            response_text = str(content or "")
+            if is_explicit_rejection(response_text):
                 pending_confirmation = None
-            elif is_explicit_rejection(str(content or "")):
+            elif is_confirmation_response(response_text):
+                state.confirmations.append(pending_confirmation)
                 pending_confirmation = None
 
         if tool_calls:
@@ -283,6 +284,14 @@ def confirmation_request_from_raw_data(raw_data: Any) -> Optional[ConfirmationBi
     if not isinstance(raw_data, dict):
         return None
     selected = raw_data.get("selected_candidate") or {}
+    proactive = selected.get("confirmation_for")
+    if isinstance(proactive, dict) and proactive.get("action"):
+        arguments = proactive.get("arguments")
+        if isinstance(arguments, dict):
+            return ConfirmationBinding(
+                action=str(proactive["action"]),
+                arguments=dict(arguments),
+            )
     if selected.get("_repair_reason") == "CONFIRMATION_REQUIRED" and selected.get("_repair_for"):
         return ConfirmationBinding(
             action=str(selected["_repair_for"]),
@@ -309,6 +318,55 @@ def target_signature(arguments: Dict[str, Any]) -> str:
         if key in arguments
     }
     return stable_json(target)
+
+
+def confirmation_signature(arguments: Dict[str, Any]) -> str:
+    """Canonicalize confirmation scope without weakening argument binding."""
+    target = {
+        key: canonical_confirmation_value(key, arguments[key])
+        for key in (
+            "user_id",
+            "order_id",
+            "item_ids",
+            "new_item_ids",
+            "payment_method_id",
+            "reason",
+            "address",
+        )
+        if key in arguments
+    }
+    item_ids = target.get("item_ids")
+    new_item_ids = target.get("new_item_ids")
+    if (
+        isinstance(item_ids, list)
+        and isinstance(new_item_ids, list)
+        and len(item_ids) == len(new_item_ids)
+    ):
+        target["item_mapping"] = sorted(zip(item_ids, new_item_ids))
+        target.pop("item_ids", None)
+        target.pop("new_item_ids", None)
+    return stable_json(target)
+
+
+def canonical_confirmation_value(key: str, value: Any) -> Any:
+    if key == "order_id":
+        text = str(value or "").strip()
+        return f"#{text.lstrip('#').upper()}" if text else ""
+    if key in {"item_ids", "new_item_ids"}:
+        items = value if isinstance(value, list) else [value]
+        return [str(item) for item in items]
+    if key in {"payment_method_id", "user_id"}:
+        return str(value or "").strip()
+    if key == "reason":
+        return " ".join(str(value or "").lower().split())
+    if key == "address" and isinstance(value, dict):
+        return {
+            str(field): canonical_confirmation_value(str(field), field_value)
+            for field, field_value in sorted(value.items())
+        }
+    if isinstance(value, str):
+        return " ".join(value.split())
+    return value
 
 
 def canonical_observed_id(value: Any, objects: Dict[str, Any]) -> str:
@@ -359,6 +417,18 @@ def is_explicit_confirmation(text: str) -> bool:
         r"\byes\s+(please\s+)?(cancel|return|exchange|modify|change|update|proceed)\b",
     )
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in patterns)
+
+
+def is_confirmation_response(text: str) -> bool:
+    if is_explicit_confirmation(text):
+        return True
+    normalized = " ".join(text.strip().lower().split())
+    return bool(
+        re.fullmatch(
+            r"(yes|yes[.!]|yep[.!]?|yeah[.!]?|sure[.!]?|ok(?:ay)?[.!]?|correct[.!]?)",
+            normalized,
+        )
+    )
 
 
 def is_explicit_rejection(text: str) -> bool:

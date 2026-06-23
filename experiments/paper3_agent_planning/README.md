@@ -125,6 +125,14 @@ Authentication, object state, duplicate execution, and confirmation are checked
 against structured runtime evidence. Confirmation is bound to the concrete
 action and target arguments rather than treated as a global dialogue flag.
 
+When requesting confirmation for a mutation, the agent must emit a structured
+`confirmation_for` object containing the exact pending action and final
+arguments. RuntimeOntologyState records the confirmation only after the next
+affirmative user response. List ordering is canonicalized, but changing the
+action, order, item mapping, payment method, reason, or address requires a new
+confirmation. The gate rejects mutation confirmation requests that omit this
+structured intent.
+
 Official experiment variants:
 
 | `agent-kind` | ActionBank prompt | Runtime state prompt | Gate | Full conditions | Repair |

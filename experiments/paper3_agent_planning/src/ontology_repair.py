@@ -67,6 +67,10 @@ class OntologyRepairPlanner:
                 "action": "respond_to_user",
                 "arguments": {},
                 "message_to_user": confirmation_message(candidate),
+                "confirmation_for": {
+                    "action": str(candidate.get("action") or ""),
+                    "arguments": dict(candidate.get("arguments") or {}),
+                },
             }
         if provider_action not in self.tool_names:
             return None

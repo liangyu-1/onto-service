@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "name": "bulksms.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "bulksms.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "BlockedNumber",
+        "blocked number",
+        "blocked_number"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object BlockedNumber",
+          "source_reference": "bulksms.com#/components/schemas/BlockedNumber",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/blocked-numbers",
+          "source_reference": "bulksms.com#/paths/~1blocked-numbers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List blocked numbers",
+          "source_reference": "bulksms.com#/paths/~1blocked-numbers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a blocked number",
+          "source_reference": "bulksms.com#/paths/~1blocked-numbers/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "BlockedNumber",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "BlockedNumber.id",
+              "source_reference": "bulksms.com#/components/schemas/BlockedNumber/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A unique identifier that is assigned when the BlockedNumber is created.",
+              "source_reference": "bulksms.com#/components/schemas/BlockedNumber/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "phone number",
+            "phoneNumber",
+            "phone_number"
+          ],
+          "evidence": [
+            {
+              "claim": "BlockedNumber.phoneNumber",
+              "source_reference": "bulksms.com#/components/schemas/BlockedNumber/properties/phoneNumber",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "phoneNumber",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "bulksms.com#/paths/~1blocked-numbers/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "bulksms.com#/paths/~1blocked-numbers/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "bulksms.com#/paths/~1blocked-numbers/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Message",
+        "message"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Message",
+          "source_reference": "bulksms.com#/components/schemas/Message",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/messages",
+          "source_reference": "bulksms.com#/paths/~1messages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Messages",
+          "source_reference": "bulksms.com#/paths/~1messages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send Messages",
+          "source_reference": "bulksms.com#/paths/~1messages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/send",
+          "source_reference": "bulksms.com#/paths/~1messages~1send",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send message by simple GET or POST",
+          "source_reference": "bulksms.com#/paths/~1messages~1send/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}",
+          "source_reference": "bulksms.com#/paths/~1messages~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show Message",
+          "source_reference": "bulksms.com#/paths/~1messages~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/relatedReceivedMessages",
+          "source_reference": "bulksms.com#/paths/~1messages~1{id}~1relatedReceivedMessages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Related Messages",
+          "source_reference": "bulksms.com#/paths/~1messages~1{id}~1relatedReceivedMessages/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Message",
+      "properties": [
+        {
+          "aliases": [
+            "body"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.body",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/body",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The content of the message",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/body",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "body",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "credit cost",
+            "creditCost",
+            "credit_cost"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.creditCost",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/creditCost",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The cost of the message (in credits).   Note that this field does not have a value in the submission response.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/creditCost",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "creditCost",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "encoding"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.encoding",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/encoding",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of the content.  See the `encoding` field for more information.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/encoding",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "from"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.from",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/from",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The address part of the sender id",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/from",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.id",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A unique identifier that is assigned when the message is created.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "message class",
+            "messageClass",
+            "message_class"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.messageClass",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/messageClass",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "See the `messageClass` field for more information.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/messageClass",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "messageClass",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "number of part",
+            "number of parts",
+            "numberOfParts",
+            "number_of_parts"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.numberOfParts",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/numberOfParts",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The number of parts.  If this is a concatenated message, the number of parts will be more than 1.  Note that this field does not have a value in the submission response.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/numberOfParts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "numberOfParts",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "protocol id",
+            "protocolId",
+            "protocol_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.protocolId",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/protocolId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "See the `protocolId` field for more information.",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/protocolId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "protocolId",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "related sent message id",
+            "relatedSentMessageId",
+            "related_sent_message_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.relatedSentMessageId",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/relatedSentMessageId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "This field has a value only if the type is RECEIVED.\nWith SMS messages, it is not possible to link a reply directly with a specific sent message.  However, if you specified `REPLIABLE` in the `from` property, BulkSMS will link any reply to the most recent message sent to a given phone number.\n\nThe `relatedSentMessageId` property keeps the information about this link.\n\nYou can use this property to derive an implicit conversation from a set of messages.\n  - If a received reply message has a `relatedSentMessageId`, you can use it to retrieve the last message that was sent before the reply was received.\n  - If you have the `id` of the sent message and you want all the received messages that relate to it, you can use the List Related Messages Operation.\n",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/relatedSentMessageId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "relatedSentMessageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.status",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The status of the message",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "submission"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.submission",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/submission",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Identifies the submission.\n",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/submission",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "submission",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "to"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.to",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/to",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The phone number of the recipient",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/to",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "to",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.type",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The message direction",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user supplied id",
+            "userSuppliedId",
+            "user_supplied_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.userSuppliedId",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/userSuppliedId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "This is the value you supplied in the `userSuppliedId` field.\nHas a value only if the `type` is SENT.\n",
+              "source_reference": "bulksms.com#/components/schemas/Message/properties/userSuppliedId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "userSuppliedId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

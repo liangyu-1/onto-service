@@ -1,0 +1,688 @@
+{
+  "metadata": {
+    "name": "dev.to_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "dev.to"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Api",
+        "api"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/admin/users",
+          "source_reference": "dev.to#/paths/~1api~1admin~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Invite a User",
+          "source_reference": "dev.to#/paths/~1api~1admin~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles",
+          "source_reference": "dev.to#/paths/~1api~1articles",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Published articles",
+          "source_reference": "dev.to#/paths/~1api~1articles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Publish article",
+          "source_reference": "dev.to#/paths/~1api~1articles/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/latest",
+          "source_reference": "dev.to#/paths/~1api~1articles~1latest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Published articles sorted by published date",
+          "source_reference": "dev.to#/paths/~1api~1articles~1latest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/me",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "User's articles",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/me/all",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1all",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "User's all articles",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1all/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/me/published",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1published",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "User's published articles",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1published/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/me/unpublished",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1unpublished",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "User's unpublished articles",
+          "source_reference": "dev.to#/paths/~1api~1articles~1me~1unpublished/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/{id}",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Published article by id",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an article by id",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/{id}/unpublish",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{id}~1unpublish",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Unpublish an article",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{id}~1unpublish/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/articles/{username}/{slug}",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{username}~1{slug}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Published article by path",
+          "source_reference": "dev.to#/paths/~1api~1articles~1{username}~1{slug}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/comments",
+          "source_reference": "dev.to#/paths/~1api~1comments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Comments",
+          "source_reference": "dev.to#/paths/~1api~1comments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/comments/{id}",
+          "source_reference": "dev.to#/paths/~1api~1comments~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Comment by id",
+          "source_reference": "dev.to#/paths/~1api~1comments~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/display_ads",
+          "source_reference": "dev.to#/paths/~1api~1display_ads",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "display ads",
+          "source_reference": "dev.to#/paths/~1api~1display_ads/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "display ads",
+          "source_reference": "dev.to#/paths/~1api~1display_ads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/display_ads/{id}",
+          "source_reference": "dev.to#/paths/~1api~1display_ads~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "display ad",
+          "source_reference": "dev.to#/paths/~1api~1display_ads~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "display ads",
+          "source_reference": "dev.to#/paths/~1api~1display_ads~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/display_ads/{id}/unpublish",
+          "source_reference": "dev.to#/paths/~1api~1display_ads~1{id}~1unpublish",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "unpublish",
+          "source_reference": "dev.to#/paths/~1api~1display_ads~1{id}~1unpublish/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/followers/users",
+          "source_reference": "dev.to#/paths/~1api~1followers~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Followers",
+          "source_reference": "dev.to#/paths/~1api~1followers~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/follows/tags",
+          "source_reference": "dev.to#/paths/~1api~1follows~1tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Followed Tags",
+          "source_reference": "dev.to#/paths/~1api~1follows~1tags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/organizations/{username}",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "An organization",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/organizations/{username}/articles",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}~1articles",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Organization's Articles",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}~1articles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/organizations/{username}/users",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Organization's users",
+          "source_reference": "dev.to#/paths/~1api~1organizations~1{username}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/pages",
+          "source_reference": "dev.to#/paths/~1api~1pages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "show details for all pages",
+          "source_reference": "dev.to#/paths/~1api~1pages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "pages",
+          "source_reference": "dev.to#/paths/~1api~1pages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/pages/{id}",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "show details for a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "update details for a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/podcast_episodes",
+          "source_reference": "dev.to#/paths/~1api~1podcast_episodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Podcast Episodes",
+          "source_reference": "dev.to#/paths/~1api~1podcast_episodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/profile_images/{username}",
+          "source_reference": "dev.to#/paths/~1api~1profile_images~1{username}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A Users or organizations profile image",
+          "source_reference": "dev.to#/paths/~1api~1profile_images~1{username}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/reactions",
+          "source_reference": "dev.to#/paths/~1api~1reactions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "create reaction",
+          "source_reference": "dev.to#/paths/~1api~1reactions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/reactions/toggle",
+          "source_reference": "dev.to#/paths/~1api~1reactions~1toggle",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "toggle reaction",
+          "source_reference": "dev.to#/paths/~1api~1reactions~1toggle/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/readinglist",
+          "source_reference": "dev.to#/paths/~1api~1readinglist",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Readinglist",
+          "source_reference": "dev.to#/paths/~1api~1readinglist/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/tags",
+          "source_reference": "dev.to#/paths/~1api~1tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Tags",
+          "source_reference": "dev.to#/paths/~1api~1tags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/users/me",
+          "source_reference": "dev.to#/paths/~1api~1users~1me",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "The authenticated user",
+          "source_reference": "dev.to#/paths/~1api~1users~1me/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/users/{id}",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A User",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/users/{id}/suspend",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}~1suspend",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Suspend a User",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}~1suspend/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/users/{id}/unpublish",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}~1unpublish",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Unpublish a User's Articles and Comments",
+          "source_reference": "dev.to#/paths/~1api~1users~1{id}~1unpublish/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/videos",
+          "source_reference": "dev.to#/paths/~1api~1videos",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Articles with a video",
+          "source_reference": "dev.to#/paths/~1api~1videos/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Api",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "dev.to#/paths/~1api~1admin~1users/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "dev.to#/paths/~1api~1articles/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "dev.to#/paths/~1api~1reactions/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "dev.to#/paths/~1api~1pages~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "suspended",
+              "source_reference": "dev.to#/paths/~1api~1users~1{id}~1suspend/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "suspended",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "dev.to#/paths/~1api~1articles~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "dev.to#/paths/~1api~1pages~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Page",
+        "Representation",
+        "page"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Page",
+          "source_reference": "dev.to#/components/schemas/Page",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Representation of a page object",
+          "source_reference": "dev.to#/components/schemas/Page",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/api/pages",
+          "source_reference": "dev.to#/paths/~1api~1pages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "show details for all pages",
+          "source_reference": "dev.to#/paths/~1api~1pages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "pages",
+          "source_reference": "dev.to#/paths/~1api~1pages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/pages/{id}",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "show details for a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "update details for a page",
+          "source_reference": "dev.to#/paths/~1api~1pages~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Page",
+      "properties": [
+        {
+          "aliases": [
+            "body json",
+            "body_json"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.body_json",
+              "source_reference": "dev.to#/components/schemas/Page/properties/body_json",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "For JSON pages, the JSON body",
+              "source_reference": "dev.to#/components/schemas/Page/properties/body_json",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "body_json",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body markdown",
+            "body_markdown"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.body_markdown",
+              "source_reference": "dev.to#/components/schemas/Page/properties/body_markdown",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The text (in markdown) of the ad (required)",
+              "source_reference": "dev.to#/components/schemas/Page/properties/body_markdown",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "body_markdown",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.description",
+              "source_reference": "dev.to#/components/schemas/Page/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "For internal use, helps similar pages from one another",
+              "source_reference": "dev.to#/components/schemas/Page/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "is top level path",
+            "is_top_level_path"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.is_top_level_path",
+              "source_reference": "dev.to#/components/schemas/Page/properties/is_top_level_path",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution",
+              "source_reference": "dev.to#/components/schemas/Page/properties/is_top_level_path",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "is_top_level_path",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "slug"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.slug",
+              "source_reference": "dev.to#/components/schemas/Page/properties/slug",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Used to link to this page in URLs, must be unique and URL-safe",
+              "source_reference": "dev.to#/components/schemas/Page/properties/slug",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "slug",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "social image",
+            "social_image"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.social_image",
+              "source_reference": "dev.to#/components/schemas/Page/properties/social_image",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "social_image",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "template"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.template",
+              "source_reference": "dev.to#/components/schemas/Page/properties/template",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Controls what kind of layout the page is rendered in",
+              "source_reference": "dev.to#/components/schemas/Page/properties/template",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "template",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "title"
+          ],
+          "evidence": [
+            {
+              "claim": "Page.title",
+              "source_reference": "dev.to#/components/schemas/Page/properties/title",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Title of the page",
+              "source_reference": "dev.to#/components/schemas/Page/properties/title",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "title",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "dev.to#/paths/~1api~1pages~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "dev.to#/paths/~1api~1pages~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

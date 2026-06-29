@@ -1,0 +1,9 @@
+{
+  "metadata": {
+    "name": "brainbi.net_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "brainbi.net"
+  },
+  "object_types": []
+}

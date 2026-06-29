@@ -1,0 +1,3479 @@
+{
+  "metadata": {
+    "name": "trello.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "trello.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Actions",
+        "action",
+        "actions"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object actions",
+          "source_reference": "trello.com#/components/schemas/actions",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "deleteActionsByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateActionsByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsBoardByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1board/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsBoardByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1board~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1card/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsCardByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1card~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsDisplayByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1display/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsEntitiesByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1entities/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsListByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1list/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsListByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1list~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsMemberByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1member/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsMemberByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1member~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsMemberCreatorByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1memberCreator/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsMemberCreatorByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1memberCreator~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsOrganizationByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1organization/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsOrganizationByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1organization~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateActionsTextByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1text/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsActionsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsMyPrefsShowSidebarBoardActionsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1myPrefs~1showSidebarBoardActions/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsActionsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsActionsCommentsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1comments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsActionsCommentsByIdCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsActionsCommentsByIdCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getListsActionsByIdList()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersActionsByIdMember()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsActionsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1actions/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Actions",
+      "properties": [
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "actions.text",
+              "source_reference": "trello.com#/components/schemas/actions/properties/text",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 1 to 16384",
+              "source_reference": "trello.com#/components/schemas/actions/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1actions~1{idAction}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1actions~1{idAction}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1actions~1{idAction}~1text/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1myPrefs~1showSidebarBoardActions/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Cards",
+        "card",
+        "cards"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object cards",
+          "source_reference": "trello.com#/components/schemas/cards",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getActionsCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1card/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsCardByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1card~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsCardsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsCardsByIdBoardByFilter()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1cards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsCardsByIdBoardByIdCard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1cards~1{idCard}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsMembersCardsByIdBoardByIdMember()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1members~1{idMember}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsPrefsCardAgingByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1prefs~1cardAging/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsPrefsCardCoversByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1prefs~1cardCovers/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCards()",
+          "source_reference": "trello.com#/paths/~1cards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsActionsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsActionsCommentsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1comments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsActionsCommentsByIdCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsActionsCommentsByIdCardByIdAction()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsAttachmentsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1attachments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsAttachmentsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1attachments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsAttachmentsByIdCardByIdAttachment()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1attachments~1{idAttachment}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsAttachmentsByIdCardByIdAttachment()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1attachments~1{idAttachment}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsBoardByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1board/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsBoardByIdCardByField()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1board~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsCheckItemStatesByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checkItemStates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemByIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1convertToCard/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsChecklistsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsChecklistsByIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists~1{idChecklist}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsClosedByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1closed/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsDescByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1desc/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsDueByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1due/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsIdAttachmentCoverByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idAttachmentCover/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsIdBoardByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idBoard/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsIdLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsIdLabelsByIdCardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsIdListByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idList/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsIdMembersByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idMembers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsIdMembersByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idMembers/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsIdMembersByIdCardByIdMember()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idMembers~1{idMember}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsLabelsByIdCardByColor()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels~1{color}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsListByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1list/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsListByIdCardByField()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1list~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsMarkAssociatedNotificationsReadByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1markAssociatedNotificationsRead/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsMembersByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1members/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsMembersVotedByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1membersVoted/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsMembersVotedByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1membersVoted/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsMembersVotedByIdCardByIdMember()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1membersVoted~1{idMember}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsNameByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsPosByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1pos/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsStickersByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsStickersByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsStickersByIdCardByIdSticker()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers~1{idSticker}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsStickersByIdCardByIdSticker()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers~1{idSticker}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsStickersByIdCardByIdSticker()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers~1{idSticker}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsSubscribedByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1subscribed/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsByIdCardByField()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCardsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCardsByIdChecklistByFilter()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1cards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateChecklistsIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addListsArchiveAllCardsByIdList()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1archiveAllCards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getListsCardsByIdList()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addListsCardsByIdList()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1cards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getListsCardsByIdListByFilter()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1cards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addListsMoveAllCardsByIdList()",
+          "source_reference": "trello.com#/paths/~1lists~1{idList}~1moveAllCards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersCardsByIdMember()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersCardsByIdMemberByFilter()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1cards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getNotificationsCardByIdNotification()",
+          "source_reference": "trello.com#/paths/~1notifications~1{idNotification}~1card/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getNotificationsCardByIdNotificationByField()",
+          "source_reference": "trello.com#/paths/~1notifications~1{idNotification}~1card~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersCardsByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1cards/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Cards",
+      "properties": [
+        {
+          "aliases": [
+            "closed"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.closed",
+              "source_reference": "trello.com#/components/schemas/cards/properties/closed",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": " true or false",
+              "source_reference": "trello.com#/components/schemas/cards/properties/closed",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "closed",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "desc"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.desc",
+              "source_reference": "trello.com#/components/schemas/cards/properties/desc",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/cards/properties/desc",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "due"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.due",
+              "source_reference": "trello.com#/components/schemas/cards/properties/due",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A date, or null",
+              "source_reference": "trello.com#/components/schemas/cards/properties/due",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "due",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "file source",
+            "fileSource",
+            "file_source"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.fileSource",
+              "source_reference": "trello.com#/components/schemas/cards/properties/fileSource",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A file",
+              "source_reference": "trello.com#/components/schemas/cards/properties/fileSource",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "fileSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id attachment cover",
+            "idAttachmentCover",
+            "id_attachment_cover"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idAttachmentCover",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idAttachmentCover",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Id of the image attachment of this card to use as its cover, or null for no cover",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idAttachmentCover",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idAttachmentCover",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id board",
+            "idBoard",
+            "id_board"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idBoard",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the board the card should be moved to",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idBoard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id card source",
+            "idCardSource",
+            "id_card_source"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idCardSource",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idCardSource",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The id of the card to copy into a new card.",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idCardSource",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idCardSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id label",
+            "id labels",
+            "idLabels",
+            "id_labels"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idLabels",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idLabels",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A comma-separated list of objectIds, 24-character hex strings",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idLabels",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idLabels",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id list",
+            "idList",
+            "id_list"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idList",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idList",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the list that the card should be added to",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idList",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id member",
+            "id members",
+            "idMembers",
+            "id_members"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.idMembers",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idMembers",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A comma-separated list of objectIds, 24-character hex strings",
+              "source_reference": "trello.com#/components/schemas/cards/properties/idMembers",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idMembers",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "keep from source",
+            "keepFromSource",
+            "keep_from_source"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.keepFromSource",
+              "source_reference": "trello.com#/components/schemas/cards/properties/keepFromSource",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Properties of the card to copy over from the source.",
+              "source_reference": "trello.com#/components/schemas/cards/properties/keepFromSource",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "keepFromSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "label",
+            "labels"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.labels",
+              "source_reference": "trello.com#/components/schemas/cards/properties/labels",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "all or a comma-separated list of: blue, green, orange, purple, red or yellow",
+              "source_reference": "trello.com#/components/schemas/cards/properties/labels",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "labels",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.name",
+              "source_reference": "trello.com#/components/schemas/cards/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The name of the new card.  It isn&#39;t required if the name is being copied from provided by a URL, file or card that is being copied.",
+              "source_reference": "trello.com#/components/schemas/cards/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pos"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.pos",
+              "source_reference": "trello.com#/components/schemas/cards/properties/pos",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A position. top , bottom , or a positive number.",
+              "source_reference": "trello.com#/components/schemas/cards/properties/pos",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "subscribed"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.subscribed",
+              "source_reference": "trello.com#/components/schemas/cards/properties/subscribed",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": " true or false",
+              "source_reference": "trello.com#/components/schemas/cards/properties/subscribed",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscribed",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "url source",
+            "urlSource",
+            "url_source"
+          ],
+          "evidence": [
+            {
+              "claim": "cards.urlSource",
+              "source_reference": "trello.com#/components/schemas/cards/properties/urlSource",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A URL starting with http:// or https:// or null",
+              "source_reference": "trello.com#/components/schemas/cards/properties/urlSource",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "urlSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "closed",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1closed/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "closed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1attachments~1{idAttachment}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists~1{idChecklist}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idMembers~1{idMember}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels~1{color}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1membersVoted~1{idMember}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers~1{idSticker}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1prefs~1cardAging/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1prefs~1cardCovers/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1actions~1{idAction}~1comments/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1closed/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1desc/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1due/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idAttachmentCover/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idBoard/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idList/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idMembers/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1pos/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1stickers~1{idSticker}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1subscribed/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CheckItem",
+        "check item",
+        "check_item"
+      ],
+      "evidence": [
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklistCurrent}/checkItem/{idCheckItem}",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemByIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/convertToCard",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1convertToCard",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1convertToCard/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/name",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/pos",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/checklist/{idChecklist}/checkItem/{idCheckItem}/state",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/checklists/{idChecklist}/checkItems",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/checklists/{idChecklist}/checkItems/{idCheckItem}",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deleteChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CheckItem",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Checklists",
+        "checklist",
+        "checklists"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object checklists",
+          "source_reference": "trello.com#/components/schemas/checklists",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getBoardsChecklistsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1checklists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addBoardsChecklistsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1checklists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemByIdCardByIdChecklistCurrentByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemByIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsChecklistCheckItemByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistCheckItemConvertToCardByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1convertToCard/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemNameByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemPosByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsChecklistCheckItemStateByIdCardByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getCardsChecklistsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsChecklistsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsChecklistsByIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists~1{idChecklist}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addChecklists()",
+          "source_reference": "trello.com#/paths/~1checklists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteChecklistsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateChecklistsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsBoardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1board/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsBoardByIdChecklistByField()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1board~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCardsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCardsByIdChecklistByFilter()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1cards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateChecklistsIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateChecklistsNameByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateChecklistsPosByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1pos/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsByIdChecklistByField()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1{field}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Checklists",
+      "properties": [
+        {
+          "aliases": [
+            "id board",
+            "idBoard",
+            "id_board"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists.idBoard",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the board that the checklist should be added to",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idBoard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id card",
+            "idCard",
+            "id_card"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists.idCard",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idCard",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the card that the checklist should be added to",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idCard",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idCard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id checklist source",
+            "idChecklistSource",
+            "id_checklist_source"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists.idChecklistSource",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idChecklistSource",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The id of the source checklist to copy into a new checklist.",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/idChecklistSource",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idChecklistSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists.name",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pos"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists.pos",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/pos",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A position. top , bottom , or a positive number.",
+              "source_reference": "trello.com#/components/schemas/checklists/properties/pos",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pos",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklists~1{idChecklist}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklistCurrent}~1checkItem~1{idCheckItem}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1pos/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1checklist~1{idChecklist}~1checkItem~1{idCheckItem}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1pos/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ChecklistsCheckItems",
+        "checklists check item",
+        "checklists check items",
+        "checklists_checkItems",
+        "checklists_check_items"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object checklists_checkItems",
+          "source_reference": "trello.com#/components/schemas/checklists_checkItems",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addChecklistsCheckItemsByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getChecklistsCheckItemsByIdChecklistByIdCheckItem()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ChecklistsCheckItems",
+      "properties": [
+        {
+          "aliases": [
+            "checked"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists_checkItems.checked",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/checked",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": " true or false",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/checked",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "checked",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists_checkItems.name",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 1 to 16384",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pos"
+          ],
+          "evidence": [
+            {
+              "claim": "checklists_checkItems.pos",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/pos",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A position. top , bottom , or a positive number.",
+              "source_reference": "trello.com#/components/schemas/checklists_checkItems/properties/pos",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pos",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1checkItems~1{idCheckItem}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "IdCard",
+        "id card",
+        "id_card"
+      ],
+      "evidence": [
+        {
+          "claim": "/checklists/{idChecklist}/idCard",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateChecklistsIdCardByIdChecklist()",
+          "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "IdCard",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1checklists~1{idChecklist}~1idCard/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "IdLabel",
+        "id label",
+        "id_label"
+      ],
+      "evidence": [
+        {
+          "claim": "/cards/{idCard}/idLabels",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "addCardsIdLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/cards/{idCard}/idLabels/{idLabel}",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deleteCardsIdLabelsByIdCardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsBoardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1board/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsBoardByIdLabelByField()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1board~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsColorByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1color/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsNameByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1name/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "IdLabel",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1color/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1name/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Labels",
+        "label",
+        "labels"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object labels",
+          "source_reference": "trello.com#/components/schemas/labels",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "updateBoardsLabelNamesBlueByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1blue/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsLabelNamesGreenByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1green/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsLabelNamesOrangeByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1orange/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsLabelNamesPurpleByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1purple/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsLabelNamesRedByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1red/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsLabelNamesYellowByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1yellow/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsLabelsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labels/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addBoardsLabelsByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsLabelsByIdBoardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labels~1{idLabel}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsIdLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsIdLabelsByIdCardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addCardsLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateCardsLabelsByIdCard()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteCardsLabelsByIdCardByColor()",
+          "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels~1{color}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addLabels()",
+          "source_reference": "trello.com#/paths/~1labels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsBoardByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1board/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getLabelsBoardByIdLabelByField()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1board~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsColorByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1color/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateLabelsNameByIdLabel()",
+          "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1name/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Labels",
+      "properties": [
+        {
+          "aliases": [
+            "color"
+          ],
+          "evidence": [
+            {
+              "claim": "labels.color",
+              "source_reference": "trello.com#/components/schemas/labels/properties/color",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A valid label color or null",
+              "source_reference": "trello.com#/components/schemas/labels/properties/color",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "color",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id board",
+            "idBoard",
+            "id_board"
+          ],
+          "evidence": [
+            {
+              "claim": "labels.idBoard",
+              "source_reference": "trello.com#/components/schemas/labels/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "An id",
+              "source_reference": "trello.com#/components/schemas/labels/properties/idBoard",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idBoard",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "labels.name",
+              "source_reference": "trello.com#/components/schemas/labels/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/labels/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1idLabels~1{idLabel}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels~1{color}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1blue/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1green/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1orange/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1purple/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1red/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1labelNames~1yellow/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1cards~1{idCard}~1labels/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1color/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1labels~1{idLabel}~1name/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Org",
+        "org"
+      ],
+      "evidence": [
+        {
+          "claim": "/organizations/{idOrg}/prefs/boardVisibilityRestrict/org",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1org",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1org/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1private/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1public/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsExternalMembersDisabledByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsGoogleAppsVersionByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1googleAppsVersion/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsPrefsOrgInviteRestrictByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsOrgInviteRestrictByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsPermissionLevelByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1permissionLevel/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsWebsiteByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1website/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsByIdOrgByField()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1{field}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Org",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1org/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1private/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1public/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1googleAppsVersion/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1permissionLevel/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1website/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Organizations",
+        "organization",
+        "organizations"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object organizations",
+          "source_reference": "trello.com#/components/schemas/organizations",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getActionsOrganizationByIdAction()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1organization/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getActionsOrganizationByIdActionByField()",
+          "source_reference": "trello.com#/paths/~1actions~1{idAction}~1organization~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateBoardsIdOrganizationByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1idOrganization/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsOrganizationByIdBoard()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1organization/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getBoardsOrganizationByIdBoardByField()",
+          "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1organization~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersOrganizationsByIdMember()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1organizations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersOrganizationsByIdMemberByFilter()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1organizations~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersOrganizationsInvitedByIdMember()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1organizationsInvited/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getMembersOrganizationsInvitedByIdMemberByField()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1organizationsInvited~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getNotificationsOrganizationByIdNotification()",
+          "source_reference": "trello.com#/paths/~1notifications~1{idNotification}~1organization/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getNotificationsOrganizationByIdNotificationByField()",
+          "source_reference": "trello.com#/paths/~1notifications~1{idNotification}~1organization~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addOrganizations()",
+          "source_reference": "trello.com#/paths/~1organizations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsActionsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsBoardsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1boards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsBoardsByIdOrgByFilter()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1boards~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsDeltasByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1deltas/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsDescByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1desc/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsDisplayNameByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1displayName/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsLogoByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1logo/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addOrganizationsLogoByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1logo/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsMembersByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersByIdOrgByFilter()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{filter}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsMembersByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsMembersByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsMembersAllByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1all/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersCardsByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsMembersDeactivatedByIdOrgByIdMember()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1deactivated/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersInvitedByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1membersInvited/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembersInvitedByIdOrgByField()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1membersInvited~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembershipsByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1memberships/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsMembershipsByIdOrgByIdMembership()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1memberships~1{idMembership}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsMembershipsByIdOrgByIdMembership()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1memberships~1{idMembership}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsNameByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1name/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsPrefsAssociatedDomainByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1associatedDomain/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsAssociatedDomainByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1associatedDomain/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictOrgByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1org/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictPrivateByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1private/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsBoardVisibilityRestrictPublicByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1public/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsExternalMembersDisabledByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsGoogleAppsVersionByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1googleAppsVersion/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteOrganizationsPrefsOrgInviteRestrictByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsOrgInviteRestrictByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsPrefsPermissionLevelByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1permissionLevel/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateOrganizationsWebsiteByIdOrg()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1website/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getOrganizationsByIdOrgByField()",
+          "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1{field}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Organizations",
+      "properties": [
+        {
+          "aliases": [
+            "desc"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.desc",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/desc",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/desc",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "display name",
+            "displayName",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.displayName",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/displayName",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A string with a length of at least 1.  Cannot begin or end with a space.",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/displayName",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "displayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.name",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs associated domain",
+            "prefs/associatedDomain",
+            "prefs_associated_domain"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/associatedDomain",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/associatedDomain",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The google apps domain to link this org to.",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/associatedDomain",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/associatedDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs board visibility restrict org",
+            "prefs/boardVisibilityRestrict/org",
+            "prefs_board_visibility_restrict_org"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/boardVisibilityRestrict/org",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/org",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "One of: admin, none or org",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/org",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/boardVisibilityRestrict/org",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs board visibility restrict private",
+            "prefs/boardVisibilityRestrict/private",
+            "prefs_board_visibility_restrict_private"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/boardVisibilityRestrict/private",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/private",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "One of: admin, none or org",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/private",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/boardVisibilityRestrict/private",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs board visibility restrict public",
+            "prefs/boardVisibilityRestrict/public",
+            "prefs_board_visibility_restrict_public"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/boardVisibilityRestrict/public",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/public",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "One of: admin, none or org",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/boardVisibilityRestrict/public",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/boardVisibilityRestrict/public",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs external members disabled",
+            "prefs/externalMembersDisabled",
+            "prefs_external_members_disabled"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/externalMembersDisabled",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/externalMembersDisabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": " true or false",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/externalMembersDisabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/externalMembersDisabled",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs google apps version",
+            "prefs/googleAppsVersion",
+            "prefs_google_apps_version"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/googleAppsVersion",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/googleAppsVersion",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a number from 1 to 2",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/googleAppsVersion",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/googleAppsVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs org invite restrict",
+            "prefs/orgInviteRestrict",
+            "prefs_org_invite_restrict"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/orgInviteRestrict",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/orgInviteRestrict",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "An email address with optional expansion tokens",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/orgInviteRestrict",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/orgInviteRestrict",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prefs permission level",
+            "prefs/permissionLevel",
+            "prefs_permission_level"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.prefs/permissionLevel",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/permissionLevel",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "One of: private or public",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/prefs/permissionLevel",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prefs/permissionLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "website"
+          ],
+          "evidence": [
+            {
+              "claim": "organizations.website",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/website",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A URL starting with http:// or https:// or null",
+              "source_reference": "trello.com#/components/schemas/organizations/properties/website",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "website",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1logo/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1all/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1associatedDomain/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1boards~1{idBoard}~1idOrganization/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1desc/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1displayName/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1members~1{idMember}~1deactivated/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1memberships~1{idMembership}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1name/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1associatedDomain/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1org/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1private/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1boardVisibilityRestrict~1public/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1externalMembersDisabled/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1googleAppsVersion/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1orgInviteRestrict/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1prefs~1permissionLevel/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1organizations~1{idOrg}~1website/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Token",
+        "token"
+      ],
+      "evidence": [
+        {
+          "claim": "/members/{idMember}/tokens",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1tokens",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getMembersTokensByIdMember()",
+          "source_reference": "trello.com#/paths/~1members~1{idMember}~1tokens/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deleteTokensByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getTokensByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}/member",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1member",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getTokensMemberByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1member/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}/member/{field}",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1member~1{field}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getTokensMemberByTokenByField()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1member~1{field}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}/webhooks",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}/webhooks/{idWebhook}",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deleteTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tokens/{token}/{field}",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1{field}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "getTokensByTokenByField()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1{field}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Token",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "TokensWebhooks",
+        "tokens webhook",
+        "tokens webhooks",
+        "tokens_webhooks"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object tokens_webhooks",
+          "source_reference": "trello.com#/components/schemas/tokens_webhooks",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TokensWebhooks",
+      "properties": [
+        {
+          "aliases": [
+            "callback url",
+            "callbackURL",
+            "callback_url"
+          ],
+          "evidence": [
+            {
+              "claim": "tokens_webhooks.callbackURL",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/callbackURL",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A valid URL that is reachable with a HEAD request",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/callbackURL",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "callbackURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "tokens_webhooks.description",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id model",
+            "idModel",
+            "id_model"
+          ],
+          "evidence": [
+            {
+              "claim": "tokens_webhooks.idModel",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/idModel",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the model to be monitored",
+              "source_reference": "trello.com#/components/schemas/tokens_webhooks/properties/idModel",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idModel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Webhooks",
+        "webhook",
+        "webhooks"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object webhooks",
+          "source_reference": "trello.com#/components/schemas/webhooks",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "getTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateTokensWebhooksByToken()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getTokensWebhooksByTokenByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "addWebhooks()",
+          "source_reference": "trello.com#/paths/~1webhooks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooks()",
+          "source_reference": "trello.com#/paths/~1webhooks~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "deleteWebhooksByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getWebhooksByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooksByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooksActiveByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1active/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooksCallbackURLByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1callbackURL/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooksDescriptionByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1description/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "updateWebhooksIdModelByIdWebhook()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1idModel/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getWebhooksByIdWebhookByField()",
+          "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1{field}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Webhooks",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "webhooks.active",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": " true or false",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "callback url",
+            "callbackURL",
+            "callback_url"
+          ],
+          "evidence": [
+            {
+              "claim": "webhooks.callbackURL",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/callbackURL",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A valid URL that is reachable with a HEAD request",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/callbackURL",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "callbackURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "webhooks.description",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "a string with a length from 0 to 16384",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id model",
+            "idModel",
+            "id_model"
+          ],
+          "evidence": [
+            {
+              "claim": "webhooks.idModel",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/idModel",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "id of the model that should be hooked",
+              "source_reference": "trello.com#/components/schemas/webhooks/properties/idModel",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "idModel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "active",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1active/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "active",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks~1{idWebhook}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1tokens~1{token}~1webhooks/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1active/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1callbackURL/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1description/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "trello.com#/paths/~1webhooks~1{idWebhook}~1idModel/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

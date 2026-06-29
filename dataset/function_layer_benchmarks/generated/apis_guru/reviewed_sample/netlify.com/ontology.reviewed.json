@@ -1,0 +1,1378 @@
+{
+  "metadata": {
+    "name": "netlify.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "netlify.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "/accounts",
+          "source_reference": "netlify.com#/paths/~1accounts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /accounts",
+          "source_reference": "netlify.com#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /accounts",
+          "source_reference": "netlify.com#/paths/~1accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/types",
+          "source_reference": "netlify.com#/paths/~1accounts~1types",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /accounts/types",
+          "source_reference": "netlify.com#/paths/~1accounts~1types/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /accounts/{account_id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /accounts/{account_id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /accounts/{account_id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/audit",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1audit",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /accounts/{account_id}/audit",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1audit/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/env",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all environment variables for an account or site. An account corresponds to a team in the Netlify UI. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates new environment variables. Granular scopes are available on Pro plans and above.  To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/env/{key}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes an environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns an individual environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates or creates a new value for an existing environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing environment variable and all of its values. Existing values will be replaced by values provided. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/env/{key}/value/{id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a specific environment variable value. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /{account_id}/builds/status",
+          "source_reference": "netlify.com#/paths/~1{account_id}~1builds~1status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /{account_slug}/members",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1members/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /{account_slug}/members",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1members/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /{account_slug}/members/{member_id}",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1members~1{member_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /{account_slug}/members/{member_id}",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1members~1{member_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /{account_slug}/members/{member_id}",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1members~1{member_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Account",
+      "properties": [
+        {
+          "id": "account_id",
+          "type": "string",
+          "aliases": [
+            "account_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "netlify.com.openapi.delete_env_var",
+              "claim": "Inferred property account_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "netlify.com#/paths/~1{account_slug}~1members~1{member_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1{account_slug}~1members~1{member_id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Deploy",
+        "deploy"
+      ],
+      "evidence": [
+        {
+          "claim": "/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/cancel",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /deploys/{deploy_id}/cancel",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/files/{path}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1files~1{path}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "PUT /deploys/{deploy_id}/files/{path}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1files~1{path}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/functions/{name}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1functions~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "PUT /deploys/{deploy_id}/functions/{name}",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1functions~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/lock",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1lock",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /deploys/{deploy_id}/lock",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1lock/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/plugin_runs",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1plugin_runs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "This is an internal-only endpoint.",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1plugin_runs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/deploys/{deploy_id}/unlock",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1unlock",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /deploys/{deploy_id}/unlock",
+          "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1unlock/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deployed-branches",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deployed-branches/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys/{deploy_id}/restore",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}~1restore",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /sites/{site_id}/deploys/{deploy_id}/restore",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}~1restore/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/rollback",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1rollback/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "[Beta] Unlinks the repo from the site.\n\nThis action will also:\n- Delete associated deploy keys\n- Delete outgoing webhooks for the repo\n- Delete the site's build hooks",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1unlink_repo/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Deploy",
+      "properties": [
+        {
+          "id": "deploy_id",
+          "type": "string",
+          "aliases": [
+            "deploy_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "netlify.com.openapi.delete_deploy",
+              "claim": "Inferred property deploy_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1plugin_runs/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1unlink_repo/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "locked",
+              "source_reference": "netlify.com#/paths/~1deploys~1{deploy_id}~1lock/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "locked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Env",
+        "env"
+      ],
+      "evidence": [
+        {
+          "claim": "/accounts/{account_id}/env",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all environment variables for an account or site. An account corresponds to a team in the Netlify UI. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates new environment variables. Granular scopes are available on Pro plans and above.  To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/env/{key}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes an environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns an individual environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates or creates a new value for an existing environment variable. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing environment variable and all of its values. Existing values will be replaced by values provided. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{account_id}/env/{key}/value/{id}",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a specific environment variable value. To use this endpoint, your site must no longer be using the <a href=\"https://docs.netlify.com/environment-variables/classic-experience/\">classic environment variables experience</a>.  Migrate now with the Netlify UI.",
+          "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+          "source_reference": "netlify.com#/paths/~1sites/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [updateEnvVar](#tag/environmentVariables/operation/updateEnvVar) to update a site's environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Env",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}~1value~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1accounts~1{account_id}~1env~1{key}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Form",
+        "form"
+      ],
+      "evidence": [
+        {
+          "claim": "/forms/{form_id}/submissions",
+          "source_reference": "netlify.com#/paths/~1forms~1{form_id}~1submissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /forms/{form_id}/submissions",
+          "source_reference": "netlify.com#/paths/~1forms~1{form_id}~1submissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/forms",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/forms",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/forms/{form_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/forms/{form_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /submissions/{submission_id}",
+          "source_reference": "netlify.com#/paths/~1submissions~1{submission_id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Form",
+      "properties": [
+        {
+          "id": "form_id",
+          "type": "string",
+          "aliases": [
+            "form_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "netlify.com.openapi.delete_site_form",
+              "claim": "Inferred property form_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Site",
+        "site"
+      ],
+      "evidence": [
+        {
+          "claim": "/sites",
+          "source_reference": "netlify.com#/paths/~1sites",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+          "source_reference": "netlify.com#/paths/~1sites/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [updateEnvVar](#tag/environmentVariables/operation/updateEnvVar) to update a site's environment variables.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/assets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/assets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/assets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/assets/{asset_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/assets/{asset_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/assets/{asset_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/assets/{asset_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/assets/{asset_id}/public_signature",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}~1public_signature",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/assets/{asset_id}/public_signature",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}~1public_signature/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/build_hooks",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/build_hooks",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/build_hooks",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/build_hooks/{id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/build_hooks/{id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/build_hooks/{id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/build_hooks/{id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/builds",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1builds",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/builds",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1builds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/builds",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1builds/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deployed-branches",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deployed-branches",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deployed-branches",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deployed-branches/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/deploys",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/deploys/{deploy_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/deploys/{deploy_id}/restore",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}~1restore",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /sites/{site_id}/deploys/{deploy_id}/restore",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}~1restore/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/dns",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1dns",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/dns",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1dns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/dns",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1dns/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/files",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/files",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/files/{file_path}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1files~1{file_path}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/files/{file_path}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1files~1{file_path}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/forms",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/forms",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/forms/{form_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/forms/{form_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/metadata",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/metadata",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1metadata/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/metadata",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1metadata/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/plugin_runs/latest",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1plugin_runs~1latest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "This is an internal-only endpoint.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1plugin_runs~1latest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/plugins/{package}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1plugins~1{package}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "This is an internal-only endpoint.",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1plugins~1{package}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/rollback",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1rollback",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/rollback",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1rollback/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/service-instances",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1service-instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/service-instances",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1service-instances/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/services/{addon}/instances",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /sites/{site_id}/services/{addon}/instances",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/services/{addon}/instances/{instance_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/services/{addon}/instances/{instance_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/services/{addon}/instances/{instance_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/services/{addon}/instances/{instance_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/snippets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/snippets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/snippets",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/snippets/{snippet_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /sites/{site_id}/snippets/{snippet_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /sites/{site_id}/snippets/{snippet_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/snippets/{snippet_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/ssl",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1ssl",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/ssl",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1ssl/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/ssl",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1ssl/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/submissions",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1submissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/submissions",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1submissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/traffic_splits",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/traffic_splits",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /sites/{site_id}/traffic_splits",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/traffic_splits/{split_test_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /sites/{site_id}/traffic_splits/{split_test_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /sites/{site_id}/traffic_splits/{split_test_id}",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/traffic_splits/{split_test_id}/publish",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1publish",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /sites/{site_id}/traffic_splits/{split_test_id}/publish",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1publish/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/traffic_splits/{split_test_id}/unpublish",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1unpublish",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /sites/{site_id}/traffic_splits/{split_test_id}/unpublish",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1unpublish/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sites/{site_id}/unlink_repo",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1unlink_repo",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "[Beta] Unlinks the repo from the site.\n\nThis action will also:\n- Delete associated deploy keys\n- Delete outgoing webhooks for the repo\n- Delete the site's build hooks",
+          "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1unlink_repo/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/{account_slug}/sites",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [getEnvVars](#tag/environmentVariables/operation/getEnvVars) to retrieve site environment variables.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "**Note:** Environment variable keys and values will soon be moved from `build_settings.env` and `repo.env` to a new endpoint. Please use [createEnvVars](#tag/environmentVariables/operation/createEnvVars) to create environment variables for a site.",
+          "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Site",
+      "properties": [
+        {
+          "id": "site_id",
+          "type": "string",
+          "aliases": [
+            "site_id"
+          ],
+          "required": false,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "netlify.com.openapi.delete_env_var",
+              "claim": "Inferred property site_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1builds/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlify.com#/paths/~1{account_slug}~1sites/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1forms~1{form_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1unlink_repo/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1unpublish/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}~1publish/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1assets~1{asset_id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1build_hooks~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1deploys~1{deploy_id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1metadata/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1plugins~1{package}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1services~1{addon}~1instances~1{instance_id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1snippets~1{snippet_id}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlify.com#/paths/~1sites~1{site_id}~1traffic_splits~1{split_test_id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

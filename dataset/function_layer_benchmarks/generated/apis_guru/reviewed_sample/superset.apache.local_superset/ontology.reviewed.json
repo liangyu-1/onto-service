@@ -1,0 +1,2533 @@
+{
+  "metadata": {
+    "name": "superset.apache.local_superset_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "superset.apache.local_superset"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Annotation",
+        "annotation"
+      ],
+      "evidence": [
+        {
+          "claim": "/annotation_layer/{pk}/annotation/",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple annotation in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of Annotation layers, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/{pk}/annotation/{annotation_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Annotation",
+      "properties": [
+        {
+          "id": "annotation_id",
+          "type": "integer",
+          "aliases": [
+            "annotation_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "superset.apache.local_superset.openapi.delete_annotation_layer_pk_annotation_annotation_id",
+              "claim": "Inferred property annotation_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "AnnotationLayer",
+        "annotation layer",
+        "annotation_layer"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object AnnotationLayer",
+          "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/annotation_layer/",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple annotation layers in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of Annotation layers, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /annotation_layer/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/{pk}/annotation/",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple annotation in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of Annotation layers, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/annotation_layer/{pk}/annotation/{annotation_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Annotation layer",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AnnotationLayer",
+      "properties": [
+        {
+          "aliases": [
+            "annotation type",
+            "annotationType",
+            "annotation_type"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.annotationType",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/annotationType",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of annotation layer",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/annotationType",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "annotationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "color"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.color",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/color",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Layer color",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/color",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "color",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description column",
+            "description columns",
+            "descriptionColumns",
+            "description_columns"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.descriptionColumns",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/descriptionColumns",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Columns to use as the description. If none are provided, all will be shown.",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/descriptionColumns",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "descriptionColumns",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "hide line",
+            "hideLine",
+            "hide_line"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.hideLine",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/hideLine",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Should line be hidden. Only applies to line annotations",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/hideLine",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hideLine",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "interval end column",
+            "intervalEndColumn",
+            "interval_end_column"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.intervalEndColumn",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/intervalEndColumn",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Column containing end of interval. Only applies to interval layers",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/intervalEndColumn",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "intervalEndColumn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.name",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of layer",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "opacity"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.opacity",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/opacity",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Opacity of layer",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/opacity",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "opacity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "override",
+            "overrides"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.overrides",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/overrides",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "which properties should be overridable",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/overrides",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "overrides",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "show"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.show",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/show",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Should the layer be shown",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/show",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "show",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "show marker",
+            "show markers",
+            "showMarkers",
+            "show_markers"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.showMarkers",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/showMarkers",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Should markers be shown. Only applies to line annotations.",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/showMarkers",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "showMarkers",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "source type",
+            "sourceType",
+            "source_type"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.sourceType",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/sourceType",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of source for annotation data",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/sourceType",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "style"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.style",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/style",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Line style. Only applies to time-series annotations",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/style",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "style",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "time column",
+            "timeColumn",
+            "time_column"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.timeColumn",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/timeColumn",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Column with event date or interval start date",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/timeColumn",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "timeColumn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "title column",
+            "titleColumn",
+            "title_column"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.titleColumn",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/titleColumn",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Column with title",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/titleColumn",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "titleColumn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "value"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.value",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/value",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "For formula annotations, this contains the formula. For other types, this is the primary key of the source object.",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/value",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "value",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "width"
+          ],
+          "evidence": [
+            {
+              "claim": "AnnotationLayer.width",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/width",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Width of annotation line",
+              "source_reference": "superset.apache.local_superset#/components/schemas/AnnotationLayer/properties/width",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "width",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1{pk}~1annotation~1{annotation_id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CacheScreenshot",
+        "cache screenshot",
+        "cache_screenshot"
+      ],
+      "evidence": [
+        {
+          "claim": "/chart/{pk}/cache_screenshot/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1cache_screenshot~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Compute and cache a screenshot.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1cache_screenshot~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CacheScreenshot",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Chart",
+        "chart"
+      ],
+      "evidence": [
+        {
+          "claim": "/chart/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple Charts in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of charts, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Chart.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Several metadata information about chart API endpoints.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/data",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a query context constructed in the client and returns payload data response for the given query.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/data/{cache_key}",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data~1{cache_key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a query context cache key and returns payload data response for the given query.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data~1{cache_key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/export/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1export~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Exports multiple charts and downloads them as YAML files",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/favorite_status/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1favorite_status~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check favorited dashboards for current user",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1favorite_status~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1import~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /chart/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of all possible owners for a chart. Use `owners` has the `column_name` parameter",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a Chart.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a chart detail information.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Chart.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}/cache_screenshot/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1cache_screenshot~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Compute and cache a screenshot.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1cache_screenshot~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}/data/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1data~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a chart ID and uses the query context stored when the chart was saved to return payload data response.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1data~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}/screenshot/{digest}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1screenshot~1{digest}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a computed screenshot from cache.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1screenshot~1{digest}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}/thumbnail/{digest}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1thumbnail~1{digest}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Compute or get already computed chart thumbnail from cache.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1thumbnail~1{digest}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{id_or_slug}/charts",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1charts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the chart definitions for a given dashboard",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1charts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of a dashboard's datasets. Each dataset includes only the information necessary to render the dashboard's charts.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Chart",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1chart~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Column",
+        "column"
+      ],
+      "evidence": [
+        {
+          "claim": "/dataset/{pk}/column/{column_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Dataset column",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Refreshes and updates columns of a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1refresh/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of queries, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedules, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /report/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedule logs, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of saved queries, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /saved_query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /saved_query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Column",
+      "properties": [
+        {
+          "id": "column_id",
+          "type": "integer",
+          "aliases": [
+            "column_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "superset.apache.local_superset.openapi.delete_dataset_pk_column_column_id",
+              "claim": "Inferred property column_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CssTemplate",
+        "css template",
+        "css_template"
+      ],
+      "evidence": [
+        {
+          "claim": "/css_template/",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple css templates in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of CSS templates, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a CSS template",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/css_template/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/css_template/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /css_template/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/css_template/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete CSS template",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a CSS template",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a CSS template",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CssTemplate",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1css_template~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1css_template~1{pk}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Dashboard",
+        "dashboard"
+      ],
+      "evidence": [
+        {
+          "claim": "/dashboard/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple Dashboards in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of dashboards, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Dashboard.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Several metadata information about dashboard API endpoints.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/export/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1export~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Exports multiple Dashboards and downloads them as YAML files.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/favorite_status/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1favorite_status~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check favorited dashboards for current user",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1favorite_status~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1import~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /dashboard/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of all possible owners for a dashboard.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{id_or_slug}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a dashboard detail information.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{id_or_slug}/charts",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1charts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the chart definitions for a given dashboard",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1charts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{id_or_slug}/datasets",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of a dashboard's datasets. Each dataset includes only the information necessary to render the dashboard's charts.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a Dashboard.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Dashboard.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/{pk}/thumbnail/{digest}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{pk}~1thumbnail~1{digest}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Compute async or get already computed dashboard thumbnail from cache.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{pk}~1thumbnail~1{digest}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Dashboard",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Data",
+        "data"
+      ],
+      "evidence": [
+        {
+          "claim": "/chart/data",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a query context constructed in the client and returns payload data response for the given query.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/data/{cache_key}",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data~1{cache_key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a query context cache key and returns payload data response for the given query.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1data~1{cache_key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/{pk}/data/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1data~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Takes a chart ID and uses the query context stored when the chart was saved to return payload data response.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1data~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of CSS templates, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of dashboards, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Several metadata information about dashboard API endpoints.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of a dashboard's datasets. Each dataset includes only the information necessary to render the dashboard's charts.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of models",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get names of databases currently available",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1available~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download database(s) and associated dataset(s) as a zip file",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /database/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Tests a database connection",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1test_connection/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Validates parameters used to connect to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1validate_parameters/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deletes a Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an item model",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get function names supported by a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1function_names~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all schemas from a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1schemas~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get database select star for table",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get database select star for table",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get database table metadata",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1table~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deletes multiple Datasets in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of models",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /dataset/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Exports multiple datasets and downloads them as YAML files",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dataset/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /dataset/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deletes a Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an item model",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a Dataset column",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a Dataset metric",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1metric~1{metric_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Refreshes and updates columns of a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1refresh/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the menu data structure. Returns a forest like structure with the menu the user has access to",
+          "source_reference": "superset.apache.local_superset#/paths/~1menu~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of queries, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedules, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedule logs, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of saved queries, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1_info/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Data",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1database~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1metric~1{metric_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Database",
+        "database"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Database",
+          "source_reference": "superset.apache.local_superset#/components/schemas/Database",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Takes a list of datasources, finds the associated cache records and invalidates them and removes the database records",
+          "source_reference": "superset.apache.local_superset#/paths/~1cachekey~1invalidate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of models",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/available/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1available~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get names of databases currently available",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1available~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/export/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1export~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Download database(s) and associated dataset(s) as a zip file",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1import~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /database/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/test_connection",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1test_connection",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Tests a database connection",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1test_connection/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/validate_parameters",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1validate_parameters",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validates parameters used to connect to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1validate_parameters/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an item model",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Database.",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/function_names/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1function_names~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get function names supported by a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1function_names~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/related_objects/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/schemas/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1schemas~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all schemas from a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1schemas~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/select_star/{table_name}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get database select star for table",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/select_star/{table_name}/{schema_name}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1{schema_name}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get database select star for table",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/database/{pk}/table/{table_name}/{schema_name}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1table~1{table_name}~1{schema_name}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get database table metadata",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1table~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Database",
+      "properties": [
+        {
+          "aliases": [
+            "allow multi schema metadata fetch",
+            "allow_multi_schema_metadata_fetch"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.allow_multi_schema_metadata_fetch",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/allow_multi_schema_metadata_fetch",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "allow_multi_schema_metadata_fetch",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "allows cost estimate",
+            "allows_cost_estimate"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.allows_cost_estimate",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/allows_cost_estimate",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "allows_cost_estimate",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "allows subquery",
+            "allows_subquery"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.allows_subquery",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/allows_subquery",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "allows_subquery",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "allows virtual table explore",
+            "allows_virtual_table_explore"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.allows_virtual_table_explore",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/allows_virtual_table_explore",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "allows_virtual_table_explore",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "backend"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.backend",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/backend",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "backend",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "explore database id",
+            "explore_database_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.explore_database_id",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/explore_database_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "explore_database_id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.id",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Database.name",
+              "source_reference": "superset.apache.local_superset#/components/schemas/Database/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1database~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Dataset",
+        "dataset"
+      ],
+      "evidence": [
+        {
+          "claim": "/dashboard/{id_or_slug}/datasets",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of a dashboard's datasets. Each dataset includes only the information necessary to render the dashboard's charts.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1{id_or_slug}~1datasets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download database(s) and associated dataset(s) as a zip file",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple Datasets in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of models",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1distinct~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dataset/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/export/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1export~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Exports multiple datasets and downloads them as YAML files",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1import~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /dataset/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dataset/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an item model",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Changes a Dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/{pk}/column/{column_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Dataset column",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/{pk}/metric/{metric_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1metric~1{metric_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Dataset metric",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1metric~1{metric_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/{pk}/refresh",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1refresh",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Refreshes and updates columns of a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1refresh/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/{pk}/related_objects",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Dataset",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1column~1{column_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1metric~1{metric_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Distinct",
+        "distinct"
+      ],
+      "evidence": [
+        {
+          "claim": "/dataset/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1distinct~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dataset/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1distinct~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/saved_query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1distinct~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /saved_query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Distinct",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "FavoriteStatu",
+        "favorite statu",
+        "favorite_statu"
+      ],
+      "evidence": [
+        {
+          "claim": "/chart/favorite_status/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1favorite_status~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check favorited dashboards for current user",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1favorite_status~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/favorite_status/",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1favorite_status~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check favorited dashboards for current user",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1favorite_status~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "FavoriteStatu",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "FunctionName",
+        "function name",
+        "function_name"
+      ],
+      "evidence": [
+        {
+          "claim": "/database/{pk}/function_names/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1function_names~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get function names supported by a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1function_names~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "FunctionName",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Query",
+        "query"
+      ],
+      "evidence": [
+        {
+          "claim": "/query/",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of queries, use Rison or JSON query parameters for filtering, sorting, pagination and  for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1distinct~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get query detail information.",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedules, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedule logs, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deletes multiple saved queries in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of saved queries, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a saved query",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /saved_query/distinct/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1distinct~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Exports multiple saved queries and downloads them as YAML files",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1export~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /saved_query/import/",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1import~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /saved_query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete saved query",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a saved query",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a saved query",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1{pk}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Query",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1{pk}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1{pk}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Related",
+        "related"
+      ],
+      "evidence": [
+        {
+          "claim": "/annotation_layer/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /annotation_layer/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1annotation_layer~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/chart/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of all possible owners for a chart. Use `owners` has the `column_name` parameter",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/css_template/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /css_template/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1css_template~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dashboard/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of all possible owners for a dashboard.",
+          "source_reference": "superset.apache.local_superset#/paths/~1dashboard~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1related_objects~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dataset/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dataset/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get charts and dashboards count associated to a dataset",
+          "source_reference": "superset.apache.local_superset#/paths/~1dataset~1{pk}~1related_objects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /report/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/saved_query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /saved_query/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1saved_query~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Related",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Report",
+        "report"
+      ],
+      "evidence": [
+        {
+          "claim": "/report/",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes multiple report schedules in a bulk operation.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of report schedules, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a report schedule",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/_info",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1_info",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get metadata information about this API resource",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1_info/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1related~1{column_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /report/related/{column_name}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1related~1{column_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/{pk}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a report schedule",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a report schedule",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a report schedule",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/{pk}/log/",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of report schedule logs, use Rison or JSON query parameters for filtering, sorting, pagination and for selecting specific columns and metadata.",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/report/{pk}/log/{log_id}",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1{log_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a report schedule log",
+          "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}~1log~1{log_id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Report",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "superset.apache.local_superset#/paths/~1report~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "superset.apache.local_superset#/paths/~1report~1{pk}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Schema",
+        "schema"
+      ],
+      "evidence": [
+        {
+          "claim": "/database/{pk}/schemas/",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1schemas~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all schemas from a database",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1schemas~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get database select star for table",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1select_star~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get database table metadata",
+          "source_reference": "superset.apache.local_superset#/paths/~1database~1{pk}~1table~1{table_name}~1{schema_name}~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Schema",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Screenshot",
+        "screenshot"
+      ],
+      "evidence": [
+        {
+          "claim": "/chart/{pk}/screenshot/{digest}/",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1screenshot~1{digest}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a computed screenshot from cache.",
+          "source_reference": "superset.apache.local_superset#/paths/~1chart~1{pk}~1screenshot~1{digest}~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Screenshot",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

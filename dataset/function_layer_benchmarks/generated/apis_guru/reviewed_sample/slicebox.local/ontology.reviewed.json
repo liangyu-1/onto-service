@@ -1,0 +1,2517 @@
+{
+  "metadata": {
+    "name": "slicebox.local_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "slicebox.local"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Anonymization",
+        "anonymization"
+      ],
+      "evidence": [
+        {
+          "claim": "/anonymization/anonymize",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1anonymize",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "anonymize the images corresponding to the supplied list of image IDs (each paired with a list of DICOM tag translation). This route corresponds to repeated use of the route /images/{id}/anonymize.",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1anonymize/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of anonymization keys, each specifying how vital DICOM attributes have been anonymized for a particular image",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/export/csv",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1export~1csv",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "export all anonymization keys as a csv file",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1export~1csv/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/query",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for anonymization keys",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/{id}",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete an anonymization key that is no longer of interest",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the anonymization key with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/{id}/keyvalues",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}~1keyvalues",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get pointers to the images corresponding to the anonymization key with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}~1keyvalues/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/options",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1options",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "list all supported anonymization options defining an anonymization profile",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1options/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Anonymization",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Attribute",
+        "attribute"
+      ],
+      "evidence": [
+        {
+          "claim": "/images/{id}/attributes",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1attributes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "list all DICOM attributes of the dataset corresponding to the supplied image ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1attributes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "modify and/or insert image attributes according to the input tagpath-value mappings",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1modify/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of rules for assigning series types to series. A rule connects to a series of attributes with values and a resulting series type. If a series has the required values of the listed attributes, it is assigned to the series type of the rule.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the status of the internal process of updating series types for series following a change of series types, rules or attributes.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1updatestatus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{id}/attributes",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the list of attributes for the series type rule with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type rule attribute",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{ruleId}/attributes/{attributeId}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type rule attribute corresponding to the supplied series type and attribute IDs",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Attribute",
+      "properties": [
+        {
+          "id": "attributeId",
+          "type": "string",
+          "aliases": [
+            "attributeId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "slicebox.local.openapi.delete_seriestypes_rules_rule_id_attributes_attribute_id",
+              "claim": "Inferred property attributeId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Boxe",
+        "boxe"
+      ],
+      "evidence": [
+        {
+          "claim": "/boxes",
+          "source_reference": "slicebox.local#/paths/~1boxes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of box connections",
+          "source_reference": "slicebox.local#/paths/~1boxes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/connect",
+          "source_reference": "slicebox.local#/paths/~1boxes~1connect",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "connect to another box using a received URL. Used to connect to a public box.",
+          "source_reference": "slicebox.local#/paths/~1boxes~1connect/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/createconnection",
+          "source_reference": "slicebox.local#/paths/~1boxes~1createconnection",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "create a new box connection where the supplied entity holds the remote box name. Used by publicly available boxes.",
+          "source_reference": "slicebox.local#/paths/~1boxes~1createconnection/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/incoming",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get incoming transactions (finished, currently receiving, waiting or failed)",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/incoming/{id}",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete an incoming transaction. If a currently active transaction is deleted, a new transaction with the remainder of the images is created when receiving the next incoming image.",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/incoming/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the received images corresponding to the incoming transaction with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/outgoing",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get outgoing transactions (finished, currently sending, waiting or failed)",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/outgoing/{id}",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete an outgoing transaction. This will stop ongoing transactions.",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/outgoing/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the sent images corresponding to the outgoing transaction with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/{id}",
+          "source_reference": "slicebox.local#/paths/~1boxes~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the remote box with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/{id}/send",
+          "source_reference": "slicebox.local#/paths/~1boxes~1{id}~1send",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "send images corresponding to the supplied image ids to the remote box with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1{id}~1send/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Boxe",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "active",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "active",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1boxes~1createconnection/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1boxes~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "failed",
+              "source_reference": "slicebox.local#/paths/~1boxes~1outgoing/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Directorywatche",
+        "directorywatche"
+      ],
+      "evidence": [
+        {
+          "claim": "/directorywatches",
+          "source_reference": "slicebox.local#/paths/~1directorywatches",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of watch directories. Each watch directory and its sub-directories are watched for incoming DICOM files, which are read and imported into slicebox.",
+          "source_reference": "slicebox.local#/paths/~1directorywatches/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new directory to watch for incoming DICOM files",
+          "source_reference": "slicebox.local#/paths/~1directorywatches/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/directorywatches/{id}",
+          "source_reference": "slicebox.local#/paths/~1directorywatches~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "stop watching and remove the directory corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1directorywatches~1{id}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Directorywatche",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1directorywatches~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Filter",
+        "filter"
+      ],
+      "evidence": [
+        {
+          "claim": "/filtering/filters",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List defined filters",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Inserts or updates a filter. If a filter with same name as supplied filter exists this filter is updated, otherwise a new filter is inserted.",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the filter corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}/tagpaths",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List tagpaths for the selected filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a tagpath to a filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}/tagpaths/{tagpathid}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the tagpath corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of all added series types. By filtering search results for certain series types, it is easier for applications to ensure that they read images of applicable types.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Filter",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Filtering",
+        "filtering"
+      ],
+      "evidence": [
+        {
+          "claim": "/filtering/associations",
+          "source_reference": "slicebox.local#/paths/~1filtering~1associations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of source to filter associations.",
+          "source_reference": "slicebox.local#/paths/~1filtering~1associations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Inserts or updates a source <-> filter associations. If the specified Source already  has an association this is updated, otherwise a new is inserted.",
+          "source_reference": "slicebox.local#/paths/~1filtering~1associations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/associations/{id}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1associations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the source <-> filter association corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1associations~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List defined filters",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Inserts or updates a filter. If a filter with same name as supplied filter exists this filter is updated, otherwise a new filter is inserted.",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the filter corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}/tagpaths",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List tagpaths for the selected filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a tagpath to a filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}/tagpaths/{tagpathid}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the tagpath corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of all added series types. By filtering search results for certain series types, it is easier for applications to ensure that they read images of applicable types.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Filtering",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1associations~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "slicebox.local#/paths/~1filtering~1associations/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Forwarding",
+        "forwarding"
+      ],
+      "evidence": [
+        {
+          "claim": "/forwarding/rule/{id}",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the forwarding rule corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/forwarding/rules",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of all forwarding rules. A forwarding rule specifies the automatic forwarding of images from a source (SCP, BOX, etc.) to a destimation (BOX, SCU, etc.)",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new forwarding rule",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Forwarding",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Image",
+        "image"
+      ],
+      "evidence": [
+        {
+          "claim": "/boxes/incoming/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the received images corresponding to the incoming transaction with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/outgoing/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the sent images corresponding to the outgoing transaction with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1outgoing~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "send images corresponding to the supplied image ids to the remote box with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1{id}~1send/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of all forwarding rules. A forwarding rule specifies the automatic forwarding of images from a source (SCP, BOX, etc.) to a destimation (BOX, SCU, etc.)",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images",
+          "source_reference": "slicebox.local#/paths/~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "add a DICOM dataset to slicebox",
+          "source_reference": "slicebox.local#/paths/~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/delete",
+          "source_reference": "slicebox.local#/paths/~1images~1delete",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "bulk delete a sequence of images according to the supplied image IDs. This is the same as a sequence of DELETE requests to /images/{id}",
+          "source_reference": "slicebox.local#/paths/~1images~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/export",
+          "source_reference": "slicebox.local#/paths/~1images~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "download the export set with the supplied export set ID as a zip archive",
+          "source_reference": "slicebox.local#/paths/~1images~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "create an export set, a group of image IDs of images to export. The export set will contain the selected images. The export set is available for download 12 hours before it is automatically deleted.",
+          "source_reference": "slicebox.local#/paths/~1images~1export/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/jpeg",
+          "source_reference": "slicebox.local#/paths/~1images~1jpeg",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "add a JPEG image to slicebox. The image data will be wrapped in a DICOM file and added as a new series belonging to the study with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1images~1jpeg/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the image with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "fetch dataset corresponding to the supplied image ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/anonymize",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1anonymize",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete the selected image and replace it with an anonymized version",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1anonymize/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/anonymized",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1anonymized",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get an anonymized version of the image with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1anonymized/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/attributes",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1attributes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "list all DICOM attributes of the dataset corresponding to the supplied image ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1attributes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/imageinformation",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1imageinformation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get basic information about the pixel data of an image",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1imageinformation/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/modify",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1modify",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "modify and/or insert image attributes according to the input tagpath-value mappings",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1modify/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{id}/png",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1png",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a PNG image representation of the image corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1png/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/sessions/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the imported images corresponding to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a DICOM dataset to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of metadata on the image level of the DICOM hierarchy",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the image with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/patients/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all images for the patient with the supplied patient ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/studies/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all images for the study with the supplied study ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of DICOM SCPs. Each SCP is a server for receiving DICOM images from e.g. a PACS system.",
+          "source_reference": "slicebox.local#/paths/~1scps/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new SCP for receiving DICOM images",
+          "source_reference": "slicebox.local#/paths/~1scps/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of DICOM SCUs. Each SCU is a client for sending DICOM images to an SCP, e.g. a PACS system.",
+          "source_reference": "slicebox.local#/paths/~1scus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new SCU for sending DICOM images",
+          "source_reference": "slicebox.local#/paths/~1scus/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "send the images with the supplied image IDs to a DICOM SCP using the the SCU with the supplied scu ID",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}~1send/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of all added series types. By filtering search results for certain series types, it is easier for applications to ensure that they read images of applicable types.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/transactions/{token}/image",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1image",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "add an image (dataset) as part of a transaction. This method is used when sending images using the push method to a public slicebox.",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1image/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "fetch an image from the connected box as part of a transaction. This method is used when sending images using the poll method from a public slicebox.",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1outgoing/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "signal that the supplied outgoing transaction and image was successfully received and can be marked as sent. This method is used when sending images using the poll method from a public slicebox.",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1outgoing~1done/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "signal that the image corresponding to the supplied outgoing transaction and image could not be read or stored properly on the receiving side, and that the transaction should be marked as failed.",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1outgoing~1failed/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get next outgoing transaction and image (information on the next image that the connected box wishes to send to you), if any. This method is used when sending images using the poll method from a public slicebox.",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1outgoing~1poll/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Image",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1images~1export/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1images~1delete/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1images~1export/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1images~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1images~1{id}~1anonymize/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1outgoing~1failed/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1images~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Import",
+        "import"
+      ],
+      "evidence": [
+        {
+          "claim": "/import/sessions",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of available import sessions.",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "create a new import sessions",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/sessions/{id}",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deletes the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns the import sessions with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/sessions/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the imported images corresponding to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a DICOM dataset to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of currently available data sources. Possible source types are user - data imported by an API call by a user, box - data received from a remote box, directory - data imported via a watched directory, import - data imported into slicebox using import sessions, or scp - data received from a PACS.",
+          "source_reference": "slicebox.local#/paths/~1sources/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Import",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1import~1sessions/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Incoming",
+        "incoming"
+      ],
+      "evidence": [
+        {
+          "claim": "/boxes/incoming",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get incoming transactions (finished, currently receiving, waiting or failed)",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/incoming/{id}",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete an incoming transaction. If a currently active transaction is deleted, a new transaction with the remainder of the images is created when receiving the next incoming image.",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/boxes/incoming/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the received images corresponding to the incoming transaction with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of watch directories. Each watch directory and its sub-directories are watched for incoming DICOM files, which are read and imported into slicebox.",
+          "source_reference": "slicebox.local#/paths/~1directorywatches/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new directory to watch for incoming DICOM files",
+          "source_reference": "slicebox.local#/paths/~1directorywatches/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the status of the remote incoming transaction with the supplied transaction ID",
+          "source_reference": "slicebox.local#/paths/~1transactions~1{token}~1status/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Incoming",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "active",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "active",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "slicebox.local#/paths/~1boxes~1incoming/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Key",
+        "key"
+      ],
+      "evidence": [
+        {
+          "claim": "/anonymization/keys",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of anonymization keys, each specifying how vital DICOM attributes have been anonymized for a particular image",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/export/csv",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1export~1csv",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "export all anonymization keys as a csv file",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1export~1csv/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/query",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for anonymization keys",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/{id}",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete an anonymization key that is no longer of interest",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the anonymization key with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/anonymization/keys/{id}/keyvalues",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}~1keyvalues",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get pointers to the images corresponding to the anonymization key with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}~1keyvalues/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Key",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1anonymization~1keys~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Log",
+        "log"
+      ],
+      "evidence": [
+        {
+          "claim": "/log",
+          "source_reference": "slicebox.local#/paths/~1log",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete all log messages",
+          "source_reference": "slicebox.local#/paths/~1log/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of slicebox log messages",
+          "source_reference": "slicebox.local#/paths/~1log/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/log/{id}",
+          "source_reference": "slicebox.local#/paths/~1log~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the log entry with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1log~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "obtain information on the currently logged in user as specified by the supplied session cookie, IP address and user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1current/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Obtain a session cookie that can be used to authenticate future API calls from the present IP address and with the present user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Logout the current user by responding with a delete cookie header removing the session cookie for this user.",
+          "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Log",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1log/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1log~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Metadata",
+        "metadata"
+      ],
+      "evidence": [
+        {
+          "claim": "/metadata/flatseries",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of flattened metadata on the patient, study and series levels",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/flatseries/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for flat series",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/flatseries/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the flat series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1flatseries~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of metadata on the image level of the DICOM hierarchy",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/images/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the image with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/patients",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of metadata on the patient level of the DICOM hierarchy",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/patients/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for patients",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/patients/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the patient with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/patients/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all images for the patient with the supplied patient ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1patients~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of metadata on the series level of the DICOM hierarchy",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for series",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{id}/seriestags",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the list of series tags for the series with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a series tag to the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{id}/seriestypes",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete all series types for the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the list of series types for the series with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{id}/source",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1source",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the source of the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1source/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{seriesId}/seriestags/{seriesTagId}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the series tag with the supplied series tag ID from the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{seriesId}/seriestypes/{seriesTypeId}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the series type with the supplied series type ID from the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add the series type with the supplied series type ID to the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/seriestags",
+          "source_reference": "slicebox.local#/paths/~1metadata~1seriestags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of series tags currently currently in use.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1seriestags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/studies",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of metadata on the study level of the DICOM hierarchy",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/studies/query",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for studies",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/studies/{id}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return the study with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/studies/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all images for the study with the supplied study ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1studies~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Metadata",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1flatseries~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1images~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1patients~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1studies~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Rule",
+        "rule"
+      ],
+      "evidence": [
+        {
+          "claim": "/forwarding/rule/{id}",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the forwarding rule corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/forwarding/rules",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of all forwarding rules. A forwarding rule specifies the automatic forwarding of images from a source (SCP, BOX, etc.) to a destimation (BOX, SCU, etc.)",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new forwarding rule",
+          "source_reference": "slicebox.local#/paths/~1forwarding~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of rules for assigning series types to series. A rule connects to a series of attributes with values and a resulting series type. If a series has the required values of the listed attributes, it is assigned to the series type of the rule.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type rule",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/updatestatus",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1updatestatus",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the status of the internal process of updating series types for series following a change of series types, rules or attributes.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1updatestatus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{id}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type rule corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{id}/attributes",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the list of attributes for the series type rule with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type rule attribute",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{ruleId}/attributes/{attributeId}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type rule attribute corresponding to the supplied series type and attribute IDs",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Rule",
+      "properties": [
+        {
+          "id": "ruleId",
+          "type": "string",
+          "aliases": [
+            "ruleId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "slicebox.local.openapi.delete_seriestypes_rules_rule_id_attributes_attribute_id",
+              "claim": "Inferred property ruleId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1forwarding~1rule~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Scp",
+        "scp"
+      ],
+      "evidence": [
+        {
+          "claim": "/scps",
+          "source_reference": "slicebox.local#/paths/~1scps",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of DICOM SCPs. Each SCP is a server for receiving DICOM images from e.g. a PACS system.",
+          "source_reference": "slicebox.local#/paths/~1scps/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new SCP for receiving DICOM images",
+          "source_reference": "slicebox.local#/paths/~1scps/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/scps/{id}",
+          "source_reference": "slicebox.local#/paths/~1scps~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "shut down and remove the SCP corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1scps~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get a list of DICOM SCUs. Each SCU is a client for sending DICOM images to an SCP, e.g. a PACS system.",
+          "source_reference": "slicebox.local#/paths/~1scus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "send the images with the supplied image IDs to a DICOM SCP using the the SCU with the supplied scu ID",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}~1send/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of currently available data sources. Possible source types are user - data imported by an API call by a user, box - data received from a remote box, directory - data imported via a watched directory, import - data imported into slicebox using import sessions, or scp - data received from a PACS.",
+          "source_reference": "slicebox.local#/paths/~1sources/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Scp",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1scps~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Scu",
+        "scu"
+      ],
+      "evidence": [
+        {
+          "claim": "/scus",
+          "source_reference": "slicebox.local#/paths/~1scus",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of DICOM SCUs. Each SCU is a client for sending DICOM images to an SCP, e.g. a PACS system.",
+          "source_reference": "slicebox.local#/paths/~1scus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new SCU for sending DICOM images",
+          "source_reference": "slicebox.local#/paths/~1scus/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/scus/{id}",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the SCU corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/scus/{id}/send",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}~1send",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "send the images with the supplied image IDs to a DICOM SCP using the the SCU with the supplied scu ID",
+          "source_reference": "slicebox.local#/paths/~1scus~1{id}~1send/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Scu",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1scus~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Seriestag",
+        "seriestag"
+      ],
+      "evidence": [
+        {
+          "claim": "/metadata/series/{id}/seriestags",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the list of series tags for the series with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a series tag to the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestags/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{seriesId}/seriestags/{seriesTagId}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the series tag with the supplied series tag ID from the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/seriestags",
+          "source_reference": "slicebox.local#/paths/~1metadata~1seriestags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of series tags currently currently in use.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1seriestags/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Seriestag",
+      "properties": [
+        {
+          "id": "seriesTagId",
+          "type": "string",
+          "aliases": [
+            "seriesTagId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "slicebox.local.openapi.delete_metadata_series_series_id_seriestags_series_tag_id",
+              "claim": "Inferred property seriesTagId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestags~1{seriesTagId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Seriestype",
+        "seriestype"
+      ],
+      "evidence": [
+        {
+          "claim": "/metadata/series/{id}/seriestypes",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete all series types for the series with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the list of series types for the series with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/metadata/series/{seriesId}/seriestypes/{seriesTypeId}",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the series type with the supplied series type ID from the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add the series type with the supplied series type ID to the series with the supplied series ID",
+          "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes",
+          "source_reference": "slicebox.local#/paths/~1seriestypes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of all added series types. By filtering search results for certain series types, it is easier for applications to ensure that they read images of applicable types.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type",
+          "source_reference": "slicebox.local#/paths/~1seriestypes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get a list of rules for assigning series types to series. A rule connects to a series of attributes with values and a resulting series type. If a series has the required values of the listed attributes, it is assigned to the series type of the rule.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type rule",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/updatestatus",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1updatestatus",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the status of the internal process of updating series types for series following a change of series types, rules or attributes.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1updatestatus/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{id}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type rule corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{id}/attributes",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the list of attributes for the series type rule with the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a new series type rule attribute",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}~1attributes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/rules/{ruleId}/attributes/{attributeId}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type rule attribute corresponding to the supplied series type and attribute IDs",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/series/query",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1series~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "submit a query for seriestypes for a list of series",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1series~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/seriestypes/{id}",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the series type corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "request an asynchronous update of all series, labelling appropriate series with the series type corresponding to the supplied ID.",
+          "source_reference": "slicebox.local#/paths/~1seriestypes~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Seriestype",
+      "properties": [
+        {
+          "id": "seriesTypeId",
+          "type": "string",
+          "aliases": [
+            "seriesTypeId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "slicebox.local.openapi.delete_metadata_series_series_id_seriestypes_series_type_id",
+              "claim": "Inferred property seriesTypeId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{id}~1seriestypes/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1metadata~1series~1{seriesId}~1seriestypes~1{seriesTypeId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1rules~1{ruleId}~1attributes~1{attributeId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1series~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "slicebox.local#/paths/~1seriestypes~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Session",
+        "session"
+      ],
+      "evidence": [
+        {
+          "claim": "/import/sessions",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of available import sessions.",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "create a new import sessions",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/sessions/{id}",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deletes the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns the import sessions with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/sessions/{id}/images",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "get the imported images corresponding to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a DICOM dataset to the import session with the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1import~1sessions~1{id}~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of currently available data sources. Possible source types are user - data imported by an API call by a user, box - data received from a remote box, directory - data imported via a watched directory, import - data imported into slicebox using import sessions, or scp - data received from a PACS.",
+          "source_reference": "slicebox.local#/paths/~1sources/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "obtain information on the currently logged in user as specified by the supplied session cookie, IP address and user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1current/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Obtain a session cookie that can be used to authenticate future API calls from the present IP address and with the present user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Logout the current user by responding with a delete cookie header removing the session cookie for this user.",
+          "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Session",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "slicebox.local#/paths/~1import~1sessions/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Tagpath",
+        "tagpath"
+      ],
+      "evidence": [
+        {
+          "claim": "/filtering/filters/{id}/tagpaths",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List tagpaths for the selected filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add a tagpath to a filter",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/filtering/filters/{id}/tagpaths/{tagpathid}",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "remove the tagpath corresponding to the supplied ID",
+          "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "modify and/or insert image attributes according to the input tagpath-value mappings",
+          "source_reference": "slicebox.local#/paths/~1images~1{id}~1modify/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Tagpath",
+      "properties": [
+        {
+          "id": "tagpathid",
+          "type": "string",
+          "aliases": [
+            "tagpathid"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "slicebox.local.openapi.delete_filtering_filters_id_tagpaths_tagpathid",
+              "claim": "Inferred property tagpathid from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "slicebox.local#/paths/~1filtering~1filters~1{id}~1tagpaths~1{tagpathid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "/users",
+          "source_reference": "slicebox.local#/paths/~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all users of slicebox",
+          "source_reference": "slicebox.local#/paths/~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new user. Dupicates are accepted but not added.",
+          "source_reference": "slicebox.local#/paths/~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/current",
+          "source_reference": "slicebox.local#/paths/~1users~1current",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "obtain information on the currently logged in user as specified by the supplied session cookie, IP address and user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1current/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/login",
+          "source_reference": "slicebox.local#/paths/~1users~1login",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Obtain a session cookie that can be used to authenticate future API calls from the present IP address and with the present user agent.",
+          "source_reference": "slicebox.local#/paths/~1users~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/logout",
+          "source_reference": "slicebox.local#/paths/~1users~1logout",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Logout the current user by responding with a delete cookie header removing the session cookie for this user.",
+          "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{id}",
+          "source_reference": "slicebox.local#/paths/~1users~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "deletes a single user based on the ID supplied",
+          "source_reference": "slicebox.local#/paths/~1users~1{id}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "User",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "slicebox.local#/paths/~1users~1logout/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

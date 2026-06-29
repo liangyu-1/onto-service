@@ -1,0 +1,3802 @@
+{
+  "metadata": {
+    "name": "vercel.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "vercel.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Alias",
+        "alia",
+        "alias"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/aliases/{aliasId}",
+          "source_reference": "vercel.com#/paths/~1v2~1aliases~1{aliasId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an Alias",
+          "source_reference": "vercel.com#/paths/~1v2~1aliases~1{aliasId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/deployments/{id}/aliases",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Deployment Aliases",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Assign an Alias",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/aliases",
+          "source_reference": "vercel.com#/paths/~1v4~1aliases",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List aliases",
+          "source_reference": "vercel.com#/paths/~1v4~1aliases/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/aliases/{idOrAlias}",
+          "source_reference": "vercel.com#/paths/~1v4~1aliases~1{idOrAlias}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get an Alias",
+          "source_reference": "vercel.com#/paths/~1v4~1aliases~1{idOrAlias}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Alias",
+      "properties": [
+        {
+          "id": "aliasId",
+          "type": "string",
+          "aliases": [
+            "aliasId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "vercel.com.openapi.delete_alias",
+              "claim": "Inferred property aliasId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v2~1aliases~1{aliasId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "AuthToken",
+        "Authentication",
+        "auth token",
+        "auth_token"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object AuthToken",
+          "source_reference": "vercel.com#/components/schemas/AuthToken",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Authentication token metadata.",
+          "source_reference": "vercel.com#/components/schemas/AuthToken",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Verify a login request to get an authentication token",
+          "source_reference": "vercel.com#/paths/~1registration~1verify/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Auth Token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an authentication token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Auth Tokens",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Auth Token Metadata",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens~1{tokenId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query information about an artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Record an artifacts cache usage event",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check if a cache artifact exists",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AuthToken",
+      "properties": [
+        {
+          "aliases": [
+            "active at",
+            "activeAt",
+            "active_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.activeAt",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/activeAt",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Timestamp (in milliseconds) of when the token was most recently used.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/activeAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "activeAt",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.createdAt",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Timestamp (in milliseconds) of when the token was created.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "expires at",
+            "expiresAt",
+            "expires_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.expiresAt",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/expiresAt",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Timestamp (in milliseconds) of when the token expires.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/expiresAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "expiresAt",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.id",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The unique identifier of the token.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.name",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The human-readable name of the token.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "origin"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.origin",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/origin",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The origin of how the token was created.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/origin",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "origin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "scope",
+            "scopes"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.scopes",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/scopes",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The access scopes granted to the token.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/scopes",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "scopes",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "AuthToken.type",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of the token.",
+              "source_reference": "vercel.com#/components/schemas/AuthToken/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1registration~1verify/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Cert",
+        "cert"
+      ],
+      "evidence": [
+        {
+          "claim": "/v7/certs",
+          "source_reference": "vercel.com#/paths/~1v7~1certs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Issue a new cert",
+          "source_reference": "vercel.com#/paths/~1v7~1certs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload a cert",
+          "source_reference": "vercel.com#/paths/~1v7~1certs/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v7/certs/{id}",
+          "source_reference": "vercel.com#/paths/~1v7~1certs~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove cert",
+          "source_reference": "vercel.com#/paths/~1v7~1certs~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get cert by id",
+          "source_reference": "vercel.com#/paths/~1v7~1certs~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Cert",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v7~1certs/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v7~1certs~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v7~1certs/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Config",
+        "config"
+      ],
+      "evidence": [
+        {
+          "claim": "/v6/domains/{domain}/config",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}~1config",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a Domain's configuration",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}~1config/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Config",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Configuration",
+        "configuration"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/integrations/configuration/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an integration configuration",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an integration configuration",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/integrations/configurations",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get configurations for the authenticated user or team",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a Domain's configuration",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}~1config/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Configuration",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Deployment",
+        "deployment"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/deployments/{deploymentId}/checks",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a list of all checks",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/deployments/{deploymentId}/checks/{checkId}",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a single check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/deployments/{deploymentId}/checks/{checkId}/rerequest",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}~1rerequest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rerequest a check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}~1rerequest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v11/deployments/{deploymentId}/builds",
+          "source_reference": "vercel.com#/paths/~1v11~1deployments~1{deploymentId}~1builds",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Deployment Builds",
+          "source_reference": "vercel.com#/paths/~1v11~1deployments~1{deploymentId}~1builds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v12/deployments/{id}/cancel",
+          "source_reference": "vercel.com#/paths/~1v12~1deployments~1{id}~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel a deployment",
+          "source_reference": "vercel.com#/paths/~1v12~1deployments~1{id}~1cancel/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v13/deployments",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a new deployment",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v13/deployments/{idOrUrl}",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments~1{idOrUrl}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a deployment by ID or URL",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments~1{idOrUrl}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v13/deployments/{id}",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Deployment",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/deployments/{idOrUrl}/events",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{idOrUrl}~1events",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get deployment events",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{idOrUrl}~1events/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/deployments/{id}/aliases",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Deployment Aliases",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Assign an Alias",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload Deployment Files",
+          "source_reference": "vercel.com#/paths/~1v2~1files/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v6/deployments",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List deployments",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v6/deployments/{id}/files",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments~1{id}~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Deployment Files",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments~1{id}~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v6/deployments/{id}/files/{fileId}",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments~1{id}~1files~1{fileId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Deployment File Contents",
+          "source_reference": "vercel.com#/paths/~1v6~1deployments~1{id}~1files~1{fileId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a domain to a project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Deployment",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "vercel.com#/paths/~1v12~1deployments~1{id}~1cancel/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Domain",
+        "domain"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/domains/records/{recordId}",
+          "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update an existing DNS record",
+          "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Assign an Alias",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/domains/{domain}/records",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a DNS record",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/domains/{domain}/records/{recordId}",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a DNS record",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains",
+          "source_reference": "vercel.com#/paths/~1v4~1domains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Register or transfer-in a new Domain",
+          "source_reference": "vercel.com#/paths/~1v4~1domains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains/buy",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1buy",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Purchase a domain",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1buy/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains/price",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1price",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check the price for a domain",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1price/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains/status",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check a Domain Availability",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains/{domain}/records",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1{domain}~1records",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List existing DNS records",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1{domain}~1records/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v5/domains",
+          "source_reference": "vercel.com#/paths/~1v5~1domains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List all the domains",
+          "source_reference": "vercel.com#/paths/~1v5~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v5/domains/{domain}",
+          "source_reference": "vercel.com#/paths/~1v5~1domains~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Information for a Single Domain",
+          "source_reference": "vercel.com#/paths/~1v5~1domains~1{domain}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v6/domains/{domain}",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a domain by name",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v6/domains/{domain}/config",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}~1config",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a Domain's configuration",
+          "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}~1config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve project domains by project by id or name",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a domain to a project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains/{domain}",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a domain from a project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains/{domain}/verify",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}~1verify",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Verify project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}~1verify/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Domain",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v4~1domains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v4~1domains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v6~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v4~1domains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "EdgeConfig",
+        "edge config",
+        "edge_config"
+      ],
+      "evidence": [
+        {
+          "claim": "/edge-config",
+          "source_reference": "vercel.com#/paths/~1edge-config",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Edge Configs",
+          "source_reference": "vercel.com#/paths/~1edge-config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/item/{edgeConfigItemKey}",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1item~1{edgeConfigItemKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get an Edge Config item",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1item~1{edgeConfigItemKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/items",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1items",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Edge Config items",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Edge Config items in batch",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1items/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/token",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create an Edge Config token",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/token/{token}",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token~1{token}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Edge Config token meta data",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token~1{token}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/tokens",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete one or more Edge Config tokens",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all tokens of an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EdgeConfig",
+      "properties": [
+        {
+          "id": "edgeConfigId",
+          "type": "string",
+          "aliases": [
+            "edgeConfigId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "vercel.com.openapi.delete_edge_config",
+              "claim": "Inferred property edgeConfigId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1items/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1edge-config/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1items/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Env",
+        "env"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/projects/{idOrName}/env/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1projects~1{idOrName}~1env~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the decrypted value of an environment variable of a project by id",
+          "source_reference": "vercel.com#/paths/~1v1~1projects~1{idOrName}~1env~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v10/projects/{idOrName}/env",
+          "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create one or more environment variables",
+          "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/env",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the environment variables of a project by id or name",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/env/{id}",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove an environment variable",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit an environment variable",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Env",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Integration",
+        "integration"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/integrations/configuration/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an integration configuration",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an integration configuration",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/integrations/configurations",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get configurations for the authenticated user or team",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/integrations/git-namespaces",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1git-namespaces",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List git namespaces by provider",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1git-namespaces/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/integrations/log-drains/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the Integration log drain with the provided `id`",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/integrations/search-repo",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1search-repo",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List git repositories linked to namespace by provider",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1search-repo/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/integrations/log-drains",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves a list of Integration log drains",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Integration Log Drain",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Integration",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1integrations~1configuration~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Invite",
+        "invite"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/teams/{teamId}/invites/{inviteId}",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1invites~1{inviteId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Team invite code",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1invites~1{inviteId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Invite a user",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Invite",
+      "properties": [
+        {
+          "id": "inviteId",
+          "type": "string",
+          "aliases": [
+            "inviteId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "vercel.com.openapi.delete_team_invite_code",
+              "claim": "Inferred property inviteId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1invites~1{inviteId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "LogDrain",
+        "log drain",
+        "log_drain"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/integrations/log-drains/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the Integration log drain with the provided `id`",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/log-drains",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves a list of Configurable Log Drains",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a Configurable Log Drain",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/log-drains/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a Configurable Log Drain",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves a Configurable Log Drain",
+          "source_reference": "vercel.com#/paths/~1v1~1log-drains~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/integrations/log-drains",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves a list of Integration log drains",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Integration Log Drain",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "LogDrain",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1log-drains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1integrations~1log-drains~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1log-drains~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Member",
+        "member"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/teams/{teamId}/members",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Invite a user",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/teams/{teamId}/members/teams/join",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1teams~1join",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Join a team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1teams~1join/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/teams/{teamId}/members/{uid}",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get access request status",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/teams/{teamId}/members",
+          "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}~1members",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List team members",
+          "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}~1members/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Member",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Project",
+        "project"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/projects/{idOrName}/env/{id}",
+          "source_reference": "vercel.com#/paths/~1v1~1projects~1{idOrName}~1env~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the decrypted value of an environment variable of a project by id",
+          "source_reference": "vercel.com#/paths/~1v1~1projects~1{idOrName}~1env~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v10/projects/{idOrName}/env",
+          "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create one or more environment variables",
+          "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new deployment",
+          "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Assign an Alias",
+          "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects",
+          "source_reference": "vercel.com#/paths/~1v9~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a list of projects",
+          "source_reference": "vercel.com#/paths/~1v9~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Find a project by id or name",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve project domains by project by id or name",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a domain to a project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains/{domain}",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a domain from a project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/domains/{domain}/verify",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}~1verify",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Verify project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}~1verify/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/env",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the environment variables of a project by id or name",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v9/projects/{idOrName}/env/{id}",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove an environment variable",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit an environment variable",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Project",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v9~1projects/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v9~1projects/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1env~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v10~1projects~1{idOrName}~1env/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v13~1deployments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1deployments~1{id}~1aliases/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Record",
+        "record"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/domains/records/{recordId}",
+          "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update an existing DNS record",
+          "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/domains/{domain}/records",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a DNS record",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/domains/{domain}/records/{recordId}",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a DNS record",
+          "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v4/domains/{domain}/records",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1{domain}~1records",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List existing DNS records",
+          "source_reference": "vercel.com#/paths/~1v4~1domains~1{domain}~1records/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Record an artifacts cache usage event",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Verify project domain",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}~1domains~1{domain}~1verify/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Record",
+      "properties": [
+        {
+          "id": "recordId",
+          "type": "string",
+          "aliases": [
+            "recordId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "vercel.com.openapi.remove_record",
+              "claim": "Inferred property recordId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records~1{recordId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1domains~1records~1{recordId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1domains~1{domain}~1records/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Secret",
+        "secret"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/secrets/{idOrName}",
+          "source_reference": "vercel.com#/paths/~1v2~1secrets~1{idOrName}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a secret",
+          "source_reference": "vercel.com#/paths/~1v2~1secrets~1{idOrName}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/secrets/{name}",
+          "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Change secret name",
+          "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new secret",
+          "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v3/secrets",
+          "source_reference": "vercel.com#/paths/~1v3~1secrets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List secrets",
+          "source_reference": "vercel.com#/paths/~1v3~1secrets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v3/secrets/{idOrName}",
+          "source_reference": "vercel.com#/paths/~1v3~1secrets~1{idOrName}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a single secret",
+          "source_reference": "vercel.com#/paths/~1v3~1secrets~1{idOrName}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Secret",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v2~1secrets~1{idOrName}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1secrets~1{name}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Team",
+        "TeamLimited",
+        "team limited",
+        "team_limited"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object TeamLimited",
+          "source_reference": "vercel.com#/components/schemas/TeamLimited",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A limited form of data representing a Team, due to the authentication token missing privileges to read the full Team data.",
+          "source_reference": "vercel.com#/components/schemas/TeamLimited",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get configurations for the authenticated user or team",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a Team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a Team invite code",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1invites~1{inviteId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Invite a user",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Join a team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1teams~1join/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Request access to a team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get access request status",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all teams",
+          "source_reference": "vercel.com#/paths/~1v2~1teams/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a Team",
+          "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Team",
+          "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List team members",
+          "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}~1members/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query information about an artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Record an artifacts cache usage event",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check if a cache artifact exists",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TeamLimited",
+      "properties": [
+        {
+          "aliases": [
+            "avatar"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.avatar",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/avatar",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ID of the file used as avatar for this Team.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/avatar",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "avatar",
+          "required": true,
+          "type": "['string', 'null']"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.created",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/created",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Will remain undocumented. Remove in v3 API.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/created",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.createdAt",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "UNIX timestamp (in milliseconds) when the Team was created.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.id",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Team's unique identifier.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "limited"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.limited",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/limited",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Property indicating that this Team data contains only limited information, due to the authentication token missing privileges to read the full Team data. Re-login with the Team's configured SAML Single Sign-On provider in order to upgrade the authentication token with the necessary privileges.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/limited",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "limited",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "membership"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.membership",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/membership",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "membership",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.name",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name associated with the Team account, or `null` if none has been provided.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "['string', 'null']"
+        },
+        {
+          "aliases": [
+            "saml"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.saml",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/saml",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When \"Single Sign-On (SAML)\" is configured, this object contains information that allows the client-side to identify whether or not this Team has SAML enforced.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/saml",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "saml",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "slug"
+          ],
+          "evidence": [
+            {
+              "claim": "TeamLimited.slug",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/slug",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Team's slug, which is unique across the Vercel platform.",
+              "source_reference": "vercel.com#/components/schemas/TeamLimited/properties/slug",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "slug",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1teams/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1invites~1{inviteId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v2~1teams~1{teamId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Token",
+        "token"
+      ],
+      "evidence": [
+        {
+          "claim": "/edge-config/{edgeConfigId}/token",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create an Edge Config token",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/token/{token}",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token~1{token}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Edge Config token meta data",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token~1{token}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/edge-config/{edgeConfigId}/tokens",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete one or more Edge Config tokens",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all tokens of an Edge Config",
+          "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Verify a login request to get an authentication token",
+          "source_reference": "vercel.com#/paths/~1registration~1verify/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a single check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a check",
+          "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Integration Log Drain",
+          "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v3/user/tokens",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create an Auth Token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v3/user/tokens/{tokenId}",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an authentication token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v5/user/tokens",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Auth Tokens",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v5/user/tokens/{tokenId}",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens~1{tokenId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Auth Token Metadata",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens~1{tokenId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query information about an artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Record an artifacts cache usage event",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check if a cache artifact exists",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Token",
+      "properties": [
+        {
+          "id": "tokenId",
+          "type": "string",
+          "aliases": [
+            "tokenId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "vercel.com.openapi.delete_auth_token",
+              "claim": "Inferred property tokenId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1registration~1verify/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v2~1integrations~1log-drains/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1edge-config~1{edgeConfigId}~1tokens/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1deployments~1{deploymentId}~1checks~1{checkId}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Array",
+        "User",
+        "UserEvent",
+        "user event",
+        "user_event"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object UserEvent",
+          "source_reference": "vercel.com#/components/schemas/UserEvent",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Array of events generated by the User.",
+          "source_reference": "vercel.com#/components/schemas/UserEvent",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get configurations for the authenticated user or team",
+          "source_reference": "vercel.com#/paths/~1v1~1integrations~1configurations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a Team",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Invite a user",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Team Member",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get access request status",
+          "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete User Account",
+          "source_reference": "vercel.com#/paths/~1v1~1user/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the User",
+          "source_reference": "vercel.com#/paths/~1v2~1user/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List User Events",
+          "source_reference": "vercel.com#/paths/~1v3~1events/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Auth Token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an authentication token",
+          "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Auth Tokens",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Auth Token Metadata",
+          "source_reference": "vercel.com#/paths/~1v5~1user~1tokens~1{tokenId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query information about an artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Record an artifacts cache usage event",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check if a cache artifact exists",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload a cache artifact",
+          "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing project",
+          "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "UserEvent",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.createdAt",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Timestamp (in milliseconds) of when the event was generated.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "entities",
+            "entity"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.entities",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/entities",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A list of \"entities\" within the event `text`. Useful for enhancing the displayed text with additional styling and links.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/entities",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "entities",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.id",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The unique identifier of the Event.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.text",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/text",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The human-readable text of the Event.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.user",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/user",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Metadata for the User who generated the event.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "user id",
+            "userId",
+            "user_id"
+          ],
+          "evidence": [
+            {
+              "claim": "UserEvent.userId",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/userId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The unique identifier of the User who generated the event.",
+              "source_reference": "vercel.com#/components/schemas/UserEvent/properties/userId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "userId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "blocked",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "blocked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1request~1{userId}/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v1~1user/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "vercel.com#/paths/~1v3~1user~1tokens~1{tokenId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v1~1teams~1{teamId}~1members~1{uid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1events/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/head",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v8~1artifacts~1{hash}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "vercel.com#/paths/~1v9~1projects~1{idOrName}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

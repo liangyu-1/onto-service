@@ -1,0 +1,1086 @@
+{
+  "metadata": {
+    "name": "credas.co.uk_pi_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "credas.co.uk_pi"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Api",
+        "api"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/bank-accounts/verify",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1bank-accounts~1verify",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Verifies bank account details.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1bank-accounts~1verify/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/companies",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Searches for a company based on its Company Number and returns its details.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/companies/{companyId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies~1{companyId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /api/companies/{companyId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies~1{companyId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/credit-status/perform",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1credit-status~1perform",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1credit-status~1perform/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/datachecks",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1datachecks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new data check against a specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1datachecks/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/id-document",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an id document image to the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/id-document/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all id document images associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add a liveness image (UAP) to the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness-performed/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness-performed~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the liveness performed image associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness-performed~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the liveness action image (UAP) associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/scan-report-pdf/{scanId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1scan-report-pdf~1{scanId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a detailed report on the analysis that has taken place of a scanned document",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1scan-report-pdf~1{scanId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/selfie",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add a selfie image to the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/selfie/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the selfie image associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/property-register",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new property registry check against the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/property-register/{id}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves property registry check associated with the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/reg-types",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1reg-types",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets all available RegTypes.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1reg-types/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/instant",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/referenceid/{referenceId}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds registrations by the ReferenceId.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/regcode/{regCode}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the RegCode.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/search",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets paged registration list by search criteria or nothing if there are no matching fields.\r\nOptional parameters may be appended to the query string.\r\nMaximum page size is 50.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/check-submitted-id-documents",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Checks if submitted documents are sufficient to complete registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/contact-details",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Updates a registration's contact details.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/override-check-status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1override-check-status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Sets an override for a specific check on the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1override-check-status/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-export",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns PDF export for a given registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-export-sections",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export-sections",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a PDF report for a given registration containing specified sections",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export-sections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-settlement-status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-settlement-status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns settlement status PDF (Share Code) for a given registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-settlement-status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/resend-invitation",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1resend-invitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resends any invitation for the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1resend-invitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/settings",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets registration settings or nothing if there are no settings associated with the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates registration settings.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Updates the status of the registration to one specified in the request.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/supported-id-documents",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1supported-id-documents",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of supported id document for the specified registration id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1supported-id-documents/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/report-view/by-referenceid",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-referenceid",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves secure links to registration details pages searching by the Reference Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-referenceid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/report-view/by-registrationid",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-registrationid",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves secure link to registration details page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/web-verifications/by-referenceid",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-referenceid",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves secure links to web verification pages searching by the Reference Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-referenceid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/web-verifications/by-registrationid",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-registrationid",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves secure link to web verification page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Api",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Company",
+        "company"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/companies",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Searches for a company based on its Company Number and returns its details.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/companies/{companyId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies~1{companyId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /api/companies/{companyId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1companies~1{companyId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check includes identifying bankruptcy, insolvency, CCJ's or Company Directorship.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1credit-status~1perform/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Company",
+      "properties": [
+        {
+          "id": "companyId",
+          "type": "string",
+          "aliases": [
+            "companyId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "credas.co.uk_pi.openapi.get_company",
+              "claim": "Inferred property companyId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Datacheck",
+        "datacheck"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/datachecks",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1datachecks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new data check against a specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1datachecks/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Datacheck",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "IdDocument",
+        "id document",
+        "id_document"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/images/id-document",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an id document image to the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/id-document/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all id document images associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Checks if submitted documents are sufficient to complete registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a list of supported id document for the specified registration id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1supported-id-documents/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "IdDocument",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Image",
+        "image"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/images/id-document",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an id document image to the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/id-document/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all id document images associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1id-document~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add a liveness image (UAP) to the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness-performed/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness-performed~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the liveness performed image associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness-performed~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/liveness/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the liveness action image (UAP) associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1liveness~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/scan-report-pdf/{scanId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1scan-report-pdf~1{scanId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a detailed report on the analysis that has taken place of a scanned document",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1scan-report-pdf~1{scanId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/selfie",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add a selfie image to the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/selfie/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the selfie image associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Image",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Instant",
+        "instant"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/registrations/instant",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Instant",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "PropertyRegister",
+        "property register",
+        "property_register"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/property-register",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new property registry check against the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/property-register/{id}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves property registry check associated with the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1property-register~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "PropertyRegister",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Registration",
+        "registration"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/registrations",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/instant",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/referenceid/{referenceId}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds registrations by the ReferenceId.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/regcode/{regCode}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the RegCode.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/search",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets paged registration list by search criteria or nothing if there are no matching fields.\r\nOptional parameters may be appended to the query string.\r\nMaximum page size is 50.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/check-submitted-id-documents",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Checks if submitted documents are sufficient to complete registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/contact-details",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Updates a registration's contact details.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/override-check-status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1override-check-status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Sets an override for a specific check on the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1override-check-status/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-export",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns PDF export for a given registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-export-sections",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export-sections",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a PDF report for a given registration containing specified sections",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-export-sections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/pdf-settlement-status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-settlement-status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns settlement status PDF (Share Code) for a given registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1pdf-settlement-status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/resend-invitation",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1resend-invitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resends any invitation for the specified registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1resend-invitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/settings",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets registration settings or nothing if there are no settings associated with the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates registration settings.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/status",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Updates the status of the registration to one specified in the request.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/supported-id-documents",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1supported-id-documents",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of supported id document for the specified registration id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1supported-id-documents/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure links to registration details pages searching by the Reference Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-referenceid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure link to registration details page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure link to web verification page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Registration",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1check-submitted-id-documents/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1contact-details/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1settings/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1status/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Search",
+        "search"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/registrations/search",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Gets paged registration list by search criteria or nothing if there are no matching fields.\r\nOptional parameters may be appended to the query string.\r\nMaximum page size is 50.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure links to registration details pages searching by the Reference Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-referenceid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure link to registration details page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1report-view~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure links to web verification pages searching by the Reference Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-referenceid/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves secure link to web verification page searching by the Registration Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1web-verifications~1by-registrationid/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Search",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Selfie",
+        "selfie"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/images/selfie",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add a selfie image to the registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/images/selfie/{registrationId}",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the selfie image associated with a registration.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1images~1selfie~1{registrationId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates new registration record, adds an ID document and optional selfie image in one go.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1instant/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Selfie",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Summary",
+        "summary"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/registrations/referenceid/{referenceId}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds registrations by the ReferenceId.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1referenceid~1{referenceId}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/regcode/{regCode}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the RegCode.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1regcode~1{regCode}~1summary/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/registrations/{id}/summary",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Finds a registration by the Id.",
+          "source_reference": "credas.co.uk_pi#/paths/~1api~1registrations~1{id}~1summary/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Summary",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

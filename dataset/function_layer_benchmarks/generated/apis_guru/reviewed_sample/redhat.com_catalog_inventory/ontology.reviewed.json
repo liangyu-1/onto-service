@@ -1,0 +1,3172 @@
+{
+  "metadata": {
+    "name": "redhat.com_catalog_inventory_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "redhat.com_catalog_inventory"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "ServiceCredential",
+        "service credential",
+        "service_credential"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceCredential",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List ServiceCredentialTypes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Show an existing ServiceCredentialType",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_credentials",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credentials",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceCredentials",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credentials/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_credentials/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credentials~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceCredential",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credentials~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceCredential",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service credential type id",
+            "service_credential_type_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.service_credential_type_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/service_credential_type_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_credential_type_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source updated at",
+            "source_updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.source_updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/source_updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type name",
+            "type_name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.type_name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/type_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredential.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredential/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServiceCredentialType",
+        "service credential type",
+        "service_credential_type"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceCredentialType",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_credential_types",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceCredentialTypes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_credential_types/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceCredentialType",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_credential_types~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceCredentialType",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "kind"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.kind",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/kind",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "kind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "namespace"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.namespace",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/namespace",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source deleted at",
+            "source_deleted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.source_deleted_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/source_deleted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_deleted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceCredentialType.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceCredentialType/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServiceInstance",
+        "service instance",
+        "service_instance"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceInstance",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_instances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInstances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_instances/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_instances/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_instances~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceInstance",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_instances~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_instances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInstances for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_instances/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_instances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInstances for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_instances/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceInstance",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "external url",
+            "external_url"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.external_url",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/external_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "external_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "extra"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.extra",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/extra",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Extra information about this object in JSON format",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/extra",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "extra",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "root service instance id",
+            "root_service_instance_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.root_service_instance_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/root_service_instance_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "root_service_instance_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service inventory id",
+            "service_inventory_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.service_inventory_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/service_inventory_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_inventory_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service offering id",
+            "service_offering_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.service_offering_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/service_offering_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_offering_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service plan id",
+            "service_plan_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.service_plan_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/service_plan_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_plan_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source deleted at",
+            "source_deleted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.source_deleted_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/source_deleted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_deleted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInstance.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInstance/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServiceInventory",
+        "service inventory",
+        "service_inventory"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_inventories",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInventories",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_inventories/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_inventories/{id}/tag",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tag",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Tag a ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tag/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_inventories/{id}/tags",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tags for ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_inventories/{id}/untag",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1untag",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Untag a ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1untag/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_inventories",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_inventories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInventories for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_inventories/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceInventory",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "extra"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.extra",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/extra",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "extra",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source updated at",
+            "source_updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.source_updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/source_updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceInventory.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceInventory/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServiceOffering",
+        "service offering",
+        "service_offering"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List ServiceOfferingNodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Show an existing ServiceOfferingNode",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferings",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/applied_inventories_tags",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1applied_inventories_tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Invokes computing of ServiceInventories tags for given ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1applied_inventories_tags/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/order",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1order",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Order an existing ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1order/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_instances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInstances for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_instances/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_offering_nodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_offering_nodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferingNodes for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_plans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_plans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServicePlans for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_plans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List ServiceOfferingNodes for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_offerings",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offerings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferings for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offerings/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceOffering",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "display name",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.display_name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/display_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "display_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "distributor"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.distributor",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/distributor",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "distributor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "documentation url",
+            "documentation_url"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.documentation_url",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/documentation_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "documentation_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "extra"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.extra",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/extra",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Extra information about this object in JSON format",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/extra",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "extra",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "long description",
+            "long_description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.long_description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/long_description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "long_description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service inventory id",
+            "service_inventory_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.service_inventory_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/service_inventory_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_inventory_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source deleted at",
+            "source_deleted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.source_deleted_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/source_deleted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_deleted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The native reference used by the Source to refer to this object",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "support url",
+            "support_url"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.support_url",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/support_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "support_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOffering.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOffering/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServiceOfferingNode",
+        "service offering node",
+        "service_offering_node"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServiceOfferingNode",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_offering_nodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferingNodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offering_nodes/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServiceOfferingNode",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offering_nodes~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_offering_nodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_offering_nodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferingNodes for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_offering_nodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offering_nodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferingNodes for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServiceOfferingNode",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "extra"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.extra",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/extra",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "extra",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "root service offering id",
+            "root_service_offering_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.root_service_offering_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/root_service_offering_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "root_service_offering_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service inventory id",
+            "service_inventory_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.service_inventory_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/service_inventory_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_inventory_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "service offering id",
+            "service_offering_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.service_offering_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/service_offering_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_offering_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source updated at",
+            "source_updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.source_updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/source_updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServiceOfferingNode.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServiceOfferingNode/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ServicePlan",
+        "service plan",
+        "service_plan"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ServicePlan",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_offerings/{id}/service_plans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_plans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServicePlans for ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1service_plans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_plans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_plans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServicePlans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_plans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_plans/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_plans~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing ServicePlan",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_plans~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_plans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_plans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServicePlans for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_plans/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ServicePlan",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "create json schema",
+            "create_json_schema"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.create_json_schema",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/create_json_schema",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "create_json_schema",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.description",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "extra"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.extra",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/extra",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Extra information about this object in JSON format",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/extra",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "extra",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last seen at",
+            "last_seen_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.last_seen_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/last_seen_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_seen_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state part id",
+            "refresh_state_part_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.refresh_state_part_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/refresh_state_part_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state_part_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "resource version",
+            "resource_version"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.resource_version",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/resource_version",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "resource_version",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "service offering id",
+            "service_offering_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.service_offering_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/service_offering_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "service_offering_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source created at",
+            "source_created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.source_created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/source_created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source deleted at",
+            "source_deleted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.source_deleted_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/source_deleted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_deleted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "source ref",
+            "source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "update json schema",
+            "update_json_schema"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.update_json_schema",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/update_json_schema",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "update_json_schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ServicePlan.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/ServicePlan/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Source",
+        "source"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Source",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/sources",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Sources",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/incremental_refresh",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1incremental_refresh",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Incremental Refresh an existing Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1incremental_refresh/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/refresh",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1refresh",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": " Refresh an existing Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1refresh/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_instances",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_instances",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInstances for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_instances/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_inventories",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_inventories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceInventories for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_inventories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_offering_nodes",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offering_nodes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferingNodes for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offering_nodes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_offerings",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offerings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServiceOfferings for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_offerings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/service_plans",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_plans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ServicePlans for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1service_plans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sources/{id}/tasks",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1tasks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tasks for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1tasks/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Source",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "availability message",
+            "availability_message"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.availability_message",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/availability_message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "availability_message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "availability statu",
+            "availability status",
+            "availability_status"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.availability_status",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/availability_status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "availability_status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "cloud connector id",
+            "cloud_connector_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.cloud_connector_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/cloud_connector_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cloud_connector_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.enabled",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "info"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.info",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/info",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "info",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last available at",
+            "last_available_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.last_available_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/last_available_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_available_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last checked at",
+            "last_checked_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.last_checked_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/last_checked_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_checked_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last refresh message",
+            "last_refresh_message"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.last_refresh_message",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/last_refresh_message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_refresh_message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last successful refresh at",
+            "last_successful_refresh_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.last_successful_refresh_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/last_successful_refresh_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_successful_refresh_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "previous sha",
+            "previous_sha"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.previous_sha",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/previous_sha",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "previous_sha",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "previous size",
+            "previous_size"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.previous_size",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/previous_size",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "previous_size",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "refresh finished at",
+            "refresh_finished_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.refresh_finished_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/refresh_finished_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_finished_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh started at",
+            "refresh_started_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.refresh_started_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/refresh_started_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_started_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh state",
+            "refresh_state"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.refresh_state",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/refresh_state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "refresh task id",
+            "refresh_task_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.refresh_task_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/refresh_task_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_task_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "uid"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.uid",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/uid",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "uid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Source.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Source/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Tag",
+        "tag"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Tag",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/Tag",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/service_inventories/{id}/tag",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tag",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Tag a ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tag/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/service_inventories/{id}/tags",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tags for ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1tags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Untag a ServiceInventory",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_inventories~1{id}~1untag/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Invokes computing of ServiceInventories tags for given ServiceOffering",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1service_offerings~1{id}~1applied_inventories_tags/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tags",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tags",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tags",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tags/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Tag",
+      "properties": [
+        {
+          "aliases": [
+            "tag"
+          ],
+          "evidence": [
+            {
+              "claim": "Tag.tag",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Tag/properties/tag",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Task",
+        "task"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Task",
+          "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/sources/{id}/tasks",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1tasks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tasks for Source",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1sources~1{id}~1tasks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tasks",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tasks",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tasks/{id}",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Show an existing Task",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing Task",
+          "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks~1{id}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Task",
+      "properties": [
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.archived_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "child task id",
+            "child_task_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.child_task_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/child_task_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "child_task_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "completed at",
+            "completed_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.completed_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/completed_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "completed_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "controller message id",
+            "controller_message_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.controller_message_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/controller_message_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "controller_message_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.created_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "input"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.input",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/input",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "input",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "message"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.message",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.name",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "output"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.output",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/output",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.owner",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source id",
+            "source_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.source_id",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/source_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source_id",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.state",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.status",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "target source ref",
+            "target_source_ref"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.target_source_ref",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/target_source_ref",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "target_source_ref",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "target type",
+            "target_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.target_type",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/target_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "target_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.type",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Task.updated_at",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "error",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "error",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "ok",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "ok",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "queued",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "queued",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "running",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "running",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "timedout",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "timedout",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "unchanged",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "unchanged",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "redhat.com_catalog_inventory#/paths/~1tasks~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "warn",
+              "source_reference": "redhat.com_catalog_inventory#/components/schemas/Task/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "warn",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

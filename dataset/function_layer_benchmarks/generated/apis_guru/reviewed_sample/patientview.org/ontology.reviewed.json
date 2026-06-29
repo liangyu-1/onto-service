@@ -1,0 +1,746 @@
+{
+  "metadata": {
+    "name": "patientview.org_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "patientview.org"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Auth",
+        "auth"
+      ],
+      "evidence": [
+        {
+          "claim": "/auth/login",
+          "source_reference": "patientview.org#/paths/~1auth~1login",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Log In",
+          "source_reference": "patientview.org#/paths/~1auth~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/auth/logout/{token}",
+          "source_reference": "patientview.org#/paths/~1auth~1logout~1{token}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Log Out",
+          "source_reference": "patientview.org#/paths/~1auth~1logout~1{token}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/auth/{token}/basicuserinformation",
+          "source_reference": "patientview.org#/paths/~1auth~1{token}~1basicuserinformation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Basic User Information",
+          "source_reference": "patientview.org#/paths/~1auth~1{token}~1basicuserinformation/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Basic Patient Information",
+          "source_reference": "patientview.org#/paths/~1patient~1{userId}~1basic/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getPatientManagementDiagnoses",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1diagnoses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getPatientManagementLookupTypes",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1lookuptypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "validatePatientManagement",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1validate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getPatientManagement",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "savePatientManagement",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "savePatientManagementSurgeries",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}~1surgeries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Available Observations Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1availableobservationheadings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Observations of Multiple Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get patient entered Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}~1patiententered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Available Patient Entered Observations Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1patiententeredobservationheadings/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Auth",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Logout",
+        "logout"
+      ],
+      "evidence": [
+        {
+          "claim": "/auth/logout/{token}",
+          "source_reference": "patientview.org#/paths/~1auth~1logout~1{token}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Log Out",
+          "source_reference": "patientview.org#/paths/~1auth~1logout~1{token}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Logout",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Observation",
+        "observation"
+      ],
+      "evidence": [
+        {
+          "claim": "/user/{userId}/observations",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Observations of Multiple Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/observations/{code}",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/observations/{code}/patiententered",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}~1patiententered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get patient entered Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}~1patiententered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Available Patient Entered Observations Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1patiententeredobservationheadings/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Observation",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object User",
+          "source_reference": "patientview.org#/components/schemas/User",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get Basic User Information",
+          "source_reference": "patientview.org#/paths/~1auth~1{token}~1basicuserinformation/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Basic Patient Information",
+          "source_reference": "patientview.org#/paths/~1patient~1{userId}~1basic/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "getPatientManagement",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "savePatientManagement",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "savePatientManagementSurgeries",
+          "source_reference": "patientview.org#/paths/~1patientmanagement~1{userId}~1group~1{groupId}~1identifier~1{identifierId}~1surgeries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/availableobservationheadings",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1availableobservationheadings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Available Observations Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1availableobservationheadings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/observations",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Observations of Multiple Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/observations/{code}",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/observations/{code}/patiententered",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}~1patiententered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get patient entered Observations of a Certain Type For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1observations~1{code}~1patiententered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/{userId}/patiententeredobservationheadings",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1patiententeredobservationheadings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Available Patient Entered Observations Types For a User",
+          "source_reference": "patientview.org#/paths/~1user~1{userId}~1patiententeredobservationheadings/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "User",
+      "properties": [
+        {
+          "aliases": [
+            "api key",
+            "apiKey",
+            "api_key"
+          ],
+          "evidence": [
+            {
+              "claim": "User.apiKey",
+              "source_reference": "patientview.org#/components/schemas/User/properties/apiKey",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "apiKey",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "can switch user",
+            "canSwitchUser",
+            "can_switch_user"
+          ],
+          "evidence": [
+            {
+              "claim": "User.canSwitchUser",
+              "source_reference": "patientview.org#/components/schemas/User/properties/canSwitchUser",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "canSwitchUser",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "change password",
+            "changePassword",
+            "change_password"
+          ],
+          "evidence": [
+            {
+              "claim": "User.changePassword",
+              "source_reference": "patientview.org#/components/schemas/User/properties/changePassword",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "changePassword",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "contact number",
+            "contactNumber",
+            "contact_number"
+          ],
+          "evidence": [
+            {
+              "claim": "User.contactNumber",
+              "source_reference": "patientview.org#/components/schemas/User/properties/contactNumber",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "contactNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "evidence": [
+            {
+              "claim": "User.created",
+              "source_reference": "patientview.org#/components/schemas/User/properties/created",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "current login",
+            "currentLogin",
+            "current_login"
+          ],
+          "evidence": [
+            {
+              "claim": "User.currentLogin",
+              "source_reference": "patientview.org#/components/schemas/User/properties/currentLogin",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "currentLogin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "current login ip address",
+            "currentLoginIpAddress",
+            "current_login_ip_address"
+          ],
+          "evidence": [
+            {
+              "claim": "User.currentLoginIpAddress",
+              "source_reference": "patientview.org#/components/schemas/User/properties/currentLoginIpAddress",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "currentLoginIpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "date of birth",
+            "dateOfBirth",
+            "date_of_birth"
+          ],
+          "evidence": [
+            {
+              "claim": "User.dateOfBirth",
+              "source_reference": "patientview.org#/components/schemas/User/properties/dateOfBirth",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "dateOfBirth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "deleted"
+          ],
+          "evidence": [
+            {
+              "claim": "User.deleted",
+              "source_reference": "patientview.org#/components/schemas/User/properties/deleted",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "deleted",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "dummy"
+          ],
+          "evidence": [
+            {
+              "claim": "User.dummy",
+              "source_reference": "patientview.org#/components/schemas/User/properties/dummy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "dummy",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "email"
+          ],
+          "evidence": [
+            {
+              "claim": "User.email",
+              "source_reference": "patientview.org#/components/schemas/User/properties/email",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "email verified",
+            "emailVerified",
+            "email_verified"
+          ],
+          "evidence": [
+            {
+              "claim": "User.emailVerified",
+              "source_reference": "patientview.org#/components/schemas/User/properties/emailVerified",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "emailVerified",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "forename"
+          ],
+          "evidence": [
+            {
+              "claim": "User.forename",
+              "source_reference": "patientview.org#/components/schemas/User/properties/forename",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "forename",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "group role",
+            "group roles",
+            "groupRoles",
+            "group_roles"
+          ],
+          "evidence": [
+            {
+              "claim": "User.groupRoles",
+              "source_reference": "patientview.org#/components/schemas/User/properties/groupRoles",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "groupRoles",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "hide secret word notification",
+            "hideSecretWordNotification",
+            "hide_secret_word_notification"
+          ],
+          "evidence": [
+            {
+              "claim": "User.hideSecretWordNotification",
+              "source_reference": "patientview.org#/components/schemas/User/properties/hideSecretWordNotification",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hideSecretWordNotification",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "User.id",
+              "source_reference": "patientview.org#/components/schemas/User/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "identifier",
+            "identifiers"
+          ],
+          "evidence": [
+            {
+              "claim": "User.identifiers",
+              "source_reference": "patientview.org#/components/schemas/User/properties/identifiers",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "identifiers",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "last login",
+            "lastLogin",
+            "last_login"
+          ],
+          "evidence": [
+            {
+              "claim": "User.lastLogin",
+              "source_reference": "patientview.org#/components/schemas/User/properties/lastLogin",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "lastLogin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last login ip address",
+            "lastLoginIpAddress",
+            "last_login_ip_address"
+          ],
+          "evidence": [
+            {
+              "claim": "User.lastLoginIpAddress",
+              "source_reference": "patientview.org#/components/schemas/User/properties/lastLoginIpAddress",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "lastLoginIpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "latest data received by",
+            "latestDataReceivedBy",
+            "latest_data_received_by"
+          ],
+          "evidence": [
+            {
+              "claim": "User.latestDataReceivedBy",
+              "source_reference": "patientview.org#/components/schemas/User/properties/latestDataReceivedBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "latestDataReceivedBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "latest data received date",
+            "latestDataReceivedDate",
+            "latest_data_received_date"
+          ],
+          "evidence": [
+            {
+              "claim": "User.latestDataReceivedDate",
+              "source_reference": "patientview.org#/components/schemas/User/properties/latestDataReceivedDate",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "latestDataReceivedDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "locked"
+          ],
+          "evidence": [
+            {
+              "claim": "User.locked",
+              "source_reference": "patientview.org#/components/schemas/User/properties/locked",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "locked",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "picture"
+          ],
+          "evidence": [
+            {
+              "claim": "User.picture",
+              "source_reference": "patientview.org#/components/schemas/User/properties/picture",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "picture",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "role description",
+            "roleDescription",
+            "role_description"
+          ],
+          "evidence": [
+            {
+              "claim": "User.roleDescription",
+              "source_reference": "patientview.org#/components/schemas/User/properties/roleDescription",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "roleDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "secret word is set",
+            "secretWordIsSet",
+            "secret_word_is_set"
+          ],
+          "evidence": [
+            {
+              "claim": "User.secretWordIsSet",
+              "source_reference": "patientview.org#/components/schemas/User/properties/secretWordIsSet",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "secretWordIsSet",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "surname"
+          ],
+          "evidence": [
+            {
+              "claim": "User.surname",
+              "source_reference": "patientview.org#/components/schemas/User/properties/surname",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "surname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user feature",
+            "user features",
+            "userFeatures",
+            "user_features"
+          ],
+          "evidence": [
+            {
+              "claim": "User.userFeatures",
+              "source_reference": "patientview.org#/components/schemas/User/properties/userFeatures",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "userFeatures",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "username"
+          ],
+          "evidence": [
+            {
+              "claim": "User.username",
+              "source_reference": "patientview.org#/components/schemas/User/properties/username",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "username",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "id": "userId",
+          "type": "integer",
+          "aliases": [
+            "userId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "patientview.org.openapi.get_observations_by_codes",
+              "claim": "Inferred property userId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

@@ -1,0 +1,1759 @@
+{
+  "metadata": {
+    "name": "netlicensing.io_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "netlicensing.io"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "License",
+        "license"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object License",
+          "source_reference": "netlicensing.io#/components/schemas/License",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/license",
+          "source_reference": "netlicensing.io#/paths/~1license",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Licenses",
+          "source_reference": "netlicensing.io#/paths/~1license/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create License",
+          "source_reference": "netlicensing.io#/paths/~1license/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/license/{licenseNumber}",
+          "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete License",
+          "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get License",
+          "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update License",
+          "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Licensees",
+          "source_reference": "netlicensing.io#/paths/~1licensee/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Transfer Licenses",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1transfer/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Validate Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1validate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List License Templates",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List License Types",
+          "source_reference": "netlicensing.io#/paths/~1utility~1licenseTypes/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "License",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "License.active",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'false', the License is disabled. License can be re-enabled, but as long as it is disabled, the License is excluded from the validation process.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "currency"
+          ],
+          "evidence": [
+            {
+              "claim": "License.currency",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/currency",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Specifies currency for the License price. Check data types to discover which currencies are supported. Read-only, set from License Template on creation.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/currency",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "currency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "hidden"
+          ],
+          "evidence": [
+            {
+              "claim": "License.hidden",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/hidden",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'true', this License is not shown in NetLicensing Shop as purchased License. Set from License Template on creation, if not specified explicitly.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/hidden",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hidden",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "License.name",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name for the Licensed item. Set from License Template on creation, if not specified explicitly.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "License.number",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number (across all Products/Licensees of a Vendor) that identifies the License. Vendor can assign this number when creating a License or let NetLicensing generate one. Read-only after corresponding creation Transaction status is set to closed.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "price"
+          ],
+          "evidence": [
+            {
+              "claim": "License.price",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/price",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "'price' for the License. If >0, it must always be accompanied by the currency specification. Read-only, set from License Template on creation.",
+              "source_reference": "netlicensing.io#/components/schemas/License/properties/price",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "price",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1license/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1licensee/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1license~1{licenseNumber}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "LicenseTemplate",
+        "license template",
+        "license_template"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object LicenseTemplate",
+          "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List License Templates",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "LicenseTemplate",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.active",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'false', the License Template is disabled. Licensee can not obtain any new Licenses off this License Template.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "automatic"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.automatic",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/automatic",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'true', every new Licensee automatically gets one License out of this License Template on creation. Automatic Licenses must have their price set to 0.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/automatic",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "automatic",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "currency"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.currency",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/currency",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Specifies currency for the License price. Check data types to discover which currencies are supported.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/currency",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "currency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "hidden"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.hidden",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/hidden",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'true', this License Template is not shown in NetLicensing Shop as offered for purchase.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/hidden",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hidden",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "hidden licens",
+            "hidden licenses",
+            "hiddenLicenses",
+            "hidden_licenses"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.hiddenLicenses",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/hiddenLicenses",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'true', Licenses from this License Template are not visible to the end customer, but participate in validation.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/hiddenLicenses",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hiddenLicenses",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "license type",
+            "licenseType",
+            "license_type"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.licenseType",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/licenseType",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of Licenses created from this License Template",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/licenseType",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "licenseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.name",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name for the Licensed item.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.number",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number (across all Product of a Vendor) that identifies the License Template. Vendor can assign this number when creating a License Template or let NetLicensing generate one. Read-only after creation of the first License from this License Template.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "price"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseTemplate.price",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/price",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "'price' for the License. If >0, it must always be accompanied by the currency specification.",
+              "source_reference": "netlicensing.io#/components/schemas/LicenseTemplate/properties/price",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "price",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Licensee",
+        "licensee"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Licensee",
+          "source_reference": "netlicensing.io#/components/schemas/Licensee",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Licensees",
+          "source_reference": "netlicensing.io#/paths/~1licensee/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/licensee/{licenseeNumber}",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/licensee/{licenseeNumber}/transfer",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1transfer",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Transfer Licenses",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1transfer/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/licensee/{licenseeNumber}/validate",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1validate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate Licensee",
+          "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}~1validate/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Licensee",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Licensee.active",
+              "source_reference": "netlicensing.io#/components/schemas/Licensee/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'false', the Licensee is disabled. Licensee can not obtain new Licenses, and validation is disabled.",
+              "source_reference": "netlicensing.io#/components/schemas/Licensee/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "Licensee.number",
+              "source_reference": "netlicensing.io#/components/schemas/Licensee/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number (across all Products of a Vendor) that identifies the Licensee. Vendor can assign this number when creating a Licensee or let NetLicensing generate one. Read-only after creation of the first License for the Licensee.",
+              "source_reference": "netlicensing.io#/components/schemas/Licensee/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1licensee/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1licensee~1{licenseeNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Licensetemplate",
+        "licensetemplate"
+      ],
+      "evidence": [
+        {
+          "claim": "/licensetemplate",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List License Templates",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/licensetemplate/{licenseTemplateNumber}",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update License Template",
+          "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Licensetemplate",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1licensetemplate~1{licenseTemplateNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "PaymentMethod",
+        "payment method",
+        "payment_method"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object PaymentMethod",
+          "source_reference": "netlicensing.io#/components/schemas/PaymentMethod",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Payment Methods",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Payment Method",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Payment Method",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "PaymentMethod",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "PaymentMethod.active",
+              "source_reference": "netlicensing.io#/components/schemas/PaymentMethod/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "PaymentMethod.number",
+              "source_reference": "netlicensing.io#/components/schemas/PaymentMethod/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Paymentmethod",
+        "paymentmethod"
+      ],
+      "evidence": [
+        {
+          "claim": "/paymentmethod",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Payment Methods",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/paymentmethod/{paymentMethodNumber}",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Payment Method",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Payment Method",
+          "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Paymentmethod",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1paymentmethod~1{paymentMethodNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Product",
+        "product"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Product",
+          "source_reference": "netlicensing.io#/components/schemas/Product",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/product",
+          "source_reference": "netlicensing.io#/paths/~1product",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Products",
+          "source_reference": "netlicensing.io#/paths/~1product/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Product",
+          "source_reference": "netlicensing.io#/paths/~1product/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/product/{productNumber}",
+          "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Product",
+          "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Product",
+          "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Product",
+          "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Product Modules",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Product",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Product.active",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'false', the Product is disabled. No new Licensees can be registered for the Product, existing Licensees can not obtain new Licenses",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "licensee auto create",
+            "licenseeAutoCreate",
+            "licensee_auto_create"
+          ],
+          "evidence": [
+            {
+              "claim": "Product.licenseeAutoCreate",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/licenseeAutoCreate",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'true', non-existing Licensees will be created at first validation attempt.",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/licenseeAutoCreate",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "licenseeAutoCreate",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Product.name",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Product name. Together with the version identifies the Product for the end customer",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "Product.number",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number that identifies the Product. Vendor can assign this number when creating a Product or let NetLicensing generate one. Read-only after creation of the first Licensee for the Product.",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "version"
+          ],
+          "evidence": [
+            {
+              "claim": "Product.version",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/version",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Product version. Convenience parameter, additional to the Product name.",
+              "source_reference": "netlicensing.io#/components/schemas/Product/properties/version",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "version",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1product/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1product~1{productNumber}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ProductModule",
+        "product module",
+        "product_module"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ProductModule",
+          "source_reference": "netlicensing.io#/components/schemas/ProductModule",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Product Modules",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ProductModule",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "ProductModule.active",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If set to 'false', the Product Module is disabled. Licensees can not obtain any new Licenses for this Product Module.",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "licensing info",
+            "licensingInfo",
+            "licensing_info"
+          ],
+          "evidence": [
+            {
+              "claim": "ProductModule.licensingInfo",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/licensingInfo",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Licensing model applied to this Product Module. Defines what License Templates can be configured for the Product Module and how Licenses for this Product Module are processed during validation.",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/licensingInfo",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "licensingInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ProductModule.name",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Product Module name that is visible to the end customers in NetLicensing Shop.",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "ProductModule.number",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number (across all Product of a Vendor) that identifies the Product Module. Vendor can assign this number when creating a Product Module or let NetLicensing generate one. Read-only after creation of the first Licensee for the Product.",
+              "source_reference": "netlicensing.io#/components/schemas/ProductModule/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Productmodule",
+        "productmodule"
+      ],
+      "evidence": [
+        {
+          "claim": "/productmodule",
+          "source_reference": "netlicensing.io#/paths/~1productmodule",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Product Modules",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/productmodule/{productModuleNumber}",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Product Module",
+          "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Productmodule",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1productmodule/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1productmodule~1{productModuleNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Token",
+        "token"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Token",
+          "source_reference": "netlicensing.io#/components/schemas/Token",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/token",
+          "source_reference": "netlicensing.io#/paths/~1token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Tokens",
+          "source_reference": "netlicensing.io#/paths/~1token/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create token",
+          "source_reference": "netlicensing.io#/paths/~1token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/token/{tokenNumber}",
+          "source_reference": "netlicensing.io#/paths/~1token~1{tokenNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete token",
+          "source_reference": "netlicensing.io#/paths/~1token~1{tokenNumber}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get token",
+          "source_reference": "netlicensing.io#/paths/~1token~1{tokenNumber}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Token",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.active",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "expiration time",
+            "expirationTime",
+            "expiration_time"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.expirationTime",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/expirationTime",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "expirationTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "license number",
+            "licenseNumber",
+            "license_number"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.licenseNumber",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/licenseNumber",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "licenseNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.number",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "shop url",
+            "shopURL",
+            "shop_url"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.shopURL",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/shopURL",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "shopURL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "token type",
+            "tokenType",
+            "token_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.tokenType",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/tokenType",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tokenType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "vendor number",
+            "vendorNumber",
+            "vendor_number"
+          ],
+          "evidence": [
+            {
+              "claim": "Token.vendorNumber",
+              "source_reference": "netlicensing.io#/components/schemas/Token/properties/vendorNumber",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "vendorNumber",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1token/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netlicensing.io#/paths/~1token~1{tokenNumber}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Transaction",
+        "transaction"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Transaction",
+          "source_reference": "netlicensing.io#/components/schemas/Transaction",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/transaction",
+          "source_reference": "netlicensing.io#/paths/~1transaction",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Transactions",
+          "source_reference": "netlicensing.io#/paths/~1transaction/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Transaction",
+          "source_reference": "netlicensing.io#/paths/~1transaction/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/transaction/{transactionNumber}",
+          "source_reference": "netlicensing.io#/paths/~1transaction~1{transactionNumber}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Transaction ",
+          "source_reference": "netlicensing.io#/paths/~1transaction~1{transactionNumber}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Transaction",
+          "source_reference": "netlicensing.io#/paths/~1transaction~1{transactionNumber}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Transaction",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Transaction.active",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Always true for the Transactions",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "number"
+          ],
+          "evidence": [
+            {
+              "claim": "Transaction.number",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique number (across all Products of a Vendor) that identifies the Transaction. This number is always generated by NetLicensing.",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "number",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source"
+          ],
+          "evidence": [
+            {
+              "claim": "Transaction.source",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/source",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Transaction.status",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "closed",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "closed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netlicensing.io#/paths/~1transaction/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "netlicensing.io#/components/schemas/Transaction/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netlicensing.io#/paths/~1transaction~1{transactionNumber}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

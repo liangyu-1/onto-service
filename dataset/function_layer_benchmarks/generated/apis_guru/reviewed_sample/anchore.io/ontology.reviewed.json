@@ -1,0 +1,3212 @@
+{
+  "metadata": {
+    "name": "anchore.io_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "anchore.io"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Account",
+          "source_reference": "anchore.io#/components/schemas/Account",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Account information",
+          "source_reference": "anchore.io#/components/schemas/Account",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/account",
+          "source_reference": "anchore.io#/paths/~1account",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List the account for the authenticated user",
+          "source_reference": "anchore.io#/paths/~1account/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts",
+          "source_reference": "anchore.io#/paths/~1accounts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List user summaries. Only available to the system admin user.",
+          "source_reference": "anchore.io#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new user. Only avaialble to admin user.",
+          "source_reference": "anchore.io#/paths/~1accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete the specified account, only allowed if the account is in the disabled state. All users will be deleted along with the account and all resources will be garbage collected",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get info about an user. Only available to admin user. Uses the main user Id, not a username.",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/state",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update the state of an account to either enabled or disabled. For deletion use the DELETE route",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List accounts for the user",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new user",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users/{username}",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific user credential by username of the credential. Cannot be the credential used to authenticate the request.",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific user in the specified account",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users/{username}/credentials",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a credential by type",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get current credential summary",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add/replace credential",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Account",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.created_at",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The timestamp when the account was created",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "email"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.email",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/email",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Optional email address associated with the account",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/email",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "email",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last updated",
+            "last_updated"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.last_updated",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/last_updated",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The timestamp of the last update to the account metadata itself (not users or creds)",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/last_updated",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_updated",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.name",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The account identifier, not updatable after creation",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.state",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "State of the account. Disabled accounts prevent member users from logging in, deleting accounts are disabled and pending deletion and will be removed once all owned resources are garbage collected by the system",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.type",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The user type (admin vs user). If not specified in a POST request, 'user' is default",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "id": "accountname",
+          "type": "string",
+          "aliases": [
+            "accountname"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "anchore.io.openapi.create_user",
+              "claim": "Inferred property accountname from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleting",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleting",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "anchore.io#/components/schemas/Account/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "AnalysisArchiveRules",
+        "Rule",
+        "analysis archive rule",
+        "analysis archive rules",
+        "analysis_archive_rules"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object AnalysisArchiveRules",
+          "source_reference": "anchore.io#/components/schemas/AnalysisArchiveRules",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Rule set for automatic archiving of system objects and flushing of archived objects (permament delete).",
+          "source_reference": "anchore.io#/components/schemas/AnalysisArchiveRules",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "GET /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AnalysisArchiveRules",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Event",
+        "event"
+      ],
+      "evidence": [
+        {
+          "claim": "/events",
+          "source_reference": "anchore.io#/paths/~1events",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Events",
+          "source_reference": "anchore.io#/paths/~1events/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Events",
+          "source_reference": "anchore.io#/paths/~1events/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/events/{eventId}",
+          "source_reference": "anchore.io#/paths/~1events~1{eventId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Event",
+          "source_reference": "anchore.io#/paths/~1events~1{eventId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Event",
+          "source_reference": "anchore.io#/paths/~1events~1{eventId}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Event",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1events/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1events~1{eventId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "EventsList",
+        "Response",
+        "events list",
+        "events_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object EventsList",
+          "source_reference": "anchore.io#/components/schemas/EventsList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Response envelope for paginated listing of events",
+          "source_reference": "anchore.io#/components/schemas/EventsList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Events",
+          "source_reference": "anchore.io#/paths/~1events/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EventsList",
+      "properties": [
+        {
+          "aliases": [
+            "item count",
+            "item_count"
+          ],
+          "evidence": [
+            {
+              "claim": "EventsList.item_count",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/item_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of events in this page",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/item_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "item_count",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "next page",
+            "next_page"
+          ],
+          "evidence": [
+            {
+              "claim": "EventsList.next_page",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/next_page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Boolean flag, True indicates there are more events and False otherwise",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/next_page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next_page",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "page"
+          ],
+          "evidence": [
+            {
+              "claim": "EventsList.page",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Page number of this result set",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "page",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "result",
+            "results"
+          ],
+          "evidence": [
+            {
+              "claim": "EventsList.results",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/results",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of events",
+              "source_reference": "anchore.io#/components/schemas/EventsList/properties/results",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "results",
+          "required": false,
+          "type": "array"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Image",
+        "image"
+      ],
+      "evidence": [
+        {
+          "claim": "/archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/archives/images/{imageDigest}",
+          "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Performs a synchronous archive deletion",
+          "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns the archive metadata record identifying the image and tags for the analysis in the archive.",
+          "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images",
+          "source_reference": "anchore.io#/paths/~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Bulk mark images for deletion",
+          "source_reference": "anchore.io#/paths/~1images/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible images",
+          "source_reference": "anchore.io#/paths/~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a new image for analysis by the engine",
+          "source_reference": "anchore.io#/paths/~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete image by docker imageId",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lookup image by docker imageId",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/check",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1check",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/content",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/content/files",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type files",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/content/java",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1java",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type java",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1java/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/content/{ctype}",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1{ctype}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1{ctype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/vuln",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/by_id/{imageId}/vuln/{vtype}",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln~1{vtype}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get vulnerabilities by type",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln~1{vtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an image analysis",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get image metadata",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/artifacts/file_content_search",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1file_content_search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1file_content_search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/artifacts/retrieved_files",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1retrieved_files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1retrieved_files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/artifacts/secret_search",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1secret_search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1secret_search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/check",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1check",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/content",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/content/files",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type files",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/content/java",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1java",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type java",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1java/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/content/malware",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1malware",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type malware",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1malware/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/content/{ctype}",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1{ctype}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1{ctype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/metadata",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List image metadata types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/metadata/{mtype}",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata~1{mtype}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the metadata of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata~1{mtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/sboms/native",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1sboms~1native",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get image sbom in the native Anchore format",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1sboms~1native/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/vuln",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/images/{imageDigest}/vuln/{vtype}",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln~1{vtype}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get vulnerabilities by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln~1{vtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/import/images",
+          "source_reference": "anchore.io#/paths/~1import~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Import an anchore image tar.gz archive file. This is a deprecated API replaced by the \"/imports/images\" route",
+          "source_reference": "anchore.io#/paths/~1import~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images",
+          "source_reference": "anchore.io#/paths/~1imports~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Lists in-progress imports",
+          "source_reference": "anchore.io#/paths/~1imports~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Invalidate operation ID so it can be garbage collected",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get detail on a single import",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/dockerfile",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded dockerfiles",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/image_config",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded image configs",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI image config to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/manifest",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded image manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/packages",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded package manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/parent_manifest",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded parent manifests (manifest lists for a tag)",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest list to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/images/by_package",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_package",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List of images containing given package",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_package/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/query/images/by_vulnerability",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_vulnerability",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List images vulnerable to the specific vulnerability ID.",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_vulnerability/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible image digests and tags",
+          "source_reference": "anchore.io#/paths/~1summaries~1imagetags/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Image",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "archived",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "archived",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "archived",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1imports~1images/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1images/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1images~1{imageDigest}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "anchore.io#/paths/~1images/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Import",
+        "import"
+      ],
+      "evidence": [
+        {
+          "claim": "/import/images",
+          "source_reference": "anchore.io#/paths/~1import~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Import an anchore image tar.gz archive file. This is a deprecated API replaced by the \"/imports/images\" route",
+          "source_reference": "anchore.io#/paths/~1import~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images",
+          "source_reference": "anchore.io#/paths/~1imports~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Lists in-progress imports",
+          "source_reference": "anchore.io#/paths/~1imports~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Invalidate operation ID so it can be garbage collected",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get detail on a single import",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/dockerfile",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded dockerfiles",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/image_config",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded image configs",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI image config to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/manifest",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded image manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/packages",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded package manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/images/{operation_id}/parent_manifest",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List uploaded parent manifests (manifest lists for a tag)",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest list to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Import",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1imports~1images/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Policy",
+        "policy"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Policy",
+          "source_reference": "anchore.io#/components/schemas/Policy",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/policies",
+          "source_reference": "anchore.io#/paths/~1policies",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List policies",
+          "source_reference": "anchore.io#/paths/~1policies/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a new policy",
+          "source_reference": "anchore.io#/paths/~1policies/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/policies/{policyId}",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get specific policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Describe the policy language spec implemented by this service.",
+          "source_reference": "anchore.io#/paths/~1system~1policy_spec/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Policy",
+      "properties": [
+        {
+          "aliases": [
+            "comment"
+          ],
+          "evidence": [
+            {
+              "claim": "Policy.comment",
+              "source_reference": "anchore.io#/components/schemas/Policy/properties/comment",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Policy.id",
+              "source_reference": "anchore.io#/components/schemas/Policy/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Policy.name",
+              "source_reference": "anchore.io#/components/schemas/Policy/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "rule",
+            "rules"
+          ],
+          "evidence": [
+            {
+              "claim": "Policy.rules",
+              "source_reference": "anchore.io#/components/schemas/Policy/properties/rules",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "rules",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "version"
+          ],
+          "evidence": [
+            {
+              "claim": "Policy.version",
+              "source_reference": "anchore.io#/components/schemas/Policy/properties/version",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "version",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "policyId",
+          "type": "string",
+          "aliases": [
+            "policyId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "anchore.io.openapi.get_policy",
+              "claim": "Inferred property policyId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1policies~1{policyId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1policies~1{policyId}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Registry",
+        "registry"
+      ],
+      "evidence": [
+        {
+          "claim": "/registries",
+          "source_reference": "anchore.io#/paths/~1registries",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List configured registries",
+          "source_reference": "anchore.io#/paths/~1registries/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a new registry",
+          "source_reference": "anchore.io#/paths/~1registries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/registries/{registry}",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update/replace a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Registry",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1registries/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "RegistryConfiguration",
+        "registry configuration",
+        "registry_configuration"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object RegistryConfiguration",
+          "source_reference": "anchore.io#/components/schemas/RegistryConfiguration",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A registry entry describing the endpoint and credentials for a registry to pull images from",
+          "source_reference": "anchore.io#/components/schemas/RegistryConfiguration",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Delete a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update/replace a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "RegistryConfiguration",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.created_at",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last upated",
+            "last_upated"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.last_upated",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/last_upated",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_upated",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "registry"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.registry",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "hostname:port string for accessing the registry, as would be used in a docker pull operation",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "registry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "registry name",
+            "registry_name"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.registry_name",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "human readable name associated with registry record",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "registry_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "registry type",
+            "registry_type"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.registry_type",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of registry",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "registry_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "registry user",
+            "registry_user"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.registry_user",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_user",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Username portion of credential to use for this registry",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "registry_user",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "registry verify",
+            "registry_verify"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.registry_verify",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_verify",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Use TLS/SSL verification for the registry URL",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/registry_verify",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "registry_verify",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "user id",
+            "userId",
+            "user_id"
+          ],
+          "evidence": [
+            {
+              "claim": "RegistryConfiguration.userId",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/userId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Engine user that owns this registry entry",
+              "source_reference": "anchore.io#/components/schemas/RegistryConfiguration/properties/userId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "userId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Repository",
+        "repository"
+      ],
+      "evidence": [
+        {
+          "claim": "/repositories",
+          "source_reference": "anchore.io#/paths/~1repositories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add repository to watch",
+          "source_reference": "anchore.io#/paths/~1repositories/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Repository",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Rule",
+        "rule"
+      ],
+      "evidence": [
+        {
+          "claim": "/archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Rule",
+      "properties": [
+        {
+          "id": "rule_id",
+          "type": "string",
+          "aliases": [
+            "rule_id"
+          ],
+          "required": false,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "anchore.io.openapi.create_analysis_archive_rule",
+              "claim": "Inferred property rule_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Subscription",
+        "subscription"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Subscription",
+          "source_reference": "anchore.io#/components/schemas/Subscription",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Subscription entry",
+          "source_reference": "anchore.io#/components/schemas/Subscription",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/subscriptions",
+          "source_reference": "anchore.io#/paths/~1subscriptions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List all subscriptions",
+          "source_reference": "anchore.io#/paths/~1subscriptions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a subscription of a specific type",
+          "source_reference": "anchore.io#/paths/~1subscriptions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subscriptions/{subscriptionId}",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete subscriptions of a specific type",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific subscription set",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing and specific subscription",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Subscription",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.active",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Is the subscription currently active",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "subscription id",
+            "subscription_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.subscription_id",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "the unique id for this subscription record",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscription_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "subscription key",
+            "subscription_key"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.subscription_key",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_key",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The key value that the subscription references. E.g. a tag value or a repo name.",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_key",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscription_key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "subscription type",
+            "subscription_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.subscription_type",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of the subscription",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscription_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "subscription value",
+            "subscription_value"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.subscription_value",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_value",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The value of the subscription target",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/subscription_value",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscription_value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user id",
+            "userId",
+            "user_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Subscription.userId",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/userId",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The userId of the subscribed user",
+              "source_reference": "anchore.io#/components/schemas/Subscription/properties/userId",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "userId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "id": "subscriptionId",
+          "type": "string",
+          "aliases": [
+            "subscriptionId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "anchore.io.openapi.get_subscription",
+              "claim": "Inferred property subscriptionId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SubscriptionUpdate",
+        "subscription update",
+        "subscription_update"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object SubscriptionUpdate",
+          "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A modification to a subscription entry to change its status or value",
+          "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Update an existing and specific subscription",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SubscriptionUpdate",
+      "properties": [
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "SubscriptionUpdate.active",
+              "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate/properties/active",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Toggle the subscription processing on or off",
+              "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "subscription value",
+            "subscription_value"
+          ],
+          "evidence": [
+            {
+              "claim": "SubscriptionUpdate.subscription_value",
+              "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate/properties/subscription_value",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The new subscription value, e.g. the new tag to be subscribed to",
+              "source_reference": "anchore.io#/components/schemas/SubscriptionUpdate/properties/subscription_value",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subscription_value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "External",
+        "Internal",
+        "Native",
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object User",
+          "source_reference": "anchore.io#/components/schemas/User",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A username for authenticating with one or more types of credentials. User type defines the expected credentials allowed for the user. Native users have passwords, External users have no credential internally. Internal users are service/system users for inter-service communication.",
+          "source_reference": "anchore.io#/components/schemas/User",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List the account for the authenticated user",
+          "source_reference": "anchore.io#/paths/~1account/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List user summaries. Only available to the system admin user.",
+          "source_reference": "anchore.io#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new user. Only avaialble to admin user.",
+          "source_reference": "anchore.io#/paths/~1accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete the specified account, only allowed if the account is in the disabled state. All users will be deleted along with the account and all resources will be garbage collected",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get info about an user. Only available to admin user. Uses the main user Id, not a username.",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update the state of an account to either enabled or disabled. For deletion use the DELETE route",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List accounts for the user",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new user",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users/{username}",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific user credential by username of the credential. Cannot be the credential used to authenticate the request.",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific user in the specified account",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/accounts/{accountname}/users/{username}/credentials",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a credential by type",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get current credential summary",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add/replace credential",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives",
+          "source_reference": "anchore.io#/paths/~1archives/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Performs a synchronous archive deletion",
+          "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns the archive metadata record identifying the image and tags for the analysis in the archive.",
+          "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/rules/{ruleId}",
+          "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete Events",
+          "source_reference": "anchore.io#/paths/~1events/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk mark images for deletion",
+          "source_reference": "anchore.io#/paths/~1images/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible images",
+          "source_reference": "anchore.io#/paths/~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a new image for analysis by the engine",
+          "source_reference": "anchore.io#/paths/~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete image by docker imageId",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lookup image by docker imageId",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type files",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type java",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1java/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content~1{ctype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerabilities by type",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln~1{vtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get image metadata",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check policy evaluation status for image",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1check/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type files",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type java",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1java/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type malware",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1malware/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the content of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content~1{ctype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image metadata types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the metadata of an image by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata~1{mtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get image sbom in the native Anchore format",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1sboms~1native/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerabilities by type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln~1{vtype}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import an anchore image tar.gz archive file. This is a deprecated API replaced by the \"/imports/images\" route",
+          "source_reference": "anchore.io#/paths/~1import~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists in-progress imports",
+          "source_reference": "anchore.io#/paths/~1imports~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Invalidate operation ID so it can be garbage collected",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get detail on a single import",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded dockerfiles",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded image configs",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI image config to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded image manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded package manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Begin the import of an image analyzed by Syft into the system",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded parent manifests (manifest lists for a tag)",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest list to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Request a jwt token for subsequent operations, this request is authenticated with normal HTTP auth",
+          "source_reference": "anchore.io#/paths/~1oauth~1token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a new policy",
+          "source_reference": "anchore.io#/paths/~1policies/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get specific policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update policy",
+          "source_reference": "anchore.io#/paths/~1policies~1{policyId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a new registry",
+          "source_reference": "anchore.io#/paths/~1registries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update/replace a registry configuration",
+          "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Service status",
+          "source_reference": "anchore.io#/paths/~1status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all subscriptions",
+          "source_reference": "anchore.io#/paths/~1subscriptions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete subscriptions of a specific type",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a specific subscription set",
+          "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible image digests and tags",
+          "source_reference": "anchore.io#/paths/~1summaries~1imagetags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "System status",
+          "source_reference": "anchore.io#/paths/~1system/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "list feeds operations and information",
+          "source_reference": "anchore.io#/paths/~1system~1feeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "trigger feeds operations",
+          "source_reference": "anchore.io#/paths/~1system~1feeds/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete the groups and data for the feed and disable the feed itself",
+          "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disable the feed so that it does not sync on subsequent sync operations",
+          "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete the group data and disable the group itself",
+          "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disable a specific group within a feed to not sync",
+          "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List system services",
+          "source_reference": "anchore.io#/paths/~1system~1services/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a service configuration and state",
+          "source_reference": "anchore.io#/paths/~1system~1services~1{servicename}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete the service config",
+          "source_reference": "anchore.io#/paths/~1system~1services~1{servicename}~1{hostid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get service config for a specific host",
+          "source_reference": "anchore.io#/paths/~1system~1services~1{servicename}~1{hostid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Adds the capabilities to test a webhook delivery for the given notification type",
+          "source_reference": "anchore.io#/paths/~1system~1webhooks~1{webhook_type}~1test/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user",
+          "source_reference": "anchore.io#/paths/~1user",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List authenticated user info",
+          "source_reference": "anchore.io#/paths/~1user/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/credentials",
+          "source_reference": "anchore.io#/paths/~1user~1credentials",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get current credential summary",
+          "source_reference": "anchore.io#/paths/~1user~1credentials/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "add/replace credential",
+          "source_reference": "anchore.io#/paths/~1user~1credentials/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "User",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "User.created_at",
+              "source_reference": "anchore.io#/components/schemas/User/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The timestampt the user record was created",
+              "source_reference": "anchore.io#/components/schemas/User/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last updated",
+            "last_updated"
+          ],
+          "evidence": [
+            {
+              "claim": "User.last_updated",
+              "source_reference": "anchore.io#/components/schemas/User/properties/last_updated",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The timestamp of the last update to this record",
+              "source_reference": "anchore.io#/components/schemas/User/properties/last_updated",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_updated",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "source"
+          ],
+          "evidence": [
+            {
+              "claim": "User.source",
+              "source_reference": "anchore.io#/components/schemas/User/properties/source",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If the user is external, this is the source that the user was initialized from. All other user types have this set to null",
+              "source_reference": "anchore.io#/components/schemas/User/properties/source",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "User.type",
+              "source_reference": "anchore.io#/components/schemas/User/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The user's type",
+              "source_reference": "anchore.io#/components/schemas/User/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "username"
+          ],
+          "evidence": [
+            {
+              "claim": "User.username",
+              "source_reference": "anchore.io#/components/schemas/User/properties/username",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The username to authenticate with",
+              "source_reference": "anchore.io#/components/schemas/User/properties/username",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "username",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "archived",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "archived",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "archived",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1archives~1rules/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1imports~1images/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "anchore.io#/paths/~1registries/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1archives~1images~1{imageDigest}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1archives~1rules~1{ruleId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1events/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1images/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1policies~1{policyId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1subscriptions~1{subscriptionId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "anchore.io#/paths/~1system~1services~1{servicename}~1{hostid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "disabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "enabled",
+              "source_reference": "anchore.io#/paths/~1system~1feeds~1{feed}~1{group}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "anchore.io#/paths/~1system~1webhooks~1{webhook_type}~1test/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "anchore.io#/paths/~1images/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1state/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1policies~1{policyId}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "anchore.io#/paths/~1registries~1{registry}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "List",
+        "Vulnerability",
+        "VulnerabilityList",
+        "vulnerability list",
+        "vulnerability_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object VulnerabilityList",
+          "source_reference": "anchore.io#/components/schemas/VulnerabilityList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List of Vulnerability objects",
+          "source_reference": "anchore.io#/components/schemas/VulnerabilityList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List the account for the authenticated user",
+          "source_reference": "anchore.io#/paths/~1account/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List user summaries. Only available to the system admin user.",
+          "source_reference": "anchore.io#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List accounts for the user",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get current credential summary",
+          "source_reference": "anchore.io#/paths/~1accounts~1{accountname}~1users~1{username}~1credentials/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives",
+          "source_reference": "anchore.io#/paths/~1archives/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/images",
+          "source_reference": "anchore.io#/paths/~1archives~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "GET /archives/rules",
+          "source_reference": "anchore.io#/paths/~1archives~1rules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Event Types",
+          "source_reference": "anchore.io#/paths/~1event_types/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Events",
+          "source_reference": "anchore.io#/paths/~1events/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible images",
+          "source_reference": "anchore.io#/paths/~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1by_id~1{imageId}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1file_content_search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1retrieved_files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a list of analyzer artifacts of the specified type",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1artifacts~1secret_search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image content types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1content/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image metadata types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1metadata/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get vulnerability types",
+          "source_reference": "anchore.io#/paths/~1images~1{imageDigest}~1vuln/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists in-progress imports",
+          "source_reference": "anchore.io#/paths/~1imports~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded dockerfiles",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1dockerfile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded image configs",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1image_config/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded image manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded package manifests",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1packages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List uploaded parent manifests (manifest lists for a tag)",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import a docker or OCI distribution manifest list to associate with the image",
+          "source_reference": "anchore.io#/paths/~1imports~1images~1{operation_id}~1parent_manifest/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List policies",
+          "source_reference": "anchore.io#/paths/~1policies/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List of images containing given package",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_package/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List images vulnerable to the specific vulnerability ID.",
+          "source_reference": "anchore.io#/paths/~1query~1images~1by_vulnerability/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Listing information about given vulnerability",
+          "source_reference": "anchore.io#/paths/~1query~1vulnerabilities/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List configured registries",
+          "source_reference": "anchore.io#/paths/~1registries/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all subscriptions",
+          "source_reference": "anchore.io#/paths/~1subscriptions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all visible image digests and tags",
+          "source_reference": "anchore.io#/paths/~1summaries~1imagetags/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "list feeds operations and information",
+          "source_reference": "anchore.io#/paths/~1system~1feeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List system services",
+          "source_reference": "anchore.io#/paths/~1system~1services/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List authenticated user info",
+          "source_reference": "anchore.io#/paths/~1user/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "VulnerabilityList",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

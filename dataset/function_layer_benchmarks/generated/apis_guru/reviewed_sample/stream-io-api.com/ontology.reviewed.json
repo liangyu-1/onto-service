@@ -1,0 +1,3924 @@
+{
+  "metadata": {
+    "name": "stream-io-api.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "stream-io-api.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Action",
+        "action"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Action",
+          "source_reference": "stream-io-api.com#/components/schemas/Action",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/messages/{id}/action",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1action",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Run message command action",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1action/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get reactions",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reactions/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Action",
+      "properties": [
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.name",
+              "source_reference": "stream-io-api.com#/components/schemas/Action/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "style"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.style",
+              "source_reference": "stream-io-api.com#/components/schemas/Action/properties/style",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "style",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.text",
+              "source_reference": "stream-io-api.com#/components/schemas/Action/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.type",
+              "source_reference": "stream-io-api.com#/components/schemas/Action/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "value"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.value",
+              "source_reference": "stream-io-api.com#/components/schemas/Action/properties/value",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "App",
+        "app"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object App",
+          "source_reference": "stream-io-api.com#/components/schemas/App",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/app",
+          "source_reference": "stream-io-api.com#/paths/~1app",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get App Settings",
+          "source_reference": "stream-io-api.com#/paths/~1app/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update App Settings",
+          "source_reference": "stream-io-api.com#/paths/~1app/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "App",
+      "properties": [
+        {
+          "aliases": [
+            "agora option",
+            "agora options",
+            "agora_options"
+          ],
+          "evidence": [
+            {
+              "claim": "App.agora_options",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/agora_options",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "agora_options",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "async url enrich enabled",
+            "async_url_enrich_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "App.async_url_enrich_enabled",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/async_url_enrich_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "async_url_enrich_enabled",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "auto translation enabled",
+            "auto_translation_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "App.auto_translation_enabled",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/auto_translation_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "auto_translation_enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "before message send hook url",
+            "before_message_send_hook_url"
+          ],
+          "evidence": [
+            {
+              "claim": "App.before_message_send_hook_url",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/before_message_send_hook_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "before_message_send_hook_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "campaign enabled",
+            "campaign_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "App.campaign_enabled",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/campaign_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "campaign_enabled",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "cdn expiration second",
+            "cdn expiration seconds",
+            "cdn_expiration_seconds"
+          ],
+          "evidence": [
+            {
+              "claim": "App.cdn_expiration_seconds",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/cdn_expiration_seconds",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cdn_expiration_seconds",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "channel config",
+            "channel configs",
+            "channel_configs"
+          ],
+          "evidence": [
+            {
+              "claim": "App.channel_configs",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/channel_configs",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Object with channel configs",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/channel_configs",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "channel_configs",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "custom action handler url",
+            "custom_action_handler_url"
+          ],
+          "evidence": [
+            {
+              "claim": "App.custom_action_handler_url",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/custom_action_handler_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "custom_action_handler_url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "disable auth check",
+            "disable auth checks",
+            "disable_auth_checks"
+          ],
+          "evidence": [
+            {
+              "claim": "App.disable_auth_checks",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/disable_auth_checks",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "disable_auth_checks",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "disable permissions check",
+            "disable permissions checks",
+            "disable_permissions_checks"
+          ],
+          "evidence": [
+            {
+              "claim": "App.disable_permissions_checks",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/disable_permissions_checks",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "disable_permissions_checks",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "enforce unique username",
+            "enforce unique usernames",
+            "enforce_unique_usernames"
+          ],
+          "evidence": [
+            {
+              "claim": "App.enforce_unique_usernames",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/enforce_unique_usernames",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "enforce_unique_usernames",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "file upload config",
+            "file_upload_config"
+          ],
+          "evidence": [
+            {
+              "claim": "App.file_upload_config",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/file_upload_config",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "file_upload_config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "grant",
+            "grants"
+          ],
+          "evidence": [
+            {
+              "claim": "App.grants",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/grants",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "grants",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "hms option",
+            "hms options",
+            "hms_options"
+          ],
+          "evidence": [
+            {
+              "claim": "App.hms_options",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/hms_options",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "hms_options",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "image moderation enabled",
+            "image_moderation_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "App.image_moderation_enabled",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/image_moderation_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "image_moderation_enabled",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "image moderation label",
+            "image moderation labels",
+            "image_moderation_labels"
+          ],
+          "evidence": [
+            {
+              "claim": "App.image_moderation_labels",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/image_moderation_labels",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "image_moderation_labels",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "image upload config",
+            "image_upload_config"
+          ],
+          "evidence": [
+            {
+              "claim": "App.image_upload_config",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/image_upload_config",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "image_upload_config",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "multi tenant enabled",
+            "multi_tenant_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "App.multi_tenant_enabled",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/multi_tenant_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "multi_tenant_enabled",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "App.name",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "organization"
+          ],
+          "evidence": [
+            {
+              "claim": "App.organization",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/organization",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "organization",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "permission version",
+            "permission_version"
+          ],
+          "evidence": [
+            {
+              "claim": "App.permission_version",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/permission_version",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "permission_version",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "policies",
+            "policy"
+          ],
+          "evidence": [
+            {
+              "claim": "App.policies",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/policies",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "policies",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "push notification",
+            "push notifications",
+            "push_notifications"
+          ],
+          "evidence": [
+            {
+              "claim": "App.push_notifications",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/push_notifications",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "push_notifications",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "reminders interval",
+            "reminders_interval"
+          ],
+          "evidence": [
+            {
+              "claim": "App.reminders_interval",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/reminders_interval",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reminders_interval",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "revoke tokens issued before",
+            "revoke_tokens_issued_before"
+          ],
+          "evidence": [
+            {
+              "claim": "App.revoke_tokens_issued_before",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/revoke_tokens_issued_before",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "revoke_tokens_issued_before",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "search backend",
+            "search_backend"
+          ],
+          "evidence": [
+            {
+              "claim": "App.search_backend",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/search_backend",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Backend implementation used for search",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/search_backend",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "search_backend",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sqs key",
+            "sqs_key"
+          ],
+          "evidence": [
+            {
+              "claim": "App.sqs_key",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/sqs_key",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sqs_key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sqs secret",
+            "sqs_secret"
+          ],
+          "evidence": [
+            {
+              "claim": "App.sqs_secret",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/sqs_secret",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sqs_secret",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sqs url",
+            "sqs_url"
+          ],
+          "evidence": [
+            {
+              "claim": "App.sqs_url",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/sqs_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sqs_url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "suspended"
+          ],
+          "evidence": [
+            {
+              "claim": "App.suspended",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/suspended",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "suspended",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "suspended explanation",
+            "suspended_explanation"
+          ],
+          "evidence": [
+            {
+              "claim": "App.suspended_explanation",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/suspended_explanation",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "suspended_explanation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user search disallowed role",
+            "user search disallowed roles",
+            "user_search_disallowed_roles"
+          ],
+          "evidence": [
+            {
+              "claim": "App.user_search_disallowed_roles",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/user_search_disallowed_roles",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user_search_disallowed_roles",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "video provider",
+            "video_provider"
+          ],
+          "evidence": [
+            {
+              "claim": "App.video_provider",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/video_provider",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "video_provider",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "webhook event",
+            "webhook events",
+            "webhook_events"
+          ],
+          "evidence": [
+            {
+              "claim": "App.webhook_events",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/webhook_events",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "webhook_events",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "webhook url",
+            "webhook_url"
+          ],
+          "evidence": [
+            {
+              "claim": "App.webhook_url",
+              "source_reference": "stream-io-api.com#/components/schemas/App/properties/webhook_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "webhook_url",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1app/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Campaign",
+        "campaign"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Campaign",
+          "source_reference": "stream-io-api.com#/components/schemas/Campaign",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/campaigns",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Query campaigns",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{id}/resume",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1resume",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resume campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1resume/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{id}/schedule",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1schedule",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Schedule campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1schedule/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{id}/stop",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stop campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1stop/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{id}/test",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1test",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Test campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1test/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Campaign",
+      "properties": [
+        {
+          "aliases": [
+            "attachment",
+            "attachments"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.attachments",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/attachments",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "attachments",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "channel type",
+            "channel_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.channel_type",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/channel_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "channel_type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "completed at",
+            "completed_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.completed_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/completed_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "completed_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.created_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "default",
+            "defaults"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.defaults",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/defaults",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "defaults",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.description",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "detail",
+            "details"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.details",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/details",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "details",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "errored message",
+            "errored messages",
+            "errored_messages"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.errored_messages",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/errored_messages",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "errored_messages",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "failed at",
+            "failed_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.failed_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/failed_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "failed_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.id",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.name",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "resumed at",
+            "resumed_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.resumed_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/resumed_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "resumed_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "scheduled at",
+            "scheduled_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.scheduled_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/scheduled_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "scheduled_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "scheduled for",
+            "scheduled_for"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.scheduled_for",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/scheduled_for",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "scheduled_for",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "segment id",
+            "segment_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.segment_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/segment_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "segment_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sender id",
+            "sender_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.sender_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/sender_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sender_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sent message",
+            "sent messages",
+            "sent_messages"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.sent_messages",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/sent_messages",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sent_messages",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.status",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "stopped at",
+            "stopped_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.stopped_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/stopped_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "stopped_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "task id",
+            "task_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.task_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/task_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "task_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.text",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Campaign.updated_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Campaign/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Channel",
+        "ChannelConfigRequest",
+        "channel config request",
+        "channel_config_request"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ChannelConfigRequest",
+          "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Channel configuration overrides",
+          "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Query channels",
+          "source_reference": "stream-io-api.com#/paths/~1channels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deletes channels asynchronously",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mark channels as read",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1read/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get or create channel (type)",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Partially update channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a call",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1call/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send event",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1event/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete file",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1file/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload file",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1file/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Hide channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1hide/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete image",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1image/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload image",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1image/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send new message",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1message/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get many messages",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1messages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get or create channel (type, id)",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mark read",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1read/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Show channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1show/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Stop watching channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1stop-watching/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Truncate channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1truncate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mark unread",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1unread/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List channel types",
+          "source_reference": "stream-io-api.com#/paths/~1channeltypes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create channel type",
+          "source_reference": "stream-io-api.com#/paths/~1channeltypes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete channel type",
+          "source_reference": "stream-io-api.com#/paths/~1channeltypes~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get channel type",
+          "source_reference": "stream-io-api.com#/paths/~1channeltypes~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update channel type",
+          "source_reference": "stream-io-api.com#/paths/~1channeltypes~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export channels",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export channels status",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mute channel",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1mute~1channel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Unmute channel",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1unmute~1channel/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ChannelConfigRequest",
+      "properties": [
+        {
+          "aliases": [
+            "blocklist"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.blocklist",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/blocklist",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "blocklist",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "blocklist behavior",
+            "blocklist_behavior"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.blocklist_behavior",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/blocklist_behavior",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "blocklist_behavior",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "command",
+            "commands"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.commands",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/commands",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "commands",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "grant",
+            "grants"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.grants",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/grants",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "grants",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "max message length",
+            "max_message_length"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.max_message_length",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/max_message_length",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Overrides max message length",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/max_message_length",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "max_message_length",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "quote",
+            "quotes"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.quotes",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/quotes",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables message quotes",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/quotes",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "quotes",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "reaction",
+            "reactions"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.reactions",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/reactions",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables or disables reactions",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/reactions",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reactions",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "replies",
+            "reply"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.replies",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/replies",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables message replies (threads)",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/replies",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "replies",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "typing event",
+            "typing events",
+            "typing_events"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.typing_events",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/typing_events",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables or disables typing events",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/typing_events",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "typing_events",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "upload",
+            "uploads"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.uploads",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/uploads",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables or disables file uploads",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/uploads",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "uploads",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "url enrichment",
+            "url_enrichment"
+          ],
+          "evidence": [
+            {
+              "claim": "ChannelConfigRequest.url_enrichment",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/url_enrichment",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Enables or disables URL enrichment",
+              "source_reference": "stream-io-api.com#/components/schemas/ChannelConfigRequest/properties/url_enrichment",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "url_enrichment",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1call/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channeltypes/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1delete/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1file/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1image/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1channeltypes~1{name}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1channeltypes~1{name}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Device",
+        "device"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Device",
+          "source_reference": "stream-io-api.com#/components/schemas/Device",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/devices",
+          "source_reference": "stream-io-api.com#/paths/~1devices",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete device",
+          "source_reference": "stream-io-api.com#/paths/~1devices/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List devices",
+          "source_reference": "stream-io-api.com#/paths/~1devices/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create device",
+          "source_reference": "stream-io-api.com#/paths/~1devices/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Device",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.created_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of creation",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "disabled"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.disabled",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/disabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether device is disabled or not",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/disabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "disabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "disabled reason",
+            "disabled_reason"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.disabled_reason",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/disabled_reason",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Reason explaining why device had been disabled",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/disabled_reason",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "disabled_reason",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.id",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "push provider",
+            "push_provider"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.push_provider",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/push_provider",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "push_provider",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "push provider name",
+            "push_provider_name"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.push_provider_name",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/push_provider_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "push_provider_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user id",
+            "user_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.user_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Device/properties/user_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user_id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1devices/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1devices/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Export",
+        "export"
+      ],
+      "evidence": [
+        {
+          "claim": "/export/users",
+          "source_reference": "stream-io-api.com#/paths/~1export~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export users",
+          "source_reference": "stream-io-api.com#/paths/~1export~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export channels",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export channels status",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}/export",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export user",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1export/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Export",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "ExportChannel",
+        "export channel",
+        "export_channel"
+      ],
+      "evidence": [
+        {
+          "claim": "/export_channels",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export channels",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/export_channels/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export channels status",
+          "source_reference": "stream-io-api.com#/paths/~1export_channels~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ExportChannel",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Import",
+        "import"
+      ],
+      "evidence": [
+        {
+          "claim": "/imports",
+          "source_reference": "stream-io-api.com#/paths/~1imports",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get import",
+          "source_reference": "stream-io-api.com#/paths/~1imports/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create import",
+          "source_reference": "stream-io-api.com#/paths/~1imports/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/imports/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1imports~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get import",
+          "source_reference": "stream-io-api.com#/paths/~1imports~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Import",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1imports/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Message",
+        "Represents",
+        "message"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Message",
+          "source_reference": "stream-io-api.com#/components/schemas/Message",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Represents any chat message",
+          "source_reference": "stream-io-api.com#/components/schemas/Message",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/channels/{type}/{id}/message",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1message",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send new message",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1message/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/channels/{type}/{id}/messages",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1messages",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get many messages",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1messages/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete message",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get message",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update message",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Partially message update",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/action",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1action",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Run message command action",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1action/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/commit",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1commit",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Commit message",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1commit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/reaction/{type}",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/reactions",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reactions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get reactions",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reactions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/translate",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1translate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Translate message",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1translate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{parent_id}/replies",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{parent_id}~1replies",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get replies",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{parent_id}~1replies/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/moderation/flags/message",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1flags~1message",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Query Message Flags",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1flags~1message/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search messages",
+          "source_reference": "stream-io-api.com#/paths/~1search/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Message",
+      "properties": [
+        {
+          "aliases": [
+            "attachment",
+            "attachments"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.attachments",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/attachments",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Array of message attachments",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/attachments",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "attachments",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "before message send failed",
+            "before_message_send_failed"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.before_message_send_failed",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/before_message_send_failed",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether `before_message_send webhook` failed or not. Field is only accessible in push webhook",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/before_message_send_failed",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "before_message_send_failed",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "cid"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.cid",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/cid",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Channel unique identifier in <type>:<id> format",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/cid",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "command"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.command",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/command",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains provided slash command",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/command",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.created_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of creation",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "deleted at",
+            "deleted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.deleted_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/deleted_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of deletion",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/deleted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "deleted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "html"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.html",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/html",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains HTML markup of the message. Can only be set when using server-side API",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/html",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "html",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "i18n"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.i18n",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/i18n",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Object with translations. Key `language` contains the original language key. Other keys contain translations",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/i18n",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "i18n",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.id",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Message ID is unique string identifier of the message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "image label",
+            "image labels",
+            "image_labels"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.image_labels",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/image_labels",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains image moderation information",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/image_labels",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "image_labels",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "latest reaction",
+            "latest reactions",
+            "latest_reactions"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.latest_reactions",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/latest_reactions",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of 10 latest reactions to this message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/latest_reactions",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "latest_reactions",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "mentioned user",
+            "mentioned users",
+            "mentioned_users"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.mentioned_users",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/mentioned_users",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of mentioned users",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/mentioned_users",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "mentioned_users",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "mml"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.mml",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/mml",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Should be empty if `text` is provided. Can only be set when using server-side API",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/mml",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "mml",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "own reaction",
+            "own reactions",
+            "own_reactions"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.own_reactions",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/own_reactions",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of 10 latest reactions of authenticated user to this message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/own_reactions",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "own_reactions",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "parent id",
+            "parent_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.parent_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/parent_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of parent message (thread)",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/parent_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "parent_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pin expire",
+            "pin expires",
+            "pin_expires"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.pin_expires",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pin_expires",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date when pinned message expires",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pin_expires",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pin_expires",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pinned"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.pinned",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether message is pinned or not",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pinned",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "pinned at",
+            "pinned_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.pinned_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date when message got pinned",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pinned_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pinned by",
+            "pinned_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.pinned_by",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned_by",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains user who pinned the message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/pinned_by",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pinned_by",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "quoted message",
+            "quoted_message"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.quoted_message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/quoted_message",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains quoted message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/quoted_message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "quoted_message",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "quoted message id",
+            "quoted_message_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.quoted_message_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/quoted_message_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "quoted_message_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "reaction count",
+            "reaction counts",
+            "reaction_counts"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.reaction_counts",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reaction_counts",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "An object containing number of reactions of each type. Key: reaction type (string), value: number of reactions (int)",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reaction_counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reaction_counts",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "reaction score",
+            "reaction scores",
+            "reaction_scores"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.reaction_scores",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reaction_scores",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "An object containing scores of reactions of each type. Key: reaction type (string), value: total score of reactions (int)",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reaction_scores",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reaction_scores",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "reply count",
+            "reply_count"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.reply_count",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reply_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of replies to this message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/reply_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reply_count",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "shadowed"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.shadowed",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/shadowed",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether the message was shadowed or not",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/shadowed",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "shadowed",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "show in channel",
+            "show_in_channel"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.show_in_channel",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/show_in_channel",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether thread reply should be shown in the channel as well",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/show_in_channel",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "show_in_channel",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "silent"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.silent",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/silent",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether message is silent or not",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/silent",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "silent",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.text",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/text",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Text of the message. Should be empty if `mml` is provided",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "thread participant",
+            "thread participants",
+            "thread_participants"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.thread_participants",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/thread_participants",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of users who participate in thread",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/thread_participants",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "thread_participants",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.type",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Contains type of the message",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.updated_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of the last update",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "Message.user",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/user",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Sender of the message. Required when using server-side API",
+              "source_reference": "stream-io-api.com#/components/schemas/Message/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Permission",
+        "permission"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Permission",
+          "source_reference": "stream-io-api.com#/components/schemas/Permission",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/permissions",
+          "source_reference": "stream-io-api.com#/paths/~1permissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List permissions",
+          "source_reference": "stream-io-api.com#/paths/~1permissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/permissions/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1permissions~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get permission",
+          "source_reference": "stream-io-api.com#/paths/~1permissions~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Permission",
+      "properties": [
+        {
+          "aliases": [
+            "action"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.action",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/action",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Action name this permission is for (e.g. SendMessage)",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/action",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "action",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "condition"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.condition",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/condition",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "MongoDB style condition which decides whether or not the permission is granted",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/condition",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "custom"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.custom",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/custom",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this is a custom permission or built-in",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/custom",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "custom",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.description",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Description of the permission",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.id",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique permission ID",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "level"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.level",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/level",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Level at which permission could be applied (app or channel)",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/level",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "level",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.name",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the permission",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.owner",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/owner",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this permission applies to resource owner or not",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "same team",
+            "same_team"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.same_team",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/same_team",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this permission applies to teammates (multi-tenancy mode only)",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/same_team",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "same_team",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "Permission.tags",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/tags",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of tags of the permission",
+              "source_reference": "stream-io-api.com#/components/schemas/Permission/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": true,
+          "type": "array"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Query",
+        "query"
+      ],
+      "evidence": [
+        {
+          "claim": "/channels/{type}/query",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get or create channel (type)",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/channels/{type}/{id}/query",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1query",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get or create channel (type, id)",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1query/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query members",
+          "source_reference": "stream-io-api.com#/paths/~1members/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query Message Flags",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1flags~1message/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query Banned Users",
+          "source_reference": "stream-io-api.com#/paths/~1query_banned_users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query recipients",
+          "source_reference": "stream-io-api.com#/paths/~1recipients/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query segments",
+          "source_reference": "stream-io-api.com#/paths/~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query users",
+          "source_reference": "stream-io-api.com#/paths/~1users/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Query",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1query/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1query/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Reaction",
+        "Represents",
+        "reaction"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Reaction",
+          "source_reference": "stream-io-api.com#/components/schemas/Reaction",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Represents user reaction to a message",
+          "source_reference": "stream-io-api.com#/components/schemas/Reaction",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/messages/{id}/reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/reaction/{type}",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete reaction",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/messages/{id}/reactions",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reactions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get reactions",
+          "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reactions/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Reaction",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.created_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of creation",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "message id",
+            "message_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.message_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/message_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of a message user reacted to",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/message_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "message_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "score"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.score",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/score",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Reaction score. If not specified reaction has score of 1",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/score",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "score",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.type",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of reaction (e.g. 'like', 'laugh', 'wow')",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.updated_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date/time of the last update",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.user",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "user id",
+            "user_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Reaction.user_id",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/user_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of a user who reacted to a message",
+              "source_reference": "stream-io-api.com#/components/schemas/Reaction/properties/user_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user_id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1messages~1{id}~1reaction~1{type}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Resume",
+        "resume"
+      ],
+      "evidence": [
+        {
+          "claim": "/campaigns/{id}/resume",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1resume",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resume campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1resume/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Resume",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Schedule",
+        "schedule"
+      ],
+      "evidence": [
+        {
+          "claim": "/campaigns/{id}/schedule",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1schedule",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Schedule campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1schedule/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Schedule",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Segment",
+        "segment"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Segment",
+          "source_reference": "stream-io-api.com#/components/schemas/Segment",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/segments",
+          "source_reference": "stream-io-api.com#/paths/~1segments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Query segments",
+          "source_reference": "stream-io-api.com#/paths/~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create segment",
+          "source_reference": "stream-io-api.com#/paths/~1segments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/segments/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1segments~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete segment",
+          "source_reference": "stream-io-api.com#/paths/~1segments~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update segment",
+          "source_reference": "stream-io-api.com#/paths/~1segments~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Segment",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.created_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.description",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "filter"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.filter",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/filter",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "filter",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.id",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "in use",
+            "in_use"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.in_use",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/in_use",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "in_use",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.name",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "size"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.size",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/size",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "size",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.status",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.type",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Segment.updated_at",
+              "source_reference": "stream-io-api.com#/components/schemas/Segment/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "stream-io-api.com#/paths/~1segments/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1segments~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1segments~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Stop",
+        "stop"
+      ],
+      "evidence": [
+        {
+          "claim": "/campaigns/{id}/stop",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stop campaign",
+          "source_reference": "stream-io-api.com#/paths/~1campaigns~1{id}~1stop/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Stop watching channel",
+          "source_reference": "stream-io-api.com#/paths/~1channels~1{type}~1{id}~1stop-watching/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Stop",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Task",
+        "task"
+      ],
+      "evidence": [
+        {
+          "claim": "/tasks/{id}",
+          "source_reference": "stream-io-api.com#/paths/~1tasks~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get status of a task",
+          "source_reference": "stream-io-api.com#/paths/~1tasks~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Task",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "/export/users",
+          "source_reference": "stream-io-api.com#/paths/~1export~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export users",
+          "source_reference": "stream-io-api.com#/paths/~1export~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Unban user",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1ban/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Ban user",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1ban/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mute user",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1mute/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Unmute user",
+          "source_reference": "stream-io-api.com#/paths/~1moderation~1unmute/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Query Banned Users",
+          "source_reference": "stream-io-api.com#/paths/~1query_banned_users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users",
+          "source_reference": "stream-io-api.com#/paths/~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Query users",
+          "source_reference": "stream-io-api.com#/paths/~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Partially update user",
+          "source_reference": "stream-io-api.com#/paths/~1users/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upsert users",
+          "source_reference": "stream-io-api.com#/paths/~1users/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/deactivate",
+          "source_reference": "stream-io-api.com#/paths/~1users~1deactivate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deactivate users",
+          "source_reference": "stream-io-api.com#/paths/~1users~1deactivate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/delete",
+          "source_reference": "stream-io-api.com#/paths/~1users~1delete",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Users",
+          "source_reference": "stream-io-api.com#/paths/~1users~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/reactivate",
+          "source_reference": "stream-io-api.com#/paths/~1users~1reactivate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Reactivate users",
+          "source_reference": "stream-io-api.com#/paths/~1users~1reactivate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/restore",
+          "source_reference": "stream-io-api.com#/paths/~1users~1restore",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Restore users",
+          "source_reference": "stream-io-api.com#/paths/~1users~1restore/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete user",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}/deactivate",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1deactivate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deactivate user",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1deactivate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}/event",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1event",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send user event",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1event/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}/export",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export user",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/users/{user_id}/reactivate",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1reactivate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Reactivate user",
+          "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}~1reactivate/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "User",
+      "properties": [
+        {
+          "id": "user_id",
+          "type": "string",
+          "aliases": [
+            "user_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "stream-io-api.com.openapi.get_users_user_id_export",
+              "claim": "Inferred property user_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1users~1delete/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "stream-io-api.com#/paths/~1users~1{user_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1users/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "stream-io-api.com#/paths/~1users/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

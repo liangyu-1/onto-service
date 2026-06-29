@@ -1,0 +1,1213 @@
+{
+  "metadata": {
+    "name": "mailscript.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "mailscript.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Action",
+        "action"
+      ],
+      "evidence": [
+        {
+          "claim": "/actions",
+          "source_reference": "mailscript.com#/paths/~1actions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all actions for the user",
+          "source_reference": "mailscript.com#/paths/~1actions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add an action",
+          "source_reference": "mailscript.com#/paths/~1actions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/actions/{action}",
+          "source_reference": "mailscript.com#/paths/~1actions~1{action}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an action",
+          "source_reference": "mailscript.com#/paths/~1actions~1{action}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an action key",
+          "source_reference": "mailscript.com#/paths/~1actions~1{action}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Action",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1actions~1{action}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1actions~1{action}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Address",
+        "address"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Address",
+          "source_reference": "mailscript.com#/components/schemas/Address",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/addresses",
+          "source_reference": "mailscript.com#/paths/~1addresses",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all addresses you have access to",
+          "source_reference": "mailscript.com#/paths/~1addresses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Claim a new Mailscript address",
+          "source_reference": "mailscript.com#/paths/~1addresses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/addresses/{address}",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a mailscript address",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/addresses/{address}/keys",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List address keys",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/addresses/{address}/keys/{key}",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Start verification process for external email address or sms number",
+          "source_reference": "mailscript.com#/paths/~1verifications/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Verify an email address or sms number with a code",
+          "source_reference": "mailscript.com#/paths/~1verifications~1{verification}~1verify/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Address",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.createdAt",
+              "source_reference": "mailscript.com#/components/schemas/Address/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created by",
+            "createdBy",
+            "created_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.createdBy",
+              "source_reference": "mailscript.com#/components/schemas/Address/properties/createdBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdBy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "display name",
+            "displayName",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.displayName",
+              "source_reference": "mailscript.com#/components/schemas/Address/properties/displayName",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "displayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.id",
+              "source_reference": "mailscript.com#/components/schemas/Address/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.owner",
+              "source_reference": "mailscript.com#/components/schemas/Address/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1addresses~1{address}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Domain",
+        "domain"
+      ],
+      "evidence": [
+        {
+          "claim": "/domains",
+          "source_reference": "mailscript.com#/paths/~1domains",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all domains you have access to",
+          "source_reference": "mailscript.com#/paths/~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Claim a new Domain",
+          "source_reference": "mailscript.com#/paths/~1domains/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/domains/verify/{domain}",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get domain verification",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check a new Domain",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/domains/{domain}",
+          "source_reference": "mailscript.com#/paths/~1domains~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a domain",
+          "source_reference": "mailscript.com#/paths/~1domains~1{domain}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Domain",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "mailscript.com#/paths/~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Input",
+        "input"
+      ],
+      "evidence": [
+        {
+          "claim": "/inputs",
+          "source_reference": "mailscript.com#/paths/~1inputs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all inputs you have access to",
+          "source_reference": "mailscript.com#/paths/~1inputs/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send an email",
+          "source_reference": "mailscript.com#/paths/~1send/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all triggers you have access to",
+          "source_reference": "mailscript.com#/paths/~1triggers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Setup a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all workflows you have access to",
+          "source_reference": "mailscript.com#/paths/~1workflows/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Setup workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get all workspaces you have access to",
+          "source_reference": "mailscript.com#/paths/~1workspaces/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Claim a Mailscript workspace",
+          "source_reference": "mailscript.com#/paths/~1workspaces/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Input",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Integration",
+        "integration"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Integration",
+          "source_reference": "mailscript.com#/components/schemas/Integration",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/integrations",
+          "source_reference": "mailscript.com#/paths/~1integrations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all integrations for the user",
+          "source_reference": "mailscript.com#/paths/~1integrations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/integrations/{integration}",
+          "source_reference": "mailscript.com#/paths/~1integrations~1{integration}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an integration",
+          "source_reference": "mailscript.com#/paths/~1integrations~1{integration}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Integration",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Integration.createdAt",
+              "source_reference": "mailscript.com#/components/schemas/Integration/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Integration.id",
+              "source_reference": "mailscript.com#/components/schemas/Integration/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Integration.type",
+              "source_reference": "mailscript.com#/components/schemas/Integration/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1integrations~1{integration}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Key",
+        "key"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Key",
+          "source_reference": "mailscript.com#/components/schemas/Key",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Delete an action",
+          "source_reference": "mailscript.com#/paths/~1actions~1{action}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an action key",
+          "source_reference": "mailscript.com#/paths/~1actions~1{action}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/addresses/{address}/keys",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List address keys",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/addresses/{address}/keys/{key}",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an address key",
+          "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an integration",
+          "source_reference": "mailscript.com#/paths/~1integrations~1{integration}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Set a property on a workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1set/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Key",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.createdAt",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created by",
+            "createdBy",
+            "created_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.createdBy",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/createdBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdBy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.id",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.name",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "read"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.read",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/read",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "read",
+          "required": true,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "write"
+          ],
+          "evidence": [
+            {
+              "claim": "Key.write",
+              "source_reference": "mailscript.com#/components/schemas/Key/properties/write",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "write",
+          "required": true,
+          "type": "boolean"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1actions~1{action}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1integrations~1{integration}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1actions~1{action}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1addresses~1{address}~1keys~1{key}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Trigger",
+        "trigger"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Trigger",
+          "source_reference": "mailscript.com#/components/schemas/Trigger",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/triggers",
+          "source_reference": "mailscript.com#/paths/~1triggers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all triggers you have access to",
+          "source_reference": "mailscript.com#/paths/~1triggers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Setup a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/triggers/{trigger}",
+          "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a trigger",
+          "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Trigger",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.createdAt",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created by",
+            "createdBy",
+            "created_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.createdBy",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/createdBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdBy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "criteria"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.criteria",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/criteria",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "criteria",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "display name",
+            "displayName",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.displayName",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/displayName",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "displayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.id",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.name",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Trigger.owner",
+              "source_reference": "mailscript.com#/components/schemas/Trigger/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1triggers~1{trigger}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Verify",
+        "verify"
+      ],
+      "evidence": [
+        {
+          "claim": "/domains/verify/{domain}",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get domain verification",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Check a new Domain",
+          "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove a domain",
+          "source_reference": "mailscript.com#/paths/~1domains~1{domain}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/verifications/{verification}/verify",
+          "source_reference": "mailscript.com#/paths/~1verifications~1{verification}~1verify",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Verify an email address or sms number with a code",
+          "source_reference": "mailscript.com#/paths/~1verifications~1{verification}~1verify/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Verify",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "mailscript.com#/paths/~1domains~1verify~1{domain}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "mailscript.com#/paths/~1domains~1{domain}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Workflow",
+        "workflow"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Workflow",
+          "source_reference": "mailscript.com#/components/schemas/Workflow",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/workflows",
+          "source_reference": "mailscript.com#/paths/~1workflows",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all workflows you have access to",
+          "source_reference": "mailscript.com#/paths/~1workflows/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Setup workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/workflows/set",
+          "source_reference": "mailscript.com#/paths/~1workflows~1set",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Set a property on a workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1set/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/workflows/{workflow}",
+          "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an workflow",
+          "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Workflow",
+      "properties": [
+        {
+          "aliases": [
+            "action"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.action",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/action",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "action",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "active"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.active",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/active",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "active",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.createdAt",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created by",
+            "createdBy",
+            "created_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.createdBy",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/createdBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdBy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.id",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "input"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.input",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/input",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "input",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.name",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.owner",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "trigger"
+          ],
+          "evidence": [
+            {
+              "claim": "Workflow.trigger",
+              "source_reference": "mailscript.com#/components/schemas/Workflow/properties/trigger",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "trigger",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "mailscript.com#/paths/~1workflows~1{workflow}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

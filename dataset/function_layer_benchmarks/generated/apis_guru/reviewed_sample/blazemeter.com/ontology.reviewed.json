@@ -1,0 +1,9 @@
+{
+  "metadata": {
+    "name": "blazemeter.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "blazemeter.com"
+  },
+  "object_types": []
+}

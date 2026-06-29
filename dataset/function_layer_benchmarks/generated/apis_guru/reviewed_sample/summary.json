@@ -1,0 +1,7 @@
+{
+  "selected_apis": 50,
+  "reviewed_overlays": 539,
+  "reviewed_object_types": 412,
+  "gold_functions": 539,
+  "output_root": "dataset/function_layer_benchmarks/generated/apis_guru/reviewed_sample"
+}

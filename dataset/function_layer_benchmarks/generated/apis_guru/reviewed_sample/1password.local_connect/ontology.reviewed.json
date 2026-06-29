@@ -1,0 +1,871 @@
+{
+  "metadata": {
+    "name": "1password.local_connect_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "1password.local_connect"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "File",
+        "file"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object File",
+          "source_reference": "1password.local_connect#/components/schemas/File",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all the files inside an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the details of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "File",
+      "properties": [
+        {
+          "aliases": [
+            "content"
+          ],
+          "evidence": [
+            {
+              "claim": "File.content",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/content",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Base64-encoded contents of the file. Only set if size <= OP_MAX_INLINE_FILE_SIZE_KB kb and `inline_files` is set to `true`.",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/content",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "content path",
+            "content_path"
+          ],
+          "evidence": [
+            {
+              "claim": "File.content_path",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/content_path",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Path of the Connect API that can be used to download the contents of this file.",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/content_path",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "content_path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "File.id",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of the file",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "File.name",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the file",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "section"
+          ],
+          "evidence": [
+            {
+              "claim": "File.section",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/section",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "For files that are in a section, this field describes the section.",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/section",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "section",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "size"
+          ],
+          "evidence": [
+            {
+              "claim": "File.size",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/size",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Size in bytes of the file",
+              "source_reference": "1password.local_connect#/components/schemas/File/properties/size",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "size",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "id": "fileUuid",
+          "type": "string",
+          "aliases": [
+            "fileUuid"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "1password.local_connect.openapi.get_details_of_file_by_id",
+              "claim": "Inferred property fileUuid from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Item",
+        "item"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Item",
+          "source_reference": "1password.local_connect#/components/schemas/Item",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all items for inside a Vault",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a subset of Item attributes",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all the files inside an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the details of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Item",
+      "properties": [
+        {
+          "aliases": [
+            "category"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.category",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/category",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.createdAt",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "favorite"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.favorite",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/favorite",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "favorite",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.id",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last edited by",
+            "lastEditedBy",
+            "last_edited_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.lastEditedBy",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/lastEditedBy",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "lastEditedBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.state",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.tags",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "title"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.title",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/title",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updatedAt",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.updatedAt",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/updatedAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updatedAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "url",
+            "urls"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.urls",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/urls",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "urls",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "vault"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.vault",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/vault",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "vault",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "version"
+          ],
+          "evidence": [
+            {
+              "claim": "Item.version",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/version",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "version",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "id": "itemUuid",
+          "type": "string",
+          "aliases": [
+            "itemUuid"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "1password.local_connect.openapi.get_vault_item_by_id",
+              "claim": "Inferred property itemUuid from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "archived",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "archived",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "1password.local_connect#/components/schemas/Item/properties/state",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Vault",
+        "vault"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Vault",
+          "source_reference": "1password.local_connect#/components/schemas/Vault",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/vaults",
+          "source_reference": "1password.local_connect#/paths/~1vaults",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all Vaults",
+          "source_reference": "1password.local_connect#/paths/~1vaults/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Vault details and metadata",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all items for inside a Vault",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a subset of Item attributes",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all the files inside an Item",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the details of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the content of a File",
+          "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}~1files~1{fileUuid}~1content/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Vault",
+      "properties": [
+        {
+          "aliases": [
+            "attribute version",
+            "attributeVersion",
+            "attribute_version"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.attributeVersion",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/attributeVersion",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The vault version",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/attributeVersion",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "attributeVersion",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "content version",
+            "contentVersion",
+            "content_version"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.contentVersion",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/contentVersion",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The version of the vault contents",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/contentVersion",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "contentVersion",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "created at",
+            "createdAt",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.createdAt",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/createdAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "createdAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.description",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.id",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "item",
+            "items"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.items",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/items",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of active items in the vault",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/items",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "items",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.name",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.type",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updatedAt",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Vault.updatedAt",
+              "source_reference": "1password.local_connect#/components/schemas/Vault/properties/updatedAt",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updatedAt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "id": "vaultUuid",
+          "type": "string",
+          "aliases": [
+            "vaultUuid"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "1password.local_connect.openapi.get_vault_by_id",
+              "claim": "Inferred property vaultUuid from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "1password.local_connect#/paths/~1vaults~1{vaultUuid}~1items~1{itemUuid}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

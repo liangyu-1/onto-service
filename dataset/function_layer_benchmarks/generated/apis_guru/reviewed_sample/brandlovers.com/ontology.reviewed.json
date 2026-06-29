@@ -1,0 +1,467 @@
+{
+  "metadata": {
+    "name": "brandlovers.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "brandlovers.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Order",
+        "order"
+      ],
+      "evidence": [
+        {
+          "claim": "/order/{orderId}",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns all details of a order",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/cancel",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm shipment canceletion (when requested by the customer) or failure to deliver",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/delivered",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1delivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirms that a shipment was delivered",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1delivered/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/exchange",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm item exchange",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/return",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm order item return and refund",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/sent",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update new order to include shipment information",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders",
+          "source_reference": "brandlovers.com#/paths/~1orders",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns orders details",
+          "source_reference": "brandlovers.com#/paths/~1orders/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/shipments/delivered",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns list of shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk update of order shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/shipments/shipped",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of shipments shipped",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk update of order shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/approved",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1approved",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Return list of approved orders",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1approved/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/canceled",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1canceled",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns lists of canceled orders",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1canceled/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/delivered",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1delivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of orders successfully delivered associated with this seller.",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1delivered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/new",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1new",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of orders flagged as new.",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1new/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/partiallyDelivered",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1partiallyDelivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of partially deliverd orders",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1partiallyDelivered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/partiallySent",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1partiallySent",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of orders partially fullfiled",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1partiallySent/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/status/sent",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1sent",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list with orders fully sent",
+          "source_reference": "brandlovers.com#/paths/~1orders~1status~1sent/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Order",
+      "properties": [
+        {
+          "id": "orderId",
+          "type": "string",
+          "aliases": [
+            "orderId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "brandlovers.com.openapi.post_order_order_id_shipment_cancel",
+              "claim": "Inferred property orderId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "approved",
+              "source_reference": "brandlovers.com#/paths/~1orders~1status~1approved/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "approved",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "canceled",
+              "source_reference": "brandlovers.com#/paths/~1orders~1status~1canceled/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "canceled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "cancelled",
+              "source_reference": "brandlovers.com#/paths/~1orders~1status~1canceled/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "shipped",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "shipped",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "shipped",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Shipment",
+        "shipment"
+      ],
+      "evidence": [
+        {
+          "claim": "/order/{orderId}/shipment/cancel",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm shipment canceletion (when requested by the customer) or failure to deliver",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/delivered",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1delivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirms that a shipment was delivered",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1delivered/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/exchange",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm item exchange",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/return",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Confirm order item return and refund",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/order/{orderId}/shipment/sent",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update new order to include shipment information",
+          "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/shipments/delivered",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns list of shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk update of order shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/shipments/shipped",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of shipments shipped",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk update of order shipments",
+          "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Shipment",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1exchange/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1return/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "shipped",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "shipped",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "shipped",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1order~1{orderId}~1shipment~1sent/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1delivered/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "brandlovers.com#/paths/~1orders~1shipments~1shipped/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3624 @@
+{
+  "metadata": {
+    "name": "shutterstock.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "shutterstock.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "AccessToken",
+        "access token",
+        "access_token"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/oauth/access_token",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get access tokens",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/user/access_token",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user~1access_token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get access token details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user~1access_token/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccessToken",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Ai",
+        "ai"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/ai/audio/descriptors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1descriptors",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List computer audio descriptors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1descriptors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/ai/audio/instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1instruments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List computer audio instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1instruments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/ai/audio/renders",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get details about audio renders",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create rendered audio",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about multiple contributors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about a single contributor",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial video content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get user details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get access token details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user~1access_token/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Ai",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Catalog",
+        "CatalogCollection",
+        "catalog collection",
+        "catalog_collection"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CatalogCollection",
+          "source_reference": "shutterstock.com#/components/schemas/CatalogCollection",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Catalog collection",
+          "source_reference": "shutterstock.com#/components/schemas/CatalogCollection",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update collection metadata",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove items from catalog collection",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add items to catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search catalogs for assets",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1search/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CatalogCollection",
+      "properties": [
+        {
+          "aliases": [
+            "cover asset",
+            "cover_asset"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.cover_asset",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/cover_asset",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cover_asset",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created time",
+            "created_time"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.created_time",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/created_time",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_time",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.id",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.name",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "role assignment",
+            "role assignments",
+            "role_assignments"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.role_assignments",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/role_assignments",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "role_assignments",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "total item count",
+            "total_item_count"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.total_item_count",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/total_item_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "total_item_count",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "updated time",
+            "updated_time"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.updated_time",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/updated_time",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_time",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "visibility"
+          ],
+          "evidence": [
+            {
+              "claim": "CatalogCollection.visibility",
+              "source_reference": "shutterstock.com#/components/schemas/CatalogCollection/properties/visibility",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "visibility",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Collection",
+        "CollectionUpdateRequest",
+        "collection update request",
+        "collection_update_request"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CollectionUpdateRequest",
+          "source_reference": "shutterstock.com#/components/schemas/CollectionUpdateRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Collection update request",
+          "source_reference": "shutterstock.com#/components/schemas/CollectionUpdateRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove audio tracks from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add audio tracks to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update collection metadata",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove items from catalog collection",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add items to catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the items in contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove images from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add images to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove videos from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add videos to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CollectionUpdateRequest",
+      "properties": [
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "CollectionUpdateRequest.name",
+              "source_reference": "shutterstock.com#/components/schemas/CollectionUpdateRequest/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The new name of the collection",
+              "source_reference": "shutterstock.com#/components/schemas/CollectionUpdateRequest/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Contributor",
+        "ContributorProfileSocialMedia",
+        "contributor profile social media",
+        "contributor_profile_social_media"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ContributorProfileSocialMedia",
+          "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Contributor profile social media links",
+          "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get details about multiple contributors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about a single contributor",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the items in contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ContributorProfileSocialMedia",
+      "properties": [
+        {
+          "aliases": [
+            "facebook"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.facebook",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/facebook",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Facebook link for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/facebook",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "facebook",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "google plu",
+            "google plus",
+            "google_plus"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.google_plus",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/google_plus",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Google+ link for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/google_plus",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "google_plus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "linkedin"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.linkedin",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/linkedin",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "LinkedIn link for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/linkedin",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "linkedin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "pinterest"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.pinterest",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/pinterest",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Pinterest page for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/pinterest",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "pinterest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "tumblr"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.tumblr",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/tumblr",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Tumblr link for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/tumblr",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tumblr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "twitter"
+          ],
+          "evidence": [
+            {
+              "claim": "ContributorProfileSocialMedia.twitter",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/twitter",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Twitter link for contributor",
+              "source_reference": "shutterstock.com#/components/schemas/ContributorProfileSocialMedia/properties/twitter",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "twitter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Cv",
+        "cv"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/cv/images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Upload images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cv/keywords",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1keywords",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List suggested keywords",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1keywords/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cv/similar/images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cv/similar/videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Cv",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "EditorialLivefeed",
+        "Metadata",
+        "editorial livefeed",
+        "editorial_livefeed"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object EditorialLivefeed",
+          "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Metadata about editorial livefeed",
+          "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Update collection metadata",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EditorialLivefeed",
+      "properties": [
+        {
+          "aliases": [
+            "cover item",
+            "cover_item"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialLivefeed.cover_item",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/cover_item",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cover_item",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created time",
+            "created_time"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialLivefeed.created_time",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/created_time",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When the livefeed was initially created",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/created_time",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_time",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialLivefeed.id",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Livefeed ID",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialLivefeed.name",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the livefeed",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "total item count",
+            "total_item_count"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialLivefeed.total_item_count",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/total_item_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Total count of items in the livefeed",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialLivefeed/properties/total_item_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "total_item_count",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections~1{collection_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Editorial",
+        "EditorialVideoSearchResults",
+        "editorial video search result",
+        "editorial video search results",
+        "editorial_video_search_results"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object EditorialVideoSearchResults",
+          "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Editorial search results",
+          "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "(Deprecated) List editorial categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial image licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) License editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Search editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License editorial video content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial video content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial video content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EditorialVideoSearchResults",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.data",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Editorial items",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "message"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.message",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/message",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Optional error message",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "next"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.next",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/next",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Cursor value that represents the next page of results",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/next",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "page"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.page",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Current page of the response",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "page",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "per page",
+            "per_page"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.per_page",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/per_page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of results per page",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/per_page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "per_page",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "prev"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.prev",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/prev",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Cursor value that represents the previous page of results",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/prev",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prev",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "search id",
+            "search_id"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.search_id",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/search_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Unique identifier for the search request",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/search_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "search_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "total count",
+            "total_count"
+          ],
+          "evidence": [
+            {
+              "claim": "EditorialVideoSearchResults.total_count",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/total_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Total count of all results",
+              "source_reference": "shutterstock.com#/components/schemas/EditorialVideoSearchResults/properties/total_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "total_count",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Keyword",
+        "keyword"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/cv/keywords",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1keywords",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List suggested keywords",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1keywords/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get keywords from text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Keyword",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Audio",
+        "LicenseAudioRequest",
+        "license audio request",
+        "license_audio_request"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object LicenseAudioRequest",
+          "source_reference": "shutterstock.com#/components/schemas/LicenseAudioRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Audio license request data",
+          "source_reference": "shutterstock.com#/components/schemas/LicenseAudioRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List computer audio descriptors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1descriptors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List computer audio instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1instruments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about audio renders",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create rendered audio",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove audio tracks from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add audio tracks to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio genres",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1genres/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1instruments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1licenses~1{id}~1downloads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio moods",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1moods/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "LicenseAudioRequest",
+      "properties": [
+        {
+          "aliases": [
+            "audio"
+          ],
+          "evidence": [
+            {
+              "claim": "LicenseAudioRequest.audio",
+              "source_reference": "shutterstock.com#/components/schemas/LicenseAudioRequest/properties/audio",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "List of audio tracks to license",
+              "source_reference": "shutterstock.com#/components/schemas/LicenseAudioRequest/properties/audio",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "audio",
+          "required": true,
+          "type": "array"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Livefeed",
+        "livefeed"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/editorial/images/livefeeds",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/editorial/images/livefeeds/{id}",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/editorial/images/livefeeds/{id}/items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}~1items",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/editorial/livefeeds",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/editorial/livefeeds/{id}",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/editorial/livefeeds/{id}/items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}~1items",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Livefeed",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Oauth",
+        "oauth"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/oauth/access_token",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get access tokens",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/oauth/authorize",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1authorize",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Authorize applications",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1authorize/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Oauth",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Access",
+        "OauthAccessTokenResponse",
+        "oauth access token response",
+        "oauth_access_token_response"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object OauthAccessTokenResponse",
+          "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Access token response to client apps",
+          "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get access tokens",
+          "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get access token details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user~1access_token/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "OauthAccessTokenResponse",
+      "properties": [
+        {
+          "aliases": [
+            "access token",
+            "access_token"
+          ],
+          "evidence": [
+            {
+              "claim": "OauthAccessTokenResponse.access_token",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/access_token",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Access token that can be used for future requests",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/access_token",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "access_token",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "expires in",
+            "expires_in"
+          ],
+          "evidence": [
+            {
+              "claim": "OauthAccessTokenResponse.expires_in",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/expires_in",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of seconds before token expires, only present for expiring tokens",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/expires_in",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "expires_in",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "refresh token",
+            "refresh_token"
+          ],
+          "evidence": [
+            {
+              "claim": "OauthAccessTokenResponse.refresh_token",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/refresh_token",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A refresh token that can be used to renew the access_token when it expires, only present for expiring tokens",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/refresh_token",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "refresh_token",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "token type",
+            "token_type"
+          ],
+          "evidence": [
+            {
+              "claim": "OauthAccessTokenResponse.token_type",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/token_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of token",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/token_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "token_type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user token",
+            "user_token"
+          ],
+          "evidence": [
+            {
+              "claim": "OauthAccessTokenResponse.user_token",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/user_token",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Metadata about the access_token, only present for expiring tokens",
+              "source_reference": "shutterstock.com#/components/schemas/OauthAccessTokenResponse/properties/user_token",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user_token",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1oauth~1access_token/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Media Recommendation",
+        "Recommendation",
+        "recommendation"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Recommendation",
+          "source_reference": "shutterstock.com#/components/schemas/Recommendation",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Media Recommendation",
+          "source_reference": "shutterstock.com#/components/schemas/Recommendation",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/v2/images/recommendations",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1recommendations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List recommended images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1recommendations/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Recommendation",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Recommendation.id",
+              "source_reference": "shutterstock.com#/components/schemas/Recommendation/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Media ID",
+              "source_reference": "shutterstock.com#/components/schemas/Recommendation/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Render",
+        "render"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/ai/audio/renders",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get details about audio renders",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create rendered audio",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Render",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1renders/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Search",
+        "SearchEntitiesRequest",
+        "search entities request",
+        "search_entities_request"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object SearchEntitiesRequest",
+          "source_reference": "shutterstock.com#/components/schemas/SearchEntitiesRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Search entity request data",
+          "source_reference": "shutterstock.com#/components/schemas/SearchEntitiesRequest",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Search for tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Run multiple image searches",
+          "source_reference": "shutterstock.com#/paths/~1v2~1bulk_search~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search catalogs for assets",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Search editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial video content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get suggestions for a search term",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get keywords from text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get suggestions for a search term",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1search~1suggestions/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SearchEntitiesRequest",
+      "properties": [
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "SearchEntitiesRequest.text",
+              "source_reference": "shutterstock.com#/components/schemas/SearchEntitiesRequest/properties/text",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Plain text to extract keywords from",
+              "source_reference": "shutterstock.com#/components/schemas/SearchEntitiesRequest/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Sfx",
+        "sfx"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/sfx",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/sfx/licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List sound effects licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/sfx/licenses/{id}/downloads",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses~1{id}~1downloads",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Download sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses~1{id}~1downloads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/sfx/search",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Search for sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/sfx/{id}",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Sfx",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "SfxUrl",
+        "Sound",
+        "URL",
+        "sfx url",
+        "sfx_url"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object SfxUrl",
+          "source_reference": "shutterstock.com#/components/schemas/SfxUrl",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Sound effect license URL object",
+          "source_reference": "shutterstock.com#/components/schemas/SfxUrl",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List sound effects licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses~1{id}~1downloads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SfxUrl",
+      "properties": [
+        {
+          "aliases": [
+            "url"
+          ],
+          "evidence": [
+            {
+              "claim": "SfxUrl.url",
+              "source_reference": "shutterstock.com#/components/schemas/SfxUrl/properties/url",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "URL that can be used to download the unwatermarked, licensed asset",
+              "source_reference": "shutterstock.com#/components/schemas/SfxUrl/properties/url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "url",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Similar",
+        "similar"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/cv/similar/images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cv/similar/videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/images/{id}/similar",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}~1similar",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/videos/{id}/similar",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}~1similar",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Similar",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Test",
+        "test"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/test",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Echo text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/test/validate",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test~1validate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate input",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test~1validate/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Test",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "TestEcho",
+        "Text",
+        "test echo",
+        "test_echo"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object TestEcho",
+          "source_reference": "shutterstock.com#/components/schemas/TestEcho",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Text to echo in the response",
+          "source_reference": "shutterstock.com#/components/schemas/TestEcho",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get keywords from text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Echo text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TestEcho",
+      "properties": [
+        {
+          "aliases": [
+            "text"
+          ],
+          "evidence": [
+            {
+              "claim": "TestEcho.text",
+              "source_reference": "shutterstock.com#/components/schemas/TestEcho/properties/text",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "TestValidate",
+        "Validation",
+        "test validate",
+        "test_validate"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object TestValidate",
+          "source_reference": "shutterstock.com#/components/schemas/TestValidate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Validation results",
+          "source_reference": "shutterstock.com#/components/schemas/TestValidate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Validate input",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test~1validate/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TestValidate",
+      "properties": [
+        {
+          "aliases": [
+            "header"
+          ],
+          "evidence": [
+            {
+              "claim": "TestValidate.header",
+              "source_reference": "shutterstock.com#/components/schemas/TestValidate/properties/header",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Headers as included in the request",
+              "source_reference": "shutterstock.com#/components/schemas/TestValidate/properties/header",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "header",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "query"
+          ],
+          "evidence": [
+            {
+              "claim": "TestValidate.query",
+              "source_reference": "shutterstock.com#/components/schemas/TestValidate/properties/query",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Query as included in the request",
+              "source_reference": "shutterstock.com#/components/schemas/TestValidate/properties/query",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "query",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Image",
+        "Thumbnail",
+        "thumbnail"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Thumbnail",
+          "source_reference": "shutterstock.com#/components/schemas/Thumbnail",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Image thumbnail information",
+          "source_reference": "shutterstock.com#/components/schemas/Thumbnail",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Run multiple image searches",
+          "source_reference": "shutterstock.com#/paths/~1v2~1bulk_search~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial image licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed items",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) License editorial content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upload ephemeral images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove images from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add images to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1licenses~1{id}~1downloads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List recommended images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1recommendations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get suggestions for a search term",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get keywords from text",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1search~1suggestions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Thumbnail",
+      "properties": [
+        {
+          "aliases": [
+            "height"
+          ],
+          "evidence": [
+            {
+              "claim": "Thumbnail.height",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/height",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Height in pixels of the image thumbnail",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/height",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "height",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "url"
+          ],
+          "evidence": [
+            {
+              "claim": "Thumbnail.url",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/url",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Direct URL to the image",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "width"
+          ],
+          "evidence": [
+            {
+              "claim": "Thumbnail.width",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/width",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Width in pixels of the image thumbnail",
+              "source_reference": "shutterstock.com#/components/schemas/Thumbnail/properties/width",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "width",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1updated/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Validate",
+        "validate"
+      ],
+      "evidence": [
+        {
+          "claim": "/v2/test/validate",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test~1validate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate input",
+          "source_reference": "shutterstock.com#/paths/~1v2~1test~1validate/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Validate",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "List",
+        "VideoDataList",
+        "video data list",
+        "video_data_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object VideoDataList",
+          "source_reference": "shutterstock.com#/components/schemas/VideoDataList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List of videos",
+          "source_reference": "shutterstock.com#/components/schemas/VideoDataList",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List computer audio descriptors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1descriptors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List computer audio instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1ai~1audio~1instruments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio tracks",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio genres",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1genres/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio instruments",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1instruments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List audio moods",
+          "source_reference": "shutterstock.com#/paths/~1v2~1audio~1moods/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List catalog collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1catalog~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about multiple contributors",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List contributors' collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1contributors~1{contributor_id}~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List suggested keywords",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1keywords/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) List editorial categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial image licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) Get editorial livefeed list",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1livefeeds/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "(Deprecated) List updated content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured image collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List image licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List recommended images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1recommendations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar images",
+          "source_reference": "shutterstock.com#/paths/~1v2~1images~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List details about sound effects",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List sound effects licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1sfx~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List user subscriptions",
+          "source_reference": "shutterstock.com#/paths/~1v2~1user~1subscriptions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "VideoDataList",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.data",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Videos",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "error",
+            "errors"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.errors",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/errors",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Error list; appears only if there was an error",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/errors",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "errors",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "message"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.message",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/message",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Server-generated message, if any",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "page"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.page",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Current page that is returned",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "page",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "per page",
+            "per_page"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.per_page",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/per_page",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of results per page",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/per_page",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "per_page",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "total count",
+            "total_count"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoDataList.total_count",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/total_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Total count of all results across all pages",
+              "source_reference": "shutterstock.com#/components/schemas/VideoDataList/properties/total_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "total_count",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1images~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1images~1updated/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1updated/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Video",
+        "VideoSizeDetails",
+        "video size detail",
+        "video size details",
+        "video_size_details"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object VideoSizeDetails",
+          "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Video asset information",
+          "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1cv~1similar~1videos/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List editorial video licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License editorial video content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search editorial video content",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get editorial video content details",
+          "source_reference": "shutterstock.com#/paths/~1v2~1editorial~1videos~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video categories",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of featured video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1featured~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the details of video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove videos from collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get the contents of video collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add videos to collections",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List video licenses",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1licenses/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "License videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1licenses/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Download videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1licenses~1{id}~1downloads/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Search for videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1search/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get suggestions for a search term",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1search~1suggestions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List updated videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1updated/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details about videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List similar videos",
+          "source_reference": "shutterstock.com#/paths/~1v2~1videos~1{id}~1similar/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "VideoSizeDetails",
+      "properties": [
+        {
+          "aliases": [
+            "display name",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.display_name",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/display_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Display name of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/display_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "display_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "file size",
+            "file_size"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.file_size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/file_size",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "File size (in bytes) of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/file_size",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "file_size",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "format"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.format",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/format",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Format of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/format",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "fps"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.fps",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/fps",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Frames per second of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/fps",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "fps",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "aliases": [
+            "height"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.height",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/height",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Height of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/height",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "height",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "is licensable",
+            "is_licensable"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.is_licensable",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/is_licensable",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether or not videos can be licensed in this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/is_licensable",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "is_licensable",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "width"
+          ],
+          "evidence": [
+            {
+              "claim": "VideoSizeDetails.width",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/width",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Width of this video size",
+              "source_reference": "shutterstock.com#/components/schemas/VideoSizeDetails/properties/width",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "width",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1collections~1{id}~1items/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "shutterstock.com#/paths/~1v2~1videos~1updated/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

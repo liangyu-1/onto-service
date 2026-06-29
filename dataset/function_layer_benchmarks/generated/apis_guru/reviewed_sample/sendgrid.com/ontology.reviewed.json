@@ -1,0 +1,5214 @@
+{
+  "metadata": {
+    "name": "sendgrid.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "sendgrid.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Automation",
+        "automation"
+      ],
+      "evidence": [
+        {
+          "claim": "/marketing/stats/automations",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/export",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}/links",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Click Tracking Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Automation",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Batch",
+        "batch"
+      ],
+      "evidence": [
+        {
+          "claim": "/mail/batch",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a batch ID",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/mail/batch/{batch_id}",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch~1{batch_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate batch ID",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch~1{batch_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/batch",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Batched Contacts by IDs",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1batch/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a cancellation or pause from a scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Batch",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1mail~1batch/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Block",
+        "block"
+      ],
+      "evidence": [
+        {
+          "claim": "/suppression/blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/blocks/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Block",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Campaign",
+        "campaign"
+      ],
+      "evidence": [
+        {
+          "claim": "/campaigns",
+          "source_reference": "sendgrid.com#/paths/~1campaigns",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all Campaigns",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{campaign_id}",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a single campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{campaign_id}/schedules",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Unschedule a Scheduled Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "View Scheduled Time of a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Scheduled Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Schedule a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{campaign_id}/schedules/now",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/campaigns/{campaign_id}/schedules/test",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1test",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send a Test Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1test/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Campaign",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "canceled",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "canceled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "draft",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1test/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Click",
+        "click"
+      ],
+      "evidence": [
+        {
+          "claim": "/tracking_settings/click",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Click Track Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Click Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Click",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Design",
+        "design"
+      ],
+      "evidence": [
+        {
+          "claim": "/designs",
+          "source_reference": "sendgrid.com#/paths/~1designs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Designs",
+          "source_reference": "sendgrid.com#/paths/~1designs/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Design",
+          "source_reference": "sendgrid.com#/paths/~1designs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/designs/pre-builts",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List SendGrid Pre-built Designs",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/designs/pre-builts/{id}",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get SendGrid Pre-built Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Duplicate SendGrid Pre-built Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/designs/{id}",
+          "source_reference": "sendgrid.com#/paths/~1designs~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Duplicate Design",
+          "source_reference": "sendgrid.com#/paths/~1designs~1{id}/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Design",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1designs/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1designs~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1designs~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "EnforcedTl",
+        "enforced tl",
+        "enforced_tl"
+      ],
+      "evidence": [
+        {
+          "claim": "/user/settings/enforced_tls",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve current Enforced TLS settings.",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Enforced TLS settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EnforcedTl",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Integration",
+        "integration"
+      ],
+      "evidence": [
+        {
+          "claim": "/sso/integrations",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All SSO Integrations",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/integrations/{id}",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/integrations/{integration_id}/certificates",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{integration_id}~1certificates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All SSO Certificates by Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{integration_id}~1certificates/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Integration",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "IpPool",
+        "ip pool",
+        "ip_pool"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ip_pool",
+          "source_reference": "sendgrid.com#/components/schemas/ip_pool",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Create a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all IP pools",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all IP pools an IP address belongs to",
+          "source_reference": "sendgrid.com#/paths/~1ips~1{ip_address}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "IpPool",
+      "properties": [
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "ip_pool.name",
+              "source_reference": "sendgrid.com#/components/schemas/ip_pool/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The name of the IP pool.",
+              "source_reference": "sendgrid.com#/components/schemas/ip_pool/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "draft",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Ips",
+        "ips"
+      ],
+      "evidence": [
+        {
+          "claim": "/ips",
+          "source_reference": "sendgrid.com#/paths/~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all IP addresses",
+          "source_reference": "sendgrid.com#/paths/~1ips/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add IPs",
+          "source_reference": "sendgrid.com#/paths/~1ips/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/assigned",
+          "source_reference": "sendgrid.com#/paths/~1ips~1assigned",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all assigned IPs",
+          "source_reference": "sendgrid.com#/paths/~1ips~1assigned/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all IP pools",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all the IPs in a specified pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}/ips",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an IP address to a pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}/ips/{ip}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove an IP address from a pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/remaining",
+          "source_reference": "sendgrid.com#/paths/~1ips~1remaining",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get remaining IPs count",
+          "source_reference": "sendgrid.com#/paths/~1ips~1remaining/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/warmup",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all IPs currently in warmup",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Start warming up an IP address",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/warmup/{ip_address}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup~1{ip_address}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stop warming up an IP address",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup~1{ip_address}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve the warmup status for a specific IP address",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup~1{ip_address}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/{ip_address}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1{ip_address}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all IP pools an IP address belongs to",
+          "source_reference": "sendgrid.com#/paths/~1ips~1{ip_address}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subusers/{subuser_name}/ips",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update IPs assigned to a subuser",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1ips/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/whitelabel/domains/{id}/ips",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an IP to an authenticated domain",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/whitelabel/domains/{id}/ips/{ip}",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips~1{ip}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove an IP from an authenticated domain.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips~1{ip}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/whitelabel/ips",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all reverse DNS records",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Set up reverse DNS",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/whitelabel/ips/{id}",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a reverse DNS record",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a reverse DNS record",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/whitelabel/ips/{id}/validate",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}~1validate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate a reverse DNS record",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}~1validate/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Ips",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1warmup~1{ip_address}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1ips~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{id}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1ips/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "List",
+        "list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object list",
+          "source_reference": "sendgrid.com#/components/schemas/list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Remove one or more IPs from the allow list",
+          "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a list of currently allowed IPs",
+          "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add one or more IPs to the allow list",
+          "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Remove a specific IP from the allowed list",
+          "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist~1{rule_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific allowed IP",
+          "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist~1{rule_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Schedule a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/contactdb/lists",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Multiple lists",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all lists",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/contactdb/lists/{list_id}",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a single list",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/contactdb/lists/{list_id}/recipients",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all recipients on a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add Multiple Recipients to a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/contactdb/lists/{list_id}/recipients/{recipient_id}",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients~1{recipient_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Single Recipient from a Single List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients~1{recipient_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a Single Recipient to a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients~1{recipient_id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/contactdb/recipients/{recipient_id}/lists",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1recipients~1{recipient_id}~1lists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the lists that a recipient is on",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1recipients~1{recipient_id}~1lists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Designs",
+          "source_reference": "sendgrid.com#/paths/~1designs/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List SendGrid Pre-built Designs",
+          "source_reference": "sendgrid.com#/paths/~1designs~1pre-builts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve address whitelist mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update address whitelist mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Lists",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a list",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a List by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}/contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove Contacts from a List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}/contacts/count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts~1count",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get List Contact Count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts~1count/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of all partner settings.",
+          "source_reference": "sendgrid.com#/paths/~1partner_settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a list of scopes for which this user has access.",
+          "source_reference": "sendgrid.com#/paths/~1scopes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all Subusers",
+          "source_reference": "sendgrid.com#/paths/~1subusers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Domain Warn List",
+          "source_reference": "sendgrid.com#/paths/~1verified_senders~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List all authenticated domains",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List the authenticated domain associated with the given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "List",
+      "properties": [
+        {
+          "aliases": [
+            "_metadata",
+            "metadata"
+          ],
+          "evidence": [
+            {
+              "claim": "list._metadata",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/_metadata",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "_metadata",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "contact count",
+            "contact_count"
+          ],
+          "evidence": [
+            {
+              "claim": "list.contact_count",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/contact_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The number of contacts currently stored on the list.",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/contact_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "contact_count",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "list.id",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The generated ID for your list.",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "list.name",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The name you gave your list.",
+              "source_reference": "sendgrid.com#/components/schemas/list/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1segments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist~1{rule_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}~1recipients~1{recipient_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "draft",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1access_settings~1whitelist~1{rule_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Mail",
+        "mail"
+      ],
+      "evidence": [
+        {
+          "claim": "/mail/batch",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a batch ID",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/mail/batch/{batch_id}",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch~1{batch_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Validate batch ID",
+          "source_reference": "sendgrid.com#/paths/~1mail~1batch~1{batch_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/mail/send",
+          "source_reference": "sendgrid.com#/paths/~1mail~1send",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "v3 Mail Send",
+          "source_reference": "sendgrid.com#/paths/~1mail~1send/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve address whitelist mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update address whitelist mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve bounce purge mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1bounce_purge/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update bounce purge mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1bounce_purge/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve footer mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1footer/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update footer mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1footer/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve forward bounce mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_bounce/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update forward bounce mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_bounce/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve forward spam mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_spam/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update forward spam mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_spam/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve legacy template mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update template mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve email statistics by mailbox provider.",
+          "source_reference": "sendgrid.com#/paths/~1mailbox_providers~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Contacts by Emails",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1search~1emails/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send a Test Marketing Email",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1test~1send_email/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve global email statistics",
+          "source_reference": "sendgrid.com#/paths/~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve email statistics for your subusers.",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve the totals for each email statistic metric for all subusers.",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats~1sums/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve the monthly email statistics for a single subuser",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1stats~1monthly/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a bounce",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Bounce",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete invalid emails",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all invalid emails",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a specific invalid email",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific invalid email",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve your account email address",
+          "source_reference": "sendgrid.com#/paths/~1user~1email/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update your account email address",
+          "source_reference": "sendgrid.com#/paths/~1user~1email/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Validate an email",
+          "source_reference": "sendgrid.com#/paths/~1validations~1email/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Email DNS records to a co-worker",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1dns~1email/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Mail",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1mail~1batch/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1address_whitelist/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1bounce_purge/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1footer/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_bounce/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1forward_spam/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1email/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Marketing",
+        "marketing"
+      ],
+      "evidence": [
+        {
+          "claim": "/marketing/contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Sample Contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add or Update a Contact",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/batch",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Batched Contacts by IDs",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1batch/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1count",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Total Contact Count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1count/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/exports",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Existing Exports",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export Contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/exports/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Contacts Status",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/imports",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1imports",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Import Contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1imports/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/imports/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1imports~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Import Contacts Status",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1imports~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/search",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Search Contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1search/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/search/emails",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1search~1emails",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Contacts by Emails",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1search~1emails/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/contacts/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a Contact by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/field_definitions",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Field Definitions",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Custom Field Definition",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/field_definitions/{custom_field_id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions~1{custom_field_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Custom Field Definition",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions~1{custom_field_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Custom Field Definition",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions~1{custom_field_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Lists",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a list",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get a List by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}/contacts",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove Contacts from a List",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/lists/{id}/contacts/count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts~1count",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get List Contact Count",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts~1count/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/segments/2.0",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/segments/2.0/{segment_id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Segment by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/segments/delete",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1delete",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Bulk Delete Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/segments/{segment_id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Segment by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/senders",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1senders",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a Sender Identity",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1senders/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/singlesends",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Bulk Delete Single Sends",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get All Single Sends",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Single Send",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/singlesends/categories",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1categories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Categories",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1categories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/singlesends/search",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Single Sends Search",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1search/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/singlesends/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Single Send by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Single Send by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Single Send",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Duplicate Single Send",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/singlesends/{id}/schedule",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}~1schedule",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete Single Send Schedule",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}~1schedule/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Schedule Single Send",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}~1schedule/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/export",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}/links",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Click Tracking Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Single Sends Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/export",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Single Send Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Single Send Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/{id}/links",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}~1links",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Single Send Click Tracking Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}~1links/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/test/send_email",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1test~1send_email",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Send a Test Marketing Email",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1test~1send_email/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Marketing",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1senders/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1contacts/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions~1{custom_field_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1delete/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}~1schedule/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}~1contacts/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1contacts/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1field_definitions~1{custom_field_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1lists~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1singlesends~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Pool",
+        "pool"
+      ],
+      "evidence": [
+        {
+          "claim": "/ips/pools",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all IP pools",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all the IPs in a specified pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Rename an IP pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}/ips",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add an IP address to a pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ips/pools/{pool_name}/ips/{ip}",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove an IP address from a pool",
+          "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all IP pools an IP address belongs to",
+          "source_reference": "sendgrid.com#/paths/~1ips~1{ip_address}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Pool",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1ips~1pools~1{pool_name}~1ips~1{ip}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Profile",
+        "profile"
+      ],
+      "evidence": [
+        {
+          "claim": "/user/profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Profile",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Segment",
+        "SegmentStatusResponse",
+        "segment status response",
+        "segment_status_response"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object segment_status_response",
+          "source_reference": "sendgrid.com#/components/schemas/segment_status_response",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Segment status indicates whether the segment's contacts will be updated periodically",
+          "source_reference": "sendgrid.com#/components/schemas/segment_status_response",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Create a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Schedule a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a List",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all segments",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve recipients on a segment",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}~1recipients/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get List of Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Segment by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Bulk Delete Segments",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Segment by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Segment",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SegmentStatusResponse",
+      "properties": [
+        {
+          "aliases": [
+            "error message",
+            "error_message"
+          ],
+          "evidence": [
+            {
+              "claim": "segment_status_response.error_message",
+              "source_reference": "sendgrid.com#/components/schemas/segment_status_response/properties/error_message",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Describes any errors that were encountered during query validation",
+              "source_reference": "sendgrid.com#/components/schemas/segment_status_response/properties/error_message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "error_message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "query validation",
+            "query_validation"
+          ],
+          "evidence": [
+            {
+              "claim": "segment_status_response.query_validation",
+              "source_reference": "sendgrid.com#/components/schemas/segment_status_response/properties/query_validation",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Status of query validation. PENDING, VALID, or INVALID",
+              "source_reference": "sendgrid.com#/components/schemas/segment_status_response/properties/query_validation",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "query_validation",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1segments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1delete/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "draft",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1lists~1{list_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1contactdb~1segments~1{segment_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~12.0~1{segment_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1marketing~1segments~1{segment_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Setting",
+        "setting"
+      ],
+      "evidence": [
+        {
+          "claim": "/user/settings/enforced_tls",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve current Enforced TLS settings.",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Enforced TLS settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/event/settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Event Webhook settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Event Notification Settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/event/settings/signed",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Signed Webhook Public Key",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Enable/Disable Signed Webhook",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Test Event Notification Settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1test/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all parse settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/settings/{hostname}",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Setting",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SpamReport",
+        "spam report",
+        "spam_report"
+      ],
+      "evidence": [
+        {
+          "claim": "/suppression/spam_reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete spam reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all spam reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/spam_reports/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SpamReport",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Sso",
+        "sso"
+      ],
+      "evidence": [
+        {
+          "claim": "/sso/certificates",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create an SSO Certificate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/certificates/{cert_id}",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an SSO Certificate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an SSO Certificate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update SSO Certificate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/integrations",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All SSO Integrations",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/integrations/{id}",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/integrations/{integration_id}/certificates",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{integration_id}~1certificates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All SSO Certificates by Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{integration_id}~1certificates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/teammates",
+          "source_reference": "sendgrid.com#/paths/~1sso~1teammates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create SSO Teammate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1teammates/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/sso/teammates/{username}",
+          "source_reference": "sendgrid.com#/paths/~1sso~1teammates~1{username}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Edit an SSO Teammate",
+          "source_reference": "sendgrid.com#/paths/~1sso~1teammates~1{username}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disassociate an authenticated domain from a given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List the authenticated domain associated with the given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Associate an authenticated domain with a given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{domain_id}~1subuser/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disassociate a branded link from a subuser",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1subuser/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Associate a branded link with a subuser",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1{link_id}~1subuser/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Sso",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1sso~1certificates/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1sso~1teammates/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1subuser/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1sso~1certificates~1{cert_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SsoIntegration",
+        "sso integration",
+        "sso-integration",
+        "sso_integration"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object sso-integration",
+          "source_reference": "sendgrid.com#/components/schemas/sso-integration",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get All SSO Integrations",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an SSO Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get All SSO Certificates by Integration",
+          "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{integration_id}~1certificates/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SsoIntegration",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1sso~1integrations~1{id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Stat",
+        "stat"
+      ],
+      "evidence": [
+        {
+          "claim": "/browsers/stats",
+          "source_reference": "sendgrid.com#/paths/~1browsers~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics by browser.",
+          "source_reference": "sendgrid.com#/paths/~1browsers~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/categories/stats",
+          "source_reference": "sendgrid.com#/paths/~1categories~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Email Statistics for Categories",
+          "source_reference": "sendgrid.com#/paths/~1categories~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/categories/stats/sums",
+          "source_reference": "sendgrid.com#/paths/~1categories~1stats~1sums",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve sums of email stats for each category [Needs: Stats object defined, has category ID?]",
+          "source_reference": "sendgrid.com#/paths/~1categories~1stats~1sums/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/clients/stats",
+          "source_reference": "sendgrid.com#/paths/~1clients~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics by client type.",
+          "source_reference": "sendgrid.com#/paths/~1clients~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/clients/{client_type}/stats",
+          "source_reference": "sendgrid.com#/paths/~1clients~1{client_type}~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve stats by a specific client type.",
+          "source_reference": "sendgrid.com#/paths/~1clients~1{client_type}~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get Recipient Upload Status",
+          "source_reference": "sendgrid.com#/paths/~1contactdb~1status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/devices/stats",
+          "source_reference": "sendgrid.com#/paths/~1devices~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics by device type.",
+          "source_reference": "sendgrid.com#/paths/~1devices~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/geo/stats",
+          "source_reference": "sendgrid.com#/paths/~1geo~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics by country and state/province.",
+          "source_reference": "sendgrid.com#/paths/~1geo~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve the warmup status for a specific IP address",
+          "source_reference": "sendgrid.com#/paths/~1ips~1warmup~1{ip_address}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/mailbox_providers/stats",
+          "source_reference": "sendgrid.com#/paths/~1mailbox_providers~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics by mailbox provider.",
+          "source_reference": "sendgrid.com#/paths/~1mailbox_providers~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Export Contacts Status",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1exports~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import Contacts Status",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1contacts~1imports~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/export",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Automation Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/automations/{id}/links",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Automation Click Tracking Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1automations~1{id}~1links/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get All Single Sends Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/export",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1export",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export Single Send Stats",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1export/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/{id}",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Single Send Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/marketing/stats/singlesends/{id}/links",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}~1links",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Single Send Click Tracking Stats by ID",
+          "source_reference": "sendgrid.com#/paths/~1marketing~1stats~1singlesends~1{id}~1links/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/stats",
+          "source_reference": "sendgrid.com#/paths/~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve global email statistics",
+          "source_reference": "sendgrid.com#/paths/~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subusers/stats",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve email statistics for your subusers.",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subusers/stats/monthly",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats~1monthly",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve monthly stats for all subusers",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats~1monthly/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subusers/stats/sums",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats~1sums",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the totals for each email statistic metric for all subusers.",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1stats~1sums/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/subusers/{subuser_name}/stats/monthly",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1stats~1monthly",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve the monthly email statistics for a single subuser",
+          "source_reference": "sendgrid.com#/paths/~1subusers~1{subuser_name}~1stats~1monthly/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/stats",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves Inbound Parse Webhook statistics.",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1stats/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Stat",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Suppression",
+        "suppression"
+      ],
+      "evidence": [
+        {
+          "claim": "/asm/groups/{group_id}/suppressions",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all suppressions for a suppression group",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add suppressions to a suppression group",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/groups/{group_id}/suppressions/search",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions~1search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Search for suppressions within a group",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions~1search/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/groups/{group_id}/suppressions/{email}",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a suppression from a suppression group",
+          "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/suppressions",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all suppressions",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/suppressions/global",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Add recipient addresses to the global suppression group.",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/suppressions/global/{email}",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a Global Suppression",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Global Suppression",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/asm/suppressions/{email}",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all suppression groups for an email address",
+          "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Schedule a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Send a Campaign",
+          "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all blocks",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/blocks/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific block",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/bounces",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete bounces",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all bounces",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/bounces/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a bounce",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Bounce",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/invalid_emails",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete invalid emails",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all invalid emails",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/invalid_emails/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific invalid email",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific invalid email",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/spam_reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete spam reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve all spam reports",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/spam_reports/{email}",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific spam report",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/suppression/unsubscribes",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1unsubscribes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all global suppressions",
+          "source_reference": "sendgrid.com#/paths/~1suppression~1unsubscribes/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Suppression",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1asm~1groups~1{group_id}~1suppressions~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1asm~1suppressions~1global~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1blocks/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1blocks~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1bounces/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1bounces~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1invalid_emails~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1suppression~1spam_reports~1{email}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "draft",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules~1now/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "draft",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1campaigns~1{campaign_id}~1schedules/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Template",
+        "template"
+      ],
+      "evidence": [
+        {
+          "claim": "/mail_settings/template",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1template",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve legacy template mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update template mail settings",
+          "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/templates",
+          "source_reference": "sendgrid.com#/paths/~1templates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve paged transactional templates.",
+          "source_reference": "sendgrid.com#/paths/~1templates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/templates/{template_id}",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a single transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Duplicate a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/templates/{template_id}/versions",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create a new transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/templates/{template_id}/versions/{version_id}",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/templates/{template_id}/versions/{version_id}/activate",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}~1activate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Activate a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}~1activate/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Template",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1templates/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1mail_settings~1template/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "TrackingSetting",
+        "tracking setting",
+        "tracking_setting"
+      ],
+      "evidence": [
+        {
+          "claim": "/tracking_settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tracking_settings/click",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Click Track Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Click Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tracking_settings/google_analytics",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1google_analytics",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Google Analytics Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1google_analytics/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Google Analytics Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1google_analytics/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tracking_settings/open",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get Open Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Open Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/tracking_settings/subscription",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1subscription",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Subscription Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1subscription/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Subscription Tracking Settings",
+          "source_reference": "sendgrid.com#/paths/~1tracking_settings~1subscription/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TrackingSetting",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "open",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "open",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "open",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1click/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1google_analytics/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1open/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1tracking_settings~1subscription/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "TransactionalTemplate",
+        "transactional template",
+        "transactional_template"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object transactional_template",
+          "source_reference": "sendgrid.com#/components/schemas/transactional_template",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Retrieve paged transactional templates.",
+          "source_reference": "sendgrid.com#/paths/~1templates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a single transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Duplicate a transactional template.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Edit a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Activate a transactional template version.",
+          "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}~1activate/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "TransactionalTemplate",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1templates/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1templates~1{template_id}~1versions~1{version_id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "/user/account",
+          "source_reference": "sendgrid.com#/paths/~1user~1account",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a user's account information.",
+          "source_reference": "sendgrid.com#/paths/~1user~1account/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/credits",
+          "source_reference": "sendgrid.com#/paths/~1user~1credits",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve your credit balance",
+          "source_reference": "sendgrid.com#/paths/~1user~1credits/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/email",
+          "source_reference": "sendgrid.com#/paths/~1user~1email",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve your account email address",
+          "source_reference": "sendgrid.com#/paths/~1user~1email/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update your account email address",
+          "source_reference": "sendgrid.com#/paths/~1user~1email/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/password",
+          "source_reference": "sendgrid.com#/paths/~1user~1password",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update your password",
+          "source_reference": "sendgrid.com#/paths/~1user~1password/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/scheduled_sends",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all scheduled sends",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel or pause a scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/scheduled_sends/{batch_id}",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a cancellation or pause from a scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a scheduled send",
+          "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/settings/enforced_tls",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve current Enforced TLS settings.",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Enforced TLS settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/username",
+          "source_reference": "sendgrid.com#/paths/~1user~1username",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve your username",
+          "source_reference": "sendgrid.com#/paths/~1user~1username/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update your username",
+          "source_reference": "sendgrid.com#/paths/~1user~1username/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/event/settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Event Webhook settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Event Notification Settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/event/settings/signed",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve Signed Webhook Public Key",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Enable/Disable Signed Webhook",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/event/test",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1test",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Test Event Notification Settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1test/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve all parse settings",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/settings/{hostname}",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a specific parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a parse setting",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/user/webhooks/parse/stats",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1stats",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves Inbound Parse Webhook statistics.",
+          "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1stats/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disassociate an authenticated domain from a given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List the authenticated domain associated with the given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Associate an authenticated domain with a given user.",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1{domain_id}~1subuser/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Disassociate a branded link from a subuser",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1subuser/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a subuser's branded link",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1subuser/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Associate a branded link with a subuser",
+          "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1{link_id}~1subuser/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "User",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1domains~1subuser/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "sendgrid.com#/paths/~1whitelabel~1links~1subuser/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings~1signed/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1email/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1password/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1scheduled_sends~1{batch_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1settings~1enforced_tls/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1username/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1event~1settings/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1webhooks~1parse~1settings~1{hostname}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "UserProfile",
+        "user profile",
+        "user_profile"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object user_profile",
+          "source_reference": "sendgrid.com#/components/schemas/user_profile",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Get a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a user's profile",
+          "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "UserProfile",
+      "properties": [
+        {
+          "aliases": [
+            "address"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.address",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/address",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The street address for this user profile.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/address",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "address2"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.address2",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/address2",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "An optional second line for the street address of this user profile.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/address2",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "address2",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "city"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.city",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/city",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The city for the user profile.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/city",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "city",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.company",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/company",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "That company that this user profile is associated with.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/company",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "country"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.country",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/country",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Th country of this user profile.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/country",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "first name",
+            "first_name"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.first_name",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/first_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The first name of the user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/first_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "first_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last name",
+            "last_name"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.last_name",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/last_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The last name of the user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/last_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "phone"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.phone",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/phone",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The phone number for the user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/phone",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.state",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/state",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The state for this user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "website"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.website",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/website",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The website associated with this user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/website",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "website",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "zip"
+          ],
+          "evidence": [
+            {
+              "claim": "user_profile.zip",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/zip",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The zip code for this user.",
+              "source_reference": "sendgrid.com#/components/schemas/user_profile/properties/zip",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "zip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "sendgrid.com#/paths/~1user~1profile/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

@@ -91,7 +91,9 @@ def validate_overlay(
     path = str(binding.get("path", ""))
     operation_id = str(binding.get("operation_id", ""))
     if (method, path, operation_id) not in operation_index:
-        errors.append(error(row_index, f"overlay_operation_not_in_openapi:{method} {path} {operation_id}"))
+        # Fallback: many APIs.guru specs lack operationId; accept (method, path) match.
+        if not any(m == method and p == path for m, p, _ in operation_index):
+            errors.append(error(row_index, f"overlay_operation_not_in_openapi:{method} {path} {operation_id}"))
 
     operation_kind = str(overlay.get("operation_kind", ""))
     if operation_kind not in OPERATION_KINDS:
@@ -136,7 +138,8 @@ def validate_function(
     path = str(binding.get("path", ""))
     operation_id = str(binding.get("operation_id", ""))
     if (method, path, operation_id) not in operation_index:
-        errors.append(error(row_index, f"operation_not_in_openapi:{method} {path} {operation_id}"))
+        if not any(m == method and p == path for m, p, _ in operation_index):
+            errors.append(error(row_index, f"operation_not_in_openapi:{method} {path} {operation_id}"))
     if trace_index and (method, path) not in trace_index:
         errors.append(error(row_index, f"operation_without_trace:{method} {path}"))
 

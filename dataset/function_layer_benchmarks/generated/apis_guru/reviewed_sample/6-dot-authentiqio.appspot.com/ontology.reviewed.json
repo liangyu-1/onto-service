@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "name": "6-dot-authentiqio.appspot.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "6-dot-authentiqio.appspot.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Key",
+        "key"
+      ],
+      "evidence": [
+        {
+          "claim": "/key",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Revoke an Authentiq ID using email & phone.\n\nIf called with `email` and `phone` only, a verification code \nwill be sent by email. Do a second call adding `code` to \ncomplete the revocation.\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Register a new ID `JWT(sub, devtoken)`\n\nv5: `JWT(sub, pk, devtoken, ...)`\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/key/{PK}",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Revoke an Identity (Key) with a revocation secret",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get public details of an Authentiq ID.\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "HEAD info on Authentiq ID\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "update properties of an Authentiq ID.\n(not operational in v4; use PUT for now)\n\nv5: POST issuer-signed email & phone scopes in\na self-signed JWT\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Authentiq ID by replacing the object.\n\nv4: `JWT(sub,email,phone)` to bind email/phone hash; \n\nv5: POST issuer-signed email & phone scopes\nand PUT to update registration `JWT(sub, pk, devtoken, ...)`\n\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Key",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1key~1{PK}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Scope",
+        "scope"
+      ],
+      "evidence": [
+        {
+          "claim": "/scope",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "scope verification request\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/scope/{job}",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "delete a verification job",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "get the status / current content of a verification job",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "HEAD to get the status of a verification job",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/head",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "this is a scope confirmation",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "authority updates a JWT with its signature\nSee: https://github.com/skion/authentiq/wiki/JWT-Examples\n",
+          "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Scope",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "confirmed",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "confirmed",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "confirmed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "6-dot-authentiqio.appspot.com#/paths/~1scope~1{job}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

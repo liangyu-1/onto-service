@@ -1,0 +1,399 @@
+{
+  "metadata": {
+    "name": "fire.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "fire.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Banktransfer",
+        "banktransfer"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/batches/{batchUuid}/banktransfers",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List items in a Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a bank transfer payment to the batch.",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/banktransfers/{itemUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a Payment from the Batch (Bank Transfers)",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Banktransfer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Batche",
+        "batche"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/batches",
+          "source_reference": "fire.com#/paths/~1v1~1batches",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List batches",
+          "source_reference": "fire.com#/paths/~1v1~1batches/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a new batch of payments",
+          "source_reference": "fire.com#/paths/~1v1~1batches/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel a batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get details of a single Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a batch for approval",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/approvals",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1approvals",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Approvers for a Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1approvals/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/banktransfers",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List items in a Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add a bank transfer payment to the batch.",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/banktransfers/{itemUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a Payment from the Batch (Bank Transfers)",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/internaltransfers",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List items in a Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add an internal transfer payment to the batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/internaltransfers/{itemUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a Payment from the Batch (Internal Transfer)",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Batche",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "fire.com#/paths/~1v1~1batches/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1banktransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Internaltransfer",
+        "internaltransfer"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/batches/{batchUuid}/internaltransfers",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List items in a Batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add an internal transfer payment to the batch",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/batches/{batchUuid}/internaltransfers/{itemUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove a Payment from the Batch (Internal Transfer)",
+          "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Internaltransfer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fire.com#/paths/~1v1~1batches~1{batchUuid}~1internaltransfers~1{itemUuid}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Mandate",
+        "mandate"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/mandates",
+          "source_reference": "fire.com#/paths/~1v1~1mandates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List all direct debit mandates",
+          "source_reference": "fire.com#/paths/~1v1~1mandates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/mandates/{mandateUuid}",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get direct debit mandate details",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a direct debit mandate alias",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/mandates/{mandateUuid}/activate",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}~1activate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Activate a direct debit mandate",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}~1activate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/mandates/{mandateUuid}/cancel",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel a direct debit mandate",
+          "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}~1cancel/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Mandate",
+      "properties": [
+        {
+          "id": "mandateUuid",
+          "type": "string",
+          "aliases": [
+            "mandateUuid"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "fire.com.openapi.cancel_mandate_by_uuid",
+              "claim": "Inferred property mandateUuid from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "fire.com#/paths/~1v1~1mandates~1{mandateUuid}/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

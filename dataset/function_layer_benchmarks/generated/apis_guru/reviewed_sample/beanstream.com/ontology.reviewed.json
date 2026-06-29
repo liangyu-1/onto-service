@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "name": "beanstream.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "beanstream.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Card",
+        "card"
+      ],
+      "evidence": [
+        {
+          "claim": "/profiles/{profileId}/cards",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get cards",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/profiles/{profileId}/cards/{cardId}",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Tokenize credit card",
+          "source_reference": "beanstream.com#/paths/~1scripts~1tokenization~1tokens/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Card",
+      "properties": [
+        {
+          "id": "cardId",
+          "type": "string",
+          "aliases": [
+            "cardId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "beanstream.com.openapi.delete_profiles_profile_id_cards_card_id",
+              "claim": "Inferred property cardId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Profile",
+        "profile"
+      ],
+      "evidence": [
+        {
+          "claim": "/profiles",
+          "source_reference": "beanstream.com#/paths/~1profiles",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create Profile",
+          "source_reference": "beanstream.com#/paths/~1profiles/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/profiles/{profileId}",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete profile",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get profile",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update Profile",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/profiles/{profileId}/cards",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get cards",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/profiles/{profileId}/cards/{cardId}",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update card",
+          "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Profile",
+      "properties": [
+        {
+          "id": "profileId",
+          "type": "string",
+          "aliases": [
+            "profileId"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "beanstream.com.openapi.delete_profiles_profile_id",
+              "claim": "Inferred property profileId from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "beanstream.com#/paths/~1profiles/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "beanstream.com#/paths/~1profiles~1{profileId}~1cards~1{cardId}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

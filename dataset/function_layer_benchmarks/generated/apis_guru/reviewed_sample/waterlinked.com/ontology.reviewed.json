@@ -1,0 +1,462 @@
+{
+  "metadata": {
+    "name": "waterlinked.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "waterlinked.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Api",
+        "api"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/",
+          "source_reference": "waterlinked.com#/paths/~1api~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "ApiVersion about",
+          "source_reference": "waterlinked.com#/paths/~1api~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/about/factoryreset",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1factoryreset",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "FactoryReset about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1factoryreset/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/about/led",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1led",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "LED about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1led/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/about/status",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1status",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Status about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1status/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/about/temperature",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1temperature",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Temperature about",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1about~1temperature/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/antenna",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1antenna",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetAntennaConfig config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1antenna/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "ModifyAntennaConfig config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1antenna/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/generic",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1generic",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1generic/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Modify config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1generic/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/ip",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1ip",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetIP config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1ip/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "ModifyIP config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1ip/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/receivers/",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1receivers~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "ListReceiver config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1receivers~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/receivers/{ID}",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1receivers~1{ID}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "ShowReceiver config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1receivers~1{ID}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "ModifyReceiver config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1receivers~1{ID}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/config/wifi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1wifi",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetWIFI config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1wifi/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "ModifyWIFI config",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1config~1wifi/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/external/depth",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1depth",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "SetDepth external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1depth/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/external/imu",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1imu",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetVehicleIMU external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1imu/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "SetVehicleIMU external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1imu/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/external/master",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1master",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "SetMaster external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1master/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/external/orientation",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1orientation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetOrientation external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1orientation/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "SetOrientation external",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1external~1orientation/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/imu/calibrate",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1calibrate",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get imu",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1calibrate/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Calibrate imu",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1calibrate/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/imu/resetgyros",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1resetgyros",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "ResetGyro imu",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1resetgyros/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/imu/setnorth",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1setnorth",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "SetNorth imu",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1imu~1setnorth/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/poi/",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/poi/{ID}",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Show poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/position/acoustic/filtered",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1acoustic~1filtered",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "AcousticFiltered position",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1acoustic~1filtered/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/position/acoustic/raw",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1acoustic~1raw",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "AcousticRaw position",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1acoustic~1raw/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/position/global",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1global",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get position",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1global/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/position/master",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1master",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GetMaster position",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1position~1master/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/status_report/",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1status_report~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get status_report",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1status_report~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/warnings/",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1warnings~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get warnings",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1warnings~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Api",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Poi",
+        "poi"
+      ],
+      "evidence": [
+        {
+          "claim": "/api/v1/poi/",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/api/v1/poi/{ID}",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Show poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update poi",
+          "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Poi",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "waterlinked.com#/paths/~1api~1v1~1poi~1{ID}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

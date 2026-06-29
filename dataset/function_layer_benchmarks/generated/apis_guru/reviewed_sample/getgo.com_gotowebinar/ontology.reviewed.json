@@ -1,0 +1,1069 @@
+{
+  "metadata": {
+    "name": "getgo.com_gotowebinar_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "getgo.com_gotowebinar"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Coorganizer",
+        "coorganizer"
+      ],
+      "evidence": [
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete co-organizer",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Coorganizer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Organizer",
+        "organizer"
+      ],
+      "evidence": [
+        {
+          "claim": "/organizers/{organizerKey}/historicalWebinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1historicalWebinars",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get historical webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1historicalWebinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1sessions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get organizer sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1sessions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/upcomingWebinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1upcomingWebinars",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get upcoming webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1upcomingWebinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1attendees",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendees for all webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1attendees/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/audio",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get audio information",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update audio information",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete co-organizer",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/meetingtimes",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1meetingtimes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar meeting times",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1meetingtimes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete webinar panelist",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend panelist invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1performance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get performance for all webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1performance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registration fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/{registrantKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar session",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1polls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee poll answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1polls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1questions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1questions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1surveys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee survey answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1surveys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1performance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1performance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1polls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1polls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1questions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1questions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1surveys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1surveys/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Organizer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Panelist",
+        "panelist"
+      ],
+      "evidence": [
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete webinar panelist",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend panelist invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Panelist",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Registrant",
+        "registrant"
+      ],
+      "evidence": [
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registration fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/{registrantKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get attendee",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get attendee poll answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1polls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get attendee questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1questions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get attendee survey answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1surveys/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Registrant",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Webinar",
+        "webinar"
+      ],
+      "evidence": [
+        {
+          "claim": "/accounts/{accountKey}/webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1accounts~1{accountKey}~1webinars",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all webinars for an account",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1accounts~1{accountKey}~1webinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get historical webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1historicalWebinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get upcoming webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1upcomingWebinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get all webinars",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update webinar",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1attendees",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendees for all webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1attendees/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/audio",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get audio information",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update audio information",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create co-organizers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete co-organizer",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/coorganizers/{coorganizerKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/meetingtimes",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1meetingtimes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar meeting times",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1meetingtimes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create Panelists",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete webinar panelist",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/panelists/{panelistKey}/resendInvitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Resend panelist invitation",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}~1resendInvitation/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1performance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get performance for all webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1performance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registrants",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get registration fields",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1fields/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/registrants/{registrantKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Get registrant",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar sessions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get webinar session",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session attendees",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1polls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee poll answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1polls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1questions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1questions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/attendees/{registrantKey}/surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1surveys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get attendee survey answers",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1attendees~1{registrantKey}~1surveys/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1performance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session performance",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1performance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1polls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session polls",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1polls/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1questions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session questions",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1questions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/organizers/{organizerKey}/webinars/{webinarKey}/sessions/{sessionKey}/surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1surveys",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get session surveys",
+          "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1sessions~1{sessionKey}~1surveys/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Webinar",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1coorganizers~1{coorganizerKey}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1panelists~1{panelistKey}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1registrants~1{registrantKey}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "getgo.com_gotowebinar#/paths/~1organizers~1{organizerKey}~1webinars~1{webinarKey}~1audio/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

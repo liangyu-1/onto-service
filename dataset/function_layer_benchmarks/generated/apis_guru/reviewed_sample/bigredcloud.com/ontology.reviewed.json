@@ -1,0 +1,1400 @@
+{
+  "metadata": {
+    "name": "bigredcloud.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "bigredcloud.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/accounts",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1accounts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Accounts. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of company's Bank Account. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"acCode\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Processes a batch of Bank Accounts.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Removes an existing Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of Customer's account transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1accountTrans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of Supplier's account transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1accountTrans/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Account",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "BankAccount",
+        "bank account",
+        "bank_account"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/bankAccounts",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Bank Account. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"acCode\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/bankAccounts/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Bank Accounts.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/bankAccounts/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Bank Account.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "BankAccount",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1bankAccounts~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CashPayment",
+        "cash payment",
+        "cash_payment"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/cashPayments",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Cash Payments. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Cash Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/cashPayments/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Cash Payments.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/cashPayments/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Cash Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Cash Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Cash Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CashPayment",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1cashPayments~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CashReceipt",
+        "cash receipt",
+        "cash_receipt"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/cashReceipts",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Cash Receipts. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Cash Receipt.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/cashReceipts/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Cash Receipts.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/cashReceipts/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Cash Receipt.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Cash Receipt.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Cash Receipt.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CashReceipt",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1cashReceipts~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Customer",
+        "customer"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/customers",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Customers. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Customer.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Customers.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Customer.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Customer. You may specify that Customer's ledger balance should be calculated.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Customer.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/{itemId}/accountTrans",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1accountTrans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Customer's account transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1accountTrans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/{itemId}/openingBalance",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/{itemId}/openingBalanceList",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalanceList",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Customer's opening balance transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalanceList/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/customers/{itemId}/quotes",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1quotes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Customer's quotes.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1quotes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Sends a Statement email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1email~1sendEmailStatement/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Sends a Quote email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1email~1sendQuote/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Sends a Sales Invoice email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Sales Invoice Customer's address.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1email~1sendSalesInvoice/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Customer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "OpeningBalance",
+        "opening balance",
+        "opening_balance"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/customers/{itemId}/openingBalance",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a Customer's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of Customer's opening balance transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1openingBalanceList/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/{itemId}/openingBalance",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of Supplier's opening balance transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalanceList/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "OpeningBalance",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Payment",
+        "payment"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/payments",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Payments. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/payments/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Payments.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/payments/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Payments.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Payment.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Payment",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1payments~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Product",
+        "product"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/products",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Products. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"stockCode\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Product.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/products/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Products.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/products/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Product.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Product.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Product.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1products~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Product",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1products~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Purchas",
+        "purcha",
+        "purchas"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/purchases",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Purchases. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Purchase.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/purchases/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Purchases.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/purchases/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Purchase.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Purchases.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Purchase.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Purchas",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1purchases~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Quote",
+        "quote"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/customers/{itemId}/quotes",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1quotes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Customer's quotes.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1customers~1{itemId}~1quotes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Sends a Quote email.\r\nIf \"toAddress\" is not empty then email will be sent to this address. Otherwise email will be sent to Statement Customer's address.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1email~1sendQuote/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Quotes.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\".",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/close/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1close~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Close a Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1close~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/createQuoteWithGeneratingReference",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1createQuoteWithGeneratingReference",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates a new Quote with auto generating reference.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1createQuoteWithGeneratingReference/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/generateSaleInvoice",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1generateSaleInvoice",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Generate a sale invoice from a Quote.\r\nWhen sale invoice is empty, new sale invoice will be generated from Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1generateSaleInvoice/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/reopen/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1reopen~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Reopen a Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1reopen~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/quotes/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Quote.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Quote",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "closed",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1close~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "closed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1createQuoteWithGeneratingReference/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1quotes~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Sale",
+        "sale"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/sales",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1sales",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Sales Entries, Sales Invoices and Sales Credit Notes. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1sales/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of company's Sales Credit Notes. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Processes a batch of Sales Credit Notes.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Removes an existing Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of company's Sales Entries. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Processes a batch of Sales Entries.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Removes an existing Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of company's Sales Invoices. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Processes a batch of Sales Invoices.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sale Invoice with auto generating reference.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1createSaleInvoiceWithGeneratingReference/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Removes an existing Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of company's SaleRep.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\".",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new SaleRep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Processes a batch of Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Removes an existing Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single SaleRep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Sale",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1createSaleInvoiceWithGeneratingReference/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SalesCreditNote",
+        "sales credit note",
+        "sales_credit_note"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/salesCreditNotes",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Sales Credit Notes. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesCreditNotes/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Sales Credit Notes.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesCreditNotes/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Credit Note.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SalesCreditNote",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesCreditNotes~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SalesEntry",
+        "sales entry",
+        "sales_entry"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/salesEntries",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Sales Entries. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesEntries/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Sales Entries.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesEntries/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Entry.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SalesEntry",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesEntries~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SalesInvoice",
+        "sales invoice",
+        "sales_invoice"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/salesInvoices",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Sales Invoices. Supports OData querying protocol.\r\nFiltering is allowed by \"entryDate\" field.\r\nOrdering is allowed by \"id\" field.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesInvoices/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Sales Invoices.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesInvoices/createSaleInvoiceWithGeneratingReference",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1createSaleInvoiceWithGeneratingReference",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Creates a new Sale Invoice with auto generating reference.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1createSaleInvoiceWithGeneratingReference/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesInvoices/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sales Invoice.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SalesInvoice",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1createSaleInvoiceWithGeneratingReference/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesInvoices~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "SalesRep",
+        "sales rep",
+        "sales_rep"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/salesReps",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's SaleRep.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\".",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new SaleRep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesReps/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/salesReps/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single SaleRep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Sale Rep.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "SalesRep",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1salesReps~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Supplier",
+        "supplier"
+      ],
+      "evidence": [
+        {
+          "claim": "/v1/suppliers",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of company's Suppliers. Supports OData querying protocol.\r\nFiltering is forbidden.\r\nOrdering is allowed by \"id\" and \"code\" fields.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new Supplier.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/batch",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1batch",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Processes a batch of Suppliers.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1batch/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/{id}",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes an existing Supplier.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns information about a single Supplier. You may specify that Supplier's ledger balance should be calculated.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing Supplier.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{id}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/{itemId}/accountTrans",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1accountTrans",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Supplier's account transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1accountTrans/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/{itemId}/openingBalance",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalance",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a Supplier's opening balances, calculated for the next periods: current month, one month old, two months old, three and more months old.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalance/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v1/suppliers/{itemId}/openingBalanceList",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalanceList",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of Supplier's opening balance transactions.",
+          "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{itemId}~1openingBalanceList/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Supplier",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "bigredcloud.com#/paths/~1v1~1suppliers~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

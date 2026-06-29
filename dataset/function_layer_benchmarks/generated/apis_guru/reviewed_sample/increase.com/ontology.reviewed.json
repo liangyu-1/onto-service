@@ -1,0 +1,2688 @@
+{
+  "metadata": {
+    "name": "increase.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "increase.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "API",
+        "Account",
+        "Account Statements",
+        "AccountStatement",
+        "File",
+        "PDF",
+        "You",
+        "account statement",
+        "account_statement"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object account_statement",
+          "source_reference": "increase.com#/components/schemas/account_statement",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Account Statements are generated monthly for every active Account. You can access the statement's data via the API or retrieve a PDF with its details via its associated File.",
+          "source_reference": "increase.com#/components/schemas/account_statement",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Numbers",
+          "source_reference": "increase.com#/paths/~1account_numbers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/account_statements",
+          "source_reference": "increase.com#/paths/~1account_statements",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Account Statements",
+          "source_reference": "increase.com#/paths/~1account_statements/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/account_statements/{account_statement_id}",
+          "source_reference": "increase.com#/paths/~1account_statements~1{account_statement_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve an Account Statement",
+          "source_reference": "increase.com#/paths/~1account_statements~1{account_statement_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Account Transfers",
+          "source_reference": "increase.com#/paths/~1account_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Accounts",
+          "source_reference": "increase.com#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account",
+          "source_reference": "increase.com#/paths/~1accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Close an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}~1close/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Card Profiles",
+          "source_reference": "increase.com#/paths/~1card_profiles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Card Profile",
+          "source_reference": "increase.com#/paths/~1card_profiles/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Card Profile",
+          "source_reference": "increase.com#/paths/~1card_profiles~1{card_profile_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List External Accounts",
+          "source_reference": "increase.com#/paths/~1external_accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Files",
+          "source_reference": "increase.com#/paths/~1files/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a File",
+          "source_reference": "increase.com#/paths/~1files/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a File",
+          "source_reference": "increase.com#/paths/~1files~1{file_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/simulations/account_statements",
+          "source_reference": "increase.com#/paths/~1simulations~1account_statements",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Simulate an Account Statement being created",
+          "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Complete a Sandbox Account Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an ACH Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Real Time Payments Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_real_time_payments_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Wire Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_wire_transfers/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccountStatement",
+      "properties": [
+        {
+          "aliases": [
+            "account id",
+            "account_id"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.account_id",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/account_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The identifier for the Account this Account Statement belongs to.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/account_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "account_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.created_at",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time at which the Account Statement was created.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "ending balance",
+            "ending_balance"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.ending_balance",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/ending_balance",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Account's balance at the start of its statement period.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/ending_balance",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "ending_balance",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "file id",
+            "file_id"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.file_id",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/file_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The identifier of the File containing a PDF of the statement.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/file_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "file_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.id",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Account Statement identifier.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "starting balance",
+            "starting_balance"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.starting_balance",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/starting_balance",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Account's balance at the start of its statement period.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/starting_balance",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "starting_balance",
+          "required": true,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "statement period end",
+            "statement_period_end"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.statement_period_end",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/statement_period_end",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time representing the end of the period the Account Statement covers.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/statement_period_end",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "statement_period_end",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statement period start",
+            "statement_period_start"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.statement_period_start",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/statement_period_start",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time representing the start of the period the Account Statement covers.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/statement_period_start",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "statement_period_start",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement.type",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A constant representing the object's type. For this resource it will always be `account_statement`.",
+              "source_reference": "increase.com#/components/schemas/account_statement/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "account_statement_id",
+          "type": "string",
+          "aliases": [
+            "account_statement_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "increase.com.openapi.retrieve_an_account_statement",
+              "claim": "Inferred property account_statement_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "closed",
+              "source_reference": "increase.com#/paths/~1accounts~1{account_id}~1close/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "closed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_numbers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1card_profiles/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1external_accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1files/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1accounts~1{account_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Account Statement",
+        "AccountStatementList",
+        "account statement list",
+        "account_statement_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object account_statement_list",
+          "source_reference": "increase.com#/components/schemas/account_statement_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A list of Account Statement objects",
+          "source_reference": "increase.com#/components/schemas/account_statement_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Statements",
+          "source_reference": "increase.com#/paths/~1account_statements/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Statement",
+          "source_reference": "increase.com#/paths/~1account_statements~1{account_statement_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an Account Statement being created",
+          "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccountStatementList",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement_list.data",
+              "source_reference": "increase.com#/components/schemas/account_statement_list/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The contents of the list.",
+              "source_reference": "increase.com#/components/schemas/account_statement_list/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "next cursor",
+            "next_cursor"
+          ],
+          "evidence": [
+            {
+              "claim": "account_statement_list.next_cursor",
+              "source_reference": "increase.com#/components/schemas/account_statement_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A pointer to a place in the list.",
+              "source_reference": "increase.com#/components/schemas/account_statement_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next_cursor",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Account Transfer",
+        "AccountTransferList",
+        "account transfer list",
+        "account_transfer_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object account_transfer_list",
+          "source_reference": "increase.com#/components/schemas/account_transfer_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A list of Account Transfer objects",
+          "source_reference": "increase.com#/components/schemas/account_transfer_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Transfers",
+          "source_reference": "increase.com#/paths/~1account_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Complete a Sandbox Account Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccountTransferList",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "account_transfer_list.data",
+              "source_reference": "increase.com#/components/schemas/account_transfer_list/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The contents of the list.",
+              "source_reference": "increase.com#/components/schemas/account_transfer_list/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "next cursor",
+            "next_cursor"
+          ],
+          "evidence": [
+            {
+              "claim": "account_transfer_list.next_cursor",
+              "source_reference": "increase.com#/components/schemas/account_transfer_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A pointer to a place in the list.",
+              "source_reference": "increase.com#/components/schemas/account_transfer_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next_cursor",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_transfers/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ACH",
+        "ACH Prenotifications",
+        "AchPrenotification",
+        "Automated Clearing",
+        "House",
+        "ach prenotification",
+        "ach_prenotification"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ach_prenotification",
+          "source_reference": "increase.com#/components/schemas/ach_prenotification",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "ACH Prenotifications are one way you can verify account and routing numbers by Automated Clearing House (ACH).",
+          "source_reference": "increase.com#/components/schemas/ach_prenotification",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/ach_prenotifications",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List ACH Prenotifications",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/ach_prenotifications/{ach_prenotification_id}",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications~1{ach_prenotification_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications~1{ach_prenotification_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List ACH Transfers",
+          "source_reference": "increase.com#/paths/~1ach_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel a pending ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Inbound ACH Transfer Returns",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Inbound ACH Transfer Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns~1{inbound_ach_transfer_return_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1return/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an ACH Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_ach_transfers/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AchPrenotification",
+      "properties": [
+        {
+          "aliases": [
+            "account number",
+            "account_number"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.account_number",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/account_number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The destination account number.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/account_number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "account_number",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "addendum"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.addendum",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/addendum",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Additional information for the recipient.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/addendum",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "addendum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company descriptive date",
+            "company_descriptive_date"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.company_descriptive_date",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_descriptive_date",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The description of the date of the notification.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_descriptive_date",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_descriptive_date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company discretionary data",
+            "company_discretionary_data"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.company_discretionary_data",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_discretionary_data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Optional data associated with the notification.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_discretionary_data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_discretionary_data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company entry description",
+            "company_entry_description"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.company_entry_description",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_entry_description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The description of the notification.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_entry_description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_entry_description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company name",
+            "company_name"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.company_name",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The name by which you know the company.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/company_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.created_at",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time at which the prenotification was created.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "credit debit indicator",
+            "credit_debit_indicator"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.credit_debit_indicator",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/credit_debit_indicator",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If the notification is for a future credit or debit.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/credit_debit_indicator",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "credit_debit_indicator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "effective date",
+            "effective_date"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.effective_date",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/effective_date",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The effective date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/effective_date",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "effective_date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.id",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ACH Prenotification's identifier.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "prenotification return",
+            "prenotification_return"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.prenotification_return",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/prenotification_return",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If your prenotification is returned, this will contain details of the return.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/prenotification_return",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "prenotification_return",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "routing number",
+            "routing_number"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.routing_number",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/routing_number",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The American Bankers' Association (ABA) Routing Transit Number (RTN).",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/routing_number",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "routing_number",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.status",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The lifecycle status of the ACH Prenotification.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification.type",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A constant representing the object's type. For this resource it will always be `ach_prenotification`.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "id": "ach_prenotification_id",
+          "type": "string",
+          "aliases": [
+            "ach_prenotification_id"
+          ],
+          "required": true,
+          "evidence": [
+            {
+              "source_type": "inferred_from_overlay",
+              "source_reference": "increase.com.openapi.retrieve_an_ach_prenotification",
+              "claim": "Inferred property ach_prenotification_id from binding"
+            }
+          ]
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending_submitting",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending_submitting",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "requires_attention",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "requires_attention",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "returned",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "returned",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification/properties/status",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ACH Prenotification",
+        "AchPrenotificationList",
+        "ach prenotification list",
+        "ach_prenotification_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object ach_prenotification_list",
+          "source_reference": "increase.com#/components/schemas/ach_prenotification_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A list of ACH Prenotification objects",
+          "source_reference": "increase.com#/components/schemas/ach_prenotification_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List ACH Prenotifications",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications~1{ach_prenotification_id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AchPrenotificationList",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification_list.data",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification_list/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The contents of the list.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification_list/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "next cursor",
+            "next_cursor"
+          ],
+          "evidence": [
+            {
+              "claim": "ach_prenotification_list.next_cursor",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A pointer to a place in the list.",
+              "source_reference": "increase.com#/components/schemas/ach_prenotification_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next_cursor",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Card Dispute",
+        "CardDisputeList",
+        "card dispute list",
+        "card_dispute_list"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object card_dispute_list",
+          "source_reference": "increase.com#/components/schemas/card_dispute_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "A list of Card Dispute objects",
+          "source_reference": "increase.com#/components/schemas/card_dispute_list",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Card Disputes",
+          "source_reference": "increase.com#/paths/~1card_disputes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Card Dispute",
+          "source_reference": "increase.com#/paths/~1card_disputes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Card Dispute",
+          "source_reference": "increase.com#/paths/~1card_disputes~1{card_dispute_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulates advancing the state of a card dispute",
+          "source_reference": "increase.com#/paths/~1simulations~1card_disputes~1{card_dispute_id}~1action/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CardDisputeList",
+      "properties": [
+        {
+          "aliases": [
+            "data"
+          ],
+          "evidence": [
+            {
+              "claim": "card_dispute_list.data",
+              "source_reference": "increase.com#/components/schemas/card_dispute_list/properties/data",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The contents of the list.",
+              "source_reference": "increase.com#/components/schemas/card_dispute_list/properties/data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "data",
+          "required": true,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "next cursor",
+            "next_cursor"
+          ],
+          "evidence": [
+            {
+              "claim": "card_dispute_list.next_cursor",
+              "source_reference": "increase.com#/components/schemas/card_dispute_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A pointer to a place in the list.",
+              "source_reference": "increase.com#/components/schemas/card_dispute_list/properties/next_cursor",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "next_cursor",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1card_disputes/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ACH",
+        "Inbound ACH",
+        "InboundAchTransferReturn",
+        "Transfer",
+        "Transfer Return",
+        "You",
+        "inbound ach transfer return",
+        "inbound_ach_transfer_return"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object inbound_ach_transfer_return",
+          "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "If unauthorized activity occurs via ACH, you can create an Inbound ACH Transfer Return and we'll reverse the transaction. You can create an Inbound ACH Transfer return the first two days after receiving an Inbound ACH Transfer.",
+          "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Transfers",
+          "source_reference": "increase.com#/paths/~1account_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List ACH Prenotifications",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an ACH Prenotification",
+          "source_reference": "increase.com#/paths/~1ach_prenotifications~1{ach_prenotification_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List ACH Transfers",
+          "source_reference": "increase.com#/paths/~1ach_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel a pending ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Check Transfers",
+          "source_reference": "increase.com#/paths/~1check_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Check Transfer",
+          "source_reference": "increase.com#/paths/~1check_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Check Transfer",
+          "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve a Check Transfer",
+          "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel a pending Check Transfer",
+          "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Request a stop payment on a Check Transfer",
+          "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}~1stop_payment/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/inbound_ach_transfer_returns",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Inbound ACH Transfer Returns",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/inbound_ach_transfer_returns/{inbound_ach_transfer_return_id}",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns~1{inbound_ach_transfer_return_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve an Inbound ACH Transfer Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns~1{inbound_ach_transfer_return_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Complete a Sandbox Account Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1return/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Deposit a Sandbox Check Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1check_transfers~1{check_transfer_id}~1deposit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Mail a Sandbox Check Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1check_transfers~1{check_transfer_id}~1mail/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an ACH Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Real Time Payments Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_real_time_payments_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Wire Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_wire_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Reverse a Sandbox Wire Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1wire_transfers~1{wire_transfer_id}~1reverse/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a Sandbox Wire Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1wire_transfers~1{wire_transfer_id}~1submit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Wire Transfers",
+          "source_reference": "increase.com#/paths/~1wire_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Wire Transfer",
+          "source_reference": "increase.com#/paths/~1wire_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Wire Transfer",
+          "source_reference": "increase.com#/paths/~1wire_transfers~1{wire_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve a Wire Transfer",
+          "source_reference": "increase.com#/paths/~1wire_transfers~1{wire_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel a pending Wire Transfer",
+          "source_reference": "increase.com#/paths/~1wire_transfers~1{wire_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "InboundAchTransferReturn",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.id",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ID of the Inbound ACH Transfer Return.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "inbound ach transfer transaction id",
+            "inbound_ach_transfer_transaction_id"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.inbound_ach_transfer_transaction_id",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/inbound_ach_transfer_transaction_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ID for the Transaction that is being returned.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/inbound_ach_transfer_transaction_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "inbound_ach_transfer_transaction_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "reason"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.reason",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/reason",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The reason why this transfer will be returned. This is sent to the initiating bank.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/reason",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.status",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The lifecycle status of the transfer.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "submission"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.submission",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/submission",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "After the return is submitted to FedACH, this will contain supplemental details.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/submission",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "submission",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "transaction id",
+            "transaction_id"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.transaction_id",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/transaction_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ID for the transaction refunding the transfer.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/transaction_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "transaction_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_return.type",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A constant representing the object's type. For this resource it will always be `inbound_ach_transfer_return`.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1wire_transfers~1{wire_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_prenotifications/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1check_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1wire_transfers/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "pending",
+              "source_reference": "increase.com#/paths/~1check_transfers~1{check_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "pending",
+              "source_reference": "increase.com#/paths/~1wire_transfers~1{wire_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending_submitting",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending_submitting",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_return/properties/status",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/paths/~1simulations~1wire_transfers~1{wire_transfer_id}~1submit/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ACH Transfer",
+        "InboundAchTransferSimulationResult",
+        "The",
+        "inbound ach transfer simulation result",
+        "inbound_ach_transfer_simulation_result"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object inbound_ach_transfer_simulation_result",
+          "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "The results of an inbound ACH Transfer simulation.",
+          "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List ACH Transfers",
+          "source_reference": "increase.com#/paths/~1ach_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel a pending ACH Transfer",
+          "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Inbound ACH Transfer Returns",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ACH Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Inbound ACH Transfer Return",
+          "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns~1{inbound_ach_transfer_return_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1return/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Submit a Sandbox ACH Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulates advancing the state of a card dispute",
+          "source_reference": "increase.com#/paths/~1simulations~1card_disputes~1{card_dispute_id}~1action/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an ACH Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_ach_transfers/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "InboundAchTransferSimulationResult",
+      "properties": [
+        {
+          "aliases": [
+            "declined transaction",
+            "declined_transaction"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_simulation_result.declined_transaction",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/declined_transaction",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If the ACH Transfer attempt fails, this will contain the resulting [Declined Transaction](#declined-transactions) object. The Declined Transaction's `source` will be of `category: inbound_ach_transfer`.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/declined_transaction",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "declined_transaction",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "transaction"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_simulation_result.transaction",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/transaction",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "If the ACH Transfer attempt succeeds, this will contain the resulting [Transaction](#transactions) object. The Transaction's `source` will be of `category: inbound_ach_transfer`.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/transaction",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "transaction",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "inbound_ach_transfer_simulation_result.type",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A constant representing the object's type. For this resource it will always be `inbound_ach_transfer_simulation_result`.",
+              "source_reference": "increase.com#/components/schemas/inbound_ach_transfer_simulation_result/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1ach_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1inbound_ach_transfer_returns/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "increase.com#/paths/~1ach_transfers~1{ach_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "submitted",
+              "source_reference": "increase.com#/paths/~1simulations~1ach_transfers~1{ach_transfer_id}~1submit/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "submitted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Account",
+        "Account Number",
+        "Account Numbers",
+        "Accounts",
+        "Card",
+        "Cards",
+        "Limit",
+        "Limits",
+        "Volume",
+        "You",
+        "limit"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object limit",
+          "source_reference": "increase.com#/components/schemas/limit",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "You can set limits at the Account, Account Number, or Card level. Limits applied to Accounts will apply to all Account Numbers and Cards in the Account. You can specify any number of Limits and they will all be applied to inbound debits and card authorizations. Volume and count Limits are designed to prevent unauthorized debits.",
+          "source_reference": "increase.com#/components/schemas/limit",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Numbers",
+          "source_reference": "increase.com#/paths/~1account_numbers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Account Number",
+          "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Account Statements",
+          "source_reference": "increase.com#/paths/~1account_statements/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Statement",
+          "source_reference": "increase.com#/paths/~1account_statements~1{account_statement_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Account Transfers",
+          "source_reference": "increase.com#/paths/~1account_transfers/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Approve an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1approve/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Cancel an Account Transfer",
+          "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Accounts",
+          "source_reference": "increase.com#/paths/~1accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an Account",
+          "source_reference": "increase.com#/paths/~1accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Close an Account",
+          "source_reference": "increase.com#/paths/~1accounts~1{account_id}~1close/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Card Disputes",
+          "source_reference": "increase.com#/paths/~1card_disputes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Card Dispute",
+          "source_reference": "increase.com#/paths/~1card_disputes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Card Dispute",
+          "source_reference": "increase.com#/paths/~1card_disputes~1{card_dispute_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Card Profiles",
+          "source_reference": "increase.com#/paths/~1card_profiles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Card Profile",
+          "source_reference": "increase.com#/paths/~1card_profiles/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Card Profile",
+          "source_reference": "increase.com#/paths/~1card_profiles~1{card_profile_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Cards",
+          "source_reference": "increase.com#/paths/~1cards/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Card",
+          "source_reference": "increase.com#/paths/~1cards/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a Card",
+          "source_reference": "increase.com#/paths/~1cards~1{card_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Card",
+          "source_reference": "increase.com#/paths/~1cards~1{card_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve sensitive details for a Card",
+          "source_reference": "increase.com#/paths/~1cards~1{card_id}~1details/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List External Accounts",
+          "source_reference": "increase.com#/paths/~1external_accounts/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an External Account",
+          "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/limits",
+          "source_reference": "increase.com#/paths/~1limits",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List Limits",
+          "source_reference": "increase.com#/paths/~1limits/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a Limit",
+          "source_reference": "increase.com#/paths/~1limits/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/limits/{limit_id}",
+          "source_reference": "increase.com#/paths/~1limits~1{limit_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a Limit",
+          "source_reference": "increase.com#/paths/~1limits~1{limit_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a Limit",
+          "source_reference": "increase.com#/paths/~1limits~1{limit_id}/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an Account Statement being created",
+          "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Complete a Sandbox Account Transfer",
+          "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an authorization on a Card",
+          "source_reference": "increase.com#/paths/~1simulations~1card_authorizations/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulates advancing the state of a card dispute",
+          "source_reference": "increase.com#/paths/~1simulations~1card_disputes~1{card_dispute_id}~1action/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a refund on a card",
+          "source_reference": "increase.com#/paths/~1simulations~1card_refunds/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate settling a card authorization",
+          "source_reference": "increase.com#/paths/~1simulations~1card_settlements/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate digital wallet provisioning for a card",
+          "source_reference": "increase.com#/paths/~1simulations~1digital_wallet_token_requests/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate an ACH Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_ach_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Real Time Payments Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_real_time_payments_transfers/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Simulate a Wire Transfer to your account",
+          "source_reference": "increase.com#/paths/~1simulations~1inbound_wire_transfers/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Limit",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.id",
+              "source_reference": "increase.com#/components/schemas/limit/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The Limit identifier.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "interval"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.interval",
+              "source_reference": "increase.com#/components/schemas/limit/properties/interval",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The interval for the metric. This is required if `metric` is `count` or `volume`.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/interval",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "metric"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.metric",
+              "source_reference": "increase.com#/components/schemas/limit/properties/metric",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The metric for the Limit.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/metric",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "model id",
+            "model_id"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.model_id",
+              "source_reference": "increase.com#/components/schemas/limit/properties/model_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The identifier of the Account Number, Account, or Card the Limit applies to.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/model_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "model_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "model type",
+            "model_type"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.model_type",
+              "source_reference": "increase.com#/components/schemas/limit/properties/model_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of the model you wish to associate the Limit with.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/model_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "model_type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.status",
+              "source_reference": "increase.com#/components/schemas/limit/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The current status of the Limit.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.type",
+              "source_reference": "increase.com#/components/schemas/limit/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A constant representing the object's type. For this resource it will always be `limit`.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "value"
+          ],
+          "evidence": [
+            {
+              "claim": "limit.value",
+              "source_reference": "increase.com#/components/schemas/limit/properties/value",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The value to evaluate the Limit against.",
+              "source_reference": "increase.com#/components/schemas/limit/properties/value",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "value",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "active",
+              "source_reference": "increase.com#/components/schemas/limit/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "active",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "increase.com#/paths/~1account_transfers~1{account_transfer_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "closed",
+              "source_reference": "increase.com#/paths/~1accounts~1{account_id}~1close/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "closed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "increase.com#/paths/~1simulations~1account_transfers~1{account_transfer_id}~1complete/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_numbers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1account_transfers/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1card_disputes/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1card_profiles/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1cards/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1external_accounts/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1limits/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "increase.com#/paths/~1simulations~1account_statements/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "inactive",
+              "source_reference": "increase.com#/components/schemas/limit/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "inactive",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1account_numbers~1{account_number_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1accounts~1{account_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1cards~1{card_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1external_accounts~1{external_account_id}/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "increase.com#/paths/~1limits~1{limit_id}/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

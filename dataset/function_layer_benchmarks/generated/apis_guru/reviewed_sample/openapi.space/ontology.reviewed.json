@@ -1,0 +1,170 @@
+{
+  "metadata": {
+    "name": "openapi.space_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "openapi.space"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Api",
+        "api"
+      ],
+      "evidence": [
+        {
+          "claim": "/apis",
+          "source_reference": "openapi.space#/paths/~1apis",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves a list of currently defined APIs in API meta list format.",
+          "source_reference": "openapi.space#/paths/~1apis/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/apis/{owner}",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves an API meta listing of all APIs defined for this owner",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/apis/{owner}/{api}",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the specified API",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves an API meta listing for all API versions for this owner and API",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Saves the provided Swagger definition",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/apis/{owner}/{api}/{version}",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a particular version of the specified API",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Publish a particular version of the specified API",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/apis/{owner}/{api}/{version}/swagger.json",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves the Swagger definition for the specified API and version in JSON format",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/apis/{owner}/{api}/{version}/swagger.yaml",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.yaml",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves the Swagger definition for the specified API and version in YAML format",
+          "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}~1swagger.yaml/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Log in to OpenAPI space",
+          "source_reference": "openapi.space#/paths/~1auth~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Log in to OpenAPI space using an APInf account",
+          "source_reference": "openapi.space#/paths/~1auth~1login~1apinf/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Log in to OpenAPI space using an APInf authentication token",
+          "source_reference": "openapi.space#/paths/~1auth~1login~1apinf_token/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Log out from OpenAPI space",
+          "source_reference": "openapi.space#/paths/~1auth~1logout/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Register to OpenAPI space",
+          "source_reference": "openapi.space#/paths/~1auth~1register/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Api",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "openapi.space#/paths/~1apis~1{owner}~1{api}~1{version}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "open",
+              "source_reference": "openapi.space#/paths/~1auth~1login/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "open",
+              "source_reference": "openapi.space#/paths/~1auth~1login~1apinf/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "open",
+              "source_reference": "openapi.space#/paths/~1auth~1login~1apinf_token/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "open",
+              "source_reference": "openapi.space#/paths/~1auth~1logout/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "open",
+              "source_reference": "openapi.space#/paths/~1auth~1register/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "open",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

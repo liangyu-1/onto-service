@@ -1,0 +1,1288 @@
+{
+  "metadata": {
+    "name": "cenit.io_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "cenit.io"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Connection",
+        "connection"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of connections",
+          "source_reference": "cenit.io#/paths/~1setup~1connection/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/connection/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Returns a list of connection roles",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a connection role.",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Connection",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "ConnectionRole",
+        "connection role",
+        "connection_role"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/connection_role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of connection roles",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/connection_role/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a connection role.",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ConnectionRole",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "DataType",
+        "data type",
+        "data_type"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/data_type/",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of data types",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/data_type/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "DataType",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Flow",
+        "flow"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/flow/",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of flows",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a flow",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/flow/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a flow.",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing flow",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Flow",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Namespace",
+        "namespace"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/namespace/",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of namespaces",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/namespace/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Namespace",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Observer",
+        "observer"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/observer/",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of events",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/observer/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Observer",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Scheduler",
+        "scheduler"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/scheduler/",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of schedulers",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an scheduler",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/scheduler/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an schedule",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing schedule",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Scheduler",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Schema",
+        "schema"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/schema/",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of schemas",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an schema",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/schema/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an schema.",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing schema",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Schema",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Setup",
+        "setup"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of connections",
+          "source_reference": "cenit.io#/paths/~1setup~1connection/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/connection/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing connection",
+          "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/connection_role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of connection roles",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/connection_role/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a connection role.",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Return a connection role",
+          "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/data_type/",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of data types",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/data_type/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a data type",
+          "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/flow/",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of flows",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a flow",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/flow/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a flow.",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing flow",
+          "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/namespace/",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of namespaces",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/namespace/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing namespace",
+          "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/observer/",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of events",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/observer/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing event",
+          "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/scheduler/",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of schedulers",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an scheduler",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/scheduler/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an schedule",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing schedule",
+          "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/schema/",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of schemas",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update an schema",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/schema/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an schema.",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing schema",
+          "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/translator/",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of translators",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/translator/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/webhook/",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of webhooks",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/webhook/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Setup",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1connection~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1connection/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1connection_role/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1data_type~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1flow~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1namespace~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1observer~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1scheduler~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1schema~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Translator",
+        "translator"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/translator/",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of translators",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/translator/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing translator",
+          "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Translator",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1translator~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Webhook",
+        "webhook"
+      ],
+      "evidence": [
+        {
+          "claim": "/setup/webhook/",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns a list of webhooks",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create or update a webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/setup/webhook/{id}",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve an existing webhook",
+          "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Webhook",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1{id}/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "cenit.io#/paths/~1setup~1webhook~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

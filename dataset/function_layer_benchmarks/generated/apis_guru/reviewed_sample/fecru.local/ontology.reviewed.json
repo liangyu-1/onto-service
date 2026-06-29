@@ -1,0 +1,2169 @@
+{
+  "metadata": {
+    "name": "fecru.local_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "fecru.local"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Admin",
+        "admin"
+      ],
+      "evidence": [
+        {
+          "claim": "/rest-service-fecru/admin/groups/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of groups.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new user group.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/groups/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a group by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a group by name.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing group.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/groups/{name}/users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user from group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists group's user names",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Adds user to group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of permission schemes.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new permission scheme. The new permission scheme is blank or can be created from another existing permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a permission scheme by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a permission scheme by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/anonymous-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes anonymous-user permission [action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of anonymous users permissions [action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add anonymous-user permission [action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes group permission [group name, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of group permissions [group name, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group permission [group name, action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/logged-in-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes logged-in-users permission [action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of logged in users permissions [action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add logged-in-users permission [action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/review-roles",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes review-role permission [role name, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of review-roles permissions [role name, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add review-role permission [role name, action name] to given permission scheme\n List of available action names:\n \n\n List of available role names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user permission [username, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of user permissions [username, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user permission [username, action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a project by key (including all reviews in this project).\n Use \n to move reviews to another project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a project by key.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{sourceProjectKey}/move-reviews/{destinationProjectKey}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Move reviews and snippets from source project to destination project",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of repositories. Repository properties with default values may not be returned.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Adds repository",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns information about the status of the repository and the current indexing status",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes repository.\n Warning: you can not undo this operation",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/disable",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Disables repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/enable",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Enables repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-discussions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-discussions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the changeset discussion index for the specified repository. The index is used to display changeset\n discussions in activity streams.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-discussions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-linecount",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-linecount",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes the linecount data used to generate the LOC graphs. The linecount data will be recalculated in daily\n buckets based on the server timezone.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-linecount/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-reviews",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-reviews",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes all the Crucible revision data (which revisions have been reviewed)",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-reviews/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-search",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the search index data for the given repository. This will rebuild the data used to search by path,\n commit message and comitter, also used for activity streams and JIRA integration.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-search/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-source",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-source",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the existing cache and re-indexes the repository from scratch.\n For large or slow repositories this may take some time, during which some functionality will be unavailable.\n This action will also restart the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-source/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/rescan-metadata",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1rescan-metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-scans the repository metadata for SVN and Perforce repositories. Only valid for Perforce and SVN repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1rescan-metadata/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/scan",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an incremental repository index now.  This is the same operation as triggered by scheduled indexing.\n Can be called using the REST Api Token to authorize.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/scan-cvs",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan-cvs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Scans the whole CVS repository for any changes since the last scan. Only valid for CVS repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan-cvs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/start",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1start",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Starts the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1start/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/stop",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stops the repository. Does not wait for the repository to stop before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1stop/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a repository by key",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a repository by key. Repository properties with default values may not be returned.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/full-incremental-index",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1full-incremental-index",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an full incremental repository index.\n For CVS: scans the whole CVS repository for any changes since the last scan.\n For other repository types will trigger an incremental index.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1full-incremental-index/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/incremental-index",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1incremental-index",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an incremental repository index.  This is the same operation as triggered by scheduled indexing.\n Can be called using the REST API Token to authorize.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1incremental-index/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/permissions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve repository permissions properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates repository permissions properties.\n\n Valid permission settings: any combination of useDefaults, allowAnonymous, allowLoggedIn.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/permissions/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from repository allowed groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Note: use /rest-service-fecru/admin/repository-permissions/ endpoint for full repository permission administration functionality\n Lists groups allowed to access repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Note: use /rest-service-fecru/admin/repository-permissions/ endpoint for full repository permission administration functionality\n Adds group to repository allowed groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-changeset-discussion",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-changeset-discussion",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the changeset discussion index for the specified repository. The index is used to display changeset\n discussions in activity streams.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-changeset-discussion/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-linecount",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-linecount",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes the linecount data used to generate the LOC graphs. The linecount data will be recalculated in daily\n buckets based on the server timezone.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-linecount/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-reviews",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-reviews",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes all the Crucible revision data (which revisions have been reviewed)",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-reviews/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-search",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the search index data for the given repository. This will rebuild the data used to search by path,\n commit message and committer, also used for activity streams and JIRA integration.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-search/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-source",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-source",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the existing cache and re-indexes the repository from scratch.\n For large or slow repositories this may take some time, during which some functionality will be unavailable.\n This action will also restart the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-source/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/rescan-metadata",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1rescan-metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-scans the repository metadata. Only valid for Perforce and SVN repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1rescan-metadata/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/start",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1start",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Starts repository. Does not wait for the repository to start before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1start/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/stop",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stops repository. Does not wait for the repository to stop before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1stop/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/updates",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves repository updates properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /rest-service-fecru/admin/repositories/{repository}/updates",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/~defaults/permissions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve default repository permissions properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates default repository permissions properties.\n\n Valid permission settings: any combination of allowAnonymous, allowLoggedIn",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of users.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new user. Tries to add the user to fisheye-users and crucible-users groups if those exist.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a user by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a user by name.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/{name}/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user from group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists user's group names",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Adds user to group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Admin",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Project",
+        "project"
+      ],
+      "evidence": [
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a project by key (including all reviews in this project).\n Use \n to move reviews to another project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a project by key.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{sourceProjectKey}/move-reviews/{destinationProjectKey}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Move reviews and snippets from source project to destination project",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited projects for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/projects/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited projects for the currently logged in Project, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects~1detailed/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Project",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "RestServiceFecru",
+        "rest service fecru",
+        "rest_service_fecru"
+      ],
+      "evidence": [
+        {
+          "claim": "/rest-service-fecru/admin/groups/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of groups.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new user group.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/groups/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a group by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a group by name.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing group.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/groups/{name}/users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user from group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists group's user names",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Adds user to group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1groups~1{name}~1users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of permission schemes.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new permission scheme. The new permission scheme is blank or can be created from another existing permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a permission scheme by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a permission scheme by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/anonymous-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes anonymous-user permission [action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of anonymous users permissions [action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add anonymous-user permission [action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes group permission [group name, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of group permissions [group name, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group permission [group name, action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/logged-in-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes logged-in-users permission [action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of logged in users permissions [action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add logged-in-users permission [action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/review-roles",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes review-role permission [role name, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of review-roles permissions [role name, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add review-role permission [role name, action name] to given permission scheme\n List of available action names:\n \n\n List of available role names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/permission-schemes/{name}/users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user permission [username, action name] from given permission scheme",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a page of user permissions [username, action name] for given permission scheme.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user permission [username, action name] to given permission scheme\n List of available action names:",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of projects.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a project by key (including all reviews in this project).\n Use \n to move reviews to another project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a project by key.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing project.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's allowed reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/allowed-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's allowed reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's allowed reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add group to project's default reviewer group list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{key}/default-reviewer-users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Remove user from project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieves project's default reviewer users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Add user to project's default reviewer users list",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/projects/{sourceProjectKey}/move-reviews/{destinationProjectKey}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Move reviews and snippets from source project to destination project",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{sourceProjectKey}~1move-reviews~1{destinationProjectKey}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of repositories. Repository properties with default values may not be returned.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Adds repository",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns information about the status of the repository and the current indexing status",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes repository.\n Warning: you can not undo this operation",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/disable",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Disables repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/enable",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Enables repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-discussions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-discussions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the changeset discussion index for the specified repository. The index is used to display changeset\n discussions in activity streams.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-discussions/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-linecount",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-linecount",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes the linecount data used to generate the LOC graphs. The linecount data will be recalculated in daily\n buckets based on the server timezone.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-linecount/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-reviews",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-reviews",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes all the Crucible revision data (which revisions have been reviewed)",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-reviews/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-search",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the search index data for the given repository. This will rebuild the data used to search by path,\n commit message and comitter, also used for activity streams and JIRA integration.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-search/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/reindex-source",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-source",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the existing cache and re-indexes the repository from scratch.\n For large or slow repositories this may take some time, during which some functionality will be unavailable.\n This action will also restart the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1reindex-source/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/rescan-metadata",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1rescan-metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-scans the repository metadata for SVN and Perforce repositories. Only valid for Perforce and SVN repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1rescan-metadata/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/scan",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an incremental repository index now.  This is the same operation as triggered by scheduled indexing.\n Can be called using the REST Api Token to authorize.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/scan-cvs",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan-cvs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Scans the whole CVS repository for any changes since the last scan. Only valid for CVS repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1scan-cvs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/start",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1start",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Starts the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1start/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories-v1/{repository}/stop",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stops the repository. Does not wait for the repository to stop before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1stop/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a repository by key",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a repository by key. Repository properties with default values may not be returned.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/full-incremental-index",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1full-incremental-index",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an full incremental repository index.\n For CVS: scans the whole CVS repository for any changes since the last scan.\n For other repository types will trigger an incremental index.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1full-incremental-index/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/incremental-index",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1incremental-index",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Runs an incremental repository index.  This is the same operation as triggered by scheduled indexing.\n Can be called using the REST API Token to authorize.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1incremental-index/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/permissions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve repository permissions properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates repository permissions properties.\n\n Valid permission settings: any combination of useDefaults, allowAnonymous, allowLoggedIn.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/permissions/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete group from repository allowed groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Note: use /rest-service-fecru/admin/repository-permissions/ endpoint for full repository permission administration functionality\n Lists groups allowed to access repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Note: use /rest-service-fecru/admin/repository-permissions/ endpoint for full repository permission administration functionality\n Adds group to repository allowed groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-changeset-discussion",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-changeset-discussion",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the changeset discussion index for the specified repository. The index is used to display changeset\n discussions in activity streams.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-changeset-discussion/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-linecount",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-linecount",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes the linecount data used to generate the LOC graphs. The linecount data will be recalculated in daily\n buckets based on the server timezone.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-linecount/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-reviews",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-reviews",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-indexes all the Crucible revision data (which revisions have been reviewed)",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-reviews/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-search",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-search",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rebuilds the search index data for the given repository. This will rebuild the data used to search by path,\n commit message and committer, also used for activity streams and JIRA integration.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-search/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/reindex-source",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-source",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes the existing cache and re-indexes the repository from scratch.\n For large or slow repositories this may take some time, during which some functionality will be unavailable.\n This action will also restart the repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1reindex-source/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/rescan-metadata",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1rescan-metadata",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Re-scans the repository metadata. Only valid for Perforce and SVN repositories.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1rescan-metadata/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/start",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1start",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Starts repository. Does not wait for the repository to start before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1start/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/stop",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1stop",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Stops repository. Does not wait for the repository to stop before returning.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1stop/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/{repository}/updates",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieves repository updates properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /rest-service-fecru/admin/repositories/{repository}/updates",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/repositories/~defaults/permissions",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve default repository permissions properties.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates default repository permissions properties.\n\n Valid permission settings: any combination of allowAnonymous, allowLoggedIn",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve a page of users.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Creates a new user. Tries to add the user to fisheye-users and crucible-users groups if those exist.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/{name}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Deletes a user by name",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Retrieve a user by name.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates an existing user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/admin/users/{name}/groups",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Removes user from group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Lists user's group names",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Adds user to group",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1users~1{name}~1groups/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/auth/login",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1auth~1login",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get the user authentication token.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1auth~1login/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/indexing-status-v1/status/{repository}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1indexing-status-v1~1status~1{repository}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Returns indexing status of given repository.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1indexing-status-v1~1status~1{repository}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited items for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visisted items for the currently logged in user, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/projects",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited projects for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/projects/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited projects for the currently logged in Project, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1projects~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/repositories",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1repositories",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited repositories for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1repositories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/repositories/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1repositories~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visisted repositories for the currently logged in user, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1repositories~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/reviews",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1reviews",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited reviews for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1reviews/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/reviews/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1reviews~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited reviews for the currently logged in user, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1reviews~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/snippets",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1snippets",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited snippets for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1snippets/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/snippets/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1snippets~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited snippets for the currently logged in user, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1snippets~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/users",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1users",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited users for the currently logged in user.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1users/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/recently-visited-v1/users/detailed",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1users~1detailed",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Get a list of recently visited users for the currently logged in user, including the detailed entities.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1recently-visited-v1~1users~1detailed/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/server-v1",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1server-v1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Provides general information about the server's configuration.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1server-v1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/share-content-v1/share",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1share-content-v1~1share",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "POST /rest-service-fecru/share-content-v1/share",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1share-content-v1~1share/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/user-prefs-v1",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Using POST method to set a user preference.\n If repo is not set, the preference will be recognised as a global preference.",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/user-prefs-v1/{property}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1~1{property}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Getting user's global preference",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1~1{property}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/rest-service-fecru/user-prefs-v1/{repository}/{property}",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1~1{repository}~1{property}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Getting user's preference related to a certain repository",
+          "source_reference": "fecru.local#/paths/~1rest-service-fecru~1user-prefs-v1~1{repository}~1{property}/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "RestServiceFecru",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1anonymous-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1logged-in-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1review-roles/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1permission-schemes~1{name}~1users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-groups/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "disabled",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1disable/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "disabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "enabled",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories-v1~1{repository}~1enable/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "enabled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1allowed-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1projects~1{key}~1default-reviewer-users/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "removed",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions~1groups/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "removed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1permissions/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1{repository}~1updates/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "fecru.local#/paths/~1rest-service-fecru~1admin~1repositories~1~0defaults~1permissions/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

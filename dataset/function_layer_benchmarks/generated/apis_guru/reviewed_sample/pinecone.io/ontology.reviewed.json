@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "name": "pinecone.io_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "pinecone.io"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "This",
+        "Vector",
+        "VectorData",
+        "vector data",
+        "vector_data"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object VectorData",
+          "source_reference": "pinecone.io#/components/schemas/VectorData",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Vector dense data. This should be the same length as the dimension of the index being queried.",
+          "source_reference": "pinecone.io#/components/schemas/VectorData",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Delete",
+          "source_reference": "pinecone.io#/paths/~1vectors~1delete/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch",
+          "source_reference": "pinecone.io#/paths/~1vectors~1fetch/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch",
+          "source_reference": "pinecone.io#/paths/~1vectors~1update/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upsert",
+          "source_reference": "pinecone.io#/paths/~1vectors~1upsert/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "VectorData",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "pinecone.io#/paths/~1vectors~1delete/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "pinecone.io#/paths/~1vectors~1update/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

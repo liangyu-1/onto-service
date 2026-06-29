@@ -1,0 +1,2978 @@
+{
+  "metadata": {
+    "name": "netboxdemo.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "netboxdemo.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "ConnectedDevice",
+        "connected device",
+        "connected_device"
+      ],
+      "evidence": [
+        {
+          "claim": "/dcim/connected-device/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1connected-device~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer\ninterface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors\nvia a protocol such as LLDP. Two query parameters must be included in the request:\n\n* `peer_device`: The name of the peer device\n* `peer_interface`: The name of the peer interface",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1connected-device~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "ConnectedDevice",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Dcim",
+        "dcim"
+      ],
+      "evidence": [
+        {
+          "claim": "/dcim/cables/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/cables/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/cables/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/cables/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/cables/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/cables/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/connected-device/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1connected-device~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer\ninterface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors\nvia a protocol such as LLDP. Two query parameters must be included in the request:\n\n* `peer_device`: The name of the peer device\n* `peer_interface`: The name of the peer interface",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1connected-device~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-connections~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dcim/console-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-connections~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/console-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/console-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/console-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/console-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/console-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/console-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/console-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/console-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-ports/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-server-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/console-server-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-server-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/console-server-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/console-server-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/console-server-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-server-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/console-server-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-server-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/console-server-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/console-server-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/console-server-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/console-server-ports/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-bay-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-bay-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-bays/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-bays/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-roles/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-roles/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-types/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-types/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/devices/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/graphs/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1graphs~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A convenience method for rendering graphs for a particular Device.",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1graphs~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/napalm/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Execute a NAPALM method on a Device",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/front-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/front-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/front-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/front-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/front-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/front-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/front-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/front-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/front-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/front-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/front-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/front-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/front-ports/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interface-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-connections~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dcim/interface-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-connections~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interface-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/interface-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interface-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/interface-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/interface-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/interface-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interfaces/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/interfaces/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interfaces/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/interfaces/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/interfaces/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/interfaces/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interfaces/{id}/graphs/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1graphs~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A convenience method for rendering graphs for a particular interface.",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1graphs~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/interfaces/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/inventory-items/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/inventory-items/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/inventory-items/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/inventory-items/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/inventory-items/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/inventory-items/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/manufacturers/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/manufacturers/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/manufacturers/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/manufacturers/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/manufacturers/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/manufacturers/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/platforms/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/platforms/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/platforms/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/platforms/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/platforms/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/platforms/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-connections~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "GET /dcim/power-connections/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-connections~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-feeds/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-feeds/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-feeds/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-feeds/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-feeds/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-feeds/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-outlet-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-outlet-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-outlet-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-outlet-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-outlet-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-outlet-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-outlets/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-outlets/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-outlets/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-outlets/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-outlets/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-outlets/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-outlets/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-panels/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-panels/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-panels/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-panels/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-panels/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-panels/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/power-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/power-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/power-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/power-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/power-ports/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-groups/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/rack-groups/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-groups/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/rack-groups/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/rack-groups/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/rack-groups/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-reservations/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/rack-reservations/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-reservations/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/rack-reservations/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/rack-reservations/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/rack-reservations/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-roles/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/rack-roles/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rack-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/rack-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/rack-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/rack-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/racks/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/racks/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/racks/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/racks/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/racks/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/racks/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/racks/{id}/elevation/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1elevation~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Rack elevation representing the list of rack units. Also supports rendering the elevation as an SVG.",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1elevation~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rear-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/rear-port-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rear-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/rear-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/rear-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/rear-port-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rear-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/rear-ports/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rear-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/rear-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/rear-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/rear-ports/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/rear-ports/{id}/trace/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1trace~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1trace~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/regions/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/regions/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/regions/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/regions/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/regions/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/regions/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/sites/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/sites/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/sites/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/sites/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/sites/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/sites/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/sites/{id}/graphs/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1graphs~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A convenience method for rendering graphs for a particular site.",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1graphs~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/virtual-chassis/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/virtual-chassis/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/virtual-chassis/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/virtual-chassis/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/virtual-chassis/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/virtual-chassis/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Dcim",
+      "properties": [],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "completed",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1trace~1/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1cables~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-port-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-ports~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-port-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1console-server-ports~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-port-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1front-ports~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interface-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1interfaces~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1inventory-items~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1manufacturers~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1platforms~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-feeds~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlet-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-outlets~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-panels~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-port-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1power-ports~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-groups~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-reservations~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rack-roles~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1racks~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-port-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1rear-ports~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1regions~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1sites~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1virtual-chassis~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Device",
+        "device"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Device",
+          "source_reference": "netboxdemo.com#/components/schemas/Device",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer\ninterface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors\nvia a protocol such as LLDP. Two query parameters must be included in the request:\n\n* `peer_device`: The name of the peer device\n* `peer_interface`: The name of the peer interface",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1connected-device~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-bay-templates/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-bay-templates/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-bays/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-bays/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-roles/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-roles/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/device-types/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "DELETE /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/device-types/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "POST /dcim/devices/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "DELETE /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Call to super to allow for caching",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PATCH /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/patch",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "PUT /dcim/devices/{id}/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/graphs/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1graphs~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "A convenience method for rendering graphs for a particular Device.",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1graphs~1/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/dcim/devices/{id}/napalm/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Execute a NAPALM method on a Device",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Device",
+      "properties": [
+        {
+          "aliases": [
+            "asset tag",
+            "asset_tag"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.asset_tag",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/asset_tag",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A unique tag used to identify this device",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/asset_tag",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "asset_tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "cluster"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.cluster",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/cluster",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cluster",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "comment",
+            "comments"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.comments",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/comments",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "comments",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.created",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/created",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "custom field",
+            "custom fields",
+            "custom_fields"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.custom_fields",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/custom_fields",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "custom_fields",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "device role",
+            "device_role"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.device_role",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/device_role",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "device_role",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "device type",
+            "device_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.device_type",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/device_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "device_type",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "display name",
+            "display_name"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.display_name",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/display_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "display_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "face"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.face",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/face",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "face",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.id",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "last updated",
+            "last_updated"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.last_updated",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/last_updated",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_updated",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "local context data",
+            "local_context_data"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.local_context_data",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/local_context_data",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "local_context_data",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.name",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "parent device",
+            "parent_device"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.parent_device",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/parent_device",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "parent_device",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "platform"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.platform",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/platform",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "platform",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "position"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.position",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/position",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The lowest-numbered unit occupied by the device",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/position",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "position",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "primary ip",
+            "primary_ip"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.primary_ip",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/primary_ip",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "primary_ip",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "primary ip4",
+            "primary_ip4"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.primary_ip4",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/primary_ip4",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "primary_ip4",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "primary ip6",
+            "primary_ip6"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.primary_ip6",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/primary_ip6",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "primary_ip6",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "rack"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.rack",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/rack",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "rack",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "serial"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.serial",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/serial",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "serial",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "site"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.site",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/site",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "site",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.status",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.tags",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "tenant"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.tenant",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/tenant",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tenant",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "vc position",
+            "vc_position"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.vc_position",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/vc_position",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "vc_position",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "vc priority",
+            "vc_priority"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.vc_priority",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/vc_priority",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "vc_priority",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "virtual chassi",
+            "virtual chassis",
+            "virtual_chassis"
+          ],
+          "evidence": [
+            {
+              "claim": "Device.virtual_chassis",
+              "source_reference": "netboxdemo.com#/components/schemas/Device/properties/virtual_chassis",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "virtual_chassis",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "deleted",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bay-templates~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-bays~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-roles~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1device-types~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/patch",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "updated",
+              "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Napalm",
+        "napalm"
+      ],
+      "evidence": [
+        {
+          "claim": "/dcim/devices/{id}/napalm/",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Execute a NAPALM method on a Device",
+          "source_reference": "netboxdemo.com#/paths/~1dcim~1devices~1{id}~1napalm~1/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Napalm",
+      "properties": [],
+      "review_status": "draft",
+      "states": []
+    }
+  ]
+}

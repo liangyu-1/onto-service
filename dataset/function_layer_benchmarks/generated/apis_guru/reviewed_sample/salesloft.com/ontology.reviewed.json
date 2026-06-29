@@ -1,0 +1,5537 @@
+{
+  "metadata": {
+    "name": "salesloft.com_reviewed",
+    "kind": "reviewed_object_ontology",
+    "warning": "Auto-reviewed silver labels. Spot-check before use as gold.",
+    "source_api": "salesloft.com"
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Account",
+          "source_reference": "salesloft.com#/components/schemas/Account",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List account stages",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an account stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Account Tiers",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_tiers.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an account tier",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_tiers~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Upsert an account",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_upserts.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List accounts",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an account",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/accounts/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an account",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an account",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an existing Account",
+          "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Account",
+      "properties": [
+        {
+          "aliases": [
+            "account tier",
+            "account_tier"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.account_tier",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/account_tier",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "account_tier",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.archived_at",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account was archived, if archived",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "city"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.city",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/city",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "City",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/city",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "city",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "company stage",
+            "company_stage"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.company_stage",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/company_stage",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_stage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "company type",
+            "company_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.company_type",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/company_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of the Account's company",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/company_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "company_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "conversational name",
+            "conversational_name"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.conversational_name",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/conversational_name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Conversational name of the Account",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/conversational_name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "conversational_name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "country"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.country",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/country",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Country",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/country",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "count",
+            "counts"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.counts",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "counts",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account was created",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "creator"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.creator",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/creator",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "creator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "crm id",
+            "crm_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.crm_id",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "CRM ID",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "crm object type",
+            "crm_object_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.crm_object_type",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_object_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "CRM object type",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_object_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_object_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "crm url",
+            "crm_url"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.crm_url",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_url",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "CRM url",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/crm_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "custom field",
+            "custom fields",
+            "custom_fields"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.custom_fields",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/custom_fields",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Custom fields are defined by the user's team. Only fields with values are presented in the API.",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/custom_fields",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "custom_fields",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.description",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Description",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "do not contact",
+            "do_not_contact"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.do_not_contact",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/do_not_contact",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this company has opted out of communications. Do not contact someone at this company when this is set to true",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/do_not_contact",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "do_not_contact",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "domain"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.domain",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/domain",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Website domain, not a fully qualified URI",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/domain",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "founded"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.founded",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/founded",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Date or year of founding",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/founded",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "founded",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.id",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Account",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "industry"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.industry",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/industry",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Industry",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/industry",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "industry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last contacted at",
+            "last_contacted_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.last_contacted_at",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime this Account was last contacted",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_contacted_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last contacted by",
+            "last_contacted_by"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.last_contacted_by",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_by",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_contacted_by",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last contacted person",
+            "last_contacted_person"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.last_contacted_person",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_contacted_person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "last contacted type",
+            "last_contacted_type"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.last_contacted_type",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of the last touch to this Account. Can be call, email, other",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/last_contacted_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_contacted_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "linkedin url",
+            "linkedin_url"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.linkedin_url",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/linkedin_url",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Full LinkedIn url",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/linkedin_url",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "linkedin_url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "locale"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.locale",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/locale",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Time locale",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/locale",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "locale",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.name",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Account Full Name",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.owner",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "owner crm id",
+            "owner_crm_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.owner_crm_id",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/owner_crm_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Mapped owner field from the CRM",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/owner_crm_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner_crm_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "phone"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.phone",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/phone",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Phone number without formatting",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/phone",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "postal code",
+            "postal_code"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.postal_code",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/postal_code",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Postal code",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/postal_code",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "postal_code",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "revenue range",
+            "revenue_range"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.revenue_range",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/revenue_range",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Estimated revenue range",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/revenue_range",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "revenue_range",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "size"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.size",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/size",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Estimated number of people in employment",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/size",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "size",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.state",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/state",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "State",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "street"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.street",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/street",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Street name and number",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/street",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "street",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.tags",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/tags",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "All tags applied to this Account",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "twitter handle",
+            "twitter_handle"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.twitter_handle",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/twitter_handle",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Twitter handle, with @",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/twitter_handle",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "twitter_handle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user relationship",
+            "user relationships",
+            "user_relationships"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.user_relationships",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/user_relationships",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Filters by accounts matching all given user relationship fields, _is_null or _unmapped can be passed to filter accounts with null or unmapped user relationship values",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/user_relationships",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user_relationships",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "website"
+          ],
+          "evidence": [
+            {
+              "claim": "Account.website",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/website",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Website",
+              "source_reference": "salesloft.com#/components/schemas/Account/properties/website",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "website",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1accounts.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "salesloft.com#/paths/~1v2~1accounts~1{id}.json/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "AccountStage",
+        "account stage",
+        "account_stage"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object AccountStage",
+          "source_reference": "salesloft.com#/components/schemas/AccountStage",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List account stages",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/account_stages/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an account stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccountStage",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountStage.created_at",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account Stage was created",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountStage.id",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Account Stage",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountStage.name",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of Account Stage",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "order"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountStage.order",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/order",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Order of Account Stage",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/order",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "order",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountStage.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account Stage was last updated",
+              "source_reference": "salesloft.com#/components/schemas/AccountStage/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "AccountTier",
+        "account tier",
+        "account_tier"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object AccountTier",
+          "source_reference": "salesloft.com#/components/schemas/AccountTier",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List Account Tiers",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_tiers.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/account_tiers/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_tiers~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an account tier",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_tiers~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "AccountTier",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountTier.created_at",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account Tier was created",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountTier.id",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Account Tier",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountTier.name",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the Account Tier",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "order"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountTier.order",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/order",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The order of the account tier",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/order",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "order",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "AccountTier.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Account Tier was last updated",
+              "source_reference": "salesloft.com#/components/schemas/AccountTier/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Action",
+        "action"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Action",
+          "source_reference": "salesloft.com#/components/schemas/Action",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List call instructions",
+          "source_reference": "salesloft.com#/paths/~1v2~1action_details~1call_instructions.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a call instructions",
+          "source_reference": "salesloft.com#/paths/~1v2~1action_details~1call_instructions~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List actions",
+          "source_reference": "salesloft.com#/paths/~1v2~1actions.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/actions/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1actions~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an action",
+          "source_reference": "salesloft.com#/paths/~1v2~1actions~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an ongoing action",
+          "source_reference": "salesloft.com#/paths/~1v2~1ongoing_actions.json/post",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Action",
+      "properties": [
+        {
+          "aliases": [
+            "action detail",
+            "action details",
+            "action_details"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.action_details",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/action_details",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "action_details",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.cadence",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Action was created",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "due"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.due",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/due",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this step is due",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/due",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "due",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "due on",
+            "due_on"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.due_on",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/due_on",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When action is due",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/due_on",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "due_on",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.id",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Action",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "multitouch group id",
+            "multitouch_group_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.multitouch_group_id",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/multitouch_group_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of the multitouch group",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/multitouch_group_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "multitouch_group_id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "person"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.person",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.status",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The current state of the person on the cadence. Possible values are:\n\nin_progress: this action has not been completed\n\npending_activity: this action has been acted upon, but the action has not been completed.\n(i.e. the email is scheduled to send, but has not been delivered yet)\n",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "step"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.step",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/step",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "step",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.type",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of this action. Valid types are: email, phone, other. New types may be added in the future.\n",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Action was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "Action.user",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1ongoing_actions.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "salesloft.com#/components/schemas/Action/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Activity",
+        "activity"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Activity",
+          "source_reference": "salesloft.com#/components/schemas/Activity",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Create an activity",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/calls.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List calls",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a call",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/calls/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a call",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/emails.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List emails",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/emails/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an email",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List Past Activities",
+          "source_reference": "salesloft.com#/paths/~1v2~1activity_histories/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a crm activity",
+          "source_reference": "salesloft.com#/paths/~1v2~1crm_activities~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List crm activity fields",
+          "source_reference": "salesloft.com#/paths/~1v2~1crm_activity_fields.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Activity",
+      "properties": [
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Activity.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Activity/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Activity was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Activity/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1activities.json/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "BulkJob",
+        "bulk job",
+        "bulk_job"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object BulkJob",
+          "source_reference": "salesloft.com#/components/schemas/BulkJob",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/v2/bulk_jobs",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List bulk jobs",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a bulk job",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/bulk_jobs/{bulk_jobs_id}/job_data",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1job_data",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List job data for a bulk job",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1job_data/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create job data for a bulk job",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1job_data/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/bulk_jobs/{bulk_jobs_id}/results",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1results",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "List job data for a completed bulk job.",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1results/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/bulk_jobs/{id}",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a bulk job",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a bulk job",
+          "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{id}/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "BulkJob",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.created_at",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this bulk job was created",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "error",
+            "errors"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.errors",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/errors",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of errored records at the time of request for this Bulk Job",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/errors",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "errors",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "finished at",
+            "finished_at"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.finished_at",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/finished_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this bulk job finished processing",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/finished_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "finished_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.id",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of this Bulk Job",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "marked ready at",
+            "marked_ready_at"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.marked_ready_at",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/marked_ready_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this bulk job was marked as ready to execute",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/marked_ready_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "marked_ready_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.name",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of this Bulk Job",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "processed"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.processed",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/processed",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of processed records at the time of request for this Bulk Job",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/processed",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "processed",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "ready to execute",
+            "ready_to_execute"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.ready_to_execute",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/ready_to_execute",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether the Bulk Job is ready to be executed",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/ready_to_execute",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "ready_to_execute",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "scope",
+            "scopes"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.scopes",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/scopes",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Scopes",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/scopes",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "scopes",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "started at",
+            "started_at"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.started_at",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/started_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this bulk job started processing. null until bulk job is done",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/started_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "started_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.state",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/state",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "State of the Bulk Job.  Must be one of: open, executing, done.",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "total"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.total",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/total",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Number of total records for this Bulk Job",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/total",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "total",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.type",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of the Bulk Job.",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "BulkJob.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this bulk job was updated",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1results/get",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{bulk_jobs_id}~1job_data/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "open",
+              "source_reference": "salesloft.com#/components/schemas/BulkJob/properties/state",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "open",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "salesloft.com#/paths/~1v2~1bulk_jobs~1{id}/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Cadence",
+        "cadence"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Cadence",
+          "source_reference": "salesloft.com#/components/schemas/Cadence",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Export a cadence",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_exports~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Import cadences from JSON",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_imports.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List cadence memberships",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List cadences",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadences.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cadences/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadences~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a cadence",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadences~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Cadence",
+      "properties": [
+        {
+          "aliases": [
+            "added stage",
+            "added_stage"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.added_stage",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/added_stage",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "added_stage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.archived_at",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the cadence was archived, if archived",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "bounced stage",
+            "bounced_stage"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.bounced_stage",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/bounced_stage",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "bounced_stage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "cadence framework id",
+            "cadence_framework_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.cadence_framework_id",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/cadence_framework_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of the cadence framework used to create steps for the cadence",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/cadence_framework_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence_framework_id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "cadence function",
+            "cadence_function"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.cadence_function",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/cadence_function",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The use case of the cadence. Possible values are:\n\noutbound: Denotes an outbound cadence, typically for sales purposes\n\ninbound: Denotes an inbound sales cadence\n\nevent: Denotes a cadence used for an upcoming event\n\nother: Denotes a cadence outside of the standard process\n",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/cadence_function",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence_function",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "cadence priority",
+            "cadence_priority"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.cadence_priority",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/cadence_priority",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence_priority",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "count",
+            "counts"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.counts",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "counts",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the cadence was created",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "creator"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.creator",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/creator",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "creator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "draft"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.draft",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/draft",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is in draft mode",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/draft",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "draft",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "external identifier",
+            "external_identifier"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.external_identifier",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/external_identifier",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Cadence External ID",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/external_identifier",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "external_identifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "finished stage",
+            "finished_stage"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.finished_stage",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/finished_stage",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "finished_stage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "group",
+            "groups"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.groups",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/groups",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Groups to which this cadence is assigned, if any",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/groups",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "groups",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.id",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of cadence",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.name",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Cadence name",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "opt out link included",
+            "opt_out_link_included"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.opt_out_link_included",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/opt_out_link_included",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is configured to include an opt-out link by default",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/opt_out_link_included",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "opt_out_link_included",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "owner"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.owner",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "remove bounces enabled",
+            "remove_bounces_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.remove_bounces_enabled",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/remove_bounces_enabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is configured to automatically remove people who have bounced",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/remove_bounces_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "remove_bounces_enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "remove replies enabled",
+            "remove_replies_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.remove_replies_enabled",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/remove_replies_enabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is configured to automatically remove people who have replied",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/remove_replies_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "remove_replies_enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "replied stage",
+            "replied_stage"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.replied_stage",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/replied_stage",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "replied_stage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "shared"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.shared",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/shared",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is visible to team members (shared)",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/shared",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "shared",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.tags",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/tags",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "All tags applied to this cadence",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "team cadence",
+            "team_cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.team_cadence",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/team_cadence",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this cadence is a team cadence.  A team cadence is created by an admin and can be run by all users",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/team_cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "team_cadence",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Cadence.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the cadence was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Cadence/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CadenceExport",
+        "cadence export",
+        "cadence_export"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CadenceExport",
+          "source_reference": "salesloft.com#/components/schemas/CadenceExport",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/v2/cadence_exports/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_exports~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Export a cadence",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_exports~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CadenceExport",
+      "properties": [
+        {
+          "aliases": [
+            "cadence content",
+            "cadence_content"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceExport.cadence_content",
+              "source_reference": "salesloft.com#/components/schemas/CadenceExport/properties/cadence_content",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The content of the cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceExport/properties/cadence_content",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence_content",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "CadenceMembership",
+        "cadence membership",
+        "cadence_membership"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CadenceMembership",
+          "source_reference": "salesloft.com#/components/schemas/CadenceMembership",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List cadence memberships",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/cadence_memberships/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a cadence membership",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CadenceMembership",
+      "properties": [
+        {
+          "aliases": [
+            "added at",
+            "added_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.added_at",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/added_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the person was last added to this cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/added_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "added_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "count",
+            "counts"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.counts",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "counts",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.created_at",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the person was first added to this cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "current state",
+            "current_state"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.current_state",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/current_state",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The current state of the person on the cadence. Possible values are:\n\nprocessing: The person is being processed on a cadence. Cadence-related changes cannot be made at this time\n\nstaged: The person is waiting for the first step in the cadence to occur\n\nactive: The cadence has begun processing this person and is still in the process, but idle\n\nscheduled: The cadence has begun processing this person and is still in the process, with an activity scheduled to occur\n\ncompleted: The cadence has been completed for this person\n\nremoved: The person was manually or automatically removed from the cadence\n\nremoved_no_action: The person was removed from the cadence before any action occurred\n\nreassigned: The person's cadence execution was transferred to a different user, ending this user's interaction\n",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/current_state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "current_state",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "currently on cadence",
+            "currently_on_cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.currently_on_cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/currently_on_cadence",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether the person is currently on the cadence",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/currently_on_cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "currently_on_cadence",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.id",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Cadence membership ID",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "latest action",
+            "latest_action"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.latest_action",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/latest_action",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "latest_action",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "person"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.person",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "person deleted",
+            "person_deleted"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.person_deleted",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/person_deleted",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether the associated person has since been deleted",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/person_deleted",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "person_deleted",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the record was last updated",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "CadenceMembership.user",
+              "source_reference": "salesloft.com#/components/schemas/CadenceMembership/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1cadence_memberships~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Call",
+        "call"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Call",
+          "source_reference": "salesloft.com#/components/schemas/Call",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List call instructions",
+          "source_reference": "salesloft.com#/paths/~1v2~1action_details~1call_instructions.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a call instructions",
+          "source_reference": "salesloft.com#/paths/~1v2~1action_details~1call_instructions~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List calls",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a call",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/calls/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a call",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List call data records",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_data_records.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a call data record",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_data_records~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List call dispositions",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_dispositions.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List call sentiments",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_sentiments.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/conversations/calls",
+          "source_reference": "salesloft.com#/paths/~1v2~1conversations~1calls",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Create Conversations Call",
+          "source_reference": "salesloft.com#/paths/~1v2~1conversations~1calls/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List caller ids",
+          "source_reference": "salesloft.com#/paths/~1v2~1phone_numbers~1caller_ids.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Call",
+      "properties": [
+        {
+          "aliases": [
+            "action"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.action",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/action",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "action",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.cadence",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "called person",
+            "called_person"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.called_person",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/called_person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "called_person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the call was created",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "crm activity",
+            "crm_activity"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.crm_activity",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/crm_activity",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_activity",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "disposition"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.disposition",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/disposition",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Result of the call",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/disposition",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "disposition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "duration"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.duration",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/duration",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Length of the call in seconds",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/duration",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "duration",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.id",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Call",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "note"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.note",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/note",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "note",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "recording",
+            "recordings"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.recordings",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/recordings",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The recordings for this this call and their status",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/recordings",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "recordings",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "sentiment"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.sentiment",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/sentiment",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Outcome of the conversation",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/sentiment",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sentiment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "step"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.step",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/step",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "step",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "to"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.to",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/to",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Phone number that received the call",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/to",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "to",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the call was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "Call.user",
+              "source_reference": "salesloft.com#/components/schemas/Call/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1activities~1calls.json/post",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1conversations~1calls/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CallDataRecord",
+        "call data record",
+        "call_data_record"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CallDataRecord",
+          "source_reference": "salesloft.com#/components/schemas/CallDataRecord",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List call data records",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_data_records.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/call_data_records/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_data_records~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a call data record",
+          "source_reference": "salesloft.com#/paths/~1v2~1call_data_records~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CallDataRecord",
+      "properties": [
+        {
+          "aliases": [
+            "call"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.call",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/call",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "call",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "call type",
+            "call_type"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.call_type",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/call_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of the call. Can be one of: call, bridge, collaboration. Though exact values may change over time",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/call_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "call_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "call uuid",
+            "call_uuid"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.call_uuid",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/call_uuid",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "UUID of the call. Legs of the same call will have the same call_uuid.",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/call_uuid",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "call_uuid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "called person",
+            "called_person"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.called_person",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/called_person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "called_person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.created_at",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the call was created",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "direction"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.direction",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/direction",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Direction of the call. Can be one of: inbound, outbound",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/direction",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "duration"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.duration",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/duration",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Length of the call in seconds",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/duration",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "duration",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "from"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.from",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/from",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Phone number that placed the call",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/from",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "from",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.id",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of CallDataRecord",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "recording"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.recording",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/recording",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "recording",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.status",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The outcome of the call. Can be one of: queued, initiated, ringing, in-progress, completed, busy, no-answer, canceled, failed",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "to"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.to",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/to",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Phone number that received the call",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/to",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "to",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the call was last updated",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "CallDataRecord.user",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "canceled",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "canceled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "completed",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "completed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "salesloft.com#/components/schemas/CallDataRecord/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CrmActivity",
+        "crm activity",
+        "crm_activity"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CrmActivity",
+          "source_reference": "salesloft.com#/components/schemas/CrmActivity",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/v2/crm_activities/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1crm_activities~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a crm activity",
+          "source_reference": "salesloft.com#/paths/~1v2~1crm_activities~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List crm activity fields",
+          "source_reference": "salesloft.com#/paths/~1v2~1crm_activity_fields.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CrmActivity",
+      "properties": [
+        {
+          "aliases": [
+            "activity type",
+            "activity_type"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.activity_type",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/activity_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The type of activity that is being recorded, if available. The values can change over time, but could be one of: email, phone, email reminder, inmail",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/activity_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "activity_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.created_at",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the crm activity was created",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "crm id",
+            "crm_id"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.crm_id",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/crm_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The ID of the activity in your CRM, if written to your CRM",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/crm_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "custom crm field",
+            "custom crm fields",
+            "custom_crm_fields"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.custom_crm_fields",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/custom_crm_fields",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Additional fields that are logged to your CRM, if mapped by the team at the time of writing to your CRM",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/custom_crm_fields",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "custom_crm_fields",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.description",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/description",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The description field of the activity in your CRM",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/description",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "error"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.error",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/error",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Information about why this crm activity failed to sync, if it did fail to sync. Failed activities will be automatically retried and may become successful in the future",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/error",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "error",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.id",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "CrmActivity ID",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "person"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.person",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/person",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "subject"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.subject",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/subject",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "The subject field of the activity in your CRM",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/subject",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the crm activity was last updated",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "CrmActivity.user",
+              "source_reference": "salesloft.com#/components/schemas/CrmActivity/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "CustomField",
+        "custom field",
+        "custom_field"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CustomField",
+          "source_reference": "salesloft.com#/components/schemas/CustomField",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List custom fields",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a custom field",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/custom_fields/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete a custom field",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a custom field",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a custom field",
+          "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "CustomField",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.created_at",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Custom Field was created",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "field type",
+            "field_type"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.field_type",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/field_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Type of the Custom Field. Value must be one of: person, company, opportunity.",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/field_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "field_type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.id",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Custom Field",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.name",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the Custom Field",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the Custom Field was last updated",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "value type",
+            "value_type"
+          ],
+          "evidence": [
+            {
+              "claim": "CustomField.value_type",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/value_type",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Value Type of the Custom Field. Value must be one of: text, date.",
+              "source_reference": "salesloft.com#/components/schemas/CustomField/properties/value_type",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "value_type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1custom_fields.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "salesloft.com#/paths/~1v2~1custom_fields~1{id}.json/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Email",
+        "email"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Email",
+          "source_reference": "salesloft.com#/components/schemas/Email",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List emails",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/activities/emails/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an email",
+          "source_reference": "salesloft.com#/paths/~1v2~1activities~1emails~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List email template attachments",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_template_attachments.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List email templates",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_templates.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an email template",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_templates~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an External Email",
+          "source_reference": "salesloft.com#/paths/~1v2~1external_emails.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch the MIME content for email",
+          "source_reference": "salesloft.com#/paths/~1v2~1mime_email_payloads~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetches a list of emails ready to be sent by an external email service. Only emails sent with an External Email Client will appear here.",
+          "source_reference": "salesloft.com#/paths/~1v2~1pending_emails.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Updates the status of an email sent by an External Email Client",
+          "source_reference": "salesloft.com#/paths/~1v2~1pending_emails~1{id}.json/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Email",
+      "properties": [
+        {
+          "aliases": [
+            "action"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.action",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/action",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "action",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "bounced"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.bounced",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/bounced",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this email bounced",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/bounced",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "bounced",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "cadence"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.cadence",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/cadence",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "click tracking",
+            "click_tracking"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.click_tracking",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/click_tracking",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this email had click tracking enabled",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/click_tracking",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "click_tracking",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "count",
+            "counts"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.counts",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "counts",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email was created",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "crm activity",
+            "crm_activity"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.crm_activity",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/crm_activity",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "crm_activity",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "email template",
+            "email_template"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.email_template",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/email_template",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "email_template",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "error message",
+            "error_message"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.error_message",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/error_message",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Error message of the email. This field has been determined sensitive and requires a specific scope to access it.",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/error_message",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "error_message",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "header",
+            "headers"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.headers",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/headers",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Selected headers that are included if this email used them. Available keys are: cc, bcc",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/headers",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "headers",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.id",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Email",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "mailing"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.mailing",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/mailing",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "mailing",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "personalization"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.personalization",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/personalization",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Percentage of this email that has been personalized",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/personalization",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "personalization",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "recipient"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.recipient",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/recipient",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "recipient",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "recipient email address",
+            "recipient_email_address"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.recipient_email_address",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/recipient_email_address",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Email address of the recipient",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/recipient_email_address",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "recipient_email_address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "send after",
+            "send_after"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.send_after",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/send_after",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this email will be sent, or null if already sent",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/send_after",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "send_after",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "sent at",
+            "sent_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.sent_at",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/sent_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "When this email was sent, or null if it was not sent",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/sent_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "sent_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "statu",
+            "status"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.status",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/status",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Status of this email through the sending process. Possible values are: sent, sent_from_gmail, sent_from_external, pending, pending_reply_check, scheduled, sending, delivering, failed, cancelled, pending_through_gmail, pending_through_external",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/status",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "step"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.step",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/step",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "step",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "subject"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.subject",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/subject",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Subject of the email. This field has been determined sensitive and requires a specific scope to access it.",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/subject",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "task"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.task",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/task",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "task",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email was last updated",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.user",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/user",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "user",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "view tracking",
+            "view_tracking"
+          ],
+          "evidence": [
+            {
+              "claim": "Email.view_tracking",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/view_tracking",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this email had view tracking enabled",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/view_tracking",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "view_tracking",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1external_emails.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "failed",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/status",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "failed",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "salesloft.com#/components/schemas/Email/properties/status",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "pending",
+              "source_reference": "salesloft.com#/paths/~1v2~1pending_emails.json/get",
+              "source_type": "openapi_state_candidate"
+            },
+            {
+              "claim": "pending",
+              "source_reference": "salesloft.com#/paths/~1v2~1pending_emails~1{id}.json/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "EmailTemplate",
+        "email template",
+        "email_template"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object EmailTemplate",
+          "source_reference": "salesloft.com#/components/schemas/EmailTemplate",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List email template attachments",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_template_attachments.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List email templates",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_templates.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/email_templates/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_templates~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch an email template",
+          "source_reference": "salesloft.com#/paths/~1v2~1email_templates~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "EmailTemplate",
+      "properties": [
+        {
+          "aliases": [
+            "_links",
+            "link",
+            "links"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate._links",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/_links",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Links to attachments and tags resources for this email template.",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/_links",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "_links",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "archived at",
+            "archived_at"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.archived_at",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email template was archived, if archived",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/archived_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "archived_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.body",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/body",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Sanitized body of the email template without email signature",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/body",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "body",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body preview",
+            "body_preview"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.body_preview",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/body_preview",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "A plain text version of the first 100 characters of the body of the email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/body_preview",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "body_preview",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "cadence template",
+            "cadence_template"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.cadence_template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/cadence_template",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this email template is only used on a cadence step. These templates are not visible in the SalesLoft application template list. If false, this email template is visible in the SalesLoft application, and may be used when composing an email or creating a cadence step.",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/cadence_template",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "cadence_template",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "click tracking enabled",
+            "click_tracking_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.click_tracking_enabled",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/click_tracking_enabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether click tracking is enabled for this email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/click_tracking_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "click_tracking_enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "count",
+            "counts"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.counts",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/counts",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "counts",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.created_at",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email template was created",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "group",
+            "groups"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.groups",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/groups",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Groups to which this template is assigned, if any",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/groups",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "groups",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.id",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "last used at",
+            "last_used_at"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.last_used_at",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/last_used_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email template was last used",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/last_used_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "last_used_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "open tracking enabled",
+            "open_tracking_enabled"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.open_tracking_enabled",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/open_tracking_enabled",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether open tracking is enabled for this email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/open_tracking_enabled",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "open_tracking_enabled",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "shared"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.shared",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/shared",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Whether this email template is visible to team members (shared)",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/shared",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "shared",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "subject"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.subject",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/subject",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Subject of the email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/subject",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "subject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "tag",
+            "tags"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.tags",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/tags",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "All tags applied to this email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/tags",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "tags",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "team template",
+            "team_template"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.team_template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/team_template",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "team_template",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "template owner",
+            "template_owner"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.template_owner",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/template_owner",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "template_owner",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "title"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.title",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/title",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Title of the email template",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/title",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "EmailTemplate.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the email template was last updated",
+              "source_reference": "salesloft.com#/components/schemas/EmailTemplate/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Group",
+        "group"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Group",
+          "source_reference": "salesloft.com#/components/schemas/Group",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List groups",
+          "source_reference": "salesloft.com#/paths/~1v2~1groups.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/groups/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1groups~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Fetch a group",
+          "source_reference": "salesloft.com#/paths/~1v2~1groups~1{id}.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Group",
+      "properties": [
+        {
+          "aliases": [
+            "accessible group",
+            "accessible groups",
+            "accessible_groups"
+          ],
+          "evidence": [
+            {
+              "claim": "Group.accessible_groups",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/accessible_groups",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Groups accessible if any",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/accessible_groups",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "accessible_groups",
+          "required": false,
+          "type": "array"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Group.id",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of the Group",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Group.name",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the Group",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "parent id",
+            "parent_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Group.parent_id",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/parent_id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of the parent Group",
+              "source_reference": "salesloft.com#/components/schemas/Group/properties/parent_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "parent_id",
+          "required": false,
+          "type": "integer"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Import",
+        "import"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Import",
+          "source_reference": "salesloft.com#/components/schemas/Import",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "Import cadences from JSON",
+          "source_reference": "salesloft.com#/paths/~1v2~1cadence_imports.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List imports",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create an import",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/v2/imports/{id}.json",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Delete an import",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an import",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update an import",
+          "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json/put",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Import",
+      "properties": [
+        {
+          "aliases": [
+            "created at",
+            "created_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.created_at",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/created_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the import was created",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/created_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "created_at",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "current people count",
+            "current_people_count"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.current_people_count",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/current_people_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Count of People that have not been deleted",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/current_people_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "current_people_count",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.id",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Import ID",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "imported people count",
+            "imported_people_count"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.imported_people_count",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/imported_people_count",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Count of People that have ever been on this Import",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/imported_people_count",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "imported_people_count",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.name",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of Import",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "updated at",
+            "updated_at"
+          ],
+          "evidence": [
+            {
+              "claim": "Import.updated_at",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Datetime of when the import was last updated, ignoring relationship changes",
+              "source_reference": "salesloft.com#/components/schemas/Import/properties/updated_at",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "updated_at",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1imports.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "salesloft.com#/paths/~1v2~1imports~1{id}.json/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "Tag",
+        "tag"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Tag",
+          "source_reference": "salesloft.com#/components/schemas/Tag",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "List account stages",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch an account stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1account_stages~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List person stages",
+          "source_reference": "salesloft.com#/paths/~1v2~1person_stages.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Create a person stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1person_stages.json/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Delete an person stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1person_stages~1{id}.json/delete",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Fetch a person stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1person_stages~1{id}.json/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "Update a person stage",
+          "source_reference": "salesloft.com#/paths/~1v2~1person_stages~1{id}.json/put",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "List team tags",
+          "source_reference": "salesloft.com#/paths/~1v2~1tags.json/get",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Tag",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "evidence": [
+            {
+              "claim": "Tag.id",
+              "source_reference": "salesloft.com#/components/schemas/Tag/properties/id",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "ID of Tag",
+              "source_reference": "salesloft.com#/components/schemas/Tag/properties/id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "id",
+          "required": false,
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "evidence": [
+            {
+              "claim": "Tag.name",
+              "source_reference": "salesloft.com#/components/schemas/Tag/properties/name",
+              "source_type": "openapi_schema_property"
+            },
+            {
+              "claim": "Name of the tag",
+              "source_reference": "salesloft.com#/components/schemas/Tag/properties/name",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "created",
+              "source_reference": "salesloft.com#/paths/~1v2~1person_stages.json/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "created",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "deleted",
+              "source_reference": "salesloft.com#/paths/~1v2~1person_stages~1{id}.json/delete",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "deleted",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "salesloft.com#/paths/~1v2~1person_stages~1{id}.json/put",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ]
+}

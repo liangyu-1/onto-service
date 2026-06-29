@@ -31,7 +31,7 @@ dataset/*
 !dataset/annotation_guidelines/**
 !dataset/function_layer_benchmarks/
 !dataset/function_layer_benchmarks/README.md
-!dataset/function_layer_benchmarks/openapi/
+dataset/function_layer_benchmarks/openapi/*.json
 !dataset/function_layer_benchmarks/openapi/*.sample.json
 !dataset/function_layer_benchmarks/ontology.sample.json
 !dataset/function_layer_benchmarks/ontology.draft.sample.json
@@ -41,8 +41,9 @@ dataset/*
 dataset/function_layer_benchmarks/raw/*
 !dataset/function_layer_benchmarks/raw/README.md
 !dataset/function_layer_benchmarks/raw/download_manifest.json
-!dataset/function_layer_benchmarks/generated/
-!dataset/function_layer_benchmarks/generated/**
+dataset/function_layer_benchmarks/generated/apis_guru/*/
+!dataset/function_layer_benchmarks/generated/apis_guru/reviewed_sample/
+!dataset/function_layer_benchmarks/generated/apis_guru/reviewed_sample/**
 !dataset/full_ontology_workflow_benchmark/
 dataset/full_ontology_workflow_benchmark/*
 !dataset/full_ontology_workflow_benchmark/README.md

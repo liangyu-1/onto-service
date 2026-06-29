@@ -169,10 +169,18 @@ def download_spec(api_key: str, version_info: dict[str, Any], output_dir: Path, 
     specs_dir = output_dir / "specs"
     specs_dir.mkdir(parents=True, exist_ok=True)
 
-    # Prefer the official APIs.guru cached JSON link if present.
-    link = version_info.get("link")
+    # APIs.guru 'link' is the registry entry page, NOT the spec.
+    # Prefer the actual spec URL: swaggerUrl or the cached spec endpoint.
     swagger_url = version_info.get("swaggerUrl")
-    url = link or swagger_url
+    openapi_ver = str(version_info.get("openapiVer") or "")
+    version_key = version_info.get("version", "unknown")
+
+    if swagger_url and ".json" in swagger_url:
+        url = swagger_url
+    else:
+        # Fallback to APIs.guru cached spec URL
+        url = f"https://api.apis.guru/v2/specs/{api_key}/{version_key}.json"
+
     if not url:
         print(f"  [skip] no download URL for {api_key}")
         return None
@@ -180,13 +188,27 @@ def download_spec(api_key: str, version_info: dict[str, Any], output_dir: Path, 
     file_name = safe_filename(f"{api_key.replace(':', '_')}.openapi.json")
     out_path = specs_dir / file_name
 
+    # Re-download if existing file is a registry entry (no openapi/paths) rather than a real spec.
     if out_path.exists():
-        print(f"  [exists] {out_path}")
-        return out_path
+        try:
+            with out_path.open("r", encoding="utf-8") as f:
+                existing = json.load(f)
+            if "openapi" not in existing and "swagger" not in existing:
+                print(f"  [stale] {out_path} is a registry entry, re-downloading")
+                out_path.unlink()
+            else:
+                print(f"  [exists] {out_path}")
+                return out_path
+        except Exception as e:
+            print(f"  [stale-check-failed] {out_path}: {e}")
+            out_path.unlink()
 
     try:
         print(f"  [download] {api_key} from {url}")
         spec = fetch_json(url, timeout=timeout)
+        if "openapi" not in spec and "swagger" not in spec:
+            print(f"  [skip] {api_key}: downloaded content is not an OpenAPI spec")
+            return None
         with out_path.open("w", encoding="utf-8") as f:
             json.dump(spec, f, indent=2, ensure_ascii=False)
         return out_path

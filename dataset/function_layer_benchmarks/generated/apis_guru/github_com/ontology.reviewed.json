@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "github_com_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/github.com.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Repository",
+        "repository"
+      ],
+      "evidence": [
+        {
+          "claim": "Repository is a reviewed core object type for github_com.",
+          "source_reference": "github.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Repository",
+      "properties": [
+        {
+          "aliases": [
+            "owner"
+          ],
+          "id": "owner",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "repo"
+          ],
+          "id": "repo",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "full_name"
+          ],
+          "id": "full_name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "private"
+          ],
+          "id": "private",
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "default_branch"
+          ],
+          "id": "default_branch",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Issue",
+        "issue"
+      ],
+      "evidence": [
+        {
+          "claim": "Issue is a reviewed core object type for github_com.",
+          "source_reference": "github.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Issue",
+      "properties": [
+        {
+          "aliases": [
+            "issue_number"
+          ],
+          "id": "issue_number",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "title"
+          ],
+          "id": "title",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body"
+          ],
+          "id": "body",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "id": "state",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "assignee"
+          ],
+          "id": "assignee",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "labels"
+          ],
+          "id": "labels",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "PullRequest",
+        "pull_request",
+        "pullrequest"
+      ],
+      "evidence": [
+        {
+          "claim": "PullRequest is a reviewed core object type for github_com.",
+          "source_reference": "github.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "PullRequest",
+      "properties": [
+        {
+          "aliases": [
+            "pull_number"
+          ],
+          "id": "pull_number",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "title"
+          ],
+          "id": "title",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body"
+          ],
+          "id": "body",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "id": "state",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "base"
+          ],
+          "id": "base",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "head"
+          ],
+          "id": "head",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_issue",
+      "review_status": "reviewed",
+      "source": "Repository",
+      "target": "Issue"
+    },
+    {
+      "relation": "has_pull_request",
+      "review_status": "reviewed",
+      "source": "Repository",
+      "target": "PullRequest"
+    }
+  ]
+}

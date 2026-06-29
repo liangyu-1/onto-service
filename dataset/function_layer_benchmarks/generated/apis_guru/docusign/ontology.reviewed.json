@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "docusign_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/docusign.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "Account is a reviewed core object type for docusign.",
+          "source_reference": "docusign.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Account",
+      "properties": [
+        {
+          "aliases": [
+            "accountId",
+            "account_id",
+            "accountid"
+          ],
+          "id": "accountId",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "accountName",
+            "account_name",
+            "accountname"
+          ],
+          "id": "accountName",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "status"
+          ],
+          "id": "status",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Envelope",
+        "envelope"
+      ],
+      "evidence": [
+        {
+          "claim": "Envelope is a reviewed core object type for docusign.",
+          "source_reference": "docusign.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Envelope",
+      "properties": [
+        {
+          "aliases": [
+            "envelopeId",
+            "envelope_id",
+            "envelopeid"
+          ],
+          "id": "envelopeId",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "status"
+          ],
+          "id": "status",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "emailSubject",
+            "email_subject",
+            "emailsubject"
+          ],
+          "id": "emailSubject",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "createdDateTime",
+            "created_date_time",
+            "createddatetime"
+          ],
+          "id": "createdDateTime",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "sentDateTime",
+            "sent_date_time",
+            "sentdatetime"
+          ],
+          "id": "sentDateTime",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Template",
+        "template"
+      ],
+      "evidence": [
+        {
+          "claim": "Template is a reviewed core object type for docusign.",
+          "source_reference": "docusign.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Template",
+      "properties": [
+        {
+          "aliases": [
+            "templateId",
+            "template_id",
+            "templateid"
+          ],
+          "id": "templateId",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "modified"
+          ],
+          "id": "modified",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_envelope",
+      "review_status": "reviewed",
+      "source": "Account",
+      "target": "Envelope"
+    },
+    {
+      "relation": "has_template",
+      "review_status": "reviewed",
+      "source": "Account",
+      "target": "Template"
+    }
+  ]
+}

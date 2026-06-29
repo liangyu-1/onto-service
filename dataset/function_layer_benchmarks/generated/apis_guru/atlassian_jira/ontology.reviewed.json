@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "atlassian_jira_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/atlassian_jira.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Issue",
+        "issue"
+      ],
+      "evidence": [
+        {
+          "claim": "Issue is a reviewed core object type for atlassian_jira.",
+          "source_reference": "atlassian_jira.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Issue",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "key"
+          ],
+          "id": "key",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "summary"
+          ],
+          "id": "summary",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "status"
+          ],
+          "id": "status",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "assignee"
+          ],
+          "id": "assignee",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "project_id"
+          ],
+          "id": "project_id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "updated"
+          ],
+          "id": "updated",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Comment",
+        "comment"
+      ],
+      "evidence": [
+        {
+          "claim": "Comment is a reviewed core object type for atlassian_jira.",
+          "source_reference": "atlassian_jira.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Comment",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "body"
+          ],
+          "id": "body",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "author"
+          ],
+          "id": "author",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "updated"
+          ],
+          "id": "updated",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Project",
+        "project"
+      ],
+      "evidence": [
+        {
+          "claim": "Project is a reviewed core object type for atlassian_jira.",
+          "source_reference": "atlassian_jira.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Project",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "key"
+          ],
+          "id": "key",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "lead"
+          ],
+          "id": "lead",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "project_type_key"
+          ],
+          "id": "project_type_key",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_issue",
+      "review_status": "reviewed",
+      "source": "Project",
+      "target": "Issue"
+    },
+    {
+      "relation": "has_comment",
+      "review_status": "reviewed",
+      "source": "Issue",
+      "target": "Comment"
+    }
+  ]
+}

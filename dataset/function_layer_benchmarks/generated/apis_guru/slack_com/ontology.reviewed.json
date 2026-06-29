@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "slack_com_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/slack.com.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Conversation",
+        "conversation"
+      ],
+      "evidence": [
+        {
+          "claim": "Conversation is a reviewed core object type for slack_com.",
+          "source_reference": "slack.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Conversation",
+      "properties": [
+        {
+          "aliases": [
+            "channel"
+          ],
+          "id": "channel",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "is_channel"
+          ],
+          "id": "is_channel",
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "is_private"
+          ],
+          "id": "is_private",
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "is_archived"
+          ],
+          "id": "is_archived",
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Message",
+        "message"
+      ],
+      "evidence": [
+        {
+          "claim": "Message is a reviewed core object type for slack_com.",
+          "source_reference": "slack.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Message",
+      "properties": [
+        {
+          "aliases": [
+            "channel"
+          ],
+          "id": "channel",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "ts"
+          ],
+          "id": "ts",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "text"
+          ],
+          "id": "text",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "user"
+          ],
+          "id": "user",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "thread_ts"
+          ],
+          "id": "thread_ts",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "evidence": [
+        {
+          "claim": "User is a reviewed core object type for slack_com.",
+          "source_reference": "slack.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "User",
+      "properties": [
+        {
+          "aliases": [
+            "user"
+          ],
+          "id": "user",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "team_id"
+          ],
+          "id": "team_id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "is_admin"
+          ],
+          "id": "is_admin",
+          "type": "boolean"
+        },
+        {
+          "aliases": [
+            "is_owner"
+          ],
+          "id": "is_owner",
+          "type": "boolean"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_message",
+      "review_status": "reviewed",
+      "source": "Conversation",
+      "target": "Message"
+    },
+    {
+      "relation": "posts_message",
+      "review_status": "reviewed",
+      "source": "User",
+      "target": "Message"
+    }
+  ]
+}

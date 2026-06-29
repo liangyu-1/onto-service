@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "sendgrid_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/sendgrid.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "ContactList",
+        "contact_list",
+        "contactlist"
+      ],
+      "evidence": [
+        {
+          "claim": "ContactList is a reviewed core object type for sendgrid.",
+          "source_reference": "sendgrid.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "ContactList",
+      "properties": [
+        {
+          "aliases": [
+            "list_id"
+          ],
+          "id": "list_id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "recipient_count"
+          ],
+          "id": "recipient_count",
+          "type": "integer"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Recipient",
+        "recipient"
+      ],
+      "evidence": [
+        {
+          "claim": "Recipient is a reviewed core object type for sendgrid.",
+          "source_reference": "sendgrid.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Recipient",
+      "properties": [
+        {
+          "aliases": [
+            "recipient_id"
+          ],
+          "id": "recipient_id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "email"
+          ],
+          "id": "email",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "first_name"
+          ],
+          "id": "first_name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last_name"
+          ],
+          "id": "last_name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created_at"
+          ],
+          "id": "created_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "updated_at"
+          ],
+          "id": "updated_at",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Segment",
+        "segment"
+      ],
+      "evidence": [
+        {
+          "claim": "Segment is a reviewed core object type for sendgrid.",
+          "source_reference": "sendgrid.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Segment",
+      "properties": [
+        {
+          "aliases": [
+            "segment_id"
+          ],
+          "id": "segment_id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "conditions"
+          ],
+          "id": "conditions",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "recipient_count"
+          ],
+          "id": "recipient_count",
+          "type": "integer"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "MarketingContact",
+        "marketing_contact",
+        "marketingcontact"
+      ],
+      "evidence": [
+        {
+          "claim": "MarketingContact is a reviewed core object type for sendgrid.",
+          "source_reference": "sendgrid.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "MarketingContact",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "email"
+          ],
+          "id": "email",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "first_name"
+          ],
+          "id": "first_name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "last_name"
+          ],
+          "id": "last_name",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_recipient",
+      "review_status": "reviewed",
+      "source": "ContactList",
+      "target": "Recipient"
+    },
+    {
+      "relation": "filters_recipient",
+      "review_status": "reviewed",
+      "source": "Segment",
+      "target": "Recipient"
+    }
+  ]
+}

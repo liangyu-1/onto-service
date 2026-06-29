@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "stripe_com_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/stripe.com.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Customer",
+        "customer"
+      ],
+      "evidence": [
+        {
+          "claim": "Customer is a reviewed core object type for stripe_com.",
+          "source_reference": "stripe.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Customer",
+      "properties": [
+        {
+          "aliases": [
+            "customer"
+          ],
+          "id": "customer",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "email"
+          ],
+          "id": "email",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "deleted"
+          ],
+          "id": "deleted",
+          "type": "boolean"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "PaymentIntent",
+        "payment_intent",
+        "paymentintent"
+      ],
+      "evidence": [
+        {
+          "claim": "PaymentIntent is a reviewed core object type for stripe_com.",
+          "source_reference": "stripe.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "PaymentIntent",
+      "properties": [
+        {
+          "aliases": [
+            "intent"
+          ],
+          "id": "intent",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "amount"
+          ],
+          "id": "amount",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "currency"
+          ],
+          "id": "currency",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "customer"
+          ],
+          "id": "customer",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "status"
+          ],
+          "id": "status",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Invoice",
+        "invoice"
+      ],
+      "evidence": [
+        {
+          "claim": "Invoice is a reviewed core object type for stripe_com.",
+          "source_reference": "stripe.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Invoice",
+      "properties": [
+        {
+          "aliases": [
+            "invoice"
+          ],
+          "id": "invoice",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "customer"
+          ],
+          "id": "customer",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "status"
+          ],
+          "id": "status",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "amount_due"
+          ],
+          "id": "amount_due",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "created"
+          ],
+          "id": "created",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_payment_intent",
+      "review_status": "reviewed",
+      "source": "Customer",
+      "target": "PaymentIntent"
+    },
+    {
+      "relation": "has_invoice",
+      "review_status": "reviewed",
+      "source": "Customer",
+      "target": "Invoice"
+    }
+  ]
+}

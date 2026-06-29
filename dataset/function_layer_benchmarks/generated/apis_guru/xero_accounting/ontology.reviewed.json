@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "xero_accounting_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/xero_accounting.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Account",
+        "account"
+      ],
+      "evidence": [
+        {
+          "claim": "Account is a reviewed core object type for xero_accounting.",
+          "source_reference": "xero_accounting.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Account",
+      "properties": [
+        {
+          "aliases": [
+            "AccountID",
+            "account_id",
+            "accountid"
+          ],
+          "id": "AccountID",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "Code",
+            "code"
+          ],
+          "id": "Code",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Name",
+            "name"
+          ],
+          "id": "Name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Type",
+            "type"
+          ],
+          "id": "Type",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Status",
+            "status"
+          ],
+          "id": "Status",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "UpdatedDateUTC",
+            "updated_date_utc",
+            "updateddateutc"
+          ],
+          "id": "UpdatedDateUTC",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Contact",
+        "contact"
+      ],
+      "evidence": [
+        {
+          "claim": "Contact is a reviewed core object type for xero_accounting.",
+          "source_reference": "xero_accounting.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Contact",
+      "properties": [
+        {
+          "aliases": [
+            "ContactID",
+            "contact_id",
+            "contactid"
+          ],
+          "id": "ContactID",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "ContactNumber",
+            "contact_number",
+            "contactnumber"
+          ],
+          "id": "ContactNumber",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "Name",
+            "name"
+          ],
+          "id": "Name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "EmailAddress",
+            "email_address",
+            "emailaddress"
+          ],
+          "id": "EmailAddress",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "ContactStatus",
+            "contact_status",
+            "contactstatus"
+          ],
+          "id": "ContactStatus",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "UpdatedDateUTC",
+            "updated_date_utc",
+            "updateddateutc"
+          ],
+          "id": "UpdatedDateUTC",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Invoice",
+        "invoice"
+      ],
+      "evidence": [
+        {
+          "claim": "Invoice is a reviewed core object type for xero_accounting.",
+          "source_reference": "xero_accounting.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Invoice",
+      "properties": [
+        {
+          "aliases": [
+            "InvoiceID",
+            "invoice_id",
+            "invoiceid"
+          ],
+          "id": "InvoiceID",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "InvoiceNumber",
+            "invoice_number",
+            "invoicenumber"
+          ],
+          "id": "InvoiceNumber",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "ContactID",
+            "contact_id",
+            "contactid"
+          ],
+          "id": "ContactID",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Type",
+            "type"
+          ],
+          "id": "Type",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Status",
+            "status"
+          ],
+          "id": "Status",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "Total",
+            "total"
+          ],
+          "id": "Total",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "UpdatedDateUTC",
+            "updated_date_utc",
+            "updateddateutc"
+          ],
+          "id": "UpdatedDateUTC",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "has_invoice",
+      "review_status": "reviewed",
+      "source": "Contact",
+      "target": "Invoice"
+    },
+    {
+      "relation": "uses_account",
+      "review_status": "reviewed",
+      "source": "Invoice",
+      "target": "Account"
+    }
+  ]
+}

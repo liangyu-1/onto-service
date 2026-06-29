@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "kind": "reviewed_object_ontology",
+    "name": "box_com_core_ontology_reviewed_v0",
+    "scope": "Reviewed core ontology subset for Paper 1 function-layer benchmark annotation.",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/box.com.openapi.json",
+    "warning": "This reviewed subset does not cover every schema or operation in the source OpenAPI file."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "File",
+        "file"
+      ],
+      "evidence": [
+        {
+          "claim": "File is a reviewed core object type for box_com.",
+          "source_reference": "box.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "File",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "id": "type",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "size"
+          ],
+          "id": "size",
+          "type": "integer"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created_at"
+          ],
+          "id": "created_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "modified_at"
+          ],
+          "id": "modified_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "parent_id"
+          ],
+          "id": "parent_id",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Folder",
+        "folder"
+      ],
+      "evidence": [
+        {
+          "claim": "Folder is a reviewed core object type for box_com.",
+          "source_reference": "box.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Folder",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "name"
+          ],
+          "id": "name",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "type"
+          ],
+          "id": "type",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "description"
+          ],
+          "id": "description",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created_at"
+          ],
+          "id": "created_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "modified_at"
+          ],
+          "id": "modified_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "parent_id"
+          ],
+          "id": "parent_id",
+          "type": "string"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    },
+    {
+      "aliases": [
+        "Comment",
+        "comment"
+      ],
+      "evidence": [
+        {
+          "claim": "Comment is a reviewed core object type for box_com.",
+          "source_reference": "box.com.openapi.json",
+          "source_type": "openapi_core_review"
+        }
+      ],
+      "id": "Comment",
+      "properties": [
+        {
+          "aliases": [
+            "id"
+          ],
+          "id": "id",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "message"
+          ],
+          "id": "message",
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "created_at"
+          ],
+          "id": "created_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "modified_at"
+          ],
+          "id": "modified_at",
+          "type": "datetime"
+        },
+        {
+          "aliases": [
+            "created_by"
+          ],
+          "id": "created_by",
+          "type": "datetime"
+        }
+      ],
+      "review_status": "reviewed",
+      "states": [
+        "created",
+        "updated",
+        "deleted"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation": "contains_file",
+      "review_status": "reviewed",
+      "source": "Folder",
+      "target": "File"
+    },
+    {
+      "relation": "has_subfolder",
+      "review_status": "reviewed",
+      "source": "Folder",
+      "target": "Folder"
+    },
+    {
+      "relation": "has_comment",
+      "review_status": "reviewed",
+      "source": "File",
+      "target": "Comment"
+    }
+  ]
+}

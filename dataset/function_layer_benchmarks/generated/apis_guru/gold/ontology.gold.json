@@ -1,0 +1,766 @@
+{
+  "metadata": {
+    "name": "apis_guru_gold_pilot",
+    "kind": "gold_object_ontology",
+    "source_apis": [
+      "1password.local_connect",
+      "trello.com",
+      "sendgrid.com"
+    ],
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Board",
+      "aliases": [
+        "Board",
+        "board",
+        "boards"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "desc",
+          "type": "string",
+          "aliases": [
+            "desc"
+          ],
+          "required": false
+        },
+        {
+          "id": "closed",
+          "type": "boolean",
+          "aliases": [
+            "closed"
+          ],
+          "required": false
+        },
+        {
+          "id": "idOrganization",
+          "type": "string",
+          "aliases": [
+            "idOrganization"
+          ],
+          "required": false
+        },
+        {
+          "id": "lists",
+          "type": "array",
+          "aliases": [
+            "lists"
+          ],
+          "required": false
+        },
+        {
+          "id": "members",
+          "type": "array",
+          "aliases": [
+            "members"
+          ],
+          "required": false
+        },
+        {
+          "id": "labels",
+          "type": "array",
+          "aliases": [
+            "labels"
+          ],
+          "required": false
+        }
+      ],
+      "states": [
+        "open",
+        "closed"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Campaign",
+      "aliases": [
+        "Campaign",
+        "campaign"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ],
+          "required": false
+        },
+        {
+          "id": "subject",
+          "type": "string",
+          "aliases": [
+            "subject"
+          ],
+          "required": false
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ],
+          "required": false
+        },
+        {
+          "id": "html_content",
+          "type": "string",
+          "aliases": [
+            "html_content"
+          ],
+          "required": false
+        }
+      ],
+      "states": [
+        "draft",
+        "scheduled",
+        "sent"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Card",
+      "aliases": [
+        "Card",
+        "card",
+        "cards"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "desc",
+          "type": "string",
+          "aliases": [
+            "desc"
+          ],
+          "required": false
+        },
+        {
+          "id": "idBoard",
+          "type": "string",
+          "aliases": [
+            "idBoard"
+          ],
+          "required": false
+        },
+        {
+          "id": "idList",
+          "type": "string",
+          "aliases": [
+            "idList"
+          ],
+          "required": false
+        },
+        {
+          "id": "closed",
+          "type": "boolean",
+          "aliases": [
+            "closed"
+          ],
+          "required": false
+        },
+        {
+          "id": "due",
+          "type": "string",
+          "aliases": [
+            "due"
+          ],
+          "required": false
+        },
+        {
+          "id": "labels",
+          "type": "array",
+          "aliases": [
+            "labels"
+          ],
+          "required": false
+        },
+        {
+          "id": "checklists",
+          "type": "array",
+          "aliases": [
+            "checklists"
+          ],
+          "required": false
+        }
+      ],
+      "states": [
+        "open",
+        "closed"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "File",
+      "aliases": [
+        "File",
+        "file"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "size",
+          "type": "integer",
+          "aliases": [
+            "size"
+          ],
+          "required": false
+        },
+        {
+          "id": "content",
+          "type": "string",
+          "aliases": [
+            "content"
+          ],
+          "required": false
+        },
+        {
+          "id": "content_path",
+          "type": "string",
+          "aliases": [
+            "content_path"
+          ],
+          "required": false
+        },
+        {
+          "id": "section",
+          "type": "object",
+          "aliases": [
+            "section"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Item",
+      "aliases": [
+        "Item",
+        "item"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ],
+          "required": false
+        },
+        {
+          "id": "category",
+          "type": "string",
+          "aliases": [
+            "category"
+          ],
+          "required": true
+        },
+        {
+          "id": "vault",
+          "type": "object",
+          "aliases": [
+            "vault"
+          ],
+          "required": true
+        },
+        {
+          "id": "favorite",
+          "type": "boolean",
+          "aliases": [
+            "favorite"
+          ],
+          "required": false
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ],
+          "required": false
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ],
+          "required": false
+        },
+        {
+          "id": "urls",
+          "type": "array",
+          "aliases": [
+            "urls"
+          ],
+          "required": false
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ],
+          "required": false
+        },
+        {
+          "id": "createdAt",
+          "type": "string",
+          "aliases": [
+            "createdAt"
+          ],
+          "required": false
+        },
+        {
+          "id": "updatedAt",
+          "type": "string",
+          "aliases": [
+            "updatedAt"
+          ],
+          "required": false
+        },
+        {
+          "id": "lastEditedBy",
+          "type": "string",
+          "aliases": [
+            "lastEditedBy"
+          ],
+          "required": false
+        },
+        {
+          "id": "fields",
+          "type": "array",
+          "aliases": [
+            "fields"
+          ],
+          "required": false
+        },
+        {
+          "id": "files",
+          "type": "array",
+          "aliases": [
+            "files"
+          ],
+          "required": false
+        },
+        {
+          "id": "sections",
+          "type": "array",
+          "aliases": [
+            "sections"
+          ],
+          "required": false
+        }
+      ],
+      "states": [
+        "active",
+        "archived",
+        "deleted"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "List",
+      "aliases": [
+        "List",
+        "list",
+        "lists"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "idBoard",
+          "type": "string",
+          "aliases": [
+            "idBoard"
+          ],
+          "required": false
+        },
+        {
+          "id": "closed",
+          "type": "boolean",
+          "aliases": [
+            "closed"
+          ],
+          "required": false
+        },
+        {
+          "id": "pos",
+          "type": "number",
+          "aliases": [
+            "pos"
+          ],
+          "required": false
+        },
+        {
+          "id": "cards",
+          "type": "array",
+          "aliases": [
+            "cards"
+          ],
+          "required": false
+        }
+      ],
+      "states": [
+        "open",
+        "closed"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "MarketingList",
+      "aliases": [
+        "MarketingList",
+        "list",
+        "marketing list"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "contact_count",
+          "type": "integer",
+          "aliases": [
+            "contact_count"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SuppressionBlock",
+      "aliases": [
+        "SuppressionBlock",
+        "block"
+      ],
+      "properties": [
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ],
+          "required": false
+        },
+        {
+          "id": "reason",
+          "type": "string",
+          "aliases": [
+            "reason"
+          ],
+          "required": false
+        },
+        {
+          "id": "created",
+          "type": "integer",
+          "aliases": [
+            "created"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Template",
+      "aliases": [
+        "Template",
+        "template",
+        "transactional template"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "generation",
+          "type": "string",
+          "aliases": [
+            "generation"
+          ],
+          "required": false
+        },
+        {
+          "id": "versions",
+          "type": "array",
+          "aliases": [
+            "versions"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "UserProfile",
+      "aliases": [
+        "UserProfile",
+        "user profile",
+        "profile"
+      ],
+      "properties": [
+        {
+          "id": "address",
+          "type": "string",
+          "aliases": [
+            "address"
+          ],
+          "required": false
+        },
+        {
+          "id": "address2",
+          "type": "string",
+          "aliases": [
+            "address2"
+          ],
+          "required": false
+        },
+        {
+          "id": "city",
+          "type": "string",
+          "aliases": [
+            "city"
+          ],
+          "required": false
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ],
+          "required": false
+        },
+        {
+          "id": "zip",
+          "type": "string",
+          "aliases": [
+            "zip"
+          ],
+          "required": false
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ],
+          "required": false
+        },
+        {
+          "id": "website",
+          "type": "string",
+          "aliases": [
+            "website"
+          ],
+          "required": false
+        },
+        {
+          "id": "phone",
+          "type": "string",
+          "aliases": [
+            "phone"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Vault",
+      "aliases": [
+        "Vault",
+        "vault"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ],
+          "required": false
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ],
+          "required": false
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ],
+          "required": false
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ],
+          "required": false
+        },
+        {
+          "id": "items",
+          "type": "integer",
+          "aliases": [
+            "items"
+          ],
+          "required": false
+        },
+        {
+          "id": "attributeVersion",
+          "type": "integer",
+          "aliases": [
+            "attributeVersion"
+          ],
+          "required": false
+        },
+        {
+          "id": "contentVersion",
+          "type": "integer",
+          "aliases": [
+            "contentVersion"
+          ],
+          "required": false
+        },
+        {
+          "id": "createdAt",
+          "type": "string",
+          "aliases": [
+            "createdAt"
+          ],
+          "required": false
+        },
+        {
+          "id": "updatedAt",
+          "type": "string",
+          "aliases": [
+            "updatedAt"
+          ],
+          "required": false
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

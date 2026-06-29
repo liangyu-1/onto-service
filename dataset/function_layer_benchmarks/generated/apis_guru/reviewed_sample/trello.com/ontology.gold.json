@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "name": "trello.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "trello.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Board",
+      "aliases": ["Board", "board", "boards"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "desc", "type": "string", "aliases": ["desc"], "required": false},
+        {"id": "closed", "type": "boolean", "aliases": ["closed"], "required": false},
+        {"id": "idOrganization", "type": "string", "aliases": ["idOrganization"], "required": false},
+        {"id": "lists", "type": "array", "aliases": ["lists"], "required": false},
+        {"id": "members", "type": "array", "aliases": ["members"], "required": false},
+        {"id": "labels", "type": "array", "aliases": ["labels"], "required": false}
+      ],
+      "states": ["open", "closed"],
+      "review_status": "gold"
+    },
+    {
+      "id": "List",
+      "aliases": ["List", "list", "lists"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "idBoard", "type": "string", "aliases": ["idBoard"], "required": false},
+        {"id": "closed", "type": "boolean", "aliases": ["closed"], "required": false},
+        {"id": "pos", "type": "number", "aliases": ["pos"], "required": false},
+        {"id": "cards", "type": "array", "aliases": ["cards"], "required": false}
+      ],
+      "states": ["open", "closed"],
+      "review_status": "gold"
+    },
+    {
+      "id": "Card",
+      "aliases": ["Card", "card", "cards"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "desc", "type": "string", "aliases": ["desc"], "required": false},
+        {"id": "idBoard", "type": "string", "aliases": ["idBoard"], "required": false},
+        {"id": "idList", "type": "string", "aliases": ["idList"], "required": false},
+        {"id": "closed", "type": "boolean", "aliases": ["closed"], "required": false},
+        {"id": "due", "type": "string", "aliases": ["due"], "required": false},
+        {"id": "labels", "type": "array", "aliases": ["labels"], "required": false},
+        {"id": "checklists", "type": "array", "aliases": ["checklists"], "required": false}
+      ],
+      "states": ["open", "closed"],
+      "review_status": "gold"
+    }
+  ]
+}

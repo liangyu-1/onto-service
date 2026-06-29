@@ -1,0 +1,10 @@
+{
+  "apis": [
+    "1password.local_connect",
+    "trello.com",
+    "sendgrid.com"
+  ],
+  "object_types": 11,
+  "overlays": 41,
+  "gold_functions": 41
+}

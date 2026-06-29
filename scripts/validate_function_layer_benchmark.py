@@ -115,7 +115,7 @@ def validate_overlay(
                 errors.append(error(row_index, f"overlay_unknown_object_binding:{ontology_property}"))
 
     review_status = str(overlay.get("review_status", ""))
-    if review_status not in {"draft", "reviewed", "rejected"}:
+    if review_status not in {"draft", "reviewed", "rejected", "gold"}:
         errors.append(error(row_index, f"overlay_invalid_review_status:{review_status}"))
     return errors
 

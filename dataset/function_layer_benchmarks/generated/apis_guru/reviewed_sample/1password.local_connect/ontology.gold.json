@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "name": "1password.local_connect_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "1password.local_connect",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Vault",
+      "aliases": ["Vault", "vault"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "type", "type": "string", "aliases": ["type"], "required": false},
+        {"id": "items", "type": "integer", "aliases": ["items"], "required": false},
+        {"id": "attributeVersion", "type": "integer", "aliases": ["attributeVersion"], "required": false},
+        {"id": "contentVersion", "type": "integer", "aliases": ["contentVersion"], "required": false},
+        {"id": "createdAt", "type": "string", "aliases": ["createdAt"], "required": false},
+        {"id": "updatedAt", "type": "string", "aliases": ["updatedAt"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Item",
+      "aliases": ["Item", "item"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "title", "type": "string", "aliases": ["title"], "required": false},
+        {"id": "category", "type": "string", "aliases": ["category"], "required": true},
+        {"id": "vault", "type": "object", "aliases": ["vault"], "required": true},
+        {"id": "favorite", "type": "boolean", "aliases": ["favorite"], "required": false},
+        {"id": "state", "type": "string", "aliases": ["state"], "required": false},
+        {"id": "tags", "type": "array", "aliases": ["tags"], "required": false},
+        {"id": "urls", "type": "array", "aliases": ["urls"], "required": false},
+        {"id": "version", "type": "integer", "aliases": ["version"], "required": false},
+        {"id": "createdAt", "type": "string", "aliases": ["createdAt"], "required": false},
+        {"id": "updatedAt", "type": "string", "aliases": ["updatedAt"], "required": false},
+        {"id": "lastEditedBy", "type": "string", "aliases": ["lastEditedBy"], "required": false},
+        {"id": "fields", "type": "array", "aliases": ["fields"], "required": false},
+        {"id": "files", "type": "array", "aliases": ["files"], "required": false},
+        {"id": "sections", "type": "array", "aliases": ["sections"], "required": false}
+      ],
+      "states": ["active", "archived", "deleted"],
+      "review_status": "gold"
+    },
+    {
+      "id": "File",
+      "aliases": ["File", "file"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "size", "type": "integer", "aliases": ["size"], "required": false},
+        {"id": "content", "type": "string", "aliases": ["content"], "required": false},
+        {"id": "content_path", "type": "string", "aliases": ["content_path"], "required": false},
+        {"id": "section", "type": "object", "aliases": ["section"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

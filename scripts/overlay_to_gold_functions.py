@@ -23,7 +23,7 @@ def main() -> None:
     skipped = 0
     for row in iter_jsonl(Path(args.overlay)):
         status = str(row.get("review_status", ""))
-        if status != "reviewed" and not args.include_draft:
+        if status not in {"reviewed", "gold"} and not args.include_draft:
             skipped += 1
             continue
         rows.append(to_gold_function(row))

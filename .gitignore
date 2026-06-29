@@ -44,6 +44,8 @@ dataset/function_layer_benchmarks/raw/*
 dataset/function_layer_benchmarks/generated/apis_guru/*/
 !dataset/function_layer_benchmarks/generated/apis_guru/reviewed_sample/
 !dataset/function_layer_benchmarks/generated/apis_guru/reviewed_sample/**
+!dataset/function_layer_benchmarks/generated/apis_guru/gold/
+!dataset/function_layer_benchmarks/generated/apis_guru/gold/**
 !dataset/full_ontology_workflow_benchmark/
 dataset/full_ontology_workflow_benchmark/*
 !dataset/full_ontology_workflow_benchmark/README.md

@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "name": "twilio_conversations_core_ontology_reviewed_v0",
+    "kind": "reviewed_object_ontology",
+    "source_openapi": "dataset/function_layer_benchmarks/raw/apis_guru/specs/twilio_conversations_v1.openapi.json",
+    "scope": "Initial reviewed core ontology for Conversation, Message, Participant, Receipt, Service, Role, User, Credential, and Webhook resources.",
+    "warning": "This is an initial reviewed subset for Paper 1 annotation. It does not cover every schema in the Twilio Conversations OpenAPI file."
+  },
+  "object_types": [
+    {
+      "id": "Conversation",
+      "aliases": ["conversation", "conversations.v1.conversation"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["ConversationSid", "Sid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "chat_service_sid", "type": "string", "aliases": ["ChatServiceSid"]},
+        {"id": "friendly_name", "type": "string"},
+        {"id": "unique_name", "type": "string"},
+        {"id": "state", "type": "string"},
+        {"id": "attributes", "type": "string"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["active", "inactive", "closed", "created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.conversation",
+          "claim": "Conversation schema has sid, state, friendly_name, attributes, and service identifiers."
+        },
+        {
+          "source_type": "openapi_path",
+          "source_reference": "twilio_conversations_v1.openapi.json#/paths/~1v1~1Conversations",
+          "claim": "Conversation collection supports list and create operations."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Message",
+      "aliases": ["message", "conversation message", "conversations.v1.conversation.conversation_message"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["MessageSid", "Sid"]},
+        {"id": "conversation_sid", "type": "string", "aliases": ["ConversationSid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "participant_sid", "type": "string"},
+        {"id": "author", "type": "string"},
+        {"id": "body", "type": "string"},
+        {"id": "attributes", "type": "string"},
+        {"id": "index", "type": "integer"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.conversation.conversation_message",
+          "claim": "Conversation message schema has sid, conversation_sid, participant_sid, author, body, attributes, and index."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Participant",
+      "aliases": ["participant", "conversation participant", "conversations.v1.conversation.conversation_participant"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["ParticipantSid", "Sid"]},
+        {"id": "conversation_sid", "type": "string", "aliases": ["ConversationSid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "identity", "type": "string"},
+        {"id": "role_sid", "type": "string"},
+        {"id": "attributes", "type": "string"},
+        {"id": "last_read_message_index", "type": "integer"},
+        {"id": "last_read_timestamp", "type": "datetime"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.conversation.conversation_participant",
+          "claim": "Conversation participant schema has sid, conversation_sid, identity, role_sid, and read markers."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Receipt",
+      "aliases": ["receipt", "message receipt", "conversation message receipt"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["Sid"]},
+        {"id": "conversation_sid", "type": "string", "aliases": ["ConversationSid"]},
+        {"id": "message_sid", "type": "string", "aliases": ["MessageSid"]},
+        {"id": "participant_sid", "type": "string", "aliases": ["ParticipantSid"]},
+        {"id": "channel_message_sid", "type": "string"},
+        {"id": "status", "type": "string"},
+        {"id": "error_code", "type": "integer"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["read", "failed", "delivered", "undelivered", "sent"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.conversation.conversation_message.conversation_message_receipt",
+          "claim": "Receipt schema has status values read, failed, delivered, undelivered, and sent."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Service",
+      "aliases": ["service", "conversation service", "conversations.v1.service"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["ChatServiceSid", "ServiceSid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "friendly_name", "type": "string"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.service",
+          "claim": "Service schema defines conversation services on an account."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Role",
+      "aliases": ["role", "user role", "conversation role"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["RoleSid", "Sid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "chat_service_sid", "type": "string", "aliases": ["ChatServiceSid"]},
+        {"id": "friendly_name", "type": "string"},
+        {"id": "type", "type": "string"},
+        {"id": "permissions", "type": "array"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.role",
+          "claim": "Role schema defines conversation-level or service-level roles and permissions."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "User",
+      "aliases": ["user", "conversation user"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["UserSid", "Sid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "chat_service_sid", "type": "string", "aliases": ["ChatServiceSid"]},
+        {"id": "identity", "type": "string"},
+        {"id": "friendly_name", "type": "string"},
+        {"id": "role_sid", "type": "string"},
+        {"id": "is_online", "type": "boolean"},
+        {"id": "is_notifiable", "type": "boolean"},
+        {"id": "attributes", "type": "string"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed", "online", "offline"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.user",
+          "claim": "User schema defines identity, role, online, notifiable, and service identifiers."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Credential",
+      "aliases": ["credential", "push notification credential"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["CredentialSid", "Sid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "friendly_name", "type": "string"},
+        {"id": "type", "type": "string"},
+        {"id": "sandbox", "type": "string"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.credential",
+          "claim": "Credential schema defines push notification credentials."
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "id": "Webhook",
+      "aliases": ["webhook", "conversation webhook", "conversation scoped webhook"],
+      "properties": [
+        {"id": "sid", "type": "string", "aliases": ["WebhookSid", "Sid"]},
+        {"id": "account_sid", "type": "string"},
+        {"id": "conversation_sid", "type": "string", "aliases": ["ConversationSid"]},
+        {"id": "target", "type": "string"},
+        {"id": "configuration", "type": "object"},
+        {"id": "date_created", "type": "datetime"},
+        {"id": "date_updated", "type": "datetime"},
+        {"id": "url", "type": "string"}
+      ],
+      "states": ["created", "updated", "removed"],
+      "evidence": [
+        {
+          "source_type": "openapi_schema",
+          "source_reference": "twilio_conversations_v1.openapi.json#/components/schemas/conversations.v1.conversation.conversation_scoped_webhook",
+          "claim": "Conversation scoped webhook schema defines target and configuration."
+        }
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [
+    {"source": "Service", "relation": "has_conversation", "target": "Conversation", "review_status": "reviewed"},
+    {"source": "Conversation", "relation": "has_message", "target": "Message", "review_status": "reviewed"},
+    {"source": "Conversation", "relation": "has_participant", "target": "Participant", "review_status": "reviewed"},
+    {"source": "Message", "relation": "has_receipt", "target": "Receipt", "review_status": "reviewed"},
+    {"source": "Conversation", "relation": "has_webhook", "target": "Webhook", "review_status": "reviewed"},
+    {"source": "Participant", "relation": "assigned_role", "target": "Role", "review_status": "reviewed"},
+    {"source": "User", "relation": "assigned_role", "target": "Role", "review_status": "reviewed"}
+  ]
+}

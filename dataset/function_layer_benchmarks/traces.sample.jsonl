@@ -1,0 +1,3 @@
+{"trace_id":"t1","method":"GET","path":"/orders/{order_id}","status":200,"request":{"order_id":"O-100"},"response":{"order_id":"O-100","state":"pending"}}
+{"trace_id":"t2","method":"POST","path":"/orders/{order_id}/cancel","status":200,"request":{"order_id":"O-100","reason":"customer_request"},"before":{"order_id":"O-100","state":"pending"},"after":{"order_id":"O-100","state":"cancelled"}}
+{"trace_id":"t3","method":"PATCH","path":"/orders/{order_id}/address","status":200,"request":{"order_id":"O-101","address":{"line1":"1 Main St","city":"Hangzhou","postal_code":"310000"}},"before":{"order_id":"O-101","state":"paid"},"after":{"order_id":"O-101","state":"paid","shipping_address":{"line1":"1 Main St","city":"Hangzhou","postal_code":"310000"}}}

@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "kind": "openapi_derived_object_ontology_draft",
+    "name": "retail_order_openapi_ontology_draft",
+    "source_files": [
+      "dataset/function_layer_benchmarks/openapi/retail_order.sample.json"
+    ],
+    "warning": "Auto-generated draft. Review object boundaries, aliases, states, and relations before use as gold ontology."
+  },
+  "object_types": [
+    {
+      "aliases": [
+        "Address",
+        "address"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Address",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Address",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/orders/{order_id}/address",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update the shipping address of a mutable order.",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Address",
+      "properties": [
+        {
+          "aliases": [
+            "city"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.city",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Address/properties/city",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "city",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "line1"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.line1",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Address/properties/line1",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "line1",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "postal code",
+            "postal_code"
+          ],
+          "evidence": [
+            {
+              "claim": "Address.postal_code",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Address/properties/postal_code",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "postal_code",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "locked",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "locked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    },
+    {
+      "aliases": [
+        "CancelOrderRequest",
+        "cancel order request",
+        "cancel_order_request"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object CancelOrderRequest",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/CancelOrderRequest",
+          "source_type": "openapi_schema"
+        }
+      ],
+      "id": "CancelOrderRequest",
+      "properties": [
+        {
+          "aliases": [
+            "reason"
+          ],
+          "evidence": [
+            {
+              "claim": "CancelOrderRequest.reason",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/CancelOrderRequest/properties/reason",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": []
+    },
+    {
+      "aliases": [
+        "Order",
+        "order"
+      ],
+      "evidence": [
+        {
+          "claim": "Schema object Order",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Order",
+          "source_type": "openapi_schema"
+        },
+        {
+          "claim": "/orders/{order_id}",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Retrieve an order by id.",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}/get",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/{order_id}/cancel",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1cancel",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Cancel a pending order.",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1cancel/post",
+          "source_type": "openapi_operation"
+        },
+        {
+          "claim": "/orders/{order_id}/address",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address",
+          "source_type": "openapi_path"
+        },
+        {
+          "claim": "Update the shipping address of a mutable order.",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+          "source_type": "openapi_operation"
+        }
+      ],
+      "id": "Order",
+      "properties": [
+        {
+          "aliases": [
+            "order id",
+            "order_id"
+          ],
+          "evidence": [
+            {
+              "claim": "Order.order_id",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Order/properties/order_id",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "order_id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "aliases": [
+            "shipping address",
+            "shipping_address"
+          ],
+          "evidence": [
+            {
+              "claim": "Order.shipping_address",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Order/properties/shipping_address",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "shipping_address",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "aliases": [
+            "state"
+          ],
+          "evidence": [
+            {
+              "claim": "Order.state",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Order/properties/state",
+              "source_type": "openapi_schema_property"
+            }
+          ],
+          "id": "state",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "review_status": "draft",
+      "states": [
+        {
+          "evidence": [
+            {
+              "claim": "cancelled",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "cancelled",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "locked",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "locked",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "pending",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1cancel/post",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "pending",
+          "review_status": "draft"
+        },
+        {
+          "evidence": [
+            {
+              "claim": "updated",
+              "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address/patch",
+              "source_type": "openapi_state_candidate"
+            }
+          ],
+          "id": "updated",
+          "review_status": "draft"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "evidence": [
+        {
+          "claim": "Nested path relation Order -> Address",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/paths/~1orders~1{order_id}~1address",
+          "source_type": "openapi_path"
+        }
+      ],
+      "relation": "has_address",
+      "review_status": "draft",
+      "source": "Order",
+      "target": "Address"
+    },
+    {
+      "evidence": [
+        {
+          "claim": "Order.shipping_address references Address",
+          "source_reference": "dataset/function_layer_benchmarks/openapi/retail_order.sample.json#/components/schemas/Order/properties/shipping_address",
+          "source_type": "openapi_schema_property"
+        }
+      ],
+      "relation": "shipping_address",
+      "review_status": "draft",
+      "source": "Order",
+      "target": "Address"
+    }
+  ]
+}

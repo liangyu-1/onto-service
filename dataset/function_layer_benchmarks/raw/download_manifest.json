@@ -1,0 +1,34 @@
+{
+  "downloaded_at": "2026-06-26",
+  "sources": [
+    {
+      "name": "ToolFactory APIdoc2json",
+      "type": "huggingface_dataset",
+      "id": "billyfin/APIdoc2json",
+      "files": [
+        "toolfactory_apidoc2json/hf_dataset_info.json",
+        "toolfactory_apidoc2json/README.md",
+        "toolfactory_apidoc2json/train-00000-of-00001.parquet"
+      ],
+      "notes": "HuggingFace metadata reports 167 train examples. Parquet reader is not installed locally, so no row-level conversion was performed."
+    },
+    {
+      "name": "APIs.guru OpenAPI Directory",
+      "type": "openapi_directory_subset",
+      "files": [
+        "apis_guru/github_repo_info.json",
+        "apis_guru/list.json",
+        "apis_guru/specs/stripe.com.openapi.json",
+        "apis_guru/specs/github.com.openapi.json",
+        "apis_guru/specs/slack.com.openapi.json",
+        "apis_guru/specs/twilio_conversations_v1.openapi.json",
+        "apis_guru/specs/atlassian_jira.openapi.json",
+        "apis_guru/specs/xero_accounting.openapi.json",
+        "apis_guru/specs/box.com.openapi.json",
+        "apis_guru/specs/docusign.openapi.json",
+        "apis_guru/specs/sendgrid.openapi.json"
+      ],
+      "notes": "The full list has 2529 API entries. The local OpenAPI subset contains 9 service specs for benchmark bootstrapping."
+    }
+  ]
+}

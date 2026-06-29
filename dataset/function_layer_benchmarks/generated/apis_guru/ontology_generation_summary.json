@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "api": "atlassian_jira.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/atlassian_jira",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/atlassian_jira/ontology.draft.json",
+      "object_type_count": 679,
+      "relation_count": 520,
+      "source_paths": 317,
+      "source_schemas": 544
+    },
+    {
+      "api": "box.com.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/box_com",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/box_com/ontology.draft.json",
+      "object_type_count": 225,
+      "relation_count": 82,
+      "source_paths": 161,
+      "source_schemas": 179
+    },
+    {
+      "api": "docusign.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/docusign",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/docusign/ontology.draft.json",
+      "object_type_count": 627,
+      "relation_count": 4050,
+      "source_paths": 204,
+      "source_schemas": 565
+    },
+    {
+      "api": "github.com.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/github_com",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/github_com/ontology.draft.json",
+      "object_type_count": 750,
+      "relation_count": 1836,
+      "source_paths": 551,
+      "source_schemas": 582
+    },
+    {
+      "api": "sendgrid.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/sendgrid",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/sendgrid/ontology.draft.json",
+      "object_type_count": 247,
+      "relation_count": 149,
+      "source_paths": 201,
+      "source_schemas": 145
+    },
+    {
+      "api": "slack.com.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/slack_com",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/slack_com/ontology.draft.json",
+      "object_type_count": 222,
+      "relation_count": 68,
+      "source_paths": 174,
+      "source_schemas": 48
+    },
+    {
+      "api": "stripe.com.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/stripe_com",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/stripe_com/ontology.draft.json",
+      "object_type_count": 837,
+      "relation_count": 662,
+      "source_paths": 299,
+      "source_schemas": 746
+    },
+    {
+      "api": "twilio_conversations_v1.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/twilio_conversations_v1",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/twilio_conversations_v1/ontology.draft.json",
+      "object_type_count": 75,
+      "relation_count": 31,
+      "source_paths": 47,
+      "source_schemas": 61
+    },
+    {
+      "api": "xero_accounting.openapi.json",
+      "directory": "dataset/function_layer_benchmarks/generated/apis_guru/xero_accounting",
+      "ontology_draft": "dataset/function_layer_benchmarks/generated/apis_guru/xero_accounting/ontology.draft.json",
+      "object_type_count": 140,
+      "relation_count": 241,
+      "source_paths": 132,
+      "source_schemas": 126
+    }
+  ]
+}

@@ -4,13 +4,16 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
 \usepackage{times}
 \usepackage{url}
 
 \pagestyle{plain}
 \providecommand{\keywords}[1]{\par\smallskip\noindent\textbf{Keywords: }#1\par}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{ActionIndex: Executability-Aware Hybrid Indexing for Ontology Action Layers}
+\title{Autonomous Construction of Ontology Function Layers from Operational Artifacts}
 
 \author{Anonymous Authors\\Anonymous Institution}
 
@@ -18,193 +21,149 @@
 \maketitle
 
 \begin{abstract}
-Operational ontologies increasingly contain not only objects, relations, and constraints, but also actions that can be selected, planned, invoked, and validated by intelligent systems. Existing retrieval-augmented generation and ontology-aware retrieval methods, however, mostly index document chunks, entities, concepts, or graph neighborhoods. They are not designed to retrieve executable actions together with their targets, parameters, preconditions, effects, constraints, and supporting evidence. This paper introduces \textsc{ActionIndex}, an executability-aware hybrid indexing framework for ontology action layers. The key idea is to treat actions as first-class retrieval units rather than as incidental labels attached to text or graph nodes. \textsc{ActionIndex} constructs structured action index documents from ontology action definitions and procedural evidence, and combines lexical, dense, ontology-graph, and constraint-state channels for retrieval and ranking. The ranking objective is not only semantic relevance, but also ontology grounding, precondition satisfaction, parameter completeness, state-transition compatibility, and evidence support. We define an action retrieval task, propose a scoring architecture, and specify an evaluation protocol covering action recall, grounding accuracy, constraint satisfaction, path correctness, and explanation faithfulness. The proposed framework provides a principled retrieval substrate for SOP search, intelligent customer service, workflow optimization, and LLM agents operating over ontology-grounded action layers.
+Operational ontologies increasingly need an executable function layer in addition to object types, properties, relations, and constraints. This layer specifies which atomic operations can be invoked over ontology objects, what parameters they require, under which states they are valid, and what effects they produce. Existing automatic ontology construction methods mainly induce descriptive schemas and triples, while tool-extraction methods mainly produce callable API schemas. Neither directly constructs ontology-bound functions whose semantics are automatically validated without per-function expert approval. We formulate autonomous ontology Function Layer construction: given operational artifacts such as OpenAPI files, API documentation, SDK signatures, request-response examples, execution traces, and an object-layer draft, construct a versioned library of atomic functions grounded in ontology objects and properties. We propose an evidence-triangulated construction framework that discovers function candidates, jointly aligns functions to object-layer elements, generates evidence-bearing contracts, validates them through ontology constraints and replay evidence, and publishes or abstains according to calibrated risk. The evaluation measures semantic correctness, executability, selective publication risk, robustness to object-layer noise, and downstream workflow composability.
 \end{abstract}
 
-\keywords{Action retrieval, ontology action layer, hybrid indexing, executability-aware ranking, neuro-symbolic retrieval}
+\keywords{Ontology construction, function layer, API semantics, autonomous validation, operational ontology}
 
 \section{Introduction}
-Retrieval-augmented systems are increasingly used in operational settings such as industrial SOP assistance, enterprise workflow optimization, customer-service automation, and LLM-based agents. In these settings, the system is often expected to answer questions such as: what action should be performed next, which object should the action operate on, which parameters are required, whether the current state satisfies the action's preconditions, and which business rule or SOP evidence justifies the recommendation. Conventional retrieval architectures are weakly aligned with this requirement. Dense retrieval and BM25 retrieve text passages; RAG retrieves external memory for generation~\cite{lewis2020rag}; GraphRAG-style methods retrieve entities, communities, or paths~\cite{edge2024graphrag}; ontology-aware retrieval retrieves concepts and relations~\cite{wang2024eike}. None of these retrieval units directly represents executable actions.
+Enterprise ontologies are no longer only descriptive data models. In operational settings they must also define what computations, queries, and state-changing operations can be executed over domain objects. An object ontology may represent \textit{Order}, \textit{Customer}, and \textit{PaymentMethod}; an operational ontology additionally needs functions that retrieve an order, cancel a pending order, calculate a refund, or update a delivery address under defined state and policy constraints. Industrial ontology platforms expose similar function concepts for object-centric computation and actions, but constructing these functions remains a substantial engineering task.
 
-This mismatch becomes problematic when an ontology is operationalized. In an operational ontology, an action is not merely a verb phrase. It has a schema, a target object type, parameters, preconditions, postconditions, effects, constraints, possible executors, risk level, and evidence provenance. A retrieval system that ranks actions only by text similarity may return actions that sound relevant but cannot be executed, violate constraints, miss required parameters, or do not connect to the current workflow state. Conversely, a purely symbolic action selector may be precise but brittle under natural-language queries and document-derived procedural descriptions.
+Current research only partially addresses this requirement. Automatic ontology and knowledge-graph construction methods generate schemas, triples, and ontology drafts from text or data~\cite{kommineni2024human2machine,bai2025autoschemakg,lippolis2025ontogenia}. API-oriented methods extract tool schemas or API knowledge graphs from documentation~\cite{ni2025toolfactory,sun2025apikg,lee2025innout}. These lines of work remain separated. Ontology construction usually stops before executable operations, while API extraction usually stops at syntax-level callability. A JSON function schema can tell an agent that an API takes an \texttt{order\_id}, but it does not necessarily specify that the function operates on an \textit{Order}, requires a particular state, returns properties compatible with the ontology, or causes a known state transition.
 
-We argue that action-layer retrieval should be formulated as a distinct retrieval problem: given a natural-language task query, workflow state, and ontology action layer, retrieve a ranked set of executable, grounded, and explainable action candidates. This paper proposes \textsc{ActionIndex}, an ontology-aware hybrid indexing framework centered on actions. Rather than indexing all ontology elements uniformly, \textsc{ActionIndex} constructs an action index document for each action by combining action labels, aliases, target types, parameters, preconditions, effects, constraints, neighboring actions, and evidence spans. Retrieval combines four channels: lexical action matching, dense semantic matching, ontology graph expansion, and constraint-state validation.
+This paper treats the Function Layer as a missing stage of automatic operational ontology construction. The input is not a single API page. It is a collection of fallible operational artifacts: database and object metadata, OpenAPI descriptions, prose API documentation, SDK signatures, request-response examples, error specifications, and observed executions. The output is not merely a tool schema, but an \textit{OntologyFunction} record with object bindings, parameter roles, property links, preconditions, effects, endpoint bindings, error contracts, evidence, confidence, and publication status.
 
-The main contributions are:
+The central constraint is no per-function human intervention during construction. Human labels are still required for evaluation, but the construction algorithm cannot ask an expert to accept or repair every candidate. This makes the problem scientific rather than only engineering: if human adjudication is removed, the system must decide which semantic claims are sufficiently supported by independent evidence and which ones should be rejected or abstained.
+
+We propose an evidence-triangulated autonomous construction framework. Candidate functions are discovered from operational artifacts, aligned jointly to object types and properties, converted into evidence-bearing contracts, validated through ontology and cross-artifact checks, optionally checked against execution traces or replay harnesses, and then published using a calibrated selective-risk policy. The method can propose local object-layer corrections, but it does not silently rewrite the ontology without independent evidence.
+
+The contributions are:
 \begin{itemize}
-    \item We define action-layer retrieval as a retrieval problem whose unit is an executable ontology action rather than a document chunk, entity, or concept.
-    \item We propose an action index document representation that encodes action semantics, ontology grounding, constraints, state transitions, and evidence provenance.
-    \item We introduce an executability-aware ranking objective that jointly considers semantic relevance, ontology-path compatibility, precondition satisfaction, parameter completeness, state-transition fit, and evidence support.
-    \item We specify an evaluation protocol that goes beyond Recall@k by measuring action grounding, constraint satisfaction, executable hit rate, and explanation faithfulness.
+    \item We define autonomous Function Layer construction as an operational ontology task distinct from descriptive ontology learning and API tool-schema extraction.
+    \item We propose a joint object--function alignment and evidence-triangulated validation framework for ontology-bound atomic functions.
+    \item We introduce an autonomous publication protocol that reports coverage--risk behavior instead of assuming every generated function is safe to publish.
+    \item We specify an evaluation design covering field-level semantics, executability, calibration, object-layer noise, and downstream workflow composability.
 \end{itemize}
 
 \section{Related Work}
-\subsection{Hybrid and Neural Retrieval}
-Modern retrieval systems frequently combine lexical matching, dense embeddings, and reranking. Such hybrid retrieval improves robustness across exact terminology and semantic paraphrase. Recent RAG-oriented IR work further shows that standard query-document relevance does not necessarily predict downstream RAG quality~\cite{salemi2024erag}, and that retrieved context can affect generation in counter-intuitive ways~\cite{cuconasu2024noise}. Adaptive retrieval methods such as QUAM use query-affinity and relevance-aware document graphs to improve recall under limited reranking budgets~\cite{rathee2025quam}. Recent benchmarking toolkits such as Rankify also reflect the need for reproducible retrieval and reranking evaluation~\cite{abdallah2025rankify}. These works motivate our view that action retrieval should not be evaluated only as text relevance. However, their indexed object is still usually a document passage or a web page. For operational action selection, passage relevance is insufficient because actions require parameters, state assumptions, and constraint validation.
+\subsection{Automatic Ontology and Knowledge-Graph Construction}
+Recent LLM-supported ontology construction systems generate ontology drafts from requirements, induce schemas from text, or construct ontology-grounded knowledge graphs~\cite{kommineni2024human2machine,lippolis2025ontogenia,bai2025autoschemakg,feng2024ontologykg}. Text2KGBench evaluates fact generation under ontology constraints~\cite{mihindukulasooriya2023text2kg}. These works motivate automatic construction but primarily target descriptive knowledge. They do not evaluate whether operational functions are correctly bound to object types, properties, states, and executable endpoints.
 
-\subsection{GraphRAG and Ontology-Aware Retrieval}
-Graph-augmented RAG methods retrieve graph nodes, graph communities, paths, or subgraphs to improve evidence organization and reasoning~\cite{edge2024graphrag}. LightRAG combines graph structures with vector representations and supports incremental update~\cite{guo2024lightrag}, while HippoRAG combines LLMs, knowledge graphs, and graph-based spreading activation for long-term memory retrieval~\cite{gutierrez2024hipporag}. KG$^2$RAG further uses knowledge graphs to expand and organize retrieved chunks~\cite{zhu2025kg2rag}. OntoRAG derives ontologies from unstructured knowledge bases to support ontology-enhanced QA~\cite{tiwari2025ontorag}. Ontology-aware retrieval further emphasizes formal concept relations, type hierarchies, and constraints, while ontology embedding work such as EIKE models extensional and intensional ontology knowledge in representation spaces~\cite{wang2024eike}. These methods provide useful structural signals, but they typically index ontology concepts, chunks, or graph neighborhoods rather than executable action schemas. As a result, they do not explicitly optimize for whether a retrieved action can be executed in the current context.
+\subsection{API Knowledge Graphs and Tool Extraction}
+API knowledge graphs model endpoints, parameters, dependencies, and invocation relations for tool use and composition. Explore--Construct--Filter automatically constructs API knowledge graphs from documentation~\cite{sun2025apikg}, and In-N-Out models parameter-level API dependencies~\cite{lee2025innout}. ToolFactory extracts AI-compatible tools from REST API documentation and provides an API extraction benchmark~\cite{ni2025toolfactory}. ToolLLM and Gorilla study large-scale API selection and invocation~\cite{qin2024toolllm,patil2024gorilla}. These works are close to our setting, but the target is not an ontology Function Layer with object semantics, state preconditions, effects, and selective publication risk.
 
-\subsection{Tool Retrieval and Agent Action Selection}
-Recent work on tool use and tool retrieval studies how agents select APIs or tools from large tool libraries~\cite{schick2023toolformer,qin2024toolllm,patil2024gorilla}. ToolRerank introduces adaptive and hierarchy-aware reranking for tool retrieval~\cite{zheng2024toolrerank}, and massive tool retrieval benchmarks study query-tool alignment at large scale~\cite{zhang2024massivetool}. This line is close to action retrieval, but APIs are usually described by input-output signatures and natural-language documentation. Ontology actions additionally involve domain objects, business states, preconditions, effects, constraints, and provenance from SOPs or workflow documents. \textsc{ActionIndex} therefore treats action retrieval as tool retrieval plus ontology grounding and executability validation.
+\subsection{Ontology-to-API and Semantic Service Composition}
+Ontology-based API generation and semantic service composition compile ontology semantics into executable interfaces or compose APIs through typed input-output relations~\cite{garijo2020oba,callaghan2023biothings}. This direction is complementary. It assumes the ontology semantics are authoritative and generates or composes services from them. We solve the reverse problem: infer the operational function layer from existing artifacts whose semantics may be incomplete, inconsistent, or stale.
 
-\section{Problem Definition}
-Let $\mathcal{O}$ be an operational ontology with object types, relations, parameters, constraints, states, and an action layer $\mathcal{A} = \{a_1,\ldots,a_n\}$. Each action $a$ is represented as:
+\section{Method}
+\subsection{Problem Definition}
+Let $A=\{A_1,\ldots,A_m\}$ denote operational artifacts and $O_0$ an object-layer draft. The goal is to construct a set of ontology functions:
 \[
-a = \langle t, r, o, I, O, P, E, C, S, \Pi \rangle
+F = \{f_1,\ldots,f_n\}
 \]
-where $t$ is the action type, $r$ is the actor role, $o$ is the target object type, $I$ and $O$ are inputs and outputs, $P$ is the set of preconditions, $E$ is the set of effects, $C$ is the set of constraints, $S$ is the state-transition descriptor, and $\Pi$ denotes evidence and provenance.
-
-Given a query $q$, optional current state $s_q$, and optional target object mention $m_q$, the task is to return a ranked list of actions:
+where each function is represented as:
 \[
-\operatorname{rank}(q, s_q, m_q, \mathcal{O}) = [a_{(1)}, a_{(2)}, \ldots, a_{(k)}]
+f=\langle id,T,k,I,O,P,E,B,C,\Pi,\gamma,\sigma\rangle.
 \]
-such that high-ranked actions are semantically relevant, ontology-grounded, executable under the query context, and supported by traceable evidence.
+Here $T$ is the bound object type set, $k$ is the operation kind, $I$ and $O$ are typed inputs and outputs, $P$ are preconditions, $E$ are effects, $B$ is the endpoint binding, $C$ is the error contract, $\Pi$ is evidence, $\gamma$ is confidence, and $\sigma$ is publication status.
 
-\section{Action Index Document}
-For each action $a$, \textsc{ActionIndex} constructs a structured index document:
-\[
-D(a) = \{D_{\text{name}}, D_{\text{target}}, D_{\text{param}}, D_{\text{pre}}, D_{\text{effect}}, D_{\text{constraint}}, D_{\text{neighbor}}, D_{\text{evidence}}\}.
-\]
-The fields are not flat text. They retain field identity and weights. Action names and target objects receive high lexical weights; evidence text receives high dense-retrieval weight; constraints and preconditions are used both for retrieval and validation; neighboring actions provide workflow context.
+The algorithm must output published, rejected, and abstained candidates without expert decisions in the loop. The evaluation uses hidden gold labels but the method does not.
 
-\section{Hybrid Index Architecture}
-\subsection{Lexical Action Index}
-The lexical index stores action names, aliases, object names, parameter names, and domain-specific terminology. It supports exact and fuzzy matching, which is essential in industrial domains where equipment names, process codes, and action labels may be standardized.
+\subsection{Multi-Source Function Discovery}
+Parsers extract operation candidates from OpenAPI files, API prose, SDK signatures, database procedures, examples, logs, and traces. For each candidate the system records endpoint identifiers, request and response fields, documented errors, source locations, and version metadata. Weak textual evidence is retained but assigned lower initial reliability.
 
-\subsection{Dense Action Index}
-The dense index encodes action index documents using a sentence or domain embedding model. It captures paraphrases such as ``handle abnormal pressure'' and ``inspect pressure gauge before shutdown''. Dense retrieval is especially useful when user queries differ from SOP wording.
+\subsection{Joint Object--Function Alignment}
+Freezing the object layer before function extraction causes every object-layer error to propagate. We therefore jointly score function, object, property, and parameter-role assignments. The score combines lexical similarity, dense similarity, datatype compatibility, request-response structure, graph neighborhood, observed read/write sets, and cross-function consistency. The output can bind to an existing ontology element, propose an alias or missing property, or mark the field unresolved.
 
-\subsection{Ontology Graph Index}
-The graph index captures typed relations among actions, objects, parameters, states, constraints, and neighboring actions. It supports expansion from an object to applicable actions, from a failure state to recovery actions, and from one action to prerequisite or follow-up actions.
+\subsection{Evidence-Bearing Contract Generation}
+The generator produces contracts only from local evidence and ontology neighborhoods. Critical fields such as target object, endpoint binding, required inputs, preconditions, and external effects must carry source references. If evidence is insufficient, the field remains unresolved rather than being completed from model prior knowledge.
 
-\subsection{Constraint-State Index}
-The constraint-state index stores preconditions, postconditions, required parameters, state transitions, permissions, and safety constraints. Unlike a post-hoc filter, this channel participates in scoring. It allows the system to prefer an action that is executable in the current state over a semantically similar but invalid action.
+\subsection{Automatic Validation}
+Validation has three layers. Ontology validation checks domain, range, datatype, relation path, and state-predicate consistency. Cross-artifact validation checks whether prose, OpenAPI, examples, errors, and traces agree on required inputs, outputs, and effects. Execution validation invokes a sandbox or replay harness when available and checks request validity, response projection, error behavior, and observed state transitions.
 
-\section{Executability-Aware Ranking}
-For query $q$ and candidate action $a$, the score is:
-\[
-\begin{split}
-\operatorname{Score}(q,a) = &
-\lambda_1 L(q,a) + \lambda_2 V(q,a) + \lambda_3 G(q,a) \\
-& + \lambda_4 C(q,a) + \lambda_5 S(q,a) + \lambda_6 E(q,a),
-\end{split}
-\]
-where $L$ is lexical match, $V$ is dense similarity, $G$ is ontology-path compatibility, $C$ is constraint satisfaction, $S$ is state-transition fit, and $E$ is evidence support. The ranking function can be implemented as a weighted model, a learning-to-rank model, or a constrained reranker. The central design choice is that executability is treated as a first-order ranking signal rather than as an explanation generated after retrieval.
+\subsection{Selective Publication}
+A publication score combines evidence diversity, ontology consistency, cross-artifact agreement, execution support, unresolved critical fields, and model disagreement. Thresholds are calibrated on a development set. Candidates above the publish threshold enter the Function Layer, candidates below the reject threshold are rejected, and intermediate candidates are abstained. The primary reported object is a risk--coverage curve, not a single cherry-picked threshold.
 
-\section{Experimental Protocol}
+\section{Experiments}
 \subsection{Datasets}
-We plan to evaluate on a combination of public and domain-specific datasets. PET provides business-process activity and control-flow annotations. MyFixit provides procedural repair manuals with actions, tools, and parts. MSPT provides materials synthesis procedures with operations and parameters. OMIn provides maintenance incidents and entity grounding, although its action annotations are incomplete. If available, enterprise SOPs, work orders, or customer-service workflows should be used as the primary domain validation set.
+The experiment uses multiple resources because no public dataset fully annotates ontology-bound functions. ToolFactory provides heterogeneous API documentation and extraction labels~\cite{ni2025toolfactory}. Public OpenAPI repositories such as APIs.guru provide scalable endpoint and schema variation. API KG resources and parameter-dependency data support dependency evaluation~\cite{sun2025apikg,lee2025innout}. APIGen, BFCL, and function-calling datasets provide additional callability and argument-format checks. We add a Function Layer overlay with object bindings, parameter roles, preconditions, effects, error contracts, and test cases.
+
+\subsection{Object-Layer Conditions}
+We evaluate three object-layer settings: a gold object layer, an automatically generated object layer, and a controlled noisy object layer. Noise includes renamed object types, missing properties, wrong domain or range, merged classes, split classes, and incorrect relation edges. This is necessary because Paper 1 claims autonomous ontology construction, not only API schema extraction under a perfect ontology.
 
 \subsection{Baselines}
-Baselines include BM25, dense retrieval, BM25+dense hybrid retrieval, GraphRAG/KG-RAG retrieval, an ontology concept index that does not distinguish actions, LLM-only action selection, and ablated variants of \textsc{ActionIndex} without graph context or constraint-state scoring.
+Baselines include rule-based OpenAPI conversion, direct LLM document-to-tool extraction, ToolFactory-style extraction, API KG construction without ontology integration, sequential object-then-function alignment, our method without execution validation, our method without joint object correction, our method without abstention, and the full method. Human ontology engineering is reported as a cost reference, not as an autonomous baseline.
 
 \subsection{Metrics}
-We will report Recall@k, MRR, and nDCG for retrieval; action-type accuracy, target grounding accuracy, and parameter F1 for ontology grounding; constraint satisfaction rate, precondition match, and executable hit rate for executability; and evidence faithfulness and path correctness for explanation and workflow coherence.
+We report function discovery precision, recall, and F1; endpoint exact match; target-object accuracy; property-link accuracy; parameter-role F1; precondition F1; effect F1; error-contract F1; full-function exact match; valid invocation rate; response-to-object projection accuracy; state-transition consistency; published coverage; published error rate; risk--coverage area; expected calibration error; unsupported-claim rate; degradation slope under object-layer noise; object-error amplification ratio; and downstream workflow executable rate.
 
-\begin{table}[t]
-\centering
-\caption{Planned evaluation dimensions. Numerical results will be filled after experiments.}
-\begin{tabular}{lccc}
-\toprule
-Method & Action Recall & Executable Hit & Constraint Sat. \\
-\midrule
-BM25 & TBD & TBD & TBD \\
-Dense Retrieval & TBD & TBD & TBD \\
-GraphRAG/KG-RAG & TBD & TBD & TBD \\
-Concept Index & TBD & TBD & TBD \\
-\textsc{ActionIndex} & TBD & TBD & TBD \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Discussion}
-\textsc{ActionIndex} is most defensible when the target domain contains explicit or extractable actions. If the ontology lacks action types, parameters, or constraints, the method can still perform semantic retrieval but loses its main advantage. Another limitation is annotation availability: public datasets rarely contain full preconditions, effects, and state transitions. A realistic evaluation may require a smaller manually curated subset for executability and path-level metrics.
+\subsection{Analysis}
+The main claim is supported only if the method publishes non-trivial coverage at a bounded error rate and improves ontology semantics and executability over tool-schema baselines. High field F1 with very low published coverage is not sufficient. The analysis traces errors across artifact parsing, alignment, contract generation, validation, publication, and downstream workflow composition.
 
 \section{Conclusion}
-This paper proposes action-layer indexing as a distinct retrieval problem for operational ontologies. By treating actions as first-class retrieval units and ranking them by both relevance and executability, \textsc{ActionIndex} provides a retrieval foundation for SOP assistance, workflow optimization, customer-service automation, and LLM agents. Future work will instantiate the framework in Neo4j-backed ontology indexes and evaluate it on public process datasets and industrial SOP corpora.
+This paper reframes atomic function extraction as autonomous operational ontology construction. The contribution is not another API schema extractor, but a no-review process that constructs ontology-bound functions, validates their semantics through independent evidence, and exposes a measurable coverage--risk boundary.
 
 \begin{thebibliography}{99}
 
-\bibitem{lewis2020rag}
-Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, Sebastian Riedel, and Douwe Kiela.
-\newblock Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.
-\newblock In \emph{NeurIPS}, 2020.
+\bibitem{kommineni2024human2machine}
+V. K. Kommineni et al.
+\newblock From Human Experts to Machines: An LLM Supported Approach to Ontology and Knowledge Graph Construction.
+\newblock arXiv:2403.08345, 2024.
 
-\bibitem{edge2024graphrag}
-Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson.
-\newblock From Local to Global: A Graph RAG Approach to Query-Focused Summarization.
-\newblock arXiv:2404.16130, 2024.
+\bibitem{bai2025autoschemakg}
+Y. Bai et al.
+\newblock AutoSchemaKG: Autonomous Schema and Knowledge Graph Construction.
+\newblock arXiv:2505.23628, 2025.
 
-\bibitem{salemi2024erag}
-Alireza Salemi and Hamed Zamani.
-\newblock Evaluating Retrieval Quality in Retrieval-Augmented Generation.
-\newblock In \emph{SIGIR}, 2024.
+\bibitem{lippolis2025ontogenia}
+A. Lippolis et al.
+\newblock OntoGenia: Ontology Generation with Large Language Models.
+\newblock arXiv:2503.05388, 2025.
 
-\bibitem{cuconasu2024noise}
-Florin Cuconasu, Giovanni Trappolini, Federico Siciliano, Simone Filice, Cesare Campagnano, Yoelle Maarek, Nicola Tonellotto, and Fabrizio Silvestri.
-\newblock The Power of Noise: Redefining Retrieval for RAG Systems.
-\newblock In \emph{SIGIR}, 2024.
+\bibitem{feng2024ontologykg}
+S. Feng et al.
+\newblock Ontology-Guided Knowledge Graph Construction with Large Language Models.
+\newblock arXiv, 2024.
 
-\bibitem{rathee2025quam}
-Mandeep Rathee, Sean MacAvaney, and Avishek Anand.
-\newblock QUAM: Adaptive Retrieval through Query Affinity Modelling.
-\newblock In \emph{WSDM}, 2025.
+\bibitem{mihindukulasooriya2023text2kg}
+N. Mihindukulasooriya et al.
+\newblock Text2KGBench: A Benchmark for Ontology-Driven Knowledge Graph Generation.
+\newblock arXiv:2308.02357, 2023.
 
-\bibitem{abdallah2025rankify}
-Abdelrahman Abdallah, Bhawna Piryani, Jamshid Mozafari, Mohammed Ali, and Adam Jatowt.
-\newblock Rankify: A Comprehensive Python Toolkit for Retrieval, Re-Ranking, and Retrieval-Augmented Generation.
-\newblock arXiv:2502.02464, 2025.
+\bibitem{ni2025toolfactory}
+J. Ni et al.
+\newblock ToolFactory: Automated Tool Extraction from API Documentation.
+\newblock arXiv:2501.16945, 2025.
 
-\bibitem{guo2024lightrag}
-Zirui Guo, Lianghao Xia, Yanhua Yu, Tu Ao, and Chao Huang.
-\newblock LightRAG: Simple and Fast Retrieval-Augmented Generation.
-\newblock arXiv:2410.05779, 2024.
+\bibitem{sun2025apikg}
+R. Sun et al.
+\newblock Explore--Construct--Filter: Automated API Knowledge Graph Construction.
+\newblock arXiv:2502.13412, 2025.
 
-\bibitem{gutierrez2024hipporag}
-Bernal Jim{\'e}nez Guti{\'e}rrez, Yiheng Shu, Yu Gu, Michihiro Yasunaga, and Yu Su.
-\newblock HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models.
-\newblock In \emph{NeurIPS}, 2024.
-
-\bibitem{zhu2025kg2rag}
-Xiangrong Zhu, Yuexiang Xie, Yi Liu, Yaliang Li, and Wei Hu.
-\newblock Knowledge Graph-Guided Retrieval Augmented Generation.
-\newblock In \emph{NAACL}, 2025.
-
-\bibitem{tiwari2025ontorag}
-Yash Tiwari, Owais Ahmad Lone, and Mayukha Pal.
-\newblock OntoRAG: Enhancing Question-Answering through Automated Ontology Derivation from Unstructured Knowledge Bases.
-\newblock arXiv:2506.00664, 2025.
-
-\bibitem{wang2024eike}
-Keyu Wang, Guilin Qi, Jiaoyan Chen, Yi Huang, and Tianxing Wu.
-\newblock Embedding Ontologies via Incorporating Extensional and Intensional Knowledge.
-\newblock arXiv:2402.01677, 2024.
-
-\bibitem{schick2023toolformer}
-Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`i}, Roberta Raileanu, Maria Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
-\newblock Toolformer: Language Models Can Teach Themselves to Use Tools.
-\newblock In \emph{NeurIPS}, 2023.
+\bibitem{lee2025innout}
+J. Lee et al.
+\newblock In-N-Out: API Graphs for Parameter-Level Tool Dependencies.
+\newblock arXiv:2509.01560, 2025.
 
 \bibitem{qin2024toolllm}
-Yujia Qin, Shengding Hu, Yankai Lin, Weize Chen, Ning Ding, Ganqu Cui, Zheni Zeng, Yufei Huang, Chaojun Xiao, Chi Han, et al.
-\newblock ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.
+Y. Qin et al.
+\newblock ToolLLM: Facilitating Large Language Models to Master Real-world APIs.
 \newblock In \emph{ICLR}, 2024.
 
 \bibitem{patil2024gorilla}
-Shishir G. Patil, Tianjun Zhang, Xin Wang, and Joseph E. Gonzalez.
+S. Patil et al.
 \newblock Gorilla: Large Language Model Connected with Massive APIs.
 \newblock In \emph{NeurIPS}, 2024.
 
-\bibitem{zheng2024toolrerank}
-Yuanhang Zheng, Peng Li, Wei Liu, Yang Liu, Jian Luan, and Bin Wang.
-\newblock ToolRerank: Adaptive and Hierarchy-Aware Reranking for Tool Retrieval.
-\newblock In \emph{LREC-COLING}, 2024.
+\bibitem{garijo2020oba}
+D. Garijo and M. Osorio.
+\newblock OBA: An Ontology-Based Framework for Creating REST APIs.
+\newblock arXiv:2007.09206, 2020.
 
-\bibitem{zhang2024massivetool}
-Yuxiang Zhang, Xin Fan, Junjie Wang, Chongxian Chen, Fan Mo, Tetsuya Sakai, and Hayato Yamana.
-\newblock Data-Efficient Massive Tool Retrieval: A Reinforcement Learning Approach for Query-Tool Alignment with Language Models.
-\newblock In \emph{SIGIR-AP}, 2024.
+\bibitem{callaghan2023biothings}
+B. Callaghan et al.
+\newblock BioThings Explorer: A Query Engine for a Federated API Network.
+\newblock arXiv:2304.09344, 2023.
 
 \end{thebibliography}
 

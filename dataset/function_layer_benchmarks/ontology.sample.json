@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "name": "retail_order_function_layer_sample",
+    "warning": "Small Paper 1 pilot ontology, not a completed benchmark."
+  },
+  "object_types": [
+    {
+      "id": "Order",
+      "aliases": ["order"],
+      "properties": [
+        {"id": "order_id", "type": "string", "aliases": ["id"]},
+        {"id": "state", "type": "string", "aliases": ["status"]},
+        {"id": "shipping_address", "type": "Address", "aliases": ["address"]}
+      ],
+      "states": ["pending", "paid", "shipped", "cancelled", "locked"]
+    },
+    {
+      "id": "Address",
+      "aliases": ["address", "shipping address"],
+      "properties": [
+        {"id": "line1", "type": "string"},
+        {"id": "city", "type": "string"},
+        {"id": "postal_code", "type": "string"}
+      ],
+      "states": []
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Retail Order API Sample",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/orders/{order_id}": {
+      "get": {
+        "operationId": "getOrder",
+        "summary": "Retrieve an order by id.",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "string"}
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Order found.",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Order"}
+              }
+            }
+          },
+          "404": {"description": "Order not found."}
+        }
+      }
+    },
+    "/orders/{order_id}/cancel": {
+      "post": {
+        "operationId": "cancelOrder",
+        "summary": "Cancel a pending order.",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "string"}
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/CancelOrderRequest"}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Order cancelled.",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Order"}
+              }
+            }
+          },
+          "404": {"description": "Order not found."},
+          "409": {"description": "Order cannot be cancelled in the current state."}
+        }
+      }
+    },
+    "/orders/{order_id}/address": {
+      "patch": {
+        "operationId": "updateOrderAddress",
+        "summary": "Update the shipping address of a mutable order.",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "path",
+            "required": true,
+            "schema": {"type": "string"}
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/Address"}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Order address updated.",
+            "content": {
+              "application/json": {
+                "schema": {"$ref": "#/components/schemas/Order"}
+              }
+            }
+          },
+          "404": {"description": "Order not found."},
+          "409": {"description": "Order is locked and cannot be modified."}
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Order": {
+        "type": "object",
+        "properties": {
+          "order_id": {"type": "string"},
+          "state": {"type": "string"},
+          "shipping_address": {"$ref": "#/components/schemas/Address"}
+        },
+        "required": ["order_id", "state"]
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "line1": {"type": "string"},
+          "city": {"type": "string"},
+          "postal_code": {"type": "string"}
+        }
+      },
+      "CancelOrderRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {"type": "string"}
+        }
+      }
+    }
+  }
+}

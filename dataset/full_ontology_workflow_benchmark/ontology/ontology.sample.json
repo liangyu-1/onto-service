@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "name": "sample_myfixit_apparel_ontology",
+    "source_id": "myfixit_10262",
+    "warning": "Small pilot annotation example, not a validated benchmark ontology."
+  },
+  "object_types": [
+    {
+      "id": "Garment",
+      "aliases": ["garment", "clothing"],
+      "properties": [
+        {"id": "garment_id", "type": "string"}
+      ],
+      "states": ["damaged", "prepared", "repaired"]
+    },
+    {
+      "id": "Pocket",
+      "aliases": ["little pocket", "pocket"],
+      "properties": [
+        {"id": "pocket_id", "type": "string"}
+      ],
+      "states": ["closed", "opened", "holding_ribbon"]
+    },
+    {
+      "id": "Ribbon",
+      "aliases": ["ribbon"],
+      "properties": [
+        {"id": "orientation", "type": "string"}
+      ],
+      "states": ["loose", "inserted", "threaded", "trimmed", "secured"]
+    },
+    {
+      "id": "Button",
+      "aliases": ["ribbon button", "button"],
+      "properties": [
+        {"id": "side", "type": "string"}
+      ],
+      "states": ["detached", "threaded", "attached"]
+    },
+    {
+      "id": "Seam",
+      "aliases": ["seam", "stitch"],
+      "properties": [
+        {"id": "location", "type": "string"}
+      ],
+      "states": ["closed", "opened", "stitched"]
+    },
+    {
+      "id": "Tool",
+      "aliases": ["sewing machine", "presser foot"],
+      "properties": [
+        {"id": "tool_name", "type": "string"}
+      ],
+      "states": ["available"]
+    }
+  ]
+}

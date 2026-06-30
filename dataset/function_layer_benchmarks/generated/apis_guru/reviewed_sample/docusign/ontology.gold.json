@@ -1,0 +1,555 @@
+{
+  "metadata": {
+    "name": "docusign_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "docusign",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": [
+        "Account",
+        "AccountInformation"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "BillingPlan",
+      "aliases": [
+        "BillingPlan",
+        "BillingPlan"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Brand",
+      "aliases": [
+        "Brand",
+        "Brand"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "BulkSendBatch",
+      "aliases": [
+        "BulkSendBatch",
+        "BulkSendBatch"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "BulkSendList",
+      "aliases": [
+        "BulkSendList",
+        "BulkSendList"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ChunkedUpload",
+      "aliases": [
+        "ChunkedUpload",
+        "ChunkedUploadResponse"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CloudStorage",
+      "aliases": [
+        "CloudStorage",
+        "CloudStorageProvider"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ConnectConfiguration",
+      "aliases": [
+        "ConnectConfiguration"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Contact",
+      "aliases": [
+        "Contact"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "cloudProvider",
+          "type": "string",
+          "aliases": [
+            "cloudProvider"
+          ]
+        },
+        {
+          "id": "cloudProviderContainerId",
+          "type": "string",
+          "aliases": [
+            "cloudProviderContainerId"
+          ]
+        },
+        {
+          "id": "contactId",
+          "type": "string",
+          "aliases": [
+            "contactId"
+          ]
+        },
+        {
+          "id": "contactPhoneNumbers",
+          "type": "array",
+          "aliases": [
+            "contactPhoneNumbers"
+          ]
+        },
+        {
+          "id": "contactUri",
+          "type": "string",
+          "aliases": [
+            "contactUri"
+          ]
+        },
+        {
+          "id": "emails",
+          "type": "array",
+          "aliases": [
+            "emails"
+          ]
+        },
+        {
+          "id": "errorDetails",
+          "type": "object",
+          "aliases": [
+            "errorDetails"
+          ]
+        },
+        {
+          "id": "isOwner",
+          "type": "boolean",
+          "aliases": [
+            "isOwner"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "notaryContactDetails",
+          "type": "object",
+          "aliases": [
+            "notaryContactDetails"
+          ]
+        },
+        {
+          "id": "organization",
+          "type": "string",
+          "aliases": [
+            "organization"
+          ]
+        },
+        {
+          "id": "roomContactType",
+          "type": "string",
+          "aliases": [
+            "roomContactType"
+          ]
+        },
+        {
+          "id": "shared",
+          "type": "string",
+          "aliases": [
+            "shared"
+          ]
+        },
+        {
+          "id": "signingGroup",
+          "type": "string",
+          "aliases": [
+            "signingGroup"
+          ]
+        },
+        {
+          "id": "signingGroupName",
+          "type": "string",
+          "aliases": [
+            "signingGroupName"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CustomTab",
+      "aliases": [
+        "CustomTab",
+        "CustomTab"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Document",
+      "aliases": [
+        "Document",
+        "Document"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Envelope",
+      "aliases": [
+        "Envelope",
+        "Envelope"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Folder",
+      "aliases": [
+        "Folder",
+        "Folder"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Group",
+      "aliases": [
+        "Group",
+        "Group"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Notary",
+      "aliases": [
+        "Notary",
+        "Notary"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "createdDate",
+          "type": "string",
+          "aliases": [
+            "createdDate"
+          ]
+        },
+        {
+          "id": "enabled",
+          "type": "string",
+          "aliases": [
+            "enabled"
+          ]
+        },
+        {
+          "id": "searchable",
+          "type": "string",
+          "aliases": [
+            "searchable"
+          ]
+        },
+        {
+          "id": "userInfo",
+          "type": "object",
+          "aliases": [
+            "userInfo",
+            "userInformation"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PermissionProfile",
+      "aliases": [
+        "PermissionProfile",
+        "PermissionProfile"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PowerForm",
+      "aliases": [
+        "PowerForm",
+        "PowerForm"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Recipient",
+      "aliases": [
+        "Recipient",
+        "Recipient"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Signature",
+      "aliases": [
+        "Signature"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SigningGroup",
+      "aliases": [
+        "SigningGroup",
+        "SigningGroup"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Template",
+      "aliases": [
+        "Template",
+        "EnvelopeTemplate"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "User",
+      "aliases": [
+        "User",
+        "UserInformation"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Workspace",
+      "aliases": [
+        "Workspace",
+        "Workspace"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

@@ -1,0 +1,543 @@
+{
+  "metadata": {
+    "name": "ably.io_platform_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "ably.io_platform",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Channel",
+      "aliases": [
+        "Channel",
+        "ChannelDetails"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "channelId",
+          "type": "string",
+          "aliases": [
+            "channelId"
+          ]
+        },
+        {
+          "id": "isGlobalMaster",
+          "type": "boolean",
+          "aliases": [
+            "isGlobalMaster"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "string",
+          "aliases": [
+            "region"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "object",
+          "aliases": [
+            "status",
+            "ChannelStatus"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ChannelSubscription",
+      "aliases": [
+        "ChannelSubscription"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DeviceRegistration",
+      "aliases": [
+        "DeviceRegistration",
+        "DeviceDetails"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "clientId",
+          "type": "string",
+          "aliases": [
+            "clientId"
+          ]
+        },
+        {
+          "id": "deviceSecret",
+          "type": "string",
+          "aliases": [
+            "deviceSecret"
+          ]
+        },
+        {
+          "id": "formFactor",
+          "type": "string",
+          "aliases": [
+            "formFactor"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "platform",
+          "type": "string",
+          "aliases": [
+            "platform"
+          ]
+        },
+        {
+          "id": "push.recipient",
+          "type": "object",
+          "aliases": [
+            "push.recipient",
+            "Recipient"
+          ]
+        },
+        {
+          "id": "push.state",
+          "type": "string",
+          "aliases": [
+            "push.state"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Key",
+      "aliases": [
+        "Key",
+        "SignedTokenRequest"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Message",
+      "aliases": [
+        "Message",
+        "Message"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "clientId",
+          "type": "string",
+          "aliases": [
+            "clientId"
+          ]
+        },
+        {
+          "id": "connectionId",
+          "type": "string",
+          "aliases": [
+            "connectionId"
+          ]
+        },
+        {
+          "id": "data",
+          "type": "string",
+          "aliases": [
+            "data"
+          ]
+        },
+        {
+          "id": "encoding",
+          "type": "string",
+          "aliases": [
+            "encoding"
+          ]
+        },
+        {
+          "id": "extras",
+          "type": "object",
+          "aliases": [
+            "extras",
+            "Extras"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "timestamp",
+          "type": "integer",
+          "aliases": [
+            "timestamp"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Occupancy",
+      "aliases": [
+        "Occupancy",
+        "Occupancy"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "presenceConnections",
+          "type": "integer",
+          "aliases": [
+            "presenceConnections"
+          ]
+        },
+        {
+          "id": "presenceMembers",
+          "type": "integer",
+          "aliases": [
+            "presenceMembers"
+          ]
+        },
+        {
+          "id": "presenceSubscribers",
+          "type": "integer",
+          "aliases": [
+            "presenceSubscribers"
+          ]
+        },
+        {
+          "id": "publishers",
+          "type": "integer",
+          "aliases": [
+            "publishers"
+          ]
+        },
+        {
+          "id": "subscribers",
+          "type": "integer",
+          "aliases": [
+            "subscribers"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Presence",
+      "aliases": [
+        "Presence",
+        "PresenceMessage"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "action",
+          "type": "string",
+          "aliases": [
+            "action"
+          ]
+        },
+        {
+          "id": "clientId",
+          "type": "string",
+          "aliases": [
+            "clientId"
+          ]
+        },
+        {
+          "id": "connectionId",
+          "type": "string",
+          "aliases": [
+            "connectionId"
+          ]
+        },
+        {
+          "id": "data",
+          "type": "string",
+          "aliases": [
+            "data"
+          ]
+        },
+        {
+          "id": "encoding",
+          "type": "string",
+          "aliases": [
+            "encoding"
+          ]
+        },
+        {
+          "id": "extras",
+          "type": "object",
+          "aliases": [
+            "extras",
+            "Extras"
+          ]
+        },
+        {
+          "id": "timestamp",
+          "type": "integer",
+          "aliases": [
+            "timestamp"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Push",
+      "aliases": [
+        "Push",
+        "Push"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "apns",
+          "type": "object",
+          "aliases": [
+            "apns"
+          ]
+        },
+        {
+          "id": "data",
+          "type": "string",
+          "aliases": [
+            "data"
+          ]
+        },
+        {
+          "id": "fcm",
+          "type": "object",
+          "aliases": [
+            "fcm"
+          ]
+        },
+        {
+          "id": "notification",
+          "type": "object",
+          "aliases": [
+            "notification",
+            "Notification"
+          ]
+        },
+        {
+          "id": "web",
+          "type": "object",
+          "aliases": [
+            "web"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Recipient",
+      "aliases": [
+        "Recipient",
+        "Recipient"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "clientId",
+          "type": "string",
+          "aliases": [
+            "clientId"
+          ]
+        },
+        {
+          "id": "deviceId",
+          "type": "string",
+          "aliases": [
+            "deviceId"
+          ]
+        },
+        {
+          "id": "deviceToken",
+          "type": "string",
+          "aliases": [
+            "deviceToken"
+          ]
+        },
+        {
+          "id": "registrationToken",
+          "type": "string",
+          "aliases": [
+            "registrationToken"
+          ]
+        },
+        {
+          "id": "transportType",
+          "type": "string",
+          "aliases": [
+            "transportType"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Stat",
+      "aliases": [
+        "Stat"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Time",
+      "aliases": [
+        "Time"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Token",
+      "aliases": [
+        "Token",
+        "TokenDetails"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "capability",
+          "type": "string",
+          "aliases": [
+            "capability"
+          ]
+        },
+        {
+          "id": "expires",
+          "type": "integer",
+          "aliases": [
+            "expires"
+          ]
+        },
+        {
+          "id": "issued",
+          "type": "integer",
+          "aliases": [
+            "issued"
+          ]
+        },
+        {
+          "id": "keyName",
+          "type": "string",
+          "aliases": [
+            "keyName"
+          ]
+        },
+        {
+          "id": "token",
+          "type": "string",
+          "aliases": [
+            "token"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

@@ -1,0 +1,3342 @@
+{
+  "metadata": {
+    "name": "squareup.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "squareup.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "BankAccount",
+      "aliases": [
+        "BankAccount"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_number_suffix",
+          "type": "string",
+          "aliases": [
+            "account_number_suffix"
+          ]
+        },
+        {
+          "id": "account_type",
+          "type": "string",
+          "aliases": [
+            "account_type"
+          ]
+        },
+        {
+          "id": "bank_name",
+          "type": "string",
+          "aliases": [
+            "bank_name"
+          ]
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ]
+        },
+        {
+          "id": "creditable",
+          "type": "boolean",
+          "aliases": [
+            "creditable"
+          ]
+        },
+        {
+          "id": "currency",
+          "type": "string",
+          "aliases": [
+            "currency"
+          ]
+        },
+        {
+          "id": "debit_mandate_reference_id",
+          "type": "string",
+          "aliases": [
+            "debit_mandate_reference_id"
+          ]
+        },
+        {
+          "id": "debitable",
+          "type": "boolean",
+          "aliases": [
+            "debitable"
+          ]
+        },
+        {
+          "id": "fingerprint",
+          "type": "string",
+          "aliases": [
+            "fingerprint"
+          ]
+        },
+        {
+          "id": "holder_name",
+          "type": "string",
+          "aliases": [
+            "holder_name"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "primary_bank_identification_number",
+          "type": "string",
+          "aliases": [
+            "primary_bank_identification_number"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "secondary_bank_identification_number",
+          "type": "string",
+          "aliases": [
+            "secondary_bank_identification_number"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Booking",
+      "aliases": [
+        "Booking"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "appointment_segments",
+          "type": "array",
+          "aliases": [
+            "appointment_segments"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "customer_note",
+          "type": "string",
+          "aliases": [
+            "customer_note"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "seller_note",
+          "type": "string",
+          "aliases": [
+            "seller_note"
+          ]
+        },
+        {
+          "id": "start_at",
+          "type": "string",
+          "aliases": [
+            "start_at"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [
+        "ACCEPTED",
+        "DECLINED",
+        "CANCELLED_BY_CUSTOMER",
+        "CANCELLED_BY_SELLER",
+        "NO_SHOW"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "BreakType",
+      "aliases": [
+        "BreakType"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "break_name",
+          "type": "string",
+          "aliases": [
+            "break_name"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "expected_duration",
+          "type": "string",
+          "aliases": [
+            "expected_duration"
+          ]
+        },
+        {
+          "id": "is_paid",
+          "type": "boolean",
+          "aliases": [
+            "is_paid"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Card",
+      "aliases": [
+        "Card"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "billing_address",
+          "type": "object",
+          "aliases": [
+            "billing_address"
+          ]
+        },
+        {
+          "id": "bin",
+          "type": "string",
+          "aliases": [
+            "bin"
+          ]
+        },
+        {
+          "id": "card_brand",
+          "type": "string",
+          "aliases": [
+            "card_brand"
+          ]
+        },
+        {
+          "id": "card_type",
+          "type": "string",
+          "aliases": [
+            "card_type"
+          ]
+        },
+        {
+          "id": "cardholder_name",
+          "type": "string",
+          "aliases": [
+            "cardholder_name"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "enabled",
+          "type": "boolean",
+          "aliases": [
+            "enabled"
+          ]
+        },
+        {
+          "id": "exp_month",
+          "type": "integer",
+          "aliases": [
+            "exp_month"
+          ]
+        },
+        {
+          "id": "exp_year",
+          "type": "integer",
+          "aliases": [
+            "exp_year"
+          ]
+        },
+        {
+          "id": "fingerprint",
+          "type": "string",
+          "aliases": [
+            "fingerprint"
+          ]
+        },
+        {
+          "id": "last_4",
+          "type": "string",
+          "aliases": [
+            "last_4"
+          ]
+        },
+        {
+          "id": "prepaid_type",
+          "type": "string",
+          "aliases": [
+            "prepaid_type"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CashDrawerShift",
+      "aliases": [
+        "CashDrawerShift"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "cash_paid_in_money",
+          "type": "object",
+          "aliases": [
+            "cash_paid_in_money"
+          ]
+        },
+        {
+          "id": "cash_paid_out_money",
+          "type": "object",
+          "aliases": [
+            "cash_paid_out_money"
+          ]
+        },
+        {
+          "id": "cash_payment_money",
+          "type": "object",
+          "aliases": [
+            "cash_payment_money"
+          ]
+        },
+        {
+          "id": "cash_refunds_money",
+          "type": "object",
+          "aliases": [
+            "cash_refunds_money"
+          ]
+        },
+        {
+          "id": "closed_at",
+          "type": "string",
+          "aliases": [
+            "closed_at"
+          ]
+        },
+        {
+          "id": "closed_cash_money",
+          "type": "object",
+          "aliases": [
+            "closed_cash_money"
+          ]
+        },
+        {
+          "id": "closing_employee_id",
+          "type": "string",
+          "aliases": [
+            "closing_employee_id"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "device",
+          "type": "object",
+          "aliases": [
+            "device"
+          ]
+        },
+        {
+          "id": "employee_ids",
+          "type": "array",
+          "aliases": [
+            "employee_ids"
+          ]
+        },
+        {
+          "id": "ended_at",
+          "type": "string",
+          "aliases": [
+            "ended_at"
+          ]
+        },
+        {
+          "id": "ending_employee_id",
+          "type": "string",
+          "aliases": [
+            "ending_employee_id"
+          ]
+        },
+        {
+          "id": "expected_cash_money",
+          "type": "object",
+          "aliases": [
+            "expected_cash_money"
+          ]
+        },
+        {
+          "id": "opened_at",
+          "type": "string",
+          "aliases": [
+            "opened_at"
+          ]
+        },
+        {
+          "id": "opened_cash_money",
+          "type": "object",
+          "aliases": [
+            "opened_cash_money"
+          ]
+        },
+        {
+          "id": "opening_employee_id",
+          "type": "string",
+          "aliases": [
+            "opening_employee_id"
+          ]
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ]
+        }
+      ],
+      "states": [
+        "OPEN",
+        "ENDED",
+        "CLOSED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "CatalogObject",
+      "aliases": [
+        "CatalogObject"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "absent_at_location_ids",
+          "type": "array",
+          "aliases": [
+            "absent_at_location_ids"
+          ]
+        },
+        {
+          "id": "catalog_v1_ids",
+          "type": "array",
+          "aliases": [
+            "catalog_v1_ids"
+          ]
+        },
+        {
+          "id": "category_data",
+          "type": "object",
+          "aliases": [
+            "category_data"
+          ]
+        },
+        {
+          "id": "custom_attribute_definition_data",
+          "type": "object",
+          "aliases": [
+            "custom_attribute_definition_data"
+          ]
+        },
+        {
+          "id": "custom_attribute_values",
+          "type": "object",
+          "aliases": [
+            "custom_attribute_values"
+          ]
+        },
+        {
+          "id": "discount_data",
+          "type": "object",
+          "aliases": [
+            "discount_data"
+          ]
+        },
+        {
+          "id": "image_data",
+          "type": "object",
+          "aliases": [
+            "image_data"
+          ]
+        },
+        {
+          "id": "image_id",
+          "type": "string",
+          "aliases": [
+            "image_id"
+          ]
+        },
+        {
+          "id": "is_deleted",
+          "type": "boolean",
+          "aliases": [
+            "is_deleted"
+          ]
+        },
+        {
+          "id": "item_data",
+          "type": "object",
+          "aliases": [
+            "item_data"
+          ]
+        },
+        {
+          "id": "item_option_data",
+          "type": "object",
+          "aliases": [
+            "item_option_data"
+          ]
+        },
+        {
+          "id": "item_option_value_data",
+          "type": "object",
+          "aliases": [
+            "item_option_value_data"
+          ]
+        },
+        {
+          "id": "item_variation_data",
+          "type": "object",
+          "aliases": [
+            "item_variation_data"
+          ]
+        },
+        {
+          "id": "measurement_unit_data",
+          "type": "object",
+          "aliases": [
+            "measurement_unit_data"
+          ]
+        },
+        {
+          "id": "modifier_data",
+          "type": "object",
+          "aliases": [
+            "modifier_data"
+          ]
+        },
+        {
+          "id": "modifier_list_data",
+          "type": "object",
+          "aliases": [
+            "modifier_list_data"
+          ]
+        },
+        {
+          "id": "present_at_all_locations",
+          "type": "boolean",
+          "aliases": [
+            "present_at_all_locations"
+          ]
+        },
+        {
+          "id": "present_at_location_ids",
+          "type": "array",
+          "aliases": [
+            "present_at_location_ids"
+          ]
+        },
+        {
+          "id": "pricing_rule_data",
+          "type": "object",
+          "aliases": [
+            "pricing_rule_data"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Customer",
+      "aliases": [
+        "Customer"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "address",
+          "type": "object",
+          "aliases": [
+            "address"
+          ]
+        },
+        {
+          "id": "birthday",
+          "type": "string",
+          "aliases": [
+            "birthday"
+          ]
+        },
+        {
+          "id": "cards",
+          "type": "array",
+          "aliases": [
+            "cards"
+          ]
+        },
+        {
+          "id": "company_name",
+          "type": "string",
+          "aliases": [
+            "company_name"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "creation_source",
+          "type": "string",
+          "aliases": [
+            "creation_source"
+          ]
+        },
+        {
+          "id": "email_address",
+          "type": "string",
+          "aliases": [
+            "email_address"
+          ]
+        },
+        {
+          "id": "family_name",
+          "type": "string",
+          "aliases": [
+            "family_name"
+          ]
+        },
+        {
+          "id": "given_name",
+          "type": "string",
+          "aliases": [
+            "given_name"
+          ]
+        },
+        {
+          "id": "group_ids",
+          "type": "array",
+          "aliases": [
+            "group_ids"
+          ]
+        },
+        {
+          "id": "nickname",
+          "type": "string",
+          "aliases": [
+            "nickname"
+          ]
+        },
+        {
+          "id": "note",
+          "type": "string",
+          "aliases": [
+            "note"
+          ]
+        },
+        {
+          "id": "phone_number",
+          "type": "string",
+          "aliases": [
+            "phone_number"
+          ]
+        },
+        {
+          "id": "preferences",
+          "type": "object",
+          "aliases": [
+            "preferences"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "segment_ids",
+          "type": "array",
+          "aliases": [
+            "segment_ids"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CustomerGroup",
+      "aliases": [
+        "CustomerGroup"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CustomerSegment",
+      "aliases": [
+        "CustomerSegment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DeviceCode",
+      "aliases": [
+        "DeviceCode"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "code",
+          "type": "string",
+          "aliases": [
+            "code"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "device_id",
+          "type": "string",
+          "aliases": [
+            "device_id"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "pair_by",
+          "type": "string",
+          "aliases": [
+            "pair_by"
+          ]
+        },
+        {
+          "id": "paired_at",
+          "type": "string",
+          "aliases": [
+            "paired_at"
+          ]
+        },
+        {
+          "id": "product_type",
+          "type": "string",
+          "aliases": [
+            "product_type"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "status_changed_at",
+          "type": "string",
+          "aliases": [
+            "status_changed_at"
+          ]
+        }
+      ],
+      "states": [
+        "UNPAIRED",
+        "PAIRED",
+        "EXPIRED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Dispute",
+      "aliases": [
+        "Dispute"
+      ],
+      "properties": [
+        {
+          "id": "dispute_id",
+          "type": "string",
+          "aliases": [
+            "dispute_id"
+          ]
+        },
+        {
+          "id": "amount_money",
+          "type": "object",
+          "aliases": [
+            "amount_money"
+          ]
+        },
+        {
+          "id": "brand_dispute_id",
+          "type": "string",
+          "aliases": [
+            "brand_dispute_id"
+          ]
+        },
+        {
+          "id": "card_brand",
+          "type": "string",
+          "aliases": [
+            "card_brand"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "disputed_payment",
+          "type": "object",
+          "aliases": [
+            "disputed_payment"
+          ]
+        },
+        {
+          "id": "due_at",
+          "type": "string",
+          "aliases": [
+            "due_at"
+          ]
+        },
+        {
+          "id": "evidence_ids",
+          "type": "array",
+          "aliases": [
+            "evidence_ids"
+          ]
+        },
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "reason",
+          "type": "string",
+          "aliases": [
+            "reason"
+          ]
+        },
+        {
+          "id": "reported_at",
+          "type": "string",
+          "aliases": [
+            "reported_at"
+          ]
+        },
+        {
+          "id": "reported_date",
+          "type": "string",
+          "aliases": [
+            "reported_date"
+          ]
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [
+        "OPEN",
+        "PROCESSING",
+        "WON",
+        "LOST",
+        "ACCEPTED",
+        "WAITING_ON_BANK_RESPONSE"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "EmployeeWage",
+      "aliases": [
+        "EmployeeWage"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "employee_id",
+          "type": "string",
+          "aliases": [
+            "employee_id"
+          ]
+        },
+        {
+          "id": "hourly_rate",
+          "type": "object",
+          "aliases": [
+            "hourly_rate"
+          ]
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "GiftCard",
+      "aliases": [
+        "GiftCard"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "balance_money",
+          "type": "object",
+          "aliases": [
+            "balance_money"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_ids",
+          "type": "array",
+          "aliases": [
+            "customer_ids"
+          ]
+        },
+        {
+          "id": "gan",
+          "type": "string",
+          "aliases": [
+            "gan"
+          ]
+        },
+        {
+          "id": "gan_source",
+          "type": "object",
+          "aliases": [
+            "gan_source"
+          ]
+        },
+        {
+          "id": "state",
+          "type": "object",
+          "aliases": [
+            "state"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "object",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [
+        "ACTIVE",
+        "INACTIVE",
+        "PENDING",
+        "BLOCKED",
+        "DISABLED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "GiftCardActivity",
+      "aliases": [
+        "GiftCardActivity"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "activate_activity_details",
+          "type": "object",
+          "aliases": [
+            "activate_activity_details"
+          ]
+        },
+        {
+          "id": "adjust_decrement_activity_details",
+          "type": "object",
+          "aliases": [
+            "adjust_decrement_activity_details"
+          ]
+        },
+        {
+          "id": "adjust_increment_activity_details",
+          "type": "object",
+          "aliases": [
+            "adjust_increment_activity_details"
+          ]
+        },
+        {
+          "id": "block_activity_details",
+          "type": "object",
+          "aliases": [
+            "block_activity_details"
+          ]
+        },
+        {
+          "id": "clear_balance_activity_details",
+          "type": "object",
+          "aliases": [
+            "clear_balance_activity_details"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "deactivate_activity_details",
+          "type": "object",
+          "aliases": [
+            "deactivate_activity_details"
+          ]
+        },
+        {
+          "id": "gift_card_balance_money",
+          "type": "object",
+          "aliases": [
+            "gift_card_balance_money"
+          ]
+        },
+        {
+          "id": "gift_card_gan",
+          "type": "string",
+          "aliases": [
+            "gift_card_gan"
+          ]
+        },
+        {
+          "id": "gift_card_id",
+          "type": "string",
+          "aliases": [
+            "gift_card_id"
+          ]
+        },
+        {
+          "id": "import_activity_details",
+          "type": "object",
+          "aliases": [
+            "import_activity_details"
+          ]
+        },
+        {
+          "id": "import_reversal_activity_details",
+          "type": "object",
+          "aliases": [
+            "import_reversal_activity_details"
+          ]
+        },
+        {
+          "id": "load_activity_details",
+          "type": "object",
+          "aliases": [
+            "load_activity_details"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "redeem_activity_details",
+          "type": "object",
+          "aliases": [
+            "redeem_activity_details"
+          ]
+        },
+        {
+          "id": "refund_activity_details",
+          "type": "object",
+          "aliases": [
+            "refund_activity_details"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "object",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "unblock_activity_details",
+          "type": "object",
+          "aliases": [
+            "unblock_activity_details"
+          ]
+        },
+        {
+          "id": "unlinked_activity_refund_activity_details",
+          "type": "object",
+          "aliases": [
+            "unlinked_activity_refund_activity_details"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "InventoryChange",
+      "aliases": [
+        "InventoryChange"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "adjustment",
+          "type": "object",
+          "aliases": [
+            "adjustment"
+          ]
+        },
+        {
+          "id": "measurement_unit",
+          "type": "object",
+          "aliases": [
+            "measurement_unit"
+          ]
+        },
+        {
+          "id": "measurement_unit_id",
+          "type": "string",
+          "aliases": [
+            "measurement_unit_id"
+          ]
+        },
+        {
+          "id": "physical_count",
+          "type": "object",
+          "aliases": [
+            "physical_count"
+          ]
+        },
+        {
+          "id": "transfer",
+          "type": "object",
+          "aliases": [
+            "transfer"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Invoice",
+      "aliases": [
+        "Invoice"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "accepted_payment_methods",
+          "type": "object",
+          "aliases": [
+            "accepted_payment_methods"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "custom_fields",
+          "type": "array",
+          "aliases": [
+            "custom_fields"
+          ]
+        },
+        {
+          "id": "delivery_method",
+          "type": "object",
+          "aliases": [
+            "delivery_method"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "invoice_number",
+          "type": "string",
+          "aliases": [
+            "invoice_number"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "next_payment_amount_money",
+          "type": "object",
+          "aliases": [
+            "next_payment_amount_money"
+          ]
+        },
+        {
+          "id": "order_id",
+          "type": "string",
+          "aliases": [
+            "order_id"
+          ]
+        },
+        {
+          "id": "payment_requests",
+          "type": "array",
+          "aliases": [
+            "payment_requests"
+          ]
+        },
+        {
+          "id": "primary_recipient",
+          "type": "object",
+          "aliases": [
+            "primary_recipient"
+          ]
+        },
+        {
+          "id": "public_url",
+          "type": "string",
+          "aliases": [
+            "public_url"
+          ]
+        },
+        {
+          "id": "scheduled_at",
+          "type": "string",
+          "aliases": [
+            "scheduled_at"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "subscription_id",
+          "type": "string",
+          "aliases": [
+            "subscription_id"
+          ]
+        },
+        {
+          "id": "timezone",
+          "type": "string",
+          "aliases": [
+            "timezone"
+          ]
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [
+        "DRAFT",
+        "UNPAID",
+        "SCHEDULED",
+        "PARTIALLY_PAID",
+        "PAID",
+        "PARTIALLY_REFUNDED",
+        "REFUNDED",
+        "CANCELED",
+        "PAYMENT_PENDING"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Location",
+      "aliases": [
+        "Location"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "address",
+          "type": "object",
+          "aliases": [
+            "address"
+          ]
+        },
+        {
+          "id": "business_email",
+          "type": "string",
+          "aliases": [
+            "business_email"
+          ]
+        },
+        {
+          "id": "business_hours",
+          "type": "object",
+          "aliases": [
+            "business_hours"
+          ]
+        },
+        {
+          "id": "business_name",
+          "type": "string",
+          "aliases": [
+            "business_name"
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "array",
+          "aliases": [
+            "capabilities"
+          ]
+        },
+        {
+          "id": "coordinates",
+          "type": "object",
+          "aliases": [
+            "coordinates"
+          ]
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "currency",
+          "type": "string",
+          "aliases": [
+            "currency"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "facebook_url",
+          "type": "string",
+          "aliases": [
+            "facebook_url"
+          ]
+        },
+        {
+          "id": "full_format_logo_url",
+          "type": "string",
+          "aliases": [
+            "full_format_logo_url"
+          ]
+        },
+        {
+          "id": "instagram_username",
+          "type": "string",
+          "aliases": [
+            "instagram_username"
+          ]
+        },
+        {
+          "id": "language_code",
+          "type": "string",
+          "aliases": [
+            "language_code"
+          ]
+        },
+        {
+          "id": "logo_url",
+          "type": "string",
+          "aliases": [
+            "logo_url"
+          ]
+        },
+        {
+          "id": "mcc",
+          "type": "string",
+          "aliases": [
+            "mcc"
+          ]
+        },
+        {
+          "id": "merchant_id",
+          "type": "string",
+          "aliases": [
+            "merchant_id"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "phone_number",
+          "type": "string",
+          "aliases": [
+            "phone_number"
+          ]
+        }
+      ],
+      "states": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "LoyaltyAccount",
+      "aliases": [
+        "LoyaltyAccount"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "balance",
+          "type": "integer",
+          "aliases": [
+            "balance"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "enrolled_at",
+          "type": "string",
+          "aliases": [
+            "enrolled_at"
+          ]
+        },
+        {
+          "id": "expiring_point_deadlines",
+          "type": "array",
+          "aliases": [
+            "expiring_point_deadlines"
+          ]
+        },
+        {
+          "id": "lifetime_points",
+          "type": "integer",
+          "aliases": [
+            "lifetime_points"
+          ]
+        },
+        {
+          "id": "mapping",
+          "type": "object",
+          "aliases": [
+            "mapping"
+          ]
+        },
+        {
+          "id": "program_id",
+          "type": "string",
+          "aliases": [
+            "program_id"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LoyaltyEvent",
+      "aliases": [
+        "LoyaltyEvent"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "accumulate_points",
+          "type": "object",
+          "aliases": [
+            "accumulate_points"
+          ]
+        },
+        {
+          "id": "adjust_points",
+          "type": "object",
+          "aliases": [
+            "adjust_points"
+          ]
+        },
+        {
+          "id": "create_reward",
+          "type": "object",
+          "aliases": [
+            "create_reward"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "delete_reward",
+          "type": "object",
+          "aliases": [
+            "delete_reward"
+          ]
+        },
+        {
+          "id": "expire_points",
+          "type": "object",
+          "aliases": [
+            "expire_points"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "loyalty_account_id",
+          "type": "string",
+          "aliases": [
+            "loyalty_account_id"
+          ]
+        },
+        {
+          "id": "other_event",
+          "type": "object",
+          "aliases": [
+            "other_event"
+          ]
+        },
+        {
+          "id": "redeem_reward",
+          "type": "object",
+          "aliases": [
+            "redeem_reward"
+          ]
+        },
+        {
+          "id": "source",
+          "type": "string",
+          "aliases": [
+            "source"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LoyaltyProgram",
+      "aliases": [
+        "LoyaltyProgram"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "accrual_rules",
+          "type": "array",
+          "aliases": [
+            "accrual_rules"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "expiration_policy",
+          "type": "object",
+          "aliases": [
+            "expiration_policy"
+          ]
+        },
+        {
+          "id": "location_ids",
+          "type": "array",
+          "aliases": [
+            "location_ids"
+          ]
+        },
+        {
+          "id": "reward_tiers",
+          "type": "array",
+          "aliases": [
+            "reward_tiers"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "terminology",
+          "type": "object",
+          "aliases": [
+            "terminology"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "LoyaltyReward",
+      "aliases": [
+        "LoyaltyReward"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "loyalty_account_id",
+          "type": "string",
+          "aliases": [
+            "loyalty_account_id"
+          ]
+        },
+        {
+          "id": "order_id",
+          "type": "string",
+          "aliases": [
+            "order_id"
+          ]
+        },
+        {
+          "id": "points",
+          "type": "integer",
+          "aliases": [
+            "points"
+          ]
+        },
+        {
+          "id": "redeemed_at",
+          "type": "string",
+          "aliases": [
+            "redeemed_at"
+          ]
+        },
+        {
+          "id": "reward_tier_id",
+          "type": "string",
+          "aliases": [
+            "reward_tier_id"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [
+        "ISSUED",
+        "REDEEMED",
+        "CANCELED",
+        "EXPIRED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Merchant",
+      "aliases": [
+        "Merchant"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "business_name",
+          "type": "string",
+          "aliases": [
+            "business_name"
+          ]
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ]
+        },
+        {
+          "id": "currency",
+          "type": "string",
+          "aliases": [
+            "currency"
+          ]
+        },
+        {
+          "id": "language_code",
+          "type": "string",
+          "aliases": [
+            "language_code"
+          ]
+        },
+        {
+          "id": "main_location_id",
+          "type": "string",
+          "aliases": [
+            "main_location_id"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Order",
+      "aliases": [
+        "Order"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "closed_at",
+          "type": "string",
+          "aliases": [
+            "closed_at"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "discounts",
+          "type": "array",
+          "aliases": [
+            "discounts"
+          ]
+        },
+        {
+          "id": "fulfillments",
+          "type": "array",
+          "aliases": [
+            "fulfillments"
+          ]
+        },
+        {
+          "id": "line_items",
+          "type": "array",
+          "aliases": [
+            "line_items"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "net_amounts",
+          "type": "object",
+          "aliases": [
+            "net_amounts"
+          ]
+        },
+        {
+          "id": "pricing_options",
+          "type": "object",
+          "aliases": [
+            "pricing_options"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "refunds",
+          "type": "array",
+          "aliases": [
+            "refunds"
+          ]
+        },
+        {
+          "id": "return_amounts",
+          "type": "object",
+          "aliases": [
+            "return_amounts"
+          ]
+        },
+        {
+          "id": "returns",
+          "type": "array",
+          "aliases": [
+            "returns"
+          ]
+        },
+        {
+          "id": "rewards",
+          "type": "array",
+          "aliases": [
+            "rewards"
+          ]
+        },
+        {
+          "id": "rounding_adjustment",
+          "type": "object",
+          "aliases": [
+            "rounding_adjustment"
+          ]
+        },
+        {
+          "id": "service_charges",
+          "type": "array",
+          "aliases": [
+            "service_charges"
+          ]
+        },
+        {
+          "id": "source",
+          "type": "object",
+          "aliases": [
+            "source"
+          ]
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ]
+        }
+      ],
+      "states": [
+        "OPEN",
+        "COMPLETED",
+        "CANCELED",
+        "DRAFT"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Payment",
+      "aliases": [
+        "Payment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "amount_money",
+          "type": "object",
+          "aliases": [
+            "amount_money"
+          ]
+        },
+        {
+          "id": "app_fee_money",
+          "type": "object",
+          "aliases": [
+            "app_fee_money"
+          ]
+        },
+        {
+          "id": "approved_money",
+          "type": "object",
+          "aliases": [
+            "approved_money"
+          ]
+        },
+        {
+          "id": "bank_account_details",
+          "type": "object",
+          "aliases": [
+            "bank_account_details"
+          ]
+        },
+        {
+          "id": "billing_address",
+          "type": "object",
+          "aliases": [
+            "billing_address"
+          ]
+        },
+        {
+          "id": "buyer_email_address",
+          "type": "string",
+          "aliases": [
+            "buyer_email_address"
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "array",
+          "aliases": [
+            "capabilities"
+          ]
+        },
+        {
+          "id": "card_details",
+          "type": "object",
+          "aliases": [
+            "card_details"
+          ]
+        },
+        {
+          "id": "cash_details",
+          "type": "object",
+          "aliases": [
+            "cash_details"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "delay_action",
+          "type": "string",
+          "aliases": [
+            "delay_action"
+          ]
+        },
+        {
+          "id": "delay_duration",
+          "type": "string",
+          "aliases": [
+            "delay_duration"
+          ]
+        },
+        {
+          "id": "delayed_until",
+          "type": "string",
+          "aliases": [
+            "delayed_until"
+          ]
+        },
+        {
+          "id": "employee_id",
+          "type": "string",
+          "aliases": [
+            "employee_id"
+          ]
+        },
+        {
+          "id": "external_details",
+          "type": "object",
+          "aliases": [
+            "external_details"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "note",
+          "type": "string",
+          "aliases": [
+            "note"
+          ]
+        },
+        {
+          "id": "order_id",
+          "type": "string",
+          "aliases": [
+            "order_id"
+          ]
+        }
+      ],
+      "states": [
+        "APPROVED",
+        "COMPLETED",
+        "CANCELED",
+        "FAILED",
+        "PENDING"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Refund",
+      "aliases": [
+        "Refund"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "additional_recipients",
+          "type": "array",
+          "aliases": [
+            "additional_recipients"
+          ]
+        },
+        {
+          "id": "amount_money",
+          "type": "object",
+          "aliases": [
+            "amount_money"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "processing_fee_money",
+          "type": "object",
+          "aliases": [
+            "processing_fee_money"
+          ]
+        },
+        {
+          "id": "reason",
+          "type": "string",
+          "aliases": [
+            "reason"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tender_id",
+          "type": "string",
+          "aliases": [
+            "tender_id"
+          ]
+        },
+        {
+          "id": "transaction_id",
+          "type": "string",
+          "aliases": [
+            "transaction_id"
+          ]
+        }
+      ],
+      "states": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED",
+        "FAILED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "Shift",
+      "aliases": [
+        "Shift"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "breaks",
+          "type": "array",
+          "aliases": [
+            "breaks"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "employee_id",
+          "type": "string",
+          "aliases": [
+            "employee_id"
+          ]
+        },
+        {
+          "id": "end_at",
+          "type": "string",
+          "aliases": [
+            "end_at"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "start_at",
+          "type": "string",
+          "aliases": [
+            "start_at"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "team_member_id",
+          "type": "string",
+          "aliases": [
+            "team_member_id"
+          ]
+        },
+        {
+          "id": "timezone",
+          "type": "string",
+          "aliases": [
+            "timezone"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        },
+        {
+          "id": "wage",
+          "type": "object",
+          "aliases": [
+            "wage"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Site",
+      "aliases": [
+        "Site"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "domain",
+          "type": "string",
+          "aliases": [
+            "domain"
+          ]
+        },
+        {
+          "id": "is_published",
+          "type": "boolean",
+          "aliases": [
+            "is_published"
+          ]
+        },
+        {
+          "id": "site_title",
+          "type": "string",
+          "aliases": [
+            "site_title"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Snippet",
+      "aliases": [
+        "Snippet"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "content",
+          "type": "string",
+          "aliases": [
+            "content"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "site_id",
+          "type": "string",
+          "aliases": [
+            "site_id"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Subscription",
+      "aliases": [
+        "Subscription"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "canceled_date",
+          "type": "string",
+          "aliases": [
+            "canceled_date"
+          ]
+        },
+        {
+          "id": "card_id",
+          "type": "string",
+          "aliases": [
+            "card_id"
+          ]
+        },
+        {
+          "id": "charged_through_date",
+          "type": "string",
+          "aliases": [
+            "charged_through_date"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "customer_id",
+          "type": "string",
+          "aliases": [
+            "customer_id"
+          ]
+        },
+        {
+          "id": "invoice_ids",
+          "type": "array",
+          "aliases": [
+            "invoice_ids"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "plan_id",
+          "type": "string",
+          "aliases": [
+            "plan_id"
+          ]
+        },
+        {
+          "id": "price_override_money",
+          "type": "object",
+          "aliases": [
+            "price_override_money"
+          ]
+        },
+        {
+          "id": "start_date",
+          "type": "string",
+          "aliases": [
+            "start_date"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tax_percentage",
+          "type": "string",
+          "aliases": [
+            "tax_percentage"
+          ]
+        },
+        {
+          "id": "timezone",
+          "type": "string",
+          "aliases": [
+            "timezone"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [
+        "PENDING",
+        "ACTIVE",
+        "CANCELED",
+        "DEACTIVATED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "TeamMember",
+      "aliases": [
+        "TeamMember"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "assigned_locations",
+          "type": "object",
+          "aliases": [
+            "assigned_locations"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "email_address",
+          "type": "string",
+          "aliases": [
+            "email_address"
+          ]
+        },
+        {
+          "id": "family_name",
+          "type": "string",
+          "aliases": [
+            "family_name"
+          ]
+        },
+        {
+          "id": "given_name",
+          "type": "string",
+          "aliases": [
+            "given_name"
+          ]
+        },
+        {
+          "id": "is_owner",
+          "type": "boolean",
+          "aliases": [
+            "is_owner"
+          ]
+        },
+        {
+          "id": "phone_number",
+          "type": "string",
+          "aliases": [
+            "phone_number"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [
+        "ACTIVE",
+        "INACTIVE"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "TeamMemberWage",
+      "aliases": [
+        "TeamMemberWage"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "hourly_rate",
+          "type": "object",
+          "aliases": [
+            "hourly_rate"
+          ]
+        },
+        {
+          "id": "team_member_id",
+          "type": "string",
+          "aliases": [
+            "team_member_id"
+          ]
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TerminalCheckout",
+      "aliases": [
+        "TerminalCheckout"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "amount_money",
+          "type": "object",
+          "aliases": [
+            "amount_money"
+          ]
+        },
+        {
+          "id": "app_id",
+          "type": "string",
+          "aliases": [
+            "app_id"
+          ]
+        },
+        {
+          "id": "cancel_reason",
+          "type": "string",
+          "aliases": [
+            "cancel_reason"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "deadline_duration",
+          "type": "string",
+          "aliases": [
+            "deadline_duration"
+          ]
+        },
+        {
+          "id": "device_options",
+          "type": "object",
+          "aliases": [
+            "device_options"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "note",
+          "type": "string",
+          "aliases": [
+            "note"
+          ]
+        },
+        {
+          "id": "payment_ids",
+          "type": "array",
+          "aliases": [
+            "payment_ids"
+          ]
+        },
+        {
+          "id": "payment_type",
+          "type": "string",
+          "aliases": [
+            "payment_type"
+          ]
+        },
+        {
+          "id": "reference_id",
+          "type": "string",
+          "aliases": [
+            "reference_id"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [
+        "PENDING",
+        "IN_PROGRESS",
+        "CANCEL_REQUESTED",
+        "CANCELED",
+        "COMPLETED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "TerminalRefund",
+      "aliases": [
+        "TerminalRefund"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "amount_money",
+          "type": "object",
+          "aliases": [
+            "amount_money"
+          ]
+        },
+        {
+          "id": "app_id",
+          "type": "string",
+          "aliases": [
+            "app_id"
+          ]
+        },
+        {
+          "id": "cancel_reason",
+          "type": "string",
+          "aliases": [
+            "cancel_reason"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "deadline_duration",
+          "type": "string",
+          "aliases": [
+            "deadline_duration"
+          ]
+        },
+        {
+          "id": "device_id",
+          "type": "string",
+          "aliases": [
+            "device_id"
+          ]
+        },
+        {
+          "id": "location_id",
+          "type": "string",
+          "aliases": [
+            "location_id"
+          ]
+        },
+        {
+          "id": "order_id",
+          "type": "string",
+          "aliases": [
+            "order_id"
+          ]
+        },
+        {
+          "id": "payment_id",
+          "type": "string",
+          "aliases": [
+            "payment_id"
+          ]
+        },
+        {
+          "id": "reason",
+          "type": "string",
+          "aliases": [
+            "reason"
+          ]
+        },
+        {
+          "id": "refund_id",
+          "type": "string",
+          "aliases": [
+            "refund_id"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [
+        "PENDING",
+        "IN_PROGRESS",
+        "CANCEL_REQUESTED",
+        "CANCELED",
+        "COMPLETED"
+      ],
+      "review_status": "gold"
+    },
+    {
+      "id": "WageSetting",
+      "aliases": [
+        "WageSetting"
+      ],
+      "properties": [
+        {
+          "id": "team_member_id",
+          "type": "string",
+          "aliases": [
+            "team_member_id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "is_overtime_exempt",
+          "type": "boolean",
+          "aliases": [
+            "is_overtime_exempt"
+          ]
+        },
+        {
+          "id": "job_assignments",
+          "type": "array",
+          "aliases": [
+            "job_assignments"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "WorkweekConfig",
+      "aliases": [
+        "WorkweekConfig"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "start_of_day_local_time",
+          "type": "string",
+          "aliases": [
+            "start_of_day_local_time"
+          ]
+        },
+        {
+          "id": "start_of_week",
+          "type": "string",
+          "aliases": [
+            "start_of_week"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "version",
+          "type": "integer",
+          "aliases": [
+            "version"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

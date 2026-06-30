@@ -1,0 +1,1721 @@
+{
+  "bound_object_types": [
+    "Account"
+  ],
+  "description": "Returns account data",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getAccount",
+    "path": "/account"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns account data",
+      "source_reference": "getAccount",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_account",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "account",
+      "ontology_property": "Account",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Account"
+  ],
+  "description": "Update account data",
+  "effects": [
+    "Account updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateAccount",
+    "path": "/account"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Update account data",
+      "source_reference": "updateAccount",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_account",
+  "inputs": [
+    {
+      "name": "account",
+      "ontology_property": "Account",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "account",
+      "ontology_property": "Account",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Account exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Plan"
+  ],
+  "description": "Returns plan data",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getPlan",
+    "path": "/account/plan"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns plan data",
+      "source_reference": "getPlan",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_plan",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "plan",
+      "ontology_property": "Plan",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Guest"
+  ],
+  "description": "Returns a list of guests",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listGuests",
+    "path": "/account/guests"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of guests",
+      "source_reference": "listGuests",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_guests",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "guests",
+      "ontology_property": "Guest",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Guest"
+  ],
+  "description": "Create a guest",
+  "effects": [
+    "Guest created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createGuest",
+    "path": "/account/guests"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a guest",
+      "source_reference": "createGuest",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_guest",
+  "inputs": [
+    {
+      "name": "guest",
+      "ontology_property": "Guest",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "guest",
+      "ontology_property": "Guest",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Guest"
+  ],
+  "description": "Returns a specific guest",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getGuest",
+    "path": "/account/guests/{guestId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Guest not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific guest",
+      "source_reference": "getGuest",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_guest",
+  "inputs": [
+    {
+      "name": "guestId",
+      "ontology_property": "Guest.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "guest",
+      "ontology_property": "Guest",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Guest.id == guestId",
+    "Guest exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Guest"
+  ],
+  "description": "Update a guest",
+  "effects": [
+    "Guest updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateGuest",
+    "path": "/account/guests/{guestId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Guest not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a guest",
+      "source_reference": "updateGuest",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_guest",
+  "inputs": [
+    {
+      "name": "guestId",
+      "ontology_property": "Guest.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "guest",
+      "ontology_property": "Guest",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "guest",
+      "ontology_property": "Guest",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Guest.id == guestId",
+    "Guest exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Guest"
+  ],
+  "description": "Delete a guest",
+  "effects": [
+    "Guest deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteGuest",
+    "path": "/account/guests/{guestId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Guest not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a guest",
+      "source_reference": "deleteGuest",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_guest",
+  "inputs": [
+    {
+      "name": "guestId",
+      "ontology_property": "Guest.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Guest.id == guestId",
+    "Guest exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Domain"
+  ],
+  "description": "Returns a list of domains",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listDomains",
+    "path": "/domains"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of domains",
+      "source_reference": "listDomains",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_domains",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "domains",
+      "ontology_property": "Domain",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Domain"
+  ],
+  "description": "Create a domain",
+  "effects": [
+    "Domain created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createDomain",
+    "path": "/domains"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a domain",
+      "source_reference": "createDomain",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_domain",
+  "inputs": [
+    {
+      "name": "domain",
+      "ontology_property": "Domain",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "domain",
+      "ontology_property": "Domain",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Domain"
+  ],
+  "description": "Returns a specific domain",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getDomain",
+    "path": "/domains/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Domain not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific domain",
+      "source_reference": "getDomain",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_domain",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Domain.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "domain",
+      "ontology_property": "Domain",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Domain.id == id",
+    "Domain exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Domain"
+  ],
+  "description": "Update a domain",
+  "effects": [
+    "Domain updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateDomain",
+    "path": "/domains/{id}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Domain not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a domain",
+      "source_reference": "updateDomain",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_domain",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Domain.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "domain",
+      "ontology_property": "Domain",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "domain",
+      "ontology_property": "Domain",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Domain.id == id",
+    "Domain exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Domain"
+  ],
+  "description": "Delete a domain",
+  "effects": [
+    "Domain deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteDomain",
+    "path": "/domains/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Domain not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a domain",
+      "source_reference": "deleteDomain",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_domain",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Domain.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Domain.id == id",
+    "Domain exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Group"
+  ],
+  "description": "Returns a list of groups",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listGroups",
+    "path": "/groups"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of groups",
+      "source_reference": "listGroups",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_groups",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "groups",
+      "ontology_property": "Group",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Group"
+  ],
+  "description": "Create a group",
+  "effects": [
+    "Group created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createGroup",
+    "path": "/groups"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a group",
+      "source_reference": "createGroup",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_group",
+  "inputs": [
+    {
+      "name": "group",
+      "ontology_property": "Group",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "group",
+      "ontology_property": "Group",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Group"
+  ],
+  "description": "Returns a specific group",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getGroup",
+    "path": "/groups/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific group",
+      "source_reference": "getGroup",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_group",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Group.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "group",
+      "ontology_property": "Group",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Group.id == id",
+    "Group exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Group"
+  ],
+  "description": "Update a group",
+  "effects": [
+    "Group updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateGroup",
+    "path": "/groups/{id}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a group",
+      "source_reference": "updateGroup",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_group",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Group.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "group",
+      "ontology_property": "Group",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "group",
+      "ontology_property": "Group",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Group.id == id",
+    "Group exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Group"
+  ],
+  "description": "Delete a group",
+  "effects": [
+    "Group deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteGroup",
+    "path": "/groups/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a group",
+      "source_reference": "deleteGroup",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_group",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Group.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Group.id == id",
+    "Group exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Datapoint"
+  ],
+  "description": "Returns a list of datapoints",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listDatapoints",
+    "path": "/datapoints"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of datapoints",
+      "source_reference": "listDatapoints",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_datapoints",
+  "inputs": [
+    {
+      "name": "offset",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "measure",
+      "type": "integer"
+    },
+    {
+      "name": "limit",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "measure",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "filter",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "state",
+      "type": "string"
+    },
+    {
+      "name": "tags",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "filter",
+      "type": "string"
+    },
+    {
+      "name": "textSearch",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "filter",
+      "type": "string"
+    },
+    {
+      "name": "onlyFavorites",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "state",
+      "type": "boolean"
+    },
+    {
+      "name": "sortBy",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "payload",
+      "type": "string"
+    },
+    {
+      "name": "sortDirection",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "payload",
+      "type": "string"
+    },
+    {
+      "name": "createdAfter",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "time",
+      "type": "string"
+    },
+    {
+      "name": "createdBefore",
+      "ontology_property": null,
+      "required": false,
+      "semantic_role": "time",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "datapoints",
+      "ontology_property": "Datapoint",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Datapoint"
+  ],
+  "description": "Create a datapoint",
+  "effects": [
+    "Datapoint created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createDatapoint",
+    "path": "/datapoints"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a datapoint",
+      "source_reference": "createDatapoint",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_datapoint",
+  "inputs": [
+    {
+      "name": "datapoint",
+      "ontology_property": "Datapoint",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "datapoint",
+      "ontology_property": "Datapoint",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Datapoint"
+  ],
+  "description": "Returns a specific datapoint",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getDatapoint",
+    "path": "/datapoints/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Datapoint not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific datapoint",
+      "source_reference": "getDatapoint",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_datapoint",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Datapoint.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "datapoint",
+      "ontology_property": "Datapoint",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Datapoint.id == id",
+    "Datapoint exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Datapoint"
+  ],
+  "description": "Update a datapoint",
+  "effects": [
+    "Datapoint updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateDatapoint",
+    "path": "/datapoints/{id}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Datapoint not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a datapoint",
+      "source_reference": "updateDatapoint",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_datapoint",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Datapoint.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "datapoint",
+      "ontology_property": "Datapoint",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "datapoint",
+      "ontology_property": "Datapoint",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Datapoint.id == id",
+    "Datapoint exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Datapoint"
+  ],
+  "description": "Delete a datapoint",
+  "effects": [
+    "Datapoint deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteDatapoint",
+    "path": "/datapoints/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Datapoint not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a datapoint",
+      "source_reference": "deleteDatapoint",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_datapoint",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "Datapoint.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Datapoint.id == id",
+    "Datapoint exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Conversion"
+  ],
+  "description": "Returns a list of conversions",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listConversions",
+    "path": "/conversions"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of conversions",
+      "source_reference": "listConversions",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_conversions",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "conversions",
+      "ontology_property": "Conversion",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Conversion"
+  ],
+  "description": "Create a conversion",
+  "effects": [
+    "Conversion created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createConversion",
+    "path": "/conversions"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a conversion",
+      "source_reference": "createConversion",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_conversion",
+  "inputs": [
+    {
+      "name": "conversion",
+      "ontology_property": "Conversion",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "conversion",
+      "ontology_property": "Conversion",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Conversion"
+  ],
+  "description": "Returns a specific conversion",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getConversion",
+    "path": "/conversions/{conversionId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Conversion not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific conversion",
+      "source_reference": "getConversion",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_conversion",
+  "inputs": [
+    {
+      "name": "conversionId",
+      "ontology_property": "Conversion.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "conversion",
+      "ontology_property": "Conversion",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Conversion.id == conversionId",
+    "Conversion exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Conversion"
+  ],
+  "description": "Update a conversion",
+  "effects": [
+    "Conversion updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateConversion",
+    "path": "/conversions/{conversionId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Conversion not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a conversion",
+      "source_reference": "updateConversion",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_conversion",
+  "inputs": [
+    {
+      "name": "conversionId",
+      "ontology_property": "Conversion.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "conversion",
+      "ontology_property": "Conversion",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "conversion",
+      "ontology_property": "Conversion",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Conversion.id == conversionId",
+    "Conversion exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Conversion"
+  ],
+  "description": "Delete a conversion",
+  "effects": [
+    "Conversion deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteConversion",
+    "path": "/conversions/{conversionId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Conversion not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a conversion",
+      "source_reference": "deleteConversion",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_conversion",
+  "inputs": [
+    {
+      "name": "conversionId",
+      "ontology_property": "Conversion.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Conversion.id == conversionId",
+    "Conversion exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Returns a list of tags",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listTags",
+    "path": "/tags"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of tags",
+      "source_reference": "listTags",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_tags",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "tags",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Create a tag",
+  "effects": [
+    "Tag created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createTag",
+    "path": "/tags"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a tag",
+      "source_reference": "createTag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_tag",
+  "inputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Returns a specific tag",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getTag",
+    "path": "/tags/{tagId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Tag not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific tag",
+      "source_reference": "getTag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_tag",
+  "inputs": [
+    {
+      "name": "tagId",
+      "ontology_property": "Tag.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Tag.id == tagId",
+    "Tag exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Delete a tag",
+  "effects": [
+    "Tag deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteTag",
+    "path": "/tags/{tagId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Tag not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a tag",
+      "source_reference": "deleteTag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_tag",
+  "inputs": [
+    {
+      "name": "tagId",
+      "ontology_property": "Tag.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Tag.id == tagId",
+    "Tag exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "RetargetingScript"
+  ],
+  "description": "Returns a list of retargeting scripts",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "listRetargetingScripts",
+    "path": "/retargeting"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of retargeting scripts",
+      "source_reference": "listRetargetingScripts",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "list_retargeting_scripts",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "scripts",
+      "ontology_property": "RetargetingScript",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "RetargetingScript"
+  ],
+  "description": "Create a retargeting script",
+  "effects": [
+    "RetargetingScript created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "createRetargetingScript",
+    "path": "/retargeting"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a retargeting script",
+      "source_reference": "createRetargetingScript",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_retargeting_script",
+  "inputs": [
+    {
+      "name": "script",
+      "ontology_property": "RetargetingScript",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "script",
+      "ontology_property": "RetargetingScript",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "RetargetingScript"
+  ],
+  "description": "Returns a specific retargeting script",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "getRetargetingScript",
+    "path": "/retargeting/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Retargeting script not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific retargeting script",
+      "source_reference": "getRetargetingScript",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_retargeting_script",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "RetargetingScript.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "script",
+      "ontology_property": "RetargetingScript",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "RetargetingScript.id == id",
+    "RetargetingScript exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "RetargetingScript"
+  ],
+  "description": "Update a retargeting script",
+  "effects": [
+    "RetargetingScript updated"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "updateRetargetingScript",
+    "path": "/retargeting/{id}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Retargeting script not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a retargeting script",
+      "source_reference": "updateRetargetingScript",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_retargeting_script",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "RetargetingScript.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "script",
+      "ontology_property": "RetargetingScript",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "script",
+      "ontology_property": "RetargetingScript",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "RetargetingScript.id == id",
+    "RetargetingScript exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "RetargetingScript"
+  ],
+  "description": "Delete a retargeting script",
+  "effects": [
+    "RetargetingScript deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "deleteRetargetingScript",
+    "path": "/retargeting/{id}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Retargeting script not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a retargeting script",
+      "source_reference": "deleteRetargetingScript",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_retargeting_script",
+  "inputs": [
+    {
+      "name": "id",
+      "ontology_property": "RetargetingScript.id",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "RetargetingScript.id == id",
+    "RetargetingScript exists"
+  ]
+}

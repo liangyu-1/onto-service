@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "name": "clickmeter.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "clickmeter.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": ["Account", "account", "User", "user"],
+      "properties": [
+        {"id": "companyName", "type": "string", "aliases": ["companyName", "company name"], "required": false},
+        {"id": "companyRole", "type": "string", "aliases": ["companyRole", "company role"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "firstName", "type": "string", "aliases": ["firstName", "first name"], "required": false},
+        {"id": "lastName", "type": "string", "aliases": ["lastName", "last name"], "required": false},
+        {"id": "phone", "type": "string", "aliases": ["phone"], "required": false},
+        {"id": "redirectOnly", "type": "boolean", "aliases": ["redirectOnly", "redirect only"], "required": false},
+        {"id": "registrationDate", "type": "string", "aliases": ["registrationDate", "registration date"], "required": false},
+        {"id": "timezone", "type": "integer", "aliases": ["timezone"], "required": false},
+        {"id": "timezonename", "type": "string", "aliases": ["timezonename"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Plan",
+      "aliases": ["Plan", "plan"],
+      "properties": [
+        {"id": "allowedPersonalDomains", "type": "integer", "aliases": ["allowedPersonalDomains"], "required": false},
+        {"id": "allowedPersonalUrls", "type": "integer", "aliases": ["allowedPersonalUrls"], "required": false},
+        {"id": "billingPeriodEnd", "type": "string", "aliases": ["billingPeriodEnd"], "required": false},
+        {"id": "billingPeriodStart", "type": "string", "aliases": ["billingPeriodStart"], "required": false},
+        {"id": "maximumDatapoints", "type": "integer", "aliases": ["maximumDatapoints"], "required": false},
+        {"id": "maximumGuests", "type": "integer", "aliases": ["maximumGuests"], "required": false},
+        {"id": "monthlyEvents", "type": "integer", "aliases": ["monthlyEvents"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "price", "type": "number", "aliases": ["price"], "required": false},
+        {"id": "usedDatapoints", "type": "integer", "aliases": ["usedDatapoints"], "required": false},
+        {"id": "usedMonthlyEvents", "type": "integer", "aliases": ["usedMonthlyEvents"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Guest",
+      "aliases": ["Guest", "guest"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "apiKey", "type": "string", "aliases": ["apiKey"], "required": false},
+        {"id": "creationDate", "type": "string", "aliases": ["creationDate"], "required": false},
+        {"id": "dateFormat", "type": "string", "aliases": ["dateFormat"], "required": false},
+        {"id": "decimalSeparator", "type": "string", "aliases": ["decimalSeparator"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "groupGrants", "type": "integer", "aliases": ["groupGrants"], "required": false},
+        {"id": "language", "type": "string", "aliases": ["language"], "required": false},
+        {"id": "loginCount", "type": "integer", "aliases": ["loginCount"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "notes", "type": "string", "aliases": ["notes"], "required": false},
+        {"id": "password", "type": "string", "aliases": ["password"], "required": false},
+        {"id": "timeFormat", "type": "string", "aliases": ["timeFormat"], "required": false},
+        {"id": "timeZone", "type": "integer", "aliases": ["timeZone"], "required": false},
+        {"id": "tlGrants", "type": "integer", "aliases": ["tlGrants"], "required": false},
+        {"id": "tpGrants", "type": "integer", "aliases": ["tpGrants"], "required": false},
+        {"id": "userName", "type": "string", "aliases": ["userName"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Domain",
+      "aliases": ["Domain", "domain"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "custom404", "type": "string", "aliases": ["custom404"], "required": false},
+        {"id": "customHomepage", "type": "string", "aliases": ["customHomepage"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "type", "type": "string", "aliases": ["type"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Group",
+      "aliases": ["Group", "group"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "creationDate", "type": "string", "aliases": ["creationDate"], "required": false},
+        {"id": "deleted", "type": "boolean", "aliases": ["deleted"], "required": false},
+        {"id": "isPublic", "type": "boolean", "aliases": ["isPublic"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "notes", "type": "string", "aliases": ["notes"], "required": false},
+        {"id": "preferred", "type": "boolean", "aliases": ["preferred"], "required": false},
+        {"id": "redirectOnly", "type": "boolean", "aliases": ["redirectOnly"], "required": false},
+        {"id": "tags", "type": "array", "aliases": ["tags"], "required": false},
+        {"id": "writePermited", "type": "boolean", "aliases": ["writePermited"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Datapoint",
+      "aliases": ["Datapoint", "datapoint"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "creationDate", "type": "string", "aliases": ["creationDate"], "required": false},
+        {"id": "encodeIp", "type": "boolean", "aliases": ["encodeIp"], "required": false},
+        {"id": "groupId", "type": "integer", "aliases": ["groupId"], "required": false},
+        {"id": "groupName", "type": "string", "aliases": ["groupName"], "required": false},
+        {"id": "isPublic", "type": "boolean", "aliases": ["isPublic"], "required": false},
+        {"id": "isSecured", "type": "boolean", "aliases": ["isSecured"], "required": false},
+        {"id": "lightTracking", "type": "boolean", "aliases": ["lightTracking"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "notes", "type": "string", "aliases": ["notes"], "required": false},
+        {"id": "preferred", "type": "boolean", "aliases": ["preferred"], "required": false},
+        {"id": "redirectOnly", "type": "boolean", "aliases": ["redirectOnly"], "required": false},
+        {"id": "status", "type": "string", "aliases": ["status"], "required": false},
+        {"id": "tags", "type": "array", "aliases": ["tags"], "required": false},
+        {"id": "title", "type": "string", "aliases": ["title"], "required": false},
+        {"id": "trackingCode", "type": "string", "aliases": ["trackingCode"], "required": false},
+        {"id": "type", "type": "string", "aliases": ["type"], "required": false}
+      ],
+      "states": ["Active", "Paused", "Abuse", "Deleted"],
+      "review_status": "gold"
+    },
+    {
+      "id": "Conversion",
+      "aliases": ["Conversion", "conversion"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "code", "type": "string", "aliases": ["code"], "required": false},
+        {"id": "creationDate", "type": "string", "aliases": ["creationDate"], "required": false},
+        {"id": "deleted", "type": "boolean", "aliases": ["deleted"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "protocol", "type": "string", "aliases": ["protocol"], "required": false},
+        {"id": "value", "type": "number", "aliases": ["value"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Tag",
+      "aliases": ["Tag", "tag"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "datapoints", "type": "array", "aliases": ["datapoints"], "required": false},
+        {"id": "groups", "type": "array", "aliases": ["groups"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "RetargetingScript",
+      "aliases": ["RetargetingScript", "retargeting script", "retargeting_script", "Retargeting", "retargeting"],
+      "properties": [
+        {"id": "id", "type": "integer", "aliases": ["id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "script", "type": "string", "aliases": ["script"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

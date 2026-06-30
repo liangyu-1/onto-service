@@ -1,0 +1,1113 @@
+{
+  "metadata": {
+    "name": "box.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "box.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Collaboration",
+      "aliases": [
+        "Collaboration",
+        "Collaboration"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "acceptance_requirements_status",
+          "type": "object",
+          "aliases": [
+            "acceptance_requirements_status"
+          ]
+        },
+        {
+          "id": "acknowledged_at",
+          "type": "string",
+          "aliases": [
+            "acknowledged_at"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "expires_at",
+          "type": "string",
+          "aliases": [
+            "expires_at"
+          ]
+        },
+        {
+          "id": "invite_email",
+          "type": "string",
+          "aliases": [
+            "invite_email"
+          ]
+        },
+        {
+          "id": "modified_at",
+          "type": "string",
+          "aliases": [
+            "modified_at"
+          ]
+        },
+        {
+          "id": "role",
+          "type": "string",
+          "aliases": [
+            "role"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Collection",
+      "aliases": [
+        "Collection",
+        "Collection"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "collection_type",
+          "type": "string",
+          "aliases": [
+            "collection_type"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Comment",
+      "aliases": [
+        "Comment",
+        "Comment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DevicePinner",
+      "aliases": [
+        "DevicePinner",
+        "DevicePinner"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "product_name",
+          "type": "string",
+          "aliases": [
+            "product_name"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "EmailAlias",
+      "aliases": [
+        "EmailAlias",
+        "EmailAlias"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "is_confirmed",
+          "type": "boolean",
+          "aliases": [
+            "is_confirmed"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "File",
+      "aliases": [
+        "File",
+        "File"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "FileRequest",
+      "aliases": [
+        "FileRequest",
+        "FileRequest"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "etag",
+          "type": "string",
+          "aliases": [
+            "etag"
+          ]
+        },
+        {
+          "id": "expires_at",
+          "type": "string",
+          "aliases": [
+            "expires_at"
+          ]
+        },
+        {
+          "id": "is_description_required",
+          "type": "boolean",
+          "aliases": [
+            "is_description_required"
+          ]
+        },
+        {
+          "id": "is_email_required",
+          "type": "boolean",
+          "aliases": [
+            "is_email_required"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "title",
+          "type": "string",
+          "aliases": [
+            "title"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        },
+        {
+          "id": "url",
+          "type": "string",
+          "aliases": [
+            "url"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "FileVersion",
+      "aliases": [
+        "FileVersion",
+        "FileVersion"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Folder",
+      "aliases": [
+        "Folder",
+        "Folder"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "FolderLock",
+      "aliases": [
+        "FolderLock",
+        "FolderLock"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "lock_type",
+          "type": "string",
+          "aliases": [
+            "lock_type"
+          ]
+        },
+        {
+          "id": "locked_operations",
+          "type": "object",
+          "aliases": [
+            "locked_operations"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Group",
+      "aliases": [
+        "Group",
+        "Group"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "GroupMembership",
+      "aliases": [
+        "GroupMembership"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "modified_at",
+          "type": "string",
+          "aliases": [
+            "modified_at"
+          ]
+        },
+        {
+          "id": "role",
+          "type": "string",
+          "aliases": [
+            "role"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LegalHoldPolicy",
+      "aliases": [
+        "LegalHoldPolicy",
+        "LegalHoldPolicy"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LegalHoldPolicyAssignment",
+      "aliases": [
+        "LegalHoldPolicyAssignment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "MetadataCascadePolicy",
+      "aliases": [
+        "MetadataCascadePolicy"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "owner_enterprise",
+          "type": "object",
+          "aliases": [
+            "owner_enterprise"
+          ]
+        },
+        {
+          "id": "parent",
+          "type": "object",
+          "aliases": [
+            "parent"
+          ]
+        },
+        {
+          "id": "scope",
+          "type": "string",
+          "aliases": [
+            "scope"
+          ]
+        },
+        {
+          "id": "templateKey",
+          "type": "string",
+          "aliases": [
+            "templateKey"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "MetadataTemplate",
+      "aliases": [
+        "MetadataTemplate",
+        "MetadataTemplate"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "copyInstanceOnItemCopy",
+          "type": "boolean",
+          "aliases": [
+            "copyInstanceOnItemCopy"
+          ]
+        },
+        {
+          "id": "displayName",
+          "type": "string",
+          "aliases": [
+            "displayName"
+          ]
+        },
+        {
+          "id": "fields",
+          "type": "array",
+          "aliases": [
+            "fields"
+          ]
+        },
+        {
+          "id": "hidden",
+          "type": "boolean",
+          "aliases": [
+            "hidden"
+          ]
+        },
+        {
+          "id": "scope",
+          "type": "string",
+          "aliases": [
+            "scope"
+          ]
+        },
+        {
+          "id": "templateKey",
+          "type": "string",
+          "aliases": [
+            "templateKey"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "RecentItem",
+      "aliases": [
+        "RecentItem"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "interacted_at",
+          "type": "string",
+          "aliases": [
+            "interacted_at"
+          ]
+        },
+        {
+          "id": "interaction_shared_link",
+          "type": "string",
+          "aliases": [
+            "interaction_shared_link"
+          ]
+        },
+        {
+          "id": "interaction_type",
+          "type": "string",
+          "aliases": [
+            "interaction_type"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "RetentionPolicy",
+      "aliases": [
+        "RetentionPolicy",
+        "RetentionPolicy"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "RetentionPolicyAssignment",
+      "aliases": [
+        "RetentionPolicyAssignment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "assigned_at",
+          "type": "string",
+          "aliases": [
+            "assigned_at"
+          ]
+        },
+        {
+          "id": "assigned_to",
+          "type": "object",
+          "aliases": [
+            "assigned_to"
+          ]
+        },
+        {
+          "id": "filter_fields",
+          "type": "array",
+          "aliases": [
+            "filter_fields"
+          ]
+        },
+        {
+          "id": "start_date_field",
+          "type": "string",
+          "aliases": [
+            "start_date_field"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ShieldInformationBarrier",
+      "aliases": [
+        "ShieldInformationBarrier"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "enabled_at",
+          "type": "string",
+          "aliases": [
+            "enabled_at"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "updated_at",
+          "type": "string",
+          "aliases": [
+            "updated_at"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SignRequest",
+      "aliases": [
+        "SignRequest",
+        "SignRequest"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "StoragePolicy",
+      "aliases": [
+        "StoragePolicy",
+        "StoragePolicy"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "StoragePolicyAssignment",
+      "aliases": [
+        "StoragePolicyAssignment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Task",
+      "aliases": [
+        "Task",
+        "Task"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "action",
+          "type": "string",
+          "aliases": [
+            "action"
+          ]
+        },
+        {
+          "id": "completion_rule",
+          "type": "string",
+          "aliases": [
+            "completion_rule"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "due_at",
+          "type": "string",
+          "aliases": [
+            "due_at"
+          ]
+        },
+        {
+          "id": "is_completed",
+          "type": "boolean",
+          "aliases": [
+            "is_completed"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "string",
+          "aliases": [
+            "message"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TaskAssignment",
+      "aliases": [
+        "TaskAssignment",
+        "TaskAssignment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "assigned_at",
+          "type": "string",
+          "aliases": [
+            "assigned_at"
+          ]
+        },
+        {
+          "id": "completed_at",
+          "type": "string",
+          "aliases": [
+            "completed_at"
+          ]
+        },
+        {
+          "id": "message",
+          "type": "string",
+          "aliases": [
+            "message"
+          ]
+        },
+        {
+          "id": "reminded_at",
+          "type": "string",
+          "aliases": [
+            "reminded_at"
+          ]
+        },
+        {
+          "id": "resolution_state",
+          "type": "string",
+          "aliases": [
+            "resolution_state"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TermsOfService",
+      "aliases": [
+        "TermsOfService",
+        "TermsOfService"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "User",
+      "aliases": [
+        "User",
+        "User"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "WebLink",
+      "aliases": [
+        "WebLink",
+        "WebLink"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Webhook",
+      "aliases": [
+        "Webhook",
+        "Webhook"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Workflow",
+      "aliases": [
+        "Workflow",
+        "Workflow"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ZipDownload",
+      "aliases": [
+        "ZipDownload"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "download_url",
+          "type": "string",
+          "aliases": [
+            "download_url"
+          ]
+        },
+        {
+          "id": "expires_at",
+          "type": "string",
+          "aliases": [
+            "expires_at"
+          ]
+        },
+        {
+          "id": "name_conflicts",
+          "type": "array",
+          "aliases": [
+            "name_conflicts"
+          ]
+        },
+        {
+          "id": "status_url",
+          "type": "string",
+          "aliases": [
+            "status_url"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

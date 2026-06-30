@@ -1,0 +1,1419 @@
+{
+  "metadata": {
+    "name": "twilio.com_api_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "twilio.com_api",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": [
+        "Account",
+        "api.v2010.account"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "auth_token",
+          "type": "string",
+          "aliases": [
+            "auth_token"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "owner_account_sid",
+          "type": "string",
+          "aliases": [
+            "owner_account_sid"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "subresource_uris",
+          "type": "object",
+          "aliases": [
+            "subresource_uris"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Address",
+      "aliases": [
+        "Address",
+        "api.v2010.account.address"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "city",
+          "type": "string",
+          "aliases": [
+            "city"
+          ]
+        },
+        {
+          "id": "customer_name",
+          "type": "string",
+          "aliases": [
+            "customer_name"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "emergency_enabled",
+          "type": "boolean",
+          "aliases": [
+            "emergency_enabled"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "iso_country",
+          "type": "string",
+          "aliases": [
+            "iso_country"
+          ]
+        },
+        {
+          "id": "postal_code",
+          "type": "string",
+          "aliases": [
+            "postal_code"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "string",
+          "aliases": [
+            "region"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "street",
+          "type": "string",
+          "aliases": [
+            "street"
+          ]
+        },
+        {
+          "id": "street_secondary",
+          "type": "string",
+          "aliases": [
+            "street_secondary"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        },
+        {
+          "id": "validated",
+          "type": "boolean",
+          "aliases": [
+            "validated"
+          ]
+        },
+        {
+          "id": "verified",
+          "type": "boolean",
+          "aliases": [
+            "verified"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Application",
+      "aliases": [
+        "Application",
+        "api.v2010.account.application"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "message_status_callback",
+          "type": "string",
+          "aliases": [
+            "message_status_callback"
+          ]
+        },
+        {
+          "id": "public_application_connect_enabled",
+          "type": "boolean",
+          "aliases": [
+            "public_application_connect_enabled"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "sms_fallback_method",
+          "type": "string",
+          "aliases": [
+            "sms_fallback_method"
+          ]
+        },
+        {
+          "id": "sms_fallback_url",
+          "type": "string",
+          "aliases": [
+            "sms_fallback_url"
+          ]
+        },
+        {
+          "id": "sms_method",
+          "type": "string",
+          "aliases": [
+            "sms_method"
+          ]
+        },
+        {
+          "id": "sms_status_callback",
+          "type": "string",
+          "aliases": [
+            "sms_status_callback"
+          ]
+        },
+        {
+          "id": "sms_url",
+          "type": "string",
+          "aliases": [
+            "sms_url"
+          ]
+        },
+        {
+          "id": "status_callback",
+          "type": "string",
+          "aliases": [
+            "status_callback"
+          ]
+        },
+        {
+          "id": "status_callback_method",
+          "type": "string",
+          "aliases": [
+            "status_callback_method"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        },
+        {
+          "id": "voice_caller_id_lookup",
+          "type": "boolean",
+          "aliases": [
+            "voice_caller_id_lookup"
+          ]
+        },
+        {
+          "id": "voice_fallback_method",
+          "type": "string",
+          "aliases": [
+            "voice_fallback_method"
+          ]
+        },
+        {
+          "id": "voice_fallback_url",
+          "type": "string",
+          "aliases": [
+            "voice_fallback_url"
+          ]
+        },
+        {
+          "id": "voice_method",
+          "type": "string",
+          "aliases": [
+            "voice_method"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Call",
+      "aliases": [
+        "Call",
+        "api.v2010.account.call"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "answered_by",
+          "type": "string",
+          "aliases": [
+            "answered_by"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "caller_name",
+          "type": "string",
+          "aliases": [
+            "caller_name"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "direction",
+          "type": "string",
+          "aliases": [
+            "direction"
+          ]
+        },
+        {
+          "id": "duration",
+          "type": "string",
+          "aliases": [
+            "duration"
+          ]
+        },
+        {
+          "id": "end_time",
+          "type": "string",
+          "aliases": [
+            "end_time"
+          ]
+        },
+        {
+          "id": "forwarded_from",
+          "type": "string",
+          "aliases": [
+            "forwarded_from"
+          ]
+        },
+        {
+          "id": "from",
+          "type": "string",
+          "aliases": [
+            "from"
+          ]
+        },
+        {
+          "id": "from_formatted",
+          "type": "string",
+          "aliases": [
+            "from_formatted"
+          ]
+        },
+        {
+          "id": "group_sid",
+          "type": "string",
+          "aliases": [
+            "group_sid"
+          ]
+        },
+        {
+          "id": "parent_call_sid",
+          "type": "string",
+          "aliases": [
+            "parent_call_sid"
+          ]
+        },
+        {
+          "id": "phone_number_sid",
+          "type": "string",
+          "aliases": [
+            "phone_number_sid"
+          ]
+        },
+        {
+          "id": "price",
+          "type": "string",
+          "aliases": [
+            "price"
+          ]
+        },
+        {
+          "id": "price_unit",
+          "type": "string",
+          "aliases": [
+            "price_unit"
+          ]
+        },
+        {
+          "id": "queue_time",
+          "type": "string",
+          "aliases": [
+            "queue_time"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "start_time",
+          "type": "string",
+          "aliases": [
+            "start_time"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Conference",
+      "aliases": [
+        "Conference",
+        "api.v2010.account.conference"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "call_sid_ending_conference",
+          "type": "string",
+          "aliases": [
+            "call_sid_ending_conference"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "reason_conference_ended",
+          "type": "string",
+          "aliases": [
+            "reason_conference_ended"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "string",
+          "aliases": [
+            "region"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "subresource_uris",
+          "type": "object",
+          "aliases": [
+            "subresource_uris"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ConferenceParticipant",
+      "aliases": [
+        "ConferenceParticipant"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "IncomingPhoneNumber",
+      "aliases": [
+        "IncomingPhoneNumber",
+        "api.v2010.account.incoming_phone_number"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "address_requirements",
+          "type": "string",
+          "aliases": [
+            "address_requirements"
+          ]
+        },
+        {
+          "id": "address_sid",
+          "type": "string",
+          "aliases": [
+            "address_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "beta",
+          "type": "boolean",
+          "aliases": [
+            "beta"
+          ]
+        },
+        {
+          "id": "bundle_sid",
+          "type": "string",
+          "aliases": [
+            "bundle_sid"
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "object",
+          "aliases": [
+            "capabilities"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "emergency_address_sid",
+          "type": "string",
+          "aliases": [
+            "emergency_address_sid"
+          ]
+        },
+        {
+          "id": "emergency_address_status",
+          "type": "string",
+          "aliases": [
+            "emergency_address_status"
+          ]
+        },
+        {
+          "id": "emergency_status",
+          "type": "string",
+          "aliases": [
+            "emergency_status"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "identity_sid",
+          "type": "string",
+          "aliases": [
+            "identity_sid"
+          ]
+        },
+        {
+          "id": "origin",
+          "type": "string",
+          "aliases": [
+            "origin"
+          ]
+        },
+        {
+          "id": "phone_number",
+          "type": "string",
+          "aliases": [
+            "phone_number"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "sms_application_sid",
+          "type": "string",
+          "aliases": [
+            "sms_application_sid"
+          ]
+        },
+        {
+          "id": "sms_fallback_method",
+          "type": "string",
+          "aliases": [
+            "sms_fallback_method"
+          ]
+        },
+        {
+          "id": "sms_fallback_url",
+          "type": "string",
+          "aliases": [
+            "sms_fallback_url"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Message",
+      "aliases": [
+        "Message",
+        "api.v2010.account.message"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "body",
+          "type": "string",
+          "aliases": [
+            "body"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_sent",
+          "type": "string",
+          "aliases": [
+            "date_sent"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "direction",
+          "type": "string",
+          "aliases": [
+            "direction"
+          ]
+        },
+        {
+          "id": "error_code",
+          "type": "integer",
+          "aliases": [
+            "error_code"
+          ]
+        },
+        {
+          "id": "error_message",
+          "type": "string",
+          "aliases": [
+            "error_message"
+          ]
+        },
+        {
+          "id": "from",
+          "type": "string",
+          "aliases": [
+            "from"
+          ]
+        },
+        {
+          "id": "messaging_service_sid",
+          "type": "string",
+          "aliases": [
+            "messaging_service_sid"
+          ]
+        },
+        {
+          "id": "num_media",
+          "type": "string",
+          "aliases": [
+            "num_media"
+          ]
+        },
+        {
+          "id": "num_segments",
+          "type": "string",
+          "aliases": [
+            "num_segments"
+          ]
+        },
+        {
+          "id": "price",
+          "type": "string",
+          "aliases": [
+            "price"
+          ]
+        },
+        {
+          "id": "price_unit",
+          "type": "string",
+          "aliases": [
+            "price_unit"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "subresource_uris",
+          "type": "object",
+          "aliases": [
+            "subresource_uris"
+          ]
+        },
+        {
+          "id": "to",
+          "type": "string",
+          "aliases": [
+            "to"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OutgoingCallerId",
+      "aliases": [
+        "OutgoingCallerId"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Queue",
+      "aliases": [
+        "Queue",
+        "api.v2010.account.queue"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "average_wait_time",
+          "type": "integer",
+          "aliases": [
+            "average_wait_time"
+          ]
+        },
+        {
+          "id": "current_size",
+          "type": "integer",
+          "aliases": [
+            "current_size"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "friendly_name",
+          "type": "string",
+          "aliases": [
+            "friendly_name"
+          ]
+        },
+        {
+          "id": "max_size",
+          "type": "integer",
+          "aliases": [
+            "max_size"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "QueueMember",
+      "aliases": [
+        "QueueMember"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Recording",
+      "aliases": [
+        "Recording",
+        "api.v2010.account.recording"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "call_sid",
+          "type": "string",
+          "aliases": [
+            "call_sid"
+          ]
+        },
+        {
+          "id": "channels",
+          "type": "integer",
+          "aliases": [
+            "channels"
+          ]
+        },
+        {
+          "id": "conference_sid",
+          "type": "string",
+          "aliases": [
+            "conference_sid"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "duration",
+          "type": "string",
+          "aliases": [
+            "duration"
+          ]
+        },
+        {
+          "id": "error_code",
+          "type": "integer",
+          "aliases": [
+            "error_code"
+          ]
+        },
+        {
+          "id": "media_url",
+          "type": "string",
+          "aliases": [
+            "media_url"
+          ]
+        },
+        {
+          "id": "price",
+          "type": "string",
+          "aliases": [
+            "price"
+          ]
+        },
+        {
+          "id": "price_unit",
+          "type": "string",
+          "aliases": [
+            "price_unit"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "source",
+          "type": "string",
+          "aliases": [
+            "source"
+          ]
+        },
+        {
+          "id": "start_time",
+          "type": "string",
+          "aliases": [
+            "start_time"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "subresource_uris",
+          "type": "object",
+          "aliases": [
+            "subresource_uris"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SipCredentialList",
+      "aliases": [
+        "SipCredentialList",
+        "api.v2010.account.sip_credential_list"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SipDomain",
+      "aliases": [
+        "SipDomain",
+        "api.v2010.account.sip_domain"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SipIpAccessControlList",
+      "aliases": [
+        "SipIpAccessControlList",
+        "api.v2010.account.sip_ip_access_control_list"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Transcription",
+      "aliases": [
+        "Transcription",
+        "api.v2010.account.transcription"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account_sid",
+          "type": "string",
+          "aliases": [
+            "account_sid"
+          ]
+        },
+        {
+          "id": "api_version",
+          "type": "string",
+          "aliases": [
+            "api_version"
+          ]
+        },
+        {
+          "id": "date_created",
+          "type": "string",
+          "aliases": [
+            "date_created"
+          ]
+        },
+        {
+          "id": "date_updated",
+          "type": "string",
+          "aliases": [
+            "date_updated"
+          ]
+        },
+        {
+          "id": "duration",
+          "type": "string",
+          "aliases": [
+            "duration"
+          ]
+        },
+        {
+          "id": "price",
+          "type": "number",
+          "aliases": [
+            "price"
+          ]
+        },
+        {
+          "id": "price_unit",
+          "type": "string",
+          "aliases": [
+            "price_unit"
+          ]
+        },
+        {
+          "id": "recording_sid",
+          "type": "string",
+          "aliases": [
+            "recording_sid"
+          ]
+        },
+        {
+          "id": "sid",
+          "type": "string",
+          "aliases": [
+            "sid"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "transcription_text",
+          "type": "string",
+          "aliases": [
+            "transcription_text"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "UsageTrigger",
+      "aliases": [
+        "UsageTrigger",
+        "api.v2010.account.usage_trigger"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

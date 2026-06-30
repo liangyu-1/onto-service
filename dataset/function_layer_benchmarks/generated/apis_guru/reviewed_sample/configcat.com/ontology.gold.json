@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "name": "configcat.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "configcat.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Organization",
+      "aliases": ["Organization", "organization"],
+      "properties": [
+        {"id": "organizationId", "type": "string", "aliases": ["organizationId", "organization id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Product",
+      "aliases": ["Product", "product"],
+      "properties": [
+        {"id": "productId", "type": "string", "aliases": ["productId", "product id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "order", "type": "integer", "aliases": ["order"], "required": false},
+        {"id": "reasonRequired", "type": "boolean", "aliases": ["reasonRequired", "reason required"], "required": false},
+        {"id": "organization", "type": "object", "aliases": ["organization"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Config",
+      "aliases": ["Config", "config"],
+      "properties": [
+        {"id": "configId", "type": "string", "aliases": ["configId", "config id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "order", "type": "integer", "aliases": ["order"], "required": false},
+        {"id": "product", "type": "object", "aliases": ["product"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Environment",
+      "aliases": ["Environment", "environment"],
+      "properties": [
+        {"id": "environmentId", "type": "string", "aliases": ["environmentId", "environment id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "color", "type": "string", "aliases": ["color"], "required": false},
+        {"id": "order", "type": "integer", "aliases": ["order"], "required": false},
+        {"id": "reasonRequired", "type": "boolean", "aliases": ["reasonRequired", "reason required"], "required": false},
+        {"id": "product", "type": "object", "aliases": ["product"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Setting",
+      "aliases": ["Setting", "setting"],
+      "properties": [
+        {"id": "settingId", "type": "integer", "aliases": ["settingId", "setting id"], "required": false},
+        {"id": "key", "type": "string", "aliases": ["key"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "hint", "type": "string", "aliases": ["hint"], "required": false},
+        {"id": "configId", "type": "string", "aliases": ["configId", "config id"], "required": false},
+        {"id": "configName", "type": "string", "aliases": ["configName", "config name"], "required": false},
+        {"id": "settingType", "type": "string", "aliases": ["settingType", "setting type"], "required": false},
+        {"id": "order", "type": "integer", "aliases": ["order"], "required": false},
+        {"id": "tags", "type": "array", "aliases": ["tags"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SettingValue",
+      "aliases": ["SettingValue", "setting value", "setting_value"],
+      "properties": [
+        {"id": "value", "type": "object", "aliases": ["value"], "required": false},
+        {"id": "rolloutRules", "type": "array", "aliases": ["rolloutRules", "rollout rules"], "required": false},
+        {"id": "rolloutPercentageItems", "type": "array", "aliases": ["rolloutPercentageItems", "rollout percentage items"], "required": false},
+        {"id": "integrationLinks", "type": "array", "aliases": ["integrationLinks", "integration links"], "required": false},
+        {"id": "readOnly", "type": "boolean", "aliases": ["readOnly", "read only"], "required": false},
+        {"id": "updatedAt", "type": "string", "aliases": ["updatedAt", "updated at"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Segment",
+      "aliases": ["Segment", "segment"],
+      "properties": [
+        {"id": "segmentId", "type": "string", "aliases": ["segmentId", "segment id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "description", "type": "string", "aliases": ["description"], "required": false},
+        {"id": "comparisonAttribute", "type": "string", "aliases": ["comparisonAttribute", "comparison attribute"], "required": false},
+        {"id": "comparisonValue", "type": "string", "aliases": ["comparisonValue", "comparison value"], "required": false},
+        {"id": "comparator", "type": "string", "aliases": ["comparator"], "required": false},
+        {"id": "createdAt", "type": "string", "aliases": ["createdAt", "created at"], "required": false},
+        {"id": "updatedAt", "type": "string", "aliases": ["updatedAt", "updated at"], "required": false},
+        {"id": "product", "type": "object", "aliases": ["product"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Tag",
+      "aliases": ["Tag", "tag"],
+      "properties": [
+        {"id": "tagId", "type": "integer", "aliases": ["tagId", "tag id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "color", "type": "string", "aliases": ["color"], "required": false},
+        {"id": "product", "type": "object", "aliases": ["product"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PermissionGroup",
+      "aliases": ["PermissionGroup", "permission group", "permission_group"],
+      "properties": [
+        {"id": "permissionGroupId", "type": "integer", "aliases": ["permissionGroupId", "permission group id"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "accessType", "type": "string", "aliases": ["accessType", "access type"], "required": false},
+        {"id": "newEnvironmentAccessType", "type": "string", "aliases": ["newEnvironmentAccessType", "new environment access type"], "required": false},
+        {"id": "environmentAccesses", "type": "array", "aliases": ["environmentAccesses", "environment accesses"], "required": false},
+        {"id": "product", "type": "object", "aliases": ["product"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Member",
+      "aliases": ["Member", "member"],
+      "properties": [
+        {"id": "userId", "type": "string", "aliases": ["userId", "user id"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "fullName", "type": "string", "aliases": ["fullName", "full name"], "required": false},
+        {"id": "productId", "type": "string", "aliases": ["productId", "product id"], "required": false},
+        {"id": "permissionGroupId", "type": "integer", "aliases": ["permissionGroupId", "permission group id"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

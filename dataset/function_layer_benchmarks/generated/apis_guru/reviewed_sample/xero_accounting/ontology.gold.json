@@ -1,0 +1,2626 @@
+{
+  "metadata": {
+    "name": "xero_accounting_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "xero_accounting",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": [
+        "Account",
+        "Account"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "AccountID",
+          "type": "string",
+          "aliases": [
+            "AccountID"
+          ]
+        },
+        {
+          "id": "AddToWatchlist",
+          "type": "boolean",
+          "aliases": [
+            "AddToWatchlist"
+          ]
+        },
+        {
+          "id": "BankAccountNumber",
+          "type": "string",
+          "aliases": [
+            "BankAccountNumber"
+          ]
+        },
+        {
+          "id": "BankAccountType",
+          "type": "string",
+          "aliases": [
+            "BankAccountType"
+          ]
+        },
+        {
+          "id": "Class",
+          "type": "string",
+          "aliases": [
+            "Class"
+          ]
+        },
+        {
+          "id": "Code",
+          "type": "string",
+          "aliases": [
+            "Code"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "Description",
+          "type": "string",
+          "aliases": [
+            "Description"
+          ]
+        },
+        {
+          "id": "EnablePaymentsToAccount",
+          "type": "boolean",
+          "aliases": [
+            "EnablePaymentsToAccount"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "Name",
+          "type": "string",
+          "aliases": [
+            "Name"
+          ]
+        },
+        {
+          "id": "ReportingCode",
+          "type": "string",
+          "aliases": [
+            "ReportingCode"
+          ]
+        },
+        {
+          "id": "ReportingCodeName",
+          "type": "string",
+          "aliases": [
+            "ReportingCodeName"
+          ]
+        },
+        {
+          "id": "ShowInExpenseClaims",
+          "type": "boolean",
+          "aliases": [
+            "ShowInExpenseClaims"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "SystemAccount",
+          "type": "string",
+          "aliases": [
+            "SystemAccount"
+          ]
+        },
+        {
+          "id": "TaxType",
+          "type": "string",
+          "aliases": [
+            "TaxType"
+          ]
+        },
+        {
+          "id": "Type",
+          "type": "string",
+          "aliases": [
+            "Type"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Attachment",
+      "aliases": [
+        "Attachment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "AttachmentID",
+          "type": "string",
+          "aliases": [
+            "AttachmentID"
+          ]
+        },
+        {
+          "id": "ContentLength",
+          "type": "integer",
+          "aliases": [
+            "ContentLength"
+          ]
+        },
+        {
+          "id": "FileName",
+          "type": "string",
+          "aliases": [
+            "FileName"
+          ]
+        },
+        {
+          "id": "IncludeOnline",
+          "type": "boolean",
+          "aliases": [
+            "IncludeOnline"
+          ]
+        },
+        {
+          "id": "MimeType",
+          "type": "string",
+          "aliases": [
+            "MimeType"
+          ]
+        },
+        {
+          "id": "Url",
+          "type": "string",
+          "aliases": [
+            "Url"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "BankTransaction",
+      "aliases": [
+        "BankTransaction",
+        "BankTransaction"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "BankAccount",
+          "type": "object",
+          "aliases": [
+            "BankAccount",
+            "Account"
+          ]
+        },
+        {
+          "id": "BankTransactionID",
+          "type": "string",
+          "aliases": [
+            "BankTransactionID"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "IsReconciled",
+          "type": "boolean",
+          "aliases": [
+            "IsReconciled"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "OverpaymentID",
+          "type": "string",
+          "aliases": [
+            "OverpaymentID"
+          ]
+        },
+        {
+          "id": "PrepaymentID",
+          "type": "string",
+          "aliases": [
+            "PrepaymentID"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        },
+        {
+          "id": "SubTotal",
+          "type": "number",
+          "aliases": [
+            "SubTotal"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        },
+        {
+          "id": "TotalTax",
+          "type": "number",
+          "aliases": [
+            "TotalTax"
+          ]
+        },
+        {
+          "id": "Type",
+          "type": "string",
+          "aliases": [
+            "Type"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "BankTransfer",
+      "aliases": [
+        "BankTransfer"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Amount",
+          "type": "number",
+          "aliases": [
+            "Amount"
+          ]
+        },
+        {
+          "id": "BankTransferID",
+          "type": "string",
+          "aliases": [
+            "BankTransferID"
+          ]
+        },
+        {
+          "id": "CreatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "CreatedDateUTC"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "FromBankAccount",
+          "type": "object",
+          "aliases": [
+            "FromBankAccount"
+          ]
+        },
+        {
+          "id": "FromBankTransactionID",
+          "type": "string",
+          "aliases": [
+            "FromBankTransactionID"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "ToBankAccount",
+          "type": "object",
+          "aliases": [
+            "ToBankAccount"
+          ]
+        },
+        {
+          "id": "ToBankTransactionID",
+          "type": "string",
+          "aliases": [
+            "ToBankTransactionID"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Budget",
+      "aliases": [
+        "Budget",
+        "Budget"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Contact",
+      "aliases": [
+        "Contact",
+        "Contact"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "AccountNumber",
+          "type": "string",
+          "aliases": [
+            "AccountNumber"
+          ]
+        },
+        {
+          "id": "AccountsPayableTaxType",
+          "type": "string",
+          "aliases": [
+            "AccountsPayableTaxType"
+          ]
+        },
+        {
+          "id": "AccountsReceivableTaxType",
+          "type": "string",
+          "aliases": [
+            "AccountsReceivableTaxType"
+          ]
+        },
+        {
+          "id": "Addresses",
+          "type": "array",
+          "aliases": [
+            "Addresses"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "Balances",
+          "type": "object",
+          "aliases": [
+            "Balances",
+            "Balances"
+          ]
+        },
+        {
+          "id": "BankAccountDetails",
+          "type": "string",
+          "aliases": [
+            "BankAccountDetails"
+          ]
+        },
+        {
+          "id": "BatchPayments",
+          "type": "object",
+          "aliases": [
+            "BatchPayments",
+            "BatchPaymentDetails"
+          ]
+        },
+        {
+          "id": "BrandingTheme",
+          "type": "object",
+          "aliases": [
+            "BrandingTheme",
+            "BrandingTheme"
+          ]
+        },
+        {
+          "id": "ContactGroups",
+          "type": "array",
+          "aliases": [
+            "ContactGroups"
+          ]
+        },
+        {
+          "id": "ContactID",
+          "type": "string",
+          "aliases": [
+            "ContactID"
+          ]
+        },
+        {
+          "id": "ContactNumber",
+          "type": "string",
+          "aliases": [
+            "ContactNumber"
+          ]
+        },
+        {
+          "id": "ContactPersons",
+          "type": "array",
+          "aliases": [
+            "ContactPersons"
+          ]
+        },
+        {
+          "id": "ContactStatus",
+          "type": "string",
+          "aliases": [
+            "ContactStatus"
+          ]
+        },
+        {
+          "id": "DefaultCurrency",
+          "type": "string",
+          "aliases": [
+            "DefaultCurrency"
+          ]
+        },
+        {
+          "id": "Discount",
+          "type": "number",
+          "aliases": [
+            "Discount"
+          ]
+        },
+        {
+          "id": "EmailAddress",
+          "type": "string",
+          "aliases": [
+            "EmailAddress"
+          ]
+        },
+        {
+          "id": "FirstName",
+          "type": "string",
+          "aliases": [
+            "FirstName"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "HasValidationErrors",
+          "type": "boolean",
+          "aliases": [
+            "HasValidationErrors"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CreditNote",
+      "aliases": [
+        "CreditNote",
+        "CreditNote"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Allocations",
+          "type": "array",
+          "aliases": [
+            "Allocations"
+          ]
+        },
+        {
+          "id": "AppliedAmount",
+          "type": "number",
+          "aliases": [
+            "AppliedAmount"
+          ]
+        },
+        {
+          "id": "BrandingThemeID",
+          "type": "string",
+          "aliases": [
+            "BrandingThemeID"
+          ]
+        },
+        {
+          "id": "CISDeduction",
+          "type": "number",
+          "aliases": [
+            "CISDeduction"
+          ]
+        },
+        {
+          "id": "CISRate",
+          "type": "number",
+          "aliases": [
+            "CISRate"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CreditNoteID",
+          "type": "string",
+          "aliases": [
+            "CreditNoteID"
+          ]
+        },
+        {
+          "id": "CreditNoteNumber",
+          "type": "string",
+          "aliases": [
+            "CreditNoteNumber"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "DueDate",
+          "type": "string",
+          "aliases": [
+            "DueDate"
+          ]
+        },
+        {
+          "id": "FullyPaidOnDate",
+          "type": "string",
+          "aliases": [
+            "FullyPaidOnDate"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "HasErrors",
+          "type": "boolean",
+          "aliases": [
+            "HasErrors"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "Payments",
+          "type": "array",
+          "aliases": [
+            "Payments"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "RemainingCredit",
+          "type": "number",
+          "aliases": [
+            "RemainingCredit"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Currency",
+      "aliases": [
+        "Currency"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Code",
+          "type": "string",
+          "aliases": [
+            "Code"
+          ]
+        },
+        {
+          "id": "Description",
+          "type": "string",
+          "aliases": [
+            "Description"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Employee",
+      "aliases": [
+        "Employee",
+        "Employee"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "EmployeeID",
+          "type": "string",
+          "aliases": [
+            "EmployeeID"
+          ]
+        },
+        {
+          "id": "ExternalLink",
+          "type": "object",
+          "aliases": [
+            "ExternalLink",
+            "ExternalLink"
+          ]
+        },
+        {
+          "id": "FirstName",
+          "type": "string",
+          "aliases": [
+            "FirstName"
+          ]
+        },
+        {
+          "id": "LastName",
+          "type": "string",
+          "aliases": [
+            "LastName"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ExpenseClaim",
+      "aliases": [
+        "ExpenseClaim",
+        "ExpenseClaim"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "AmountDue",
+          "type": "number",
+          "aliases": [
+            "AmountDue"
+          ]
+        },
+        {
+          "id": "AmountPaid",
+          "type": "number",
+          "aliases": [
+            "AmountPaid"
+          ]
+        },
+        {
+          "id": "ExpenseClaimID",
+          "type": "string",
+          "aliases": [
+            "ExpenseClaimID"
+          ]
+        },
+        {
+          "id": "PaymentDueDate",
+          "type": "string",
+          "aliases": [
+            "PaymentDueDate"
+          ]
+        },
+        {
+          "id": "Payments",
+          "type": "array",
+          "aliases": [
+            "Payments"
+          ]
+        },
+        {
+          "id": "ReceiptID",
+          "type": "string",
+          "aliases": [
+            "ReceiptID"
+          ]
+        },
+        {
+          "id": "Receipts",
+          "type": "array",
+          "aliases": [
+            "Receipts"
+          ]
+        },
+        {
+          "id": "ReportingDate",
+          "type": "string",
+          "aliases": [
+            "ReportingDate"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "User",
+          "type": "object",
+          "aliases": [
+            "User",
+            "User"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Invoice",
+      "aliases": [
+        "Invoice",
+        "Invoice"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "AmountCredited",
+          "type": "number",
+          "aliases": [
+            "AmountCredited"
+          ]
+        },
+        {
+          "id": "AmountDue",
+          "type": "number",
+          "aliases": [
+            "AmountDue"
+          ]
+        },
+        {
+          "id": "AmountPaid",
+          "type": "number",
+          "aliases": [
+            "AmountPaid"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "BrandingThemeID",
+          "type": "string",
+          "aliases": [
+            "BrandingThemeID"
+          ]
+        },
+        {
+          "id": "CISDeduction",
+          "type": "number",
+          "aliases": [
+            "CISDeduction"
+          ]
+        },
+        {
+          "id": "CISRate",
+          "type": "number",
+          "aliases": [
+            "CISRate"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CreditNotes",
+          "type": "array",
+          "aliases": [
+            "CreditNotes"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "DueDate",
+          "type": "string",
+          "aliases": [
+            "DueDate"
+          ]
+        },
+        {
+          "id": "ExpectedPaymentDate",
+          "type": "string",
+          "aliases": [
+            "ExpectedPaymentDate"
+          ]
+        },
+        {
+          "id": "FullyPaidOnDate",
+          "type": "string",
+          "aliases": [
+            "FullyPaidOnDate"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "HasErrors",
+          "type": "boolean",
+          "aliases": [
+            "HasErrors"
+          ]
+        },
+        {
+          "id": "InvoiceID",
+          "type": "string",
+          "aliases": [
+            "InvoiceID"
+          ]
+        },
+        {
+          "id": "InvoiceNumber",
+          "type": "string",
+          "aliases": [
+            "InvoiceNumber"
+          ]
+        },
+        {
+          "id": "IsDiscounted",
+          "type": "boolean",
+          "aliases": [
+            "IsDiscounted"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Item",
+      "aliases": [
+        "Item",
+        "Item"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Code",
+          "type": "string",
+          "aliases": [
+            "Code"
+          ]
+        },
+        {
+          "id": "Description",
+          "type": "string",
+          "aliases": [
+            "Description"
+          ]
+        },
+        {
+          "id": "InventoryAssetAccountCode",
+          "type": "string",
+          "aliases": [
+            "InventoryAssetAccountCode"
+          ]
+        },
+        {
+          "id": "IsPurchased",
+          "type": "boolean",
+          "aliases": [
+            "IsPurchased"
+          ]
+        },
+        {
+          "id": "IsSold",
+          "type": "boolean",
+          "aliases": [
+            "IsSold"
+          ]
+        },
+        {
+          "id": "IsTrackedAsInventory",
+          "type": "boolean",
+          "aliases": [
+            "IsTrackedAsInventory"
+          ]
+        },
+        {
+          "id": "ItemID",
+          "type": "string",
+          "aliases": [
+            "ItemID"
+          ]
+        },
+        {
+          "id": "Name",
+          "type": "string",
+          "aliases": [
+            "Name"
+          ]
+        },
+        {
+          "id": "PurchaseDescription",
+          "type": "string",
+          "aliases": [
+            "PurchaseDescription"
+          ]
+        },
+        {
+          "id": "PurchaseDetails",
+          "type": "object",
+          "aliases": [
+            "PurchaseDetails",
+            "Purchase"
+          ]
+        },
+        {
+          "id": "QuantityOnHand",
+          "type": "number",
+          "aliases": [
+            "QuantityOnHand"
+          ]
+        },
+        {
+          "id": "SalesDetails",
+          "type": "object",
+          "aliases": [
+            "SalesDetails",
+            "Purchase"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        },
+        {
+          "id": "TotalCostPool",
+          "type": "number",
+          "aliases": [
+            "TotalCostPool"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Journal",
+      "aliases": [
+        "Journal",
+        "Journal"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "CreatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "CreatedDateUTC"
+          ]
+        },
+        {
+          "id": "JournalDate",
+          "type": "string",
+          "aliases": [
+            "JournalDate"
+          ]
+        },
+        {
+          "id": "JournalID",
+          "type": "string",
+          "aliases": [
+            "JournalID"
+          ]
+        },
+        {
+          "id": "JournalLines",
+          "type": "array",
+          "aliases": [
+            "JournalLines"
+          ]
+        },
+        {
+          "id": "JournalNumber",
+          "type": "integer",
+          "aliases": [
+            "JournalNumber"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "SourceID",
+          "type": "string",
+          "aliases": [
+            "SourceID"
+          ]
+        },
+        {
+          "id": "SourceType",
+          "type": "string",
+          "aliases": [
+            "SourceType"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "ManualJournal",
+      "aliases": [
+        "ManualJournal",
+        "ManualJournal"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "JournalLines",
+          "type": "array",
+          "aliases": [
+            "JournalLines"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "ManualJournalID",
+          "type": "string",
+          "aliases": [
+            "ManualJournalID"
+          ]
+        },
+        {
+          "id": "Narration",
+          "type": "string",
+          "aliases": [
+            "Narration"
+          ]
+        },
+        {
+          "id": "ShowOnCashBasisReports",
+          "type": "boolean",
+          "aliases": [
+            "ShowOnCashBasisReports"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "Url",
+          "type": "string",
+          "aliases": [
+            "Url"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        },
+        {
+          "id": "Warnings",
+          "type": "array",
+          "aliases": [
+            "Warnings"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Overpayment",
+      "aliases": [
+        "Overpayment",
+        "Overpayment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Allocations",
+          "type": "array",
+          "aliases": [
+            "Allocations"
+          ]
+        },
+        {
+          "id": "AppliedAmount",
+          "type": "number",
+          "aliases": [
+            "AppliedAmount"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "OverpaymentID",
+          "type": "string",
+          "aliases": [
+            "OverpaymentID"
+          ]
+        },
+        {
+          "id": "Payments",
+          "type": "array",
+          "aliases": [
+            "Payments"
+          ]
+        },
+        {
+          "id": "RemainingCredit",
+          "type": "number",
+          "aliases": [
+            "RemainingCredit"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "SubTotal",
+          "type": "number",
+          "aliases": [
+            "SubTotal"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        },
+        {
+          "id": "TotalTax",
+          "type": "number",
+          "aliases": [
+            "TotalTax"
+          ]
+        },
+        {
+          "id": "Type",
+          "type": "string",
+          "aliases": [
+            "Type"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Payment",
+      "aliases": [
+        "Payment",
+        "Payment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Account",
+          "type": "object",
+          "aliases": [
+            "Account",
+            "Account"
+          ]
+        },
+        {
+          "id": "Amount",
+          "type": "number",
+          "aliases": [
+            "Amount"
+          ]
+        },
+        {
+          "id": "BankAccountNumber",
+          "type": "string",
+          "aliases": [
+            "BankAccountNumber"
+          ]
+        },
+        {
+          "id": "BatchPaymentID",
+          "type": "string",
+          "aliases": [
+            "BatchPaymentID"
+          ]
+        },
+        {
+          "id": "Code",
+          "type": "string",
+          "aliases": [
+            "Code"
+          ]
+        },
+        {
+          "id": "CreditNote",
+          "type": "object",
+          "aliases": [
+            "CreditNote",
+            "CreditNote"
+          ]
+        },
+        {
+          "id": "CreditNoteNumber",
+          "type": "string",
+          "aliases": [
+            "CreditNoteNumber"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "Details",
+          "type": "string",
+          "aliases": [
+            "Details"
+          ]
+        },
+        {
+          "id": "HasAccount",
+          "type": "boolean",
+          "aliases": [
+            "HasAccount"
+          ]
+        },
+        {
+          "id": "HasValidationErrors",
+          "type": "boolean",
+          "aliases": [
+            "HasValidationErrors"
+          ]
+        },
+        {
+          "id": "Invoice",
+          "type": "object",
+          "aliases": [
+            "Invoice",
+            "Invoice"
+          ]
+        },
+        {
+          "id": "InvoiceNumber",
+          "type": "string",
+          "aliases": [
+            "InvoiceNumber"
+          ]
+        },
+        {
+          "id": "IsReconciled",
+          "type": "boolean",
+          "aliases": [
+            "IsReconciled"
+          ]
+        },
+        {
+          "id": "Overpayment",
+          "type": "object",
+          "aliases": [
+            "Overpayment",
+            "Overpayment"
+          ]
+        },
+        {
+          "id": "Particulars",
+          "type": "string",
+          "aliases": [
+            "Particulars"
+          ]
+        },
+        {
+          "id": "PaymentID",
+          "type": "string",
+          "aliases": [
+            "PaymentID"
+          ]
+        },
+        {
+          "id": "PaymentType",
+          "type": "string",
+          "aliases": [
+            "PaymentType"
+          ]
+        },
+        {
+          "id": "Prepayment",
+          "type": "object",
+          "aliases": [
+            "Prepayment",
+            "Prepayment"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Prepayment",
+      "aliases": [
+        "Prepayment",
+        "Prepayment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Allocations",
+          "type": "array",
+          "aliases": [
+            "Allocations"
+          ]
+        },
+        {
+          "id": "AppliedAmount",
+          "type": "number",
+          "aliases": [
+            "AppliedAmount"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "PrepaymentID",
+          "type": "string",
+          "aliases": [
+            "PrepaymentID"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "RemainingCredit",
+          "type": "number",
+          "aliases": [
+            "RemainingCredit"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "SubTotal",
+          "type": "number",
+          "aliases": [
+            "SubTotal"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        },
+        {
+          "id": "TotalTax",
+          "type": "number",
+          "aliases": [
+            "TotalTax"
+          ]
+        },
+        {
+          "id": "Type",
+          "type": "string",
+          "aliases": [
+            "Type"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PurchaseOrder",
+      "aliases": [
+        "PurchaseOrder",
+        "PurchaseOrder"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "AttentionTo",
+          "type": "string",
+          "aliases": [
+            "AttentionTo"
+          ]
+        },
+        {
+          "id": "BrandingThemeID",
+          "type": "string",
+          "aliases": [
+            "BrandingThemeID"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "DeliveryAddress",
+          "type": "string",
+          "aliases": [
+            "DeliveryAddress"
+          ]
+        },
+        {
+          "id": "DeliveryDate",
+          "type": "string",
+          "aliases": [
+            "DeliveryDate"
+          ]
+        },
+        {
+          "id": "DeliveryInstructions",
+          "type": "string",
+          "aliases": [
+            "DeliveryInstructions"
+          ]
+        },
+        {
+          "id": "ExpectedArrivalDate",
+          "type": "string",
+          "aliases": [
+            "ExpectedArrivalDate"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "PurchaseOrderID",
+          "type": "string",
+          "aliases": [
+            "PurchaseOrderID"
+          ]
+        },
+        {
+          "id": "PurchaseOrderNumber",
+          "type": "string",
+          "aliases": [
+            "PurchaseOrderNumber"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "SentToContact",
+          "type": "boolean",
+          "aliases": [
+            "SentToContact"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Quote",
+      "aliases": [
+        "Quote",
+        "Quote"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "BrandingThemeID",
+          "type": "string",
+          "aliases": [
+            "BrandingThemeID"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "string",
+          "aliases": [
+            "Contact"
+          ]
+        },
+        {
+          "id": "CurrencyCode",
+          "type": "string",
+          "aliases": [
+            "CurrencyCode"
+          ]
+        },
+        {
+          "id": "CurrencyRate",
+          "type": "number",
+          "aliases": [
+            "CurrencyRate"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "DateString",
+          "type": "string",
+          "aliases": [
+            "DateString"
+          ]
+        },
+        {
+          "id": "ExpiryDate",
+          "type": "string",
+          "aliases": [
+            "ExpiryDate"
+          ]
+        },
+        {
+          "id": "ExpiryDateString",
+          "type": "string",
+          "aliases": [
+            "ExpiryDateString"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "QuoteID",
+          "type": "string",
+          "aliases": [
+            "QuoteID"
+          ]
+        },
+        {
+          "id": "QuoteNumber",
+          "type": "string",
+          "aliases": [
+            "QuoteNumber"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "StatusAttributeString",
+          "type": "string",
+          "aliases": [
+            "StatusAttributeString"
+          ]
+        },
+        {
+          "id": "SubTotal",
+          "type": "number",
+          "aliases": [
+            "SubTotal"
+          ]
+        },
+        {
+          "id": "Summary",
+          "type": "string",
+          "aliases": [
+            "Summary"
+          ]
+        },
+        {
+          "id": "Terms",
+          "type": "string",
+          "aliases": [
+            "Terms"
+          ]
+        },
+        {
+          "id": "Title",
+          "type": "string",
+          "aliases": [
+            "Title"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Receipt",
+      "aliases": [
+        "Receipt",
+        "Receipt"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Attachments",
+          "type": "array",
+          "aliases": [
+            "Attachments"
+          ]
+        },
+        {
+          "id": "Contact",
+          "type": "object",
+          "aliases": [
+            "Contact",
+            "Contact"
+          ]
+        },
+        {
+          "id": "Date",
+          "type": "string",
+          "aliases": [
+            "Date"
+          ]
+        },
+        {
+          "id": "HasAttachments",
+          "type": "boolean",
+          "aliases": [
+            "HasAttachments"
+          ]
+        },
+        {
+          "id": "LineAmountTypes",
+          "type": "string",
+          "aliases": [
+            "LineAmountTypes"
+          ]
+        },
+        {
+          "id": "LineItems",
+          "type": "array",
+          "aliases": [
+            "LineItems"
+          ]
+        },
+        {
+          "id": "ReceiptID",
+          "type": "string",
+          "aliases": [
+            "ReceiptID"
+          ]
+        },
+        {
+          "id": "ReceiptNumber",
+          "type": "string",
+          "aliases": [
+            "ReceiptNumber"
+          ]
+        },
+        {
+          "id": "Reference",
+          "type": "string",
+          "aliases": [
+            "Reference"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "SubTotal",
+          "type": "number",
+          "aliases": [
+            "SubTotal"
+          ]
+        },
+        {
+          "id": "Total",
+          "type": "number",
+          "aliases": [
+            "Total"
+          ]
+        },
+        {
+          "id": "TotalTax",
+          "type": "number",
+          "aliases": [
+            "TotalTax"
+          ]
+        },
+        {
+          "id": "UpdatedDateUTC",
+          "type": "string",
+          "aliases": [
+            "UpdatedDateUTC"
+          ]
+        },
+        {
+          "id": "Url",
+          "type": "string",
+          "aliases": [
+            "Url"
+          ]
+        },
+        {
+          "id": "User",
+          "type": "object",
+          "aliases": [
+            "User",
+            "User"
+          ]
+        },
+        {
+          "id": "ValidationErrors",
+          "type": "array",
+          "aliases": [
+            "ValidationErrors"
+          ]
+        },
+        {
+          "id": "Warnings",
+          "type": "array",
+          "aliases": [
+            "Warnings"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Report",
+      "aliases": [
+        "Report",
+        "ReportWithRows"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Reports",
+          "type": "array",
+          "aliases": [
+            "Reports"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TaxRate",
+      "aliases": [
+        "TaxRate",
+        "TaxRate"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "CanApplyToAssets",
+          "type": "boolean",
+          "aliases": [
+            "CanApplyToAssets"
+          ]
+        },
+        {
+          "id": "CanApplyToEquity",
+          "type": "boolean",
+          "aliases": [
+            "CanApplyToEquity"
+          ]
+        },
+        {
+          "id": "CanApplyToExpenses",
+          "type": "boolean",
+          "aliases": [
+            "CanApplyToExpenses"
+          ]
+        },
+        {
+          "id": "CanApplyToLiabilities",
+          "type": "boolean",
+          "aliases": [
+            "CanApplyToLiabilities"
+          ]
+        },
+        {
+          "id": "CanApplyToRevenue",
+          "type": "boolean",
+          "aliases": [
+            "CanApplyToRevenue"
+          ]
+        },
+        {
+          "id": "DisplayTaxRate",
+          "type": "number",
+          "aliases": [
+            "DisplayTaxRate"
+          ]
+        },
+        {
+          "id": "EffectiveRate",
+          "type": "number",
+          "aliases": [
+            "EffectiveRate"
+          ]
+        },
+        {
+          "id": "Name",
+          "type": "string",
+          "aliases": [
+            "Name"
+          ]
+        },
+        {
+          "id": "ReportTaxType",
+          "type": "string",
+          "aliases": [
+            "ReportTaxType"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "TaxComponents",
+          "type": "array",
+          "aliases": [
+            "TaxComponents"
+          ]
+        },
+        {
+          "id": "TaxType",
+          "type": "string",
+          "aliases": [
+            "TaxType"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TrackingCategory",
+      "aliases": [
+        "TrackingCategory",
+        "TrackingCategory"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "Name",
+          "type": "string",
+          "aliases": [
+            "Name"
+          ]
+        },
+        {
+          "id": "Option",
+          "type": "string",
+          "aliases": [
+            "Option"
+          ]
+        },
+        {
+          "id": "Options",
+          "type": "array",
+          "aliases": [
+            "Options"
+          ]
+        },
+        {
+          "id": "Status",
+          "type": "string",
+          "aliases": [
+            "Status"
+          ]
+        },
+        {
+          "id": "TrackingCategoryID",
+          "type": "string",
+          "aliases": [
+            "TrackingCategoryID"
+          ]
+        },
+        {
+          "id": "TrackingOptionID",
+          "type": "string",
+          "aliases": [
+            "TrackingOptionID"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

@@ -1,0 +1,2188 @@
+{
+  "bound_object_types": [
+    "Member"
+  ],
+  "description": "Returns the current user",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-me",
+    "path": "/v1/me"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns the current user",
+      "source_reference": "get-me",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_me",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "me",
+      "ontology_property": "Member",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Organization"
+  ],
+  "description": "Returns a list of organizations",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-organizations",
+    "path": "/v1/organizations"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of organizations",
+      "source_reference": "get-organizations",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_organizations",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "organizations",
+      "ontology_property": "Organization",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Organization",
+    "Member"
+  ],
+  "description": "Returns organization members",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-organization-members",
+    "path": "/v1/organizations/{organizationId}/members"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Organization not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns organization members",
+      "source_reference": "get-organization-members",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_organization_members",
+  "inputs": [
+    {
+      "name": "organizationId",
+      "ontology_property": "Organization.organizationId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "members",
+      "ontology_property": "Member",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Organization.organizationId == organizationId",
+    "Organization exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Organization",
+    "Member"
+  ],
+  "description": "Delete an organization member",
+  "effects": [
+    "Member deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-organization-member",
+    "path": "/v1/organizations/{organizationId}/members/{userId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Member not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete an organization member",
+      "source_reference": "delete-organization-member",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_organization_member",
+  "inputs": [
+    {
+      "name": "organizationId",
+      "ontology_property": "Organization.organizationId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "userId",
+      "ontology_property": "Member.userId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Organization.organizationId == organizationId",
+    "Organization exists",
+    "Member.userId == userId",
+    "Member exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product"
+  ],
+  "description": "Returns a list of products",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-products",
+    "path": "/v1/products"
+  },
+  "error_contract": [
+    "401: Unauthorized"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a list of products",
+      "source_reference": "get-products",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_products",
+  "inputs": [],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "products",
+      "ontology_property": "Product",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": []
+}
+{
+  "bound_object_types": [
+    "Organization",
+    "Product"
+  ],
+  "description": "Create a product",
+  "effects": [
+    "Product created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-product",
+    "path": "/v1/organizations/{organizationId}/products"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Organization not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a product",
+      "source_reference": "create-product",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_product",
+  "inputs": [
+    {
+      "name": "organizationId",
+      "ontology_property": "Organization.organizationId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "product",
+      "ontology_property": "Product",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "product",
+      "ontology_property": "Product",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Organization.organizationId == organizationId",
+    "Organization exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product"
+  ],
+  "description": "Returns a specific product",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-product",
+    "path": "/v1/products/{productId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific product",
+      "source_reference": "get-product",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_product",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "product",
+      "ontology_property": "Product",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product"
+  ],
+  "description": "Update a product",
+  "effects": [
+    "Product updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-product",
+    "path": "/v1/products/{productId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a product",
+      "source_reference": "update-product",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_product",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "product",
+      "ontology_property": "Product",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "product",
+      "ontology_property": "Product",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product"
+  ],
+  "description": "Delete a product",
+  "effects": [
+    "Product deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-product",
+    "path": "/v1/products/{productId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a product",
+      "source_reference": "delete-product",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_product",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Config"
+  ],
+  "description": "Returns product configs",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-configs",
+    "path": "/v1/products/{productId}/configs"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product configs",
+      "source_reference": "get-configs",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_configs",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "configs",
+      "ontology_property": "Config",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Config"
+  ],
+  "description": "Create a config",
+  "effects": [
+    "Config created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-config",
+    "path": "/v1/products/{productId}/configs"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a config",
+      "source_reference": "create-config",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_config",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "config",
+      "ontology_property": "Config",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "config",
+      "ontology_property": "Config",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Config"
+  ],
+  "description": "Returns a specific config",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-config",
+    "path": "/v1/configs/{configId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Config not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific config",
+      "source_reference": "get-config",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_config",
+  "inputs": [
+    {
+      "name": "configId",
+      "ontology_property": "Config.configId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "config",
+      "ontology_property": "Config",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Config.configId == configId",
+    "Config exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Config"
+  ],
+  "description": "Update a config",
+  "effects": [
+    "Config updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-config",
+    "path": "/v1/configs/{configId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Config not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a config",
+      "source_reference": "update-config",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_config",
+  "inputs": [
+    {
+      "name": "configId",
+      "ontology_property": "Config.configId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "config",
+      "ontology_property": "Config",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "config",
+      "ontology_property": "Config",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Config.configId == configId",
+    "Config exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Config"
+  ],
+  "description": "Delete a config",
+  "effects": [
+    "Config deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-config",
+    "path": "/v1/configs/{configId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Config not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a config",
+      "source_reference": "delete-config",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_config",
+  "inputs": [
+    {
+      "name": "configId",
+      "ontology_property": "Config.configId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Config.configId == configId",
+    "Config exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Environment"
+  ],
+  "description": "Returns product environments",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-environments",
+    "path": "/v1/products/{productId}/environments"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product environments",
+      "source_reference": "get-environments",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_environments",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "environments",
+      "ontology_property": "Environment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Environment"
+  ],
+  "description": "Create an environment",
+  "effects": [
+    "Environment created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-environment",
+    "path": "/v1/products/{productId}/environments"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create an environment",
+      "source_reference": "create-environment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_environment",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "environment",
+      "ontology_property": "Environment",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "environment",
+      "ontology_property": "Environment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Environment"
+  ],
+  "description": "Returns a specific environment",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-environment",
+    "path": "/v1/environments/{environmentId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Environment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific environment",
+      "source_reference": "get-environment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_environment",
+  "inputs": [
+    {
+      "name": "environmentId",
+      "ontology_property": "Environment.environmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "environment",
+      "ontology_property": "Environment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Environment.environmentId == environmentId",
+    "Environment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Environment"
+  ],
+  "description": "Update an environment",
+  "effects": [
+    "Environment updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-environment",
+    "path": "/v1/environments/{environmentId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Environment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update an environment",
+      "source_reference": "update-environment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_environment",
+  "inputs": [
+    {
+      "name": "environmentId",
+      "ontology_property": "Environment.environmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "environment",
+      "ontology_property": "Environment",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "environment",
+      "ontology_property": "Environment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Environment.environmentId == environmentId",
+    "Environment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Environment"
+  ],
+  "description": "Delete an environment",
+  "effects": [
+    "Environment deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-environment",
+    "path": "/v1/environments/{environmentId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Environment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete an environment",
+      "source_reference": "delete-environment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_environment",
+  "inputs": [
+    {
+      "name": "environmentId",
+      "ontology_property": "Environment.environmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Environment.environmentId == environmentId",
+    "Environment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Config",
+    "Setting"
+  ],
+  "description": "Returns config settings",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-settings",
+    "path": "/v1/configs/{configId}/settings"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Config not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns config settings",
+      "source_reference": "get-settings",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_settings",
+  "inputs": [
+    {
+      "name": "configId",
+      "ontology_property": "Config.configId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "settings",
+      "ontology_property": "Setting",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Config.configId == configId",
+    "Config exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Config",
+    "Setting"
+  ],
+  "description": "Create a setting",
+  "effects": [
+    "Setting created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-setting",
+    "path": "/v1/configs/{configId}/settings"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Config not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a setting",
+      "source_reference": "create-setting",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_setting",
+  "inputs": [
+    {
+      "name": "configId",
+      "ontology_property": "Config.configId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "setting",
+      "ontology_property": "Setting",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "setting",
+      "ontology_property": "Setting",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Config.configId == configId",
+    "Config exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Setting"
+  ],
+  "description": "Returns a specific setting",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-setting",
+    "path": "/v1/settings/{settingId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Setting not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific setting",
+      "source_reference": "get-setting",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_setting",
+  "inputs": [
+    {
+      "name": "settingId",
+      "ontology_property": "Setting.settingId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "setting",
+      "ontology_property": "Setting",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Setting.settingId == settingId",
+    "Setting exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Setting"
+  ],
+  "description": "Update a setting",
+  "effects": [
+    "Setting updated"
+  ],
+  "endpoint_binding": {
+    "method": "PATCH",
+    "operation_id": "update-setting",
+    "path": "/v1/settings/{settingId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Setting not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a setting",
+      "source_reference": "update-setting",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_setting",
+  "inputs": [
+    {
+      "name": "settingId",
+      "ontology_property": "Setting.settingId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "patch",
+      "ontology_property": null,
+      "required": true,
+      "semantic_role": "payload",
+      "type": "array"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "setting",
+      "ontology_property": "Setting",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Setting.settingId == settingId",
+    "Setting exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Setting"
+  ],
+  "description": "Delete a setting",
+  "effects": [
+    "Setting deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-setting",
+    "path": "/v1/settings/{settingId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Setting not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a setting",
+      "source_reference": "delete-setting",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_setting",
+  "inputs": [
+    {
+      "name": "settingId",
+      "ontology_property": "Setting.settingId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Setting.settingId == settingId",
+    "Setting exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Environment",
+    "Setting",
+    "SettingValue"
+  ],
+  "description": "Returns a setting value",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-setting-value",
+    "path": "/v1/environments/{environmentId}/settings/{settingId}/value"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Setting or environment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a setting value",
+      "source_reference": "get-setting-value",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_setting_value",
+  "inputs": [
+    {
+      "name": "environmentId",
+      "ontology_property": "Environment.environmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "settingId",
+      "ontology_property": "Setting.settingId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "value",
+      "ontology_property": "SettingValue",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Environment.environmentId == environmentId",
+    "Environment exists",
+    "Setting.settingId == settingId",
+    "Setting exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Environment",
+    "Setting",
+    "SettingValue"
+  ],
+  "description": "Replace a setting value",
+  "effects": [
+    "SettingValue updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "replace-setting-value",
+    "path": "/v1/environments/{environmentId}/settings/{settingId}/value"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Setting or environment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Replace a setting value",
+      "source_reference": "replace-setting-value",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_setting_value",
+  "inputs": [
+    {
+      "name": "environmentId",
+      "ontology_property": "Environment.environmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "settingId",
+      "ontology_property": "Setting.settingId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "ontology_property": "SettingValue",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "value",
+      "ontology_property": "SettingValue",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Environment.environmentId == environmentId",
+    "Environment exists",
+    "Setting.settingId == settingId",
+    "Setting exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Segment"
+  ],
+  "description": "Returns product segments",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-segments",
+    "path": "/v1/products/{productId}/segments"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product segments",
+      "source_reference": "get-segments",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_segments",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "segments",
+      "ontology_property": "Segment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Segment"
+  ],
+  "description": "Create a segment",
+  "effects": [
+    "Segment created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-segment",
+    "path": "/v1/products/{productId}/segments"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a segment",
+      "source_reference": "create-segment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_segment",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "segment",
+      "ontology_property": "Segment",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "segment",
+      "ontology_property": "Segment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Segment"
+  ],
+  "description": "Returns a specific segment",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-segment",
+    "path": "/v1/segments/{segmentId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Segment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific segment",
+      "source_reference": "get-segment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_segment",
+  "inputs": [
+    {
+      "name": "segmentId",
+      "ontology_property": "Segment.segmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "segment",
+      "ontology_property": "Segment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Segment.segmentId == segmentId",
+    "Segment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Segment"
+  ],
+  "description": "Update a segment",
+  "effects": [
+    "Segment updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-segment",
+    "path": "/v1/segments/{segmentId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Segment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a segment",
+      "source_reference": "update-segment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_segment",
+  "inputs": [
+    {
+      "name": "segmentId",
+      "ontology_property": "Segment.segmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "segment",
+      "ontology_property": "Segment",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "segment",
+      "ontology_property": "Segment",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Segment.segmentId == segmentId",
+    "Segment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Segment"
+  ],
+  "description": "Delete a segment",
+  "effects": [
+    "Segment deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-segment",
+    "path": "/v1/segments/{segmentId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Segment not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a segment",
+      "source_reference": "delete-segment",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_segment",
+  "inputs": [
+    {
+      "name": "segmentId",
+      "ontology_property": "Segment.segmentId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Segment.segmentId == segmentId",
+    "Segment exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Tag"
+  ],
+  "description": "Returns product tags",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-tags",
+    "path": "/v1/products/{productId}/tags"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product tags",
+      "source_reference": "get-tags",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_tags",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "tags",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Tag"
+  ],
+  "description": "Create a tag",
+  "effects": [
+    "Tag created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-tag",
+    "path": "/v1/products/{productId}/tags"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a tag",
+      "source_reference": "create-tag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_tag",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Returns a specific tag",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-tag",
+    "path": "/v1/tags/{tagId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Tag not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific tag",
+      "source_reference": "get-tag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_tag",
+  "inputs": [
+    {
+      "name": "tagId",
+      "ontology_property": "Tag.tagId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Tag.tagId == tagId",
+    "Tag exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Update a tag",
+  "effects": [
+    "Tag updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-tag",
+    "path": "/v1/tags/{tagId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Tag not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a tag",
+      "source_reference": "update-tag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_tag",
+  "inputs": [
+    {
+      "name": "tagId",
+      "ontology_property": "Tag.tagId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "tag",
+      "ontology_property": "Tag",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Tag.tagId == tagId",
+    "Tag exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Tag"
+  ],
+  "description": "Delete a tag",
+  "effects": [
+    "Tag deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-tag",
+    "path": "/v1/tags/{tagId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Tag not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a tag",
+      "source_reference": "delete-tag",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_tag",
+  "inputs": [
+    {
+      "name": "tagId",
+      "ontology_property": "Tag.tagId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Tag.tagId == tagId",
+    "Tag exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "PermissionGroup"
+  ],
+  "description": "Returns product permission groups",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-permission-groups",
+    "path": "/v1/products/{productId}/permissions"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product permission groups",
+      "source_reference": "get-permission-groups",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_permission_groups",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "permissionGroups",
+      "ontology_property": "PermissionGroup",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "PermissionGroup"
+  ],
+  "description": "Create a permission group",
+  "effects": [
+    "PermissionGroup created"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "create-permission-group",
+    "path": "/v1/products/{productId}/permissions"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Create a permission group",
+      "source_reference": "create-permission-group",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "create_permission_group",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "permissionGroup",
+      "ontology_property": "PermissionGroup",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [
+    {
+      "name": "permissionGroup",
+      "ontology_property": "PermissionGroup",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "PermissionGroup"
+  ],
+  "description": "Returns a specific permission group",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-permission-group",
+    "path": "/v1/permissions/{permissionGroupId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Permission group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns a specific permission group",
+      "source_reference": "get-permission-group",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_permission_group",
+  "inputs": [
+    {
+      "name": "permissionGroupId",
+      "ontology_property": "PermissionGroup.permissionGroupId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "permissionGroup",
+      "ontology_property": "PermissionGroup",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "PermissionGroup.permissionGroupId == permissionGroupId",
+    "PermissionGroup exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "PermissionGroup"
+  ],
+  "description": "Update a permission group",
+  "effects": [
+    "PermissionGroup updated"
+  ],
+  "endpoint_binding": {
+    "method": "PUT",
+    "operation_id": "update-permission-group",
+    "path": "/v1/permissions/{permissionGroupId}"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Permission group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Update a permission group",
+      "source_reference": "update-permission-group",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "update_permission_group",
+  "inputs": [
+    {
+      "name": "permissionGroupId",
+      "ontology_property": "PermissionGroup.permissionGroupId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    },
+    {
+      "name": "permissionGroup",
+      "ontology_property": "PermissionGroup",
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "update",
+  "outputs": [
+    {
+      "name": "permissionGroup",
+      "ontology_property": "PermissionGroup",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "object"
+    }
+  ],
+  "preconditions": [
+    "PermissionGroup.permissionGroupId == permissionGroupId",
+    "PermissionGroup exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "PermissionGroup"
+  ],
+  "description": "Delete a permission group",
+  "effects": [
+    "PermissionGroup deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-permission-group",
+    "path": "/v1/permissions/{permissionGroupId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Permission group not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a permission group",
+      "source_reference": "delete-permission-group",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_permission_group",
+  "inputs": [
+    {
+      "name": "permissionGroupId",
+      "ontology_property": "PermissionGroup.permissionGroupId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "integer"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "PermissionGroup.permissionGroupId == permissionGroupId",
+    "PermissionGroup exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Member"
+  ],
+  "description": "Returns product members",
+  "effects": [],
+  "endpoint_binding": {
+    "method": "GET",
+    "operation_id": "get-product-members",
+    "path": "/v1/products/{productId}/members"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Returns product members",
+      "source_reference": "get-product-members",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "get_product_members",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "read",
+  "outputs": [
+    {
+      "name": "members",
+      "ontology_property": "Member",
+      "required": false,
+      "semantic_role": "target_object",
+      "type": "array"
+    }
+  ],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Member"
+  ],
+  "description": "Invite members",
+  "effects": [
+    "Member invited"
+  ],
+  "endpoint_binding": {
+    "method": "POST",
+    "operation_id": "invite-member",
+    "path": "/v1/products/{productId}/members/invite"
+  },
+  "error_contract": [
+    "400: Bad Request",
+    "401: Unauthorized",
+    "404: Product not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Invite members",
+      "source_reference": "invite-member",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "invite_member",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "invite",
+      "ontology_property": null,
+      "required": true,
+      "semantic_role": "payload",
+      "type": "object"
+    }
+  ],
+  "operation_kind": "create",
+  "outputs": [],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists"
+  ]
+}
+{
+  "bound_object_types": [
+    "Product",
+    "Member"
+  ],
+  "description": "Delete a product member",
+  "effects": [
+    "Member deleted"
+  ],
+  "endpoint_binding": {
+    "method": "DELETE",
+    "operation_id": "delete-product-member",
+    "path": "/v1/products/{productId}/members/{userId}"
+  },
+  "error_contract": [
+    "401: Unauthorized",
+    "404: Member not found"
+  ],
+  "evidence": [
+    {
+      "claim": "Delete a product member",
+      "source_reference": "delete-product-member",
+      "source_type": "openapi"
+    }
+  ],
+  "function_id": "delete_product_member",
+  "inputs": [
+    {
+      "name": "productId",
+      "ontology_property": "Product.productId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "userId",
+      "ontology_property": "Member.userId",
+      "required": true,
+      "semantic_role": "identifier",
+      "type": "string"
+    }
+  ],
+  "operation_kind": "delete",
+  "outputs": [],
+  "preconditions": [
+    "Product.productId == productId",
+    "Product exists",
+    "Member.userId == userId",
+    "Member exists"
+  ]
+}

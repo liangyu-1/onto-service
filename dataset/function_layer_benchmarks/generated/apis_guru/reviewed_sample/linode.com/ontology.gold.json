@@ -1,0 +1,1675 @@
+{
+  "metadata": {
+    "name": "linode.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "linode.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": [
+        "Account",
+        "Account"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "active_promotions",
+          "type": "array",
+          "aliases": [
+            "active_promotions"
+          ]
+        },
+        {
+          "id": "active_since",
+          "type": "string",
+          "aliases": [
+            "active_since"
+          ]
+        },
+        {
+          "id": "address_1",
+          "type": "string",
+          "aliases": [
+            "address_1"
+          ]
+        },
+        {
+          "id": "address_2",
+          "type": "string",
+          "aliases": [
+            "address_2"
+          ]
+        },
+        {
+          "id": "balance",
+          "type": "number",
+          "aliases": [
+            "balance"
+          ]
+        },
+        {
+          "id": "balance_uninvoiced",
+          "type": "number",
+          "aliases": [
+            "balance_uninvoiced"
+          ]
+        },
+        {
+          "id": "billing_source",
+          "type": "string",
+          "aliases": [
+            "billing_source"
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "array",
+          "aliases": [
+            "capabilities"
+          ]
+        },
+        {
+          "id": "city",
+          "type": "string",
+          "aliases": [
+            "city"
+          ]
+        },
+        {
+          "id": "company",
+          "type": "string",
+          "aliases": [
+            "company"
+          ]
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ]
+        },
+        {
+          "id": "credit_card",
+          "type": "object",
+          "aliases": [
+            "credit_card"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "euuid",
+          "type": "string",
+          "aliases": [
+            "euuid"
+          ]
+        },
+        {
+          "id": "first_name",
+          "type": "string",
+          "aliases": [
+            "first_name"
+          ]
+        },
+        {
+          "id": "last_name",
+          "type": "string",
+          "aliases": [
+            "last_name"
+          ]
+        },
+        {
+          "id": "phone",
+          "type": "string",
+          "aliases": [
+            "phone"
+          ]
+        },
+        {
+          "id": "state",
+          "type": "string",
+          "aliases": [
+            "state"
+          ]
+        },
+        {
+          "id": "tax_id",
+          "type": "string",
+          "aliases": [
+            "tax_id"
+          ]
+        },
+        {
+          "id": "zip",
+          "type": "string",
+          "aliases": [
+            "zip"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Domain",
+      "aliases": [
+        "Domain",
+        "Domain"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "axfr_ips",
+          "type": "array",
+          "aliases": [
+            "axfr_ips"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "domain",
+          "type": "string",
+          "aliases": [
+            "domain"
+          ]
+        },
+        {
+          "id": "expire_sec",
+          "type": "integer",
+          "aliases": [
+            "expire_sec"
+          ]
+        },
+        {
+          "id": "group",
+          "type": "string",
+          "aliases": [
+            "group"
+          ]
+        },
+        {
+          "id": "master_ips",
+          "type": "array",
+          "aliases": [
+            "master_ips"
+          ]
+        },
+        {
+          "id": "refresh_sec",
+          "type": "integer",
+          "aliases": [
+            "refresh_sec"
+          ]
+        },
+        {
+          "id": "retry_sec",
+          "type": "integer",
+          "aliases": [
+            "retry_sec"
+          ]
+        },
+        {
+          "id": "soa_email",
+          "type": "string",
+          "aliases": [
+            "soa_email"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "ttl_sec",
+          "type": "integer",
+          "aliases": [
+            "ttl_sec"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DomainRecord",
+      "aliases": [
+        "DomainRecord",
+        "DomainRecord"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "port",
+          "type": "integer",
+          "aliases": [
+            "port"
+          ]
+        },
+        {
+          "id": "priority",
+          "type": "integer",
+          "aliases": [
+            "priority"
+          ]
+        },
+        {
+          "id": "protocol",
+          "type": "string",
+          "aliases": [
+            "protocol"
+          ]
+        },
+        {
+          "id": "service",
+          "type": "string",
+          "aliases": [
+            "service"
+          ]
+        },
+        {
+          "id": "tag",
+          "type": "string",
+          "aliases": [
+            "tag"
+          ]
+        },
+        {
+          "id": "target",
+          "type": "string",
+          "aliases": [
+            "target"
+          ]
+        },
+        {
+          "id": "ttl_sec",
+          "type": "integer",
+          "aliases": [
+            "ttl_sec"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        },
+        {
+          "id": "weight",
+          "type": "integer",
+          "aliases": [
+            "weight"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Firewall",
+      "aliases": [
+        "Firewall",
+        "Firewall"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "rules",
+          "type": "object",
+          "aliases": [
+            "rules"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "IP",
+      "aliases": [
+        "IP"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Image",
+      "aliases": [
+        "Image",
+        "Image"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "created_by",
+          "type": "string",
+          "aliases": [
+            "created_by"
+          ]
+        },
+        {
+          "id": "deprecated",
+          "type": "boolean",
+          "aliases": [
+            "deprecated"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "eol",
+          "type": "string",
+          "aliases": [
+            "eol"
+          ]
+        },
+        {
+          "id": "expiry",
+          "type": "string",
+          "aliases": [
+            "expiry"
+          ]
+        },
+        {
+          "id": "is_public",
+          "type": "boolean",
+          "aliases": [
+            "is_public"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "size",
+          "type": "integer",
+          "aliases": [
+            "size"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        },
+        {
+          "id": "vendor",
+          "type": "string",
+          "aliases": [
+            "vendor"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "KubernetesCluster",
+      "aliases": [
+        "KubernetesCluster",
+        "KubernetesCluster"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Linode",
+      "aliases": [
+        "Linode",
+        "Linode"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "alerts",
+          "type": "object",
+          "aliases": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "backups",
+          "type": "object",
+          "aliases": [
+            "backups"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "group",
+          "type": "string",
+          "aliases": [
+            "group"
+          ]
+        },
+        {
+          "id": "host_uuid",
+          "type": "string",
+          "aliases": [
+            "host_uuid"
+          ]
+        },
+        {
+          "id": "hypervisor",
+          "type": "string",
+          "aliases": [
+            "hypervisor"
+          ]
+        },
+        {
+          "id": "ipv4",
+          "type": "array",
+          "aliases": [
+            "ipv4"
+          ]
+        },
+        {
+          "id": "ipv6",
+          "type": "string",
+          "aliases": [
+            "ipv6"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "string",
+          "aliases": [
+            "region"
+          ]
+        },
+        {
+          "id": "specs",
+          "type": "object",
+          "aliases": [
+            "specs"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        },
+        {
+          "id": "watchdog_enabled",
+          "type": "boolean",
+          "aliases": [
+            "watchdog_enabled"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LinodeConfig",
+      "aliases": [
+        "LinodeConfig",
+        "LinodeConfig"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "comments",
+          "type": "string",
+          "aliases": [
+            "comments"
+          ]
+        },
+        {
+          "id": "devices",
+          "type": "object",
+          "aliases": [
+            "devices",
+            "Devices"
+          ]
+        },
+        {
+          "id": "helpers",
+          "type": "object",
+          "aliases": [
+            "helpers"
+          ]
+        },
+        {
+          "id": "interfaces",
+          "type": "object",
+          "aliases": [
+            "interfaces",
+            "LinodeConfigInterfaces"
+          ]
+        },
+        {
+          "id": "kernel",
+          "type": "string",
+          "aliases": [
+            "kernel"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "memory_limit",
+          "type": "integer",
+          "aliases": [
+            "memory_limit"
+          ]
+        },
+        {
+          "id": "root_device",
+          "type": "string",
+          "aliases": [
+            "root_device"
+          ]
+        },
+        {
+          "id": "run_level",
+          "type": "string",
+          "aliases": [
+            "run_level"
+          ]
+        },
+        {
+          "id": "virt_mode",
+          "type": "string",
+          "aliases": [
+            "virt_mode"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LinodeDisk",
+      "aliases": [
+        "LinodeDisk",
+        "LinodeDisk"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LinodeType",
+      "aliases": [
+        "LinodeType",
+        "LinodeType"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "addons",
+          "type": "object",
+          "aliases": [
+            "addons"
+          ]
+        },
+        {
+          "id": "class",
+          "type": "string",
+          "aliases": [
+            "class"
+          ]
+        },
+        {
+          "id": "disk",
+          "type": "integer",
+          "aliases": [
+            "disk"
+          ]
+        },
+        {
+          "id": "gpus",
+          "type": "integer",
+          "aliases": [
+            "gpus"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "memory",
+          "type": "integer",
+          "aliases": [
+            "memory"
+          ]
+        },
+        {
+          "id": "network_out",
+          "type": "integer",
+          "aliases": [
+            "network_out"
+          ]
+        },
+        {
+          "id": "price",
+          "type": "object",
+          "aliases": [
+            "price"
+          ]
+        },
+        {
+          "id": "successor",
+          "type": "string",
+          "aliases": [
+            "successor"
+          ]
+        },
+        {
+          "id": "transfer",
+          "type": "integer",
+          "aliases": [
+            "transfer"
+          ]
+        },
+        {
+          "id": "vcpus",
+          "type": "integer",
+          "aliases": [
+            "vcpus"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "LongviewClient",
+      "aliases": [
+        "LongviewClient",
+        "LongviewClient"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "api_key",
+          "type": "string",
+          "aliases": [
+            "api_key"
+          ]
+        },
+        {
+          "id": "apps",
+          "type": "object",
+          "aliases": [
+            "apps"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "install_code",
+          "type": "string",
+          "aliases": [
+            "install_code"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Networking",
+      "aliases": [
+        "Networking"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "NodeBalancer",
+      "aliases": [
+        "NodeBalancer",
+        "NodeBalancer"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "client_conn_throttle",
+          "type": "integer",
+          "aliases": [
+            "client_conn_throttle"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "hostname",
+          "type": "string",
+          "aliases": [
+            "hostname"
+          ]
+        },
+        {
+          "id": "ipv4",
+          "type": "string",
+          "aliases": [
+            "ipv4"
+          ]
+        },
+        {
+          "id": "ipv6",
+          "type": "string",
+          "aliases": [
+            "ipv6"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "string",
+          "aliases": [
+            "region"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "transfer",
+          "type": "object",
+          "aliases": [
+            "transfer"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "NodeBalancerConfig",
+      "aliases": [
+        "NodeBalancerConfig",
+        "NodeBalancerConfig"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "algorithm",
+          "type": "string",
+          "aliases": [
+            "algorithm"
+          ]
+        },
+        {
+          "id": "check",
+          "type": "string",
+          "aliases": [
+            "check"
+          ]
+        },
+        {
+          "id": "check_attempts",
+          "type": "integer",
+          "aliases": [
+            "check_attempts"
+          ]
+        },
+        {
+          "id": "check_body",
+          "type": "string",
+          "aliases": [
+            "check_body"
+          ]
+        },
+        {
+          "id": "check_interval",
+          "type": "integer",
+          "aliases": [
+            "check_interval"
+          ]
+        },
+        {
+          "id": "check_passive",
+          "type": "boolean",
+          "aliases": [
+            "check_passive"
+          ]
+        },
+        {
+          "id": "check_path",
+          "type": "string",
+          "aliases": [
+            "check_path"
+          ]
+        },
+        {
+          "id": "check_timeout",
+          "type": "integer",
+          "aliases": [
+            "check_timeout"
+          ]
+        },
+        {
+          "id": "cipher_suite",
+          "type": "string",
+          "aliases": [
+            "cipher_suite"
+          ]
+        },
+        {
+          "id": "nodebalancer_id",
+          "type": "integer",
+          "aliases": [
+            "nodebalancer_id"
+          ]
+        },
+        {
+          "id": "nodes_status",
+          "type": "object",
+          "aliases": [
+            "nodes_status"
+          ]
+        },
+        {
+          "id": "port",
+          "type": "integer",
+          "aliases": [
+            "port"
+          ]
+        },
+        {
+          "id": "protocol",
+          "type": "string",
+          "aliases": [
+            "protocol"
+          ]
+        },
+        {
+          "id": "proxy_protocol",
+          "type": "string",
+          "aliases": [
+            "proxy_protocol"
+          ]
+        },
+        {
+          "id": "ssl_cert",
+          "type": "string",
+          "aliases": [
+            "ssl_cert"
+          ]
+        },
+        {
+          "id": "ssl_commonname",
+          "type": "string",
+          "aliases": [
+            "ssl_commonname"
+          ]
+        },
+        {
+          "id": "ssl_fingerprint",
+          "type": "string",
+          "aliases": [
+            "ssl_fingerprint"
+          ]
+        },
+        {
+          "id": "ssl_key",
+          "type": "string",
+          "aliases": [
+            "ssl_key"
+          ]
+        },
+        {
+          "id": "stickiness",
+          "type": "string",
+          "aliases": [
+            "stickiness"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Region",
+      "aliases": [
+        "Region",
+        "Region"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "array",
+          "aliases": [
+            "capabilities"
+          ]
+        },
+        {
+          "id": "country",
+          "type": "string",
+          "aliases": [
+            "country"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "resolvers",
+          "type": "object",
+          "aliases": [
+            "resolvers"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "StackScript",
+      "aliases": [
+        "StackScript",
+        "StackScript"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "deployments_active",
+          "type": "integer",
+          "aliases": [
+            "deployments_active"
+          ]
+        },
+        {
+          "id": "deployments_total",
+          "type": "integer",
+          "aliases": [
+            "deployments_total"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "images",
+          "type": "array",
+          "aliases": [
+            "images"
+          ]
+        },
+        {
+          "id": "is_public",
+          "type": "boolean",
+          "aliases": [
+            "is_public"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "mine",
+          "type": "boolean",
+          "aliases": [
+            "mine"
+          ]
+        },
+        {
+          "id": "rev_note",
+          "type": "string",
+          "aliases": [
+            "rev_note"
+          ]
+        },
+        {
+          "id": "script",
+          "type": "string",
+          "aliases": [
+            "script"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        },
+        {
+          "id": "user_defined_fields",
+          "type": "array",
+          "aliases": [
+            "user_defined_fields"
+          ]
+        },
+        {
+          "id": "user_gravatar_id",
+          "type": "string",
+          "aliases": [
+            "user_gravatar_id"
+          ]
+        },
+        {
+          "id": "username",
+          "type": "string",
+          "aliases": [
+            "username"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SupportTicket",
+      "aliases": [
+        "SupportTicket"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "attachments",
+          "type": "array",
+          "aliases": [
+            "attachments"
+          ]
+        },
+        {
+          "id": "closable",
+          "type": "boolean",
+          "aliases": [
+            "closable"
+          ]
+        },
+        {
+          "id": "closed",
+          "type": "string",
+          "aliases": [
+            "closed"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "entity",
+          "type": "object",
+          "aliases": [
+            "entity"
+          ]
+        },
+        {
+          "id": "gravatar_id",
+          "type": "string",
+          "aliases": [
+            "gravatar_id"
+          ]
+        },
+        {
+          "id": "opened",
+          "type": "string",
+          "aliases": [
+            "opened"
+          ]
+        },
+        {
+          "id": "opened_by",
+          "type": "string",
+          "aliases": [
+            "opened_by"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "summary",
+          "type": "string",
+          "aliases": [
+            "summary"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        },
+        {
+          "id": "updated_by",
+          "type": "string",
+          "aliases": [
+            "updated_by"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Tag",
+      "aliases": [
+        "Tag"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "User",
+      "aliases": [
+        "User",
+        "User"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "restricted",
+          "type": "boolean",
+          "aliases": [
+            "restricted"
+          ]
+        },
+        {
+          "id": "ssh_keys",
+          "type": "array",
+          "aliases": [
+            "ssh_keys"
+          ]
+        },
+        {
+          "id": "tfa_enabled",
+          "type": "boolean",
+          "aliases": [
+            "tfa_enabled"
+          ]
+        },
+        {
+          "id": "username",
+          "type": "string",
+          "aliases": [
+            "username"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Volume",
+      "aliases": [
+        "Volume",
+        "Volume"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created",
+          "type": "string",
+          "aliases": [
+            "created"
+          ]
+        },
+        {
+          "id": "filesystem_path",
+          "type": "string",
+          "aliases": [
+            "filesystem_path"
+          ]
+        },
+        {
+          "id": "hardware_type",
+          "type": "string",
+          "aliases": [
+            "hardware_type"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "linode_id",
+          "type": "integer",
+          "aliases": [
+            "linode_id"
+          ]
+        },
+        {
+          "id": "linode_label",
+          "type": "string",
+          "aliases": [
+            "linode_label"
+          ]
+        },
+        {
+          "id": "region",
+          "type": "object",
+          "aliases": [
+            "region",
+            "id"
+          ]
+        },
+        {
+          "id": "size",
+          "type": "integer",
+          "aliases": [
+            "size"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "updated",
+          "type": "string",
+          "aliases": [
+            "updated"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

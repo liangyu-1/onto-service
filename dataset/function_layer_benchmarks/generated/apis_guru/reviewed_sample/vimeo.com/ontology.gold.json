@@ -1,0 +1,1683 @@
+{
+  "metadata": {
+    "name": "vimeo.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "vimeo.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "User",
+      "aliases": [
+        "User",
+        "user"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "account",
+          "type": "string",
+          "aliases": [
+            "account"
+          ]
+        },
+        {
+          "id": "bio",
+          "type": "string",
+          "aliases": [
+            "bio"
+          ]
+        },
+        {
+          "id": "content_filter",
+          "type": "array",
+          "aliases": [
+            "content_filter"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "location",
+          "type": "string",
+          "aliases": [
+            "location"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "preferences",
+          "type": "object",
+          "aliases": [
+            "preferences"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "upload_quota",
+          "type": "object",
+          "aliases": [
+            "upload_quota"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        },
+        {
+          "id": "websites",
+          "type": "array",
+          "aliases": [
+            "websites"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Video",
+      "aliases": [
+        "Video",
+        "video"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "categories",
+          "type": "array",
+          "aliases": [
+            "categories"
+          ]
+        },
+        {
+          "id": "content_rating",
+          "type": "array",
+          "aliases": [
+            "content_rating"
+          ]
+        },
+        {
+          "id": "context",
+          "type": "object",
+          "aliases": [
+            "context"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "duration",
+          "type": "number",
+          "aliases": [
+            "duration"
+          ]
+        },
+        {
+          "id": "height",
+          "type": "number",
+          "aliases": [
+            "height"
+          ]
+        },
+        {
+          "id": "language",
+          "type": "string",
+          "aliases": [
+            "language"
+          ]
+        },
+        {
+          "id": "last_user_action_event_date",
+          "type": "string",
+          "aliases": [
+            "last_user_action_event_date"
+          ]
+        },
+        {
+          "id": "license",
+          "type": "string",
+          "aliases": [
+            "license"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "password",
+          "type": "string",
+          "aliases": [
+            "password"
+          ]
+        },
+        {
+          "id": "privacy",
+          "type": "object",
+          "aliases": [
+            "privacy"
+          ]
+        },
+        {
+          "id": "release_time",
+          "type": "string",
+          "aliases": [
+            "release_time"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "spatial",
+          "type": "object",
+          "aliases": [
+            "spatial"
+          ]
+        },
+        {
+          "id": "stats",
+          "type": "object",
+          "aliases": [
+            "stats"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Album",
+      "aliases": [
+        "Album",
+        "album"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "allow_continuous_play",
+          "type": "boolean",
+          "aliases": [
+            "allow_continuous_play"
+          ]
+        },
+        {
+          "id": "allow_downloads",
+          "type": "boolean",
+          "aliases": [
+            "allow_downloads"
+          ]
+        },
+        {
+          "id": "allow_share",
+          "type": "boolean",
+          "aliases": [
+            "allow_share"
+          ]
+        },
+        {
+          "id": "brand_color",
+          "type": "string",
+          "aliases": [
+            "brand_color"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "domain",
+          "type": "string",
+          "aliases": [
+            "domain"
+          ]
+        },
+        {
+          "id": "duration",
+          "type": "number",
+          "aliases": [
+            "duration"
+          ]
+        },
+        {
+          "id": "embed",
+          "type": "object",
+          "aliases": [
+            "embed"
+          ]
+        },
+        {
+          "id": "embed_brand_color",
+          "type": "boolean",
+          "aliases": [
+            "embed_brand_color"
+          ]
+        },
+        {
+          "id": "embed_custom_logo",
+          "type": "boolean",
+          "aliases": [
+            "embed_custom_logo"
+          ]
+        },
+        {
+          "id": "hide_nav",
+          "type": "boolean",
+          "aliases": [
+            "hide_nav"
+          ]
+        },
+        {
+          "id": "hide_vimeo_logo",
+          "type": "boolean",
+          "aliases": [
+            "hide_vimeo_logo"
+          ]
+        },
+        {
+          "id": "layout",
+          "type": "string",
+          "aliases": [
+            "layout"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "privacy",
+          "type": "object",
+          "aliases": [
+            "privacy"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Channel",
+      "aliases": [
+        "Channel",
+        "channel"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "categories",
+          "type": "array",
+          "aliases": [
+            "categories"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "privacy",
+          "type": "object",
+          "aliases": [
+            "privacy"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "tags",
+          "type": "array",
+          "aliases": [
+            "tags"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Group",
+      "aliases": [
+        "Group",
+        "group"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "privacy",
+          "type": "object",
+          "aliases": [
+            "privacy"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Project",
+      "aliases": [
+        "Project",
+        "project"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Portfolio",
+      "aliases": [
+        "Portfolio",
+        "portfolio"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "sort",
+          "type": "string",
+          "aliases": [
+            "sort"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Comment",
+      "aliases": [
+        "Comment",
+        "comment"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_on",
+          "type": "string",
+          "aliases": [
+            "created_on"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "text",
+          "type": "string",
+          "aliases": [
+            "text"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Credit",
+      "aliases": [
+        "Credit",
+        "credit"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "role",
+          "type": "string",
+          "aliases": [
+            "role"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Picture",
+      "aliases": [
+        "Picture",
+        "picture"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "active",
+          "type": "boolean",
+          "aliases": [
+            "active"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "sizes",
+          "type": "array",
+          "aliases": [
+            "sizes"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TextTrack",
+      "aliases": [
+        "TextTrack",
+        "text-track"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "active",
+          "type": "boolean",
+          "aliases": [
+            "active"
+          ]
+        },
+        {
+          "id": "hls_link",
+          "type": "string",
+          "aliases": [
+            "hls_link"
+          ]
+        },
+        {
+          "id": "hls_link_expires_time",
+          "type": "string",
+          "aliases": [
+            "hls_link_expires_time"
+          ]
+        },
+        {
+          "id": "language",
+          "type": "string",
+          "aliases": [
+            "language"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "link_expires_time",
+          "type": "string",
+          "aliases": [
+            "link_expires_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Tag",
+      "aliases": [
+        "Tag",
+        "tag"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "canonical",
+          "type": "string",
+          "aliases": [
+            "canonical"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Category",
+      "aliases": [
+        "Category",
+        "category"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "last_video_featured_time",
+          "type": "string",
+          "aliases": [
+            "last_video_featured_time"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "parent",
+          "type": "object",
+          "aliases": [
+            "parent"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "subcategories",
+          "type": "array",
+          "aliases": [
+            "subcategories"
+          ]
+        },
+        {
+          "id": "top_level",
+          "type": "boolean",
+          "aliases": [
+            "top_level"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OnDemandPage",
+      "aliases": [
+        "OnDemandPage",
+        "on-demand-page"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "colors",
+          "type": "object",
+          "aliases": [
+            "colors"
+          ]
+        },
+        {
+          "id": "content_rating",
+          "type": "array",
+          "aliases": [
+            "content_rating"
+          ]
+        },
+        {
+          "id": "created_time",
+          "type": "string",
+          "aliases": [
+            "created_time"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "domain_link",
+          "type": "string",
+          "aliases": [
+            "domain_link"
+          ]
+        },
+        {
+          "id": "episodes",
+          "type": "object",
+          "aliases": [
+            "episodes"
+          ]
+        },
+        {
+          "id": "genres",
+          "type": "array",
+          "aliases": [
+            "genres"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "modified_time",
+          "type": "string",
+          "aliases": [
+            "modified_time"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "preorder",
+          "type": "object",
+          "aliases": [
+            "preorder"
+          ]
+        },
+        {
+          "id": "published",
+          "type": "object",
+          "aliases": [
+            "published"
+          ]
+        },
+        {
+          "id": "rating",
+          "type": "number",
+          "aliases": [
+            "rating"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "sku",
+          "type": "string",
+          "aliases": [
+            "sku"
+          ]
+        },
+        {
+          "id": "subscription",
+          "type": "object",
+          "aliases": [
+            "subscription"
+          ]
+        },
+        {
+          "id": "theme",
+          "type": "string",
+          "aliases": [
+            "theme"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OnDemandGenre",
+      "aliases": [
+        "OnDemandGenre",
+        "on-demand-genre"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "canonical",
+          "type": "string",
+          "aliases": [
+            "canonical"
+          ]
+        },
+        {
+          "id": "interactions",
+          "type": "object",
+          "aliases": [
+            "interactions"
+          ]
+        },
+        {
+          "id": "link",
+          "type": "string",
+          "aliases": [
+            "link"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OnDemandSeason",
+      "aliases": [
+        "OnDemandSeason",
+        "on-demand-season"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "description",
+          "type": "string",
+          "aliases": [
+            "description"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "position",
+          "type": "number",
+          "aliases": [
+            "position"
+          ]
+        },
+        {
+          "id": "resource_key",
+          "type": "string",
+          "aliases": [
+            "resource_key"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OnDemandPromotion",
+      "aliases": [
+        "OnDemandPromotion",
+        "on-demand-promotion"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "access_type",
+          "type": "string",
+          "aliases": [
+            "access_type"
+          ]
+        },
+        {
+          "id": "discount_type",
+          "type": "string",
+          "aliases": [
+            "discount_type"
+          ]
+        },
+        {
+          "id": "download",
+          "type": "boolean",
+          "aliases": [
+            "download"
+          ]
+        },
+        {
+          "id": "label",
+          "type": "string",
+          "aliases": [
+            "label"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "percent_off",
+          "type": "number",
+          "aliases": [
+            "percent_off"
+          ]
+        },
+        {
+          "id": "product_type",
+          "type": "string",
+          "aliases": [
+            "product_type"
+          ]
+        },
+        {
+          "id": "stream_period",
+          "type": "string",
+          "aliases": [
+            "stream_period"
+          ]
+        },
+        {
+          "id": "total",
+          "type": "number",
+          "aliases": [
+            "total"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "string",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "OnDemandRegion",
+      "aliases": [
+        "OnDemandRegion",
+        "on-demand-region"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "country_code",
+          "type": "string",
+          "aliases": [
+            "country_code"
+          ]
+        },
+        {
+          "id": "country_name",
+          "type": "string",
+          "aliases": [
+            "country_name"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Preset",
+      "aliases": [
+        "Preset",
+        "presets"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "metadata",
+          "type": "object",
+          "aliases": [
+            "metadata"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "settings",
+          "type": "object",
+          "aliases": [
+            "settings"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Domain",
+      "aliases": [
+        "Domain",
+        "domain"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "allow_hd",
+          "type": "boolean",
+          "aliases": [
+            "allow_hd"
+          ]
+        },
+        {
+          "id": "domain",
+          "type": "string",
+          "aliases": [
+            "domain"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "UploadAttempt",
+      "aliases": [
+        "UploadAttempt",
+        "upload-attempt"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "complete_uri",
+          "type": "string",
+          "aliases": [
+            "complete_uri"
+          ]
+        },
+        {
+          "id": "form",
+          "type": "string",
+          "aliases": [
+            "form"
+          ]
+        },
+        {
+          "id": "ticket_id",
+          "type": "string",
+          "aliases": [
+            "ticket_id"
+          ]
+        },
+        {
+          "id": "upload_link",
+          "type": "string",
+          "aliases": [
+            "upload_link"
+          ]
+        },
+        {
+          "id": "uri",
+          "type": "string",
+          "aliases": [
+            "uri"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

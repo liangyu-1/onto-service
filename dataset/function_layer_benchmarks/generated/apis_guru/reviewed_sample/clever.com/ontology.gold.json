@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "name": "clever.com_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "clever.com",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "District",
+      "aliases": ["District", "district"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "mdr_number", "type": "string", "aliases": ["mdr_number", "mdr number"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DistrictAdmin",
+      "aliases": ["DistrictAdmin", "district admin", "district_admin"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "name", "type": "object", "aliases": ["name"], "required": false},
+        {"id": "title", "type": "string", "aliases": ["title"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "DistrictStatus",
+      "aliases": ["DistrictStatus", "district status", "district_status"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "error", "type": "string", "aliases": ["error"], "required": false},
+        {"id": "instant_login", "type": "boolean", "aliases": ["instant_login", "instant login"], "required": false},
+        {"id": "last_sync", "type": "string", "aliases": ["last_sync", "last sync"], "required": false},
+        {"id": "launch_date", "type": "string", "aliases": ["launch_date", "launch date"], "required": false},
+        {"id": "pause_end", "type": "string", "aliases": ["pause_end", "pause end"], "required": false},
+        {"id": "pause_start", "type": "string", "aliases": ["pause_start", "pause start"], "required": false},
+        {"id": "sis_type", "type": "string", "aliases": ["sis_type", "sis type"], "required": false},
+        {"id": "state", "type": "string", "aliases": ["state"], "required": false}
+      ],
+      "states": ["running", "pending", "error", "paused"],
+      "review_status": "gold"
+    },
+    {
+      "id": "School",
+      "aliases": ["School", "school"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "created", "type": "string", "aliases": ["created"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "high_grade", "type": "string", "aliases": ["high_grade", "high grade"], "required": false},
+        {"id": "last_modified", "type": "string", "aliases": ["last_modified", "last modified"], "required": false},
+        {"id": "location", "type": "object", "aliases": ["location"], "required": false},
+        {"id": "low_grade", "type": "string", "aliases": ["low_grade", "low grade"], "required": false},
+        {"id": "mdr_number", "type": "string", "aliases": ["mdr_number", "mdr number"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "nces_id", "type": "string", "aliases": ["nces_id", "nces id"], "required": false},
+        {"id": "phone", "type": "string", "aliases": ["phone"], "required": false},
+        {"id": "principal", "type": "object", "aliases": ["principal"], "required": false},
+        {"id": "school_number", "type": "string", "aliases": ["school_number", "school number"], "required": false},
+        {"id": "sis_id", "type": "string", "aliases": ["sis_id", "sis id"], "required": false},
+        {"id": "state_id", "type": "string", "aliases": ["state_id", "state id"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SchoolAdmin",
+      "aliases": ["SchoolAdmin", "school admin", "school_admin"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "credentials", "type": "object", "aliases": ["credentials", "credential"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "name", "type": "object", "aliases": ["name"], "required": false},
+        {"id": "schools", "type": "array", "aliases": ["schools", "school"], "required": false},
+        {"id": "staff_id", "type": "string", "aliases": ["staff_id", "staff id"], "required": false},
+        {"id": "title", "type": "string", "aliases": ["title"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Section",
+      "aliases": ["Section", "section"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "course_description", "type": "string", "aliases": ["course_description", "course description"], "required": false},
+        {"id": "course_name", "type": "string", "aliases": ["course_name", "course name"], "required": false},
+        {"id": "course_number", "type": "string", "aliases": ["course_number", "course number"], "required": false},
+        {"id": "created", "type": "string", "aliases": ["created"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "grade", "type": "string", "aliases": ["grade"], "required": false},
+        {"id": "last_modified", "type": "string", "aliases": ["last_modified", "last modified"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "period", "type": "string", "aliases": ["period"], "required": false},
+        {"id": "school", "type": "string", "aliases": ["school"], "required": false},
+        {"id": "section_number", "type": "string", "aliases": ["section_number", "section number"], "required": false},
+        {"id": "sis_id", "type": "string", "aliases": ["sis_id", "sis id"], "required": false},
+        {"id": "students", "type": "array", "aliases": ["students", "student"], "required": false},
+        {"id": "subject", "type": "string", "aliases": ["subject"], "required": false},
+        {"id": "teacher", "type": "string", "aliases": ["teacher"], "required": false},
+        {"id": "teachers", "type": "array", "aliases": ["teachers"], "required": false},
+        {"id": "term", "type": "object", "aliases": ["term"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Student",
+      "aliases": ["Student", "student"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "created", "type": "string", "aliases": ["created"], "required": false},
+        {"id": "credentials", "type": "object", "aliases": ["credentials"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "dob", "type": "string", "aliases": ["dob"], "required": false},
+        {"id": "ell_status", "type": "string", "aliases": ["ell_status", "ell status"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "gender", "type": "string", "aliases": ["gender"], "required": false},
+        {"id": "grade", "type": "string", "aliases": ["grade"], "required": false},
+        {"id": "graduation_year", "type": "string", "aliases": ["graduation_year", "graduation year"], "required": false},
+        {"id": "hispanic_ethnicity", "type": "string", "aliases": ["hispanic_ethnicity", "hispanic ethnicity"], "required": false},
+        {"id": "last_modified", "type": "string", "aliases": ["last_modified", "last modified"], "required": false},
+        {"id": "location", "type": "object", "aliases": ["location"], "required": false},
+        {"id": "name", "type": "object", "aliases": ["name"], "required": false},
+        {"id": "race", "type": "string", "aliases": ["race"], "required": false},
+        {"id": "school", "type": "string", "aliases": ["school"], "required": false},
+        {"id": "schools", "type": "array", "aliases": ["schools"], "required": false},
+        {"id": "sis_id", "type": "string", "aliases": ["sis_id", "sis id"], "required": false},
+        {"id": "state_id", "type": "string", "aliases": ["state_id", "state id"], "required": false},
+        {"id": "student_number", "type": "string", "aliases": ["student_number", "student number"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "StudentContact",
+      "aliases": ["StudentContact", "student contact", "student_contact", "Contact", "contact"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "name", "type": "string", "aliases": ["name"], "required": false},
+        {"id": "phone", "type": "string", "aliases": ["phone"], "required": false},
+        {"id": "phone_type", "type": "string", "aliases": ["phone_type", "phone type"], "required": false},
+        {"id": "relationship", "type": "string", "aliases": ["relationship"], "required": false},
+        {"id": "sis_id", "type": "string", "aliases": ["sis_id", "sis id"], "required": false},
+        {"id": "student", "type": "string", "aliases": ["student"], "required": false},
+        {"id": "type", "type": "string", "aliases": ["type"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Teacher",
+      "aliases": ["Teacher", "teacher"],
+      "properties": [
+        {"id": "id", "type": "string", "aliases": ["id"], "required": false},
+        {"id": "created", "type": "string", "aliases": ["created"], "required": false},
+        {"id": "credentials", "type": "object", "aliases": ["credentials"], "required": false},
+        {"id": "district", "type": "string", "aliases": ["district"], "required": false},
+        {"id": "email", "type": "string", "aliases": ["email"], "required": false},
+        {"id": "last_modified", "type": "string", "aliases": ["last_modified", "last modified"], "required": false},
+        {"id": "name", "type": "object", "aliases": ["name"], "required": false},
+        {"id": "school", "type": "string", "aliases": ["school"], "required": false},
+        {"id": "schools", "type": "array", "aliases": ["schools"], "required": false},
+        {"id": "sis_id", "type": "string", "aliases": ["sis_id", "sis id"], "required": false},
+        {"id": "state_id", "type": "string", "aliases": ["state_id", "state id"], "required": false},
+        {"id": "teacher_number", "type": "string", "aliases": ["teacher_number", "teacher number"], "required": false},
+        {"id": "title", "type": "string", "aliases": ["title"], "required": false}
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}

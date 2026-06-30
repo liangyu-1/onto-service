@@ -1,0 +1,614 @@
+{
+  "metadata": {
+    "name": "zoom.us_gold",
+    "kind": "gold_object_ontology",
+    "source_api": "zoom.us",
+    "review_status": "gold"
+  },
+  "object_types": [
+    {
+      "id": "Account",
+      "aliases": [
+        "Account",
+        "Account"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "first_name",
+          "type": "string",
+          "aliases": [
+            "first_name"
+          ]
+        },
+        {
+          "id": "last_name",
+          "type": "string",
+          "aliases": [
+            "last_name"
+          ]
+        },
+        {
+          "id": "options",
+          "type": "object",
+          "aliases": [
+            "options"
+          ]
+        },
+        {
+          "id": "password",
+          "type": "string",
+          "aliases": [
+            "password"
+          ]
+        },
+        {
+          "id": "vanity_url",
+          "type": "string",
+          "aliases": [
+            "vanity_url"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "CommonAreaPhone",
+      "aliases": [
+        "CommonAreaPhone"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Device",
+      "aliases": [
+        "Device",
+        "Device"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "encryption",
+          "type": "string",
+          "aliases": [
+            "encryption"
+          ]
+        },
+        {
+          "id": "ip",
+          "type": "string",
+          "aliases": [
+            "ip"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "protocol",
+          "type": "string",
+          "aliases": [
+            "protocol"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Group",
+      "aliases": [
+        "Group",
+        "Group"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "name",
+          "type": "string",
+          "aliases": [
+            "name"
+          ]
+        },
+        {
+          "id": "total_members",
+          "type": "integer",
+          "aliases": [
+            "total_members"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "H323Device",
+      "aliases": [
+        "H323Device"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "IMGroup",
+      "aliases": [
+        "IMGroup",
+        "IMGroup"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Meeting",
+      "aliases": [
+        "Meeting",
+        "Meeting"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Phone",
+      "aliases": [
+        "Phone"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PhoneCallingPlan",
+      "aliases": [
+        "PhoneCallingPlan",
+        "PhoneCallingPlan"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PhoneNumber",
+      "aliases": [
+        "PhoneNumber",
+        "PhoneNumber"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "PhoneUser",
+      "aliases": [
+        "PhoneUser",
+        "PhoneUser"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Recording",
+      "aliases": [
+        "Recording",
+        "Recording"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "deleted_time",
+          "type": "string",
+          "aliases": [
+            "deleted_time"
+          ]
+        },
+        {
+          "id": "download_url",
+          "type": "string",
+          "aliases": [
+            "download_url"
+          ]
+        },
+        {
+          "id": "file_size",
+          "type": "number",
+          "aliases": [
+            "file_size"
+          ]
+        },
+        {
+          "id": "file_type",
+          "type": "string",
+          "aliases": [
+            "file_type"
+          ]
+        },
+        {
+          "id": "meeting_id",
+          "type": "string",
+          "aliases": [
+            "meeting_id"
+          ]
+        },
+        {
+          "id": "play_url",
+          "type": "string",
+          "aliases": [
+            "play_url"
+          ]
+        },
+        {
+          "id": "recording_end",
+          "type": "string",
+          "aliases": [
+            "recording_end"
+          ]
+        },
+        {
+          "id": "recording_start",
+          "type": "string",
+          "aliases": [
+            "recording_start"
+          ]
+        },
+        {
+          "id": "recording_type",
+          "type": "string",
+          "aliases": [
+            "recording_type"
+          ]
+        },
+        {
+          "id": "status",
+          "type": "string",
+          "aliases": [
+            "status"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Report",
+      "aliases": [
+        "Report",
+        "Report"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Role",
+      "aliases": [
+        "Role",
+        "Role"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Room",
+      "aliases": [
+        "Room",
+        "Room"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "SipTrunk",
+      "aliases": [
+        "SipTrunk"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "TSP",
+      "aliases": [
+        "TSP",
+        "TSP"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "conference_code",
+          "type": "string",
+          "aliases": [
+            "conference_code"
+          ]
+        },
+        {
+          "id": "dial_in_numbers",
+          "type": "array",
+          "aliases": [
+            "dial_in_numbers"
+          ]
+        },
+        {
+          "id": "leader_pin",
+          "type": "string",
+          "aliases": [
+            "leader_pin"
+          ]
+        },
+        {
+          "id": "tsp_bridge",
+          "type": "string",
+          "aliases": [
+            "tsp_bridge"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "User",
+      "aliases": [
+        "User",
+        "User"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        },
+        {
+          "id": "created_at",
+          "type": "string",
+          "aliases": [
+            "created_at"
+          ]
+        },
+        {
+          "id": "dept",
+          "type": "string",
+          "aliases": [
+            "dept"
+          ]
+        },
+        {
+          "id": "email",
+          "type": "string",
+          "aliases": [
+            "email"
+          ]
+        },
+        {
+          "id": "first_name",
+          "type": "string",
+          "aliases": [
+            "first_name"
+          ]
+        },
+        {
+          "id": "last_client_version",
+          "type": "string",
+          "aliases": [
+            "last_client_version"
+          ]
+        },
+        {
+          "id": "last_login_time",
+          "type": "string",
+          "aliases": [
+            "last_login_time"
+          ]
+        },
+        {
+          "id": "last_name",
+          "type": "string",
+          "aliases": [
+            "last_name"
+          ]
+        },
+        {
+          "id": "pmi",
+          "type": "integer",
+          "aliases": [
+            "pmi"
+          ]
+        },
+        {
+          "id": "role_name",
+          "type": "string",
+          "aliases": [
+            "role_name"
+          ]
+        },
+        {
+          "id": "timezone",
+          "type": "string",
+          "aliases": [
+            "timezone"
+          ]
+        },
+        {
+          "id": "type",
+          "type": "integer",
+          "aliases": [
+            "type"
+          ]
+        },
+        {
+          "id": "use_pmi",
+          "type": "boolean",
+          "aliases": [
+            "use_pmi"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    },
+    {
+      "id": "Webinar",
+      "aliases": [
+        "Webinar",
+        "Webinar"
+      ],
+      "properties": [
+        {
+          "id": "id",
+          "type": "string",
+          "aliases": [
+            "id"
+          ]
+        }
+      ],
+      "states": [],
+      "review_status": "gold"
+    }
+  ]
+}
